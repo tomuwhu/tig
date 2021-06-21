@@ -1,0 +1,1 @@
+$$\forall{n \in Z,n>1}: h(n,a,b) = h(n-1,a,6-a-b), a \longrightarrow b, h(n-1,6-a-b,b)$$
