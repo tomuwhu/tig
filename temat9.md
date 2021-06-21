@@ -2,7 +2,6 @@
 
 ## 0. Cloud szolgáltatások regisztrációja
 - Google account létrehozása
-- GitHub account létrehozása
 
 ## I. Szövegszerkesztés (11 óra)
 

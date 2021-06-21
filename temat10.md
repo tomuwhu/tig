@@ -1,5 +1,8 @@
 # Tematika - Digitális kultúra 10.
 
+## 0. Cloud szolgáltatások regisztrációja
+- GitHub account létrehozása
+
 ## I. Táblázatkezelés (4 óra)
 (HTML Táblázatok, Google Spreadshet, MS EXCEL)
 
