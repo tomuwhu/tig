@@ -14,6 +14,7 @@
 - XML alapú dokumentumok
 - Felhő alapú szövegkészítés
 - PDF és a Nyomtatott dokumentum
+- EPub és az elektronikus könyvek
 
 ## Számítógépes grafika és multimédia (18 óra)
 
@@ -33,7 +34,8 @@
 - SVG animációk
 
 ## V. Algoritmizálás, formális programozási nyelv használata (13 óra)
-(Python programozási nyelv)
+
+### Python programozási nyelv
 
 - Egy Python program futtatása
 - Függvények, változók és objektumok
@@ -43,7 +45,7 @@
 - Számok
 - Karakterláncok és listák
 
-## VI.-VII. Mobiltechnológiai ismeretek, publikálás a világhálón (10 óra)
+### VI.-VII. Mobiltechnológiai ismeretek, publikálás a világhálón (10 óra)
 
 - HTML objektumok
 - HTML oldal felépítése
@@ -56,8 +58,8 @@
 - hivatkozások, képletek
 - függvények
 
-## IX. Az információs társadalom, e-Világ (1)
+## IX. Az információs társadalom, e-Világ (1 óra)
 
-## X. Online kommunikáció (3)
+## X. Online kommunikáció (3 óra)
 
-## XI. A digitális eszközök használata (4)
+## XI. A digitális eszközök használata (4 óra)
