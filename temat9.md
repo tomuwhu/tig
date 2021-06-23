@@ -1,7 +1,11 @@
 # Tematika - Digitális kultúra 9.
 
-## 0. Cloud szolgáltatások regisztrációja
+## 0. Iskolai laborok használata
+
+- Laborrend, iskolai accountok, felhasználói jogosultságok
+- Netikett
 - Google account létrehozása
+- Operációs rendszerek, Parancssor, Terminálok
 
 ## I. Szövegszerkesztés (11 óra)
 
@@ -10,6 +14,7 @@
 - Formázott szöveg kódolása
 - MarkDown
 - HTML
+- Táblázatok
 - Tex és Latex
 - XML alapú dokumentumok
 - Felhő alapú szövegkészítés
@@ -28,6 +33,7 @@
 - vektorgrafika elve, grafikai primitívek
 - koordináta renszer a számítógépben
 - SVG és alkalmazása
+- Folyamatábra és struktúradiagram készítése
 
 ### IV. Animációkészítés
 
@@ -57,6 +63,7 @@
 - adatok, cellák, táblázat elemei
 - hivatkozások, képletek
 - függvények
+- diagramok
 
 ## IX. Az információs társadalom, e-Világ (1 óra)
 

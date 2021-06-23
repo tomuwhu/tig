@@ -1,14 +1,17 @@
 # Tematika - Digitális kultúra 10.
 
 ## 0. Cloud szolgáltatások regisztrációja
-- GitHub account létrehozása
 
+- GitHub account létrehozása
+- Linux Shell
+  
 ## I. Táblázatkezelés (4 óra)
 (HTML Táblázatok, Google Spreadshet, MS EXCEL)
 
 - függvények alkalmazása
 - szűrések, rendezések
 - formázás, makrók
+- adatvizualizáció
 
 ## II. Online kommunikáció (1 óra)
 
@@ -23,10 +26,11 @@
 (Python és JavaScript)
 
 - Ismétlés
+- Bejárók és generátorok
 - Függvények készítése
+- Modulok használata és készítése
 - Szótárak, készletek
 - Rekurzió
-- Bejárók és generátorok
 
 ## VI. Adatbázis-kezelés (5 óra)
 
