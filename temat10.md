@@ -15,12 +15,19 @@
 
 ## II. Online kommunikáció (1 óra)
 
+- verziókezelő rendszerek, felhőszolgáltatások
+
 ## III. Publikálás a világhálón (8 óra)
 
 - Ismétlés: HTML - CSS
+- DNS, HTTPS, TCP/IP működése
 - JavaScript
+- Back-end és Cloud Storage (File server, SQL, NoSQL)
 
 ## IV. Az információs társadalom, e-Világ
+
+- Az informatika helye a társadalomban
+- Hálózatok a társadalomban, matematikai modellek
 
 ## V. Algoritmizálás, formális programozási nyelv használata (13 óra)
 (Python és JavaScript)
@@ -40,4 +47,7 @@
 - MS ACCESS használata
 - Űrlapok, Jelentések, Körlevél
 
-## VII.	A digitális eszközök használata (2 óra)
+## VII. A digitális eszközök használata (2 óra)
+
+- program és applikáció
+- universal applikációk, electron
