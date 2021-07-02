@@ -5,6 +5,7 @@ from os import listdir
 from os.path import isfile, join
 path = "./py"
 files = [f for f in listdir(path) if isfile(join(path, f))]
+files.sort()
 myhtml = """<meta charset="UTF-8">
 <script src="hljs/markdown.min.js"></script>
 <script>
