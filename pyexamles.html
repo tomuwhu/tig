@@ -1,0 +1,25 @@
+
+<script>
+function load() {
+    file="sq.py"
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            html_content = markdown.toHTML( xhttp.responseText );
+            document.getElementById("code").innerHTML= html_content;
+            hljs.highlightAll()
+        }
+    };
+    xhttp.open("GET", "./"+file, true);
+    xhttp.send();
+}
+</script>
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet"
+      href="hljs/a11y-dark.css">
+<script src="hljs/highlight.min.js"></script>
+<select onchange="load()">
+<option></option>
+<option>sq.py</option>
+</select>
+<pre><code class="language-python" id="code"></code></pre>
