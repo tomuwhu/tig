@@ -8,7 +8,7 @@ files = [f for f in listdir(path) if isfile(join(path, f))]
 myhtml = """
 <script>
 function load() {
-    file="sq.py"
+    file="py/sq.py"
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
