@@ -1,4 +1,4 @@
-# Tematika - Digitális kultúra 9.
+# Tematika - Digitális kultúra 9. évfolyam
 
 ## 0. Iskolai laborok használata
 

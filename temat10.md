@@ -1,4 +1,4 @@
-# Tematika - Digitális kultúra 10.
+# Tematika - Digitális kultúra 10. évfolyam
 
 ## 0. Cloud szolgáltatások regisztrációja
 
@@ -6,6 +6,7 @@
 - Linux Shell
   
 ## I. Táblázatkezelés (4 óra)
+
 (HTML Táblázatok, Google Spreadshet, MS EXCEL)
 
 - függvények alkalmazása
@@ -30,6 +31,7 @@
 - Hálózatok a társadalomban, matematikai modellek
 
 ## V. Algoritmizálás, formális programozási nyelv használata (13 óra)
+
 (Python és JavaScript)
 
 - Ismétlés
