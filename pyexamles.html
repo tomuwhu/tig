@@ -1,11 +1,15 @@
 <meta charset="UTF-8">
+<script src="hljs/markdown.min.js"></script>
 <script>
 function load() {
     file="py/"+document.getElementById("sel").value
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("code").innerHTML= xhttp.responseText;
+            if (file.split('.')[1]=='md') {
+                html_content = markdown.toHTML( xhttp.responseText )
+            } else html_content = xhttp.responseText
+            document.getElementById("code").innerHTML= html_content;
             hljs.highlightAll()
         }
     };
