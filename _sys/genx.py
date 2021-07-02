@@ -15,13 +15,15 @@ function load() {
         if (this.readyState == 4 && this.status == 200) {
             if (file.split('.')[1]=='md') {
                 html_content = markdown.toHTML( xhttp.responseText )
-                document.getElementById("md").innerHTML= html_content;
-                document.getElementById('md').style.visibility = "visible"
+                document.getElementById("code").innerHTML=''
+                document.getElementById("content").innerHTML= html_content
+                document.getElementById('content').style.visibility = "visible"
                 document.getElementById('code').style.visibility = "hidden"
             } else {
                 html_content = xhttp.responseText
                 document.getElementById("code").innerHTML= html_content;
-                document.getElementById('md').style.visibility = "hidden"
+                document.getElementById("content").innerHTML=''
+                document.getElementById('content').style.visibility = "hidden"
                 document.getElementById('code').style.visibility = "visible"
             }
             hljs.highlightAll()
@@ -42,7 +44,7 @@ function load() {
 </select>
 <pre><code class="language-python" id="code"></code></pre>
 <div style="text-align: center;">
-    <div id="md" style="visibility: hidden;"></div>
+    <div id="content" style="visibility: hidden;"></div>
 </div>
 """
 
