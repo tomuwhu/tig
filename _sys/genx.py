@@ -48,6 +48,6 @@ function load() {
 </div>
 """
 
-f = open("pyexamles.html", "w")
+f = open("pyexamples.html", "w")
 f.write(myhtml)
 f.close()
