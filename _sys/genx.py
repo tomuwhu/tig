@@ -5,8 +5,7 @@ from os import listdir
 from os.path import isfile, join
 path = "./py"
 files = [f for f in listdir(path) if isfile(join(path, f))]
-myhtml = """
-<meta charset="ISO-8859-2">
+myhtml = """<meta charset="UTF-8">
 <script>
 function load() {
     file="py/"+document.getElementById("sel").value
@@ -25,7 +24,7 @@ function load() {
 <link rel="stylesheet"
       href="hljs/a11y-dark.css">
 <script src="hljs/highlight.min.js"></script>
-<h1>Python példaprogramok</h1>
+<h1>Python p&eacute;ldaprogramok</h1>
 <select onchange="load()" id="sel">
 <option></option>
 """+''.join(map(f, files))+"""
