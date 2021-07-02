@@ -4,7 +4,5 @@ d = {
     '3': "három",
     '4': "négy"
 }
-i = input()
-while d.get(i,False):
-    print(d[i])
-    i = input()
+while d.get(i := input(), False):
+    print(f"{i}: {d[i]}")

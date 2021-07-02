@@ -1,5 +1,5 @@
 def f(fn):
-    return "<option>"+fn+"</option>"
+    return f"<option>{fn}</option>"
 
 from os import listdir
 from os.path import isfile, join
