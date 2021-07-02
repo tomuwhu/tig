@@ -24,6 +24,7 @@ function load() {
 <link rel="stylesheet"
       href="hljs/a11y-dark.css">
 <script src="hljs/highlight.min.js"></script>
+<h1>Python példaprogramok</h1>
 <select onchange="load()">
 <option></option>
 """+''.join(map(f, files))+"""
