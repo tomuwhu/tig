@@ -8,7 +8,7 @@ files = [f for f in listdir(path) if isfile(join(path, f))]
 myhtml = """
 <script>
 function load() {
-    file="py/sq.py"
+    file="py/"+document.getElementById("sel").value
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -25,7 +25,7 @@ function load() {
       href="hljs/a11y-dark.css">
 <script src="hljs/highlight.min.js"></script>
 <h1>Python példaprogramok</h1>
-<select onchange="load()">
+<select onchange="load()" id="sel">
 <option></option>
 """+''.join(map(f, files))+"""
 </select>
