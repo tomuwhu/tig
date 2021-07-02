@@ -37,12 +37,4 @@ pl: { 4 -9 6 8 5 -4 5 -10 -5 -6 } -> { 4 6 8 -4 -10 -6 -9 5 5 -5 }
 
 1. Tölts fel egy 10 sorból és 10 oszlopból álló kétdimenziós tömböt véletlen számokkal a [0;9] intervallumból! Írd ki, hol van a bal felső sarka annak a 3×3-as négyzetnek a 10×10-es területen belül, amelyik által lefedett területen legnagyobb a számok összege!
 
-1. Tölts fel egy legalább 3×3 tetszőleges méretű, nem feltétlenül négyzet alakú kétdimenziós tömböt (maximum 20×20) véletlen számokkal a [0;9] intervallumból! Hol van annak a + jelnek a közepe, amelyik által lefedett területen legnagyobb a számok összege?
-
-```python
-             2
-jel példa: 5 8 7
-             7
-```
-
 1. Tölts fel egy 10 elemű tömböt páros és páratlan számokkal a [-20;20] intervallumból úgy, hogy mindkét fajtából 5-5 darab legyen! A számok eloszlásába minél kevésbé nyúlj bele! (pl ne tedd az 5-5 db számot egymás mellé, vagy direkt felváltva, stb, igyekezz minél kevésbé befolyásolni a sorrendet)
