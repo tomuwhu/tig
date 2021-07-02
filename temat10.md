@@ -32,7 +32,7 @@
 
 ## V. Algoritmizálás, formális programozási nyelv használata (13 óra)
 
-(Python és JavaScript)
+([Python](pyexamples.html) és JavaScript)
 
 - Ismétlés
 - Bejárók és generátorok

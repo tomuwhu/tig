@@ -42,7 +42,7 @@
 
 ## V. Algoritmizálás, formális programozási nyelv használata (13 óra)
 
-### Python programozási nyelv
+[### Python programozási nyelv](pyexamples.html)
 
 - Egy Python program futtatása
 - Függvények, változók és objektumok
