@@ -42,6 +42,8 @@
 
 ## V. Algoritmizálás, formális programozási nyelv használata (13 óra)
 
+- programozási nyelvek jellemzői, szintaxis, csoportosításuk
+
 [Python programozási nyelv](pyexamples.html)
 
 - Egy Python program futtatása
