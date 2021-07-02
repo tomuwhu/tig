@@ -18,6 +18,7 @@
 - Tex és Latex
 - XML alapú dokumentumok
 - Felhő alapú szövegkészítés
+- Kiadványszerkesztés
 - PDF és a Nyomtatott dokumentum
 - EPub és az elektronikus könyvek
 
