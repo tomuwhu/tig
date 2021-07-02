@@ -6,7 +6,7 @@ from os.path import isfile, join
 path = "./py"
 files = [f for f in listdir(path) if isfile(join(path, f))]
 myhtml = """
-<meta charset="utf-8">
+<meta charset="ISO-8859-2">
 <script>
 function load() {
     file="py/"+document.getElementById("sel").value
