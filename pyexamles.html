@@ -5,8 +5,7 @@ function load() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            html_content = markdown.toHTML( xhttp.responseText );
-            document.getElementById("code").innerHTML= html_content;
+            document.getElementById("code").innerHTML= xhttp.responseText;
             hljs.highlightAll()
         }
     };
