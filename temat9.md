@@ -38,7 +38,11 @@
 
 ### IV. Animációkészítés
 
+- Animációs adatvizualizáció
+- Interaktív adatvizualizáció
+- Animációkészítő alkalmazások
 - SVG animációk
+- Programozott interaktív animációk
 
 ## V. Algoritmizálás, formális programozási nyelv használata (13 óra)
 

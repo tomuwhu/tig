@@ -12,7 +12,7 @@
 - függvények alkalmazása
 - szűrések, rendezések
 - formázás, makrók
-- adatvizualizáció
+- adatvizualizáció (statikus, animált és interaktív av.)
 
 ## II. Online kommunikáció (1 óra)
 
