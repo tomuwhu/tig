@@ -31,6 +31,7 @@
 
 ### III. Vektorgrafika
 
+- ismétlés: teknőcgrafika
 - vektorgrafika elve, grafikai primitívek
 - koordináta renszer a számítógépben
 - SVG és alkalmazása
