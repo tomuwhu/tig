@@ -18,3 +18,4 @@
 
 [MarkDown](https://www.markdownguide.org/)
 [W3Schools](https://www.w3schools.com/)
+[Videó tananyagok magyar nyelven](https://www.youtube.com/channel/UCs6bOI-3hy2aY2QaE4ZXm0g/videos)
