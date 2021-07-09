@@ -16,7 +16,7 @@
 ## Online anyagok
 
 [MarkDown](https://www.markdownguide.org/)
-[W3Schools](https://www.w3schools.com/)<br>
+[W3Schools](https://www.w3schools.com/)<hr>
 
 [Video: IT alapozó I.](https://www.youtube.com/watch?v=6Ru6LLC4F-M)
 [Video: IT alapozó II.](https://www.youtube.com/watch?v=0E-louNT7ic)<br>
