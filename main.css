@@ -33,7 +33,7 @@ a {
   grid-gap: 50px;
   align-items: stretch;
 }
-a {
+a.b {
     color:rgb(255, 251, 202);
     text-decoration: none;
     margin: 6px;
