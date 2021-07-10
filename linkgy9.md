@@ -32,4 +32,5 @@
 
 ## WEB
 
-[EGY NOBEL-DÍJAS: A DDT](DDT/ddt.html)
+[EGY NOBEL-DÍJAS: A DDT]([ddt/ddt.html](http://www.bdarvas.hu/ismeretterjesztes/kemiai_biztonsag/idn16))
+[Méhek vs ~szerek](http://bdarvas.hu/download/pdf/Meh17Szd.pdf)
