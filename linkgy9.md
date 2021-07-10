@@ -29,3 +29,7 @@
 - [Video: Python függvények II.](https://www.youtube.com/watch?v=zP6Cko_fm8E)
 - [Video: Python modulok](https://www.youtube.com/watch?v=JxnRyM1V9qE)
 - [További videók](https://www.youtube.com/channel/UCs6bOI-3hy2aY2QaE4ZXm0g/videos)
+
+## WEB
+
+[EGY NOBEL-DÍJAS: A DDT](DDT/ddt.html)
