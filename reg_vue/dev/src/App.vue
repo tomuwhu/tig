@@ -107,7 +107,7 @@ export default {
       this.x++
       this.axios
                     .post(
-                        'http://inf.u-szeged.hu/~tnemeth/tig_server.php',
+                        'https://inf.u-szeged.hu/~tnemeth/tig_server.php',
                         { 
                             p:'insert', 
                             data: {
