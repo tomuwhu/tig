@@ -6,7 +6,7 @@
     <table>
       <tr>
         <td class="label">
-          TIG-es gmail
+          Sztig-es emailcím
         </td>
         <td>
           <div v-if="o.saved">{{o.gmail_tig}}</div>
@@ -106,32 +106,32 @@ export default {
     f() {
       this.x++
       this.axios
-                    .post(
-                        'https://inf.u-szeged.hu/~tnemeth/tig_server.php',
-                        { 
-                            p:'insert', 
-                            data: {
-                                gmail_tig:    this.o.gmail_tig,
-                                v_name:       this.o.v_name,
-                                k_name:       this.o.k_name,
-                                oszt:         this.o.oszt, 
-                                gmail_own:    this.o.gmail_own,
-                                pw:           this.o.pw,
-                                kedvenca:     this.o.kedvenca,
-                                date:         Date.now()
-                            } 
-                        }
-                    )
-                    .then( v => {
-                        console.log(v.data.gmail_tig);
-                        if (v.data.gmail_tig) {
-                          this.o.saved = true
-                          console.log('Mentve');
-                        }
-                    } )
-                    .catch( err => 
-                        console.log(err)
-                    )
+          .post(
+              'https://inf.u-szeged.hu/~tnemeth/tig_server.php',
+              { 
+                  p:'insert', 
+                  data: {
+                      gmail_tig:    this.o.gmail_tig,
+                      v_name:       this.o.v_name,
+                      k_name:       this.o.k_name,
+                      oszt:         this.o.oszt, 
+                      gmail_own:    this.o.gmail_own,
+                      pw:           this.o.pw,
+                      kedvenca:     this.o.kedvenca,
+                      date:         Date.now()
+                  } 
+              }
+          )
+          .then( v => {
+              console.log(v.data.gmail_tig);
+              if (v.data.gmail_tig) {
+                this.o.saved = true
+                console.log('Mentve');
+              }
+          } )
+          .catch( err => 
+              console.log(err)
+          )
     }
   }
 }
