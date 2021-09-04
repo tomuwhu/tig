@@ -11,3 +11,6 @@ a következők szerint:
 - a B nyomógomb hatására a kijelzőn jelenjen meg a számláló értéke számmal, több számjegy esetén scrollozva, majd egy másodperc elteltével - illetve scrollozás után - térjen vissza az alapeset (*) módra,
 - az eszközt megrázva írja ki a kijelzőre 2^n értéket (több számjegy esetén scrollozva) majd térjen vissza alapeset (*) módba!
 
+[megoldás](mb/szamlalo.hex)
+
+![...](szamlalo.jpg)
