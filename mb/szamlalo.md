@@ -4,7 +4,7 @@
 
 a következők szerint:
 
-- $n$ kezdetben 0, (n maximális értéke 25 lehet),
+- n kezdetben 0, (n maximális értéke 25 lehet),
 - a kijelzőn alapesetben $n$ darab led világítson (*),
 - a logóra kattintva számláló értéke eggyel nőjön,
 - az A nyomógomb hatására a számláló értéke legyen 0 (reset),
