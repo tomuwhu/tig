@@ -13,4 +13,4 @@ a következők szerint:
 
 [megoldás](mb/szamlalo.hex)
 
-![...](szamlalo.jpg)
+![...](mb/szamlalo.jpg)
