@@ -77,3 +77,7 @@ div.imgcont {
     box-shadow: 0px 0px 8px gray;
     text-align: center;
 }
+img {
+    border-radius: 6px;
+    box-shadow: 0px 0px 8px gray;
+}
