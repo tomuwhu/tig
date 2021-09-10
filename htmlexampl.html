@@ -15,6 +15,7 @@ function load() {
                     .replace(/'/g, "&#039;");
                 document.getElementById("content").innerHTML=html_content
                 document.getElementById('content').style.visibility = "visible"
+                document.getElementById('_b').style.visibility = "hidden"
                 document.getElementById('code').style.visibility = "visible"
             hljs.highlightAll()
         }
@@ -30,13 +31,14 @@ function load() {
 <script src="hljs/highlight.min.js"></script>
 <h1 class="h">HTML-CSS p&eacute;ldák</h1>
 <select class="s" onchange="load()" id="sel">
-<option></option>
+<option id="_b"></option>
 <option>orarend_v01.html</option>
 <option>orarend_v02.html</option>
 <option>urlap.html</option>
 </select>
 <pre><code class="language-html" id="code"></code></pre>
 <div class="d" style="text-align: center;">
-    <div class="d" id="content" style="text-align: left; color:black; background-color: white;"></div>
+    <div class="d" id="content" 
+    style="text-align: left; color:black; background-color: white; visibility: hidden;"></div>
 </div>
 </body>
