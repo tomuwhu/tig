@@ -7,7 +7,12 @@ function load() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
                 html_content = xhttp.responseText
-                document.getElementById("code").innerText= html_content
+                document.getElementById("code").innerHTML = html_content
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;");
                 document.getElementById("content").innerHTML=html_content
                 document.getElementById('content').style.visibility = "visible"
                 document.getElementById('code').style.visibility = "visible"
@@ -18,16 +23,19 @@ function load() {
     xhttp.send();
 }
 </script>
+<body class="b">
 <link rel="stylesheet"
       href="hljs/a11y-dark.css">
-<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="main2.css">
 <script src="hljs/highlight.min.js"></script>
-<h1>HTML-CSS p&eacute;ldák</h1>
-<select onchange="load()" id="sel">
+<h1 class="h">HTML-CSS p&eacute;ldák</h1>
+<select class="s" onchange="load()" id="sel">
 <option></option>
 <option>orarend_v01.html</option>
+<option>orarend_v02.html</option>
 </select>
-<pre><code class="language-python" id="code"></code></pre>
-<div style="text-align: center;">
-    <div id="content" style="visibility: hidden;"></div>
+<pre><code class="language-html" id="code"></code></pre>
+<div class="d" style="text-align: center;">
+    <div class="d" id="content" style="text-align: left; color:black; background-color: white;"></div>
 </div>
+</body>

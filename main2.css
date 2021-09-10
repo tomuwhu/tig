@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Shadows+Into+Light&display=swap');
+body.b {
+    background: rgb(12, 12, 1);
+    color: rgb(196, 240, 230);
+    margin: 20px;
+}
+select.s {
+    width: 200px;
+}
+div#content {
+    text-align: left;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px gray;
+    background-color: rgb(24, 43, 43);
+    font-size: 12px;
+}
+h1.x, h2.x {
+    font-family: 'Shadows Into Light', cursive;
+}
+.c {
+    text-align: center;
+}
+.grid { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(580px, 1fr));
+  grid-gap: 50px;
+  align-items: stretch;
+}
+a.a {
+    font-family: 'Kanit', sans-serif;
+    cursor: pointer;
+    color:rgb(255, 251, 202);
+    text-decoration: none;
+    margin: 6px;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 4px;
+    padding-bottom: 3px;
+    background-color: rgb(9, 29, 52);
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px gray;
+}
+a.a:hover {
+    color:rgb(183, 236, 255);
+    background-color: rgb(72, 72, 15);
+    box-shadow: 0px 0px 12px rgb(201, 201, 201);
+}
+a.a:active {
+    color:rgb(183, 236, 255);
+    background-color: rgb(72, 15, 15);
+    box-shadow: 0px 0px 12px rgb(201, 201, 201);
+}
+a.a:visited {
+    color:rgb(226, 249, 201);
+}
+code.c {
+    border-radius: 12px;
+    box-shadow: 0px 0px 8px gray;
+}
+h1.h {
+    font-size: 20px;
+}
+h2.h {
+    font-size: 16px;
+}
+h3.h {
+    font-size: 12px;
+}
+div.imgcont {
+    background-color: rgb(237, 237, 237);
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px gray;
+    text-align: center;
+}
+img.i {
+    border-radius: 6px;
+    box-shadow: 0px 0px 8px gray;
+}
+td, th {
+    color: black;
+}
