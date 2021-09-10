@@ -1,0 +1,65 @@
+<div class=c>
+    <h2>Űrlap példa</h2>
+    <table>
+        <tr>
+            <td>Név:</td>
+            <td><input placeholder="Vezetéknév" type="text"></td>
+            <td><input placeholder="Keresztnév" type="text"></td>
+        </tr>
+        <tr>
+            <td rowspan="2">Lakcím:</td>
+            <td><input placeholder="Irányítószám" type="number"></td>
+            <td><input placeholder="Város" type="text"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input placeholder="Utca / házszám" type="text"></td>
+        </tr>
+        <tr>
+            <td>Kedvenc állat:</td>
+            <td colspan="2">
+                <select>
+                    <option></option>
+                    <option>Cica</option>
+                    <option>Kutya</option>
+                    <option>Ló</option>
+                    <option>Zebra</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Kedvenc szín:</td>
+            <td colspan="2"><input type="color"></td>
+        </tr>
+    </table>
+</div>
+<style>
+    div.c {
+        text-align: center;
+    }
+    h2 {
+        margin: 10 auto;
+        text-align: center;
+        box-shadow: 1px 1px 3px black;
+        padding: 8px;
+        background: rgb(167, 136, 136);
+        border-radius: 12px;
+        width: 445px;
+    }
+    table {
+        text-align: center;
+        border-spacing: 6px;
+        margin: 0 auto;
+    }
+    input, select {
+        width: 100%;
+    }
+    td {
+        vertical-align: top;
+        text-align: left;
+        background: rgb(204, 206, 182);
+        min-width: 60px;
+        border-radius: 4px;
+        box-shadow: 1px 1px 3px black;
+        padding: 8px;
+    }
+</style>
