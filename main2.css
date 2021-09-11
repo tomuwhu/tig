@@ -55,7 +55,7 @@ a.a:active {
 a.a:visited {
     color:rgb(226, 249, 201);
 }
-code.c {
+code#code {
     border-radius: 12px;
     box-shadow: 0px 0px 8px gray;
 }
