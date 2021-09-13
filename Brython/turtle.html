@@ -1,0 +1,26 @@
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+</head>
+<body onload="brython()">
+	<script type="text/python">
+        from browser import document
+        import turtle
+        turtle.set_defaults( turtle_canvas_wrapper = document['td'] )
+        t = turtle.Turtle()
+        t.penup()
+        t.goto(-160, 0)
+        t.width(2)
+        t.pendown()
+        t.goto(-160, 0)
+        t.color("orange","orange")
+        t.begin_fill()
+        for i in range(9):
+            t.forward(400)
+            t.left(160)
+        t.end_fill()
+        t.hideturtle()
+        turtle.done()
+	</script>
+    <div id="td"></div>
+</body>
