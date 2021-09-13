@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+<script src="hljs/markdown.min.js"></script>
+<script>
+function load() {
+    file="Brython/"+document.getElementById("sel").value
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+                html_content = xhttp.responseText
+                document.getElementById("code").innerHTML = html_content
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;");
+                document.getElementById("a").setAttribute('href', file)
+                document.getElementById("a").innerHTML="Futtat: "+document.getElementById("sel").value
+            hljs.highlightAll()
+        }
+    };
+    xhttp.open("GET", "./"+file, true);
+    xhttp.send();
+}
+
+</script>
+<body class="b" onload="load()">
+<link rel="stylesheet"
+      href="hljs/a11y-dark.css">
+<link rel="stylesheet" href="main2.css">
+<script src="hljs/highlight.min.js"></script>
+<h1 class="h">Brython (HTML-CSS-Python) p&eacute;ldák</h1>
+<select class="s" onchange="load()" id="sel">
+<option selected>random.html</option>
+<option>clicks.html</option>
+</select>
+<div class="d" style="text-align: center;">
+    <a id="a" href="Brython/random.html" class="a" target="_blank"></a>
+</div>
+<pre><code class="language-html" id="code"></code></pre>
+</body>
