@@ -1,0 +1,39 @@
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+    <script type="text/python">
+        from browser import document
+        a = float(document["i1"].value)
+        b = float(document["i2"].value)
+        c = float(document["i3"].value)
+        d = float(document["i4"].value)
+        fx = lambda x: a*x**3 + c*x + d
+        Df = lambda x: 3*a*x**2 + c
+        xn = float(document["ke"].value)
+        s = ""
+        for n in range(0,20):
+            s+="<li>%s</li>" % xn
+            xn = xn - fx(xn)/Df(xn)
+        document.getElementById("op").innerHTML="<ul>%s</ul>" % s
+    </script>
+</head>
+<body>
+    <h2>Harmadfokú egyenlet megoldó program</h2>
+    Egyenlet:
+    <input type="number" id="i1" value="0">x<sup>3</sup>+
+    <input type="number" id="i2" value="0">x<sup>2</sup>+
+    <input type="number" id="i3" value="0">x+
+    <input type="number" id="i4" value="0">=0
+    <br>
+    <br>
+    Kezdőérték:
+    <input type="number" value="0" id="ke">
+    <button onclick="brython()">Megold</button>
+    <div id="op">...</div>
+</body>
+<style>
+    input {
+        width: 45px;
+    }
+</style>
