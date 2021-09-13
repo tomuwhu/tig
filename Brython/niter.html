@@ -8,8 +8,8 @@
         b = float(document["i2"].value)
         c = float(document["i3"].value)
         d = float(document["i4"].value)
-        fx = lambda x: a*x**3 + c*x + d
-        Df = lambda x: 3*a*x**2 + c
+        fx = lambda x: a*x**3 + b*x**2 + c*x + d
+        Df = lambda x: 3*a*x**2 + 2*b*x + c
         xn = float(document["ke"].value)
         s = ""
         for n in range(0,20):
