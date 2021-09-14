@@ -53,6 +53,7 @@
 - programozási nyelvek jellemzői, szintaxis, csoportosításuk
 
 [Python programozási nyelv](pyexamples.html)
+[Python (TK 93-128)](irodalom/TK93-128-Python.pdf)
 
 - Egy Python program futtatása
 - Függvények, változók és objektumok

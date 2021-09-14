@@ -35,6 +35,8 @@
 
 ([Python](pyexamples.html) és JavaScript)
 
+[Python (TK9. 93-128)](irodalom/TK93-128-Python.pdf)
+
 - Ismétlés
 - Bejárók és generátorok
 - Függvények készítése
