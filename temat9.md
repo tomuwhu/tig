@@ -61,7 +61,7 @@
 
 ### VI.-VII. Mobiltechnológiai ismeretek, publikálás a világhálón (10 óra)
 
-[irodalom/TK143-170-WEB.pdf](TK 143-170)
+[TK 143-170](irodalom/TK143-170-WEB.pdf)
 
 - HTML objektumok
 - HTML oldal felépítése
