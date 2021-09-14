@@ -35,6 +35,9 @@
 - vektorgrafika elve, grafikai primitívek
 - koordináta renszer a számítógépben
 - SVG és alkalmazása
+
+[SVG (TK 71-73)](irodalom/TK71-73-SVG.pdf)
+
 - Folyamatábra és struktúradiagram készítése
 
 ### IV. Animációkészítés
