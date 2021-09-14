@@ -20,7 +20,8 @@
 
 ## III. Publikálás a világhálón (8 óra)
 
-- [Ismétlés: HTML - CSS (TK 143-170)](irodalom/TK143-170-WEB.pdf)
+[Ismétlés: HTML - CSS (TK 143-170)](irodalom/TK143-170-WEB.pdf)
+
 - DNS, HTTPS, TCP/IP működése
 - JavaScript
 - Back-end és Cloud Storage (File server, SQL, NoSQL)
