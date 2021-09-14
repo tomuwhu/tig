@@ -36,6 +36,7 @@
 ([Python](pyexamples.html) és JavaScript)
 
 [Python (TK9. 93-128)](irodalom/TK93-128-Python.pdf)
+[Python (TK10. 42-90)](irodalom/TK10-42-90-Python.pdf)
 
 - Ismétlés
 - Bejárók és generátorok
