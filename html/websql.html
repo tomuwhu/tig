@@ -1,0 +1,20 @@
+<script>
+    var dbObj = openDatabase( "CicaDB", 1.0, "SZTIG", 3000000 )
+
+    dbObj.transaction( tx => tx.executeSql('CREATE TABLE USER (id unique, Name, Location)') )
+    dbObj.transaction( tx => tx.executeSql('INSERT INTO USER values(1,"Béla","Szeged")') )
+    dbObj.transaction( tx => tx.executeSql('INSERT INTO USER values(2,"János","Balástya")') )
+    dbObj.transaction( tx => tx.executeSql('SELECT * FROM USER',[], (tx,res) => {
+        s = "<table>"
+        Array.from(res.rows).forEach(row => s += 
+            `<tr><td>${ row.Name }</td><td>${ row.Location }</td></tr>` )
+        s+= "</table>"
+        document.write(s)
+    } ) )
+    /*
+    var rr
+    dbObj.transaction( tx => tx.executeSql('SELECT * FROM USER',[], (tx,res) => {
+       rr = res.rows
+    } ) )
+    */
+</script>
