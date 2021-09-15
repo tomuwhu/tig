@@ -1,5 +1,20 @@
 <link rel="stylesheet" href="main.css">
 <meta charset="utf-8">
+<script src="hljs/markdown.min.js"></script>
+<script>
+    function tmd(file) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                html_content = markdown.toHTML( xhttp.responseText );
+                document.getElementById('content').innerHTML = html_content;
+                document.getElementById('content').style.visibility = "visible"
+            }
+        };
+        xhttp.open("GET", "./"+file, true);
+        xhttp.send();
+    }
+</script>
 <a href="https://www.oktatas.hu/pub_bin/dload/kozoktatas/kerettanterv/Digitalis_kultura_K.docx" download>Kerettanterv letöltése</a>
 <h3 class="c">9. évfolyam</h3>
 <div class="c x">
@@ -14,4 +29,8 @@
     <a onclick="tmd('temat10.md')">Tematika</a> - 
     <a onclick="tmd('linkgy10.md')">Külső&nbsp;hivatkozások</a> - 
     <a href="irodalom/10dk.pdf">SZTIG helyi tanterv</a>
+</div>
+<div style="text-align: center;">
+    <div id="content" style="visibility: hidden;">
+    </div>
 </div>
