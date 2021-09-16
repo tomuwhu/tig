@@ -6,8 +6,9 @@
 			a = []
 			for k in document.select( "input" ):
 				a.append( int( k.value ) )
-			document.getElementById( "res" ).innerHTML=a[0]*a[4]*a[8] + a[1]*a[5]*a[6] + a[2]*a[3]*a[7]
-		t = html.TABLE( style={ "border-spacing": "8px" } )
+			document.getElementById( "res" )
+					.innerHTML = a[0]*a[4]*a[8] + a[1]*a[5]*a[6] + a[2]*a[3]*a[7]
+		t = html.TABLE( style = { "border-spacing": "8px" } )
 		t <= html.TH( "Számoló tábla", colspan = 3 )
 		for j in range( 3 ):
 			r = html.TR( )
@@ -29,7 +30,7 @@
 	@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 	td, th {
 		font-family: 'Lobster', cursive;
-		border-radius:6px;
+		border-radius: 6px;
 		padding: 10px;
 		color: blue;
 	}
@@ -39,8 +40,8 @@
 		text-shadow: 1px 1px 3px gray;
 	}
 	td {
-		background-color: yellow;
-		box-shadow: 1px 1px 4px Black;
+		background-color: rgb(245, 245, 113);
+		box-shadow: 1px 1px 4px black;
 		text-shadow: 1px 1px 3px black;
 	}
 	td:hover {
