@@ -6,8 +6,8 @@
 			a = []
 			for k in document.select( "input" ):
 				a.append( int( k.value ) )
-			document.getElementById( "res" )
-					.innerHTML = a[0]*a[4]*a[8] + a[1]*a[5]*a[6] + a[2]*a[3]*a[7]
+			document.getElementById( "res" ).innerHTML = \
+				a[0]*a[4]*a[8] + a[1]*a[5]*a[6] + a[2]*a[3]*a[7]
 		t = html.TABLE( style = { "border-spacing": "8px" } )
 		t <= html.TH( "Számoló tábla", colspan = 3 )
 		for j in range( 3 ):
