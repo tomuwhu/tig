@@ -3,30 +3,30 @@
 	<script type="text/python">
 		from browser import document, html
 		def f(e):
-			a=[]
-			for k in document.select("input"):
+			a = []
+			for k in document.select( "input" ):
 				a.append( int( k.value ) )
-			document.getElementById("res").innerHTML=a[0]*a[4]*a[8] + a[1]*a[5]*a[6] + a[2]*a[3]*a[7]
-		t = html.TABLE()
-		t <= html.TH("Számoló tábla",colspan=3)
-		for j in range(3):
-			r = html.TR()
-			for k in range(3):
-				r <= html.TD(html.INPUT(value=1,type="number",min=0,max=9))
+			document.getElementById( "res" ).innerHTML=a[0]*a[4]*a[8] + a[1]*a[5]*a[6] + a[2]*a[3]*a[7]
+		t = html.TABLE( style={ "border-spacing": "8px" } )
+		t <= html.TH( "Számoló tábla", colspan = 3 )
+		for j in range( 3 ):
+			r = html.TR( )
+			for k in range( 3 ):
+				r <= html.TD( html.INPUT( value=1, type="number", min=0, max=9 ) )
 			t <= r
-		t <= html.TR( html.TH( html.BUTTON('Számol').bind("click",f) ,colspan="3" ) )
-		t <= html.TR( html.TH( '&nbsp',colspan=3,id="res" ) )
+		t <= html.TR( 
+				html.TH( 
+					html.BUTTON( 'Számol', style = { "border-radius": "6px" } )
+						.bind( "click", f ), 
+					colspan = "3" 
+				) 
+			 )
+		t <= html.TR( html.TH( '&nbsp', colspan = 3, id = "res" ) )
 		document <= t
 	</script>
 </body>
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-	button {
-		border-radius:6px;
-	}
-	table {
-		border-spacing: 8px;
-	}
 	td, th {
 		font-family: 'Lobster', cursive;
 		border-radius:6px;
