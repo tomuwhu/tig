@@ -1,0 +1,62 @@
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+<table>
+    <tr><th colspan="3">Számoló tábla</th></tr>
+    <tr><td><input type="number" min="1" max="9" value="1"></td>
+        <td><input type="number" min="1" max="9" value="1"></td>
+        <td><input type="number" min="1" max="9" value="1"></td>
+    </tr>
+    <tr><td><input type="number" min="1" max="9" value="1"></td>
+        <td><input type="number" min="1" max="9" value="1"></td>
+        <td><input type="number" min="1" max="9" value="1"></td>
+    </tr>
+    <tr><td><input type="number" min="1" max="9" value="1"></td>
+        <td><input type="number" min="1" max="9" value="1"></td>
+        <td><input type="number" min="1" max="9" value="1"></td>
+    </tr>
+    <tr><th colspan="3">
+        <button onclick="brython()">Számol</button>
+        </th>
+    </tr>
+    <tr><th colspan="3" id="res">&nbsp;</th></tr>
+</table>
+<script type="text/python">
+    from browser import document
+    a=[]
+    for k in document.select("input"):
+        a.append( int( k.value ) )
+    document.getElementById("res").innerHTML=a[0]*a[4]*a[8] + a[1]*a[5]*a[6] + a[2]*a[3]*a[7]
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+button {
+    border-radius:6px;
+}
+table {
+    border-spacing: 8px;
+}
+th {
+    font-family: 'Lobster', cursive;
+    background-color: rgb(200,189,234);
+    color: blue;
+    border-radius:6px;
+    padding: 10px;
+    box-shadow: 1px 1px 4px gray;
+    text-shadow: 1px 1px 3px gray;
+}
+td {
+    font-family: 'Lobster', cursive;
+    background-color: yellow;
+    color: blue;
+    border-radius:6px;
+    padding: 10px;
+    box-shadow: 1px 1px 4px Black;
+    text-shadow: 1px 1px 3px black;
+}
+td:hover {
+    background-color: brown;
+}
+input {
+    width: 50px;
+    text-align: center;
+}
+</style>
