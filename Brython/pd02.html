@@ -2,30 +2,31 @@
 <body onload="brython()">
     <script type="text/python">
         from browser import document, html
-        rt = 8*[0]
+        n  = 13
+        rt = n*[0]
         def f(e):
             if e.target.innerHTML == '':
                 e.target.style = { "background-color": "rgb(160,29,34)" }
-                e.target.innerHTML = 2**int( e.target.id )
+                e.target.innerHTML = 2 ** int( e.target.id )
                 rt[ int( e.target['class'] ) ] += 2 ** int( e.target.id )
                 document.select( f'TH.res{int( e.target["class"] )}')[0] \
                         .innerHTML = rt[ int( e.target['class'] ) ]
             else:
                 e.target.style = { "background-color": "rgb(245, 245, 113)" }
                 e.target.innerHTML = ''
-                rt[ int( e.target['class'] ) ] -= 2**int( e.target.id )
+                rt[ int( e.target['class'] ) ] -= 2 ** int( e.target.id )
                 document.select( f'TH.res{int( e.target["class"] )}' )[0] \
                         .innerHTML = rt[ int( e.target['class'] ) ]
         t = html.TABLE( style = { "border-spacing": "8px" } )
-        t <= html.TR( html.TH( "BitMátrix", colspan = 9 ) )
+        t <= html.TR( html.TH( "BitMátrix", colspan = 14 ) )
         r = html.TR( )
-        for k in range( 8 ):
-            r <= html.TH( 2 ** (7-k) )
+        for k in range( n ):
+            r <= html.TH( 2 ** ( n - k - 1 ), Class="xx" )
         t <= r
-        for j in range( 8 ):
+        for j in range( n ):
             r = html.TR( )
-            for k in range( 8 ):
-                r <= html.TD( id = ( 7 - k ), Class = j ).bind( "click", f )
+            for k in range( n ):
+                r <= html.TD( id = ( n - k - 1 ), Class = j ).bind( "click", f )
             r <= html.TH( 0, Class = f'res{j} res' )
             t <= r
         document <= t
@@ -41,15 +42,24 @@
         font-family: 'Lobster', cursive;
         border-radius: 6px;
         padding: 10px;
-        color: blue;
+        color: rgb(2, 54, 70);
     }
     th {
-        background-color: rgb(200,189,234);
+        font-size: 35px;
+        background-color: rgb(153, 186, 180);
         box-shadow: 1px 1px 4px gray;
         text-shadow: 1px 1px 3px gray;
     }
+    th.xx {
+        font-size: 20px;
+        color:rgb(80, 8, 54)
+    }
     th.res {
         width: 80px;
+        font-size: 20px;
+        color:rgb(22, 102, 108);
+        text-align: right;
+        padding-right: 20px;
     }
     td {
         background-color: rgb(245, 245, 113);
