@@ -1,0 +1,32 @@
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+<body onload="brython()">
+    <script type="text/python">
+        from browser import document, svg
+        for i in range(20):
+            document['panel'] <= svg.circle(
+                cx=50+48*i, 
+                cy=50+21*i, 
+                r=40, 
+                stroke="blue",
+                fill=f'rgb({50+10*i},{250-10*i},220)'
+            )
+    </script>
+</body>
+<h1>SVG példa</h1>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+    width="1020" height="505">
+  <g id="panel">
+  </g>
+</svg>
+<style>
+    body {
+        text-align: center;
+    }
+    svg {
+        border: solid 1px rgb(148, 77, 77);
+        background-color: rgb(227, 227, 192);
+        border-radius: 10px;
+        box-shadow: 1px 1px 3px black;
+    }
+</style>

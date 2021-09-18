@@ -1,0 +1,22 @@
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+<body onload="brython()">
+    <script type="text/python">
+        from browser import document, svg
+        title = svg.text('Cica', x=70, y=25, font_size=22, text_anchor="middle")
+        circle = svg.circle(cx=70, cy=120, r=40, stroke="blue",fill="rgb(170,230,220)")
+        document['panel'] <= title
+        document['panel'] <= circle
+    </script>
+</body>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+    width="1024" height="500" style="border-style:solid;border-width:1;border-color:#000;">
+  <g id="panel">
+  </g>
+</svg>
+<style>
+    svg {
+        border-radius: 10px;
+        box-shadow: 1px 1px 3px black;
+    }
+</style>
