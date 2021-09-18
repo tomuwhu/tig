@@ -3,17 +3,13 @@
 <body onload="brython()">
     <script type="text/python">
         from browser import document, svg, timer
+
         def f():
             c.attrs["cx"] = int( c.attrs["cx"] ) + 1
             if int( c.attrs["cx"] ) > 970:
                 timer.clear_interval( t )
-        c = svg.circle(
-                cx=50, 
-                cy=50, 
-                r=40, 
-                stroke="blue",
-                fill=f'rgb(200,100,220)'
-            )
+
+        c = svg.circle( cx=50, cy=50, r=40,  stroke="blue", fill=f'rgb(200,100,220)' )
         document['panel'] <= c
         t = timer.set_interval(f, 10)
     </script>
