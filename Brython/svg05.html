@@ -1,0 +1,44 @@
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+<body onload="brython()">
+    <script type="text/python">
+        from browser import document, svg, timer
+        x = 50
+        ir = 1
+        def f():
+            global x, ir
+            c.attrs["cx"] = x
+            x += ir
+            if x > 970 or x < 50:
+                ir = - ir
+        def ss(e):
+            global t
+            if e.target.innerHTML == "Stop":
+                timer.clear_interval( t )
+                e.target.innerHTML = "Start"
+            else:
+                t = timer.set_interval(f, 2)
+                e.target.innerHTML = "Stop"
+        c = svg.circle( cx=50, cy=50, r=40,  stroke = "blue", fill = f'rgb(200,100,220)' )
+        document['panel'] <= c
+        t = timer.set_interval(f, 2)
+        document['stop'].bind( "click", ss )
+    </script>
+</body>
+<h1>Animáció példa</h1>
+<svg width="1020" height="100">
+  <g id="panel"></g>
+</svg>
+<hr>
+<button id="stop">Stop</button>
+<style>
+    body {
+        text-align: center;
+    }
+    svg {
+        border: solid 1px rgb(148, 77, 77);
+        background-color: rgb(227, 227, 192);
+        border-radius: 10px;
+        box-shadow: 1px 1px 3px black;
+    }
+</style>
