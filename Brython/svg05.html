@@ -5,10 +5,13 @@
         from browser import document, svg, timer
         x = 50
         ir = 1
+        i = 0
         def f():
-            global x, ir
+            global x, ir, i
             c.attrs["cx"] = x
+            c.attrs["fill"] = f'rgb({(x+i)%256},{0.6*x%256},{0.2*x%256})'
             x += ir
+            i += 1
             if x > 970 or x < 50:
                 ir = - ir
         def ss(e):
