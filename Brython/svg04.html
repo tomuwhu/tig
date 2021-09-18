@@ -3,24 +3,17 @@
 <body onload="brython()">
     <script type="text/python">
         from browser import document, svg, timer
-        i = 0
         def f():
-            global i
-            document['panel'] <= svg.circle(
-                cx = 50+48*i, 
-                cy = 50+21*i, 
-                r  = 40, 
-                stroke = "blue",
-                fill = f'rgb( {50+10*i}, {250-10*i}, 220 )'
-            )
-            i += 1
-            if i > 19:
+            c.attrs["cx"] = int( c.attrs["cx"] ) + 1
+            if int( c.attrs["cx"] ) > 970:
                 timer.clear_interval( t )
-        t = timer.set_interval(f, 20)
+        c = svg.circle( cx=50, cy=50, r=40,  stroke = "blue", fill = f'rgb(200,100,220)' )
+        document['panel'] <= c
+        t = timer.set_interval(f, 10)
     </script>
 </body>
-<h1>SVG példa</h1>
-<svg width="1020" height="505">
+<h1>Animáció példa</h1>
+<svg width="1020" height="100">
   <g id="panel"></g>
 </svg>
 <style>
