@@ -22,7 +22,7 @@
             else:
                 t = timer.set_interval(f, 2)
                 e.target.innerHTML = "Stop"
-        c = svg.circle( cx=50, cy=50, r=40,  stroke = "blue", fill = f'rgb(200,100,220)' )
+        c = svg.circle( cx=50, cy=50, r=40, stroke = "blue" )
         document['panel'] <= c
         t = timer.set_interval(f, 2)
         document['stop'].bind( "click", ss )
