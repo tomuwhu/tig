@@ -6,13 +6,13 @@
     <script type="text/python">
         from browser import document, html
         def f(e):
-            r = document['res']
-            r.innerHTML = ""
-            r <= html.SPAN( document['i1'].value ) \
-               + html.SUP( document['i2'].value ) + " = " \
-               + int( document['i1'].value ) ** \
-                 int( document['i2'].value )
-        document['btn'].bind( "click", f )
+            r = document[ 'res' ]
+            r.clear()
+            r <= html.SPAN( document[ 'i1' ].value ) \
+               + html.SUP( document[ 'i2' ].value ) + " = " \
+               + int( document[ 'i1' ].value ) ** \
+                 int( document[ 'i2' ].value )
+        document[ 'btn' ].bind( "click", f )
     </script>
     <h1>Hatványozó</h1>
     <input id="i1" value="1" min=1 max=20 type="number">
@@ -25,12 +25,10 @@
     body {
         text-align: center;
         color: rgb(96, 6, 19);
+        text-shadow: 1px 1px 3px gray;
     }
-    input {
-        width: 60px;
-        font-size: larger;
-    }
-    button {
+    input, button {
+        width: 80px;
         font-size: larger;
     }
     #res {
@@ -38,11 +36,12 @@
         box-shadow: 1px 1px 3px black;
         border-radius: 8px;
         font-size: 30px;
-        text-shadow: 1px 1px 3px gray;
         font-family: Franklin, sans-serif;
-        background-color: antiquewhite;
+        background-color: rgb(245, 245, 203);
         text-align: center;
+        vertical-align: text-bottom;
         margin: auto;
-        width: 300px;
+        height: 80px;
+        width: 500px;
     }
 </style>
