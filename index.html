@@ -12,14 +12,26 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                html_content = markdown.toHTML( xhttp.responseText );
-                document.getElementById('content').innerHTML = html_content;
+                z = xhttp.responseText("\r\n")
+                document.getElementById('sp').innerHTML = "cica"+z[0];
                 document.getElementById('content').style.visibility = "visible"
             }
         };
         xhttp.open("GET", "./"+file, true);
         xhttp.send();
     }
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById('sp').innerHTML = "<select>" +
+            xhttp.responseText.split("\r\n").map(v => {
+                row = v.split(';')
+                return "<option " + (row[0]==6?"selected":"") + " value='"+row[0]+"'>"+row[0]+" "+row[1]+"</option>"
+            })
+        }
+    };
+    xhttp.open("GET", "./irodalom/tanmenet.csv", true);
+    xhttp.send();
 </script>
 <link rel="stylesheet" href="main.css">
 <meta charset="utf-8">
@@ -29,16 +41,19 @@
 </h2>
 <hr>
 <div class="c x">
+<span id="sp"></span>
 <a href="tanttm.html">Tantervek, tanmenetek</a>
 <a href="htmlexampl.html">HTML-CSS példák <sup>(új)</sup></a>
 <a href="bryexamples.html">Brython példák <sup>(új)</sup></a>
+
 </div>
 <h3 class="c">9. évfolyam</h2>
 <div class="c x">
+
 <a onclick="tmd('linkgy9.md')">Külső&nbsp;hivatkozások</a> - 
 <a href="python9.html">Python&nbsp;kiegészítő&nbsp;anyagok</a> - 
-<a href="irodalom/DK_ora6-opr.pdf">6. óra prez. - oprendszerek</a>
-<a href="irodalom/DK_ora7-szgt.pdf">7. óra prez. - szg története</a>
+<a href="irodalom/TK143-170-WEB.pdf">HTML rész a tankönyvben</a>
+<a onclick="tmd('mb/szamlalo.md')">Számlálós feladat (micro:bit)</a>
 </div>
 <h3 class="c">10. évfolyam</h2>
 <div class="c">
@@ -49,11 +64,6 @@
 <div style="text-align: center;">
     <div id="content" style="visibility: hidden;">
     </div>
-    <a onclick="tmd('mb/szamlalo.md')">Számlálós feladat (micro:bit)</a>
-    <a href="https://www.inf.u-szeged.hu/~tnemeth/eloadas/Info_DK_el%c5%91ad%c3%a1s_1_115.pdf">Prezentáció 1</a>
-    <a href="https://www.inf.u-szeged.hu/~tnemeth/eloadas/Info_DK_el%c5%91ad%c3%a1s_116_212.pdf">Prezentáció 2</a>
-    <!--a href="https://classroom.google.com/c/Mzg4MjEyMjU2Mjg3?cjc=5wrtlkh">ClassRoom meghívó</a-->
-    <a href="irodalom/TK143-170-WEB.pdf">HTML rész a tankönyvben</a>
 </div>
 <div style="text-align: center; padding-top: 20px;">
 <a style="border:none;background:none;box-shadow:none;" 
