@@ -13,7 +13,7 @@
     function f(e) {
 
         ora = tt[e.srcElement.selectedIndex].split(";")
-        document.getElementById('content').innerHTML = "<p>" + ora[0] + ora[1] + "</p>" +
+        document.getElementById('content').innerHTML = "<p>" + ora[0] + " " + ora[1] + "</p>" +
         ora[2] + "<p>" + ora[3]+ "</p>" + "<p>" + ora[4]+ "</p>"
     }
     function tmd(file) {
@@ -33,7 +33,7 @@
         if (this.readyState == 4 && this.status == 200) {
             tt = xhttp.responseText.split("\r\n")
             ora = tt[ossz-1].split(";")
-            document.getElementById('content').innerHTML = "<p>" + ora[0] + ora[1] + "</p>" + 
+            document.getElementById('content').innerHTML = "<p>" + ora[0] + " " + ora[1] + "</p>" + 
             ora[2] + "<p>" + ora[3]+ "</p>" + "<p>" + ora[4]+ "</p>"
             document.getElementById('content').style.visibility = "visible"
             document.getElementById('sp').innerHTML = "<select onchange='f(event)'>" +
