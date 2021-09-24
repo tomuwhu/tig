@@ -8,6 +8,13 @@
 </script>
 <script src="hljs/markdown.min.js"></script>
 <script>
+    var tt
+    var ossz = 6
+    function f(e) {
+
+        ora = tt[e.srcElement.selectedIndex].split(";")
+        document.getElementById('content').innerHTML = ora[2] + "<p>" + ora[3]+ "</p>" + "<p>" + ora[4]+ "</p>"
+    }
     function tmd(file) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -23,10 +30,15 @@
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById('sp').innerHTML = "<select>" +
-            xhttp.responseText.split("\r\n").map(v => {
+            tt = xhttp.responseText.split("\r\n")
+            ora = tt[ossz-1].split(";")
+            document.getElementById('content').innerHTML = ora[2]+
+            "<p>" + ora[3]+ "</p>" + "<p>" + ora[4]+ "</p>"
+            document.getElementById('content').style.visibility = "visible"
+            document.getElementById('sp').innerHTML = "<select onchange='f(event)'>" +
+            tt.map(v => {
                 row = v.split(';')
-                return "<option " + (row[0]==6?"selected":"") + " value='"+row[0]+"'>"+row[0]+" "+row[1]+"</option>"
+                return "<option " + (row[0]==ossz?"selected":"") + " value='"+row[0]+"'>"+row[0]+" "+row[1]+"</option>"
             })
         }
     };
