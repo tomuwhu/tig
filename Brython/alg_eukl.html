@@ -1,6 +1,39 @@
 <head>
     <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+    <style>
+        div {
+            margin: auto;
+            text-align: center;
+            border: solid 1px black;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 3px black;
+        }
+        input, button {
+            font-size: 25px;
+            margin: 10px;
+            box-shadow: 1px 1px 3px black;
+        }
+        input {
+            width: 120px;
+        }
+        button {
+            width: 220px;
+            border-radius: 7px;
+        }
+        div#res {
+            font-size: 30px;
+            color: rgb(116, 43, 52);
+            text-shadow: 1px 1px 3px black;
+            width: 200px;
+            text-align: center;
+            height: 35px;
+            padding: 10px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            background-color: rgb(230, 224, 176);
+        }
+    </style>
 </head>
 <body onload="brython()">
     <script type="text/python">
@@ -27,37 +60,3 @@
         )
     </script>
 </body>
-<style>
-    div {
-        margin: auto;
-        text-align: center;
-        border: solid 1px black;
-        max-width: 500px;
-        border-radius: 10px;
-        box-shadow: 1px 1px 3px black;
-    }
-    input, button {
-        font-size: 25px;
-        margin: 10px;
-        box-shadow: 1px 1px 3px black;
-    }
-    input {
-        width: 120px;
-    }
-    button {
-        width: 220px;
-        border-radius: 7px;
-    }
-    div#res {
-        font-size: 30px;
-        color: rgb(116, 43, 52);
-        text-shadow: 1px 1px 3px black;
-        width: 200px;
-        text-align: center;
-        height: 35px;
-        padding: 10px;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        background-color: rgb(230, 224, 176);
-    }
-</style>

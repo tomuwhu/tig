@@ -1,5 +1,16 @@
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+<style>
+    body {
+        text-align: center;
+    }
+    svg {
+        border: solid 1px rgb(148, 77, 77);
+        background-color: rgb(227, 227, 192);
+        border-radius: 10px;
+        box-shadow: 1px 1px 3px black;
+    }
+</style>
 <body onload="brython()">
     <script type="text/python">
         from browser import document, svg
@@ -15,14 +26,3 @@
     <h1>SVG példa</h1>
     <svg width="1020" height="505"><g id="panel"></g></svg>
 </body>
-<style>
-    body {
-        text-align: center;
-    }
-    svg {
-        border: solid 1px rgb(148, 77, 77);
-        background-color: rgb(227, 227, 192);
-        border-radius: 10px;
-        box-shadow: 1px 1px 3px black;
-    }
-</style>

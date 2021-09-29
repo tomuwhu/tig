@@ -1,6 +1,29 @@
 <head>
     <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+    <style>
+        body {
+            text-align: center;
+            color: rgb(96, 6, 19);
+            text-shadow: 1px 1px 3px gray;
+        }
+        input, button {
+            width: 80px;
+            font-size: larger;
+        }
+        #res {
+            font-size: larger;
+            box-shadow: 1px 1px 3px black;
+            border-radius: 8px;
+            font-size: 30px;
+            font-family: Franklin, sans-serif;
+            background-color: rgb(245, 245, 203);
+            text-align: center;
+            vertical-align: text-bottom;
+            margin: auto;
+            height: 80px;
+            width: 500px;
+        }
+    </style>
 </head>
 <body onload="brython()">
     <script type="text/python">
@@ -21,27 +44,3 @@
     <hr>
     <div id="res"></div>
 </body>
-<style>
-    body {
-        text-align: center;
-        color: rgb(96, 6, 19);
-        text-shadow: 1px 1px 3px gray;
-    }
-    input, button {
-        width: 80px;
-        font-size: larger;
-    }
-    #res {
-        font-size: larger;
-        box-shadow: 1px 1px 3px black;
-        border-radius: 8px;
-        font-size: 30px;
-        font-family: Franklin, sans-serif;
-        background-color: rgb(245, 245, 203);
-        text-align: center;
-        vertical-align: text-bottom;
-        margin: auto;
-        height: 80px;
-        width: 500px;
-    }
-</style>

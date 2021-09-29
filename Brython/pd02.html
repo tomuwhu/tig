@@ -1,37 +1,4 @@
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
-<body onload="brython()">
-    <script type="text/python">
-        from browser import document, html
-        n  = 13
-        rt = n*[0]
-        def f(e):
-            if e.target.innerHTML == '':
-                e.target.style = { "background-color": "rgb(160,29,34)" }
-                e.target.innerHTML = 2 ** int( e.target.id )
-                rt[ int( e.target['class'] ) ] += 2 ** int( e.target.id )
-                document.select( f'TH.res{int( e.target["class"] )}')[0] \
-                        .innerHTML = rt[ int( e.target['class'] ) ]
-            else:
-                e.target.style = { "background-color": "rgb(245, 245, 113)" }
-                e.target.innerHTML = ''
-                rt[ int( e.target['class'] ) ] -= 2 ** int( e.target.id )
-                document.select( f'TH.res{int( e.target["class"] )}' )[0] \
-                        .innerHTML = rt[ int( e.target['class'] ) ]
-        t = html.TABLE( style = { "border-spacing": "8px" } )
-        t <= html.TR( html.TH( "BitMátrix", colspan = 14 ) )
-        r = html.TR( )
-        for k in range( n ):
-            r <= html.TH( 2 ** ( n - k - 1 ), Class="xx" )
-        t <= r
-        for j in range( n ):
-            r = html.TR( )
-            for k in range( n ):
-                r <= html.TD( id = ( n - k - 1 ), Class = j ).bind( "click", f )
-            r <= html.TH( 0, Class = f'res{j} res' )
-            t <= r
-        document <= t
-    </script>
-</body>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
     table {
@@ -74,3 +41,36 @@
         background-color: rgb(42, 46, 165);
     }
 </style>
+<body onload="brython()">
+    <script type="text/python">
+        from browser import document, html
+        n  = 13
+        rt = n*[0]
+        def f(e):
+            if e.target.innerHTML == '':
+                e.target.style = { "background-color": "rgb(160,29,34)" }
+                e.target.innerHTML = 2 ** int( e.target.id )
+                rt[ int( e.target['class'] ) ] += 2 ** int( e.target.id )
+                document.select( f'TH.res{int( e.target["class"] )}')[0] \
+                        .innerHTML = rt[ int( e.target['class'] ) ]
+            else:
+                e.target.style = { "background-color": "rgb(245, 245, 113)" }
+                e.target.innerHTML = ''
+                rt[ int( e.target['class'] ) ] -= 2 ** int( e.target.id )
+                document.select( f'TH.res{int( e.target["class"] )}' )[0] \
+                        .innerHTML = rt[ int( e.target['class'] ) ]
+        t = html.TABLE( style = { "border-spacing": "8px" } )
+        t <= html.TR( html.TH( "BitMátrix", colspan = 14 ) )
+        r = html.TR( )
+        for k in range( n ):
+            r <= html.TH( 2 ** ( n - k - 1 ), Class="xx" )
+        t <= r
+        for j in range( n ):
+            r = html.TR( )
+            for k in range( n ):
+                r <= html.TD( id = ( n - k - 1 ), Class = j ).bind( "click", f )
+            r <= html.TH( 0, Class = f'res{j} res' )
+            t <= r
+        document <= t
+    </script>
+</body>

@@ -37,13 +37,46 @@
     }
   </style>
 </head>
-<body>
+<body onload="load()">
 <pre id="editor"></pre>
 <a id="b" onmouseenter="f()">Letölt</a>
 <a id="a" download="try.html">Letölt</a>
+<select class="s" onchange="load()" id="sel">
+  <option>a_ures.html</option>
+  <option selected>random.html</option>
+  <option>clicks.html</option>
+  <option>turtle.html</option>
+  <option>turtle2.html</option>
+  <option>pd01mo1.html</option>
+  <option>pd01mo2.html</option>
+  <option>korlevel.html</option>
+  <option>szorzotabla1.html</option>
+  <option>szorzotabla2.html</option>
+  <option>pd02.html</option>
+  <option>niter.html</option>
+  <option>svg01.html</option>
+  <option>svg02.html</option>
+  <option>svg03.html</option>
+  <option>svg04.html</option>
+  <option>svg05.html</option>
+  <option>input.html</option>
+  <option>alg_eukl.html</option>
+  <option>alg_erasztot.html</option>
+</select>
 <script src="ace/ace.js"></script>
 <script src="ace/ext-language_tools.js"></script>
 <script>
+    function load() {
+        file="Brython/"+document.getElementById("sel").value
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              editor.setValue( xhttp.responseText )
+            }
+        };
+        xhttp.open("GET", "./"+file, true);
+        xhttp.send();
+    }
     ace.require("ace/ext/language_tools");
     var editor = ace.edit("editor");
     editor.session.setMode("ace/mode/html");

@@ -1,4 +1,30 @@
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+    td, th {
+        font-family: 'Lobster', cursive;
+        border-radius: 6px;
+        padding: 10px;
+        color: blue;
+    }
+    th {
+        background-color: rgb(200,189,234);
+        box-shadow: 1px 1px 4px gray;
+        text-shadow: 1px 1px 3px gray;
+    }
+    td {
+        background-color: rgb(245, 245, 113);
+        box-shadow: 1px 1px 4px black;
+        text-shadow: 1px 1px 3px black;
+    }
+    td:hover {
+        background-color: brown;
+    }
+    input {
+        width: 50px;
+        text-align: center;
+    }
+    </style>
 <body onload="brython()">
     <script type="text/python">
         from browser import document, html
@@ -26,29 +52,3 @@
         document <= t
     </script>
 </body>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-td, th {
-    font-family: 'Lobster', cursive;
-    border-radius: 6px;
-    padding: 10px;
-    color: blue;
-}
-th {
-    background-color: rgb(200,189,234);
-    box-shadow: 1px 1px 4px gray;
-    text-shadow: 1px 1px 3px gray;
-}
-td {
-    background-color: rgb(245, 245, 113);
-    box-shadow: 1px 1px 4px black;
-    text-shadow: 1px 1px 3px black;
-}
-td:hover {
-    background-color: brown;
-}
-input {
-    width: 50px;
-    text-align: center;
-}
-</style>

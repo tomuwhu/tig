@@ -1,6 +1,26 @@
 <head>
     <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+    <style>
+        body   { text-align:center;  }
+        div.C  { text-align: center; }
+        div.L  { text-align: left;   }
+        div.SB { height: 10px;       }
+        div.Sx { height: 5px;        }
+        td {
+            text-align: center;
+            width: 74%;
+        }
+        @media print {
+            header { page-break-before: always; }
+            div.SB { height: 100px;  }
+            div.Sx { height: 30px;   }
+            hr { visibility: hidden; }
+            footer {
+                position: fixed;
+                bottom: 0;
+            }
+        }
+    </style>
 </head>
 <body onload="brython()">
     <script type="text/python">
@@ -31,24 +51,3 @@
             f( sor )
     </script>
 </body>
-<style>
-body   { text-align:center;  }
-div.C  { text-align: center; }
-div.L  { text-align: left;   }
-div.SB { height: 10px;       }
-div.Sx { height: 5px;        }
-td {
-    text-align: center;
-    width: 74%;
-}
-@media print {
-    header { page-break-before: always; }
-    div.SB { height: 100px;  }
-    div.Sx { height: 30px;   }
-    hr { visibility: hidden; }
-    footer {
-        position: fixed;
-        bottom: 0;
-    }
-}
-</style>
