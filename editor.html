@@ -10,32 +10,37 @@
     #editor { 
       margin: 0px;
       position: absolute;
-      top: 40px;
+      top: 42px;
       bottom: 0;
       left: 0;
       right: 0;
     }
-    div.btn {
+    a {
       cursor: pointer;
-      background-color: aqua;
+      background-color: rgb(192, 208, 147);
       border-radius: 6px;
       box-shadow: 1px 1px 3px black;
-      padding: 6px;
+      padding: 5px;
+      color: rgb(3, 26, 40);
+      text-decoration: none;
+      width: 130px;
+      text-align: center;
+      font-weight: bold;
     }
     a#a {
-      visibility: hidden;
+      display: none;
+      background-color: rgb(230, 117, 124);
+    }
+    a#b {
       cursor: pointer;
-      background-color: aqua;
-      border-radius: 6px;
-      box-shadow: 1px 1px 3px black;
-      padding: 6px;
+      display: inline-block;
     }
   </style>
 </head>
 <body>
 <pre id="editor"></pre>
-<button id="b" onclick="f()">Konvertál</button>
-<a id="a" href="data:text/plain;charset=utf-8,cica" download="try.html">Letölt</a>
+<a id="b" onmouseenter="f()">Letölt</a>
+<a id="a" download="try.html">Letölt</a>
 <script src="ace/ace.js"></script>
 <script src="ace/ext-language_tools.js"></script>
 <script>
@@ -50,12 +55,14 @@
     });
     function f() {
       document.getElementById("a").href="data:text/plain;charset=utf-8,"+editor.getValue()
-      document.getElementById("b").style.visibility="hidden"
-      document.getElementById("a").style.visibility="visible"
-      setTimeout(() => { 
-        document.getElementById("b").style.visibility="visible"
-        document.getElementById("a").style.visibility="hidden"
-      }, 5000);
+      if (editor.getValue().length > 0) {
+        document.getElementById("b").style.display="none"
+        document.getElementById("a").style.display="inline-block"
+        setTimeout(() => { 
+          document.getElementById("b").style.display="inline-block"
+          document.getElementById("a").style.display="none"
+        }, 2000);
+      }
     }
 </script>
 </body>
