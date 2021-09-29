@@ -1,0 +1,17 @@
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+</head>
+<body onload="brython()">
+    <script type="text/python">
+        from browser import document, html
+        n = 100
+        stat = dict.fromkeys( range( 0, n + 1 ), 0 )
+        for i in range( 1, n ):
+            for j in range( 1, i ):
+                if i * j <= n:
+                    stat[ i * j ] += 1
+        for i in range( 2, n ):
+            document <= html.DIV( f'{i} - {stat[i]}' )
+    </script>
+</body>
