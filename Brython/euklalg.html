@@ -10,6 +10,54 @@
                 return lnko( b, a % b )
             else:
                 return b
-        document <= html.H1( lnko( 60, 140 ))
+        def calc(e):
+            if document["i1"].value and document["i2"].value:
+                document["res"].html = lnko( 
+                    int( document["i1"].value ), 
+                    int( document["i2"].value ) 
+                )
+            else: document["res"].html = "-"
+        btn = html.BUTTON( "LNKO" )
+        btn.bind( "click", calc )
+        document <= html.DIV( 
+            html.INPUT( id="i1", type = "number", placeholder="1. szám" ) + 
+            html.INPUT( id="i2", type = "number", placeholder="2. szám" ) +
+            btn +
+            html.DIV( id = "res" )
+        )
     </script>
 </body>
+<style>
+    div {
+        margin: auto;
+        text-align: center;
+        border: solid 1px black;
+        max-width: 500px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 3px black;
+    }
+    input, button {
+        font-size: 25px;
+        margin: 10px;
+        box-shadow: 1px 1px 3px black;
+    }
+    input {
+        width: 120px;
+    }
+    button {
+        width: 220px;
+        border-radius: 7px;
+    }
+    div#res {
+        font-size: 30px;
+        color: rgb(116, 43, 52);
+        text-shadow: 1px 1px 3px black;
+        width: 200px;
+        text-align: center;
+        height: 35px;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        background-color: rgb(230, 224, 176);
+    }
+</style>
