@@ -1,0 +1,76 @@
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+</head>
+<body onload="brython()">
+    <script type="text/python">
+        from browser import document, html
+        def f(e):
+            e.target.style = { 
+                "background-color" : "rgb(53, 16, 17)",
+                "color" : "rgb(237, 234, 157)",
+                "cursor" : "default" 
+            }
+        h = html.HEADER()
+        h <= html.TITLE("szorzótábla példa")
+        v = html.BODY()
+        v <= html.TABLE( 
+            html.TR(
+                html.TH( "Szorzótábla", colspan=10 )
+            ) + 
+            map (
+                lambda j:
+                    html.TR(
+                        map(
+                            lambda i: 
+                                html.TD( 
+                                    ( i + 1 ) * ( j + 1 ), 
+                                    Class = "c" if i==0 or j==0 else "a"
+                                ), 
+                            range( 10 ) 
+                        )
+                    ),
+                range( 10 )
+            )
+        )
+        document <= h + v
+        for k in document.select("td.a"):
+            k.bind("click",f)
+    </script>
+</body>
+<style>
+    table {
+        text-align: center;
+        margin: auto;
+        border-spacing: 10px;
+        font-family: 'Segoe UI', Verdana;
+        text-shadow: 1px 1px 3px black;
+        user-select: none;
+    }
+    td {
+        width: 40px;
+        height: 60px;
+        padding: 10px;
+        box-shadow: 1px 1px 3px black;
+        border-radius: 30px;
+        text-align: center;
+        font-size: 14px;
+        background-color: rgb(237, 234, 157);
+        color: rgb(53, 16, 17);
+        cursor: default;
+    }
+    th {
+        box-shadow: 1px 1px 3px black;
+        border-radius: 7px;
+        padding: 14px;
+        font-size: 20px;
+        background-color: rgb(27, 62, 34);
+        color: rgb(232, 232, 155);
+    }
+    td.c {
+        color:rgb(220, 215, 160);
+        background-color: rgb(73, 108, 64);
+    }
+    td.a {
+        cursor: pointer;
+    }
+</style>
