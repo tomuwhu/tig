@@ -1,32 +1,5 @@
 <head>
     <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
-    <style>
-        div.gc {
-            display: inline-grid;
-            grid-template-columns: repeat(10, 1fr);
-        }
-        div.e {
-            width: 60px;
-            height: 40px;
-            margin: 6px;
-            padding-top: 5px;
-            box-shadow: 1px 1px 3px black;
-            border-radius: 8px;
-            text-align: center;
-            align-content: space-evenly;
-            font-size: 14px;
-            background-color: rgb(237, 234, 157);
-            color: rgb(53, 16, 17);
-            cursor: default;
-        }
-        div.p {
-            font-size: 20px;
-            background-color: aqua;
-            color: blueviolet;
-        }
-    </style>
-</head>
-<body onload="brython()">
     <script type="text/python">
         from browser import document, html
         n = 1000
@@ -44,4 +17,30 @@
                 gc <= html.DIV( html.SPAN(i) + html.BR() +  html.SPAN(stat[i]), Class = "e" )
         document <= gc
     </script>
-</body>
+    <style>
+        div.gc {
+            display: inline-grid;
+            grid-template-columns: repeat(10, 1fr);
+        }
+        div.e {
+            width: 60px;
+            height: 40px;
+            margin: 6px;
+            padding-top: 5px;
+            box-shadow: 1px 1px 3px black;
+            border-radius: 8px;
+            text-align: center;
+            align-content: space-evenly;
+            font-size: 14px;
+            background-color: rgb(237, 235, 174);
+            color: rgb(48, 10, 11);
+            cursor: default;
+        }
+        div.p {
+            font-size: 20px;
+            background-color: rgb(131, 216, 216);
+            color: rgb(29, 57, 70);
+        }
+    </style>
+</head>
+<body onload="brython()"></body>
