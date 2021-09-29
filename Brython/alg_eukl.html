@@ -1,5 +1,27 @@
 <head>
     <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+    <script type="text/python">
+        from browser import document, html
+        def lnko( a, b ):
+            if a % b:
+                return lnko( b, a % b )
+            else:
+                return b
+        def calc(e):
+            if document[ "i1" ].value and document["i2"].value:
+                document[ "res" ].html = lnko( 
+                    int( document[ "i1" ].value ), 
+                    int( document[ "i2" ].value ) 
+                )
+            else: document[ "res" ].html = "-"
+        btn = html.BUTTON( "LNKO" )
+        btn.bind( "click", calc )
+        document <= html.DIV( 
+            html.INPUT( id = "i1", type = "number", placeholder = "1. szám" ) + 
+            html.INPUT( id = "i2", type = "number", placeholder = "2. szám" ) +
+            btn + html.DIV( id = "res" )
+        )
+    </script>
     <style>
         div {
             margin: auto;
@@ -35,28 +57,4 @@
         }
     </style>
 </head>
-<body onload="brython()">
-    <script type="text/python">
-        from browser import document, html
-        def lnko( a, b ):
-            if a % b:
-                return lnko( b, a % b )
-            else:
-                return b
-        def calc(e):
-            if document["i1"].value and document["i2"].value:
-                document["res"].html = lnko( 
-                    int( document["i1"].value ), 
-                    int( document["i2"].value ) 
-                )
-            else: document["res"].html = "-"
-        btn = html.BUTTON( "LNKO" )
-        btn.bind( "click", calc )
-        document <= html.DIV( 
-            html.INPUT( id="i1", type = "number", placeholder="1. szám" ) + 
-            html.INPUT( id="i2", type = "number", placeholder="2. szám" ) +
-            btn +
-            html.DIV( id = "res" )
-        )
-    </script>
-</body>
+<body onload="brython()"></body>
