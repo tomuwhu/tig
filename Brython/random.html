@@ -3,11 +3,11 @@
 	<script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
 	<script type="text/python">
 		from browser import document
-		from random import shuffle # a keverés(shuffle) importálása
-		li = [ *range( 1, 90 ) ]   # vegyük a számokat 1-től 90-ig
-		shuffle( li )              # keverjük össze a sorrendjüket
-		lo = li[ :5 ]              # vegyük az első 5-öt (ez az 5 nyerőszámunk)
-		lo.sort(    )              # rendezzük őket növekvő sorrendbe
+		from random import shuffle
+		li = [ *range( 1, 90 ) ]
+		shuffle( li )
+		lo = li[ :5 ]
+		lo.sort(    )
 		s = ""
 		for la in lo:
 			s+="<li>%s</li>" % la 
