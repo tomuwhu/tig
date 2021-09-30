@@ -9,13 +9,13 @@
             for j in range( 1, i + 1 ):
                 if i * j <= n:
                     stat[ i * j ] += 1
-        gc = html.DIV( Class="gc" )
-        gc <= html.DIV()
+        gc  =   html.DIV( Class="gc" )
+        gc <=   html.DIV()
         for i in range( 2, n + 1 ):
             if stat[i] == 1:
-                gc <= html.DIV( html.SPAN(i), Class = "e p" )
+                gc <= html.DIV( html.SPAN( i ), Class = "e p" )
             else:
-                gc <= html.DIV( html.SPAN(i) + html.BR() +  html.SPAN(stat[i]), Class = "e" )
+                gc <= html.DIV( html.SPAN( i ) + html.BR() +  html.SPAN( stat[ i ] ), Class = "e" )
         document <= gc
     </script>
     <style>
