@@ -41,6 +41,17 @@
 <pre id="editor"></pre>
 <a id="b" onmouseenter="f()">Letölt</a>
 <a id="a" download="try.html">Letölt</a>
+
+<select class="s" onchange="load2()" id="sel2">
+  <option selected>alap.html</option>
+  <option>cica.html</option>
+  <option>orarend_v01.html</option>
+  <option>orarend_v02.html</option>
+  <option>probadoga.html</option>
+  <option>pd01.html</option>
+  <option>urlap.html</option>
+</select>
+
 <select class="s" onchange="load()" id="sel">
   <option>a_ures.html</option>
   <option selected>random.html</option>
@@ -68,6 +79,17 @@
 <script>
     function load() {
         file="Brython/"+document.getElementById("sel").value
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              editor.setValue( xhttp.responseText )
+            }
+        };
+        xhttp.open("GET", "./"+file, true);
+        xhttp.send();
+    }
+    function load2() {
+        file="html/"+document.getElementById("sel2").value
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
