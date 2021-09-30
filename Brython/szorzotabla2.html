@@ -1,43 +1,40 @@
-<head>
-    <meta charset="utf-8">
-    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
-</head>
-<body onload="brython()">
-    <script type="text/python">
-        from browser import document, html
-        def f(e):
-            e.target.style = { 
-                "background-color" : "rgb(53, 16, 17)",
-                "color" : "rgb(237, 234, 157)",
-                "cursor" : "default" 
-            }
-        h = html.HEADER()
-        h <= html.TITLE("szorzótábla példa")
-        v = html.BODY()
-        v <= html.TABLE( 
-            html.TR(
-                html.TH( "Szorzótábla", colspan=10 )
-            ) + 
-            map (
-                lambda j:
-                    html.TR(
-                        map(
-                            lambda i: 
-                                html.TD( 
-                                    ( i + 1 ) * ( j + 1 ), 
-                                    Class = "c" if i==0 or j==0 else "a"
-                                ), 
-                            range( 10 ) 
-                        )
-                    ),
-                range( 10 )
-            )
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+<script type="text/python">
+    from browser import document, html
+    def f(e):
+        e.target.style = { 
+            "background-color" : "rgb(53, 16, 17)",
+            "color" : "rgb(237, 234, 157)",
+            "cursor" : "default" 
+        }
+    h = html.HEADER()
+    h <= html.TITLE("szorzótábla példa")
+    v = html.BODY()
+    v <= html.TABLE( 
+        html.TR(
+            html.TH( "Szorzótábla", colspan=10 )
+        ) + 
+        map (
+            lambda j:
+                html.TR(
+                    map(
+                        lambda i: 
+                            html.TD( 
+                                ( i + 1 ) * ( j + 1 ), 
+                                Class = "c" if i==0 or j==0 else "a"
+                            ), 
+                        range( 10 ) 
+                    )
+                ),
+            range( 10 )
         )
-        document <= h + v
-        for k in document.select("td.a"):
-            k.bind("click",f)
-    </script>
-</body>
+    )
+    document <= h + v
+    for k in document.select("td.a"):
+        k.bind("click",f)
+</script>
 <style>
     table {
         text-align: center;
@@ -75,3 +72,4 @@
         cursor: pointer;
     }
 </style>
+<body onload="brython()"></body>

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <head>
     <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
     <style>
@@ -24,23 +25,22 @@
             width: 500px;
         }
     </style>
-</head>
-<body onload="brython()">
     <script type="text/python">
         from browser import document, html
         def f(e):
             r = document[ 'res' ]
             r.clear()
             r <= html.SPAN( document[ 'i1' ].value ) \
-               + html.SUP( document[ 'i2' ].value ) + " = " \
-               + int( document[ 'i1' ].value ) ** \
-                 int( document[ 'i2' ].value )
+                + html.SUP( document[ 'i2' ].value ) + " = " \
+                + int( document[ 'i1' ].value ) ** \
+                    int( document[ 'i2' ].value )
         document[ 'btn' ].bind( "click", f )
     </script>
+</head>
+<body onload="brython()">
     <h1>Hatványozó</h1>
     <input id="i1" value="1" min=1 max=20 type="number">
     <input id="i2" value="1" min=1 max=12 type="number">
     <button id="btn">Számol</button>
-    <hr>
-    <div id="res"></div>
+    <hr> <div id="res"></div>
 </body>

@@ -1,5 +1,17 @@
+<!DOCTYPE html>
 <head>
 	<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+	<script type="text/python">
+		from browser import document, html
+		def f(e):
+			e.target.innerHTML = "C I C A"
+			e.target.style = { "background-color" : "red" }
+		document <= html.H1( "CICA" )
+		for i in range( 10 ):
+			document <= html.DIV( "%s. ROW" % ( i + 1 ) )
+		for k in document.select( "div" ):
+			k.bind( "click", f )
+	</script>
 	<style>
 		div {
 			cursor: pointer;
@@ -11,16 +23,4 @@
 		}
 	</style>
 </head>
-<body onload="brython()">
-	<script type="text/python">
-		from browser import document, html
-		def f(e):
-			e.target.innerHTML="C I C A"
-			e.target.style={"background-color":"red"}
-		document <= html.H1("CICA")
-		for i in range(10):
-			document <= html.DIV( "%s. ROW" % (i+1) )
-		for k in document.select("div"):
-			k.bind("click",f)
-	</script>
-</body>
+<body onload="brython()"></body>
