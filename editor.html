@@ -110,6 +110,7 @@
     });
     function f() {
       document.getElementById("a").href="data:text/plain;charset=utf-8,"+editor.getValue()
+      document.getElementById("a").download=Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 8)+".html"
       if (editor.getValue().length > 0) {
         document.getElementById("b").style.display="none"
         document.getElementById("a").style.display="inline-block"
