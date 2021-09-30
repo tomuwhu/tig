@@ -1,7 +1,6 @@
-def f(a):
-    return a**2
-y = range(10)
-print(*map(f,y))
+def f( a ):
+    return a ** 2
+print( * map( f, range( 10 ) ) )
 
-x = [i**2 for i in range(10)]
-print(*x)
+x = [ ( i, i ** 2 ) for i in range( 1, 10 ) ]
+print( * x )
