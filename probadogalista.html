@@ -3,7 +3,7 @@
     <tr>
         <td colspan=2 class="cim">
             Mintafeladatok
-        </th>
+        </td>
     </tr>
     <tr>
         <th>
@@ -32,7 +32,7 @@
         <td>
             <a href="html/pd02.html"><img src="img/pd02.jpg" alt=""></a>
         </td>
-    </tr>   
+    </tr>
     <tr><td colspan=2 id="pd1g" class="gg"
         onclick="document.getElementById('pd1x').style.display='table-row';document.getElementById('pd1g').style.display='none'" >1. próbadolgozat</td></tr>
     <tr id="pd1x" style="display:none;">
@@ -55,11 +55,13 @@
     .gg:hover {
         background-color: rgb(232, 198, 172);
     }
-    .cim {
+    td.cim {
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size: 25px;
-        box-shadow: 1px 1px 3px black;
-        text-shadow: 1px 1px 2px rgb(84, 43, 40);
+        font-size: 35px;
+        box-shadow: 1px 1px 6px black inset;
+        text-shadow: 1px 1px 3px rgb(84, 43, 40);
+        padding: 20px;
+        background-image: url("img/textura1.jpg");
     }
     img {
         width: 500px;
@@ -70,11 +72,13 @@
         box-shadow: 1px 1px 7px rgb(72, 4, 4) ;
     }
     table {
+        user-select: none;
         margin: auto;
         text-align: center;
         border-spacing: 10px;
         background-color: rgb(183, 194, 89);
-        box-shadow: 1px 1px 3px black;
+        box-shadow: 1px 1px 3px black inset;
+        border-radius: 10px;
     }
     th {
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -88,7 +92,7 @@
         box-shadow: 1px 1px 3px black;
         text-align: center;
         padding: 20px;
-        text-shadow: 1px 1px 2px darkslategray;
+        text-shadow: 0px 0px 2px darkslategray;
     }
     td.mo {
         vertical-align: bottom;
