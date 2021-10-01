@@ -1,40 +1,9 @@
 <meta charset="utf-8">
 <table>
     <tr>
-        <th>
-            1. próbadolgozat
+        <td colspan=2 class="cim">
+            Mintafeladatok
         </th>
-        <td>
-            <a href="img/pd01.jpg"><img src="img/pd01.jpg" alt=""></a>
-        </td>
-        <td class="mo">
-            <a href="html/pd01.html">megoldás</a>
-            <div class="pici"></div>
-        </td>
-    </tr>
-    <tr>
-        <th>
-            2. próbadolgozat
-        </th>
-        <td>
-            <a href="img/pd02.jpg"><img src="img/pd02.jpg" alt=""></a>
-        </td>
-        <td class="mo">
-            <a href="html/pd02.html">megoldás</a>
-            <div class="pici"></div>
-        </td>
-    </tr>
-    <tr>
-        <th>
-            3. próbadolgozat
-        </th>
-        <td>
-            <a href="img/pd03.jpg"><img src="img/pd03.jpg" alt=""></a>
-        </td>
-        <td class="mo">
-            <a href="html/pd03.html">megoldás</a>
-            <div class="pici"></div>
-        </td>
     </tr>
     <tr>
         <th>
@@ -43,15 +12,62 @@
         <td>
             <a href="img/pd04.jpg"><img src="img/pd04.jpg" alt=""></a>
         </td>
-        <td class="mo">
+    </tr>
+    <tr><td colspan=2 id="pd3g" class="gg"
+        onclick="document.getElementById('pd3x').style.display='table-row';document.getElementById('pd3g').style.display='none'" >3. próbadolgozat</td></tr>
+    <tr id="pd3x" style="display:none;">
+        <th>
+            3. próbadolgozat
+        </th>
+        <td>
+            <a href="html/pd03.html"><img src="img/pd03.jpg" alt=""></a>
+        </td>
+    </tr>    
+    <tr><td colspan=2 id="pd2g" class="gg"
+        onclick="document.getElementById('pd2x').style.display='table-row';document.getElementById('pd2g').style.display='none'" >2. próbadolgozat</td></tr>
+    <tr id="pd2x" style="display:none;">
+        <th>
+            2. próbadolgozat
+        </th>
+        <td>
+            <a href="html/pd02.html"><img src="img/pd02.jpg" alt=""></a>
+        </td>
+    </tr>   
+    <tr><td colspan=2 id="pd1g" class="gg"
+        onclick="document.getElementById('pd1x').style.display='table-row';document.getElementById('pd1g').style.display='none'" >1. próbadolgozat</td></tr>
+    <tr id="pd1x" style="display:none;">
+        <th>
+            1. próbadolgozat
+        </th>
+        <td>
+            <a href="html/pd01.html"><img src="img/pd01.jpg" alt=""></a>
         </td>
     </tr>
 </table>
 <style>
+    .gg {
+        cursor: pointer;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 20px;
+        box-shadow: 1px 1px 3px black;
+        text-shadow: 1px 1px 2px darkslategray;
+    }
+    .gg:hover {
+        background-color: rgb(232, 198, 172);
+    }
+    .cim {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 25px;
+        box-shadow: 1px 1px 3px black;
+        text-shadow: 1px 1px 2px rgb(84, 43, 40);
+    }
     img {
         width: 500px;
         border-radius: 10px;
         box-shadow: 1px 1px 3px black;
+    }
+    img:hover {
+        box-shadow: 1px 1px 7px rgb(72, 4, 4) ;
     }
     table {
         margin: auto;
@@ -65,7 +81,7 @@
         text-orientation: mixed;
         writing-mode: vertical-lr;
         transform: rotate(180deg);
-        font-size: 25px;
+        font-size: 20px;
         border-radius: 12px;
         color: rgb(87, 80, 22);
         padding: 5px;
@@ -77,6 +93,7 @@
     td.mo {
         vertical-align: bottom;
         padding: 10px;
+        width: 82px;
     }
     .mo a {
         text-decoration: none;
