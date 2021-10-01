@@ -21,6 +21,7 @@
 - [Video: IT alapozó I.](https://www.youtube.com/watch?v=6Ru6LLC4F-M)
 - [Video: IT alapozó II.](https://www.youtube.com/watch?v=0E-louNT7ic)
 - [Video: IT alapozó - Operációs rendszerek](https://www.youtube.com/watch?v=iUwk1u_XcUs)
+- [Video: CSS FlexBox](https://www.youtube.com/watch?v=3exthRoo7pQ)
 - [Video: Python telepítése](https://www.youtube.com/watch?v=iQwMYe4Wfbw)
 - [Video: Python nyelvi elemek I.](https://www.youtube.com/watch?v=O4-ofoI3tsI)
 - [Video: Python nyelvi elemek II.](https://www.youtube.com/watch?v=rmVBDTEHZu4)
