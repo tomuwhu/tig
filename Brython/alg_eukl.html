@@ -21,7 +21,7 @@
         document <= html.DIV( 
             html.INPUT( id = "i1", type = "number", placeholder = "1. szám" ) + 
             html.INPUT( id = "i2", type = "number", placeholder = "2. szám" ) +
-            btn + html.DIV( id = "res" )
+            btn + html.DIV( id = "res", Class="res" )
         )
     </script>
     <style>
@@ -45,7 +45,7 @@
             width: 220px;
             border-radius: 7px;
         }
-        div#res {
+        div.res {
             font-size: 30px;
             color: rgb(116, 43, 52);
             text-shadow: 1px 1px 3px black;
