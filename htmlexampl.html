@@ -28,22 +28,31 @@ function load() {
       href="hljs/a11y-dark.css">
 <link rel="stylesheet" href="main2.css">
 <script src="hljs/highlight.min.js"></script>
-<h1 class="h">HTML-CSS p&eacute;ldák</h1>
-<select class="s" onchange="load()" id="sel">
-<option selected>alap.html</option>
-<option>cica.html</option>
-<option>orarend_v01.html</option>
-<option>orarend_v02.html</option>
-<option>probadoga.html</option>
-<option>pd01.html</option>
-<option>pd02.html</option>
-<option>pd03.html</option>
-<option>urlap.html</option>
-<option>flex.html</option>
-</select>
-<div class="d" style="text-align: center;">
-    <div class="d" id="content" 
-    style="text-align: left; color:black; background-color: white; visibility: hidden;"></div>
+<ul class="navigation">
+    <li><a href="./">Kezdőlap</a></li>
+    <li><a href="tanttm.html">Tananyag</a></li>
+    <li><a href="bryexamples.html">Brython</a></li>
+    <li><a href="editor.html">Editor</a></li>
+    <li><a href="probadogalista.html">Számonkérés</a></li>
+</ul>
+<div class="m20">
+    <h1 class="h">HTML-CSS p&eacute;ldák</h1>
+    <select class="s" onchange="load()" id="sel">
+    <option selected>alap.html</option>
+    <option>cica.html</option>
+    <option>orarend_v01.html</option>
+    <option>orarend_v02.html</option>
+    <option>probadoga.html</option>
+    <option>pd01.html</option>
+    <option>pd02.html</option>
+    <option>pd03.html</option>
+    <option>urlap.html</option>
+    <option>flex.html</option>
+    </select>
+    <div class="d" style="text-align: center;">
+        <div class="d" id="content" 
+        style="text-align: left; color:black; background-color: white; visibility: hidden;"></div>
+    </div>
+    <pre><code class="language-html" id="code"></code></pre>
 </div>
-<pre><code class="language-html" id="code"></code></pre>
 </body>

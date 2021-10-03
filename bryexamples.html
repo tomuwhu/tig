@@ -21,38 +21,46 @@ function load() {
     xhttp.open("GET", "./"+file, true);
     xhttp.send();
 }
-
 </script>
 <body class="b" onload="load()">
 <link rel="stylesheet"
       href="hljs/a11y-dark.css">
 <link rel="stylesheet" href="main2.css">
 <script src="hljs/highlight.min.js"></script>
-<h1 class="h">Brython (HTML-CSS-Python) p&eacute;ldák</h1>
-<select class="s" onchange="load()" id="sel">
-<option>a_ures.html</option>
-<option selected>random.html</option>
-<option>clicks.html</option>
-<option>turtle.html</option>
-<option>turtle2.html</option>
-<option>pd01mo1.html</option>
-<option>pd01mo2.html</option>
-<option>korlevel.html</option>
-<option>szorzotabla1.html</option>
-<option>szorzotabla2.html</option>
-<option>pd02.html</option>
-<option>niter.html</option>
-<option>svg01.html</option>
-<option>svg02.html</option>
-<option>svg03.html</option>
-<option>svg04.html</option>
-<option>svg05.html</option>
-<option>input.html</option>
-<option>alg_eukl.html</option>
-<option>alg_erasztot.html</option>
-</select>
-<div class="d" style="text-align: center;">
-    <a id="a" href="Brython/brython.html" class="a" target="_blank"></a>
+<ul class="navigation">
+    <li><a href="./">Kezdőlap</a></li>
+    <li><a href="tanttm.html">Tananyag</a></li>
+    <li><a href="htmlexampl.html">HTML-CSS</a></li>
+    <li><a href="editor.html">Editor</a></li>
+    <li><a href="probadogalista.html">Számonkérés</a></li>
+</ul>
+<div class="m20">
+    <h1 class="h">Brython (HTML-CSS-Python) p&eacute;ldák</h1>
+    <select class="s" onchange="load()" id="sel">
+    <option>a_ures.html</option>
+    <option selected>random.html</option>
+    <option>clicks.html</option>
+    <option>turtle.html</option>
+    <option>turtle2.html</option>
+    <option>pd01mo1.html</option>
+    <option>pd01mo2.html</option>
+    <option>korlevel.html</option>
+    <option>szorzotabla1.html</option>
+    <option>szorzotabla2.html</option>
+    <option>pd02.html</option>
+    <option>niter.html</option>
+    <option>svg01.html</option>
+    <option>svg02.html</option>
+    <option>svg03.html</option>
+    <option>svg04.html</option>
+    <option>svg05.html</option>
+    <option>input.html</option>
+    <option>alg_eukl.html</option>
+    <option>alg_erasztot.html</option>
+    </select>
+    <div class="d" style="text-align: center;">
+        <a id="a" href="Brython/brython.html" class="a" target="_blank"></a>
+    </div>
+    <pre><code class="language-python" id="code"></code></pre>
 </div>
-<pre><code class="language-python" id="code"></code></pre>
 </body>

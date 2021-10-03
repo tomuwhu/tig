@@ -6,85 +6,94 @@
 <script src="hljs/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 <meta charset="utf-8">
-<h1 class="c x">Python&nbsp;kiegészítő&nbsp;anyagok a&nbsp;10.&nbsp;évfolyam&nbsp;számára</h1>
-<a href="irodalom/python-a-gepben.epub" download>Python könyv letöltése (epub)</a> - 
-<a href="https://www.hackerrank.com/" target="_blank">HackerRank</a> - 
-<a href="pyexamples.html">További példaprogramok</a>
-<hr>
-<main class="grid">
-<article>
-    <b>19. óra - Függvények alkalmazása</b><br><br>
-    A másodfokú egyenlet megoldása (TK. 9.)<br><br>
-        Az <span id="t0">ax^2+bx+c=0</span><br>egyenlet gyökei:
-        <span id="t1">x_{1,2} = {-b \pm \sqrt{b^2-4ac} \over 2a}.</span>
-        <pre><code class="language-python"
->from math import sqrt
-def mfegy(a,b,c):
-    return (-b+sqrt(b**2-4*a*c))/2*a,(-b-sqrt(b**2-4*a*c))/2*a
-print(mfegy(1,-2,-3))</code></pre>
-</article>
+<ul class="navigation">
+    <li><a href="tanttm.html">Tananyag</a></li>
+    <li><a href="htmlexampl.html">HTML-CSS</a></li>
+    <li><a href="bryexamples.html">Brython</a></li>
+    <li><a href="editor.html">Editor</a></li>
+    <li><a href="probadogalista.html">Számonkérés</a></li>
+</ul>
+<div class="m20">
+    <h1 class="c x">Python&nbsp;kiegészítő&nbsp;anyagok a&nbsp;10.&nbsp;évfolyam&nbsp;számára</h1>
+    <a class="btn" href="irodalom/python-a-gepben.epub" download>Python könyv letöltése (epub)</a> - 
+    <a class="btn" href="https://www.hackerrank.com/" target="_blank">HackerRank</a> - 
+    <a class="btn" href="pyexamples.html">További példaprogramok</a>
+    <hr>
+    <main class="grid">
+    <article>
+        <b>19. óra - Függvények alkalmazása</b><br><br>
+        A másodfokú egyenlet megoldása (TK. 9.)<br><br>
+            Az <span id="t0">ax^2+bx+c=0</span><br>egyenlet gyökei:
+            <span id="t1">x_{1,2} = {-b \pm \sqrt{b^2-4ac} \over 2a}.</span>
+            <pre><code class="language-python"
+    >from math import sqrt
+    def mfegy(a,b,c):
+        return (-b+sqrt(b**2-4*a*c))/2*a,(-b-sqrt(b**2-4*a*c))/2*a
+    print(mfegy(1,-2,-3))</code></pre>
+    </article>
 
-<article>
-<b>20. óra - Egyenletmegoldás ciklussal</b><br><br>
-<a href="https://secure.math.ubc.ca/~pwalls/math-python/roots-optimization/newton/" target="_blank">Newton iteráció</a>
-TK. 117. (1.e. megoldás)
-<span id="t2">x_{n+1}=x_n-\frac{f\left(x_n\right)}{f'\left(x_n\right)},n=[0,1,...]</span>
-<pre><code class="language-python"
->fx = lambda x: 2*x**3 - 3*x + 1
-Df = lambda x: 6*x**2 - 3
-xn = 0
-for n in range(0,10):
-    print(xn) # Megoldásközelítés az n. iterációban.
-    xn = xn - fx(xn)/Df(xn)
-</code></pre>
-</article>
+    <article>
+    <b>20. óra - Egyenletmegoldás ciklussal</b><br><br>
+    <a class="btn" href="https://secure.math.ubc.ca/~pwalls/math-python/roots-optimization/newton/" target="_blank">Newton iteráció</a>
+    TK. 117. (1.e. megoldás)
+    <span id="t2">x_{n+1}=x_n-\frac{f\left(x_n\right)}{f'\left(x_n\right)},n=[0,1,...]</span>
+    <pre><code class="language-python"
+    >fx = lambda x: 2*x**3 - 3*x + 1
+    Df = lambda x: 6*x**2 - 3
+    xn = 0
+    for n in range(0,10):
+        print(xn) # Megoldásközelítés az n. iterációban.
+        xn = xn - fx(xn)/Df(xn)
+    </code></pre>
+    </article>
 
-<article>
-<b>21. óra - Függvények alkalmazása (rekurzió)</b><br><br>
-Hanoi tornyai (TK. 61.)<br><br>
-n=1 -re <span id="t3">h(n,a,b) = a \longrightarrow b</span>
-egyébként (minden n>1 egész számra):<br>
-<span id="t4">
-h(n,a,b) = h(n-1,a,6-a-b), a \longrightarrow b, h(n-1,6-a-b,b)
-</span>
+    <article>
+    <b>21. óra - Függvények alkalmazása (rekurzió)</b><br><br>
+    Hanoi tornyai (TK. 61.)<br><br>
+    n=1 -re <span id="t3">h(n,a,b) = a \longrightarrow b</span>
+    egyébként (minden n>1 egész számra):<br>
+    <span id="t4">
+    h(n,a,b) = h(n-1,a,6-a-b), a \longrightarrow b, h(n-1,6-a-b,b)
+    </span>
 
-<pre><code class="language-python"
->def h(n, a, b):
-    if ( n == 1 ):
-        return "( {} => {} )".format(a, b)
-    else: 
-        return (
-            h( n-1, a,     6-a-b )+
-            h( 1,   a,     b )+
-            h( n-1, 6-a-b, b )
-        )
-print( h( 3, 1, 2 ) )
-</code></pre>
-micro:bit blocks<br>
-<div class="imgcont">
-    <img style="width: 400px" src="mb/hanoi.jpg" />
+    <pre><code class="language-python"
+    >def h(n, a, b):
+        if ( n == 1 ):
+            return "( {} => {} )".format(a, b)
+        else: 
+            return (
+                h( n-1, a,     6-a-b )+
+                h( 1,   a,     b )+
+                h( n-1, 6-a-b, b )
+            )
+    print( h( 3, 1, 2 ) )
+    </code></pre>
+    micro:bit blocks<br>
+    <div class="imgcont">
+        <img style="width: 400px" src="mb/hanoi.jpg" />
+    </div>
+    <a class="btn" href="mb/microbit-hanoi.hex" download="microbit-hanoi.hex">letöltés</a>
+    </article>
+
+    <article>
+    <b>22. óra - Teknőcgrafika + rekurzív fügvény</b><br><br>
+    <pre><code class="language-python"
+    >from turtle import *
+    speed("fastest")
+    color("red","blue")
+    def k(x):
+        for i in range(6):
+            forward(x)
+            left(60)
+        left(10)
+        if x>8:
+            k(34*x/35)
+    begin_fill()
+    k(250)
+    end_fill()
+    mainloop()
+    </code></pre>
+    </article>
+
+    </main>
 </div>
-<a href="mb/microbit-hanoi.hex" download="microbit-hanoi.hex">letöltés</a>
-</article>
-
-<article>
-<b>22. óra - Teknőcgrafika + rekurzív fügvény</b><br><br>
-<pre><code class="language-python"
->from turtle import *
-speed("fastest")
-color("red","blue")
-def k(x):
-    for i in range(6):
-        forward(x)
-        left(60)
-    left(10)
-    if x>8:
-        k(34*x/35)
-begin_fill()
-k(250)
-end_fill()
-mainloop()
-</code></pre>
-</article>
-
-</main>

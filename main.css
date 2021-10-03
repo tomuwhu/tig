@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Shadows+Into+Light&display=swap');
 body {
     background: rgb(12, 12, 1);
     color: rgb(196, 240, 230);
-    margin: 20px;
+    margin: 0;
 }
 select {
     width: 200px;
@@ -20,7 +19,7 @@ div#content {
 h1.x, h2.x {
     font-family: 'Shadows Into Light', cursive;
 }
-a {
+a.btn {
     font-family: 'Kanit', sans-serif;
     cursor: pointer;
 }
@@ -33,7 +32,7 @@ a {
   grid-gap: 50px;
   align-items: stretch;
 }
-a {
+a.btn {
     color:rgb(255, 251, 202);
     text-decoration: none;
     margin: 6px;
@@ -45,17 +44,17 @@ a {
     border-radius: 8px;
     box-shadow: 0px 0px 8px gray;
 }
-a:hover {
+a.btn:hover {
     color:rgb(183, 236, 255);
     background-color: rgb(72, 72, 15);
     box-shadow: 0px 0px 12px rgb(201, 201, 201);
 }
-a:active {
+a.btn:active {
     color:rgb(183, 236, 255);
     background-color: rgb(72, 15, 15);
     box-shadow: 0px 0px 12px rgb(201, 201, 201);
 }
-a:visited {
+a.btn:visited {
     color:rgb(226, 249, 201);
 }
 code {
@@ -71,6 +70,9 @@ h2 {
 h3 {
     font-size: 12px;
 }
+div.m20 {
+    margin: 20px;
+}
 div.imgcont {
     background-color: rgb(237, 237, 237);
     border-radius: 8px;
@@ -80,4 +82,59 @@ div.imgcont {
 img {
     border-radius: 6px;
     box-shadow: 0px 0px 8px gray;
+}
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Shadows+Into+Light&display=swap');
+.navigation {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    text-shadow: 1px 1px 3px black;
+    list-style: none;
+    margin: 0; 
+    background: rgb(2, 98, 130);
+}
+
+.navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    color: white;
+}
+
+.navigation a:hover {
+    background: #1565C0;
+}
+
+@media all and (max-width: 800px) {
+    .navigation {
+        justify-content: space-around;
+    }
+}
+
+@media all and (max-width: 700px) {
+    .navigation {
+        flex-flow: column wrap;
+        padding: 0;
+    }
+    .navigation a { 
+        text-align: center; 
+        padding: 10px;
+        border-top: 1px solid rgba(255, 255, 255,0.3); 
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+    }
+    .navigation li:last-of-type a {
+        border-bottom: none;
+    }
+}
+
+div#content a {
+    color: antiquewhite;
+}
+
+div#content a:hover {
+    color: rgb(249, 175, 158);
+}
+
+div#content a:visited {
+    color: rgb(184, 208, 223);
 }

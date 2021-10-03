@@ -10,12 +10,12 @@
     #editor { 
       margin: 0px;
       position: absolute;
-      top: 42px;
+      top: 72px;
       bottom: 0;
       left: 0;
       right: 0;
     }
-    a {
+    a.btn {
       cursor: pointer;
       background-color: rgb(192, 208, 147);
       border-radius: 6px;
@@ -35,12 +35,70 @@
       cursor: pointer;
       display: inline-block;
     }
+    body {
+        margin: 0;
+    }
+    .navigation {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        text-shadow: 1px 1px 3px black;
+        list-style: none;
+        margin: 0; 
+        background: rgb(2, 98, 130);
+    }
+
+    .navigation a {
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        color: white;
+    }
+
+    .navigation a:hover {
+        background: #1565C0;
+    }
+
+    div.m20 {
+        margin: 20px;
+    }
+    @media all and (max-width: 800px) {
+        .navigation {
+            justify-content: space-around;
+        }
+    }
+
+    @media all and (max-width: 500px) {
+        .navigation {
+            flex-flow: column wrap;
+            padding: 0;
+        }
+        .navigation a { 
+            text-align: center; 
+            padding: 10px;
+            border-top: 1px solid rgba(255, 255, 255,0.3); 
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+        }
+        .navigation li:last-of-type a {
+            border-bottom: none;
+        }
+        #editor { 
+          top: 192px;
+        }
+    }
   </style>
 </head>
 <body onload="load()">
+<ul class="navigation">
+  <li><a href="./">Kezdőlap</a></li>
+  <li><a href="tanttm.html">Tananyag</a></li>
+  <li><a href="htmlexampl.html">HTML-CSS</a></li>
+  <li><a href="bryexamples.html">Brython</a></li>
+  <li><a href="probadogalista.html">Számonkérés</a></li>
+</ul>
 <pre id="editor"></pre>
-<a id="b" onmouseenter="f()">Letölt</a>
-<a id="a" download="try.html">Letölt</a>
+<a class="btn" id="b" onmouseenter="f()">Letölt</a>
+<a class="btn" id="a" download="try.html">Letölt</a>
 
 <select class="s" onchange="load2()" id="sel2">
   <option>alap.html</option>
