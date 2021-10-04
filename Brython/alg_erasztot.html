@@ -5,7 +5,7 @@
         from browser import document, html
         n = 1000
         stat = dict.fromkeys( range( 0, n + 1 ), 0 )
-        for i in range( 1, n ):
+        for i in range( 1, n + 1 ):
             for j in range( 1, i + 1 ):
                 if i * j <= n:
                     stat[ i * j ] += 1
