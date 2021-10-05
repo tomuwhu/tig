@@ -25,7 +25,7 @@ a.btn {
 .c {
     text-align: center;
 }
-.grid { 
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(580px, 1fr));
   grid-gap: 50px;
@@ -89,7 +89,7 @@ img {
     justify-content: flex-end;
     text-shadow: 1px 1px 3px black;
     list-style: none;
-    margin: 0; 
+    margin: 0;
     background: rgb(2, 98, 130);
 }
 
@@ -115,11 +115,11 @@ img {
         flex-flow: column wrap;
         padding: 0;
     }
-    .navigation a { 
-        text-align: center; 
+    .navigation a {
+        text-align: center;
         padding: 10px;
-        border-top: 1px solid rgba(255, 255, 255,0.3); 
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+        border-top: 1px solid rgba(255, 255, 255,0.3);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
     .navigation li:last-of-type a {
         border-bottom: none;
@@ -150,6 +150,9 @@ td.tl {
 }
 td.tr {
     text-align: right;
+}
+td.tc {
+    text-align: center;
 }
 a.h {
     background-color: rgb(13, 61, 67);

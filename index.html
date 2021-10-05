@@ -32,7 +32,7 @@
         if (this.readyState == 4 && this.status == 200) {
             tt = xhttp.responseText.split("\r\n")
             ora = tt[ossz-1].split(";")
-            document.getElementById('content').innerHTML = "<p>" + ora[0] + " " + ora[1] + "</p>" + 
+            document.getElementById('content').innerHTML = "<p>" + ora[0] + " " + ora[1] + "</p>" +
             ora[2] + "<p>" + ora[3]+ "</p>" + "<p>" + ora[4]+ "</p>"
             document.getElementById('content').style.visibility = "visible"
             document.getElementById('sp').innerHTML = "<select onchange='f(event)'>" +
@@ -66,22 +66,40 @@
 <div class="c x">
 <table>
     <tr>
+      <td class="tx tr">
+          <a class="btn" href="irodalom/TK93-128-Python.pdf">Python rész a tankönyvben</a>
+      </td>
+      <td class="tx tc">
+          <a class="btn" href="irodalom/python-a-gepben.epub">Python&nbsp;tankönyv (epub)</a>
+      </td>
+      <td class="tx tl">
+          <a class="btn" href="python9.html">Python&nbsp;kiegészítő&nbsp;anyagok</a>
+      </td>
+    </tr>
+    <tr>
         <td class="tx tr">
-            <a class="btn h" onclick="tmd('linkgy9.md')">Külső&nbsp;hivatkozások</a>
+            <a class="btn" href="pyexamples.html">Python&nbsp;pédalprogramok</a>
+        </td>
+        <td class="tx tc">
+            <a class="btn" href="https://chrome.google.com/webstore/detail/epubreader/jhhclmfgfllimlhabjkgkeebkbiadflb">EPUB olvasó Chrome-plugin</a>
         </td>
         <td class="tx tl">
-            <a class="btn h" onclick="tmd('mb/szamlalo.md')">Számlálós feladat (micro:bit)</a>
+            <a class="btn h" onclick="tmd('linkgy9.md')">Külső&nbsp;hivatkozások</a>
         </td>
     </tr>
     <tr>
         <td class="tx tr">
             <a class="btn" href="irodalom/TK143-170-WEB.pdf">HTML rész a tankönyvben</a>
         </td>
+        <td class="tx tc">
+            <a class="btn h" onclick="tmd('mb/szamlalo.md')">Számlálós feladat (micro:bit)</a>
+        </td>
         <td class="tx tl">
-            <a class="btn" href="python9.html">Python&nbsp;kiegészítő&nbsp;anyagok</a>
+            <a class="btn" href="irodalom/TK71-73-SVG.pdf">SVG rész a tankönyvben</a>
         </td>
     </tr>
 </table>
+
 </div>
 <h3 class="c">10. évfolyam</h2>
 <div class="c">
@@ -103,10 +121,10 @@
     </div>
 </div>
 <div style="text-align: center; padding-top: 20px;">
-<a style="border:none;background:none;box-shadow:none;" 
+<a style="border:none;background:none;box-shadow:none;"
    target="_blank"
    href="https://github.com/tomuwhu/tig">
-   <img style="background-color: rgb(242, 242, 229);border-radius: 25px;" 
+   <img style="background-color: rgb(242, 242, 229);border-radius: 25px;"
    src="github.png" alt="github"
    ></a>
 </div>
