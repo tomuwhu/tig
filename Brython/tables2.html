@@ -6,14 +6,14 @@
         from browser import document, html
         def gen(e):
           tr = html.TR()
-          for betu in e.target.value:
-            tr <= html.TD(betu)
+          for c in e.target.value:
+            tr <= html.TD( c )
           table <= tr
           document <= table
           e.target.value = ''
         input = html.INPUT()
         input.bind("change",gen)
-        document <= input
+        document <= input + html.HR()
         table = html.TABLE()
     </script>
     <style media="screen">
