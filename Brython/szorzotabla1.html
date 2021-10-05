@@ -1,24 +1,25 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
 <script type="text/python">
     from browser import document, html
     h = html.HEADER()
     h <= html.TITLE("szorzótábla példa")
     v = html.BODY()
-    v <= html.TABLE( 
+    v <= html.TABLE(
         html.TR(
             html.TH( "Szorzótábla", colspan=10 )
-        ) + 
+        ) +
         map (
             lambda j:
                 html.TR(
                     map(
-                        lambda i: 
-                            html.TD( 
-                                ( i + 1 ) * ( j + 1 ), 
+                        lambda i:
+                            html.TD(
+                                ( i + 1 ) * ( j + 1 ),
                                 Class = "c" if i==0 or j==0 else ""
-                            ), 
-                        range( 10 ) 
+                            ),
+                        range( 10 )
                     )
                 ),
             range( 10 )
