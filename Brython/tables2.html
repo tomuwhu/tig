@@ -5,32 +5,32 @@
     <script type="text/python">
         from browser import document, html
         def gen(e):
-          tr = html.TR()
-          for c in e.target.value:
-            tr <= html.TD( c )
-          table <= tr
-          document <= table
-          e.target.value = ''
+            tr = html.TR()
+            for c in e.target.value:
+                tr <= html.TD( c )
+            table <= tr
+            document <= table
+            e.target.value = ''
         input = html.INPUT()
         input.bind("change",gen)
         document <= input + html.HR()
         table = html.TABLE()
     </script>
     <style media="screen">
-      table {
-        border-spacing: 10px;
-        background-color: rgb(210, 210, 14);
-        border-radius: 12px;
-        border: double 4px gray;
-      }
-      td {
-        box-shadow: 1px 1px 4px black inset;
-        padding: 10px;
-        background-color: rgb(199, 222, 199);
-        text-align: center;
-        width: 30px;
-        font-size: 20px;
-      }
+        table {
+            border-spacing: 10px;
+            background-color: rgb(210, 210, 14);
+            border-radius: 12px;
+            border: double 4px gray;
+        }
+        td {
+            box-shadow: 1px 1px 4px black inset;
+            padding: 10px;
+            background-color: rgb(199, 222, 199);
+            text-align: center;
+            width: 30px;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body onload="brython()"></body>
