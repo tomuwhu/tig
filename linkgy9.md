@@ -12,9 +12,13 @@
 [Adobe Reader](https://get.adobe.com/hu/reader/)
 [EPUBReader](https://chrome.google.com/webstore/detail/epubreader/jhhclmfgfllimlhabjkgkeebkbiadflb/related)
 [Calibre](https://calibre-ebook.com/download)
+[Anaconda](https://www.anaconda.com/)
+[Atom](https://atom.io/)
+[Code](https://code.visualstudio.com/)
 
 ## Online anyagok
 
+[Python-idomár](https://pythonidomar.wordpress.com/)
 [MarkDown](https://www.markdownguide.org/)
 [W3Schools](https://www.w3schools.com/)
 
