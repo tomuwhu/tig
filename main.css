@@ -157,3 +157,13 @@ td.tc {
 a.h {
     background-color: rgb(13, 61, 67);
 }
+div.cont {
+    user-select: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+a.bx {
+    display: inline-block;
+    padding: 9px;
+}
