@@ -1,29 +1,42 @@
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/brython@3.9.5/brython.min.js">
-    </script>
-</head>
-
-<body onload="brython()">
-
+<meta charset="utf-8">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.9.5/brython.min.js"></script>
 <script type="text/python">
-from browser import document
+from browser import document, html
 def h(n, a, b):
     if ( n == 1 ):
-        return "( {} => {} )".format(a, b)
+        return html.DIV( 
+            html.SPAN( a ) +
+            html.SPAN( "=>" ) +
+            html.SPAN( b ) 
+        )
     else: 
         return (
-            h( n-1, a,     6-a-b )+
-            h( 1,   a,     b )+
+            h( n-1, a,     6-a-b ) +
+            h( 1,   a,     b ) +
             h( n-1, 6-a-b, b )
         )
-document <= h( 3, 1, 2 )
+document <= html.DIV( h( 5, 1, 2 ), Class="c" )
 </script>
-
-
-</body>
-
-</html>
+<style>
+    div {
+        text-align: center;
+        margin: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 4px black inset;
+    }
+    div.c {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-color: beige;
+    }
+    div.c div {
+        width: 50px;
+        background-color: aquamarine;
+        font-family: Tahoma;
+        font-size: large;
+        text-shadow: 1px 1px 3px black;
+    }
+</style>
+<body onload="brython()"></body>
