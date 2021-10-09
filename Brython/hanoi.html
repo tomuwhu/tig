@@ -4,12 +4,12 @@
 from browser import document, html
 def h(n, a, b):
     if ( n == 1 ):
-        return html.DIV( 
+        return html.DIV(
             html.SPAN( a ) +
             html.SPAN( "=>" ) +
-            html.SPAN( b ) 
+            html.SPAN( b )
         )
-    else: 
+    else:
         return (
             h( n-1, a,     6-a-b ) +
             h( 1,   a,     b ) +
@@ -19,6 +19,7 @@ document <= html.DIV( h( 5, 1, 2 ), Class="c" )
 </script>
 <style>
     div {
+        user-select: none;
         text-align: center;
         margin: 10px;
         padding: 20px;
