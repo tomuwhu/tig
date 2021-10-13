@@ -3,27 +3,33 @@
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
 <style>
-    body {
-        text-align: center;
-    }
     svg {
-        border: solid 1px rgb(148, 77, 77);
-        background-color: rgb(227, 227, 192);
+        border-style:solid;
+        border-width:1;
+        border-color:#000;
         border-radius: 10px;
         box-shadow: 1px 1px 3px black;
     }
 </style>
 <script type="text/python">
-    from browser import document, svg, timer
-    def f():
-        c.attrs["cx"] = int( c.attrs["cx"] ) + 1
-        if int( c.attrs["cx"] ) > 970:
-            timer.clear_interval( t )
-    c = svg.circle( cx=50, cy=50, r=40,  stroke = "blue", fill = f'rgb(200,100,220)' )
-    document['panel'] <= c
-    t = timer.set_interval(f, 10)
+    from browser import document, svg
+    title = svg.text('Cicuskák', x = 77, y = 44, font_size = 22, text_anchor = "middle")
+    circle = svg.circle( cx = 77, cy = 120, r = 40, stroke = "blue",fill = "rgb(170,230,220)")
+    star = svg.polygon(
+            fill = "#800000", stroke = "#ae3f4f", stroke_width = "7",
+            points = """ 275,38  290,80  335,80  298,107 311,150
+                         275,125 238,150 251,107 215,80  260,80 """ )
+    ellipse = svg.ellipse( cx = "390", cy = "100", rx = "30", ry = "80",
+                           stroke = "black", stroke_width = "5",fill = "green" )
+    pl = svg.polyline( fill="none", stroke="#ae3f4f", stroke_width="5",
+            points="""50,375
+                    150,375 150,325 250,325 250,375
+                    350,375 350,250 450,250 450,375
+                    550,375 550,175 650,175 650,375
+                    750,375 750,100 850,100 850,375
+                    950,375 950,400 53,400  53,375 """ )
+    document['panel'] <= title + circle + star + ellipse + pl
 </script>
 <body onload="brython()">
-    <h1>Animáció példa</h1>
-    <svg width="1020" height="100"><g id="panel"></g></svg>
+    <svg width="1024" height="500"><g id="panel"></g></svg>
 </body>
