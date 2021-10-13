@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+<script type="text/python">
+    from browser import document, html
+    next = "X"
+    def f(e):
+      global next
+      e.target.html = next
+      if next == "X":
+        next = "O"
+        e.target.style = { "background-color": "rgb( 100, 150, 100 )" }
+      else:
+        next = "X"
+        e.target.style = { "background-color": "rgb( 150, 130, 120 )" }
+    h = html.HEADER()
+    h <= html.TITLE("szorzótábla példa")
+    v = html.BODY()
+    v <= html.TABLE(
+        map (
+            lambda j:
+                html.TR(
+                    map(
+                        lambda i:
+                            html.TD( ).bind("click",f),
+                        range( 15 )
+                    )
+                ),
+            range( 15 )
+        )
+    )
+    document <= h + v
+</script>
+<style>
+    table {
+        user-select: none;
+        text-align: center;
+        margin: auto;
+        border-spacing: 5px;
+        font-family: 'Segoe UI', Verdana;
+        text-shadow: 1px 1px 3px black;
+    }
+    td {
+        cursor: pointer ;
+        width: 20px;
+        height: 20px;
+        padding: 10px;
+        box-shadow: 1px 1px 3px black;
+        border-radius: 9px;
+        text-align: center;
+        font-size: 14px;
+        background-color: rgb(237, 234, 157);
+        color: rgb(53, 16, 17);
+    }
+    td.c {
+        color:rgb(220, 215, 160);
+        background-color: rgb(73, 108, 64);
+    }
+</style>
+<body onload="brython()"></body>
