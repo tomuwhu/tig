@@ -76,13 +76,13 @@ div.m20 {
                 Mintafeladatok
             </td>
         </tr>
-        <tr><td colspan=2  class="gg" style="display:none;"
-            onclick="f('pd6')">6. próbadolgozat (lezárt)</td></tr>
+        <tr><td colspan=2 class="gg" style="display:none;" id="pd6g"
+            onclick="f('pd6')">6. próbadolgozat (nyitva)</td></tr>
         <tr id="pd6x" class="px">
-            <th>
+            <th id="h6x">
                 6. próbadolgozat (nyitva)
             </th>
-            <td>
+            <td id="h6x2">
                 <a href="http://www.inf.u-szeged.hu/~tnemeth/examples/webexamples/Aknakereso.html"><img class="pici" src="img/pd06.jpg" alt=""></a>
             </td>
         </tr>
@@ -157,6 +157,7 @@ div.m20 {
         text-shadow: 1px 1px 3px rgb(84, 43, 40);
         padding: 20px;
         background-image: url("img/textura1.jpg");
+        color: #08274b;
     }
     img {
         width: 700px;
@@ -182,7 +183,7 @@ div.m20 {
         transform: rotate(180deg);
         font-size: 20px;
         border-radius: 12px;
-        color: rgb(87, 80, 22);
+        color: rgb(114, 111, 78);
         padding: 5px;
         box-shadow: 1px 1px 3px black;
         text-align: center;
@@ -209,6 +210,7 @@ div.m20 {
         border-radius: 12px;
         box-shadow: 1px 1px 3px black;
         background-color: antiquewhite;
+        color: #70725a;
     }
     td {
         padding: 6px;
@@ -225,5 +227,9 @@ div.m20 {
         width: 450px;
         border-radius: 10px;
         box-shadow: 1px 1px 3px black;
+    }
+    td#pd6g, th#h6x, td#h6x2 {
+        background-color: aquamarine;
+        color:#08274b
     }
 </style>
