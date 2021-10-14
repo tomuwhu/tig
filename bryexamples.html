@@ -2,12 +2,13 @@
 <script src="hljs/markdown.min.js"></script>
 <script>
 function ks(x) {
-    if ( x < 9 )       l = "００"
-    else if ( x < 99 ) l = "０"
+    if ( x < 9 )       l = "₀₀"
+    else if ( x < 99 ) l = "₀"
     else l = ""
     u = (x+1)
     sv = u.toString()
-    "０１２３４５６７８９".split("").forEach( ( v, i ) => sv = sv.replaceAll( i, v ) )
+    "₀₁₂₃₄₅₆₇₈₉".split("").forEach( ( v, i ) => sv = sv.replaceAll( i, v ) )
+    "０１２３４５６７８９"
     return l+sv+" "
 }
 function load() {
