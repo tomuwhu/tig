@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 body.b {
     background: rgb(12, 12, 1);
     color: rgb(196, 240, 230);
@@ -17,7 +17,7 @@ div#content {
     font-size: 12px;
 }
 h1.x, h2.x {
-    font-family: 'Shadows Into Light', cursive;
+    font-family: cursive;
 }
 .c {
     text-align: center;
@@ -61,6 +61,8 @@ a.a:visited {
 code#code {
     border-radius: 12px;
     box-shadow: 0px 0px 8px gray;
+    font-family: 'Courier Prime', monospace;
+    font-size: smaller;
 }
 h1.h {
     font-size: 20px;
