@@ -50,6 +50,18 @@ div.m20 {
 }
 </style>
 <meta charset="utf-8">
+<script>
+    function f(x) {
+        document.querySelectorAll('.px').forEach( v => {
+            v.style="display:none;"
+        })
+        document.querySelectorAll('.gg').forEach( v => {
+            v.style="display:table-cell;"
+        })
+        document.getElementById(x+'x').style.display='table-cell'
+        document.getElementById(x+'g').style.display='none'
+    }
+</script>
 <ul class="navigation">
     <li><a href="./">Kezdőlap</a></li>
     <li><a href="tanttm.html">Tananyag</a></li>
@@ -64,61 +76,61 @@ div.m20 {
                 Mintafeladatok
             </td>
         </tr>
-        <tr style="display:none;"><td colspan=2 id="pd6g" class="gg"
-            onclick="document.getElementById('pd6x').style.display='table-row';document.getElementById('pd6g').style.display='none'" >6. próbadolgozat</td></tr>
-        <tr id="pd6x">
+        <tr><td colspan=2  class="gg" style="display:none;"
+            onclick="f('pd6')">6. próbadolgozat (lezárt)</td></tr>
+        <tr id="pd6x" class="px">
             <th>
-                6. próbadolgozat
+                6. próbadolgozat (nyitva)
             </th>
             <td>
                 <a href="http://www.inf.u-szeged.hu/~tnemeth/examples/webexamples/Aknakereso.html"><img class="pici" src="img/pd06.jpg" alt=""></a>
             </td>
         </tr>
         <tr><td colspan=2 id="pd5g" class="gg"
-            onclick="document.getElementById('pd5x').style.display='table-row';document.getElementById('pd5g').style.display='none'" >5. próbadolgozat</td></tr>
-        <tr id="pd5x" style="display:none;">
+            onclick="f('pd5')" >5. próbadolgozat (lezárt)</td></tr>
+        <tr id="pd5x" class="px" style="display:none;">
             <th>
-                5. próbadolgozat
+                5. próbadolgozat (lezárt)
             </th>
             <td>
                 <a href="Brython/amoba2.html"><img class="pici" src="img/pd05.jpg" alt=""></a>
             </td>
         </tr>
         <tr><td colspan=2 id="pd4g" class="gg"
-            onclick="document.getElementById('pd4x').style.display='table-row';document.getElementById('pd4g').style.display='none'" >4. próbadolgozat</td></tr>
-        <tr id="pd4x" style="display:none;">
+            onclick="f('pd4')" >4. próbadolgozat (lezárt)</td></tr>
+        <tr id="pd4x" class="px" style="display:none;">
             <th>
-                4. próbadolgozat
+                4. próbadolgozat (lezárt)
             </th>
             <td>
                 <a href="html/pd04.html"><img  class="pici2" src="img/pd04.jpg" alt=""></a>
             </td>
         </tr>
         <tr><td colspan=2 id="pd3g" class="gg"
-            onclick="document.getElementById('pd3x').style.display='table-row';document.getElementById('pd3g').style.display='none'" >3. próbadolgozat</td></tr>
-        <tr id="pd3x" style="display:none;">
+            onclick="f('pd3')" >3. próbadolgozat (lezárt)</td></tr>
+        <tr id="pd3x" class="px" style="display:none;">
             <th>
-                3. próbadolgozat
+                3. próbadolgozat (lezárt)
             </th>
             <td>
                 <a href="html/pd03.html"><img src="img/pd03.jpg" alt=""></a>
             </td>
         </tr>
         <tr><td colspan=2 id="pd2g" class="gg"
-            onclick="document.getElementById('pd2x').style.display='table-row';document.getElementById('pd2g').style.display='none'" >2. próbadolgozat</td></tr>
-        <tr id="pd2x" style="display:none;">
+            onclick="f('pd2')" >2. próbadolgozat (lezárt)</td></tr>
+        <tr id="pd2x" class="px" style="display:none;">
             <th>
-                2. próbadolgozat
+                2. próbadolgozat (lezárt)
             </th>
             <td>
                 <a href="html/pd02.html"><img class="pici2" src="img/pd02.jpg" alt=""></a>
             </td>
         </tr>
         <tr><td colspan=2 id="pd1g" class="gg"
-            onclick="document.getElementById('pd1x').style.display='table-row';document.getElementById('pd1g').style.display='none'" >1. próbadolgozat</td></tr>
-        <tr id="pd1x" style="display:none;">
+            onclick="f('pd1')" >1. próbadolgozat (lezárt)</td></tr>
+        <tr id="pd1x" class="px" style="display:none;">
             <th>
-                1. próbadolgozat
+                1. próbadolgozat (lezárt)
             </th>
             <td>
                 <a href="html/pd01.html"><img class="pici2" src="img/pd01.jpg" alt=""></a>
