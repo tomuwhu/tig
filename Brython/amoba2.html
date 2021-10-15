@@ -9,15 +9,14 @@
     def nyert(next):
       global stop
       if next == "X":
-        document['no'].style = { "display": "block" }
+        document[ 'no' ].style = { "display": "block" }
       else:
-        document['nx'].style = { "display": "block" }
+        document[ 'nx' ].style = { "display": "block" }
       stop = 1
-    def f(e):
+    def katt(e):
       global stop
       xy = e.target.id.split('-')
-      x = int( xy[ 0 ] )
-      y = int( xy[ 1 ] )
+      x, y = int( xy[ 0 ] ), int( xy[ 1 ] )
       if stop == 0 and t[ x + 1 ][ y + 1 ] == 0:
         global next
         e.target.html = next
@@ -29,12 +28,12 @@
           next = "X"
           e.target.style = { bc: "#af5489" }
           t[ x + 1 ][ y + 1 ] = "X"
-        for v in [(1,1),(1,0),(0,1)]:
+        for v in [ ( 1, 1 ), ( 1, 0 ), ( 0, 1 ) ]:
           maxh = 0
           for i in [-1,1]:
             xp, yp = x, y
             while t[ xp + 1 ][ yp + 1 ] == next:
-              xp += i*v[ 0 ]; yp += i* v[ 1 ]; maxh += 1
+              xp += i * v[ 0 ]; yp += i * v[ 1 ]; maxh += 1
           if maxh > 5:
             nyert( next )
     h =  html.HEADER(); h <= html.TITLE("Amőba II.")
@@ -44,7 +43,7 @@
     v <= html.TABLE( map ( lambda j:
          html.TR( map( lambda i:
             html.TD( id = f'{i}-{j}' )
-                .bind( "click", f ), range( n ) )
+                .bind( "click", katt ), range( n ) )
          ), range( n ) )
     )
     document <= h + v
@@ -69,7 +68,7 @@
         background-color: rgb(73, 108, 64);
     }
     h2 {
-      text-align: center;
+        text-align: center;
     }
     div#no, div#nx {
         user-select: none; display: none;
@@ -81,10 +80,10 @@
         background-color: rgba(200,240,250,0.8); font-size: 50px;
     }
     div#no {
-      color: #af5489;
+        color: #af5489;
     }
     div#nx {
-      color: #437264;
+        color: #437264;
     }
 </style>
 <body onload="brython()"></body>
