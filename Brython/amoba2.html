@@ -4,7 +4,6 @@
 <script type="text/python">
     from browser import document, html
     n, bc, next, stop = 10, "background-color", "X", 0
-    vh = { "visibility": "hidden" }
     t = [ [ 0 ] * ( n + 2 ) for i in range( n + 2 ) ]
     def nyert(next):
       global stop
@@ -38,8 +37,8 @@
             nyert( next )
     h =  html.HEADER(); h <= html.TITLE("Amőba II.")
     v =  html.BODY(); v <= html.H2("Amőba")
-    v <= html.DIV( "Nyert: X", id = "nx", Class = vh )
-    v <= html.DIV( "Nyert: O", id = "no", Class = vh )
+    v <= html.DIV( "Nyert: X", id = "nx" )
+    v <= html.DIV( "Nyert: O", id = "no" )
     v <= html.TABLE( map ( lambda j:
          html.TR( map( lambda i:
             html.TD( id = f'{i}-{j}' )
