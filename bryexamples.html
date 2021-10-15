@@ -22,7 +22,7 @@ function load() {
                     .replace(/</g, "&lt;")
                     .replace(/>/g, "&gt;")
                     .replace(/"/g, "&quot;")
-                    .replace(/'/g, "&#039;").split("\n").map( (v,i) => ks(i)+v ).join("\n").substring(0, str.length - 2);
+                    .replace(/'/g, "&#039;").split("\n").map( (v,i) => ks(i)+v ).join("\n").slice( 0, - 2 );
                 document.getElementById("a").setAttribute('href', file)
                 document.getElementById("a").innerHTML="Futtat: "+document.getElementById("sel").value
             hljs.highlightAll()
