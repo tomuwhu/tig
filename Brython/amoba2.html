@@ -37,10 +37,8 @@
               xp += i*v[ 0 ]; yp += i* v[ 1 ]; maxh += 1
           if maxh > 5:
             nyert( next )
-    h =  html.HEADER()
-    h <= html.TITLE("Amőba II.")
-    v =  html.BODY()
-    v <= html.H2("Amőba")
+    h =  html.HEADER(); h <= html.TITLE("Amőba II.")
+    v =  html.BODY(); v <= html.H2("Amőba")
     v <= html.DIV( "Nyert: X", id = "nx", Class = vh )
     v <= html.DIV( "Nyert: O", id = "no", Class = vh )
     v <= html.TABLE( map ( lambda j:
