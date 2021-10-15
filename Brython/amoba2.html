@@ -40,7 +40,7 @@
             "background-color": "#af5489"
           }
           t[ x + 1 ][ y + 1 ] = "X"
-        for v in [[1,1],[1,0],[0,1],[-1,1]]:
+        for v in [(1,1),(1,0),(0,1)]:
           xp, yp, maxh = x, y, 0
           while t[ xp + 1 ][ yp + 1 ] == next:
             xp += v[ 0 ]; yp += v[ 1 ]; maxh += 1
