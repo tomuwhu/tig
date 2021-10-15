@@ -6,7 +6,6 @@
     n = 10
     t = [ [ 0 ] * ( n + 2 ) for i in range( n + 2 ) ]
     next, stop = "X", 0
-
     def nyert(next):
       global stop
       if next == "X":
@@ -18,13 +17,11 @@
           "display": "block"
         }
       stop = 1
-
     def f(e):
       global stop
       xy = e.target.id.split('-')
       x = int( xy[ 0 ] )
       y = int( xy[ 1 ] )
-
       if stop == 0 and t[ x + 1 ][ y + 1 ] == 0:
         global next
         e.target.html = next
@@ -49,7 +46,6 @@
             xp -= v[ 0 ]; yp -= v[ 1 ]; maxh += 1
           if maxh > 5:
             nyert( next )
-
     h = html.HEADER()
     h <= html.TITLE("Amőba II.")
     v = html.BODY()
