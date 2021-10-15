@@ -17,15 +17,16 @@ function load() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
                 html_content = xhttp.responseText
-                document.getElementById("code").innerHTML = html_content
+                q = html_content
                     .replace(/&/g, "&amp;")
                     .replace(/</g, "&lt;")
                     .replace(/>/g, "&gt;")
                     .replace(/"/g, "&quot;")
                     .replace(/'/g, "&#039;")
+                document.getElementById("code").innerHTML = q.trim()
                 document.getElementById("a").setAttribute('href', file)
                 document.getElementById("a").innerHTML="Futtat: "+document.getElementById("sel").value
-            hljs.highlightAll()
+                hljs.highlightAll()
         }
     };
     xhttp.open("GET", "./"+file, true);
@@ -79,6 +80,6 @@ function load() {
     <div class="d" style="text-align: center;">
         <a id="a" href="Brython/brython.html" class="a" target="_blank"></a>
     </div>
-    <pre><code class="language-python" id="code"></code></pre>
+    <pre><code class="language-html" id="code"></code></pre>
 </div>
 </body>
