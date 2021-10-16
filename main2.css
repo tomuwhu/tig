@@ -22,7 +22,7 @@ h1.x, h2.x {
 .c {
     text-align: center;
 }
-.grid { 
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(580px, 1fr));
   grid-gap: 50px;
@@ -92,7 +92,7 @@ td, th {
     justify-content: flex-end;
     text-shadow: 1px 1px 3px black;
     list-style: none;
-    margin: 0; 
+    margin: 0;
     background: rgb(2, 98, 130);
 }
 
@@ -118,11 +118,11 @@ td, th {
         flex-flow: column wrap;
         padding: 0;
     }
-    .navigation a { 
-        text-align: center; 
+    .navigation a {
+        text-align: center;
         padding: 10px;
-        border-top: 1px solid rgba(255, 255, 255,0.3); 
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+        border-top: 1px solid rgba(255, 255, 255,0.3);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
     .navigation li:last-of-type a {
         border-bottom: none;
@@ -138,4 +138,7 @@ div#content a:hover {
 }
 div#content a:visited {
     color: rgb(184, 208, 223);
+}
+span.pn {
+  color: rgb(254, 137, 137);
 }
