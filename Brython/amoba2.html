@@ -13,20 +13,16 @@
         document[ 'nx' ].style = { "display": "block" }
       stop = 1
     def katt(e):
-      global stop
-      xy = e.target.id.split('-')
+      global stop; xy = e.target.id.split('-')
       x, y = int( xy[ 0 ] ), int( xy[ 1 ] )
       if stop == 0 and t[ x + 1 ][ y + 1 ] == 0:
-        global next
-        e.target.html = next
+        global next; e.target.html = next
         if next == "X":
-          next = "O"
+          next = "O"; t[ x + 1 ][ y + 1 ] = "O"
           e.target.style = { bc: "#437264" }
-          t[ x + 1 ][ y + 1 ] = "O"
         else:
-          next = "X"
+          next = "X"; t[ x + 1 ][ y + 1 ] = "X"
           e.target.style = { bc: "#af5489" }
-          t[ x + 1 ][ y + 1 ] = "X"
         for v in [ ( 1, 1 ), ( 1, 0 ), ( 0, 1 ) ]:
           maxh = 0
           for i in [-1,1]:
