@@ -4,11 +4,7 @@
 from browser import document, html
 def h(n, a, b):
     if ( n == 1 ):
-        return html.DIV(
-            html.SPAN( a ) +
-            html.SPAN( "=>" ) +
-            html.SPAN( b )
-        )
+        return html.DIV( f'{a}=>{b}' )
     else:
         return (
             h( n-1, a,     6-a-b ) +
