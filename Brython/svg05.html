@@ -4,11 +4,9 @@
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
 <style>
     svg {
-        border-style: solid;
-        border-width: 4px;
-        border-color: #000000;
-        border-radius: 10px;
-        box-shadow: 1px 1px 3px black;
+        border-style: solid; border-width: 4px; border-color: #000000;
+        border-radius: 10px; box-shadow: 1px 1px 3px black;
+        width: 1200px; height: 900px;
     }
 </style>
 <script type="text/python">
@@ -21,6 +19,4 @@
         )
     document['x'].bind( "mousemove", f )
 </script>
-<body onload="brython()">
-    <svg width="1024" height="900" id="x"></svg>
-</body>
+<body onload="brython()"><svg id="x"></svg></body>
