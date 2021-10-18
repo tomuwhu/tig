@@ -5,16 +5,10 @@
     <script type="text/python">
         from browser import document, html
         def gen(e):
-            tr = html.TR()
-            for c in e.target.value:
-                tr <= html.TD( c )
-            table <= tr
-            document <= table
-            e.target.value = ''
-        input = html.INPUT()
-        input.bind("change",gen)
-        document <= input + html.HR()
-        table = html.TABLE()
+            document <= html.TABLE() <= html.TR() <= [
+                html.TD( c ) for c in e.target.value
+            ];  e.target.value = ''
+        document <= html.INPUT().bind("change",gen) + html.HR()
     </script>
     <style media="screen">
         table {
