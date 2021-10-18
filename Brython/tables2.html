@@ -6,9 +6,9 @@
         from browser import document, html
         def gen(e):
             document <= html.TABLE() <= html.TR() <= [
-                html.TD( c ) for c in e.target.value
-            ];  e.target.value = ''
-        document <= html.INPUT().bind("change",gen) + html.HR()
+               html.TD(c) for c in e.target.value
+            ]; e.target.value = ''
+        document <= html.INPUT().bind("change", gen) + html.HR()
     </script>
     <style media="screen">
         table {

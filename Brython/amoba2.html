@@ -25,7 +25,7 @@
           e.target.style = { bc: "#af5489" }
         for v in [ ( 1, 1 ), ( 1, 0 ), ( 0, 1 ) ]:
           maxh = 0
-          for i in [-1,1]:
+          for i in [-1, 1]:
             xp, yp = x, y
             while t[ xp + 1 ][ yp + 1 ] == next:
               xp += i * v[ 0 ]; yp += i * v[ 1 ]; maxh += 1
