@@ -4,9 +4,9 @@
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
 <style>
     svg {
-        border-style:solid;
-        border-width:1;
-        border-color:#000;
+        border-style: solid;
+        border-width: 4px;
+        border-color: #000000;
         border-radius: 10px;
         box-shadow: 1px 1px 3px black;
     }
@@ -17,7 +17,7 @@
       if e.buttons == 1:
         document['x'] <= svg.circle(
           cx = int(e.x)-10, cy = int(e.y)-10, r = 10,
-          stroke="blue",fill="rgb(170,230,220)"
+          stroke="blue", fill="rgb(170,230,220)"
         )
     document['x'].bind( "mousemove", f )
 </script>
