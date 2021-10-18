@@ -17,6 +17,9 @@
           cx = int(e.x)-10, cy = int(e.y)-10, r = 10,
           stroke="blue", fill="rgb(170,230,220)"
         )
-    document['x'].bind( "mousemove", f ).bind("touchmove", f)
+    document['x'] .bind( "mousedown", f ) \
+                  .bind( "mousemove", f ) \
+                  .bind( "touchmove", f ) \
+                  .bind( "touchstart", f )
 </script>
 <body onload="brython()"><svg id="x"></svg></body>
