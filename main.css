@@ -126,6 +126,22 @@ img {
     }
 }
 
+@media all and (min-width: 1000px) {
+    .ww {
+        width: 70%;
+        margin: auto;
+        text-align: center;
+    }
+}
+
+@media all and (min-width: 1500px) {
+    .ww {
+        width: 50%;
+        margin: auto;
+        text-align: center;
+    }
+}
+
 div#content a {
     color: antiquewhite;
 }
