@@ -14,8 +14,12 @@
     var ossz = 15
     function f(e) {
         ora = tt[e.srcElement.selectedIndex].split(";")
+        if (ora[5]) {
+                sss =  "<a href='"+ora[5]+"' target='_blank'>Tananyag</a>"
+        } 
+        else sss=""
         document.getElementById('content').innerHTML = "<p>" + ora[0] + " " + ora[1] + "</p>" +
-        ora[2] + "<p>" + ora[3]+ "</p>" + "<p>" + ora[4]+ "</p>"
+        ora[2] + "<p>" + ora[3]+ "</p>" + "<p>" + ora[4]+ "</p>" + sss
     }
     function tmd(file) {
         var xhttp = new XMLHttpRequest();
@@ -34,8 +38,12 @@
         if (this.readyState == 4 && this.status == 200) {
             tt = xhttp.responseText.split("\r\n")
             ora = tt[ossz-1].split(";")
+            if (ora[5]) {
+                sss =  "<a href='"+ora[5]+"' target='_blank'>Tananyag</a>"
+            } 
+            else sss=""
             document.getElementById('content').innerHTML = "<p>" + ora[0] + " " + ora[1] + "</p>" +
-            ora[2] + "<p>" + ora[3]+ "</p>" + "<p>" + ora[4]+ "</p>"
+            ora[2] + "<p>" + ora[3]+ "</p>" + "<p>" + ora[4]+ "</p>" + sss
             document.getElementById('content').style.visibility = "visible"
             document.getElementById('sp').innerHTML = "<select onchange='f(event)'>" +
             tt.map(v => {
@@ -72,6 +80,7 @@
     <a class="btn bx" href="https://getbootstrap.com/">BootStrap</a>
     <a class="btn bx" href="https://www.javascript.com/">JavaScript</a>
     <a class="btn bx" href="https://programozaskarrier.hu/karrier/10-jel-sikeres-programozo/">Hozzáállási lista</a>
+    <a href="https://editor.method.ac/">SVG Editor</a>
 </div>
 <h3 class="c">9. évfolyam</h2>
 <div class="cont ww">
