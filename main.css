@@ -183,3 +183,14 @@ a.bx {
     display: inline-block;
     padding: 9px;
 }
+a.imgbtn {
+    background-color: aliceblue;
+    margin: 3px;
+    padding: 4px;
+    border-radius: 6px;
+    box-shadow: inset 1px 1px 3px black;
+}
+a.imgbtn img {
+    border-radius: 1px;
+    box-shadow: none;
+}
