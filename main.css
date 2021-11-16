@@ -191,6 +191,6 @@ a.imgbtn {
     box-shadow: inset 1px 1px 3px black;
 }
 a.imgbtn img {
-    border-radius: 1px;
+    border-radius: 5px;
     box-shadow: none;
 }
