@@ -1,0 +1,17 @@
+<script src="http://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+<svg id="my-svg" width="12cm" height="4cm" viewBox="0 0 1200 400">
+    <rect x="1" y="1" width="1198" height="398"
+          fill="none" stroke="#568998" stroke-width="4" rx="15" />
+    <rect x="100" y="100" width="400" height="200" rx="20"
+          fill="none" stroke="#a66938" stroke-width="6" />
+    <circle cx="220" cy="200" r="60" fill="none" stroke="#361938" stroke-width="2"></circle>
+    <circle cx="300" cy="200" r="60" fill="none" stroke="#164928" stroke-width="2"></circle>
+    <circle cx="380" cy="200" r="60" fill="none" stroke="#f00000" stroke-width="2"></circle>
+    <g transform="translate(700 210) rotate(-30)">
+        <rect x="0" y="0" width="400" height="200" rx="80"
+              fill="none" stroke="purple" stroke-width="10" />
+    </g>
+  </svg>
+  <script>
+    new Vivus('my-svg', { type: 'delayed', delay: 80 });
+  </script>
