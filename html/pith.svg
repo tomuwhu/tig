@@ -1,0 +1,53 @@
+<svg id="eTrflXFUwBR1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 640 480" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+<style><![CDATA[
+#eTrflXFUwBR3_to {
+    animation: eTrflXFUwBR3_to__to 3000ms linear 1 normal forwards
+}
+@keyframes eTrflXFUwBR3_to__to {
+    0% {offset-distance: 0%} 
+    100% {offset-distance: 100%}
+} 
+#eTrflXFUwBR3_tr {
+    animation: eTrflXFUwBR3_tr__tr 3000ms linear 1 normal forwards
+}
+@keyframes eTrflXFUwBR3_tr__tr {
+     0% {transform: rotate(0deg)} 
+     100% {transform: rotate(-89.368617deg)}
+} 
+#eTrflXFUwBR4_to {
+    animation: eTrflXFUwBR4_to__to 3000ms linear 1 normal forwards
+}
+@keyframes eTrflXFUwBR4_to__to { 
+    0% {transform: translate(262.078211px,181.112851px)} 
+    100% {transform: translate(261.813791px,247.615645px)}
+} 
+#eTrflXFUwBR5_to {
+    animation: eTrflXFUwBR5_to__to 3000ms linear 1 normal forwards
+}
+@keyframes eTrflXFUwBR5_to__to { 
+    0% {offset-distance: 0%} 
+    100% {offset-distance: 100%}
+} 
+#eTrflXFUwBR5_tr {
+    animation: eTrflXFUwBR5_tr__tr 3000ms linear 1 normal forwards
+}
+@keyframes eTrflXFUwBR5_tr__tr { 
+    0% {transform: rotate(270.108958deg)} 
+    83.333333% {transform: rotate(360.029255deg)} 
+    100% {transform: rotate(360.029255deg)}
+}]]>
+</style>
+<rect id="eTrflXFUwBR2" width="64" height="48" rx="0" ry="0" transform="matrix(2.849161 0 0 3.797477 228.826883 123.98433)" fill="rgb(110,219,237)" stroke="none" stroke-width="0"/>
+<g id="eTrflXFUwBR3_to" style="offset-path:path('M286.748601,272.286037C195.358456,325.177979,282.608414,277.355605,262.71453,248.652219');offset-rotate:0deg">
+<g id="eTrflXFUwBR3_tr" transform="rotate(0)">
+    <path id="eTrflXFUwBR3" d="M158.748603,133.917318L158.748603,200.420112L274.592179,199.705028L158.748603,133.917318Z" transform="translate(-216.670391,-167.168715)" fill="none" stroke="rgb(63,87,135)" stroke-width="1.28"/></g>
+</g>
+<g id="eTrflXFUwBR4_to" transform="translate(262.078211,181.112851)">
+    <path id="eTrflXFUwBR4" d="M158.748603,133.917318L158.748603,200.420112L274.592179,199.705028L158.748603,133.917318Z" transform="rotate(90.000001) translate(-216.670391,-167.168715)" fill="none" stroke="rgb(63,87,135)" stroke-width="1.28"/>
+</g>
+<g id="eTrflXFUwBR5_to" style="offset-path:path('M377.811702,247.552517C407.123776,224.12013,356.225699,186.301434,353.251395,155.063596');offset-rotate:0deg">
+<g id="eTrflXFUwBR5_tr" transform="rotate(270.108958)"><path id="eTrflXFUwBR5" d="M158.748603,133.917318L158.748603,200.420112L274.592179,199.705028L158.748603,133.917318Z" transform="translate(-216.916775,-165.086469)" fill="none" stroke="rgb(63,87,135)" stroke-width="1.28"/>
+</g>
+</g>
+<path id="eTrflXFUwBR6" d="M158.748603,133.917318L158.748603,200.420112L274.592179,199.705028L158.748603,133.917318Z" transform="matrix(-1 0 0 -1 569.921779 323.61119)" fill="none" stroke="rgb(63,87,135)" stroke-width="1.28"/>
+</svg>
