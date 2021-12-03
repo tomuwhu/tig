@@ -12,9 +12,9 @@ def f2(n): # fibonacci sorozat n. eleme
 t1 = time.time()
 print( f1(30) )
 t2 = time.time()
-print("Időigémy memorizálással: %", "{:.2f}".format((t2 - t1) * 10 ** 3) )
+print("Időigémy memorizálással: ", "{:.2f}".format((t2 - t1) * 10 ** 3), "ms" )
 
 t1 = time.time()
 print( f2(30) )
 t2 = time.time()
-print("Időigény memorizálás nélkül: %", "{:.2f}".format((t2 - t1) * 10 ** 3) )
+print("Időigény memorizálás nélkül: ", "{:.2f}".format((t2 - t1) * 10 ** 3), "ms" )
