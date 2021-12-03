@@ -26,7 +26,10 @@ function load() {
     xhttp.open("GET", "./"+file, true);
     xhttp.send();
     document.getElementById("linkk").innerHTML=`
-    <a class="imgbtn" href="https://runpython.org/?gui_edit=https://github.com/tomuwhu/tig/blob/main/${file}">Megnyitás a runpythonon</a>
+    <a 
+        class="imgbtn"
+        target="_blank"
+        href="https://runpython.org/?gui_edit=https://github.com/tomuwhu/tig/blob/main/${file}">Megnyitás a runpythonon</a>
     `
 }
 </script>
