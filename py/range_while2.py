@@ -7,5 +7,5 @@ print(
     f(10), *f(10)
 )
 print(
-    [i for i in f(3, 10, 2)]
+    [i for i in f(3, 10, 2)], 7 in f(3, 10, 2)
 )
