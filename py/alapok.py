@@ -9,12 +9,7 @@ print( # keresés
 print( [i for i in a if i % 2] )
 
 # ii
-print( 
-    *filter(
-        lambda x: x % 2,
-        a
-    )
-)
+print( *filter( lambda x: x % 2, a ) )
 
 print( # külső rendezés
     *sorted(a), " <---> ", *a
