@@ -4,5 +4,8 @@ def f(i, n=0, s=1):
         i+=s
         yield i-s
 print(
-    *f(3,10,2)
+    f(10), *f(10)
+)
+print(
+    [i for i in f(3,10,2)]
 )
