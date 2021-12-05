@@ -3,12 +3,19 @@ print( # keresés
     32 in a,
     31 in a
 )
-print( # szűrés (leválogatás)
+
+# szűrés (leválogatás)
+# i
+print( [i for i in a if i % 2] )
+
+# ii
+print( 
     *filter(
         lambda x: x % 2,
         a
     )
 )
+
 print( # külső rendezés
     *sorted(a), " <---> ", *a
 )
