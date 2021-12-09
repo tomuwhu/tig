@@ -1,11 +1,10 @@
-# 1. feladat
+"1. feladat"
 m = {}
 f = open("tavirathu13.txt","r").readlines()
 def elem(x):
-    y =  x.strip().split(sep = " ")
-    k, d = y[0], y[1:]
-    if k not in m: m[k] = []
-    m[k].append(d)
+    y = x.strip().split(sep = " ")
+    if y[0] not in m: m[y[0]] = []
+    m[y[0]].append(y[1:])
     return y
 l = list( map( elem, f ) )
 
