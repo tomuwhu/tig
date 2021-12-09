@@ -10,7 +10,7 @@ def elem(x):
 l = list( map( elem, f ) )
 
 print("2. feladat")
-i = m[input("Adja meg egy település kódját! Település:")][-1][0]
+i = m[input("Adja meg egy település kódját! Település: ")][-1][0]
 print( f'Az utolsó mérési adat a megadott településről {i[0:2]}:{i[2:4]}-kor érkezett.' )
 
 print("3. feladat")
