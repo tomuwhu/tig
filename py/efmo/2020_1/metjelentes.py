@@ -35,7 +35,7 @@ for v in m:
     hl = list( map( lambda x: int(x[2]), filter( lambda x: x[0][0:2] in ["01", "07", "13", "19"], m[v] ) ) )
     hi = list( map( lambda x: int(x[2]), m[v] ) )
     pi = max(hi) - min(hi)
-    if (set( map( lambda x: x[0][0:2], m[v])) & {"01","07","13","19"} == {"01","07","13","19"}):
+    if (set( map( lambda x: x[0][0:2], m[v])) & {"01", "07", "13", "19"} == {"01", "07", "13", "19"}):
         pk = 'Középhőmérséklet: '+str(int(sum(hl)/len(hl)))
     else:
         pk = "NA"
