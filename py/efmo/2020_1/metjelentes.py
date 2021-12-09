@@ -1,6 +1,6 @@
 "1. feladat"
 m = {}
-f = open("tavirathu13.txt","r").readlines()
+f = open("tavirathu13.txt").readlines()
 def elem(x):
     y = x.strip().split(sep = " ")
     if y[0] not in m: m[y[0]] = []
@@ -43,8 +43,11 @@ for v in m:
 
 print("6. feladat")
 for v in m:
-    f = open(v+".txt","w")
-    f.write(v+"\n")
-    for row in list(map( lambda x: f'{x[0][0:2]}:{x[0][2:4]} {int(x[1][-2:])*"#"}', m[v])):
-        f.write(row+"\n")
+    f = open(v + ".txt","w")
+    print(
+        v,
+        * list(map( lambda x: f'{x[0][0:2]}:{x[0][2:4]} {int(x[1][-2:])*"#"}', m[v])),
+        sep = "\n",
+        file = f
+    )
 print("A fájlok elkészültek.")
