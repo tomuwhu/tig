@@ -1,9 +1,10 @@
 def elem(x):
     y =  x.strip().split(sep = " ")
     k, d = y[0], y[1:]
-    if m.get(k,0) == 0: m[y[0]] = [d]
-    else: m[k].append(d)
+    if k not in m: m[k] = []
+    m[k].append(d)
     return y
+
 m = {}
 f = open("tavirathu13.txt","r").readlines()
 l = list( map( elem, f ) )
@@ -29,7 +30,6 @@ if len(sz):
         sep="\n" 
     )
 else: print("Nem volt szélcsend a mérések idején.")
-
 
 print("5. feladat")
 for v in m:
