@@ -5,6 +5,8 @@ print( f'A fájl adatainak száma: {len(t)}' )
 print("\n2. feladat")
 p = int(input("Adjon meg egy távolságértéket! "))-1
 print(f'Ezen a helyen a felszín {t[p]} méter mélyen van.')
+# ide gondolom azt kellett volna írni, hogy a gödör alja milyen mélyen van, 
+# de a pont csak akkor jár, ha a kiírás a minta szerinti (még akkor is ha a minta hibás !#?).
 
 print("\n3. feladat")
 k = '{:.2f}'.format(100*len(list(filter(lambda x: x==0, t)))/len(t))
@@ -34,9 +36,9 @@ else:
 
     st = "B"+s+"B"
     vl = list(filter(lambda x: len(x),st.split(chr(mm+65))))
-    if len(vl) > 2: #legmélyebb pontokon szétvágva több mint 2 részre esik
+    if len(vl) > 2:     #legmélyebb pontokon szétvágva több mint 2 részre esik
         print("Nem mélyül folyamatosan.")
-    elif len(vl) == 0: #legmélyebb pontokon szétvágva nem marad semmi (csupa 1-es van benne)
+    elif len(vl) == 0:  #legmélyebb pontokon szétvágva nem marad semmi (csupa 1-es van benne)
         print("Folyamatosan mélyül.")
     elif vl[0]=="".join(sorted(list(vl[0]))) and vl[1][::-1]=="".join(sorted(list(vl[1]))):
         print("Folyamatosan mélyül.") #pontosan 2 részre esik, és a részek rendezve ugyanazok
