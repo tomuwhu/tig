@@ -1,5 +1,5 @@
 print("\n1. feladat")
-t = list(map(lambda x: int(x.strip()), open("melyseg.txt").readlines()))
+t = list(map(lambda x: int(x.strip()), open("m2.txt").readlines()))
 print( f'A fájl adatainak száma: {len(t)}' )
 
 print("\n2. feladat")
@@ -31,10 +31,17 @@ else:
     print("b)")
     ml = list(map(lambda x: ord(x)-65, s))
     mm = max(ml)
-    if len(list(filter(lambda x: len(x),(chr(mm+65)+s+chr(mm+65)).split(chr(mm+65))))) > 2:
+
+    st = "B"+s+"B"
+    vl = list(filter(lambda x: len(x),st.split(chr(mm+65))))
+    if len(vl) > 2: #legmélyebb pontokon szétvágva több mint 2 részre esik
         print("Nem mélyül folyamatosan.")
-    else:
+    elif len(vl) < 2: #legmélyebb pontokon szétvágva kevesebb mint 2 részre esik
         print("Folyamatosan mélyül.")
+    elif vl[0]=="".join(sorted(list(vl[0]))) and vl[1][::-1]=="".join(sorted(list(vl[1]))):
+        print("Folyamatosan mélyül.") #pontosan 2 részre esik, de a 2 rész rendezve ugyanaz
+    else:
+        print("Nem mélyül folyamatosan.")
 
     print("c)")
     print(f'A legnagyobb bélysége {mm} méter.')
