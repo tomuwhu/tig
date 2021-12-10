@@ -1,5 +1,5 @@
 print("\n1. feladat")
-t = list(map(lambda x: int(x.strip()), open("m2.txt").readlines()))
+t = list(map(lambda x: int(x.strip()), open("melyseg.txt").readlines()))
 print( f'A fájl adatainak száma: {len(t)}' )
 
 print("\n2. feladat")
@@ -36,10 +36,10 @@ else:
     vl = list(filter(lambda x: len(x),st.split(chr(mm+65))))
     if len(vl) > 2: #legmélyebb pontokon szétvágva több mint 2 részre esik
         print("Nem mélyül folyamatosan.")
-    elif len(vl) < 2: #legmélyebb pontokon szétvágva kevesebb mint 2 részre esik
+    elif len(vl) == 0: #legmélyebb pontokon szétvágva nem marad semmi (csupa 1-es van benne)
         print("Folyamatosan mélyül.")
     elif vl[0]=="".join(sorted(list(vl[0]))) and vl[1][::-1]=="".join(sorted(list(vl[1]))):
-        print("Folyamatosan mélyül.") #pontosan 2 részre esik, de a 2 rész rendezve ugyanaz
+        print("Folyamatosan mélyül.") #pontosan 2 részre esik, de a részek rendezve ugyanazok
     else:
         print("Nem mélyül folyamatosan.")
 
