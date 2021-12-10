@@ -39,7 +39,7 @@ else:
     elif len(vl) == 0: #legmélyebb pontokon szétvágva nem marad semmi (csupa 1-es van benne)
         print("Folyamatosan mélyül.")
     elif vl[0]=="".join(sorted(list(vl[0]))) and vl[1][::-1]=="".join(sorted(list(vl[1]))):
-        print("Folyamatosan mélyül.") #pontosan 2 részre esik, de a részek rendezve ugyanazok
+        print("Folyamatosan mélyül.") #pontosan 2 részre esik, és a részek rendezve ugyanazok
     else:
         print("Nem mélyül folyamatosan.")
 
