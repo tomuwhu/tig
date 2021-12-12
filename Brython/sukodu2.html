@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+    <script type="text/python">
+        from browser import document, html
+        from browser import ajax
+        m = []
+        def f(e):
+                x = e.target.cellIndex
+                y = e.target.parentNode.rowIndex
+                gn = []
+                for s in range(1,10):
+                    if m[y][x]:
+                        "print('A helyet már kitöltötték.')"
+                    elif s in xg(x):
+                        "print(f'{s}: Az adott oszlopban már szerepel a szám.')"
+                    elif s in yg(y):
+                        "print(f'{s}: Az adott sorban már szerepel a szám.')"
+                    elif s in rg(rt(x, y)):
+                        "print(f'{s}: A résztáblában már szerepel a szám.')"
+                    else:
+                        gn.append(s)
+                if len(gn)==1:
+                    e.target <= gn[0]
+                    m[y][x] = gn[0]
+                    e.target.style = {
+                        "background-color" : "rgb(153, 216, 217)",
+                        "color" : "rgb(37, 84, 87)",
+                        "cursor" : "default"
+                    }
+        def rt(x,y): return x//3+(y//3)*3+1
+        def rg(r):
+            yield from map(lambda x: x[1], list(filter(lambda x: x[0]==r, [(rt(i,j), m[j][i]) for j in range(9) for i in range(9)])))
+        def xg(p):
+            yield from map(lambda x: x[2], filter(lambda x: x[0]==p, [(i, j, m[j][i]) for j in range(9) for i in range(9)]))
+        def yg(p):
+            yield from map(lambda x: x[2], filter(lambda x: x[1]==p, [(i, j, m[j][i]) for j in range(9) for i in range(9)]))
+        def x(req):
+            global m
+            global content
+            content.innerHTML=""
+            m = list(map(lambda x: list(map( lambda x: int(x), filter( lambda x: x !=" ", list(x)))), req.text.split("\r\n")[:9]))
+            table = html.TABLE()
+            for row in enumerate(m):
+                tr = html.TR()
+                for cell in enumerate(row[1]):
+                    if cell[1]:
+                        tr <= html.TD(cell[1], Class=f'x{rt(row[0],cell[0])%2}')
+                    else:
+                        tr <= html.TD(" ", Class="u").bind("click",f)
+                table <= tr
+                content <= table
+        def load1(e):
+            ajax.get( "sukodu/konnyu.txt", encoding="utf-8", oncomplete = x )
+        def load2(e):
+            ajax.get( "sukodu/kozepes.txt", encoding="utf-8", oncomplete = x )
+        def load3(e):
+            ajax.get( "sukodu/nehez.txt", encoding="utf-8", oncomplete = x )
+        document <= html.H1("Sudoku kitöltő")
+        document <= html.HR()
+        content = html.DIV()
+        menu = html.DIV(Class="mc")
+        menu <= html.SPAN("Könnyű", Class="x").bind("click",load1)
+        menu <= html.SPAN("Közepes", Class="x").bind("click",load2)
+        menu <= html.SPAN("Nehéz", Class="x").bind("click",load3)
+        document <= menu 
+        document <= html.HR()
+        document <= content
+    </script>
+    <style>
+        div.mc {
+            text-align: center;
+        }
+        span.x {
+            cursor: pointer;
+            margin: 5px;
+            padding: 4px;
+            text-decoration: underline;
+        }
+        h1 {
+            text-align: center;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-shadow: 1px 1px 3px rgb(43, 65, 62);
+            color: rgb(27, 56, 50);
+        }
+        table {
+            margin: 0 auto;
+            text-align: center;
+            border-spacing: 6px;
+            user-select: none;
+        }
+        td {
+            width: 39px;
+            height: 39px;
+            border-radius: 5px;
+            box-shadow: 1px 1px 3px black;
+            text-align: center;
+            color: rgb(27, 56, 50);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-shadow: 1px 1px 3px rgb(43, 65, 62);
+        }
+        td.x1 {
+            background-color: rgb(174, 199, 199);
+        }
+        td.x0 {
+            background-color: rgb(124, 145, 145);
+        }
+        td.u {
+            cursor: pointer;
+            background-color: rgb(240, 222, 198);
+        }
+    </style>
+</head>
+<body onload="brython()"></body>
