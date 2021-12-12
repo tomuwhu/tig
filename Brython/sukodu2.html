@@ -41,10 +41,16 @@
                 if len(gn)==1:
                     e.target <= gn[0]
                     m[y][x] = gn[0]
-                    e.target.style = {
-                        "background-color" : "rgb(153, 216, 217)",
-                        "color" : "rgb(37, 84, 87)",
-                    }
+                    if rt(x,y)%2:
+                        e.target.style = {
+                            "background-color" : "rgb(194, 199, 199)",
+                            "color" : "rgb(137, 84, 87)",
+                        }
+                    else:
+                        e.target.style = {
+                            "background-color" : "rgb(144, 145, 145)",
+                            "color" : "rgb(137, 84, 87)",
+                        }
                     e.target.bind("click",torol)
                 else:
                     if mh: sp <= html.SPAN("Beír: ")
