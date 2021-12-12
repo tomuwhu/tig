@@ -6,8 +6,21 @@
     <script type="text/python">
         from browser import document, html
         from browser import ajax
-        m = []
+        m, x, y = [], 0, 0
+        def torol(e):
+            sp.innerHTML=""
+            x = e.target.cellIndex
+            y = e.target.parentNode.rowIndex
+            e.target.innerHTML=" "
+            e.target.style = {
+                "background-color" : "rgb(240, 222, 198)",
+                "color" : "rgb(37, 84, 87)",
+            }
+            e.target.bind("click",f)
+            m[y][x] = 0
         def f(e):
+                mh = 1
+                sp.innerHTML=""
                 x = e.target.cellIndex
                 y = e.target.parentNode.rowIndex
                 gn = []
@@ -22,14 +35,32 @@
                         "print(f'{s}: A résztáblában már szerepel a szám.')"
                     else:
                         gn.append(s)
+                if len(gn)==0:
+                    mh = 0
+                    sp <= html.SPAN("Már megoldhatatlan", Class="y2")
                 if len(gn)==1:
                     e.target <= gn[0]
                     m[y][x] = gn[0]
                     e.target.style = {
                         "background-color" : "rgb(153, 216, 217)",
                         "color" : "rgb(37, 84, 87)",
-                        "cursor" : "default"
                     }
+                    e.target.bind("click",torol)
+                else:
+                    if mh: sp <= html.SPAN("Beír: ")
+                    for i in gn:
+                        sp <= html.SPAN(i, Id=f'{x}-{y}', Class="y").bind("click",beir)
+        def beir(e):
+            n = int(e.target.innerHTML)
+            p = e.target.id.split("-")
+            m[int(p[1])][int(p[0])] = n
+            document["x"+e.target.id].innerHTML=n
+            document["x"+e.target.id].bind("click",torol)
+            document["x"+e.target.id].style = {
+                "background-color" : "rgb(153, 216, 217)",
+                "color" : "rgb(37, 84, 87)",
+            }
+            sp.innerHTML=""
         def rt(x,y): return x//3+(y//3)*3+1
         def rg(r):
             yield from map(lambda x: x[1], list(filter(lambda x: x[0]==r, [(rt(i,j), m[j][i]) for j in range(9) for i in range(9)])))
@@ -38,6 +69,7 @@
         def yg(p):
             yield from map(lambda x: x[2], filter(lambda x: x[1]==p, [(i, j, m[j][i]) for j in range(9) for i in range(9)]))
         def x(req):
+            sp.innerHTML=""
             global m
             global content
             content.innerHTML=""
@@ -49,7 +81,7 @@
                     if cell[1]:
                         tr <= html.TD(cell[1], Class=f'x{rt(row[0],cell[0])%2}')
                     else:
-                        tr <= html.TD(" ", Class="u").bind("click",f)
+                        tr <= html.TD(" ", Class="u", Id=f'x{cell[0]}-{row[0]}').bind("click",f)
                 table <= tr
                 content <= table
         def load1(e):
@@ -68,8 +100,30 @@
         document <= menu 
         document <= html.HR()
         document <= content
+        document <= html.HR()
+        sp = html.SPAN()
+        spc = html.DIV(Class="mc")
+        spc <= sp
+        document <= spc
     </script>
     <style>
+        .mc span span.y {
+            margin: 5px;
+            padding: 7px;
+            cursor: pointer;
+            background-color: aqua;
+            box-shadow: inset 1px 1px 3px gray;
+            border-radius: 4px;
+            color: rgb(46, 35, 21);
+        }
+        span.y2 {
+            margin: 5px;
+            padding: 7px;
+            background-color: rgb(226, 170, 179);
+            box-shadow: inset 1px 1px 3px gray;
+            border-radius: 4px;
+            color: rgb(46, 35, 21);
+        }
         div.mc {
             text-align: center;
         }
