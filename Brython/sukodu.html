@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+    <script type="text/python">
+        from browser import document, html
+        from browser import ajax
+        def rt(x,y): return x//3+(y//3)*3+1
+        def x(req):
+            m = map(lambda x: list(map( lambda x: int(x), filter( lambda x: x !=" ", list(x)))), req.text.split("\r\n")[:9])
+            table = html.TABLE()
+            for row in enumerate(m):
+                tr = html.TR()
+                for cell in enumerate(row[1]):
+                    if cell[1]:
+                        tr <= html.TD(cell[1], Class=f'x{rt(row[0],cell[0])%2}')
+                    else:
+                        tr <= html.TD(" ", Class="u")
+                table <= tr
+            document <= table
+        ajax.get( "sukodu/konnyu.txt", encoding="utf-8", oncomplete = x )
+    </script>
+    <style>
+        table {
+            border-spacing: 6px;
+        }
+        td {
+            width: 39px;
+            height: 39px;
+            border-radius: 5px;
+            box-shadow: 1px 1px 3px black;
+            text-align: center;
+            color: rgb(27, 56, 50);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-shadow: 1px 1px 3px rgb(43, 65, 62);
+        }
+        td.x1 {
+            background-color: rgb(174, 199, 199);
+        }
+        td.x0 {
+            background-color: rgb(124, 145, 145);
+        }
+    </style>
+</head>
+<body onload="brython()"></body>
