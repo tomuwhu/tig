@@ -75,19 +75,16 @@
         def yg(p):
             yield from map(lambda x: x[2], filter(lambda x: x[1]==p, [(i, j, m[j][i]) for j in range(9) for i in range(9)]))
         def x(req):
-            sp.innerHTML=""
             global m
             global content
-            content.innerHTML=""
+            sp.innerHTML, content.innerHTML = "", ""
             m = list(map(lambda x: list(map( lambda x: int(x), filter( lambda x: x !=" ", list(x)))), req.text.split("\r\n")[:9]))
             table = html.TABLE()
             for row in enumerate(m):
                 tr = html.TR()
                 for cell in enumerate(row[1]):
-                    if cell[1]:
-                        tr <= html.TD(cell[1], Class=f'x{rt(row[0],cell[0])%2}')
-                    else:
-                        tr <= html.TD(" ", Class="u", Id=f'x{cell[0]}-{row[0]}').bind("click",f)
+                    if cell[1]: tr <= html.TD(cell[1], Class=f'x{rt(row[0],cell[0])%2}')
+                    else:       tr <= html.TD(" ", Class="u", Id=f'x{cell[0]}-{row[0]}').bind("click",f)
                 table <= tr
                 content <= table
         def load(e):
