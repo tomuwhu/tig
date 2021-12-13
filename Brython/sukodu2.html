@@ -8,22 +8,17 @@
         from browser import ajax
         m, x, y = [], 0, 0
         def torol(e):
-            sp.innerHTML=""
-            x = e.target.cellIndex
-            y = e.target.parentNode.rowIndex
+            x, y = e.target.cellIndex, e.target.parentNode.rowIndex
+            sp.innerHTML, m[y][x] = "", 0
             e.target.innerHTML=" "
             e.target.style = {
                 "background-color" : "rgb(240, 222, 198)",
                 "color" : "rgb(37, 84, 87)",
             }
             e.target.bind("click",f)
-            m[y][x] = 0
         def f(e):
-                mh = 1
-                sp.innerHTML=""
-                x = e.target.cellIndex
-                y = e.target.parentNode.rowIndex
-                gn = []
+                mh, sp.innerHTML = 1, ""
+                x, y, gn = e.target.cellIndex, e.target.parentNode.rowIndex, []
                 for s in range(1,10):
                     if m[y][x]:
                         "print('A helyet már kitöltötték.')"
@@ -43,13 +38,13 @@
                     m[y][x] = gn[0]
                     if rt(x,y)%2:
                         e.target.style = {
-                            "background-color" : "rgb(194, 199, 199)",
-                            "color" : "rgb(137, 84, 87)",
+                            "background-color" : "rgb(174, 199, 199)",
+                            "color" : "rgb(137, 14, 47)",
                         }
                     else:
                         e.target.style = {
-                            "background-color" : "rgb(144, 145, 145)",
-                            "color" : "rgb(137, 84, 87)",
+                            "background-color" : "rgb(124, 145, 145)",
+                            "color" : "rgb(137, 14, 47)",
                         }
                     e.target.bind("click",torol)
                 else:
@@ -57,19 +52,18 @@
                     for i in gn:
                         sp <= html.SPAN(i, Id=f'{x}-{y}', Class="y").bind("click",beir)
         def beir(e):
-            n = int(e.target.innerHTML)
-            p = e.target.id.split("-")
+            n, p = int(e.target.innerHTML), e.target.id.split("-")
             m[int(p[1])][int(p[0])] = n
-            document["x"+e.target.id].innerHTML=n
+            document["x"+e.target.id].innerHTML = n
             document["x"+e.target.id].bind("click",torol)
             if rt(int(p[0]),int(p[1]))%2:
                 document["x"+e.target.id].style = {
-                    "background-color" : "rgb(194, 199, 199)",
+                    "background-color" : "rgb(174, 199, 199)",
                     "color" : "rgb(137, 84, 87)",
                 }
             else:
                 document["x"+e.target.id].style = {
-                    "background-color" : "rgb(144, 145, 145)",
+                    "background-color" : "rgb(124, 145, 145)",
                     "color" : "rgb(137, 84, 87)",
                 }
             sp.innerHTML=""
@@ -96,19 +90,14 @@
                         tr <= html.TD(" ", Class="u", Id=f'x{cell[0]}-{row[0]}').bind("click",f)
                 table <= tr
                 content <= table
-        def load1(e):
-            ajax.get( "sukodu/konnyu.txt", encoding="utf-8", oncomplete = x )
-        def load2(e):
-            ajax.get( "sukodu/kozepes.txt", encoding="utf-8", oncomplete = x )
-        def load3(e):
-            ajax.get( "sukodu/nehez.txt", encoding="utf-8", oncomplete = x )
+        def load(e):
+            ajax.get( f'sukodu/{e.target.id}.txt', encoding="utf-8", oncomplete = x )
         document <= html.H1("Sudoku kitöltő")
         document <= html.HR()
         content = html.DIV()
         menu = html.DIV(Class="mc")
-        menu <= html.SPAN("Könnyű", Class="x").bind("click",load1)
-        menu <= html.SPAN("Közepes", Class="x").bind("click",load2)
-        menu <= html.SPAN("Nehéz", Class="x").bind("click",load3)
+        for i in [('konnyu',"Könnyű"),('kozepes',"Közepes"),('nehez',"Nehéz Ⅰ."),('nehez2',"Nehéz Ⅱ.")]:
+            menu <= html.SPAN(i[1], Class="x", Id=i[0]).bind("click",load)
         document <= menu 
         document <= html.HR()
         document <= content
@@ -119,6 +108,9 @@
         document <= spc
     </script>
     <style>
+        body {
+            background-color: rgb(219, 221, 198);
+        }
         .mc span span.y {
             margin: 5px;
             padding: 7px;
@@ -143,7 +135,12 @@
             cursor: pointer;
             margin: 5px;
             padding: 4px;
-            text-decoration: underline;
+            margin: 5px;
+            padding: 7px;
+            background-color: rgb(226, 170, 179);
+            box-shadow: inset 1px 1px 3px gray;
+            border-radius: 4px;
+            color: rgb(46, 35, 21);
         }
         h1 {
             text-align: center;
@@ -161,7 +158,7 @@
             width: 39px;
             height: 39px;
             border-radius: 5px;
-            box-shadow: 1px 1px 3px black;
+            box-shadow: 1px 1px 2px rgb(31, 29, 29);
             text-align: center;
             color: rgb(27, 56, 50);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -176,6 +173,9 @@
         td.u {
             cursor: pointer;
             background-color: rgb(240, 222, 198);
+        }
+        td.u:hover {
+            background-color: rgb(204, 153, 140);
         }
     </style>
 </head>
