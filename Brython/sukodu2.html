@@ -48,7 +48,7 @@
                         }
                     e.target.bind("click",torol)
                 else:
-                    if mh: sp <= html.SPAN("Beír: ")
+                    if mh: sp <= html.SPAN("Lehetőségek: ")
                     for i in gn:
                         sp <= html.SPAN(i, Id=f'{x}-{y}', Class="y").bind("click",beir)
         def beir(e):
@@ -103,10 +103,18 @@
         spc = html.DIV(Class="mc")
         spc <= sp
         document <= spc
+        document <= html.HR()
+        document <= html.A("Forrás: Informatika érettségi 2021 tavasz, 4. feladat", href="../py/efmo/2021_2/e_inf_21okt_fl.pdf")
     </script>
     <style>
         body {
             background-color: rgb(219, 221, 198);
+            text-align: center;
+        }
+        .mc {
+            height: 20px;
+            padding: 10px;
+            background-color: antiquewhite;
         }
         .mc span span.y {
             margin: 5px;
@@ -115,7 +123,8 @@
             background-color: aqua;
             box-shadow: inset 1px 1px 3px gray;
             border-radius: 4px;
-            color: rgb(46, 35, 21);
+            color: rgb(45, 89, 109);
+            text-shadow: 1px 1px 2px rgb(43, 20, 20);
         }
         .mc span span.y:hover {
             background-color: rgb(192, 248, 248);
