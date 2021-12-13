@@ -7,3 +7,6 @@ def heapsort(iterable):
 print(
     heapsort([1, 3, 5, 7, 9, 2, 4, 6, 8, 0])
 )
+print(
+    sorted([1, 3, 5, 7, 9, 2, 4, 6, 8, 0])
+)
