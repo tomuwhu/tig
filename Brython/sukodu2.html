@@ -15,7 +15,7 @@
                 "background-color" : "rgb(240, 222, 198)",
                 "color" : "rgb(37, 84, 87)",
             }
-            e.target.bind("click",f)
+            e.target.bind("click", f)
         def f(e):
                 mh, sp.innerHTML = 1, ""
                 x, y, gn = e.target.cellIndex, e.target.parentNode.rowIndex, []
@@ -36,7 +36,7 @@
                 if len(gn)==1:
                     e.target <= gn[0]
                     m[y][x] = gn[0]
-                    if rt(x,y)%2:
+                    if rt(x, y) % 2:
                         e.target.style = {
                             "background-color" : "rgb(174, 199, 199)",
                             "color" : "rgb(137, 14, 47)",
@@ -46,34 +46,34 @@
                             "background-color" : "rgb(124, 145, 145)",
                             "color" : "rgb(137, 14, 47)",
                         }
-                    e.target.bind("click",torol)
+                    e.target.bind("click", torol)
                 else:
                     if mh: sp <= html.SPAN("Lehetőségek: ")
                     for i in gn:
-                        sp <= html.SPAN(i, Id=f'{x}-{y}', Class="y").bind("click",beir)
+                        sp <= html.SPAN(i, Id=f'{x}-{y}', Class="y").bind("click", beir)
         def beir(e):
             n, p = int(e.target.innerHTML), e.target.id.split("-")
             m[int(p[1])][int(p[0])] = n
-            document["x"+e.target.id].innerHTML = n
-            document["x"+e.target.id].bind("click",torol)
-            if rt(int(p[0]),int(p[1]))%2:
-                document["x"+e.target.id].style = {
+            document["x" + e.target.id].innerHTML = n
+            document["x" + e.target.id].bind("click", torol)
+            if rt(int(p[0]), int(p[1])) % 2:
+                document["x" + e.target.id].style = {
                     "background-color" : "rgb(174, 199, 199)",
                     "color" : "rgb(137, 84, 87)",
                 }
             else:
-                document["x"+e.target.id].style = {
+                document["x" + e.target.id].style = {
                     "background-color" : "rgb(124, 145, 145)",
                     "color" : "rgb(137, 84, 87)",
                 }
-            sp.innerHTML=""
-        def rt(x,y): return x//3+(y//3)*3+1
+            sp.innerHTML = ""
+        def rt(x,y): return x // 3 + (y // 3) * 3 + 1
         def rg(r):
-            yield from map(lambda x: x[1], list(filter(lambda x: x[0]==r, [(rt(i,j), m[j][i]) for j in range(9) for i in range(9)])))
+            yield from map(lambda x: x[1], list(filter(lambda x: x[0] == r, [(rt(i, j), m[j][i]) for j in range(9) for i in range(9)])))
         def xg(p):
-            yield from map(lambda x: x[2], filter(lambda x: x[0]==p, [(i, j, m[j][i]) for j in range(9) for i in range(9)]))
+            yield from map(lambda x: x[2], filter(lambda x: x[0] == p, [(i, j, m[j][i]) for j in range(9) for i in range(9)]))
         def yg(p):
-            yield from map(lambda x: x[2], filter(lambda x: x[1]==p, [(i, j, m[j][i]) for j in range(9) for i in range(9)]))
+            yield from map(lambda x: x[2], filter(lambda x: x[1] == p, [(i, j, m[j][i]) for j in range(9) for i in range(9)]))
         def loaded(req):
             global m
             global content
@@ -83,28 +83,28 @@
             for row in enumerate(m):
                 tr = html.TR()
                 for cell in enumerate(row[1]):
-                    if cell[1]: tr <= html.TD(cell[1], Class=f'x{rt(row[0],cell[0])%2}')
-                    else:       tr <= html.TD(" ", Class="u", Id=f'x{cell[0]}-{row[0]}').bind("click",f)
+                    if cell[1]: tr <= html.TD(cell[1], Class = f'x{rt(row[0],cell[0])%2}')
+                    else:       tr <= html.TD(" ", Class="u", Id = f'x{cell[0]}-{row[0]}').bind("click", f)
                 table <= tr
                 content <= table
         def load(e):
-            ajax.get( f'sukodu/{e.target.id}.txt', encoding="utf-8", oncomplete = loaded )
+            ajax.get( f'sukodu/{e.target.id}.txt', encoding = "utf-8", oncomplete = loaded )
         document <= html.H1("Sudoku kitöltő")
         document <= html.HR()
         content = html.DIV()
-        menu = html.DIV(Class="mc")
-        for i in [('konnyu',"Könnyű","d"),('kozepes',"Közepes","d"),('nehez',"Nehéz Ⅰ.",""),('nehez2',"Nehéz Ⅱ.","d"),('ures',"Üres","")]:
-            menu <= html.SPAN(i[1], Class=f'x {i[2]}', Id=i[0]).bind("click",load)
+        menu = html.DIV(Class = "mc")
+        for i in [('konnyu', "Könnyű", "d"),('kozepes', "Közepes", "d"),('nehez', "Nehéz Ⅰ.", ""),('nehez2', "Nehéz Ⅱ.", "d"),('ures', "Üres", "")]:
+            menu <= html.SPAN(i[1], Class = f'x {i[2]}', Id = i[0]).bind("click", load)
         document <= menu
         document <= html.HR()
         document <= content
         document <= html.HR()
         sp = html.SPAN()
-        spc = html.DIV(Class="mc")
+        spc = html.DIV(Class = "mc")
         spc <= sp
         document <= spc
         document <= html.HR()
-        document <= html.A("Forrás: Informatika érettségi 2021 tavasz, 4. feladat", href="../py/efmo/2021_2/e_inf_21okt_fl.pdf")
+        document <= html.A("Forrás: Informatika érettségi 2021 tavasz, 4. feladat", href = "../py/efmo/2021_2/e_inf_21okt_fl.pdf")
     </script>
     <style>
         body {
