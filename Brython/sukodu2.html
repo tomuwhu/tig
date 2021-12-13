@@ -95,7 +95,7 @@
         menu = html.DIV(Class="mc")
         for i in [('konnyu',"Könnyű","d"),('kozepes',"Közepes","d"),('nehez',"Nehéz Ⅰ.",""),('nehez2',"Nehéz Ⅱ.","d"),('ures',"Üres","")]:
             menu <= html.SPAN(i[1], Class=f'x {i[2]}', Id=i[0]).bind("click",load)
-        document <= menu 
+        document <= menu
         document <= html.HR()
         document <= content
         document <= html.HR()
@@ -108,6 +108,7 @@
     </script>
     <style>
         body {
+            user-select: none;
             background-color: rgb(219, 221, 198);
             text-align: center;
         }
