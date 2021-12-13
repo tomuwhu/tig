@@ -74,7 +74,7 @@
             yield from map(lambda x: x[2], filter(lambda x: x[0]==p, [(i, j, m[j][i]) for j in range(9) for i in range(9)]))
         def yg(p):
             yield from map(lambda x: x[2], filter(lambda x: x[1]==p, [(i, j, m[j][i]) for j in range(9) for i in range(9)]))
-        def x(req):
+        def loaded(req):
             global m
             global content
             sp.innerHTML, content.innerHTML = "", ""
@@ -88,12 +88,12 @@
                 table <= tr
                 content <= table
         def load(e):
-            ajax.get( f'sukodu/{e.target.id}.txt', encoding="utf-8", oncomplete = x )
+            ajax.get( f'sukodu/{e.target.id}.txt', encoding="utf-8", oncomplete = loaded )
         document <= html.H1("Sudoku kitöltő")
         document <= html.HR()
         content = html.DIV()
         menu = html.DIV(Class="mc")
-        for i in [('konnyu',"Könnyű"),('kozepes',"Közepes"),('nehez',"Nehéz Ⅰ."),('nehez2',"Nehéz Ⅱ.")]:
+        for i in [('konnyu',"Könnyű"),('kozepes',"Közepes"),('nehez',"Nehéz Ⅰ."),('nehez2',"Nehéz Ⅱ."),('ures',"Üres")]:
             menu <= html.SPAN(i[1], Class="x", Id=i[0]).bind("click",load)
         document <= menu 
         document <= html.HR()
