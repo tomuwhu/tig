@@ -93,8 +93,8 @@
         document <= html.HR()
         content = html.DIV()
         menu = html.DIV(Class="mc")
-        for i in [('konnyu',"Könnyű"),('kozepes',"Közepes"),('nehez',"Nehéz Ⅰ."),('nehez2',"Nehéz Ⅱ."),('ures',"Üres")]:
-            menu <= html.SPAN(i[1], Class="x", Id=i[0]).bind("click",load)
+        for i in [('konnyu',"Könnyű","d"),('kozepes',"Közepes","d"),('nehez',"Nehéz Ⅰ.",""),('nehez2',"Nehéz Ⅱ.","d"),('ures',"Üres","")]:
+            menu <= html.SPAN(i[1], Class=f'x {i[2]}', Id=i[0]).bind("click",load)
         document <= menu 
         document <= html.HR()
         document <= content
@@ -152,6 +152,9 @@
             box-shadow: inset 1px 1px 3px gray;
             border-radius: 4px;
             color: rgb(46, 35, 21);
+        }
+        span.d {
+            background-color: rgb(225, 226, 170);
         }
         h1 {
             text-align: center;
