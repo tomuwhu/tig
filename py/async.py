@@ -6,7 +6,7 @@ async def gen(s):
         yield s[:i]
 
 async def main():
-    async for i in gen('géza kék az ég'):
+    async for i in gen('géza_kék_az_ég'):
         print(i)
 
 asyncio.run(main())
