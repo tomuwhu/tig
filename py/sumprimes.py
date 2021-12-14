@@ -10,4 +10,4 @@ for i in range(2, int(sqrt(n)) + 1):
     if lst[i]:
         for j in range(i * i, n, i):
             lst[j] = 0
-print( sum([ i for i in range(2, n) if lst[i] and i in tosum ]) )
+print( sum([i for i in tosum if lst[i]]) )
