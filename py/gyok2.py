@@ -4,4 +4,4 @@ def f(x,p):
     while abs(x-y) > 10 ** -p:
         y, x = x, Fraction(x + Fraction(s, x), 2) #Babylonian method
         yield x.numerator, x.denominator, x.numerator/x.denominator
-print(*f(2,20), sep = "\n")
+print(*f(2,10), sep = "\n")
