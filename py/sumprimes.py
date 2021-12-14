@@ -1,6 +1,6 @@
 # feladat
 # adott egy lista (tosum) pl:
-tosum = [1,2,3,4,5,6,7,8,9,20,21,23]
+tosum = [1,2,3,4,5,6,7,8,9,21,21,23,42]
 # írjunk programot, mely kiírja a listában szereplő prímszámok összegét
 
 from math import sqrt
@@ -10,4 +10,5 @@ for i in range(2, int(sqrt(n)) + 1):
     if lst[i]:
         for j in range(i * i, n, i):
             lst[j] = 0
+lst[1]=0
 print( sum([i for i in tosum if lst[i]]) )
