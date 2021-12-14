@@ -1,9 +1,7 @@
 def f(x):
-    s = x
-    for _ in range(20):
+    s, y = x, 0
+    while abs(x-y) > 10 ** -9:
+        y = x
         x = (x + s / x) / 2 #Babylonian method
     return x
-a = 2
-print(
-    f(a)
-)
+print(f(2))
