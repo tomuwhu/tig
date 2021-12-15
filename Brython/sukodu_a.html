@@ -5,19 +5,8 @@
     <script type="text/python">
         from browser import document, html
         from browser import ajax
-        def rt(x,y): return x//3+(y//3)*3+1
         def x(req):
-            m = map(lambda x: list(map( lambda x: int(x), filter( lambda x: x !=" ", list(x)))), req.text.split("\r\n")[:9])
-            table = html.TABLE()
-            for row in enumerate(m):
-                tr = html.TR()
-                for cell in enumerate(row[1]):
-                    if cell[1]:
-                        tr <= html.TD(cell[1], Class=f'x{rt(row[0],cell[0])%2}')
-                    else:
-                        tr <= html.TD(" ", Class="u")
-                table <= tr
-            document <= table
+            document <= html.TABLE([html.TR( html.TD(j, Class=f'x{j}') for j in i if j!=" " ) for i in req.text.split("\r\n") ])
         ajax.get( "sukodu/konnyu.txt", oncomplete = x )
     </script>
     <style>
@@ -34,15 +23,10 @@
             color: rgb(27, 56, 50);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-shadow: 1px 1px 3px rgb(43, 65, 62);
-        }
-        td.x1 {
-            background-color: rgb(174, 199, 199);
+            background-color: rgb(141, 167, 167);
         }
         td.x0 {
-            background-color: rgb(124, 145, 145);
-        }
-        td.u {
-            background-color: rgb(240, 222, 198);
+            background-color: rgb(222, 236, 236);
         }
     </style>
 </head>

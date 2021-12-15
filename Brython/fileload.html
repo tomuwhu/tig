@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython_stdlib.js"></script>
+    <script type="text/python">
+        from browser import document, html, ajax
+        def x(x):
+            document <= html.TABLE([html.TR( html.TD(j) for j in i ) for i in x.text.split("\r\n") ])
+        ajax.get( "sukodu/konnyu.txt", oncomplete = x )
+    </script>
+</head>
+<body onload="brython()"></body>
