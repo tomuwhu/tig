@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+<script type="text/python">
+    from browser import document, html
+    from random import shuffle
+    def f(e):
+        li = [ *range( 1, 90 ) ]
+        shuffle( li )
+        lo = li[ :5 ]
+        lo.sort(    )
+        s = html.TR()
+        for la in lo:
+            s <= html.TD(la) 
+        tx <= s
+    hd = html.TD("Start", colspan=5, Class="g").bind("click", f)
+    tx = html.TABLE(html.TR( hd ))
+    tx <= hd
+    document <= tx
+</script>
+<body onload="brython()"></body>
+<style>
+    td {
+        user-select: none;
+        margin: 3px;
+        padding: 5px;
+        width: 10px;
+        border-radius: 4px;
+        box-shadow: 1px  2px 2px black;
+        text-align: center;
+        background-color: aquamarine;
+    }
+    td.g {
+        cursor: pointer;
+        background-color: bisque;
+    }
+</style>
