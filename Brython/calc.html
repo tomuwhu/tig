@@ -6,7 +6,7 @@
         from browser import document, html
         calc = html.TABLE()
         calc <= html.TR(html.TH(html.DIV("0", id="result"), colspan=10) + html.TD("C"))
-        lines = ["()[]abcdefg", "789/hijklmn", "456*%opqrst", '123-":uvxyz', "0.,+'{}<>=!"]
+        lines = ["()[]abcdefg", "789/hijklmn", "456*%opqrst", '123-":uvxyz', "0.,+'{}<>=⧴"]
         calc <= [html.TR(html.TD(x) for x in line) for line in lines]
         document <= html.H1("Brython számológép")
         document <= calc
@@ -14,21 +14,21 @@
         def action(event):
             element = event.target
             value = element.text
-            if value not in "!C":
+            if value not in "⧴C":
                 if result.text in ["0", "error"]:
                     result.text = value
                 else:
                     result.text = result.text + value
             elif value == "C":
                 result.text = "0"
-            elif value == "!":
+            elif value == "⧴":
                 try:
                     result.text = eval(result.text)
                 except:
                     result.text = "error"
         for b in document.select("td"):
             b.bind("click", action)
-            if b.innerHTML=="!":
+            if b.innerHTML=="⧴":
                 b.style = {
                     "background-color" : "#abfdef",
                     "font-weight" : "bolder"
@@ -65,9 +65,13 @@
         width: 39px;
         height: 39px;
         border-radius: 5px;
-        box-shadow: 1px 1px 2px rgb(31, 29, 29);
+        box-shadow: 1px 1px 3px rgb(31, 29, 29);
         text-align: center;
-        background-color: azure;
+        background-color: rgb(212, 228, 228);
+    }
+    td:active {
+        box-shadow: 1px 1px 1px rgb(31, 29, 29);
+        background-color: rgb(164, 180, 180);
     }
     th {
         box-shadow: inset 1px 1px 2px rgb(31, 29, 29);
