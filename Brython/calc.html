@@ -5,7 +5,7 @@
     <script type="text/python">
         from browser import document, html
         calc = html.TABLE()
-        calc <= html.TR(html.TH(html.DIV("0", id="result"), colspan=10) + html.TD("C"))
+        calc <= html.TR(html.TH(html.DIV("0", id="result"), colspan=9) + html.TD("⇦") + html.TD("C") )
         lines = ["()[]abcdefg", "789/hijklmn", "456*%opqrst", '123-":uvxyz', "0.,+'{}<>=⧴"]
         calc <= [html.TR(html.TD(x) for x in line) for line in lines]
         document <= html.H1("Brython számológép")
@@ -14,13 +14,15 @@
         def action(event):
             element = event.target
             value = element.text
-            if value not in "⧴C":
+            if value not in "⧴C⇦":
                 if result.text in ["0", "error"]:
                     result.text = value
                 else:
                     result.text = result.text + value
             elif value == "C":
                 result.text = "0"
+            elif value == "⇦":
+                result.text = result.text[:-1]
             elif value == "⧴":
                 try:
                     result.text = eval(result.text)
