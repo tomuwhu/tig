@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython.min.js"></script>
+    <script type="text/python">
+        from browser import document, html
+        calc = html.TABLE()
+        calc <= html.TR(html.TH(html.DIV("0", id="result"), colspan=10) + html.TD("C"))
+        lines = ["()[]abcdefg", "789/hijklmn", "456*%opqrst", '123-":uvxyz', "0.,+'{}<>=!"]
+        calc <= [html.TR(html.TD(x) for x in line) for line in lines]
+        document <= html.H1("Brython számológép")
+        document <= calc
+        result = document["result"]
+        def action(event):
+            element = event.target
+            value = element.text
+            if value not in "!C":
+                if result.text in ["0", "error"]:
+                    result.text = value
+                else:
+                    result.text = result.text + value
+            elif value == "C":
+                result.text = "0"
+            elif value == "!":
+                try:
+                    result.text = eval(result.text)
+                except:
+                    result.text = "error"
+        for b in document.select("td"):
+            b.bind("click", action)
+            if b.innerHTML=="!":
+                b.style = {
+                    "background-color" : "#abfdef",
+                    "font-weight" : "bolder"
+                }
+            if b.innerHTML=="C":
+                b.style = {
+                    "background-color" : "#fbcdef",
+                    "font-weight" : "bolder"
+                }
+    </script>
+</head>
+<body onload="brython()"></body>
+<style>
+    body {
+        background-color: bisque;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-shadow: 1px 1px 3px rgb(43, 65, 62);
+        color: rgb(27, 56, 50);
+    }
+    h1 {
+        text-align: center;
+    }
+    table {
+        margin: 0 auto;
+        text-align: center;
+        border-spacing: 6px;
+        user-select: none;
+        background-color: rgb(194, 183, 169);
+        border-radius: 5px;
+        box-shadow: inset 0px 0px 2px black;
+    }
+    td {
+        cursor: pointer;
+        width: 39px;
+        height: 39px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 2px rgb(31, 29, 29);
+        text-align: center;
+        background-color: azure;
+    }
+    th {
+        box-shadow: inset 1px 1px 2px rgb(31, 29, 29);
+        text-align: right;
+        background-color: antiquewhite;
+        padding: 6px;
+        border-radius: 3px;
+        font-weight: normal;
+    }
+</style>
