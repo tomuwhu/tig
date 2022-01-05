@@ -1,5 +1,5 @@
 print("\n1. feladat")
-t = list(map(lambda x: int(x.strip()), open("melyseg.txt").readlines()))
+t = list(map(int, open("melyseg.txt")))
 print( f'A fájl adatainak száma: {len(t)}' )
 
 print("\n2. feladat")

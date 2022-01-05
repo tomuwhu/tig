@@ -1,8 +1,8 @@
 
 print("1. feladat")
 fn = input("Adja meg a bemeneti fájl nevét! ")
-y = int(input("Adja meg egy sor számát! "))-1
-x = int(input("Adja meg egy oszlop számát! "))-1
+y = int(input("Adja meg egy sor számát! ")) - 1
+x = int(input("Adja meg egy oszlop számát! ")) - 1
 
 ''' #Teszt
 fn = "konnyu.txt"
@@ -10,9 +10,9 @@ x = 1-1 # oszlop
 y = 1-1 # sor
 '''
 
-f = open(fn).readlines()
-m = list(map(lambda x: list(map(lambda x: int(x), list(x.strip()[0::2]))), f[:9]))
-c = list(map(lambda x: list(map(lambda x: int(x), list(x.strip()[0::2]))), f[9:]))
+f = list(open(fn))
+m = list(map(lambda x: list(map(int, list(x.strip()[::2]))), f[:9]))
+c = list(map(lambda x: list(map(int, list(x.strip()[::2]))), f[9:]))
 l = [i for s in m for i in s]
 
 print("\n3.feladat")
