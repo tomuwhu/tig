@@ -1,12 +1,11 @@
 "1. feladat"
 m = {}
-f = open("tavirathu13.txt").readlines()
 def elem(x):
     y = x.strip().split(sep = " ")
     if y[0] not in m: m[y[0]] = []
     m[y[0]].append(y[1:])
     return y
-l = list( map( elem, f ) )
+l = list( map( elem, open("tavirathu13.txt") ) )
 
 print("2. feladat")
 i = m[input("Adja meg egy település kódját! Település: ")][-1][0]
