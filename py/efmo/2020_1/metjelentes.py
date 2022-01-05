@@ -2,7 +2,7 @@
 m = {}
 def f(x):
     y = x.strip().split(sep = " ")
-    if y[0] not in m: m[y[0]] = []
+    if y[0] not in m: m[y[0]] = [y[1:]]
     m[y[0]].append(y[1:])
     return y
 l = list(map(f, open("tavirathu13.txt")))
