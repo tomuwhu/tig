@@ -43,11 +43,10 @@ for v in m:
 
 print("6. feladat")
 for v in m:
-    f = open(v + ".txt","w")
     print(
         v,
         * list(map( lambda x: f'{x[0][0:2]}:{x[0][2:4]} {int(x[1][-2:])*"#"}', m[v])),
         sep = "\n",
-        file = f
+        file = open(v + ".txt","w")
     )
 print("A fájlok elkészültek.")
