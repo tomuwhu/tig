@@ -1,0 +1,1 @@
+print( sum( map( int, open("inp.txt") ) ), file=open("res.txt","w") )
