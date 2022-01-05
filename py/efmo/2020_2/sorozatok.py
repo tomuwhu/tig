@@ -1,6 +1,6 @@
-'''1. feladat:'''
+'1. feladat:'
 t, e, c = [], [], 0
-for i in open("lista.txt").readlines():
+for i in open("lista.txt"):
     e.append( i.strip() ); c += 1
     if c % 5 == 0: t.append(e); e = []
 n = c // 5
