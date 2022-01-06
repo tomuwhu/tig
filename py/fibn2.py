@@ -3,4 +3,4 @@ def fib(n):
     while a < n:
         a, b = b, a + b
         yield a
-print( list(fib(1000)) )
+print(*fib(1000)) 
