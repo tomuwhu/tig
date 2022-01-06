@@ -109,7 +109,7 @@ body {
     .navigation a:hover {
         background: #1565C0;
     }
-
+    
 </style>
 <link href="https://fonts.googleapis.com/css?family=Dosis:500" rel="stylesheet">
 <script src="lz-string.js"></script>
@@ -203,7 +203,6 @@ body {
     <button id="new" class="button" onclick="newProgram()">Új</button>
 	<button id="clear" class="button" onclick="clearProgram()">Töröl</button>
 	<button id="stop" class="button" onclick="stopProgram()">Állj</button>
-    <button id="toggleConsole" class="button" onclick="toggleConsole()">Konzol</button>
  	<label class="button" for="loadfile">Feltölt</label>
     <input type="file" id="loadfile" name="files[]" style="visibility:hidden;display:none;" onchange="loadit(this)"></input>
 	<label class="button" onclick="saveit()">Letöltés mint...</label>
@@ -212,24 +211,12 @@ body {
 </div>
 
 <div id="centralarea" >
-
     <div id="interactiveDiv">
         <div id="sourceArea" >
     		<pre id="editor" ></pre>   
     	</div>
     </div>
     <div id="runDiv"></div>
-</div>
-
-<iframe id="consoleIframe" src="./console.html" 
-style="margin:0; border:none; overflow:hidden; display:none;"
-scrolling="no" onload="adjustIframeOnLoad()" ></iframe>
-
-<div id="footer" class="frame">
-	<div id="showurl">
-    <button class="button" onclick="showUrl()">Show URL for this sketch</button><br/>
-    <a id="myurl" href="" title=""></a>
-    </div>
 </div>
 
 <script type="text/javascript">
@@ -461,32 +448,6 @@ scrolling="no" onload="adjustIframeOnLoad()" ></iframe>
       }
     };
 
-    // Includes an encoded url for this sketch at the bottom of the screen
-    function showUrl() {
-        var link = document.URL;
-        var i = link.indexOf("?");
-        if (i>=0) link = link.substr(0,i);
-        var pgm = editor.getValue(); 
-        var s1 = LZString.compressToEncodedURIComponent(pgm);
-        link = link+"?lzsrc="+s1;
-        // if (parms.autoRun) link = link+"&autorun";
-        // if (parms.hideIde) link = link+"&hideide";
-        // if (parms.noTitle) link = link+"&notitle";        
-        // if (parms.noOutput) link = link+"&nooutput";
-        var myurl = document.getElementById('myurl');
-        myurl.setAttribute("href", link);
-        myurl.text=link;
-        copyToClipboard (link);
-    }
-
-	//
-	// URL Parameter processing
-	// 
-
-	if (getParameter("showurl") || getParameter("showUrl")) {
-    	document.getElementById("footer").style.display = "inline";
-    }
-
     var lzsource = getParameter("lzsrc");
     if (lzsource) {
         editor.setValue(LZString.decompressFromEncodedURIComponent(lzsource));
@@ -512,11 +473,6 @@ scrolling="no" onload="adjustIframeOnLoad()" ></iframe>
 
     var runit = getParameter("autorun") || hideIde;
 
-    // Remove arguments from the location
-    //history.pushState(null, "", location.href.split("?")[0]);
-
-
-    // Fetch the run template and run the program if autorun is set
     fetch("./brythonrun.txt")
         .then(response=> response.text())
         .then(text=>{
@@ -526,14 +482,10 @@ scrolling="no" onload="adjustIframeOnLoad()" ></iframe>
             }
         });
 
-
-    // Prevent silently navigating away from the IDE
     window.onbeforeunload = function() {
         if (changeCount==0) return null;
-        return "Have you saved your program?";
+        return "A program el van mentve?";
     }
-
-    // Try to save the program to local storage before leaving
     window.onunload = function () {
         localStorage["brythonEditor"] = editor.getValue();
         localStorage["brythonEditorFilename"] = document.getElementById("savefilename").value
@@ -542,16 +494,13 @@ scrolling="no" onload="adjustIframeOnLoad()" ></iframe>
         file="../py/"+document.getElementById("sel").value
         loadUrl(file)
         document.getElementById("savefilename").value = document.getElementById("sel").value
-        runProgram()
-        var t = document.getElementById('editor');
-        t.focus();
-        t.selectionStart = 4;
-        t.selectionEnd = 8;
+        setTimeout( v => {
+            localStorage["brythonEditor"] = editor.getValue();
+            localStorage["brythonEditorFilename"] = document.getElementById("savefilename").value
+            runProgram()
+            t = document.getElementById("editor").childNodes[0]
+            t.setSelectionRange(0, t.value.length)
+        }, 1000 )
 
-        setTimeout(function()
-        {
-            t.selectionStart = 0;
-            t.selectionEnd = 0;
-        },  2500);
     }
 	</script>
