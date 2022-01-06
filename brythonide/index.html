@@ -154,7 +154,6 @@ body {
 	<div class="frame">
     <select onchange="load()" id="sel">
         <option></option>
-        <option value="colors.py">Színek</option>
         <option value="strings.py">Szövegformázás</option>
         <option value="refvsobj.py">Objektum - Referencia Ⅰ.</option>
         <option value="arrvsstring.py">Objektum - Referencia Ⅱ.</option>
@@ -504,6 +503,7 @@ body {
         }, 100 )
     }
     setTimeout( v => {
+        runProgram()
         t =  document.getElementsByClassName("ace_marker-layer")[0]
         console.log( t )
         t.innerHTML=""
