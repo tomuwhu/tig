@@ -12,9 +12,19 @@
 #editor { 
     margin: 2px;
     width: 600px;
-    height: 400px;
+    height: 700px;
+    overflow: scroll;
+    resize: both;
+}
+
+textarea#console { 
+    margin: 2px;
     overflow: scroll;
     resize:both;
+}
+body {
+    width: 100%;
+    height: 100%;
 }
 
 #runFrame {
@@ -22,11 +32,9 @@
     border: 0px;
 }
 .frame {
-	border: 1px solid lightgray;
-	background: lightgray;
-	border-radius: 6px;
-	padding: 5px;
-	margin: 5px 5px 0px 5px;
+	background: rgb(147, 194, 221);
+	padding: 3px;
+	margin: 0px;
 }
 .button {
     border-radius: 6px;
@@ -123,7 +131,7 @@ body {
 </script>
 <link rel="stylesheet" href="../main.css">
 </header>
-<body> 
+
     <ul class="navigation">
         <li><a href="./">Kezdőlap</a></li>
         <li><a href="tanttm.html">Tananyag</a></li>
@@ -180,21 +188,9 @@ body {
         <option value="feladatgy1.py">Megoldások I.</option>
         <option value="mfem.py">Másodfokú egyenlet megoldó</option>
         <option value="npp.py">Lineáris egyenletrendszer megoldó</option>
-        <option value="py2svg.py">SVG generátor</option>
         <option value="squarenlist.py">Generátorok</option>
         <option value="szamrendszerek.py">Számrendszerek</option>
-        <option value="tdb.py">NoSQL adatkezelés</option>
-        <option value="tek01.py">SVG</option>
-        <option value="animation.py">Animáció</option>
-        <option value="teknoc.py">Teknőcgrafika</option>
         <option value="time.py">Lokalizáció (dátum)</option>
-        <option value="async.py">Aszinkron IO</option>
-        <option value="hr_lkp.py">HackerrRank: list-comprehensions</option>
-        <option value="hr_ftp.py">HackerrRank: finding-the-percentage</option>
-        <option value="efmo/2020_1/metjelentes.py">Érettségi 2020_1</option>
-        <option value="efmo/2020_2/sorozatok.py">Érettségi 2020_2</option>
-        <option value="efmo/2021_1/godor.py">Érettségi 2021_1</option>
-        <option value="efmo/2021_2/sudoku.py">Érettségi 2021_2</option>
     </select>
     <button id="run" class="button" onclick="runProgram()">Futtat</button>
     <button id="new" class="button" onclick="newProgram()">Új</button>
@@ -307,7 +303,7 @@ scrolling="no" onload="adjustIframeOnLoad()" ></iframe>
     // Action for the button "New": clears the editor
     function newProgram() {
         if (changeCount > 0) {
-            var yes = confirm ("There are unsaved changes. Are you sure you want to start a new program?");
+            var yes = confirm ("Vannak elmentetlen változtatások. Biztosan új programot kezdünk?");
             if (!yes) return;
         }
         clearProgram();
@@ -376,7 +372,7 @@ scrolling="no" onload="adjustIframeOnLoad()" ></iframe>
     function loadit(input) {
 
         if (changeCount > 0) {
-            var yes = confirm ("There are unsaved changes. Are you sure you want to load a new program?");
+            var yes = confirm ("Vannak elmentetlen változtatások. Biztosan új programot kezdünk?");
             if (!yes) return;
         }
 
@@ -552,4 +548,3 @@ scrolling="no" onload="adjustIframeOnLoad()" ></iframe>
         },  2500);
     }
 	</script>
-</body>

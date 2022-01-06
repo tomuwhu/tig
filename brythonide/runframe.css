@@ -7,16 +7,16 @@ body {
 #console {
 	display:flex;
 	order: 2;
-	width: 400px;
-	height: 120px;
+	width: 500px;
+	height: 700px;
 	font-family: monospace;
 	overflow: scroll;
 	border: 1px solid lightgray;
-	border-radius: 6px;
-	padding: 5px;
-	margin:5px;
+	padding: 8px;
+	margin: 2px;
 	resize:both;
-	
+	background-color: black;
+	color: rgb(255, 255, 189);
 }
 canvas {
 	display:flex;
