@@ -499,10 +499,14 @@ body {
             localStorage["brythonEditor"] = editor.getValue();
             localStorage["brythonEditorFilename"] = document.getElementById("savefilename").value
             runProgram()
-            t =  document.getElementsByClassName("ace_print-margin")[0]
+            t =  document.getElementsByClassName("ace_marker-layer")[0]
             console.log( t )
-            t.selectionStart = 70
-        }, 1000 )
-
+            t.innerHTML=""
+        }, 100 )
     }
-	</script>
+    setTimeout( v => {
+        t =  document.getElementsByClassName("ace_marker-layer")[0]
+        console.log( t )
+        t.innerHTML=""
+    }, 100 )
+    </script>
