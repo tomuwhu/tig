@@ -2,7 +2,6 @@ body {
     background: rgb(12, 12, 1);
     color: rgb(196, 240, 230);
     margin: 0;
-    text-align: center;
 }
 select {
     width: 300px;
