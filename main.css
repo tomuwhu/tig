@@ -2,6 +2,7 @@ body {
     background: rgb(12, 12, 1);
     color: rgb(196, 240, 230);
     margin: 0;
+    text-align: center;
 }
 select {
     width: 300px;
@@ -42,6 +43,9 @@ a.btn {
     background-color: rgb(9, 29, 52);
     border-radius: 8px;
     box-shadow: 0px 0px 8px gray;
+}
+a.b2 {
+    background-color: rgb(71, 27, 19);
 }
 a.btn:hover {
     color:rgb(183, 236, 255);
@@ -184,13 +188,16 @@ a.bx {
     padding: 9px;
 }
 a.imgbtn {
-    background-color: aliceblue;
-    margin: 3px;
-    padding: 4px;
-    border-radius: 6px;
-    box-shadow: inset 1px 1px 3px black;
+    background: transparent;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 a.imgbtn img {
     border-radius: 5px;
     box-shadow: none;
+}
+a.imgbtn img:hover {
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px black;
+    background-color: beige;
 }

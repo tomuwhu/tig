@@ -2,6 +2,17 @@
 <meta charset="utf-8">
 <script src="hljs/markdown.min.js"></script>
 <script>
+    var tt
+    var ossz = 32
+    function f(e) {
+        ora = tt[e.srcElement.selectedIndex].split(";")
+        if (ora[5]) {
+                sss =  "<a href='"+ora[5]+"' target='_blank'>Tananyag</a>"
+        } 
+        else sss=""
+        document.getElementById('content').innerHTML = "<p>" + ora[0] + " " + ora[1] + "</p>" +
+        ora[2] + "<p>" + ora[3]+ "</p>" + "<p>" + ora[4]+ "</p>" + sss
+    }
     function tmd(file) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -14,36 +25,27 @@
         xhttp.open("GET", "./"+file, true);
         xhttp.send();
     }
-</script>
-    <ul class="navigation">
-        <li><a href="./">Kezdőlap</a></li>
-        <li><a href="htmlexampl.html">HTML-CSS</a></li>
-        <li><a href="pyexamples.html">Python</a></li>
-        <li><a href="bryexamples.html">Brython</a></li>
-        <li><a href="editor.html">Editor</a></li>
-        <li><a href="probadogalista.html">Számonkérés</a></li>
-    </ul>
-<div class="m20">
-    <div class="c x">
-        <a class="btn" href="https://www.youtube.com/watch?v=zGjvy1pWVcw&t=1775s" target="_blank">Érettségi követelmények</a>
-        <a class="btn" href="irodalom/Nat_Dk.pdf" target="_blank">NAT</a>
-        <a class="btn" href="https://www.oktatas.hu/pub_bin/dload/kozoktatas/kerettanterv/Digitalis_kultura_K.docx" download>Kerettanterv letöltése</a>
-    </div>
-    <hr>
-    <h3 class="c">9. évfolyam</h3>
-    <div class="c x">
-        <a class="btn" href="https://www.tankonyvkatalogus.hu/site/kiadvany/OH-DIG09TA" target="_blank">Központi tananyag</a> - 
-        <a class="btn h" onclick="tmd('temat9.md')">Tematika</a> - 
-        <a class="btn h" onclick="tmd('linkgy9.md')">Külső&nbsp;hivatkozások</a>
-    </div>
-    <h3 class="c">10. évfolyam</h3>
-    <div class="c x">
-        <a class="btn" href="https://www.tankonyvkatalogus.hu/site/kiadvany/OH-DIG10TA" target="_blank">Központi tananyag</a> -
-        <a class="btn h" onclick="tmd('temat10.md')">Tematika</a> - 
-        <a class="btn h" onclick="tmd('linkgy10.md')">Külső&nbsp;hivatkozások</a>
-    </div>
-    <div style="text-align: center;">
-        <div id="content" style="width: 600px;">
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            tt = xhttp.responseText.split("\r\n")
+            ora = tt[ossz-1].split(";")
+            if (ora[5]) {
+                sss =  "<a href='"+ora[5]+"' target='_blank'>Tananyag</a>"
+            } 
+            else sss=""
+            document.getElementById('content').innerHTML = "<p>" + ora[0] + " " + ora[1] + "</p>" +
+            ora[2] + "<p>" + ora[3]+ "</p>" + "<p>" + ora[4]+ "</p>" + sss
+            document.getElementById('content').style.visibility = "visible"
+            document.getElementById('sp').innerHTML = "<select onchange='f(event)'>" +
+            tt.map(v => {
+                row = v.split(';')
+                return "<option " + (row[0]==ossz?"selected":"") + " value='"+row[0]+"'>"+row[0]+" "+row[1]+"</option>"
+            })
+        }
+    };
+    function f2() {
+        document.getElementById('content').innerHTML = `
             <h2>Fő témakörök a NAT alapján a 9-12. évfolyamon</h2>
             <ol>
                 <li>Algoritmizálás, formális programozási nyelv használata</li>
@@ -58,6 +60,52 @@
                 <li>Adatbázis-kezelés</li>
                 <li>A digitális eszközök használata</li>
             </ol>
+        `
+    }
+    function f0() {
+        xhttp.open("GET", "./irodalom/tanmenet.csv", true);
+        xhttp.send();
+    }
+    f0()
+</script>
+    <ul class="navigation">
+        <li><a href="./">Kezdőlap</a></li>
+        <li><a href="htmlexampl.html">HTML-CSS</a></li>
+        <li><a href="pyexamples.html">Python</a></li>
+        <li><a href="bryexamples.html">Brython</a></li>
+        <li><a href="editor.html">Editor</a></li>
+        <li><a href="probadogalista.html">Számonkérés</a></li>
+    </ul>
+    <div class="m20">
+    <div class="c x">
+        <a class="btn" href="https://www.youtube.com/watch?v=zGjvy1pWVcw&t=1775s" target="_blank">Érettségi követelmények</a>
+        <a class="btn" href="irodalom/Nat_Dk.pdf" target="_blank">NAT</a>
+        <a class="btn h" onclick="f2()" target="_blank">NAT Témakörök</a>
+        <a class="btn" href="https://www.oktatas.hu/pub_bin/dload/kozoktatas/kerettanterv/Digitalis_kultura_K.docx" download>Kerettanterv letöltése</a>
+    </div>
+    <hr>
+    <h2 class="c k" onclick="f0()">9. évfolyam</h2>
+    <div class="c x">
+        <a class="btn" href="https://www.tankonyvkatalogus.hu/site/kiadvany/OH-DIG09TA" target="_blank">Központi tananyag</a> - 
+        <a class="btn h" onclick="tmd('temat9.md')">Tematika</a> - 
+        <a class="btn h" onclick="tmd('linkgy9.md')">Külső&nbsp;hivatkozások</a>
+    </div>
+    <h2 class="c">10. évfolyam</h2>
+    <div class="c x">
+        <a class="btn" href="https://www.tankonyvkatalogus.hu/site/kiadvany/OH-DIG10TA" target="_blank">Központi tananyag</a> -
+        <a class="btn h" onclick="tmd('temat10.md')">Tematika</a> - 
+        <a class="btn h" onclick="tmd('linkgy10.md')">Külső&nbsp;hivatkozások</a>
+    </div>
+    <br><br>
+    <div id="sp" style="text-align: center;"></div>
+    <div style="text-align: center;">
+        <div id="content" style="width: 600px;">
         </div>
     </div>
 </div>
+
+<style>
+    h2.k {
+        cursor: pointer;
+    }
+</style>

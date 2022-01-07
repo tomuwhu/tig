@@ -10,17 +10,6 @@
 </script>
 <script src="hljs/markdown.min.js"></script>
 <script>
-    var tt
-    var ossz = 32
-    function f(e) {
-        ora = tt[e.srcElement.selectedIndex].split(";")
-        if (ora[5]) {
-                sss =  "<a href='"+ora[5]+"' target='_blank'>Tananyag</a>"
-        } 
-        else sss=""
-        document.getElementById('content').innerHTML = "<p>" + ora[0] + " " + ora[1] + "</p>" +
-        ora[2] + "<p>" + ora[3]+ "</p>" + "<p>" + ora[4]+ "</p>" + sss
-    }
     function tmd(file) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -33,27 +22,24 @@
         xhttp.open("GET", "./"+file, true);
         xhttp.send();
     }
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            tt = xhttp.responseText.split("\r\n")
-            ora = tt[ossz-1].split(";")
-            if (ora[5]) {
-                sss =  "<a href='"+ora[5]+"' target='_blank'>Tananyag</a>"
-            } 
-            else sss=""
-            document.getElementById('content').innerHTML = "<p>" + ora[0] + " " + ora[1] + "</p>" +
-            ora[2] + "<p>" + ora[3]+ "</p>" + "<p>" + ora[4]+ "</p>" + sss
-            document.getElementById('content').style.visibility = "visible"
-            document.getElementById('sp').innerHTML = "<select onchange='f(event)'>" +
-            tt.map(v => {
-                row = v.split(';')
-                return "<option " + (row[0]==ossz?"selected":"") + " value='"+row[0]+"'>"+row[0]+" "+row[1]+"</option>"
+    function f(x) {
+        z =  document.querySelectorAll('.u')
+        if (z) {
+            z.forEach( v => {
+                v.style="display:none;"
             })
         }
-    };
-    xhttp.open("GET", "./irodalom/tanmenet.csv", true);
-    xhttp.send();
+        z =  document.querySelectorAll('.gg'+x)
+        if (z) {
+            z.forEach( v => {
+                v.style.display='flex'
+            })
+        }    
+    }
+    setTimeout( v=> {
+        f(1)
+    }, 100)
+
 </script>
 <link rel="stylesheet" href="main.css">
 <ul class="navigation">
@@ -72,18 +58,15 @@
     <br>
 </h2>
 <hr>
-<h3 class="c">Programozás, problémamegoldás</h3>
-<div class="cont">
-    <a class="imgbtn" href="https://www.youtube.com/watch?v=74W7VtJMM70"><img class="k" width="70px" src="pic/androidstudio.png" alt="HeckerEarth"></a>
-    <a class="imgbtn" href="https://www.hackerrank.com/"><img width="100px" src="pic/hr.jpg" alt="HeckerEarth"></a>
-    <a class="imgbtn" href="https://www.hackerearth.com/"><img width="100px" src="pic/HE_logo.png" alt="HeckerEarth"></a>
-    <a class="imgbtn" href="https://www.spoj.com/"><img width="160px" src="pic/spoj.png" alt="Spoj"></a>
-    <a class="imgbtn" href="https://www.topcoder.com/"><img width="130px" src="pic/tc.png" alt="TopCoder"></a>
-    <a class="imgbtn" href="https://www.upwork.com/"><img width="60px" src="pic/uw.png" alt="UpWork"></a>
+<h3 class="c" onclick="f(1)">- Ⅰ (otthonra telepítendő ingyenes szoftverek) -</h3>
+<div class="ww cont gg1 u">
+    <a class="btn bx b2" href="https://chrome.google.com/webstore/detail/epubreader/jhhclmfgfllimlhabjkgkeebkbiadflb">EPUB olvasó Chrome-plugin (epub fájlok megynyitásához)</a>
+    <a class="btn bx b2" href="https://code.visualstudio.com/">Visual Studio Code (Dokumentumkészítés, Grafika, Algoritmizálás, Programozás)</a>
+    <a class="btn bx b2" href="https://www.python.org/downloads/">Python (Algoritmizálás, Programozás)</a>
+    <a class="btn bx b2" href="https://sqlitebrowser.org/dl/">DB Browser letöltés (Adatkezelés, Adabáziskezelés, SQL)</a>
 </div>
-<br>
-<h3 class="c">- Ⅰ (bemeneti követelmények, ajánlott irodalom) -</h3>
-<div class="cont">
+<h3 class="c" onclick="f(2)">- Ⅱ (bemeneti követelmények, ajánlott irodalom) -</h3>
+<div class="ww cont gg2 u">
     <a class="btn bx" href="https://youproof.hu/kriptografia/">Alice és Bob</a>
     <a class="btn bx" href="https://qubit.hu/2021/11/28/a-lyukkartyatol-az-ssd-meghajtoig-szedito-fejlodesen-mentek-at-az-adathordozok-az-elmult-evszazadban?fbclid=IwAR0fdB3LaacgyXfhf5y0HWZi5K3SLHT5bRAnJZmhoCfLxdYb9lMYob_dYD0">Cikk az adathordozókról</a>
     <a class="btn bx" href="https://scratch.mit.edu/">Scratch</a>
@@ -97,27 +80,34 @@
     <a class="btn bx" href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00-introduction-to-computer-science-and-programming-fall-2008/video-lectures/">MIT Videos</a>
     <a class="btn h bx" onclick="tmd('linkgy9.md')">Külső hivatkozások Ⅸ.</a>
     <a class="btn h bx" onclick="tmd('linkgy10.md')">Külső hivatkozások Ⅹ.</a>
-    <a class="btn bx" href="https://chrome.google.com/webstore/detail/epubreader/jhhclmfgfllimlhabjkgkeebkbiadflb">EPUB olvasó Chrome-plugin</a>
-</div><br>
-<h3 class="c">- Ⅱ (dokumentumkészítés) -</h3>
-<div class="cont ww">
+</div>
+<h3 class="c" onclick="f(3)">- Ⅲ (dokumentumkészítés) -</h3>
+<div class="cont ww gg3 u">
     <a class="btn bx" href="irodalom/TK143-170-WEB.pdf">HTML rész a tankönyvben</a>
     <a class="btn bx" href="https://html-online.com/editor/">HTML Editor</a>
     <a class="btn bx" href="irodalom/TK71-73-SVG.pdf">SVG rész a tankönyvben</a>
     <a class="btn bx" href="https://editor.method.ac/">SVG Editor</a>
     <a class="btn bx" href="https://app.svgator.com/">SVG Animation Editor</a>
-</div><br>
-<h3 class="c">- Ⅲ (kötelező irodalom) -</h3>
-    <div class="cont"> 
-        <a class="btn bx" href="https://www.tankonyvkatalogus.hu/pdf/OH-DIG09TA__teljes.pdf">Teljes tankönyv (pdf)</a>
-        <a class="btn bx" href="irodalom/html.pdf">HTML, CSS tankönyv (pdf)</a>
-        <a class="btn bx" href="irodalom/python-a-gepben.epub">Python tankönyv (epub)</a>
-        <a class="btn bx" href="irodalom/arch.pdf">Számítógép felépítése és működése (pdf)</a>
-        <a class="btn bx" href="irodalom/algasz.pdf">Számítógép-programok felépítése és működése (pdf)</a>
+</div>
+<h3 class="c" onclick="f(4)">- Ⅳ (kötelező irodalom) -</h3>
+<div class="ww cont gg4 u"> 
+    <a class="btn bx" href="https://www.tankonyvkatalogus.hu/pdf/OH-DIG09TA__teljes.pdf">Teljes tankönyv (pdf)</a>
+    <a class="btn bx" href="irodalom/html.pdf">HTML, CSS tankönyv (pdf)</a>
+    <a class="btn bx" href="irodalom/python-a-gepben.epub">Python tankönyv (epub)</a>
+    <a class="btn bx" href="irodalom/arch.pdf">Számítógép felépítése és működése (pdf)</a>
+    <a class="btn bx" href="irodalom/algasz.pdf">Számítógép-programok felépítése és működése (pdf)</a>
+</div>
+<h3 class="c" onclick="f(5)">- Ⅴ (a python programozási nyelv) -</h3>
+<div class="ww cont gg5 u">
+    <div class="imgdiv">
+        <a class="imgbtn" href="https://www.youtube.com/watch?v=74W7VtJMM70"><img class="k" width="70px" src="pic/androidstudio.png" alt="HeckerEarth"></a>
+        <a class="imgbtn" href="https://www.hackerrank.com/"><img width="100px" src="pic/hr.jpg" alt="HeckerEarth"></a>
+        <a class="imgbtn" href="https://www.hackerearth.com/"><img width="100px" src="pic/HE_logo.png" alt="HeckerEarth"></a>
+        <a class="imgbtn" href="https://www.spoj.com/"><img width="160px" src="pic/spoj.png" alt="Spoj"></a>
+        <a class="imgbtn" href="https://www.topcoder.com/"><img width="130px" src="pic/tc.png" alt="TopCoder"></a>
+        <a class="imgbtn" href="https://www.upwork.com/"><img width="60px" src="pic/uw.png" alt="UpWork"></a>
     </div>
     <br>
-<h3 class="c">- Ⅳ (a python programozási nyelv) -</h3>
-<div class="cont">
     <a class="btn bx" href="https://codecombat.com/students?_cc=NameFightShoe">CodeCombat</a>
     <a class="btn bx" href="pyexamples.html">Python példaprogramok</a>
     <a class="btn bx" href="brythonide/">Python programok futtatása helyben</a>
@@ -133,31 +123,39 @@
     <a class="btn bx" href="https://szit.hu/doku.php?id=oktatas:programozas:programozasi_tetelek:python_megvalositas">Programozási tételek Python</a>
     <a class="btn bx" href="efmego.html">Érettségi feladatok és megoldások</a>
 </div>
-<h3 class="c">- Ⅴ (SQL feladatok) -</h3>
-<div class="cont">
+<h3 class="c" onclick="f(6)">- Ⅵ (SQL feladatok) -</h3>
+<div class="ww cont gg6 u">
     <a class="btn bx" href="https://szit.hu/doku.php?id=oktatas:linux:adatbazis-kezeles">Adatbáziskezelés - SZIT</a>
     <a class="btn bx" href="https://tudasbazis.sulinet.hu/hu/szakkepzes/informatika/adatbazis-kezeles">Adatbáziskezelés - Sulinet</a>
     <a class="btn bx" href="https://www.w3schools.com/sql/">SQL tutorial</a>
     <a class="btn bx" href="https://www.sqlite.org/lang_select.html">SQLite Syntax</a>
-    <a class="btn bx" href="https://sqlitebrowser.org/dl/">DB Browser letöltés</a>
 </div>
-
-<h3 class="c">- Ⅵ (komplex feladatok) -</h3>
-<div class="cont">
+<h3 class="c" onclick="f(7)">- Ⅶ (komplex feladatok) -</h3>
+<div class="ww cont gg7 u">
     <a class="btn bx" href="bryexamples.html">Brython példaprogramok</a>
     <a class="btn bx" href="https://brython.info/tests/editor.html">Brython online</a>
 </div>
-<br><br>
-<div id="sp" style="text-align: center;"></div>
 <div style="text-align: center;">
     <div id="content" style="visibility: hidden; width: 550px;">
     </div>
 </div>
 <div style="text-align: center; padding-top: 20px;">
-<a style="border:none;background:none;box-shadow:none;"
-   target="_blank"
-   href="https://github.com/tomuwhu/tig">
-   <img style="background-color: rgb(242, 242, 229);border-radius: 25px;"
-   src="github.png" alt="github"
-   ></a>
+    <a style="border:none;background:none;box-shadow:none;"
+       target="_blank"
+       href="https://github.com/tomuwhu/tig">
+       <img style="background-color: rgb(242, 242, 229);border-radius: 25px;"
+       src="github.png" alt="github"
+    ></a>
 </div>
+<style>
+    h3.c {
+        cursor:pointer;
+    }
+    .imgdiv {
+        background-color: rgb(255, 255, 255);
+        padding: 6px;
+        margin: 4px;
+        border-radius: 7px;
+        box-shadow: 1px 1px 3px inset black;
+    }
+</style>
