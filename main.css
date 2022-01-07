@@ -220,3 +220,6 @@ h3.c:hover {
     margin: 4px;
     border-radius: 7px;
 }
+.hljs {
+    text-align: left;
+}
