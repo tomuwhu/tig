@@ -23,6 +23,7 @@
         xhttp.send();
     }
     function f(x) {
+        document.getElementById('cx').style.display = "none"
         z =  document.querySelectorAll('.u')
         if (z) {
             z.forEach( v => {
@@ -37,7 +38,7 @@
         }    
     }
     setTimeout( v=> {
-        f(1)
+        f(5)
     }, 100)
 
 </script>
