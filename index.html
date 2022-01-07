@@ -16,7 +16,7 @@
             if (this.readyState == 4 && this.status == 200) {
                 html_content = markdown.toHTML( xhttp.responseText );
                 document.getElementById('content').innerHTML = html_content;
-                document.getElementById('content').style.visibility = "visible"
+                document.getElementById('cx').style.display = "block"
             }
         };
         xhttp.open("GET", "./"+file, true);
@@ -135,11 +135,12 @@
     <a class="btn bx" href="bryexamples.html">Brython példaprogramok</a>
     <a class="btn bx" href="https://brython.info/tests/editor.html">Brython online</a>
 </div>
-<div style="text-align: center;">
-    <div id="content" style="visibility: hidden; width: 550px;">
+<div id="cx" style="text-align: center; display: none;">
+    <div id="content" style="width: 550px;">
     </div>
 </div>
-<div style="text-align: center; padding-top: 20px;">
+<br>
+<div style="text-align: center;">
     <a style="border:none;background:none;box-shadow:none;"
        target="_blank"
        href="https://github.com/tomuwhu/tig">
@@ -150,6 +151,10 @@
 <style>
     h3.c {
         cursor:pointer;
+    }
+    h3.c:hover {
+        cursor:pointer;
+        color: burlywood;
     }
     .imgdiv {
         background-color: rgb(255, 255, 255);
