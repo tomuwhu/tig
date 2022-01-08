@@ -184,7 +184,7 @@ div.cont {
 }
 a.bx {
     display: inline-block;
-    padding: 9px;
+    padding: 7px;
 }
 a.by {
     display: inline-block;
@@ -214,14 +214,15 @@ h3.c {
     font-family: 'Kanit', sans-serif;
     font-size: 15px;
     cursor:pointer;
+    margin: 8px;
 }
 h3.c:hover {
     cursor:pointer;
     color: burlywood;
 }
 .imgdiv {
-    padding: 6px;
-    margin: 4px;
+    padding: 0px;
+    margin: 0px;
     border-radius: 7px;
 }
 .hljs {
