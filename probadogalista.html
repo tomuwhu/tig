@@ -54,7 +54,7 @@ div.m20 {
     background-color: rgb(255, 253, 253);
     border-radius: 7px;
     color:rgb(17, 53, 136);
-    width: 650px;
+    width: 680px;
     height: 226px;
 }
 b.mm {
@@ -142,7 +142,9 @@ a:hover {
         mos = []
         mot = []
         inps= ''
+        fs=true
         if (localStorage.getItem('inps')) {
+            fs=false
             inps=localStorage.getItem('inps')
             k = 0
             for (j=0;j<5;j++) {
@@ -173,6 +175,7 @@ a:hover {
         }
         
         if (localStorage.getItem('q')) {
+            fs=false
             qs = localStorage.getItem('q')
             q = qs.split(",").map( v=> Number(v))
         } else {
@@ -182,6 +185,7 @@ a:hover {
         }
         
         if (localStorage.getItem('w')) {
+            fs=false
             ws = localStorage.getItem('w')
             w = ws.split(",").map( v => Number(v))
         } else {
@@ -212,22 +216,31 @@ a:hover {
         `
         i=0
         kn = ks.length
-        t = setInterval(() => {
-            document.getElementById("feladat").innerHTML = ks.slice(0,i)+"█"
-            if ( i.toFixed() == (kn*4/7).toFixed() ) document.getElementById("feladat").style.height = "456px"
-            i++
-            if (ks[i] == "<") {
-                while (ks[i]!=">") i++
-            } 
-            if (i >= kn) {
-                clearInterval(t)
-                document.getElementById("feladat").innerHTML = ks
-                setTimeout( v => { 
-                    document.getElementById("ax").href="data:text/plain;charset=utf-8,"+s
-                    document.getElementById("ax").innerHTML="<b>INPUT.TXT (A letöltéshez kattintson ide!)</b>"
-                }, 10)
-            }
-        }, 2+((kn-i)/kn)*10 );
+        if (fs)
+            t = setInterval(() => {
+                document.getElementById("feladat").innerHTML = ks.slice(0,i)+"█"
+                if ( i.toFixed() == (kn*4/7).toFixed() ) document.getElementById("feladat").style.height = "456px"
+                i++
+                if (ks[i] == "<") {
+                    while (ks[i]!=">") i++
+                } 
+                if (i >= kn) {
+                    clearInterval(t)
+                    document.getElementById("feladat").innerHTML = ks
+                    setTimeout( v => { 
+                        document.getElementById("ax").href="data:text/plain;charset=utf-8,"+s
+                        document.getElementById("ax").innerHTML="<b>INPUT.TXT (A letöltéshez kattintson ide!)</b>"
+                    }, 10)
+                }
+            }, 2+((kn-i)/kn)*10 );
+        else {
+            document.getElementById("feladat").style.height = "456px"
+            document.getElementById("feladat").innerHTML = ks
+            setTimeout( v => { 
+                document.getElementById("ax").href="data:text/plain;charset=utf-8,"+s
+                document.getElementById("ax").innerHTML="<b>INPUT.TXT (A letöltéshez kattintson ide!)</b>"
+            }, 10)
+        }
         
     }, 100)
 </script>
@@ -397,7 +410,7 @@ a:hover {
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
     body {
-        background-color: aquamarine;
+        background-color: #030f14;
     }
     th, td {
         border-radius: 12px;
