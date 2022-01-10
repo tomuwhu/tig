@@ -55,6 +55,9 @@ div.m20 {
     border-radius: 7px;
     color:rgb(17, 53, 136);
 }
+b.mm {
+    color: brown;
+}
 </style>
 <meta charset="utf-8">
 <script>
@@ -70,14 +73,41 @@ div.m20 {
     }
     il = [5,7,9,11,14,15,17,19,21,24,27]
     ii = il[Math.floor(Math.random() * il.length)]
-    f1 = ['számok','páros számok','páratlan számok',`${ii}-nél kisebb számok`,`${ii}-nél kisebb számok`,
+    f1 = ['számok','páros számok','páratlan számok',`${ii}-nél kisebb számok`,`${ii}-nél nagyobb számok`,
          'hárommal osztható számok', 'négyzetszámok','10 legnagyobb szám','17 legnagyobb szám','15 legkisebb szám','12 legkisebb szám']
-    f2 = ['összegét', 'szorzatát', 'négyzeteinek összegét', 'számtani közepét (átlagát)', 'mértani közepét', 'minimumát', 'maximumát',]
+    f2 = ['összegét', 'szorzatának nagyságrendjét', 'négyzeteinek összegét', 'számtani közepét (átlagát)', 'minimumát', 'maximumát']
+    f2v = ['összege: ', 'szorzatának nagyságrendje: 10<sup>', 'négyzeteinek összege: ', 'számtani közepe: ', 'minimuma: ', 'maximuma: ']
+    f1l=[
+        t => t,                                                             //0
+        t => t.filter( v => !(v % 2) ),                                     //1
+        t => t.filter( v => v % 2 ),                                        //2
+        t => t.filter( v => v < ii ),                                       //3
+        t => t.filter( v => v > ii ),                                       //4
+        t => t.filter( v => !(v % 3) ),                                     //5
+        t => t.filter( v => Math.sqrt(v) == Math.trunc(Math.sqrt(v)) ),     //6
+        t => t.sort((a,b) => b-a).slice(0,10),                              //7
+        t => t.sort((a,b) => b-a).slice(0,17),                              //8
+        t => t.sort((a,b) => a-b).slice(0,15),                              //9
+        t => t.sort((a,b) => a-b).slice(0,12),                              //10
+    ]
+    f2l=[
+        t => t.reduce((o, a) => o + a, 0),
+        t => t.reduce((o, a) => o + Math.log10(a), 0).toFixed()+"</sup>",
+        t => t.reduce((o, a) => o + a**2, 0),
+        t => (t.reduce((o, a) => o + a, 0) / t.length).toFixed(2),
+        t => Math.min(...t),
+        t => Math.max(...t)
+    ]
     setTimeout( v => {
         s=""
+        ms = []
+        mos = []
+        mot = []
         for (j=0;j<5;j++) {
             st = []
-            for (i=1;i<50;i++) st.push(Math.floor(Math.random() * 100))
+            for (i=1;i<50;i++) st.push(Math.floor(Math.random() * 99 + 1))
+            ms.push(st)
+            mos.push(...st)
             s += st.join(" ")+"\n"
         }
         q = [...Array(f1.length).keys()].sort( v => Math.random()-0.5 )
@@ -87,14 +117,21 @@ div.m20 {
         for (j=0;j<5;j++) {
             sx += `<b>${j + 2}. feladat</b>: Határozza meg ${j==0 ||j==4 ? 'az' : 'a&nbsp;'} ${j + 1}. sorban szereplő ${f1[q[j]]} ${ f2[w[j]] }!<br>`
         }
-        sx +=`<b>7. feladat</b>: Határozza meg az összes számra a ${f1[q[5]]} ${ f2[w[5]] }!`
+        sx +=`<b>7. feladat</b>: Határozza meg az összes számra a ${f1[q[5]]} ${ f2[w[5]] }!<hr><b class="mm">Minta a szöveges kimenetek kialakításához:</b><br><br>`
+        for (j=0;j<5;j++) {
+            sx += `<b>${j + 2}. feladat</b>:<br> ${j==0 ||j==4 ? 'Az' : 'A&nbsp;'} ${j + 1}. sorban szereplő ${f1[q[j]]} ${ f2v[w[j]] }${f2l[w[j]](f1l[q[j]](ms[j]))}<br>`
+        }
         document.getElementById("feladat").innerHTML = `
             <b>1. feladat</b>: Mentse el ezt a feladatkiírást képként f8.jpg néven!<br><br>
             Az alábbi szöveges fájl soraiban egész számok vannak szóközzel elválasztva.<br><br>
             <a  id="ax" download="input.txt">INPUT.TXT (A letöltéshez kattintson ide!)</a><br><br>
             Készítsen programot <i>python</i> nyelven, mely beolvassa a számokat és eltárolja egy alkalmas<br>
-            adatszerkezetben, majd az alábbi számításokat végrehajtja! A program neve <b>f8.py</b> legyen!<br><br>
-        `+sx
+            adatszerkezetben, majd az alábbi számításokat végrehajtja! A program neve <b>f8.py</b> legyen!<br>
+            A nem egész számokat két tizedesre kerekítve adja meg!
+            <br><br>
+        ` + sx + `
+            <b>7. feladat</b>:<br>Az inputban szereplő összes szám közül a ${f1[q[5]]} ${ f2v[w[5]] }${f2l[w[5]](f1l[q[5]](mos))}<br>
+        `
     }, 100)
 </script>
 <ul class="navigation">
