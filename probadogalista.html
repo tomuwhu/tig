@@ -55,7 +55,7 @@ div.m20 {
     border-radius: 7px;
     color:rgb(17, 53, 136);
     width: 650px;
-    height: 440px;
+    height: 226px;
 }
 b.mm {
     color: brown;
@@ -214,11 +214,12 @@ a:hover {
         kn = ks.length
         t = setInterval(() => {
             document.getElementById("feladat").innerHTML = ks.slice(0,i)+"█"
+            if ( i.toFixed() == (kn*4/7).toFixed() ) document.getElementById("feladat").style.height = "456px"
             i++
             if (ks[i] == "<") {
                 while (ks[i]!=">") i++
             } 
-            if (i >= ks.length) {
+            if (i >= kn) {
                 clearInterval(t)
                 document.getElementById("feladat").innerHTML = ks
                 setTimeout( v => { 
