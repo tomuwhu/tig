@@ -72,7 +72,14 @@ b.mm {
         document.getElementById(x+'g').style.display='none'
     }
     il = [5,7,9,11,14,15,17,19,21,24,27]
-    ii = il[Math.floor(Math.random() * il.length)]
+    if (localStorage.getItem('ic')) {
+        ic = Number(localStorage.getItem('ic'))
+        ii = il[ic]
+    } else {
+        ic = Math.floor(Math.random() * il.length)
+        localStorage.setItem("ic", ic)
+        ii = il[ic]
+    }
     f1 = ['számok','páros számok','páratlan számok',`${ii}-nél kisebb számok`,`${ii}-nél nagyobb számok`,
          'hárommal osztható számok', 'négyzetszámok','10 legnagyobb szám','17 legnagyobb szám','15 legkisebb szám','12 legkisebb szám']
     f2 = ['összegét', 'szorzatának nagyságrendjét', 'négyzeteinek összegét', 'számtani közepét (átlagát)', 'minimumát', 'maximumát']
@@ -108,20 +115,66 @@ b.mm {
         ['ponttal','.'],
     ]
     setTimeout( v => {
-        zz = Math.floor(Math.random() * z.length)
+        if (localStorage.getItem('zz')) {
+            zz = Number(localStorage.getItem('zz'))
+        } else {
+            zz = Math.floor(Math.random() * z.length)
+            localStorage.setItem('zz', zz)
+        }
+
         s=""
         ms = []
         mos = []
         mot = []
-        for (j=0;j<5;j++) {
-            st = []
-            for (i=1;i<50;i++) st.push(Math.floor(Math.random() * 99 + 1))
-            ms.push(st)
-            mos.push(...st)
-            s += st.join(z[zz][1])+"\n"
+        inps= ''
+        if (localStorage.getItem('inps')) {
+            inps=localStorage.getItem('inps')
+            k = 0
+            for (j=0;j<5;j++) {
+                st = []
+                for (i=1;i<50;i++) {
+                    nu = Number(inps.split(",")[k])
+                    k++
+                    st.push(nu)
+                    inps += nu +","
+                }
+                ms.push(st)
+                mos.push(...st)
+                s += st.join(z[zz][1])+"\n"
+            }
+        } else {
+            for (j=0;j<5;j++) {
+                st = []
+                for (i=1;i<50;i++) {
+                    nu = Math.floor(Math.random() * 99 + 1)
+                    st.push(nu)
+                    inps += nu +","
+                }
+                ms.push(st)
+                mos.push(...st)
+                s += st.join(z[zz][1])+"\n"
+            }
+            localStorage.setItem('inps',inps)
         }
-        q = [...Array(f1.length).keys()].sort( v => Math.random()-0.5 )
-        w = [...Array(f2.length).keys()].sort( v => Math.random()-0.5 )
+        
+        if (localStorage.getItem('q')) {
+            qs = localStorage.getItem('q')
+            q = qs.split(",").map( v=> Number(v))
+        } else {
+            q = [...Array(f1.length).keys()].sort( v => Math.random()-0.5 )
+            qs = q.join(",")
+            localStorage.setItem('q', qs)
+        }
+        
+        if (localStorage.getItem('w')) {
+            ws = localStorage.getItem('w')
+            w = ws.split(",").map( v => Number(v))
+        } else {
+            w = [...Array(f2.length).keys()].sort( v => Math.random()-0.5 )
+            ws = w.join(",")
+            localStorage.setItem('w', ws)
+        }
+
         setTimeout( v => { document.getElementById("ax").href="data:text/plain;charset=utf-8,"+s }, 100)
         sx=''
         for (j=0;j<5;j++) {
@@ -137,7 +190,7 @@ b.mm {
             <a  id="ax" download="input.txt">INPUT.TXT (A letöltéshez kattintson ide!)</a><br><br>
             Készítsen programot <i>python</i> nyelven, mely beolvassa a számokat és eltárolja egy alkalmas<br>
             adatszerkezetben, majd az alábbi számításokat végrehajtja! A program neve <b>p8.py</b> legyen!<br>
-            A nem egész számokat két tizedesre kerekítve adja meg, a nagyságrendet 10^n vagy 10<sup>n</sup> alakban!
+            A nem egész számokat két tizedesjegyre kerekítve adja meg, a nagyságrendet 10^n vagy 10<sup>n</sup> alakban!
             <br><br>
         ` + sx + `
             <b>7. feladat</b>:<br>Az inputban szereplő összes szám közül a ${f1[q[5]]} ${ f2v[w[5]] }${f2l[w[5]](f1l[q[5]](mos))}<br>
