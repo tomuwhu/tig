@@ -98,7 +98,17 @@ b.mm {
         t => Math.min(...t),
         t => Math.max(...t)
     ]
+    z = [
+        ['szóközzel',' '],
+        ['vesszővel',','],
+        ['pontosvesszővel',';'],
+        ['kettősponttal',':'],
+        ['felkijálójellel','!'],
+        ['kötőjellel','-'],
+        ['ponttal','.'],
+    ]
     setTimeout( v => {
+        zz = Math.floor(Math.random() * z.length)
         s=""
         ms = []
         mos = []
@@ -108,7 +118,7 @@ b.mm {
             for (i=1;i<50;i++) st.push(Math.floor(Math.random() * 99 + 1))
             ms.push(st)
             mos.push(...st)
-            s += st.join(" ")+"\n"
+            s += st.join(z[zz][1])+"\n"
         }
         q = [...Array(f1.length).keys()].sort( v => Math.random()-0.5 )
         w = [...Array(f2.length).keys()].sort( v => Math.random()-0.5 )
@@ -123,7 +133,7 @@ b.mm {
         }
         document.getElementById("feladat").innerHTML = `
             <b>1. feladat</b>: Mentse el ezt a feladatkiírást képként f8.jpg néven!<br><br>
-            Az alábbi szöveges fájl soraiban egész számok vannak szóközzel elválasztva.<br><br>
+            Az alábbi szöveges fájl soraiban egész számok vannak ${z[zz][0]} ('${z[zz][1]}') elválasztva.<br><br>
             <a  id="ax" download="input.txt">INPUT.TXT (A letöltéshez kattintson ide!)</a><br><br>
             Készítsen programot <i>python</i> nyelven, mely beolvassa a számokat és eltárolja egy alkalmas<br>
             adatszerkezetben, majd az alábbi számításokat végrehajtja! A program neve <b>p8.py</b> legyen!<br>
