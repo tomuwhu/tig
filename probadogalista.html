@@ -59,6 +59,14 @@ div.m20 {
 }
 b.mm {
     color: brown;
+    text-shadow: 1px 1px 3px rgb(70, 51, 5);
+}
+a {
+    color:rgb(10, 88, 88);
+}
+a:hover {
+    color: rgb(155, 82, 82);
+    text-shadow: 1px 1px 3px rgb(70, 51, 5);
 }
 </style>
 <meta charset="utf-8">
@@ -210,7 +218,7 @@ b.mm {
                 document.getElementById("feladat").innerHTML = ks
                 setTimeout( v => { 
                     document.getElementById("ax").href="data:text/plain;charset=utf-8,"+s
-                    document.getElementById("ax").innerHTML="INPUT.TXT (A letöltéshez kattintson ide!)"
+                    document.getElementById("ax").innerHTML="<b>INPUT.TXT (A letöltéshez kattintson ide!)</b>"
                 }, 10)
             }
         }, 2+((kn-i)/kn)*10 );
