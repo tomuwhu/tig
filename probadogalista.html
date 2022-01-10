@@ -70,23 +70,24 @@ div.m20 {
     }
     il = [5,7,9,11,14,15,17,19,21,24,27]
     ii = il[Math.floor(Math.random() * il.length)]
-    f1 = ['','páros ','páratlan ',`${ii}-nél kisebb `,`${ii}-nél kisebb `, 'hárommal osztható ', 'négyzet']
-    f2 = ['összegét', 'szorzatát', 'négyzeteinek összegét', 'számtani közepét (átlagát)', 'mértani közepét', 'minimumát', 'maximumát']
+    f1 = ['számok','páros számok','páratlan számok',`${ii}-nél kisebb számok`,`${ii}-nél kisebb számok`,
+         'hárommal osztható számok', 'négyzetszámok','10 legnagyobb szám','17 legnagyobb szám','15 legkisebb szám','12 legkisebb szám']
+    f2 = ['összegét', 'szorzatát', 'négyzeteinek összegét', 'számtani közepét (átlagát)', 'mértani közepét', 'minimumát', 'maximumát',]
     setTimeout( v => {
         s=""
         for (j=0;j<5;j++) {
             st = []
-            for (i=1;i<20;i++) st.push(Math.floor(Math.random() * 100))
+            for (i=1;i<50;i++) st.push(Math.floor(Math.random() * 100))
             s += st.join(" ")+"\n"
         }
-        q = [0,1,2,3,4,5,6].sort( v => Math.random()-0.5 )
-        w = [0,1,2,3,4,5,6].sort( v => Math.random()-0.5 )
+        q = [...Array(f1.length).keys()].sort( v => Math.random()-0.5 )
+        w = [...Array(f2.length).keys()].sort( v => Math.random()-0.5 )
         setTimeout( v => { document.getElementById("ax").href="data:text/plain;charset=utf-8,"+s }, 100)
         sx=''
         for (j=0;j<5;j++) {
-            sx += `<b>${j + 2}. feladat</b>: Határozza meg ${j==0 ||j==4 ? 'az' : 'a'} ${j + 1}. sorban szereplő ${f1[q[j]]}számok ${ f2[w[j]] }!<br>`
+            sx += `<b>${j + 2}. feladat</b>: Határozza meg ${j==0 ||j==4 ? 'az' : 'a&nbsp;'} ${j + 1}. sorban szereplő ${f1[q[j]]} ${ f2[w[j]] }!<br>`
         }
-        sx +=`<b>7. feladat</b>: Határozza meg az összes számra a ${f1[q[5]]}számok ${ f2[w[5]] }!`
+        sx +=`<b>7. feladat</b>: Határozza meg az összes számra a ${f1[q[5]]} ${ f2[w[5]] }!`
         document.getElementById("feladat").innerHTML = `
             <b>1. feladat</b>: Mentse el ezt a feladatkiírást képként f8.jpg néven!<br><br>
             Az alábbi szöveges fájl soraiban egész számok vannak szóközzel elválasztva.<br><br>
