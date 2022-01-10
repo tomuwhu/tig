@@ -54,6 +54,8 @@ div.m20 {
     background-color: rgb(255, 253, 253);
     border-radius: 7px;
     color:rgb(17, 53, 136);
+    width: 650px;
+    height: 440px;
 }
 b.mm {
     color: brown;
@@ -180,14 +182,14 @@ b.mm {
         for (j=0;j<5;j++) {
             sx += `<b>${j + 2}. feladat</b>: Határozza meg ${j==0 ||j==4 ? 'az' : 'a&nbsp;'} ${j + 1}. sorban szereplő ${f1[q[j]]} ${ f2[w[j]] }!<br>`
         }
-        sx +=`<b>7. feladat</b>: Határozza meg az összes számra a ${f1[q[5]]} ${ f2[w[5]] }!<hr><b class="mm">Minta a szöveges kimenetek kialakításához:</b><br><br>`
+        sx +=`<b>7. feladat</b>: Határozza meg az összes számra a ${f1[q[5]]} ${ f2[w[5]] }!<hr><b class="mm">Minta a szöveges kimenet kialakításához:</b><br><br>`
         for (j=0;j<5;j++) {
             sx += `<b>${j + 2}. feladat</b>:<br> ${j==0 ||j==4 ? 'Az' : 'A&nbsp;'} ${j + 1}. sorban szereplő ${f1[q[j]]} ${ f2v[w[j]] }${f2l[w[j]](f1l[q[j]](ms[j]))}<br>`
         }
-        document.getElementById("feladat").innerHTML = `
-            <b>1. feladat</b>: Mentse el ezt a feladatkiírást képként f8.jpg néven!<br><br>
+        ks = `
+            <b>1. feladat</b>: Mentse el ezt a feladatkiírást képként <b>f8.jpg</b> néven!<br><br>
             Az alábbi szöveges fájl soraiban egész számok vannak ${z[zz][0]} ('${z[zz][1]}') elválasztva.<br><br>
-            <a  id="ax" download="input.txt">INPUT.TXT (A letöltéshez kattintson ide!)</a><br><br>
+            <a  id="ax" download="input.txt">INPUT.TXT</a><br><br>
             Készítsen programot <i>python</i> nyelven, mely beolvassa a számokat és eltárolja egy alkalmas<br>
             adatszerkezetben, majd az alábbi számításokat végrehajtja! A program neve <b>p8.py</b> legyen!<br>
             A nem egész számokat két tizedesjegyre kerekítve adja meg, a nagyságrendet 10^n vagy 10<sup>n</sup> alakban!
@@ -195,6 +197,24 @@ b.mm {
         ` + sx + `
             <b>7. feladat</b>:<br>Az inputban szereplő összes szám közül a ${f1[q[5]]} ${ f2v[w[5]] }${f2l[w[5]](f1l[q[5]](mos))}<br>
         `
+        i=0
+        kn = ks.length
+        t = setInterval(() => {
+            document.getElementById("feladat").innerHTML = ks.slice(0,i)+"█"
+            i++
+            if (ks[i] == "<") {
+                while (ks[i]!=">") i++
+            } 
+            if (i >= ks.length) {
+                clearInterval(t)
+                document.getElementById("feladat").innerHTML = ks
+                setTimeout( v => { 
+                    document.getElementById("ax").href="data:text/plain;charset=utf-8,"+s
+                    document.getElementById("ax").innerHTML="INPUT.TXT (A letöltéshez kattintson ide!)"
+                }, 10)
+            }
+        }, 2+((kn-i)/kn)*10 );
+        
     }, 100)
 </script>
 <ul class="navigation">
