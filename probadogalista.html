@@ -26,7 +26,7 @@ body {
 div.m20 {
     margin: 20px;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
 @media all and (max-width: 800px) {
     .navigation {
         justify-content: space-around;
@@ -48,6 +48,9 @@ div.m20 {
         border-bottom: none;
     }
 }
+#feladat {
+    margin:25px;
+}
 </style>
 <meta charset="utf-8">
 <script>
@@ -61,6 +64,33 @@ div.m20 {
         document.getElementById(x+'x').style.display='table-cell'
         document.getElementById(x+'g').style.display='none'
     }
+    il = [5,7,9,11,14,15,17,19,21,24,27]
+    ii = il[Math.floor(Math.random() * il.length)]
+    f1 = ['','páros ','páratlan ',`${ii}-nél kisebb `,`${ii}-nél kisebb `, 'hárommal osztható ', 'négyzet']
+    f2 = ['összegét', 'szorzatát', 'négyzeteinek összegét', 'számtani közepét (átlagát)', 'mértani közepét', 'minimumát', 'maximumát']
+    setTimeout( v => {
+        s=""
+        for (j=0;j<5;j++) {
+            st = []
+            for (i=1;i<20;i++) st.push(Math.floor(Math.random() * 100))
+            s += st.join(" ")+"\n"
+        }
+        q = [0,1,2,3,4,5,6].sort( v => Math.random()-0.5 )
+        w = [0,1,2,3,4,5,6].sort( v => Math.random()-0.5 )
+        setTimeout( v => { document.getElementById("ax").href="data:text/plain;charset=utf-8,"+s }, 100)
+        sx=''
+        for (j=0;j<5;j++) {
+            sx += `<b>${j + 2}. feladat</b>: Határozza meg ${j==0 ||j==4 ? 'az' : 'a'} ${j + 1}. sorban szereplő ${f1[q[j]]}számok ${ f2[w[j]] }!<br>`
+        }
+        sx +=`<b>7. feladat</b>: Határozza meg az összes számra a ${f1[q[5]]}számok ${ f2[w[5]] }!`
+        document.getElementById("feladat").innerHTML = `
+            <b>1. feladat</b>: Mentse el ezt a feladatkiírást képként f8.jpg néven!<br><br>
+            Az alábbi szöveges fájl soraiban egész számok vannak szóközzel elválasztva.<br><br>
+            <a  id="ax" download="input.txt">INPUT.TXT (A letöltéshez kattintson ide!)</a><br><br>
+            Készítsen programot <i>python</i> nyelven, mely beolvassa a számokat és eltárolja egy alkalmas<br>
+            adatszerkezetben, majd az alábbi számításokat végrehajtja! A program neve <b>f8.py</b> legyen!<br><br>
+        `+sx
+    }, 100)
 </script>
 <ul class="navigation">
     <li><a href="./">Kezdőlap</a></li>
@@ -77,16 +107,27 @@ div.m20 {
                 Mintafeladatok
             </td>
         </tr>
-        <tr><td colspan=2 class="gg" style="display:none;" id="pd7g"
-            onclick="f('pd7')">7. dolgozat (nyitva)</td></tr>
-        <tr id="pd7x" class="px">
+        <tr><td colspan=2 class="gg" style="display:none;" id="pd8g"
+            onclick="f('pd8')">8. dolgozat (nyitva)</td></tr>
+        <tr id="pd8x" class="px">
             <th id="h7x">
-                7. dolgozat (nyitva)
+                8. dolgozat (nyitva)
             </th>
-            <td id="h7x2">
-                <a href="html/pithx.svg"><img class="pici2" src="img/ptbk.gif" alt=""></a>
+            <td id="h8x2" style="text-align: left; font-family: 'Syne Mono', monospace; font-size: 12px;">
+                <div id="feladat"></div>
             </td>
         </td>
+        </tr>
+        <tr><td colspan=2 id="pd7g" class="gg"
+            onclick="f('pd7')" >7. dolgozat (lezárt)</td></tr>
+        <tr id="pd7x" class="px" style="display:none;">
+            <th>
+                7. dolgozat (lezárt)
+            </th>
+            <td>
+                <a href="html/pithx.svg"><img class="pici2" src="img/ptbk.gif" alt=""></a>
+            </td>
+            </td>
         </tr>
         <tr><td colspan=2 id="pd6g" class="gg"
             onclick="f('pd6')" >6. dolgozat (lezárt)</td></tr>
@@ -241,7 +282,7 @@ div.m20 {
         border-radius: 10px;
         box-shadow: 1px 1px 3px black;
     }
-    td#pd7g, th#h7x, td#h7x2 {
+    td#pd8g, th#h8x, td#h8x2 {
         background-color: aquamarine;
         color:#08274b
     }
