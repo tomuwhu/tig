@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Shadows+Into+Light&family=Lemonada');
 body.b {
     background: rgb(12, 12, 1);
     color: rgb(196, 240, 230);
@@ -94,6 +94,8 @@ td, th {
     list-style: none;
     margin: 0;
     background: rgb(2, 98, 130);
+    font-family: 'Lemonada', cursive;
+    font-size: 12px;
 }
 
 .navigation a {

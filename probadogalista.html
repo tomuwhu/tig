@@ -1,4 +1,5 @@
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@300&family=Syne+Mono&display=swap');
 body {
     margin: 0;
 }
@@ -10,6 +11,8 @@ body {
     list-style: none;
     margin: 0;
     background: rgb(2, 98, 130);
+    font-family: 'Lemonada', cursive;
+    font-size: 12px;
 }
 
 .navigation a {
@@ -26,7 +29,7 @@ body {
 div.m20 {
     margin: 20px;
 }
-@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@300&family=Syne+Mono&display=swap');
+
 @media all and (max-width: 800px) {
     .navigation {
         justify-content: space-around;
@@ -251,7 +254,7 @@ a:hover {
                 document.getElementById("ax").innerHTML="<b>INPUT.TXT (A letöltéshez kattintson ide!)</b>"
             }, 10)
         }
-        
+        document.getElementById("feladat").innerHTML += `<hr><a href="http://localhost/tig/pyexamples.html?p8.py">Megoldás minta (nem pontosan ehhez a feladathoz)</a>`
     }, 100)
 </script>
 <ul class="navigation">
