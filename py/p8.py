@@ -7,8 +7,8 @@ print("3. feladat")
 t3 = list(map(lambda x: x**2,sorted(t[1])[-8:]))
 print(f'A 2. sorban szereplő 8 legnagyobb szám négyzetének összege: {sum(t3)}')
 
-from functools import reduce
 print("4. feladat")
+from functools import reduce
 t4 = reduce(lambda x, y: x * y, filter(lambda x: x % 3, t[2]), 1)
 print(f'A 3. sorban szereplő 3-mal nem osztható számok szorzatának nagyságrendje: 10^{len(str(t4))}')
 
