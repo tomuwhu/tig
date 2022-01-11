@@ -54,7 +54,7 @@ div.m20 {
     background-color: rgb(255, 253, 253);
     border-radius: 7px;
     color:rgb(17, 53, 136);
-    width: 680px;
+    width: 720px;
     height: 226px;
 }
 b.mm {
@@ -219,7 +219,7 @@ a:hover {
             <a  id="ax" download="input.txt">INPUT.TXT</a><br><br>
             Készítsen programot <i>python</i> nyelven, mely beolvassa a számokat és eltárolja egy alkalmas<br>
             adatszerkezetben, majd az alábbi számításokat végrehajtja! A program neve <b>p8.py</b> legyen!<br>
-            A nem egész számokat két tizedesjegyre kerekítve adja meg, a nagyságrendet 10^n vagy 10<sup>n</sup> alakban!
+            A nem egész számokat két tizedesjegyre kerekítve adja meg, a nagyságrendet 10^n alakban!
             <br><br>
         ` + sx + `
             <b>7. feladat</b>:<br>Az inputban szereplő összes szám közül a ${f1[q[5]]} ${ f2v[w[5]] }${f2l[w[5]](f1l[q[5]](mos))}<br>
@@ -229,7 +229,7 @@ a:hover {
         if (fs)
             t = setInterval(() => {
                 document.getElementById("feladat").innerHTML = ks.slice(0,i)+"█"
-                if ( i.toFixed() == (kn*4/7).toFixed() ) document.getElementById("feladat").style.height = "456px"
+                if ( i.toFixed() == (kn*4/7).toFixed() ) document.getElementById("feladat").style.height = "465px"
                 i++
                 if (ks[i] == "<") {
                     while (ks[i]!=">") i++
@@ -244,7 +244,7 @@ a:hover {
                 }
             }, 2+((kn-i)/kn)*10 );
         else {
-            document.getElementById("feladat").style.height = "456px"
+            document.getElementById("feladat").style.height = "465px"
             document.getElementById("feladat").innerHTML = ks
             setTimeout( v => { 
                 document.getElementById("ax").href="data:text/plain;charset=utf-8,"+s
