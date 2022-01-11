@@ -1,3 +1,7 @@
+# A képernyő kijelölt területének másolása vágólapra:
+# windows: win  + shift + s
+# mac-os:  ctrl + shift + mac + 4
+
 t = list(map(lambda x: list(map(int, x.split("-"))),open("input.txt")))
 
 print("2. feladat")
