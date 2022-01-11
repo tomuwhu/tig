@@ -80,9 +80,9 @@ a:hover {
     ds = (d.getDate()+d.getMonth()+d.getYear()).toFixed()
     if (localStorage.getItem('ds')) {
         if ( localStorage.getItem('ds') != ds) {
-            console.log(localStorage.getItem('ds') != ds,localStorage.getItem('ds'), ds);
-           localStorage.setItem('ds', ds)
+           console.log(localStorage.getItem('ds') != ds,localStorage.getItem('ds'), ds);
            localStorage.clear()
+           localStorage.setItem('ds', ds)
         }
     } else {
         localStorage.clear()
