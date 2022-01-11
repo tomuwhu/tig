@@ -76,6 +76,18 @@ a:hover {
 </style>
 <meta charset="utf-8">
 <script>
+    d = new Date()
+    ds = (d.getDate()+d.getMonth()+d.getYear()).toFixed()
+    if (localStorage.getItem('ds')) {
+        if ( localStorage.getItem('ds') != ds) {
+            console.log(localStorage.getItem('ds') != ds,localStorage.getItem('ds'), ds);
+           localStorage.setItem('ds', ds)
+           localStorage.clear()
+        }
+    } else {
+        localStorage.clear()
+        localStorage.setItem('ds', ds)
+    }
     function f(x) {
         document.querySelectorAll('.px').forEach( v => {
             v.style="display:none;"
@@ -193,8 +205,6 @@ a:hover {
             ws = w.join(",")
             localStorage.setItem('w', ws)
         }
-
-        setTimeout( v => { document.getElementById("ax").href="data:text/plain;charset=utf-8,"+s }, 100)
         sx=''
         for (j=0;j<5;j++) {
             sx += `<b>${j + 2}. feladat</b>: Határozza meg ${j==0 ||j==4 ? 'az' : 'a&nbsp;'} ${j + 1}. sorban szereplő ${f1[q[j]]} ${ f2[w[j]] }!<br>`
