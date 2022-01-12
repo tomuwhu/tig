@@ -1,82 +1,3 @@
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@300&family=Syne+Mono&display=swap');
-body {
-    margin: 0;
-}
-.navigation {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
-    text-shadow: 1px 1px 3px black;
-    list-style: none;
-    margin: 0;
-    background: rgb(2, 98, 130);
-    font-family: 'Lemonada', cursive;
-    font-size: 12px;
-}
-
-.navigation a {
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    color: white;
-}
-
-.navigation a:hover {
-    background: #1565C0;
-}
-
-div.m20 {
-    margin: 20px;
-}
-
-@media all and (max-width: 800px) {
-    .navigation {
-        justify-content: space-around;
-    }
-}
-
-@media all and (max-width: 700px) {
-    .navigation {
-        flex-flow: column wrap;
-        padding: 0;
-    }
-    .navigation a {
-        text-align: center;
-        padding: 10px;
-        border-top: 1px solid rgba(255, 255, 255,0.3);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-    .navigation li:last-of-type a {
-        border-bottom: none;
-    }
-}
-#feladat {
-    padding:15px;
-    box-shadow: 1px 1px 3px black;
-    background-color: rgb(255, 253, 253);
-    border-radius: 7px;
-    color:rgb(17, 53, 136);
-    width: 720px;
-    height: 226px;
-}
-b.mm {
-    color: brown;
-    text-shadow: 1px 1px 3px rgb(70, 51, 5);
-    font-family: 'Gluten', cursive;
-    font-size: 17px;
-}
-a {
-    color:rgb(10, 88, 88);
-    text-shadow: 1px 1px 2px rgb(5, 49, 70);
-    font-family: 'Gluten', cursive;
-    font-size: 14px;
-}
-a:hover {
-    color: rgb(155, 82, 82);
-    text-shadow: 1px 1px 3px rgb(70, 51, 5);
-}
-</style>
 <meta charset="utf-8">
 <script>
     d = new Date()
@@ -214,7 +135,7 @@ a:hover {
         }
         sx +=`<b>7. feladat</b>: Határozza meg az összes számra a ${f1[q[5]]} ${ f2[w[5]] }!<hr><b class="mm">Minta a szöveges kimenet kialakításához:</b><br><br>`
         for (j=0;j<5;j++) {
-            sx += `<b>${j + 2}. feladat</b>:<br> ${j==0 ||j==4 ? 'Az' : 'A&nbsp;'} ${j + 1}. sorban szereplő ${f1[q[j]]} ${ f2v[w[j]] }${f2l[w[j]](f1l[q[j]](ms[j]))}<br>`
+            sx += `<b>${j + 2}. feladat</b>:<br> ${j==0 ||j==4 ? 'Az' : 'A&nbsp;'} ${j + 1}. sorban szereplő ${f1[q[j]]} ${ f2v[w[j]] }<b class="r">${f2l[w[j]](f1l[q[j]](ms[j]))}</b><br>`
         }
         ks = `
             <b>1. feladat</b>: Mentse el ezt a feladatkiírást képként <b>f8.jpg</b> néven!<br><br>
@@ -225,7 +146,7 @@ a:hover {
             A nem egész számokat két tizedesjegyre kerekítve adja meg, a nagyságrendet 10^n alakban!
             <br><br>
         ` + sx + `
-            <b>7. feladat</b>:<br>Az inputban szereplő összes szám közül a ${f1[q[5]]} ${ f2v[w[5]] }${f2l[w[5]](f1l[q[5]](mos))}<br>
+            <b>7. feladat</b>:<br>Az inputban szereplő összes szám közül a ${f1[q[5]]} ${ f2v[w[5]] }<b class="r">${f2l[w[5]](f1l[q[5]](mos))}</b><br>
             <hr><a href="http://localhost/tig/pyexamples.html?p8.py" target="mm">Megoldás minta (nem pontosan ehhez a feladathoz)</a>
         `
         i=0
@@ -359,96 +280,181 @@ a:hover {
 </div>
 
 <style>
-    .gg {
-        cursor: pointer;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size: 20px;
-        box-shadow: 1px 1px 3px black;
-        text-shadow: 1px 1px 2px darkslategray;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+body {
+    margin: 0;
+}
+.navigation {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    text-shadow: 1px 1px 3px black;
+    list-style: none;
+    margin: 0;
+    background: rgb(2, 98, 130);
+    font-family: 'Lemonada', cursive;
+    font-size: 12px;
+}
+
+.navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    color: white;
+}
+
+.navigation a:hover {
+    background: #1565C0;
+}
+
+div.m20 {
+    margin: 20px;
+}
+
+@media all and (max-width: 800px) {
+    .navigation {
+        justify-content: space-around;
     }
-    .gg:hover {
-        background-color: rgb(232, 198, 172);
+}
+
+@media all and (max-width: 700px) {
+    .navigation {
+        flex-flow: column wrap;
+        padding: 0;
     }
-    td.cim {
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size: 35px;
-        box-shadow: 1px 1px 6px black inset;
-        text-shadow: 1px 1px 3px rgb(84, 43, 40);
-        padding: 20px;
-        background-image: url("img/textura1.jpg");
-        color: #08274b;
-    }
-    img {
-        width: 700px;
-        border-radius: 10px;
-        box-shadow: 1px 1px 3px black;
-    }
-    img:hover {
-        box-shadow: 1px 1px 7px rgb(72, 4, 4) ;
-    }
-    table {
-        user-select: none;
-        margin: auto;
+    .navigation a {
         text-align: center;
-        border-spacing: 10px;
-        background-color: rgb(183, 194, 89);
-        box-shadow: 1px 1px 3px black inset;
-        border-radius: 10px;
-    }
-    th {
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        text-orientation: mixed;
-        writing-mode: vertical-lr;
-        transform: rotate(180deg);
-        font-size: 20px;
-        border-radius: 12px;
-        color: rgb(114, 111, 78);
-        padding: 5px;
-        box-shadow: 1px 1px 3px black;
-        text-align: center;
-        padding: 20px;
-        text-shadow: 0px 0px 2px darkslategray;
-    }
-    td.mo {
-        vertical-align: bottom;
         padding: 10px;
-        width: 82px;
+        border-top: 1px solid rgba(255, 255, 255,0.3);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
-    .mo a {
-        text-decoration: none;
-        padding: 10px;
-        box-shadow: 1px 1px 3px black;
-        border-radius: 10px;
-        background-color: aquamarine;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    .navigation li:last-of-type a {
+        border-bottom: none;
     }
-    body {
-        background-color: #030f14;
-    }
-    th, td {
-        border-radius: 12px;
-        box-shadow: 1px 1px 3px black;
-        background-color: antiquewhite;
-        color: #70725a;
-    }
-    td {
-        padding: 6px;
-    }
-    div.pici {
-        height: 10px;
-    }
-    img.pici {
-        width: 350px;
-        border-radius: 10px;
-        box-shadow: 1px 1px 3px black;
-    }
-    img.pici2 {
-        width: 450px;
-        border-radius: 10px;
-        box-shadow: 1px 1px 3px black;
-    }
-    td#pd8g, th#h8x, td#h8x2 {
-        background-color: aquamarine;
-        color:#08274b
-    }
+}
+#feladat {
+    padding:15px;
+    box-shadow: 1px 1px 3px black;
+    background-color: rgb(255, 253, 253);
+    border-radius: 7px;
+    color:rgb(17, 53, 136);
+    width: 720px;
+    height: 226px;
+    user-select: text;
+}
+b.mm {
+    color: brown;
+    text-shadow: 1px 1px 3px rgb(70, 51, 5);
+    font-family: 'Comfortaa', cursive;
+    font-size: 17px;
+}
+a {
+    color:rgb(10, 88, 88);
+    text-shadow: 1px 1px 2px rgb(5, 49, 70);
+    font-family: 'Comfortaa', cursive;
+    font-size: 14px;
+}
+a:hover {
+    color: rgb(155, 82, 82);
+    text-shadow: 1px 1px 3px rgb(70, 51, 5);
+}
+.gg {
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+    font-size: 20px;
+    box-shadow: 1px 1px 3px black;
+    text-shadow: 1px 1px 2px darkslategray;
+}
+.gg:hover {
+    background-color: rgb(232, 198, 172);
+}
+td.cim {
+    font-family: 'Comfortaa', cursive;
+    font-size: 35px;
+    box-shadow: 1px 1px 6px black inset;
+    text-shadow: 1px 1px 3px rgb(84, 43, 40);
+    padding: 20px;
+    background-image: url("img/textura1.jpg");
+    color: #08274b;
+}
+img {
+    width: 700px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px black;
+}
+img:hover {
+    box-shadow: 1px 1px 7px rgb(72, 4, 4) ;
+}
+table {
+    user-select: none;
+    margin: auto;
+    text-align: center;
+    border-spacing: 10px;
+    background-color: rgb(183, 194, 89);
+    box-shadow: 1px 1px 3px black inset;
+    border-radius: 10px;
+}
+th {
+    font-family: 'Comfortaa', cursive;
+    text-orientation: mixed;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 20px;
+    border-radius: 12px;
+    color: rgb(114, 111, 78);
+    padding: 5px;
+    box-shadow: 1px 1px 3px black;
+    text-align: center;
+    padding: 20px;
+    text-shadow: 0px 0px 2px darkslategray;
+}
+td.mo {
+    vertical-align: bottom;
+    padding: 10px;
+    width: 82px;
+}
+.mo a {
+    text-decoration: none;
+    padding: 10px;
+    box-shadow: 1px 1px 3px black;
+    border-radius: 10px;
+    background-color: aquamarine;
+    font-family: 'Comfortaa', cursive;
+}
+body {
+    background-color: #030f14;
+}
+th, td {
+    border-radius: 12px;
+    box-shadow: 1px 1px 3px black;
+    background-color: antiquewhite;
+    color: #70725a;
+}
+td {
+    padding: 6px;
+}
+div.pici {
+    height: 10px;
+}
+img.pici {
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px black;
+}
+img.pici2 {
+    width: 450px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px black;
+}
+td#pd8g, th#h8x, td#h8x2 {
+    background-color: aquamarine;
+    color:#08274b
+}
+b.r {
+    color:rgb(72, 4, 4);
+    text-shadow: 1px 1px 2px rgb(104, 97, 97);
+}
+b {
+    text-shadow: 1px 1px 2px rgb(104, 97, 97);
+}
 </style>
