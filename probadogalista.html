@@ -133,7 +133,8 @@
         for (j=0;j<5;j++) {
             sx += `<b>${j + 2}. feladat</b>: Határozza meg ${j==0 ||j==4 ? 'az' : 'a&nbsp;'} ${j + 1}. sorban szereplő ${f1[q[j]]} ${ f2[w[j]] }!<br>`
         }
-        sx +=`<b>7. feladat</b>: Határozza meg az összes számra a ${f1[q[5]]} ${ f2[w[5]] }!<hr><b class="mm">Minta a szöveges kimenet kialakításához:</b><br><br>`
+        sx +=`<b>7. feladat</b>: Határozza meg az összes számra a ${f1[q[5]]} ${ f2[w[5]] }!<hr>`
+        sx +=`<b class="bek mm" onclick="document.getElementById('min').style.display='inline'">Minta a szöveges kimenet kialakításához:</b><br><div id="min" style="display:none;"><br>`
         for (j=0;j<5;j++) {
             sx += `<b>${j + 2}. feladat</b>:<br> ${j==0 ||j==4 ? 'Az' : 'A&nbsp;'} ${j + 1}. sorban szereplő ${f1[q[j]]} ${ f2v[w[j]] }<b class="r">${f2l[w[j]](f1l[q[j]](ms[j]))}</b><br>`
         }
@@ -146,7 +147,13 @@
             A nem egész számokat két tizedesjegyre kerekítve adja meg, a nagyságrendet 10^n alakban!
             <br><br>
         ` + sx + `
-            <b>7. feladat</b>:<br>Az inputban szereplő összes szám közül a ${f1[q[5]]} ${ f2v[w[5]] }<b class="r">${f2l[w[5]](f1l[q[5]](mos))}</b><br>
+            <b>7. feladat</b>:<br>Az inputban szereplő összes szám közül a ${f1[q[5]]} ${ f2v[w[5]] }<b class="r">${f2l[w[5]](f1l[q[5]](mos))}</b></br></div><hr>
+            <b class="bek" onclick="document.getElementById('bek').style.display='inline'">Beküldés</b>
+            <div id="bek" style="display: none;"><b>:</b> Az <b>f8.jpg</b>, az <b>input.txt</b> és a <b>p8.py</b>
+            fájlokat arhiválja a <i>vez-ker-mm-dd-ok.zip</i> tömörített fájlba,<br>
+            ahol <i>vez</i>: vezetéknév, <i>ker</i>: keresztnév, <i>mm</i>: mai dátum hónap, <i>dd</i>: mai dátum nap, <i>ok</i>: osztály.
+            Az .zip fájlt mentse saját google drive-jára és <a class="ma" target="gd" href="https://drive.google.com/drive/folders/1pqhwb6Yzj_T1Nq3s4rv-n8dh2_dyoPwU?usp=sharing">ebbe</a>
+            a megosztott mappába!<br><br><b>Beküldési határidő 2022. január 16. (vasárnap) 21:00!</b></div>
             <hr><a href="pyexamples.html?p8.py" target="mm">Megoldás minta (nem pontosan ehhez a feladathoz)</a>
         `
         i=0
@@ -459,5 +466,17 @@ b.r {
 }
 b {
     text-shadow: 1px 1px 2px rgb(104, 97, 97);
+}
+a.ma {
+    font-size: 10px;
+    font-weight: bold;
+}
+b.bek {
+    cursor: pointer; 
+    color:#6e060f;
+}
+b.bek:hover {
+    cursor: pointer; 
+    color:#d63946;
 }
 </style>
