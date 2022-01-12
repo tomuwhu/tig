@@ -22,17 +22,17 @@
         xhttp.open("GET", "./"+file, true);
         xhttp.send();
     }
-    function f(x, w = 10) {
+    function f(x) {
         z =  document.querySelectorAll('.u')
         if (z) {
             z.forEach( (v, i) => {
-                setTimeout( q => v.style.display="none", w * (i + 1) )
+                v.style.display="none"
             })
         }
         z =  document.querySelectorAll('.gg'+x)
         if (z) {
             z.forEach( v => {
-                setTimeout( q =>v.style.display='flex', 9 * w )
+                setTimeout( q =>v.style.display='flex', 10 )
             })
         }    
     }
@@ -163,3 +163,8 @@
     ></a>
 </div>
 </body>
+<style>
+    div.ww {
+        display: none;
+    }
+</style>
