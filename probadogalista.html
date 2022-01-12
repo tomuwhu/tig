@@ -158,26 +158,13 @@
         `
         i=0
         kn = ks.length
-        if (fs)
-            t = setInterval(() => {
-                document.getElementById("feladat").innerHTML = ks.slice(0,i)+"█"
-                if ( i == 1100 ) document.getElementById("feladat").style.height = "auto"
-                if ( i == 1180 ) i+= 800
-                i++
-                if (ks[i] == "<") {
-                    while (ks[i]!=">") i++
-                } 
-                if (i >= kn) {
-                    clearInterval(t)
-                    document.getElementById("feladat").innerHTML = ks
-                    setTimeout( v => { 
-                        document.getElementById("ax").href="data:text/plain;charset=utf-8,"+s
-                        document.getElementById("ax").innerHTML="<b>INPUT.TXT (A letöltéshez kattintson ide!)</b>"
-                    }, 10)
-                }
-            }, 2+((kn-i)/kn)*10 );
-        else {
-            document.getElementById("feladat").style.height = "auto"
+        if (fs) {
+            document.getElementById("feladat").innerHTML = ks
+            setTimeout( v => { 
+                document.getElementById("ax").href="data:text/plain;charset=utf-8,"+s
+                document.getElementById("ax").innerHTML="<b>INPUT.TXT (A letöltéshez kattintson ide!)</b>"
+            }, 10)
+        } else {
             document.getElementById("feladat").innerHTML = ks
             setTimeout( v => { 
                 document.getElementById("ax").href="data:text/plain;charset=utf-8,"+s
@@ -347,7 +334,7 @@ div.m20 {
     border-radius: 7px;
     color:rgb(17, 53, 136);
     width: 720px;
-    height: 226px;
+    height: auto;
     user-select: text;
 }
 b.mm {
