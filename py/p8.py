@@ -16,6 +16,11 @@ from functools import reduce
 t4 = reduce(lambda x, y: x * y, filter(lambda x: x % 3, t[2]), 1)
 print(f'A 3. sorban szereplő 3-mal nem osztható számok szorzatának nagyságrendje: 10^{len(str(t4))}')
 
+from math import sqrt as gy
+print("6. feladat")
+t5 = list(filter(lambda x: gy(x) == int(gy(x)),t[4]))
+t6 = reduce(lambda x, y: x + gy(y), filter(lambda x: gy(x) == int(gy(x)), t[4]), 0)
+print(f'A 4. sorban szereplő négyzetszámok ({(", ".join(map(str,sorted(t5))))}) négyzetgyökeinek ({(", ".join(map(str,map(int,map(gy,sorted(t5))))))}) összege: {t6:0.0f}')
 
 '''input.txt:
 58-34-50-47-14-85-32-29-10-3-66-92-83-2-59-17-9-99-14-81-9-92-45-83-11-53-89-36-58-30-24-15-42-60-79-2-10-38-33-78-51-30-12-23-11-97-3-57-86
