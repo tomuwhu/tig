@@ -164,6 +164,10 @@
         };
         xhttp.open("GET", "./"+file, true);
         xhttp.send();
+        setTimeout( v=> {
+          document.getElementsByClassName("ace_marker-layer")[0].innerHTML=""
+          document.getElementsByClassName("ace_marker-layer")[0].focus()
+        }, 1000 )
     }
     function load2() {
         file="html/"+document.getElementById("sel2").value
@@ -175,6 +179,9 @@
         };
         xhttp.open("GET", "./"+file, true);
         xhttp.send();
+        setTimeout( v=> {
+          document.getElementsByClassName("ace_marker-layer")[0].innerHTML=""
+        }, 500 )
     }
     ace.require("ace/ext/language_tools");
     var editor = ace.edit("editor");
@@ -194,9 +201,36 @@
         setTimeout(() => {
           document.getElementById("b").style.display="inline-block"
           document.getElementById("a").style.display="none"
-        }, 2000);
+        }, 500);
       }
     }
+    setTimeout( v=> {
+      document.getElementsByClassName("ace_marker-layer")[0].innerHTML=""
+    }, 300 )
 </script>
 </body>
+<style>
+  .navigation {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    text-shadow: 1px 1px 3px black;
+    list-style: none;
+    margin: 0;
+    background: rgb(2, 98, 130);
+    font-family: 'Lemonada', cursive;
+    font-size: 12px;
+}
+
+.navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    color: white;
+}
+
+.navigation a:hover {
+    background: #1b334f;
+}
+</style>
 </html>
