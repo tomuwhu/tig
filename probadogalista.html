@@ -159,11 +159,18 @@
         i=0
         kn = ks.length
         if (fs) {
-            document.getElementById("feladat").innerHTML = ks
-            setTimeout( v => { 
-                document.getElementById("ax").href="data:text/plain;charset=utf-8,"+s
-                document.getElementById("ax").innerHTML="<b>INPUT.TXT (A letöltéshez kattintson ide!)</b>"
-            }, 10)
+            fto = setInterval( v => {
+                i++
+                document.getElementById("feladat").innerHTML = `<div class="fg"><br><br><br> &nbsp; &nbsp; Egyedi feladatsor generálása${Array(i).fill('.').join("")}</div>`
+            }, 200)
+            setTimeout( to => {
+                clearInterval(fto)
+                document.getElementById("feladat").innerHTML = ks
+                setTimeout( v => { 
+                    document.getElementById("ax").href="data:text/plain;charset=utf-8,"+s
+                    document.getElementById("ax").innerHTML="<b>INPUT.TXT (A letöltéshez kattintson ide!)</b>"
+                }, 10)
+            }, 2000 )
         } else {
             document.getElementById("feladat").innerHTML = ks
             setTimeout( v => { 
@@ -335,6 +342,7 @@ div.m20 {
     color:rgb(17, 53, 136);
     width: 720px;
     height: auto;
+    min-height: 250px;
     user-select: text;
 }
 b.mm {
@@ -466,5 +474,10 @@ b.bek {
 b.bek:hover {
     cursor: pointer; 
     color:#d63946;
+}
+div.fg {
+    color:rgb(72, 4, 4);
+    text-shadow: 1px 1px 2px rgb(104, 97, 97);
+    font-size: 30px;
 }
 </style>
