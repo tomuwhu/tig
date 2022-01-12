@@ -161,7 +161,8 @@
         if (fs)
             t = setInterval(() => {
                 document.getElementById("feladat").innerHTML = ks.slice(0,i)+"█"
-                if ( i.toFixed() == (kn*4/7).toFixed() ) document.getElementById("feladat").style.height = "auto"
+                if ( i == 1100 ) document.getElementById("feladat").style.height = "auto"
+                if ( i == 1180 ) i+= 800
                 i++
                 if (ks[i] == "<") {
                     while (ks[i]!=">") i++
