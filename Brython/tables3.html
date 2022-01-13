@@ -4,14 +4,19 @@
     <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
     <script type="text/python">
         from browser import document, html
+        s = 0
         def gen(e):
             global r
+            global s
+            s+=1
             n = str(int(2**(int(e.target.value)/30120)))
             row = [ html.TD(c) for c in n]
             for i in range(10-len(n)):
                 row.append(html.TD(f'({i+len(n)})', Class="x"))
             r <= html.TR() <= row; e.target.value = ''
-        document <= html.INPUT(type="range", min=0, max="1000000", placeholder="Írjon be egy számot!").bind("change", gen) + html.HR()
+            if s==6:
+                document['i1'].style={"display":"none"}
+        document <= html.INPUT(Id="i1", type="range", min=0, max="1000000", placeholder="Írjon be egy számot!").bind("change", gen) + html.HR()
         r = html.TABLE()
         document <= r
     </script>
@@ -21,7 +26,10 @@
             border-spacing: 10px;
             background-color: rgb(96, 173, 148);
             border-radius: 12px;
-            border: double 4px gray;
+            border: solid 1px rgb(82, 50, 50);
+            box-shadow: 1px 1px 3px inset black;
+            height: 40px;
+            width: 700px;
         }
         td {
             box-shadow: 1px 1px 4px black inset;
