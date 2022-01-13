@@ -28,4 +28,4 @@
 
     - Az órákon nem figyel, nem próbálkozik, az óra alatt a padtársával más dolgokról beszélget vagy más tárgyat tanul, esetleg a többiek figyelmét is eltereli,
     - a tananyag nagy részét nem érti, nem is érti mivel foglalkozunk,
-    - az ellenőrzési pontok feladatain elszűrnyűlködik, majd elkezd más tárgyat tanulni.
+    - az ellenőrzési pontok feladatain elszűrnyűlködik.
