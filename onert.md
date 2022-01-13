@@ -1,5 +1,12 @@
 ## Tanulási erőfeszítések és tanulási eredmények az önértékeléshez
 
+- Dícséretes Jeles (5d):
+
+    - Az órákon figyel, aktívan együttműködik, a kötelező irodalmat otthon önállóan feldolgozza,
+    - a tananyagot érti, a tanult ismereteket a gyakorlatban alkalmazza,
+    - az ellenőrzési pontok feladatait 45 perc alatt önállóan közel hibátlanul megoldja,
+    - a tehetséggondozó pontok feladatait vagy más a tananyagon túlmutató feladatokat old meg.
+
 - Jeles (5):
 
     - Az órákon figyel, aktívan együttműködik, a kötelező irodalmat otthon önállóan feldolgozza,
