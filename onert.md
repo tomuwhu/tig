@@ -42,3 +42,6 @@
     - a tananyag nagy részét nem érti, nem is érti mivel foglalkozunk, néha megkérdezi: "kapok ötöst?",
     - az ellenőrzési pontok feladatain elszűrnyűlködik,
     - a HackerRank-re csak bemásolja a megoldásokat, a feladatok elolvasása nélkül.
+
+- [Óraértékelő űrlap kitöltése](uf/)
+- [Eredmények](uf/getres.html)

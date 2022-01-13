@@ -1,0 +1,331 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+function bgy() {
+    if (!localStorage.getItem("bek")) {
+        k = Array(6).fill(0)
+        for (j=1; j<7; j++) {
+            i = 1
+            document.getElementsByName("k"+j).forEach(kl => {
+                if (kl.checked) k[j-1] = i
+                i ++
+            });
+            if (k[j-1]) {
+                document.getElementById("k"+j).style.backgroundColor="#74ffa7"
+            }
+        }
+        if ( k.filter( v => v).length == 6 ) document.getElementById("gb").style.display="inline-block"
+        else document.getElementById("gb").style.display="none"
+        localStorage.setItem("k",k)
+    } else {
+        j = localStorage.getItem("k")
+        k = j.split(",").map(Number)
+        for (j=1; j<7; j++) {
+            i = 1
+            document.getElementsByName("k"+j).forEach(kl => {
+                if (k[j-1] == i) kl.checked = true
+                i ++
+            });
+            if (k[j-1]) {
+                document.getElementById("k"+j).style.backgroundColor="#74ffa7"
+            }
+        }
+        document.getElementById("gb").style.display="none"
+        document.getElementById("gbsent").style.display="inline-block"
+    }
+    return k.join('')
+}
+function f() {
+    if (!localStorage.getItem("bek")) {
+        console.log(localStorage.getItem("bek"));
+        k = bgy() ;
+        $.post( 
+            "https://inf.u-szeged.hu/~tnemeth/uf.php",
+            { x: 12, k }  
+        )
+        .done( q => {
+            v12 = q.split('|')
+            v1 = v12[0]
+            v2 = JSON.parse(v12[1])
+            v3 = JSON.parse(v12[2])
+            $("#echo").html(v1);
+            console.log(v2,v3);
+            localStorage.setItem("bek",true)
+            document.getElementById("gb").style.display="none"
+            document.getElementById("gbsent").style.display="inline-block"
+        })
+    }
+}
+$( () => {
+    j = localStorage.getItem("k")
+    if (j) {
+        k = j.split(",").map(Number)
+        for (j=1; j<7; j++) {
+            i = 1
+            document.getElementsByName("k"+j).forEach(kl => {
+                if (k[j-1] == i) kl.checked = true
+                i ++
+            });
+            if (k[j-1]) {
+                document.getElementById("k"+j).style.backgroundColor="#74ffa7"
+            }
+        }
+        if ( k.filter( v => v).length == 6 ) document.getElementById("gb").style.display="inline-block"
+        if (localStorage.getItem("bek")) {
+            document.getElementById("gb").style.display="none"
+            document.getElementById("gbsent").style.display="inline-block"
+        }
+    }
+})
+
+</script>
+<meta charset="utf-8"> 
+
+<div class="cim">Digitális kultúra tantárgy - értékelési kérdőív</div>
+<div class="bc" onclick="bgy()">
+    <div class="bord" id="k1">
+        <div class="ques">Melyik a kedvenc témaköre informatikából?</div>
+        <div class="cont">
+            <div class="op">
+                <input type="radio" id="k1v1" name="k1">
+                <label for="k1v1">HTML/CSS</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k1v2" name="k1">
+                <label for="k1v2">SVG</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k1v3" name="k1">
+                <label for="k1v3">MarkDown</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k1v4" name="k1">
+                <label for="k1v4">Python</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k1v5" name="k1">
+                <label for="k1v5">Egyik sem</label>
+            </div>
+        </div>
+    </div>
+    <div class="bord" id="k2">
+        <div class="ques">Az alábbi tárgyak közül melyiket szereti legjobban?</div>
+        <div class="cont">
+            <div class="op">
+                <input type="radio" id="k2v1" name="k2">
+                <label for="k2v1">Info</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k2v2" name="k2">
+                <label for="k2v2">Magyar</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k2v3" name="k2">
+                <label for="k2v3">Idegen&nbsp;nyelv</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k2v4" name="k2">
+                <label for="k2v4">Töri</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k2v5" name="k2">
+                <label for="k2v5">Matek</label>
+            </div>
+        </div>
+    </div>
+    <div class="bord" id="k3">
+        <div class="ques">Az alábbi tárgyak közül melyiket szereti legkevésvé?</div>
+        <div class="cont">
+            <div class="op">
+                <input type="radio" id="k3v1" name="k3">
+                <label for="k3v1">Info</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k3v2" name="k3">
+                <label for="k3v2">Magyar</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k3v3" name="k3">
+                <label for="k3v3">Idegen&nbsp;nyelv</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k3v4" name="k3">
+                <label for="k3v4">Töri</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k3v5" name="k3">
+                <label for="k3v5">Matek</label>
+            </div>
+        </div>
+    </div>
+    <div class="bord" id="k4">
+        <div class="ques">Mennyire tudja követni az órai magyarázatot, feladatokat?</div>
+        <div class="cont">
+            <div class="op">
+                <input type="radio" id="k4v1" name="k4">
+                <label for="k4v1">Totál tudom követni</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k4v2" name="k4">
+                <label for="k4v2">Többnyire képben vagyok</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k4v3" name="k4">
+                <label for="k4v3">Többé-kevésbé O.K.</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k4v4" name="k4">
+                <label for="k4v4">Általában totlál lemaradok</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k4v5" name="k4">
+                <label for="k4v5">Meg se próbálom, tiszta káosz az egész</label>
+            </div>
+        </div>
+    </div>   
+    <div class="bord" id="k5">
+        <div class="ques">Mennyire rendszeresen foglalkozik otthon a kitűzött házi feladatokkal, kötelező irodalmakkal a Digitális kultúra tárgy tekintetében?</div>
+        <div class="cont">
+            <div class="op">
+                <input type="radio" id="k5v1" name="k5">
+                <label for="k5v1">Heti 3-4 órát.</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k5v2" name="k5">
+                <label for="k5v2">Heti 1-2 órát.</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k5v3" name="k5">
+                <label for="k5v3">Hetente kb. fél órát.</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k5v4" name="k5">
+                <label for="k5v4">Néha ránézek.</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k5v5" name="k5">
+                <label for="k5v5">Szinte soha.</label>
+            </div>
+        </div>
+    </div>
+    <div class="bord" id="k6">
+        <div class="ques">Mit gondol mennyire valószínű, hogy az egyik érettségi tárgya a Digitális kultúra tárgy lesz?</div>
+        <div class="cont">
+            <div class="op">
+                <input type="radio" id="k6v1" name="k6">
+                <label for="k6v1">Biztos vagyok benne.</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k6v2" name="k6">
+                <label for="k6v2">Jó eséllyel ez lesz az egyik tárgy.</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k6v3" name="k6">
+                <label for="k6v3">Még nem döntöttem, de előfordulhat.</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k6v4" name="k6">
+                <label for="k6v4">Nem valószínű.</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k6v5" name="k6">
+                <label for="k6v5">Ebből tutira nem fogok érettségizni.</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="gc">
+    <div id="gb" class="gomb" style="text-align: center; cursor: pointer;" onclick="f()">Beküld</div>
+    <div id="gbsent" class="gomb" style="text-align: center;">Beküldve</div>
+</div>
+<div id="echo"></div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+body {
+    font-family: 'Balsamiq Sans', cursive;
+    margin:0px;
+    background-color: darkkhaki;
+    user-select: none;
+}
+div.ques {
+    padding: 7px; 
+    font-size: 22px;
+    text-shadow: 1px 1px 3px rgb(5, 39, 29);
+}
+div.bc {
+    background-color: rgb(86, 112, 112);
+    margin:0;
+    padding:5px;
+    box-shadow: 0px 0px 5px black;
+}
+div.cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    flex-wrap: wrap;
+}
+div.op {
+    font-size: 12px;
+    min-width: 100px;
+    margin: 6px;
+    padding: 6px;
+    padding-right: 25px;
+    box-shadow: 1px 1px 3px black;
+    border-radius: 10px;
+    background-color: rgb(11, 58, 59);
+    color:rgb(253, 241, 191);
+}
+div.ou {
+    width: 200px;
+    margin: 6px;
+    padding: 6px;
+}
+div.bord {
+    font-size: 14px;
+    margin: 6px;
+    padding: 6px;
+    box-shadow: 1px 1px 3px inset black;
+    border-radius: 10px;
+    background-color: rgb(153, 222, 224);
+    color: rgb(4, 62, 70);
+}
+label, input {
+    cursor: pointer;
+}
+div.gc {
+    text-align: center;
+}
+div.gomb {
+    display: none;
+    min-width: 100px;
+    padding: 6px;
+    margin: 6px;
+    box-shadow: 1px 1px 3px black;
+    border-radius: 10px;
+    background-color: rgb(11, 58, 59);
+    color:rgb(253, 241, 191);
+}
+div#gbsent {
+    display: none;
+    background-color: rgb(38, 86, 87);
+    color:rgb(131, 170, 182);
+}
+input:checked {
+    width: 14px;
+    height: 14px;
+}
+div#echo {
+    text-align: center;
+    margin: 20px;
+}
+div.cim {
+    text-align: center;
+    font-size: 25px;
+    padding-top: 25px;
+    background-color: rgb(11, 58, 59);
+    padding-bottom: 35px;
+    color:rgb(231, 231, 197);
+    text-shadow: 1px 1px 3px rgb(32, 5, 5);
+}
+</style>

@@ -1,0 +1,63 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<meta charset="utf-8">
+<script>
+ql = [
+    `Melyik a kedvenc témaköre informatikából?`,
+    `Az alábbi tárgyak közül melyiket szereti legjobban?`,
+    `Az alábbi tárgyak közül melyiket szereti legkevésvé?`,
+    `Mennyire tudja követni az órai magyarázatot, feladatokat?`,
+    `Mennyire rendszeresen foglalkozik otthon a kitűzött házi feladatokkal, kötelező irodalmakkal a Digitális kultúra tárgy tekintetében?`,
+    `Mit gondol mennyire valószínű, hogy az egyik érettségi tárgya a Digitális kultúra tárgy lesz?`
+]
+vl = [
+    [`HTML/CSS`,`SVG`,`MarkDown`,`Python`,`Egyik sem`],
+    [`Info`,`Magyar`,`Idegen nyelv`,`Töri`,`Matek`],
+    [`Info`,`Magyar`,`Idegen nyelv`,`Töri`,`Matek`],
+    [`Totál tudom követni`,`Többnyire képben vagyok`,`Többé-kevésbé O.K.`,`Általában totlál lemaradok`,`Meg se próbálom, tiszta káosz az egész`],
+    [`Heti 3-4 órát.`,`Heti 1-2 órát.`,`Hetente kb. fél órát.`,`Néha ránézek.`,`Szinte soha.`],
+    [`Biztos vagyok benne.`,`Jó eséllyel ez lesz az egyik tárgy.`,`Még nem döntöttem, de előfordulhat.`,`Nem valószínű.`,`Ebből tutira nem fogok érettségizni.`],
+]
+$( () => {
+    $.get( 
+        "https://inf.u-szeged.hu/~tnemeth/ufget.php" 
+    )
+    .done( q => {
+        l = JSON.parse(q);
+        s = `<table><tr><th></th>`
+        ql.forEach( hc => {
+            s += `<th>${hc}</th>`
+        })
+        s += "</tr>"
+        l.forEach(row => {
+            s += `<tr><td>${row['ts']}</td>`
+            row['data'].split('').forEach( (u, i) => {
+                s += `<td>${ vl[i][u-1] }</td>`
+            });
+            s += `</tr>`
+        });        
+        s += `</table>`
+        $('#echo').html(s)
+    })
+})    
+</script>
+<div id="echo"></div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+body {
+    font-family: 'Balsamiq Sans', cursive;
+    margin:0px;
+    background-color: darkkhaki;
+    user-select: none;
+}
+td {
+    font-size: 12px;
+    min-width: 100px;
+    margin: 6px;
+    padding: 6px;
+    padding-right: 25px;
+    box-shadow: 1px 1px 3px black;
+    border-radius: 10px;
+    background-color: rgb(11, 58, 59);
+    color:rgb(253, 241, 191);
+}
+</style>
