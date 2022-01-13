@@ -2,19 +2,19 @@
 
 - Jeles (5):
 
-    - Az órákon figyel, aktívan együttműködik,
+    - Az órákon figyel, aktívan együttműködik, a kötelező irodalmat otthon önállóan feldolgozza,
     - a tananyagot érti, a tanult ismereteket a gyakorlatban alkalmazza,
     - az ellenőrzési pontok feladatait 45 perc alatt önállóan közel hibátlanul megoldja.
 
 - Jó (4):
 
-    - Az órákon figyel, dolgozik, próbálkozik
+    - Az órákon figyel, dolgozik, próbálkozik, a kötelező irodalmat megnézte,
     - a tananyag nagy részét érti, a gyakorlatban felmerülő problémákra külső megoldást önállóan keres,
     - az ellenőrzési pontok feladatainak egy részét önállóan vagy együttműködéssel megoldja.
 
 - Közepes (3):
 
-    - Az órákon többnyire figyel, legtöbbször a kapott feladaton dolgozik (és nem más tárgyat tanul)
+    - Az órákon többnyire figyel, legtöbbször a kapott feladaton dolgozik (és nem más tárgyat tanul),
     - a tananyag egyes részeit érti, a kapott feladatokat megpróbálja megoldani, ha nem sikerül külső segítséget kér,
     - az ellenőrzési pontok feladatait megpróbálja megoldani, a megoldáshoz csoporttársai segítségét kéri.
 
