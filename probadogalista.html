@@ -179,10 +179,8 @@
             }, 10)
         }
     }, 100)
-    function g() {
-        document.getElementById('anim').innerHTML=`<a href='html/pithx.svg'><img class='pici2' src='html/pithx.svg?p=${Math.random()*10000}'></a>`
-        setTimeout( v=> {
-            document.getElementById('anim').innerHTML=`<div style="background: lemonchiffon;padding:10px;margin:5px;box-shadow: 1px 1px 3px black;border-radius:10px;color:rgb(48, 41, 38);font-family: 'Syne Mono', monospace;font-size:12px;">
+    function h() {
+        document.getElementById('anim').innerHTML=`<div style="background: lemonchiffon;padding:10px;margin:5px;box-shadow: 1px 1px 3px black;border-radius:10px;color:rgb(48, 41, 38);font-family: 'Syne Mono', monospace;font-size:12px;">
                     Készítsen az alábbi animációhoz hasonló, egy a tanulmányaival összefüggő más animációt <b>SVG</b> formátumban!
                     Az elkészült fájlt nevezze el <i>ok-vez_ker.svg</i> néven, ahol <i>ok</i>: osztály ('9c','9d','9kny'),<br>
                     <i>vez</i>: vezetéknév, <i>ker</i>: keresztnév vagy keresztnevek "_" karakterrel elválasztva!<br>
@@ -194,10 +192,14 @@
                     <div style="text-align: center;"><a 
                         id="start" class="m ma"
                         style="cursor:pointer;font-size:17px;"
-                        onclick="g()">Példa-animáció indítása (a Pitagorasz-tétel bizonyítása)</a>
+                        onclick="g()">Példa-animáció indítása<br>(a Pitagorasz-tétel bizonyítása)</a>
                     </div>`
-        },10000)
     }
+    function g() {
+        document.getElementById('anim').innerHTML=`<a href='html/pithx.svg'><img class='pici2' src='html/pithx.svg?p=${Math.random()*10000}'></a>`
+        setTimeout(h, 10000)
+    }
+    setTimeout(h, 100)
 </script>
 <ul class="navigation">
     <li><a href="./">Kezdőlap</a></li>
@@ -232,7 +234,7 @@
                 <embed style="width:720px; min-height:333px;" src="Brython/tables3.html" alt="">
             </td>
             <th id="h6x">
-                2. tehtségfeltáró pont
+                2. tehtségfeltáró pont (újranyitva)
             </th>
         </tr>
         <tr><td colspan=2 id="pd7g" class="gg"
@@ -240,20 +242,6 @@
         <tr id="pd7x" class="px" style="display:none;">
             <td style="vertical-align: top;">
                 <div id="anim" style="width:720px;text-align:left;">
-                    <div style="background: lemonchiffon;padding:10px;margin:5px;box-shadow: 1px 1px 3px black;border-radius:10px;color:rgb(48, 41, 38);font-family: 'Syne Mono', monospace;font-size:12px;">
-                    Készítsen az alábbi animációhoz hasonló, egy a tanulmányaival összefüggő más animációt <b>SVG</b> formátumban!
-                    Az elkészült fájlt nevezze el <i>ok-vez_ker.svg</i> néven, ahol <i>ok</i>: osztály ('9c','9d','9kny'),<br>
-                    <i>vez</i>: vezetéknév, <i>ker</i>: keresztnév vagy keresztnevek "_" karakterrel elválasztva!<br>
-                    Az <i>.svg</i> fájlt mentse saját google drive-jára és
-                    <a class="m ma" target="gd" href="https://drive.google.com/drive/folders/1pqhwb6Yzj_T1Nq3s4rv-n8dh2_dyoPwU?usp=sharing">ebbe</a>
-                    a megosztott mappába!<br><br><b>Beküldési határidő (meghosszabbítva) 2022. január 23. (vasárnap) 21:00!</b>
-                    </div>
-                    <br><hr><br>
-                    <div style="text-align: center;"><a 
-                        id="start" class="m ma"
-                        style="cursor:pointer;font-size:17px;"
-                        onclick="g()">Példa-animáció indítása (a Pitagorasz-tétel bizonyítása)</a>
-                    </div>
                 </div>
             </td>
             <th id="h7x">
@@ -261,14 +249,14 @@
             </th>
         </tr>
         <tr><td colspan=2 id="pd5g" class="gg"
-            onclick="f('pd5')" >1. tehtséggondozó pont</td></tr>
+            onclick="f('pd5')" >1. tehtségfeltáró pont</td></tr>
         <tr id="pd5x" class="px" style="display:none;">
             <td>
                 <a href="Brython/amoba2.html"><img class="pici" src="img/pd05.jpg" alt=""></a>
                 <a href="http://www.inf.u-szeged.hu/~tnemeth/examples/webexamples/Aknakereso.html"><img class="pici" src="img/pd06.jpg" alt=""></a>
             </td>
-            <th id="h7x">
-                1. tehtséggondozó pont (újranyitva)
+            <th>
+                1. tehtségfeltáró pont
             </th>
         </tr>
         <tr><td colspan=2 id="pd4g" class="gg"
