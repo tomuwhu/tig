@@ -1,0 +1,134 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<meta charset="utf-8">
+<h1>Eredmények grafikusan</h1>
+<div class="fc">
+    <div class="cc">
+        Melyik a kedvenc témaköre informatikából?
+        <canvas id="c1"></canvas>
+    </div>
+    <div class="cc">
+        Az alábbi tárgyak közül melyiket szereti legjobban?
+        <canvas id="c2"></canvas>
+    </div>
+    <div class="cc">
+        Az alábbi tárgyak közül melyiket szereti legkevésvé?
+        <canvas id="c3"></canvas>
+    </div>
+    <div class="cc">
+        Mennyire tudja követni az órai magyarázatot, feladatokat?
+        <canvas id="c4"></canvas>
+    </div>
+    <div class="cc">
+        Mennyire rendszeresen foglalkozik otthon a kitűzött házi feladatokkal, kötelező irodalmakkal a Digitális kultúra tárgy tekintetében?
+        <canvas id="c5"></canvas>
+    </div>
+    <div class="cc">
+        Mit gondol mennyire valószínű, hogy az egyik érettségi tárgya a Digitális kultúra tárgy lesz?
+        <canvas id="c6"></canvas>
+    </div>
+</div>
+<script>
+ql = [
+    `Melyik a kedvenc témaköre informatikából?`,
+    `Az alábbi tárgyak közül melyiket szereti legjobban?`,
+    `Az alábbi tárgyak közül melyiket szereti legkevésvé?`,
+    `Mennyire tudja követni az órai magyarázatot, feladatokat?`,
+    `Mennyire rendszeresen foglalkozik otthon a kitűzött házi feladatokkal, kötelező irodalmakkal a Digitális kultúra tárgy tekintetében?`,
+    `Mit gondol mennyire valószínű, hogy az egyik érettségi tárgya a Digitális kultúra tárgy lesz?`
+]
+vl = [
+    [`HTML/CSS`,`SVG`,`MarkDown`,`Python`,`Egyik sem`],
+    [`Info`,`Magyar`,`Idegen nyelv`,`Töri`,`Matek`],
+    [`Info`,`Magyar`,`Idegen nyelv`,`Töri`,`Matek`],
+    [`Totál tudom követni`,`Többnyire képben vagyok`,`Többé-kevésbé O.K.`,`Általában totlál lemaradok`,`Meg se próbálom, tiszta káosz az egész`],
+    [`Heti 3-4 órát.`,`Heti 1-2 órát.`,`Hetente kb. fél órát.`,`Néha ránézek.`,`Szinte soha.`],
+    [`Biztos vagyok benne.`,`Jó eséllyel ez lesz az egyik tárgy.`,`Még nem döntöttem, de előfordulhat.`,`Nem valószínű.`,`Ebből tutira nem fogok érettségizni.`],
+]
+dr = [ Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(5).fill(0) ]
+const c1 = document.getElementById('c1');
+const c2 = document.getElementById('c2');
+const c3 = document.getElementById('c3');
+const c4 = document.getElementById('c4');
+const c5 = document.getElementById('c5');
+const c6 = document.getElementById('c6');
+ct = [c1, c2, c3, c4, c5, c6]
+$( () => {
+    $.get( 
+        "https://inf.u-szeged.hu/~tnemeth/ufget.php" 
+    )
+    .done( q => {
+        l = JSON.parse(q);
+        l.forEach(row => {
+            row['data'].split('').forEach( (u, i) => {
+                dr[i][u-1]++
+            });
+        });        
+        for (i=0;i<6;i++)
+        myChart = new Chart(ct[i], {
+            type: 'doughnut',
+            data: {
+                labels: vl[i],
+                datasets: [{
+                    label: '# of Votes',
+                    data: dr[i],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    })
+})
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+body {
+    font-family: 'Balsamiq Sans', cursive;
+    margin:0px;
+    margin-bottom: 0px;
+    background-color: rgb(243, 242, 235);
+    user-select: none;
+    color: darkolivegreen;
+}
+h1 {
+    padding: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 3px gray;
+    padding-bottom: 0px;
+}
+div.fc {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+div.cc {
+    padding:16px;
+    margin:13px;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+}
+</style>
