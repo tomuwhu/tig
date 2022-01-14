@@ -62,6 +62,7 @@ const c4 = document.getElementById('c4');
 const c5 = document.getElementById('c5');
 const c6 = document.getElementById('c6');
 ct = [c1, c2, c3, c4, c5, c6]
+dt = ['doughnut','polarArea','pie'][Math.floor(Math.random() * 3)]
 $( () => {
     $.get( 
         "https://inf.u-szeged.hu/~tnemeth/ufget.php" 
@@ -75,7 +76,7 @@ $( () => {
         });        
         for (i=0;i<6;i++)
         myChart = new Chart(ct[i], {
-            type: 'doughnut',
+            type: dt,
             data: {
                 labels: vl[i],
                 datasets: [{
