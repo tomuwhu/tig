@@ -1,0 +1,1 @@
+SELECT location, CAST(`total_deaths_per_million` as INT) as ss FROM 'owid-covid-data' WHERE `date`="2022-01-13" and ss>;0 ORDER BY ss desc, date, location
