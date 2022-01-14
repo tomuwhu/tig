@@ -14,48 +14,46 @@
         font-family: 'Lemonada', cursive;
         font-size: 12px;
     }
-    </style>
+</style>
 <script>
-function load() {
-    file="py/"+document.getElementById("sel").value
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            if (file.split('.')[1]=='md') {
-                html_content = markdown.toHTML( xhttp.responseText )
-                document.getElementById("code").innerHTML=''
-                document.getElementById("content").innerHTML= html_content
-                document.getElementById('content').style.visibility = "visible"
-                document.getElementById('code').style.visibility = "hidden"
-            } else {
-                html_content = xhttp.responseText
-                document.getElementById("code").innerHTML= html_content;
-                document.getElementById("content").innerHTML=''
-                document.getElementById('content').style.visibility = "hidden"
-                document.getElementById('code').style.visibility = "visible"
+    function load() {
+        file = "py/" + document.getElementById("sel").value
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                if (file.split('.')[1] == 'md') {
+                    html_content = markdown.toHTML(xhttp.responseText)
+                    document.getElementById("code").innerHTML = ''
+                    document.getElementById("content").innerHTML = html_content
+                    document.getElementById('content').style.visibility = "visible"
+                    document.getElementById('code').style.visibility = "hidden"
+                } else {
+                    html_content = xhttp.responseText
+                    document.getElementById("code").innerHTML = html_content;
+                    document.getElementById("content").innerHTML = ''
+                    document.getElementById('content').style.visibility = "hidden"
+                    document.getElementById('code').style.visibility = "visible"
+                }
+                hljs.highlightAll()
             }
-            hljs.highlightAll()
-        }
-    };
-    xhttp.open("GET", "./"+file, true);
-    xhttp.send();
-    document.getElementById("linkk").innerHTML=`
+        };
+        xhttp.open("GET", "./" + file, true);
+        xhttp.send();
+        document.getElementById("linkk").innerHTML = `
     <a 
         class="btn bx"
         target="_blank"
         href="https://runpython.org/?gui_edit=https://github.com/tomuwhu/tig/blob/main/${file}">Megnyitás a runpythonon</a>
     `
-}
-setTimeout( v => {
-    if (window.location.search) {
-        document.getElementById("sel").value = window.location.search.slice(1)
-        load()
     }
-}, 200) 
-
+    setTimeout(v => {
+        if (window.location.search) {
+            document.getElementById("sel").value = window.location.search.slice(1)
+            load()
+        }
+    }, 200)
 </script>
-<link rel="stylesheet"
-      href="hljs/a11y-dark.css">
+<link rel="stylesheet" href="hljs/a11y-dark.css">
 <link rel="stylesheet" href="main.css">
 <script src="hljs/highlight.min.js"></script>
 <ul class="navigation">
@@ -99,6 +97,7 @@ setTimeout( v => {
     <option value="fakt.py">Faktoriális Ⅱ.</option>
     <option value="nfakt2.py">Faktoriálisok sorozata Ⅰ.</option>
     <option value="nfakt3.py">Faktoriálisok sorozata Ⅱ.</option>
+    <option value="covid_dr.py">Szövegfájl, csv fájl beolvasása</option>
     <option value="fileread.py">Szövegfájl adatok feldolgozása Ⅰ.</option>
     <option value="fileio.py">Szövegfájl Input/Output</option>
     <option value="fileread2.py">Szövegfájl adatok feldolgozása Ⅱ.</option>
