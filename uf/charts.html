@@ -13,27 +13,21 @@
 <h1>Eredmények grafikusan</h1>
 <div class="fc">
     <div class="cc">
-        Melyik a kedvenc témaköre informatikából?
         <canvas id="c1"></canvas>
     </div>
     <div class="cc">
-        Az alábbi tárgyak közül melyiket szereti legjobban?
         <canvas id="c2"></canvas>
     </div>
     <div class="cc">
-        Az alábbi tárgyak közül melyiket szereti legkevésvé?
         <canvas id="c3"></canvas>
     </div>
     <div class="cc">
-        Mennyire tudja követni az órai magyarázatot, feladatokat?
         <canvas id="c4"></canvas>
     </div>
     <div class="cc">
-        Mennyire rendszeresen foglalkozik otthon a kitűzött házi feladatokkal, kötelező irodalmakkal a Digitális kultúra tárgy tekintetében?
         <canvas id="c5"></canvas>
     </div>
     <div class="cc">
-        Mit gondol mennyire valószínű, hogy az egyik érettségi tárgya a Digitális kultúra tárgy lesz?
         <canvas id="c6"></canvas>
     </div>
 </div>
@@ -43,16 +37,16 @@ ql = [
     `Az alábbi tárgyak közül melyiket szereti legjobban?`,
     `Az alábbi tárgyak közül melyiket szereti legkevésvé?`,
     `Mennyire tudja követni az órai magyarázatot, feladatokat?`,
-    `Mennyire rendszeresen foglalkozik otthon a kitűzött házi feladatokkal, kötelező irodalmakkal a Digitális kultúra tárgy tekintetében?`,
-    `Mit gondol mennyire valószínű, hogy az egyik érettségi tárgya a Digitális kultúra tárgy lesz?`
+    `Mennyire rendszeresen foglalkozik otthon a tárggyal?`,
+    `Mit gondol mennyire valószínű, hogy az egyik érettségi tárgya ez lesz?`
 ]
 vl = [
     [`HTML/CSS`,`SVG`,`MarkDown`,`Python`,`Egyik sem`],
     [`Info`,`Magyar`,`Idegen nyelv`,`Töri`,`Matek`],
     [`Info`,`Magyar`,`Idegen nyelv`,`Töri`,`Matek`],
-    [`Totál tudom követni`,`Többnyire képben vagyok`,`Többé-kevésbé O.K.`,`Általában totlál lemaradok`,`Meg se próbálom, tiszta káosz az egész`],
-    [`Heti 3-4 órát.`,`Heti 1-2 órát.`,`Hetente kb. fél órát.`,`Néha ránézek.`,`Szinte soha.`],
-    [`Biztos vagyok benne.`,`Jó eséllyel ez lesz az egyik tárgy.`,`Még nem döntöttem, de előfordulhat.`,`Nem valószínű.`,`Ebből tutira nem fogok érettségizni.`],
+    [`Totál tudom követni`,`Többnyire képben vagyok`,`Többé-kevésbé O.K`,`Általában totlál lemaradok`,`Meg se próbálom`],
+    [`Heti 3-4 órát`,`Heti 1-2 órát`,`Hetente kb. fél órát`,`Néha ránézek`,`Szinte soha`],
+    [`Biztos vagyok benne.`,`Jó eséllyel ez lesz az egyik`,`Még nem döntöttem`,`Nem valószínű`,`Ebből tutira nem`],
 ]
 dr = [ Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(5).fill(0) ]
 const c1 = document.getElementById('c1');
@@ -62,7 +56,7 @@ const c4 = document.getElementById('c4');
 const c5 = document.getElementById('c5');
 const c6 = document.getElementById('c6');
 ct = [c1, c2, c3, c4, c5, c6]
-dt = ['doughnut','polarArea','pie'][Math.floor(Math.random() * 3)]
+dt = ['doughnut','polarArea','pie','bar'][Math.floor(Math.random() * 4)]
 $( () => {
     $.get( 
         "https://inf.u-szeged.hu/~tnemeth/ufget.php" 
@@ -101,9 +95,20 @@ $( () => {
                 }]
             },
             options: {
+                indexAxis: 'y',
+                responsive: true,
                 scales: {
                     y: {
                         beginAtZero: false
+                    }
+                },
+                plugins: {
+                    legend: dt == "bar" ? null : {
+                        position: 'top'
+                    },
+                    title: {
+                        display: true,
+                        text: ql[i]
                     }
                 }
             }
