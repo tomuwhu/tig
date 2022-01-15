@@ -32,164 +32,166 @@
     </div>
 </div>
 <script>
-ql = [
-    `Melyik a kedvenc témaköre informatikából?`,
-    `Az alábbi tárgyak közül melyiket szereti legjobban?`,
-    `Az alábbi tárgyak közül melyiket szereti legkevésvé?`,
-    `Mennyire tudja követni az órai magyarázatot, feladatokat?`,
-    `Mennyire rendszeresen foglalkozik otthon a tárggyal?`,
-    `Mit gondol mennyire valószínű, hogy az egyik érettségi tárgya ez lesz?`
-]
-vl = [
-    [`HTML/CSS`,`SVG`,`MarkDown`,`Python`,`Egyik sem`],
-    [`Info`,`Magyar`,`Idegen nyelv`,`Töri`,`Matek`],
-    [`Info`,`Magyar`,`Idegen nyelv`,`Töri`,`Matek`],
-    [`Totál tudom követni`,`Többnyire képben vagyok`,`Többé-kevésbé O.K`,`Általában totlál lemaradok`,`Meg se próbálom`],
-    [`Heti 3-4 órát`,`Heti 1-2 órát`,`Hetente kb. fél órát`,`Néha ránézek`,`Szinte soha`],
-    [`Biztos vagyok benne.`,`Jó eséllyel ez lesz az egyik`,`Még nem döntöttem`,`Nem valószínű`,`Ebből tutira nem`],
-]
-dr = [ Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(5).fill(0) ]
-const c1 = document.getElementById('c1');
-const c2 = document.getElementById('c2');
-const c3 = document.getElementById('c3');
-const c4 = document.getElementById('c4');
-const c5 = document.getElementById('c5');
-const c6 = document.getElementById('c6');
-ct = [c1, c2, c3, c4, c5, c6]
-dt = ['doughnut','polarArea','pie','bar'][Math.floor(Math.random() * 4)]
-$( () => {
-    $.get( 
-        "https://inf.u-szeged.hu/~tnemeth/ufget.php" 
-    )
-    .done( q => {
-        l = JSON.parse(q);
-        l.forEach(row => {
-            row['data'].split('').forEach( (u, i) => {
-                dr[i][u-1]++
-            });
-        });        
-        for (i=0;i<6;i++)
-        myChart = new Chart(ct[i], {
-            type: dt,
-            data: {
-                labels: vl[i],
-                datasets: [{
-                    data: dr[i],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                indexAxis: 'y',
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: false
-                    }
-                },
-                plugins: {
-                    legend: dt == "bar" ? null : {
-                        position: 'top'
-                    },
-                    title: {
-                        display: true,
-                        text: ql[i]
-                    }
-                }
-            }
-        });
+    ql = [
+        `Melyik a kedvenc témaköre informatikából?`,
+        `Az alábbi tárgyak közül melyiket szereti legjobban?`,
+        `Az alábbi tárgyak közül melyiket szereti legkevésvé?`,
+        `Mennyire tudja követni az órai magyarázatot, feladatokat?`,
+        `Mennyire rendszeresen foglalkozik otthon a tárggyal?`,
+        `Mit gondol mennyire valószínű, hogy az egyik érettségi tárgya ez lesz?`
+    ]
+    vl = [
+        [`HTML/CSS`, `SVG`, `MarkDown`, `Python`, `Egyik sem`],
+        [`Info`, `Magyar`, `Idegen nyelv`, `Töri`, `Matek`],
+        [`Info`, `Magyar`, `Idegen nyelv`, `Töri`, `Matek`],
+        [`Totál tudom követni`, `Többnyire képben vagyok`, `Többé-kevésbé O.K`, `Általában totlál lemaradok`, `Meg se próbálom`],
+        [`Heti 3-4 órát`, `Heti 1-2 órát`, `Hetente kb. fél órát`, `Néha ránézek`, `Szinte soha`],
+        [`Biztos vagyok benne.`, `Jó eséllyel ez lesz az egyik`, `Még nem döntöttem`, `Nem valószínű`, `Ebből tutira nem`],
+    ]
+    dr = [Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(5).fill(0)]
+    const c1 = document.getElementById('c1');
+    const c2 = document.getElementById('c2');
+    const c3 = document.getElementById('c3');
+    const c4 = document.getElementById('c4');
+    const c5 = document.getElementById('c5');
+    const c6 = document.getElementById('c6');
+    ct = [c1, c2, c3, c4, c5, c6]
+    dt = ['doughnut', 'polarArea', 'pie'][Math.floor(Math.random() * 3)]
+    $(() => {
+        $.get("https://inf.u-szeged.hu/~tnemeth/ufget.php")
+            .done(q => {
+                l = JSON.parse(q);
+                l.forEach(row => {
+                    row['data'].split('').forEach((u, i) => {
+                        dr[i][u - 1]++
+                    });
+                });
+                for (i = 0; i < 6; i++)
+                    myChart = new Chart(ct[i], {
+                        type: dt,
+                        data: {
+                            labels: vl[i],
+                            datasets: [{
+                                data: dr[i],
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            indexAxis: 'y',
+                            responsive: true,
+                            scales: {
+                                y: {
+                                    beginAtZero: false
+                                }
+                            },
+                            plugins: {
+                                legend: dt == "bar" ? null : {
+                                    position: 'top'
+                                },
+                                title: {
+                                    display: true,
+                                    text: ql[i]
+                                }
+                            }
+                        }
+                    });
+            })
     })
-})
 </script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Shadows+Into+Light&family=Lemonada');
-.navigation {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
-    text-shadow: 1px 1px 3px black;
-    list-style: none;
-    margin: 0;
-    background: rgb(2, 98, 130);
-    font-family: 'Lemonada', cursive;
-    font-size: 12px;
-}
-
-.navigation a {
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    color: white;
-}
-
-.navigation a:hover {
-    background: #1b334f;
-}
-
-@media all and (max-width: 800px) {
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Shadows+Into+Light&family=Lemonada');
     .navigation {
-        justify-content: space-around;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        text-shadow: 1px 1px 3px black;
+        list-style: none;
+        margin: 0;
+        background: rgb(2, 98, 130);
+        font-family: 'Lemonada', cursive;
+        font-size: 12px;
     }
-}
-
-@media all and (max-width: 700px) {
-    .navigation {
-        flex-flow: column wrap;
-        padding: 0;
-    }
+    
     .navigation a {
-        text-align: center;
+        text-decoration: none;
+        display: block;
         padding: 10px;
-        border-top: 1px solid rgba(255, 255, 255,0.3);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        color: white;
     }
-    .navigation li:last-of-type a {
-        border-bottom: none;
+    
+    .navigation a:hover {
+        background: #1b334f;
     }
-}
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
-body {
-    font-family: 'Balsamiq Sans', cursive;
-    margin:0px;
-    margin-bottom: 0px;
-    background-color: rgb(243, 242, 235);
-    user-select: none;
-    color: darkolivegreen;
-}
-h1 {
-    padding: 20px;
-    text-align: center;
-    text-shadow: 1px 1px 3px gray;
-    padding-bottom: 0px;
-}
-div.fc {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-div.cc {
-    font-size: 13px;
-    font-weight: bold;
-    padding:16px;
-    margin:13px;
-    width: 450px;
-    height: 450px;
-    text-align: center;
-}
+    
+    @media all and (max-width: 800px) {
+        .navigation {
+            justify-content: space-around;
+        }
+    }
+    
+    @media all and (max-width: 700px) {
+        .navigation {
+            flex-flow: column wrap;
+            padding: 0;
+        }
+        .navigation a {
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .navigation li:last-of-type a {
+            border-bottom: none;
+        }
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+    body {
+        font-family: 'Balsamiq Sans', cursive;
+        margin: 0px;
+        margin-bottom: 0px;
+        background-color: rgb(243, 242, 235);
+        user-select: none;
+        color: darkolivegreen;
+    }
+    
+    h1 {
+        padding: 20px;
+        text-align: center;
+        text-shadow: 1px 1px 3px gray;
+        padding-bottom: 0px;
+    }
+    
+    div.fc {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    div.cc {
+        font-size: 13px;
+        font-weight: bold;
+        padding: 16px;
+        margin: 13px;
+        width: 650px;
+        height: 650px;
+        text-align: center;
+    }
 </style>
