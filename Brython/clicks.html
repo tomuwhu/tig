@@ -6,7 +6,6 @@
         from browser import document, html
         ossz = 0
         def m(e):
-            print("-")
             global ossz
             e.target.innerHTML = e.target.id[1:]
             ossz -= int(e.target.id[1:])
@@ -15,7 +14,6 @@
             e.target.unbind( "click", m )
             e.target.bind( "click", f )
         def f(e):
-            print("+")
             global ossz
             e.target.innerHTML = e.target.id[1:]
             ossz += int(e.target.id[1:])
