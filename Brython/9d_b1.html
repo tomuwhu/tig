@@ -34,7 +34,11 @@
         from browser import document, html
         cont = html.DIV( Class="cont" )
         for i in range(1,33):
-            cont <= html.DIV( f'{i}<sup>2</sup> = {i**2}', Class="e" )
+            cont <= html.DIV(
+                      html.SPAN(i) +
+                      html.SUP(2) +
+                      html.SPAN(f' = {i**2}'
+                    ), Class="e" )
         document <= html.H1("Négyzetszámok") + cont
     </script>
 </head>
