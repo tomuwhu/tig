@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<style>
+    div.e {
+        background-color: rgb(11, 65, 42);
+        color: rgb(141, 235, 201);
+        box-shadow: 1px 1px 3px black;
+        border-radius: 8px;
+        margin: 4px;
+        padding: 15px;
+        text-shadow: 1px 1px 3px black;
+        display: block;
+        width: 100px;
+        text-align: center;
+    }
+    div.cont {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    h1 {
+      text-align: center;
+      font-family: fantasy;
+      color: rgba(11, 71, 42, 0.74);
+      text-shadow: 1px 1px 3px rgb(38, 91, 78);
+    }
+</style>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython_stdlib.js"></script>
+    <script type="text/python">
+        from browser import document, html
+        cont = html.DIV( Class="cont" )
+        for i in range(1,30):
+            cont <= html.DIV( f'{i}<sup>2</sup> = {i**2}', Class="e" )
+        document <= html.H1("Négyzetszámok") + cont
+    </script>
+</head>
+<body onload="brython()"></body>
