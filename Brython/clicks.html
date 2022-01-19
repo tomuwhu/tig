@@ -1,70 +1,64 @@
-<!DOCTYPE html>
-
-<head>
-    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
-	<script type="text/python">
-        from browser import document, html
-        ossz = 0
-        def m(e):
-            global ossz
-            ossz -= int(e.target.id[1:])
-            e.target.style = { "background-color" : "blanchedalmond" }
-            document["sum"].html = ossz
-            e.target.unbind( "click", m )
-            e.target.bind( "click", f )
-        def f(e):
-            global ossz
-            ossz += int(e.target.id[1:])
-            e.target.style = { "background-color" : "red" }
-            document["sum"].html = ossz
-            e.target.unbind( "click", f )
-            e.target.bind( "click", m )
-        document <= html.H1( "Binary sums" )
-        df = html.DIV(Class="cont")
-        sum = html.DIV("0",Id="sum")
-        for i in range( 10 ):
-            df <= html.DIV( f'2<sup>{i}</sup> = {2 ** i}', Class="x", Id=f'b{2 ** i}' )
-        document <= df + sum
-        for k in document.select( ".x" ):
-            k.bind( "click", f )
-	</script>
-            <style>
-                h1 {
-                    text-align: center;
-                }
-                div.cont {
-                    display: flex;
-                    flex-wrap: wrap;
-                    flex-direction: row;
-                    user-select: none;
-                    justify-content: center;
-                }
-                body {
-                  text-align: center;
-                }
-                div.x {
-                    background-color: blanchedalmond;
-                    cursor: pointer;
-                    margin: 8px;
-                    padding: 7px;
-                    border-radius: 8px;
-                    box-shadow: 1px 1px 4px black;
-                    text-align: center;
-                    width: 200px;
-                }
-
-                div#sum {
-                    text-align: center;
-                    font-size: 20px;
-                    font-weight: bold;
-                    padding: 10px;
-                    box-shadow: 1px 1px 3px black;
-                    border-radius: 10px;
-                    background-color: rgb(193, 121, 72);
-                    width: 300px;
-                    margin: 20px auto;
-                }
-            </style>
-</head>
-
-<body onload="brython()"></body>
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+<script>setTimeout( brython, 100 )</script>
+<script type="text/python">
+      from browser import document, html
+      ossz = 0
+      def m(e):
+          global ossz
+          ossz -= int(e.target.id[1:])
+          e.target.style = { "background-color" : "blanchedalmond" }
+          document["sum"].html = ossz
+          e.target.unbind( "click", m )
+          e.target.bind( "click", f )
+      def f(e):
+          global ossz
+          ossz += int(e.target.id[1:])
+          e.target.style = { "background-color" : "red" }
+          document["sum"].html = ossz
+          e.target.unbind( "click", f )
+          e.target.bind( "click", m )
+      document <= html.H1( "Binary sums" )
+      df = html.DIV(Class="cont")
+      sum = html.DIV("0",Id="sum")
+      for i in range( 10 ):
+          df <= html.DIV( f'{2 ** i}', Class="x", Id=f'b{2 ** i}' )
+      document <= df + sum
+      for k in document.select( ".x" ):
+          k.bind( "click", f )
+</script>
+<style>
+    h1 {
+        text-align: center;
+    }
+    div.cont {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        user-select: none;
+        justify-content: center;
+    }
+    body {
+      text-align: center;
+    }
+    div.x {
+        background-color: blanchedalmond;
+        cursor: pointer;
+        margin: 8px;
+        padding: 7px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 4px black;
+        text-align: center;
+        width: 200px;
+    }
+    div#sum {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px;
+        box-shadow: 1px 1px 3px black;
+        border-radius: 10px;
+        background-color: rgb(193, 121, 72);
+        width: 300px;
+        margin: 20px auto;
+    }
+</style>
