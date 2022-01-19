@@ -37,9 +37,11 @@
             cont <= html.DIV(
                       html.SPAN(i) +
                       html.SUP(2) +
-                      html.SPAN(f' = {i**2}'
-                    ), Class="e" )
+                      html.SPAN(f' = {i**2}'),
+                      Class="e"
+                    )
         document <= html.H1("Négyzetszámok") + cont
     </script>
 </head>
 <body onload="brython()"></body>
+#
