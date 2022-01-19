@@ -7,7 +7,6 @@
         ossz = 0
         def m(e):
             global ossz
-            e.target.innerHTML = e.target.id[1:]
             ossz -= int(e.target.id[1:])
             e.target.style = { "background-color" : "blanchedalmond" }
             document["sum"].html = ossz
@@ -15,7 +14,6 @@
             e.target.bind( "click", f )
         def f(e):
             global ossz
-            e.target.innerHTML = e.target.id[1:]
             ossz += int(e.target.id[1:])
             e.target.style = { "background-color" : "red" }
             document["sum"].html = ossz
@@ -25,7 +23,7 @@
         df = html.DIV(Class="cont")
         sum = html.DIV("0",Id="sum")
         for i in range( 10 ):
-            df <= html.DIV( f'{2 ** i}', Class="x", Id=f'b{2 ** i}' )
+            df <= html.DIV( f'2<sup>{i}</sup> = {2 ** i}', Class="x", Id=f'b{2 ** i}' )
         document <= df + sum
         for k in document.select( ".x" ):
             k.bind( "click", f )
@@ -39,8 +37,11 @@
                     flex-wrap: wrap;
                     flex-direction: row;
                     user-select: none;
+                    justify-content: center;
                 }
-                
+                body {
+                  text-align: center;
+                }
                 div.x {
                     background-color: blanchedalmond;
                     cursor: pointer;
@@ -56,6 +57,12 @@
                     text-align: center;
                     font-size: 20px;
                     font-weight: bold;
+                    padding: 10px;
+                    box-shadow: 1px 1px 3px black;
+                    border-radius: 10px;
+                    background-color: rgb(193, 121, 72);
+                    width: 300px;
+                    margin: 20px auto;
                 }
             </style>
 </head>
