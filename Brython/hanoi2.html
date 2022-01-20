@@ -6,16 +6,25 @@
         <script type="text/python">
             from browser import document, html, timer
             a = [[]]*3
+            q = []
             time = 1
+            ot = 0
+            def op():
+                global ot, ft, n
+                document["anim"].clear()
+                document["anim"] <= q[ot]
+                ot += 1
+                if ot >= 2 ** n:
+                  timer.clear_interval(ft)
             def kiir():
                 global time
-                document <= html.DIV(
+                q.append( html.DIV(
                   html.DIV(f'{time}.', Class="t") +
                   html.DIV(map(lambda x: html.DIV(x, Class=f'f{x}'), a[0]), Class="el") +
                   html.DIV(map(lambda x: html.DIV(x, Class=f'f{x}'), a[1]), Class="el") +
                   html.DIV(map(lambda x: html.DIV(x, Class=f'f{x}'), a[2]), Class="el"),
                   Class="c"
-                )
+                ) )
                 time += 1
             def f(i, j):
                 global a, time
@@ -27,28 +36,41 @@
                 if n > 1: h(n - 1, a, 6 - a - b)
                 f(a, b)
                 if n > 1: h(n - 1, 6 - a - b, b)
-            n = 4
+            n = 5
             a[0] = list(range(n,0,-1))
             a[1] = []
             a[2] = []
             kiir()
             h(n,1,2)
+            ft = timer.set_interval(op, 500)
         </script>
         <style>
+            h1 {
+              text-shadow: 1px 1px 4px black;
+              font-size: 30px;
+            }
             .c {
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
-                height: 170px;
+                height: 220px;
+                margin: 6px auto;
+                width: 450px;
             }
             .t {
                 margin: 6px;
-                padding-top: 70px;
+                padding: 10px;
                 font-weight: bold;
                 text-shadow: 1px 1px 4px black;
+                width: 35px;
+                font-size: 30px;
+                box-shadow: 1px 1px 3px inset black;
+                border-radius: 7px;
+                background-color: rgb(11, 112, 90);
+                color: rgb(210, 210, 166);
             }
             .el {
-                width: 60px;
+                width: 76px;
                 margin: 6px;
                 padding: 15px;
                 box-shadow: 1px 1px 3px inset black;
@@ -66,6 +88,7 @@
                 margin:3px;
                 border-radius: 20px;
                 color: rgb(183, 209, 226);
+                text-shadow: 1px 1px 3px black;
             }
             .f1 {
                 width: 30px;
@@ -79,11 +102,18 @@
             .f4 {
                 width: 60px;
             }
+            .f5 {
+                width: 70px;
+            }
             body {
               background-color:rgb(199, 241, 235);
               color: rgb(47, 91, 91);
+              text-align:center;
             }
         </style>
     </head>
-    <body onload="brython()"></body>
+    <body onload="brython()">
+      <h1>Hanoi tornyai</h1>
+      <div id="anim"></div>
+    </body>
 </html>
