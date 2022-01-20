@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+        <script type="text/python">
+            from browser import document, html, timer
+            a = [[]]*3
+            time = 1
+            def kiir():
+                global time
+                document <= html.DIV(
+                  html.DIV(f'{time}.', Class="t") +
+                  html.DIV(map(lambda x: html.DIV(x, Class=f'f{x}'), a[0]), Class="el") +
+                  html.DIV(map(lambda x: html.DIV(x, Class=f'f{x}'), a[1]), Class="el") +
+                  html.DIV(map(lambda x: html.DIV(x, Class=f'f{x}'), a[2]), Class="el"),
+                  Class="c"
+                )
+                time += 1
+            def f(i, j):
+                global a, time
+                e = a[i-1][-1]
+                a[i-1].pop()
+                a[j-1].append(e)
+                kiir()
+            def h(n, a, b):
+                if n > 1: h(n - 1, a, 6 - a - b)
+                f(a, b)
+                if n > 1: h(n - 1, 6 - a - b, b)
+            n = 4
+            a[0] = list(range(n,0,-1))
+            a[1] = []
+            a[2] = []
+            kiir()
+            h(n,1,2)
+        </script>
+        <style>
+            .c {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                height: 170px;
+            }
+            .t {
+                margin: 6px;
+                padding-top: 70px;
+                font-weight: bold;
+                text-shadow: 1px 1px 4px black;
+            }
+            .el {
+                width: 60px;
+                margin: 6px;
+                padding: 15px;
+                box-shadow: 1px 1px 3px inset black;
+                border-radius: 7px;
+                background-color: aqua;
+                text-align: center;
+                align-items: center;
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            .el div {
+                box-shadow: 1px 1px 3px black;
+                background-color: rgb(23, 98, 101);
+                padding: 4px;
+                margin:3px;
+                border-radius: 20px;
+                color: rgb(183, 209, 226);
+            }
+            .f1 {
+                width: 30px;
+            }
+            .f2 {
+                width: 40px;
+            }
+            .f3 {
+                width: 50px;
+            }
+            .f4 {
+                width: 60px;
+            }
+            body {
+              background-color:rgb(199, 241, 235);
+              color: rgb(47, 91, 91);
+            }
+        </style>
+    </head>
+    <body onload="brython()"></body>
+</html>
