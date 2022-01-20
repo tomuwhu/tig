@@ -8,17 +8,16 @@
         <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
         <script type="text/python">
             from browser import document, html, timer
+            document.title = "Hanoi tornyai"
             a = [[]]*3
-            q = []
-            time = 1
-            ot = 0
             def op():
-                global ot, ft, n
+                global a, ot, ft, n
                 document["anim"].clear()
                 document["anim"] <= q[ot]
                 ot += 1
-                if ot >= 2 ** n:
+                if ot > 2 ** n - 1:
                   timer.clear_interval(ft)
+                  timer.set_timeout(tostart, ft*(2**n)+ft+2000 )
             def kiir():
                 global time
                 q.append( html.DIV(
@@ -39,15 +38,88 @@
                 if n > 1: h(n - 1, a, 6 - a - b)
                 f(a, b)
                 if n > 1: h(n - 1, 6 - a - b, b)
-            n = 9
-            a[0] = list(range(n,0,-1))
-            a[1] = []
-            a[2] = []
-            kiir()
-            h(n,1,2)
-            ft = timer.set_interval(op, 1500)
+            def start(e):
+                global a, ft, ot, n, time, q
+                q = []
+                time = 1
+                ot = 0
+                n = int(document["n"].value)
+                ax = int(document["a"].value)
+                bx = int(document["b"].value)
+                a[0] = []
+                a[1] = []
+                a[2] = []
+                a[ax-1] = list(range(n,0,-1))
+                kiir()
+                if ax == bx:
+                    bx+=1
+                if bx > 3: bx = 1
+                h(n,ax,bx)
+                ft = timer.set_interval(op, (40-int(document["t"].value)) ** 2)
+            def tostart():
+                global a, x, row1, row2
+                document["anim"].clear()
+                x = html.TABLE()
+                row1 = html.TR()
+                row1 <= html.TH("magasság:")
+                row1 <= html.TH("forrás:")
+                row1 <= html.TH("cél:")
+                row1 <= html.TH("sebesség:")
+                x <= row1
+                row2 = html.TR()
+                row2 <= html.TD() <= html.INPUT(Type="range", Min=2, Max=9, Placeholder="n", Class="m1", Id="n", Value=5).bind("change", bea)
+                row2 <= html.TD() <= html.INPUT(Type="range", Min=1, Max=3, Placeholder="a", Class="m", Id="a", Value=1).bind("change", bea)
+                row2 <= html.TD() <= html.INPUT(Type="range", Min=1, Max=3, Placeholder="b", Class="m", Id="b", Value=2).bind("change", bea)
+                row2 <= html.TD() <= html.INPUT(Type="range", Min=10, Max=30, Placeholder="t", Class="m2", Id="t", Value=20).bind("change", bea)
+                row2 <= html.TD() <= html.BUTTON("Indít").bind("click", start)
+                x <= row2
+                row3 = html.TR()
+                row3 <= html.TH(5)
+                row3 <= html.TH(1)
+                row3 <= html.TH(2)
+                row3 <= html.TH(20)
+                x <= row1
+                x <= row2
+                x <= row3
+                document["anim"] <= x
+            def bea(e):
+                global row1
+                x = html.TABLE()
+                ax = int(document["a"].value)
+                bx = int(document["b"].value)
+                if ax == bx:
+                    bx+=1
+                if bx > 3: bx = 1
+                row3 = html.TR()
+                row3 <= html.TH(document["n"].value)
+                row3 <= html.TH(ax)
+                row3 <= html.TH(bx)
+                row3 <= html.TH(document["t"].value)
+                x <= row1
+                x <= row2
+                x <= row3
+                document["anim"].clear()
+                document["anim"] <= x
+                document["b"].value = bx
+            tostart()
         </script>
         <style>
+            table {
+              margin: auto;
+              margin-top: 80px;
+            }
+            input.m1 {
+                width: 100px;
+                margin: 10px;
+            }
+            input.m {
+                width: 50px;
+                margin: 10px;
+            }
+            input.m2 {
+                width: 120px;
+                margin: 10px;
+            }
             h1 {
                 text-shadow: 1px 1px 4px black;
                 font-size: 30px;
