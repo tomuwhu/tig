@@ -1,6 +1,9 @@
 <!doctype html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <script> MathJax = { tex: { inlineMath: [['$', '$']] } } </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
         <script type="text/python">
@@ -48,7 +51,7 @@
             h1 {
               text-shadow: 1px 1px 4px black;
               font-size: 30px;
-              color: rgb(88, 38, 58);
+              color: rgb(38, 74, 88);
             }
             .c {
                 display: flex;
@@ -67,8 +70,10 @@
                 font-size: 30px;
                 box-shadow: 1px 1px 3px inset black;
                 border-radius: 7px;
-                background-color: rgb(11, 112, 90);
+                background-color: rgba(11, 100, 112, 0.72);
                 color: rgb(210, 210, 166);
+                height: 36px;
+                text-align: center;
             }
             .el {
                 width: 76px;
@@ -76,7 +81,7 @@
                 padding: 15px;
                 box-shadow: 1px 1px 3px inset black;
                 border-radius: 7px;
-                background-color: aqua;
+                background-color: rgba(94, 149, 150, 0.64);
                 text-align: center;
                 align-items: center;
                 display: flex;
@@ -85,36 +90,42 @@
             .el div {
                 box-shadow: 1px 1px 3px black;
                 background-color: rgb(23, 98, 101);
-                padding: 4px;
+                padding:7px;
                 margin:3px;
                 border-radius: 20px;
                 color: rgb(183, 209, 226);
                 text-shadow: 1px 1px 3px black;
+                font-size: 10px;
             }
-            .f1 {
-                width: 30px;
-            }
-            .f2 {
-                width: 40px;
-            }
-            .f3 {
-                width: 50px;
-            }
-            .f4 {
-                width: 60px;
-            }
-            .f5 {
-                width: 70px;
-            }
+            .f1 { width: 30px; }
+            .f2 { width: 40px; }
+            .f3 { width: 50px; }
+            .f4 { width: 60px; }
+            .f5 { width: 70px; }
             body {
               background-color:rgb(199, 241, 235);
               color: rgb(47, 91, 91);
               text-align:center;
+            }
+            #anim {
+              height: 250px;
+            }
+            div.rr{
+              text-align: left;
+              width: 460px;
+              margin: auto;
             }
         </style>
     </head>
     <body onload="brython()">
       <h1>Hanoi tornyai</h1>
       <div id="anim"></div>
+      <div class="rr">
+        $n=1$ -re <span id="t3">$h(n,a,b) = a \longrightarrow b$</span>,
+        egyébként (minden n>1 egész számra):<br>
+        <span id="t4">
+        $h(n,a,b) = h(n-1,a,6-a-b), a \longrightarrow b, h(n-1,6-a-b,b)$
+        </span>
+      </div>
     </body>
 </html>
