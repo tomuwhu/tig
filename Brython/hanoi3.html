@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script> MathJax = { tex: { inlineMath: [['$', '$']] } } </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+        <script type="text/python">
+            from browser import document, html, timer
+            a = [[]]*3
+            q = []
+            time = 1
+            ot = 0
+            def op():
+                global ot, ft, n
+                document["anim"].clear()
+                document["anim"] <= q[ot]
+                ot += 1
+                if ot >= 2 ** n:
+                  timer.clear_interval(ft)
+            def kiir():
+                global time
+                q.append( html.DIV(
+                  html.DIV(f'{time}.', Class="t") +
+                  html.DIV(map(lambda x: html.DIV(x, Class=f'f{x}'), a[0]), Class="el") +
+                  html.DIV(map(lambda x: html.DIV(x, Class=f'f{x}'), a[1]), Class="el") +
+                  html.DIV(map(lambda x: html.DIV(x, Class=f'f{x}'), a[2]), Class="el"),
+                  Class="c"
+                ) )
+                time += 1
+            def f(i, j):
+                global a, time
+                e = a[i-1][-1]
+                a[i-1].pop()
+                a[j-1].append(e)
+                kiir()
+            def h(n, a, b):
+                if n > 1: h(n - 1, a, 6 - a - b)
+                f(a, b)
+                if n > 1: h(n - 1, 6 - a - b, b)
+            n = 9
+            a[0] = list(range(n,0,-1))
+            a[1] = []
+            a[2] = []
+            kiir()
+            h(n,1,2)
+            ft = timer.set_interval(op, 1500)
+        </script>
+        <style>
+            h1 {
+                text-shadow: 1px 1px 4px black;
+                font-size: 30px;
+                color: rgb(38, 74, 88);
+            }
+            .c {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                height: 325px;
+                margin: 6px auto;
+                width: 750px;
+            }
+            .t {
+                margin: 6px;
+                padding: 10px;
+                font-weight: bold;
+                text-shadow: 1px 1px 4px black;
+                width: 55px;
+                font-size: 30px;
+                box-shadow: 1px 1px 3px inset black;
+                border-radius: 7px;
+                background-color: rgba(11, 100, 112, 0.72);
+                color: rgb(210, 210, 166);
+                height: 36px;
+                text-align: center;
+            }
+            .el {
+                width: 160px;
+                margin: 6px;
+                padding: 15px;
+                box-shadow: 1px 1px 3px inset black;
+                border-radius: 7px;
+                background-color: rgba(94, 149, 150, 0.64);
+                text-align: center;
+                align-items: center;
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            .el div {
+                box-shadow: 1px 1px 3px black;
+                background-color: rgb(23, 98, 101);
+                padding:7px;
+                margin:3px;
+                border-radius: 20px;
+                color: rgb(183, 209, 226);
+                text-shadow: 1px 1px 3px black;
+                font-size: 10px;
+            }
+            body {
+              background-color:rgb(199, 241, 235);
+              color: rgb(47, 91, 91);
+              text-align:center;
+              user-select: none;
+            }
+            #anim {
+              height: 350px;
+            }
+            div.rr {
+              text-align: left;
+              width: 460px;
+              margin: auto;
+            }
+            .f1 { width: 30px; background-color: rgb(142, 188, 200);}
+            .f2 { width: 40px; background-color: rgb(132, 178, 205);}
+            .f3 { width: 51px; background-color: rgb(122, 168, 210);}
+            .f4 { width: 62px; background-color: rgb(112, 158, 215);}
+            .f5 { width: 75px; background-color: rgb(102, 148, 220);}
+            .f6 { width: 89px; background-color: rgb(92, 138, 225);}
+            .f7 { width: 105px; background-color: rgb(82, 128, 230);}
+            .f8 { width: 120px; background-color: rgb(72, 118, 235);}
+            .f9 { width: 140px; background-color: rgb(62, 108, 240); }
+        </style>
+    </head>
+    <body onload="brython()">
+      <h1>Hanoi tornyai</h1>
+      <div id="anim"></div>
+      <div class="rr">
+        $n=1$ -re <span id="t3">$h(n,a,b) = a \longrightarrow b$</span>,
+        egyébként (minden n>1 egész számra):<br>
+        <span id="t4">
+        $h(n,a,b) = h(n-1,a,6-a-b), a \longrightarrow b, h(n-1,6-a-b,b)$
+        </span>
+      </div>
+    </body>
+</html>
