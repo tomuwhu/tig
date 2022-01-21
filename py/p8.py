@@ -24,6 +24,11 @@ t52 = ", ".join(map(str,map(int, map(gy, t50))))
 t5x = reduce(lambda x, y: x + gy(y), filter(lambda x: gy(x) == int(gy(x)), t[4]), 0)
 print(f'A 4. sorban szereplő négyzetszámok ({t51}) négyzetgyökeinek ({t52}) összege: {t5x:0.0f}')
 
+# ...
+
+print("7. feladat")
+print(f'Az inputban szereplő összes szám közül a 12 legkisebb szám maximuma: {max(sorted(sum(t, []))[:12])}')
+
 '''input.txt:
 58-34-50-47-14-85-32-29-10-3-66-92-83-2-59-17-9-99-14-81-9-92-45-83-11-53-89-36-58-30-24-15-42-60-79-2-10-38-33-78-51-30-12-23-11-97-3-57-86
 84-47-42-34-30-21-72-26-1-15-10-4-39-94-69-78-26-5-69-47-87-59-42-11-36-52-58-63-18-56-23-18-36-24-29-13-5-26-45-16-84-57-7-60-39-84-21-46-39
