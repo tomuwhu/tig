@@ -3,7 +3,7 @@ l = [2,3,5,6,8,8,9,11,11,11,14,18,19,20,20,21,22,24,25,26,28,29,33,35,45,47,49,5
      55,57,59,60,61,63,63,63,64,66,66,67,69,71,73,74,77,80,82,88,91,91,92,94,95,97,99]
 def finda(i, j):
     global l
-    p = int((i + j) / 2)
+    p = (i + j) // 2
     print(f'Keres a {i + 1}:{j+1} listában: a közepén a {p + 1}. pozícióban a ({l[p]}) kulcs.')
     if a == l[p]:   return f'Igen a {p + 1}. a listában'
     if i == j:      return "Nincs a listában"
