@@ -4,12 +4,30 @@
     <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython_stdlib.js"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+        body {
+            font-family: 'Dancing Script', cursive;
+            color: rgb(58, 48, 14);
+            text-shadow: 1px 1px 3px rgb(100, 99, 99);
+        }
+        h1 {
+            text-align: center;
+        }
         div.cont {
             display: flex;
             flex-direction: row;
             justify-content: center;
+            margin: 14px;
+            padding: 15px;
+            background-color: rgb(238, 229, 218);
+            border-radius: 3px;
+            box-shadow: 1px 1px 3px inset rgb(175, 173, 139);
+            height: 45px;
         }
-        div.x0, div.x1 {
+        div.x0, div.x1, div.x2, div.x3 {
+            font-weight: bold;
+            color: rgb(65, 46, 36);
+            height: 20px;
             display: inline-block;
             width: 40px;
             border-radius: 5px;
@@ -25,6 +43,16 @@
         div.x1 {
             background-color: burlywood;
         }
+        div.x2 {
+            background-color: rgb(150, 190, 173);
+            width: 190px;
+            text-align: right;
+        }
+        div.x3 {
+            background-color: rgb(212, 175, 169);
+            width: auto;
+            text-align: right;
+        }
         h3 {
             text-align: center;
         }
@@ -38,16 +66,44 @@
         l = list(map(lambda _:rr(1,99),[0]*20))
         l1 = l[::2]
         l2 = l[1::2]
-        s1 = sum(l1)
-        s2 = sum(l2)
-        if s1 > s2:
+        ll = [[],[]]
+        ls = [0, 0]
+        next = 0
+        if sum(l1) > sum(l2):
             lm = list(map(lambda x: (0, x[1]) if x[0] % 2 else (1, x[1]), enumerate(l)))
         else:
             lm = list(map(lambda x: (1, x[1]) if x[0] % 2 else (0, x[1]), enumerate(l)))
         def f(e):
-            print(e.target.id[1:])
+            global l, lm, ls, next
+            if e.target.id[1:]=="0":
+                el = lm[0]
+                ee = l[0]
+                l = l[1:]
+                lm = lm[1:]
+            else:
+                el = lm[-1]
+                ee = l[-1]
+                l = l[:-1]
+                lm = lm[:-1]
+            ll[next].append(el)
+            ls[next] += ee
+            next = 1 if next==0 else 0
+            kiir()
         def kiir():
-            document["b"].clear()
+            ks = ['az első', 'a második']
+            document.clear()
+            if len(lm):
+                s = f'(Következik: {ks[next]} játékos)'
+            else:
+                if ls[0] == ls[1]:
+                    s = "döntetlen"
+                elif ls[0] > ls[1]:
+                    s = f' - {ks[0]} játékos nyert.'
+                else:
+                    s = f' - {ks[1]} játékos nyert.'
+            document <= html.H1(f'Számjáték {s}')
+            if len(lm):
+                document <= html.DIV("Válasszon a játéktér 2 széléle közül. Az nyer aki a végén nagyobb összeget gyűjt.", Style={"text-align":"center"})
             cont = html.DIV(Class="cont")
             for i in enumerate(lm):
                 if i[0]==0 or i[0]==len(lm)-1:
@@ -55,9 +111,16 @@
                 else:
                     cont <= html.DIV( i[1][1], Class=f'x{i[1][0]}' ) 
             document <= cont
-            document <= html.H3( " + ".join( str(x) for x in l1) + " = " + str(sum(l1)))
-            document <= html.H3( " + ".join( str(x) for x in l2) + " = " + str(sum(l2)))
+            c = [0, 0]
+            for j in range(2):
+                c[j] = html.DIV(Class="cont", Id=f'x{j}')
+                c[j] <= html.DIV(f'{ks[j]} játékos számai: ', Class=f'x2')
+                if len(ll[j]):
+                    for i in enumerate(ll[j]):
+                        c[j] <= html.DIV( i[1][1], Class=f'x{i[1][0]} c', Id=f'c{i[0]}' ).bind("click", f)
+                c[j] <= html.DIV(f'Összeg: {ls[j]}', Class=f'x3')
+                document <= c[j]
         kiir() 
     </script>
 </head>
-<body id ="b" onload="brython()"></body>
+<body onload="brython()"></body>
