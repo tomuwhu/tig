@@ -25,7 +25,7 @@
             box-shadow: 1px 1px 3px inset rgb(175, 173, 139);
             height: 45px;
         }
-        div.x0, div.x1, div.x2, div.x3 {
+        div.x0, div.x1, div.x2, div.x3, div.x4 {
             font-weight: bold;
             color: rgb(65, 46, 36);
             height: 20px;
@@ -37,12 +37,13 @@
             padding: 7px;
             text-align: center;
             user-select: none;
+            cursor: not-allowed;
         }
         div.x0 {
-            background-color: bisque;
+            background-color: rgb(226, 208, 185);
         }
         div.x1 {
-            background-color: burlywood;
+            background-color: rgb(207, 187, 161);
         }
         div.x2 {
             background-color: rgb(150, 190, 173);
@@ -60,6 +61,9 @@
         div.c {
             cursor: pointer;
         }
+        div.x4 {
+            cursor: not-allowed;
+        }
     </style>
     <script type="text/python">
         from browser import document, html
@@ -71,9 +75,9 @@
         ls = [0, 0]
         next = 0
         if sum(l1) > sum(l2):
-            lm = list(map(lambda x: (0, x[1]) if x[0] % 2 else (1, x[1]), enumerate(l)))
+            lm = list(map(lambda x: [0, x[1]] if x[0] % 2 else [1, x[1]], enumerate(l)))
         else:
-            lm = list(map(lambda x: (1, x[1]) if x[0] % 2 else (0, x[1]), enumerate(l)))
+            lm = list(map(lambda x: [1, x[1]] if x[0] % 2 else [0, x[1]], enumerate(l)))
         def f(e):
             global l, lm, ls, next
             if e.target.id[1:]=="0":
@@ -86,6 +90,7 @@
                 ee = l[-1]
                 l = l[:-1]
                 lm = lm[:-1]
+            el[0] = 4
             ll[next].append(el)
             ls[next] += ee
             next = 1 if next==0 else 0
@@ -94,7 +99,7 @@
             ks = ['az első', 'a második']
             document.clear()
             if len(lm):
-                s = f'(Következik: {ks[next]} játékos)'
+                s = f', {ks[next]} játékos következik'
             else:
                 if ls[0] == ls[1]:
                     s = "döntetlen"
