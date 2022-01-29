@@ -110,7 +110,7 @@
                     s = f' - {ks[1]} játékos nyert.'
             document <= html.H1(f'Számjáték {s}')
             if len(lm):
-                document <= html.DIV("Válasszon a játéktér 2 széléle közül. Az nyer aki a végén nagyobb összeget gyűjt.", Style={"text-align":"center"})
+                document <= html.DIV("Válasszon a játéktér 2 széléle közül! Az nyer aki a végén nagyobb összeget gyűjt.", Style={"text-align":"center"})
             cont = html.DIV(Class="cont")
             for i in enumerate(lm):
                 if i[0]==0 or i[0]==len(lm)-1:
