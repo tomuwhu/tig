@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython_stdlib.js"></script>
+    <style>
+        div.cont {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        div.x0, div.x1 {
+            display: inline-block;
+            width: 40px;
+            border-radius: 5px;
+            box-shadow: 1px 1px 3px black;
+            margin: 5px;
+            padding: 7px;
+            text-align: center;
+            user-select: none;
+        }
+        div.x0 {
+            background-color: bisque;
+        }
+        div.x1 {
+            background-color: burlywood;
+        }
+        h3 {
+            text-align: center;
+        }
+        div.c {
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/python">
+        from browser import document, html
+        from random import randrange as rr
+        l = list(map(lambda _:rr(1,99),[0]*20))
+        l1 = l[::2]
+        l2 = l[1::2]
+        s1 = sum(l1)
+        s2 = sum(l2)
+        if s1 > s2:
+            lm = list(map(lambda x: (0, x[1]) if x[0] % 2 else (1, x[1]), enumerate(l)))
+        else:
+            lm = list(map(lambda x: (1, x[1]) if x[0] % 2 else (0, x[1]), enumerate(l)))
+        def f(e):
+            print(e.target.id[1:])
+        def kiir():
+            document["b"].clear()
+            cont = html.DIV(Class="cont")
+            for i in enumerate(lm):
+                if i[0]==0 or i[0]==len(lm)-1:
+                    cont <= html.DIV( i[1][1], Class=f'x{i[1][0]} c', Id=f'c{i[0]}' ).bind("click", f)
+                else:
+                    cont <= html.DIV( i[1][1], Class=f'x{i[1][0]}' ) 
+            document <= cont
+            document <= html.H3( " + ".join( str(x) for x in l1) + " = " + str(sum(l1)))
+            document <= html.H3( " + ".join( str(x) for x in l2) + " = " + str(sum(l2)))
+        kiir() 
+    </script>
+</head>
+<body id ="b" onload="brython()"></body>
