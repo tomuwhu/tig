@@ -1,4 +1,3 @@
-
 suly = [5, 8, 9, 11, 7, 3, 2]
 fontossag = [1, 7, 8, 6, 3, 9, 4] 
 wmax=20
@@ -16,4 +15,3 @@ def hatizsak(i, w):
 n=len(suly)
 print("Hátizsak - rekurzív")
 print(f'Idealis berakásnal az összfontossag: {hatizsak(n-1, wmax)}')
-
