@@ -98,17 +98,17 @@
             next = 1 if next==0 else 0
             kiir()
         def kiir():
-            ks = ['az első', 'a második']
+            ks = ['Az első', 'A második']
             document.clear()
             if len(lm):
-                s = f'{ks[next]} játékos következik'
+                s = f'{ks[next]} játékos következik.'
             else:
                 if ls[0] == ls[1]:
                     s = "döntetlen"
                 elif ls[0] > ls[1]:
-                    s = f' - {ks[0]} játékos nyert.'
+                    s = f'{ks[0]} játékos nyert.'
                 else:
-                    s = f' - {ks[1]} játékos nyert.'
+                    s = f'{ks[1]} játékos nyert.'
             document <= html.H1(f'Számjáték')
             document <= html.H2(f'{s}')
             if len(lm):
