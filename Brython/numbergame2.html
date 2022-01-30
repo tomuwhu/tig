@@ -112,7 +112,10 @@
             document <= html.H1(f'Számjáték')
             document <= html.H2(f'{s}')
             if len(lm):
-                document <= html.DIV("Válassza a számsor első vagy utolsó számát! Az nyer aki a végén nagyobb összeget gyűjt.", Style={"text-align":"center"})
+                document <= html.DIV(
+                     'Válassza a számsor első vagy utolsó számát! Az nyer aki a végén nagyobb összeget gyűjt.',
+                     Style = {"text-align" : "center"}
+                )
             cont = html.DIV(Class="cont")
             for i in enumerate(lm):
                 if i[0]==0 or i[0]==len(lm)-1:
