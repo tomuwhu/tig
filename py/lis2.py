@@ -1,11 +1,13 @@
 # a leghosszabb növekvő részsorozat
 # https://www.youtube.com/watch?v=aPQY__2H3tE
 def lis(a):
-    l = [None] * len(a); o = []
+    l = [None] * len(a) ; o = []
     for i in range(len(a)): 
-        l[i] = max([(l[k][0] + 1, k, i) for k in range(i) if a[k] < a[i]], default = (1, -1, i), key = lambda x: x[0])
+        l[i] =  max(    [(l[k][0] + 1, k, i) for k in range(i) if a[k] < a[i]], 
+                        default = (1, -1, i), 
+                        key = lambda x: x[0]    )
     m = max(l, key = lambda x: x[0])
-    while not m[1] < 0: o.append(a[m[2]]); m = l[m[1]]
+    while not m[1] < 0: o.append(a[m[2]]) ; m = l[m[1]]
     o.append(a[m[2]])
     return reversed(o)
 print(
