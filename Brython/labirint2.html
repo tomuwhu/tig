@@ -11,8 +11,9 @@
         D <= TABLE([TR(map(TD, l)) for l in t])
         def f(e):
             e.target.html = " " if  e.target.html == "" else ""
-            t[e.target.parent.rowIndex][e.target.cellIndex] = "x" if t[e.target.parent.rowIndex][e.target.cellIndex] == "" else ""
-            s = "\n".join([",".join(list(map(lambda x: "1" if x==" " or x=="x" else "0", r))) for r in t])
+            y, x = e.target.parent.rowIndex, e.target.cellIndex
+            t[y][x] = " " if t[y][x] == "" else ""
+            s = "\n".join(["".join(list(map(lambda z: "1" if z == " " else "0", r))) for r in t])
             D["a"].clear()
             D["a"] <= A("Pálya letöltése", Download="p.txt", Href=f'data:text/plain;charset=utf-8,{s}')
         for i in D.select("td"): i.bind("click", f)
