@@ -6,12 +6,11 @@
         from browser import document as D
         from browser.html import TABLE, TR, TD, A, DIV
         from random import shuffle as sh
-        n, m = 21, 29
+        n, m = 5 * 4 + 1, 7 * 4 + 1
         t = [['' for j in range(m)] for i in range(n)]
         l = list(range(2, m - 2, 2))
         r = list(range(2, n, 2))
-        sh(l)
-        sh(r)
+        sh(l); sh(r)
         for j in range(0, len(r) - 1, 2):
             for i in range(1, n - 2):
                 if t[i + 1][l[j]] == "": t[i][l[j]] = " "
