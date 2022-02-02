@@ -4,7 +4,7 @@
     <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython_stdlib.js"></script>
     <script type="text/python">
         from browser import document as D
-        from browser.html import TABLE, TR, TD, A, DIV
+        from browser.html import TABLE, TR, TD, A, DIV, H1
         from random import shuffle as sh
         n, m = 5 * 4 + 1, 7 * 4 + 1
         t = [['' for j in range(m)] for i in range(n)]
@@ -22,7 +22,7 @@
                 if t[r[j + 1]][i - 1] == "": t[r[j + 1]][i] = " "
         for i in range(n): t[i][0], t[i][m-1] = " ", " "
         for i in range(m): t[0][i], t[n-1][i] = " ", " "
-        D <= TABLE([TR(map(TD, l)) for l in t]) + DIV(Id = "a")
+        D <= H1("Labirintus tervező") + TABLE([TR(map(TD, l)) for l in t]) + DIV(Id = "a")
         def f(e):
             e.target.html = " " if  e.target.html == "" else ""
             y, x = e.target.parent.rowIndex, e.target.cellIndex
@@ -35,7 +35,13 @@
     <style media="screen">
         div#a { margin: 10px; padding: 15px; }
         a     { font-size: 20px; }
-        body  { text-align: center; }
+        body  {
+          text-align: center;
+          background: rgb(193, 197, 176);
+          color: rgb(63, 51, 36);
+          text-shadow: 1px 1px 2px rgb(105, 96, 84);
+          user-select: none;
+        }
         table { margin: auto; border-spacing: 5px; }
         td {
             width: 40px;
