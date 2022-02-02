@@ -42,17 +42,20 @@
           text-shadow: 1px 1px 2px rgb(105, 96, 84);
           user-select: none;
         }
-        table { margin: auto; border-spacing: 5px; }
+        table { margin: auto; border-spacing: 2px; }
         td {
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             background-color: rgb(70, 62, 53);
-            border-radius: 5px;
-            box-shadow: 1px 1px 3px black;
+            border-radius: 2px;
+            box-shadow: 1px 1px 2px black;
             text-align: center;
             cursor: pointer;
         }
         td:empty { background-color: rgb(223, 223, 184); }
+        td:hover {
+            background-color: rgb(146, 129, 110);
+        }
     </style>
 </head>
 <body onload="brython()"></body>
