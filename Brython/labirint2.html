@@ -8,7 +8,7 @@
         t = [['' for j in range(m)] for i in range(n)]
         for i in range(n): t[i][0], t[i][m-1] = " ", " "
         for i in range(m): t[0][i], t[n-1][i] = " ", " "
-        D <= TABLE([TR(map(TD, l)) for l in t])
+        D <= TABLE([TR(map(TD, l)) for l in t]) + DIV(Id = "a")
         def f(e):
             e.target.html = " " if  e.target.html == "" else ""
             y, x = e.target.parent.rowIndex, e.target.cellIndex
@@ -17,7 +17,6 @@
             D["a"].clear()
             D["a"] <= A("Pálya letöltése", Download="p.txt", Href=f'data:text/plain;charset=utf-8,{s}')
         for i in D.select("td"): i.bind("click", f)
-        D <= DIV(Id = "a")
     </script>
     <style media="screen">
         div#a {
