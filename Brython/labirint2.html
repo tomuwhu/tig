@@ -1,13 +1,15 @@
 <head>
     <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
     <script type="text/python">
-      from browser import document as D
-      from browser.html import TABLE, TR, TD
-      n, m = 13, 29
-      t = [['' for j in range(m)] for i in range(n)]
-      for i in range(n): t[i][0], t[i][m-1] = " ", " "
-      for i in range(m): t[0][i], t[n-1][i] = " ", " "
-      D <= TABLE([TR(map(TD, l)) for l in t])
+        from browser import document as D
+        from browser.html import TABLE, TR, TD
+        n, m = 13, 29
+        t = [['' for j in range(m)] for i in range(n)]
+        for i in range(n): t[i][0], t[i][m-1] = " ", " "
+        for i in range(m): t[0][i], t[n-1][i] = " ", " "
+        D <= TABLE([TR(map(TD, l)) for l in t])
+        def f(e): e.target.html = " " if  e.target.html == "" else ""
+        for i in D.select("td"): i.bind("click", f)
     </script>
     <style media="screen">
         table {
@@ -20,6 +22,7 @@
             border-radius: 5px;
             box-shadow: 1px 1px 3px black;
             text-align: center;
+            cursor: pointer;
         }
         td:empty {
             background-color: rgb(223, 223, 184);
