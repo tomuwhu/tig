@@ -1,11 +1,26 @@
 <head>
     <meta charset="utf-8">
     <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython_stdlib.js"></script>
     <script type="text/python">
         from browser import document as D
         from browser.html import TABLE, TR, TD, A, DIV
-        n, m = 13, 29
+        from random import shuffle as sh
+        n, m = 21, 29
         t = [['' for j in range(m)] for i in range(n)]
+        l = list(range(2, m - 2, 2))
+        r = list(range(2, n, 2))
+        sh(l)
+        sh(r)
+        for j in range(0, len(r) - 1, 2):
+            for i in range(1, n - 2):
+                if t[i + 1][l[j]] == "": t[i][l[j]] = " "
+            for i in range(1, m - 2):
+                if t[r[j]][i + 1] == "": t[r[j]][i] = " "
+            for i in range(n - 1, 1, -1):
+                if t[i - 1][l[j + 1]] == "": t[i][l[j + 1]] = " "
+            for i in range(m - 1, 1, -1):
+                if t[r[j + 1]][i - 1] == "": t[r[j + 1]][i] = " "
         for i in range(n): t[i][0], t[i][m-1] = " ", " "
         for i in range(m): t[0][i], t[n-1][i] = " ", " "
         D <= TABLE([TR(map(TD, l)) for l in t]) + DIV(Id = "a")
