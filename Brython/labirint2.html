@@ -16,23 +16,13 @@
             s = "\n".join(["".join(list(map(lambda z: "1" if z == " " else "0", r))) for r in t])
             D["a"].clear()
             D["a"] <= A("Pálya letöltése", Download="p.txt", Href=f'data:text/plain;charset=utf-8,{s}')
-        for i in D.select("td"): i.bind("click", f)
+        for td in D.select("td"): td.bind("click", f)
     </script>
     <style media="screen">
-        div#a {
-            margin: 10px;
-            padding: 15px;
-        }
-        a {
-            font-size: 20px;
-        }
-        body {
-            text-align: center;
-        }
-        table {
-            margin: auto;
-            border-spacing: 5px;
-        }
+        div#a { margin: 10px; padding: 15px; }
+        a     { font-size: 20px; }
+        body  { text-align: center; }
+        table { margin: auto; border-spacing: 5px; }
         td {
             width: 40px;
             height: 40px;
@@ -42,9 +32,7 @@
             text-align: center;
             cursor: pointer;
         }
-        td:empty {
-            background-color: rgb(223, 223, 184);
-        }
+        td:empty { background-color: rgb(223, 223, 184); }
     </style>
 </head>
 <body onload="brython()"></body>
