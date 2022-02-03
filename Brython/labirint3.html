@@ -13,18 +13,11 @@
         vp = (n - 2, m - 2)
         t = [['' for j in range(m)] for i in range(n)]
         def z(x):
-            if x == " ": return "1"
-            elif x == "X": return "2"
-            elif x == "K": return "3"
-            elif x == "V": return "4"
-            else: return "0"
+            return {" ": "1", "X": "2", "K": "3", "V": "4"}.get(x, "0")
         def sp(e):
             def td(x):
                 if isinstance(x, int): x = ""
-                if x=="X": return TD("X", Class="x")
-                if x=="K": return TD("K", Class="k")
-                if x=="V": return TD("V", Class="v")
-                return TD(x)
+                return {i: TD(i, Class=i) for i in ["X", "K", "V"]}.get(x, TD(x))
             tt = t[:]
             q.put(vp)
             tt[vp[0]][vp[1]] = 0
@@ -64,7 +57,7 @@
                 if t[r[j + 1]][i - 1] == "": t[r[j + 1]][i] = " "
         for i in range(n): t[i][0], t[i][m-1] = " ", " "
         for i in range(m): t[0][i], t[n-1][i] = " ", " "
-        D <= H1("Labirintus tervező") + TABLE([TR(map(TD, l)) for l in t]) + DIV(Id = "a")
+        D <= H1("Labirintus tervező") + TABLE([TR(map(TD, l)) for l in t], Class="o") + DIV(Id = "a")
         def f(e):
             e.target.html = " " if  e.target.html == "" else ""
             y, x = e.target.parent.rowIndex, e.target.cellIndex
@@ -92,13 +85,13 @@
             text-shadow: 1px 1px 2px rgb(105, 96, 84);
             user-select: none;
         }
-        table { 
+        table {
             padding: 2px;
             border-radius: 3px;
             box-shadow: 1px 1px 3px black;
-            margin: auto; 
+            margin: auto;
             border-spacing: 3px;
-            background-color: rgb(45, 51, 11);
+            background-color: rgb(11, 51, 38);
         }
         td {
             width: 30px;
@@ -110,13 +103,12 @@
             cursor: pointer;
         }
         td:empty { background-color: rgb(223, 223, 184); }
-        td:hover { background-color: rgb(192, 183, 171); }
-        td:empty:hover { background-color: rgb(110, 103, 95); }
+        table.o tr td:hover { background-color: rgb(192, 183, 171); }
+        table.o tr td:empty:hover { background-color: rgb(110, 103, 95); }
         td.x { background-color: rgb(236, 227, 208); }
         td.k { background-color: rgb(128, 170, 150); }
         td.v { background-color: rgb(221, 158, 139); }
         table.t tr td { cursor: default; }
-        table.t tr td:hover { background-color:unset; }
     </style>
 </head>
 <body onload="brython()"></body>
