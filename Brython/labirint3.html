@@ -26,18 +26,17 @@
                 if tt[p[0]][p[1]+1] == "": q.put((p[0],p[1]+1)); tt[p[0]][p[1]+1] = tav + 1
                 if tt[p[0]][p[1]-1] == "": q.put((p[0],p[1]-1)); tt[p[0]][p[1]-1] = tav + 1
             p = kp; tav = tt[p[0]][p[1]]; t[kp[0]][kp[1]] = "K"; t[vp[0]][vp[1]] = "V"
+            D.clear()
             if isinstance(tav, int):
                 while tav > 1:
                     p = { tt[p[0]+1][p[1]]: (p[0]+1,p[1]), tt[p[0]-1][p[1]]: (p[0]-1,p[1]),
                           tt[p[0]][p[1]+1]: (p[0],p[1]+1), tt[p[0]][p[1]-1]: (p[0],p[1]-1)
                     }.get(tav - 1); tav = tt[p[0]][p[1]]; t[p[0]][p[1]] = "X"
-                D.clear()
-                D <= H1("Labirintus tervező") + TABLE([TR(map(td, l)) for l in t], Class="t") + DIV(Id = "a")
                 s = "\n".join(["".join(list(map(z, r))) for r in t])
+                D <= H1("Labirintus a legrövidebb úttal") + TABLE([TR(map(td, l)) for l in t], Class="t") + DIV(Id = "a")
                 D["a"] <= A("Pálya letöltése", Download="p.txt", Href=f'data:text/plain;charset=utf-8,{s}')
             else:
-                D.clear()
-                D <= H1("Labirintus tervező") + TABLE([TR(map(td, l)) for l in t], Class="t") + DIV(Id = "a")
+                D <= H1("Labirintus zsákutca") + TABLE([TR(map(td, l)) for l in t], Class="t") + DIV(Id = "a")
                 D["a"] <= "Nincs út!"
         l = list(range(2, m, 2)); r = list(range(2, n, 2)); sh(l); sh(r)
         for j in range(0, len(r) - 1, 2):
@@ -63,6 +62,7 @@
         for td in D.select("td"): td.bind("click", f)
     </script>
     <style media="screen">
+        h1 { margin: 30px auto; }
         div#a { margin: 10px; padding: 15px; }
         a {
             font-size: 20px;
