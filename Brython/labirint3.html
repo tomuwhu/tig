@@ -92,20 +92,27 @@
             text-shadow: 1px 1px 2px rgb(105, 96, 84);
             user-select: none;
         }
-        table { margin: auto; border-spacing: 2px; }
+        table { 
+            padding: 2px;
+            border-radius: 3px;
+            box-shadow: 1px 1px 3px black;
+            margin: auto; 
+            border-spacing: 3px;
+            background-color: rgb(45, 51, 11);
+        }
         td {
             width: 30px;
             height: 30px;
-            background-color: rgb(70, 62, 53);
+            background-color: rgb(95, 78, 58);
             border-radius: 2px;
-            box-shadow: 1px 1px 2px black;
+            box-shadow: 1px 1px 2px inset black;
             text-align: center;
             cursor: pointer;
         }
         td:empty { background-color: rgb(223, 223, 184); }
         td:hover { background-color: rgb(192, 183, 171); }
         td:empty:hover { background-color: rgb(110, 103, 95); }
-        td.x { background-color: rgb(196, 183, 159); }
+        td.x { background-color: rgb(236, 227, 208); }
         td.k { background-color: rgb(128, 170, 150); }
         td.v { background-color: rgb(221, 158, 139); }
         table.t tr td { cursor: default; }
