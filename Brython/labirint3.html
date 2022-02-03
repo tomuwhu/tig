@@ -6,8 +6,46 @@
         from browser import document as D
         from browser.html import TABLE, TR, TD, A, DIV, H1
         from random import shuffle as sh
+        from queue import Queue
+        q = Queue()
         n, m = 5 * 4 + 1, 7 * 4 + 1
+        kp = (1, 1)
+        vp = (n - 2, m - 2)
         t = [['' for j in range(m)] for i in range(n)]
+        def z(x):
+            if x == " ": return "1"
+            elif x == "X": return "2"
+            else: return "0"
+        def sp(e):
+            def td(x):
+                if isinstance(x, int): x = ""
+                if x=="X": return TD("X", Class="x")
+                return TD(x)
+            tt = t[:]
+            q.put(vp)
+            tav = 0
+            while not q.empty():
+                tav += 1
+                p = q.get()
+                tt[p[0]][p[1]] = tav
+                if tt[p[0]+1][p[1]] == "": q.put((p[0]+1,p[1])); tt[p[0]+1][p[1]] = tav
+                if tt[p[0]-1][p[1]] == "": q.put((p[0]-1,p[1])); tt[p[0]-1][p[1]] = tav
+                if tt[p[0]][p[1]+1] == "": q.put((p[0],p[1]+1)); tt[p[0]][p[1]+1] = tav
+                if tt[p[0]][p[1]-1] == "": q.put((p[0],p[1]-1)); tt[p[0]][p[1]-1] = tav
+            p = kp
+            tav = tt[p[0]][p[1]]
+            while tav > 1:
+                if isinstance(tt[p[0]+1][p[1]], int) and tt[p[0]+1][p[1]] < tav: p = (p[0]+1,p[1])
+                elif isinstance(tt[p[0]-1][p[1]], int) and tt[p[0]-1][p[1]] < tav: p = (p[0]-1,p[1])
+                elif isinstance(tt[p[0]][p[1]+1], int) and tt[p[0]][p[1]+1] < tav: p = (p[0],p[1]+1)
+                elif isinstance( tt[p[0]][p[1]-1], int) and tt[p[0]][p[1]-1] < tav: p = (p[0],p[1]-1)
+                tav =  tt[p[0]][p[1]]
+                t[p[0]][p[1]] = "X"
+            t[kp[0]][kp[1]] = "X"
+            D.clear()
+            D <= H1("Labirintus tervező") + TABLE([TR(map(td, l)) for l in t], Class="t") + DIV(Id = "a")
+            s = "\n".join(["".join(list(map(z, r))) for r in t])
+            D["a"] <= A("Pálya letöltése", Download="p.txt", Href=f'data:text/plain;charset=utf-8,{s}')
         l = list(range(2, m - 2, 2))
         r = list(range(2, n, 2))
         sh(l); sh(r)
@@ -27,20 +65,30 @@
             e.target.html = " " if  e.target.html == "" else ""
             y, x = e.target.parent.rowIndex, e.target.cellIndex
             t[y][x] = " " if t[y][x] == "" else ""
-            s = "\n".join(["".join(list(map(lambda z: "1" if z == " " else "0", r))) for r in t])
+            s = "\n".join(["".join(list(map(z, r))) for r in t])
             D["a"].clear()
             D["a"] <= A("Pálya letöltése", Download="p.txt", Href=f'data:text/plain;charset=utf-8,{s}')
+            D["a"] <= A("Legrövidebb út meghatározása").bind("click", sp)
         for td in D.select("td"): td.bind("click", f)
     </script>
     <style media="screen">
         div#a { margin: 10px; padding: 15px; }
-        a     { font-size: 20px; }
+        a {
+            font-size: 20px;
+            margin: 10px;
+            color: rgb(54, 54, 40);
+            cursor: pointer;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
         body  {
-          text-align: center;
-          background: rgb(193, 197, 176);
-          color: rgb(63, 51, 36);
-          text-shadow: 1px 1px 2px rgb(105, 96, 84);
-          user-select: none;
+            text-align: center;
+            background: rgb(193, 197, 176);
+            color: rgb(63, 51, 36);
+            text-shadow: 1px 1px 2px rgb(105, 96, 84);
+            user-select: none;
         }
         table { margin: auto; border-spacing: 2px; }
         td {
@@ -55,6 +103,15 @@
         td:empty { background-color: rgb(223, 223, 184); }
         td:hover { background-color: rgb(192, 183, 171); }
         td:empty:hover { background-color: rgb(110, 103, 95); }
+        td.x {
+            background-color: rgb(196, 183, 159);
+        }
+        table.t tr td {
+            cursor: default;
+        }
+        table.t tr td:hover {
+            background-color:unset;
+        }
     </style>
 </head>
 <body onload="brython()"></body>
