@@ -36,8 +36,6 @@
             s = "\n".join(["".join(list(map(z, r))) for r in t])
             D["a"] <= A("Pálya letöltése", Download="p.txt", Href=f'data:text/plain;charset=utf-8,{s}')
         l = list(range(2, m - 2, 2)); r = list(range(2, n, 2)); sh(l); sh(r)
-        for i in range(n): t[i][0], t[i][m-1] = " ", " "
-        for i in range(m): t[0][i], t[n-1][i] = " ", " "
         for j in range(0, len(r) - 1, 2):
             for i in range(1, n - 2):
                 if t[i + 1][l[j]] == "": t[i][l[j]] = " "
@@ -47,6 +45,8 @@
                 if t[i - 1][l[j + 1]] == "": t[i][l[j + 1]] = " "
             for i in range(m - 1, 1, -1):
                 if t[r[j + 1]][i - 1] == "": t[r[j + 1]][i] = " "
+        for i in range(n): t[i][0], t[i][m-1] = " ", " "
+        for i in range(m): t[0][i], t[n-1][i] = " ", " "
         D <= H1("Labirintus tervező") + TABLE([TR(map(TD, l)) for l in t], Class="o") + DIV(Id = "a")
         def f(e):
             e.target.html = " " if  e.target.html == "" else ""
