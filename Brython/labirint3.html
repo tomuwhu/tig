@@ -16,7 +16,7 @@
             return {" ": "1", "X": "2", "K": "3", "V": "4"}.get(x, "0")
         def sp(e):
             def td(x):
-                if isinstance(x, int): x = ""
+                if isinstance(x, int): return TD(x, Class="s")
                 return {i: TD(i, Class=i) for i in ["X", "K", "V"]}.get(x, TD(x))
             tt = t[:]; q.put(vp); tt[vp[0]][vp[1]] = 0
             while not q.empty():
@@ -26,16 +26,22 @@
                 if tt[p[0]][p[1]+1] == "": q.put((p[0],p[1]+1)); tt[p[0]][p[1]+1] = tav + 1
                 if tt[p[0]][p[1]-1] == "": q.put((p[0],p[1]-1)); tt[p[0]][p[1]-1] = tav + 1
             p = kp; tav = tt[p[0]][p[1]]
-            while tav > 1:
-                p = { tt[p[0]+1][p[1]]: (p[0]+1,p[1]), tt[p[0]-1][p[1]]: (p[0]-1,p[1]),
-                      tt[p[0]][p[1]+1]: (p[0],p[1]+1), tt[p[0]][p[1]-1]: (p[0],p[1]-1)
-                }.get(tav - 1); tav = tt[p[0]][p[1]]; t[p[0]][p[1]] = "X"
-            t[kp[0]][kp[1]] = "K"; t[vp[0]][vp[1]] = "V"
-            D.clear()
-            D <= H1("Labirintus tervező") + TABLE([TR(map(td, l)) for l in t], Class="t") + DIV(Id = "a")
-            s = "\n".join(["".join(list(map(z, r))) for r in t])
-            D["a"] <= A("Pálya letöltése", Download="p.txt", Href=f'data:text/plain;charset=utf-8,{s}')
-        l = list(range(2, m - 2, 2)); r = list(range(2, n, 2)); sh(l); sh(r)
+            if isinstance(tav, int):
+                while tav > 1:
+                    p = { tt[p[0]+1][p[1]]: (p[0]+1,p[1]), tt[p[0]-1][p[1]]: (p[0]-1,p[1]),
+                          tt[p[0]][p[1]+1]: (p[0],p[1]+1), tt[p[0]][p[1]-1]: (p[0],p[1]-1)
+                    }.get(tav - 1); tav = tt[p[0]][p[1]]; t[p[0]][p[1]] = "X"
+                t[kp[0]][kp[1]] = "K"; t[vp[0]][vp[1]] = "V"
+                D.clear()
+                D <= H1("Labirintus tervező") + TABLE([TR(map(td, l)) for l in t], Class="t") + DIV(Id = "a")
+                s = "\n".join(["".join(list(map(z, r))) for r in t])
+                D["a"] <= A("Pálya letöltése", Download="p.txt", Href=f'data:text/plain;charset=utf-8,{s}')
+            else:
+                D.clear()
+                D <= H1("Labirintus tervező") + TABLE([TR(map(td, l)) for l in t], Class="o") + DIV(Id = "a")
+                D["a"] <= "Nincs út!"
+                for td in D.select("td"): td.bind("click", f)
+        l = list(range(2, m, 2)); r = list(range(2, n, 2)); sh(l); sh(r)
         for j in range(0, len(r) - 1, 2):
             for i in range(1, n - 2):
                 if t[i + 1][l[j]] == "": t[i][l[j]] = " "
@@ -95,6 +101,7 @@
         td:empty { background-color: rgb(223, 223, 184); }
         table.o tr td:hover { background-color: rgb(192, 183, 171); }
         table.o tr td:empty:hover { background-color: rgb(110, 103, 95); }
+        td.s { background-color: rgb(236, 227, 208); color: rgb(201, 150, 150);}
         td.x { background-color: rgb(236, 227, 208); }
         td.k { background-color: rgb(128, 170, 150); }
         td.v { background-color: rgb(221, 158, 139); }
