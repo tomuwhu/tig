@@ -37,7 +37,7 @@
             write(content) {
                 // Show output messages here.
                 // console.log('StdOut: ' + content);
-                document.getElementById("cons").innerHTML = `<div class="fi">A program futási eredménye:</div><pre class="c">${content}</pre>`
+                document.getElementById("cons").innerHTML += content
             },
             flush() {},
         },
@@ -45,7 +45,7 @@
             write(content) {
                 // Show error messages here.
                 // console.error('StdErr: ' + content);
-                document.getElementById("cons").innerHTML = `<div class="fi">Infó:</div><pre class="c">Ez a mintaprogram nem futtatható online. :(</pre>`
+                document.getElementById("cons").innerHTML = `Ez a mintaprogram nem futtatható online. :(`
             },
             flush() {},
         },
@@ -53,7 +53,7 @@
             async readline() {
                 var userInput = prompt();
                 // console.log('Received StdIn: ' + userInput);
-                document.getElementById("cons").innerHTML = `<div class="fi">Received StdIn:</div><pre class="c">${userInput}</pre>`
+                document.getElementById("cons").innerHTML += userInput
                 return userInput;
             },
         }
@@ -75,6 +75,7 @@
                     document.getElementById("content").innerHTML = ''
                     document.getElementById('content').style.display = "none"
                     document.getElementById('code').style.display = "block"
+                    document.getElementById("cons").innerHTML = ""
                     runner.runCode(html_content);
                 }
                 hljs.highlightAll()
@@ -128,7 +129,7 @@
         <option value="fibn2.py">Fibonacci sorozat Ⅱ.</option>
         <option value="fib_gen_rek.py">Fibonacci sorozat Ⅲ.</option>
         <option value="tetelek/sum.py">Sum (összegzés)</option>
-        <option value="tetelek/sum.py">Max (keresés)</option>
+        <option value="tetelek/max.py">Max (keresés)</option>
         <option value="szures.py">Szűrés (leválogatás)</option>
         <option value="tetelek/filter.py">"filter" objektum (leválogatás)</option>
         <option value="tetelek/map.py">"map" objektum</option>
@@ -185,7 +186,7 @@
     <div style="text-align: center;">
         <div id="content" style="display: none;"></div>
     </div>
-    <dvi id="cons"></dvi>
+    <dvi><div class="fi">A program futási eredménye:</div><pre class="c" id="cons"></pre></dvi>
 </div>
 <style>
     select {
