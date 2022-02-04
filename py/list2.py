@@ -8,7 +8,7 @@ s = [
     ["Zsilák Zsuzsanna Edit", "7341", "Kukutyin", "Zabhegyező köz 221.", "+36 (70) 311-40-40"]
 ]
 
-print("\nLista elemű lista rendezés adott sorszámú mező szerint:")
+print("\nLista elemű lista rendezése adott sorszámú mező szerint:")
 # rendezés adott sorszámú mező szerint
 s.sort(key = lambda x: x[0])
 for i in s:
