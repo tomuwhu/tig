@@ -4,27 +4,24 @@ print("Keresés")
 print( 32 in a, 31 in a )
 
 print("\nLista darabolása")
+print(a[5])     # 5. elem (a sorszámozás 0.-val kezdődik)
 print(a[4:9:2]) # a 4. 6. és 8. elem
 print(a[:5])    # a 0. 1. ... 4. elem
 
 print("\nLista bejárása")
-for i in a:
-    print(i, end=", ")
+for i in a: print(i, end=", ")
 
 print("\n\nLista bejárása indexszel I.")
-for i in range(len(a)):
-    print(f'Az {i}. elem: {a[i]}')
+for i in range(len(a)): print(f'Az {i}. elem: {a[i]}')
 
 print("\n\nLista bejárása indexszel II.")
-for i in enumerate(a):
-    print(f'Az {i[0]}. elem: {i[1]}')
+for i in enumerate(a): print(f'Az {i[0]}. elem: {i[1]}')
 
 print("\n\nSzűrés (leválogatás) I.")
 print( *[i for i in a if i % 2] )
 
 print("\nszűrés (leválogatás) II.")
 print( *filter( lambda x: x % 2, a ) )
-
 
 print("\nKülső rendezés\n", *sorted(a), " <---> ", *a)
 
