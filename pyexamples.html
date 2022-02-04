@@ -47,7 +47,7 @@
             write(content) {
                 // Show output messages here.
                 // console.log('StdOut: ' + content);
-                document.getElementById("cons").innerHTML += `${content}`
+                document.getElementById("cons").innerHTML += `${content.replace("<","﹤").replace(">","﹥")}`
             },
             flush() {},
         },
