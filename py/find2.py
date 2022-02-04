@@ -4,7 +4,7 @@
 #   Beépített keresés
 import time
 
-l = list(range(10000000))
+l = list(range(1000000))
 def finda(i, j):
     p = (i + j) // 2
     if a == l[p]:   return f'Igen a {p + 1}. a listában'
@@ -14,7 +14,7 @@ def finda(i, j):
     else:
         return finda(p + 1, j)
 
-a = 9999995
+a = 999995
 
 print(f'Keressük a ({a}) kulcsot!')
 t1 = time.time()
