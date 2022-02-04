@@ -1,6 +1,7 @@
 <meta charset="UTF-8">
 <script src="hljs/markdown.min.js"></script>
 <link rel="stylesheet" href="main.css">
+<script src="https://cdn.jsdelivr.net/gh/pythonpad/brython-runner/lib/brython-runner.bundle.js"></script>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Shadows+Into+Light&family=Lemonada');
     .navigation {
@@ -14,8 +15,49 @@
         font-family: 'Lemonada', cursive;
         font-size: 12px;
     }
+    pre.c {
+        margin: 0;
+        border-radius: 5px;
+        border: solid 1px white;
+        padding: 10px;
+        text-align: left;
+        background-color: rgb(59, 59, 59);
+        box-shadow: 1px 1px 3px inset rgb(0, 0, 0);
+    }
+    div.fi {
+        margin: 0;
+        padding: 3px;
+        padding-left: 6px;
+        color:bisque
+    }
 </style>
 <script>
+    const runner = new BrythonRunner({
+        stdout: {
+            write(content) {
+                // Show output messages here.
+                // console.log('StdOut: ' + content);
+                document.getElementById("cons").innerHTML = `<div class="fi">A program futási eredménye:</div><pre class="c">${content}</pre>`
+            },
+            flush() {},
+        },
+        stderr: {
+            write(content) {
+                // Show error messages here.
+                // console.error('StdErr: ' + content);
+                document.getElementById("cons").innerHTML = `<div class="fi">Infó:</div><pre class="c">Ez a mintaprogram nem futtatható online. :(</pre>`
+            },
+            flush() {},
+        },
+        stdin: {
+            async readline() {
+                var userInput = prompt();
+                // console.log('Received StdIn: ' + userInput);
+                document.getElementById("cons").innerHTML = `<div class="fi">Received StdIn:</div><pre class="c">${userInput}</pre>`
+                return userInput;
+            },
+        }
+    });
     function load() {
         file = "py/" + document.getElementById("sel").value
         var xhttp = new XMLHttpRequest();
@@ -25,14 +67,15 @@
                     html_content = markdown.toHTML(xhttp.responseText)
                     document.getElementById("code").innerHTML = ''
                     document.getElementById("content").innerHTML = html_content
-                    document.getElementById('content').style.visibility = "visible"
-                    document.getElementById('code').style.visibility = "hidden"
+                    document.getElementById('content').style.display = "block"
+                    document.getElementById('code').style.display = "none"
                 } else {
                     html_content = xhttp.responseText
                     document.getElementById("code").innerHTML = html_content;
                     document.getElementById("content").innerHTML = ''
-                    document.getElementById('content').style.visibility = "hidden"
-                    document.getElementById('code').style.visibility = "visible"
+                    document.getElementById('content').style.display = "none"
+                    document.getElementById('code').style.display = "block"
+                    runner.runCode(html_content);
                 }
                 hljs.highlightAll()
             }
@@ -140,8 +183,9 @@
     <span id="linkk"></span>
     <pre><code class="language-python" id="code"></code></pre>
     <div style="text-align: center;">
-        <div id="content" style="visibility: hidden;"></div>
+        <div id="content" style="display: none;"></div>
     </div>
+    <dvi id="cons"></dvi>
 </div>
 <style>
     select {
