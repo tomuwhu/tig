@@ -1,4 +1,4 @@
-from random import randrange as r # Ez fog kelleni a 4. feladathoz (a véletlen szám generáláshoz)
+from random import randrange as r # Ez fog kelleni az 5/2. feladathoz (a véletlen szám generáláshoz)
 # 1. Írja ki a képernyőre a választási lehetőségeket
 print('''
 Milyen műveletet szeretne gyakorolni?
