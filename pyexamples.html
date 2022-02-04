@@ -45,7 +45,8 @@
     const runner = new BrythonRunner({
         stdout: {
             write(content) {
-                document.getElementById("cons").innerHTML += `${content.replace("<","﹤").replace(">","﹥")}`
+                t = content.replace("<","﹤").replace(">","﹥")
+                document.getElementById("cons").innerHTML += `${t}`
             },
             flush() {},
         },
