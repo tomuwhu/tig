@@ -3,4 +3,6 @@ def f(it, o = 0):
         if o < i: o = i
     return o
 print(f([1, 2, 3]))
+
+# vagy:
 print(max([1, 2, 3]))

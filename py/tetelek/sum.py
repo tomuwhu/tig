@@ -3,7 +3,8 @@ def f(it, o = 0):
         o += i
     return o
 print(f([1, 2, 3], 5))
-print(sum([1, 2, 3], 5))
-print("--------------")
 print(f([[1, 2],[3, 4]], []))
+
+# vagy:
+print(sum([1, 2, 3], 5))
 print(sum([[1, 2],[3, 4]], []))
