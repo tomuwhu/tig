@@ -11,11 +11,11 @@ print("\nLista bejárása")
 for i in a:
     print(i, end=", ")
 
-print("\n\nLista bejárása indexxel I.")
+print("\n\nLista bejárása indexszel I.")
 for i in range(len(a)):
     print(f'Az {i}. elem: {a[i]}')
 
-print("\n\nLista bejárása indexxel II.")
+print("\n\nLista bejárása indexszel II.")
 for i in enumerate(a):
     print(f'Az {i[0]}. elem: {i[1]}')
 
