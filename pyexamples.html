@@ -45,16 +45,12 @@
     const runner = new BrythonRunner({
         stdout: {
             write(content) {
-                // Show output messages here.
-                // console.log('StdOut: ' + content);
                 document.getElementById("cons").innerHTML += `${content.replace("<","﹤").replace(">","﹥")}`
             },
             flush() {},
         },
         stderr: {
             write(content) {
-                // Show error messages here.
-                // console.error('StdErr: ' + content);
                 document.getElementById("cons").innerHTML = `Ez a mintaprogram nem futtatható online. :(`
             },
             flush() {},
@@ -62,8 +58,7 @@
         stdin: {
             async readline() {
                 var userInput = prompt();
-                // console.log('Received StdIn: ' + userInput);
-                document.getElementById("cons").innerHTML += userInput
+                document.getElementById("cons").innerHTML += userInput + "\n"
                 return userInput;
             },
         }
@@ -124,6 +119,7 @@
     <h1>Python p&eacute;ldaprogramok</h1>
     <select onchange="load()" id="sel">
         <option></option>
+        <option value="input.py">Input</option>
         <option value="colors.py">Színek</option>
         <option value="strings.py">Szövegformázás</option>
         <option value="alapok.py">Python alapok Ⅰ.</option>
