@@ -23,12 +23,22 @@
         text-align: left;
         background-color: rgb(59, 59, 59);
         box-shadow: 1px 1px 3px inset rgb(0, 0, 0);
+        overflow-x: auto;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+        text-align: left;
     }
     div.fi {
-        margin: 0;
+        margin: 0 auto;
         padding: 3px;
         padding-left: 6px;
-        color:bisque
+        color:bisque;
+    }
+    div.row {
+        width: 100%;
     }
 </style>
 <script>
@@ -37,7 +47,7 @@
             write(content) {
                 // Show output messages here.
                 // console.log('StdOut: ' + content);
-                document.getElementById("cons").innerHTML += content
+                document.getElementById("cons").innerHTML += `${content}`
             },
             flush() {},
         },
