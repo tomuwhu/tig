@@ -30,6 +30,7 @@
         white-space: -o-pre-wrap;
         word-wrap: break-word;
         text-align: left;
+        font-family: monospace;
     }
     div.fi {
         margin: 0 auto;
@@ -45,7 +46,7 @@
     const runner = new BrythonRunner({
         stdout: {
             write(content) {
-                t = content.replace("<","﹤").replace(">","﹥")
+                t = content.replace("<","❮").replace(">","❯")
                 document.getElementById("cons").innerHTML += `${t}`
             },
             flush() {},

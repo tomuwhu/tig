@@ -6,5 +6,5 @@ for i in range(32, 127):
     print(f"'{i:c}':{i:d}", end=" ")
 
 print("\n\nTovábbi karakterek:")
-for i in range(8448, 11390):
+for i in range(161, 12390):
     print(f"{i:c}", end=" ")

@@ -222,7 +222,7 @@ h3.c {
     font-family: 'Kanit', sans-serif;
     font-size: 15px;
     cursor:pointer;
-    margin: 8px;
+    margin: 0px;
 }
 h3.c:hover {
     cursor:pointer;
