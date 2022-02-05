@@ -3,7 +3,7 @@ h = { 2, 3, 4, 5, 6, 8, 11, 16 }
 print( 2 in h )
 print( 2 in h and 3 in h )
 print( 2 in h and 7 in h )
-h.add( 2 )
+h.add( 2 ) #egy elem csak egyszer szerepelhet, nem teszi bele még egy példányban!
 print( *h )
 
 # szótár
