@@ -9,6 +9,5 @@ print(*f(list("csikóhal")))
 print(*enumerate(list("csikóhal")))
 
 # használata:
-
 l = "első,második,harmadik,negyedik,ötödik,hatodik".split(",")
 print(*[f'{i + 1}.: {x}' for i, x in enumerate(l)], sep="\n")
