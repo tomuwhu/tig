@@ -3,6 +3,10 @@ body {
     color: rgb(196, 240, 230);
     margin: 0;
 }
+span.ss {
+    font-size: 23px;
+    color:aqua;
+}
 select {
     width: 300px;
 }
