@@ -13,10 +13,10 @@ print("\nLista bejárása")
 for i in a: print(i, end=", ")
 
 print("\n\nLista bejárása indexszel I.")
-for i in range(len(a)): print(f'Az { i }. elem: { a[i] }')
+for i in range(len(a)): print(f'Az { i + 1 }. elem: { a[i] }')
 
 print("\n\nLista bejárása indexszel II.")
-for i in enumerate(a): print(f'Az { i[0] }. elem: { i[1] }')
+for i, x in enumerate(a): print(f'Az { i + 1 }. elem: { x }')
 
 print("\n\nSzűrés (leválogatás) I.")
 print( *[i for i in a if i % 2] )
