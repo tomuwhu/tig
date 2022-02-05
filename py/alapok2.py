@@ -30,7 +30,7 @@ emberek = [
     ["Vozár Boglárka", "4578", "Kiskunlacháza", "Kökörcsin út 8.", "+36 (20) 212-11-50"],
     ["Zsilák Zsuzsanna Edit", "7341", "Kukutyin", "Zabhegyező köz 221.", "+36 (70) 311-40-40"]
 ] 
-s = [{h[e[0]]: e[1] for e in enumerate(sor)} for sor in emberek]
+s = [{h[i]: k for i, k in enumerate(sor)} for sor in emberek]
 
 # rendezés adott mező szerint
 s.sort(key = lambda x: x["Név"])
