@@ -1,8 +1,9 @@
-print("ff=%.2f, kd='%s'" % (2.23455, 'cica'))
-print("ff=%6.2f, kd='%6s'" % (2.23455, 'cica'))
+s = "cica"
+print(f'ff={2.23455:.2f}, kd="{s}"')
 
 for i in range(32, 127):
-    print("A '%c' karakter kódja: %d" % (i, i))
+    print(f"A '{i:c}' karakter kódja: {i:d}")
 
+print("További karakterek és kódjaik:")
 for i in range(8592, 9211):
-    print("%d:   %c" % (i, i))
+    print(f"({i:d}: {i:c} )", end=", ")
