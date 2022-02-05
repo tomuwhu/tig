@@ -16,6 +16,7 @@ from random import randrange as r
 print(f'A kedvenc állatom a { {0: "cica", 1: "krokodil", 2: "róka", 3: "kutya", 4: "nyuszi"}[r(5)] }. ')
 
 # szótár készítése listából
+l = ["cica", "kutya", "szamár", "zebra", "zsiráf", "antilop", "viziló"]
 d = dict(enumerate(l))
 print( d )
 print(f'A kedvenc állatom a { d[r(len(l))] }.\n')
