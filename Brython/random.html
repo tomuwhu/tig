@@ -2,16 +2,16 @@
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
 <script type="text/python">
-	from browser import document
+	from browser import document, html as h
 	from random import shuffle
 	li = [ *range( 1, 90 ) ]
 	shuffle( li )
 	lo = li[ :5 ]
 	lo.sort(    )
-	s = ""
+	s = h.UL()
 	for la in lo:
-		s+="<li>%s</li>" % la 
-	document.getElementById("op").innerHTML="<ul>%s</ul>" % s
+		s <= h.LI(la)
+	document["op"] <= s
 </script>
 <body>
 	<button onclick="brython()">Start</button>

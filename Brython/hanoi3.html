@@ -17,22 +17,22 @@
                 ot += 1
                 if ot > 2 ** n - 1:
                   timer.clear_interval(ft)
-                  timer.set_timeout(tostart, ft*(2**n)+ft+2000 )
+                  timer.set_timeout(tostart, ft * (2 ** n) + ft + 2000 )
             def kiir():
                 global time
                 q.append( html.DIV(
                   html.DIV(f'{time}.', Class="t") +
-                  html.DIV(map(lambda x: html.DIV(x, Class=f'f{x}'), a[0]), Class="el") +
-                  html.DIV(map(lambda x: html.DIV(x, Class=f'f{x}'), a[1]), Class="el") +
-                  html.DIV(map(lambda x: html.DIV(x, Class=f'f{x}'), a[2]), Class="el"),
+                  html.DIV(map(lambda x: html.DIV(x, Class = f'f{x}'), a[0]), Class = "el") +
+                  html.DIV(map(lambda x: html.DIV(x, Class = f'f{x}'), a[1]), Class = "el") +
+                  html.DIV(map(lambda x: html.DIV(x, Class = f'f{x}'), a[2]), Class = "el"),
                   Class="c"
                 ) )
                 time += 1
             def f(i, j):
                 global a, time
-                e = a[i-1][-1]
-                a[i-1].pop()
-                a[j-1].append(e)
+                e = a[i - 1][-1]
+                a[i - 1].pop()
+                a[j - 1].append(e)
                 kiir()
             def h(n, a, b):
                 if n > 1: h(n - 1, a, 6 - a - b)
@@ -54,7 +54,7 @@
                 if ax == bx:
                     bx+=1
                 if bx > 3: bx = 1
-                h(n,ax,bx)
+                h(n, ax, bx)
                 ft = timer.set_interval(op, (40-int(document["t"].value)) ** 2)
             def tostart():
                 global a, x, row1, row2

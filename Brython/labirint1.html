@@ -19,8 +19,8 @@
               if t[i - 1][l[j + 1]] == "": t[i][l[j + 1]] = " "
           for i in range(m - 1, 1, -1):
               if t[r[j + 1]][i - 1] == "": t[r[j + 1]][i] = " "
-      for i in range(n): t[i][0], t[i][m-1] = " ", " "
-      for i in range(m): t[0][i], t[n-1][i] = " ", " "
+      for i in range(n): t[i][0], t[i][m - 1] = " ", " "
+      for i in range(m): t[0][i], t[n - 1][i] = " ", " "
       D <= TABLE([TR(map(TD, l)) for l in t])
     </script>
     <style media="screen">
