@@ -54,6 +54,7 @@
         stderr: {
             write(content) {
                 document.getElementById("cons").innerHTML += `Ez a mintaprogram nem futtatható online. :(`
+                console.log(content);
             },
             flush() {},
         },
@@ -121,11 +122,13 @@
     <h1>Python p&eacute;ldaprogramok</h1>
     <select onchange="load()" id="sel">
         <option></option>
-        <option value="input.py">Input</option>
+                <option value="input.py">Input</option>
         <option value="inpsform.py">Input + String formázás</option>
         <option value="colors.py">Színek</option>
         <option value="strings.py">Szövegformázás</option>
+        <option value="tk119_5.py">TK 119. oldal 5. feladat</option>
         <option value="list1.py">Python listák Ⅰ.</option>
+        <option value="tk126_123.py">TK 126. oldal 1-3. feladat</option>
         <option value="list2.py">Python listák Ⅱ.</option>
         <option value="alapok2.py">Python halmazok, szótárak</option>
         <option value="refvsobj.py">Objektum - Referencia Ⅰ.</option>
