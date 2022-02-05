@@ -15,10 +15,6 @@ print(sz["cica"])
 from random import randrange as r
 print(f'A kedvenc állatom a { {0: "cica", 1: "krokodil", 2: "róka", 3: "kutya", 4: "nyuszi"}[r(5)] }. ')
 
-# lista használata elágazáshoz
-l = ["cica", "kutya", "szamár", "zebra", "zsiráf", "antilop", "viziló"]
-print(f'A kedvenc állatom a { l[r(len(l))] }. ')
-
 # szótár készítése listából
 d = dict(enumerate(l))
 print( d )

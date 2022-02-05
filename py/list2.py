@@ -1,3 +1,8 @@
+# lista használata elágazáshoz
+from random import randrange as r
+l = ["cica", "kutya", "szamár", "zebra", "zsiráf", "antilop", "viziló"]
+print(f'A kedvenc állatom a { l[r(len(l))] }. ')
+
 # Lista elemű lista
 s = [
     ["Nagymihály Balázs", "6725", "Szeged", "Pacsirta utca 9.", "+36 (70) 567-45-67"],
