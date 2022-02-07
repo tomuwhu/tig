@@ -19,6 +19,9 @@
           list(range(490,496))
         ],[])
         def katt(e):
+            y, x = e.target.parent.rowIndex, e.target.cellIndex
+            k = int(D["i"].value)
+            D["y"] <= DIV(f'{x + 16 * y + 256 * k}: ', Class="k k3")
             D["y"] <= DIV(e.target.innerHTML, Class="k k2")
         def ki(e = 0):
             k = e if isinstance(e, int) else int(e.target.value)
@@ -94,6 +97,10 @@
         }
         div.k2 {
           font-size: 57px;
+          user-select: text;
+        }
+        div.k3 {
+          font-size: 17px;
           user-select: text;
         }
         div.y {
