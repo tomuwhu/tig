@@ -8,7 +8,9 @@
         from browser.html import TABLE, TR, TD, DIV, H1
         from random import shuffle as kever
         kk = 129402
-        n = 4 # 4 .. 16, páros
+        n = list(range(4,17,2))
+        kever(n)
+        n = n[0]
         u = []
         def f(e):
             if len(u)==0:
@@ -19,27 +21,22 @@
                 e.target.childNodes[0].style.display = "block"
                 e.target.unbind("click", f)
                 v = u[0]
-                if not e.target.id == v.id:
-                    if not e.target.childNodes[0].innerHTML == v.childNodes[0].innerHTML:
-                        u.append(e.target)
-                    else:
-                        u.pop()
+                if e.target.id != v.id:
+                    if e.target.childNodes[0].innerHTML != v.childNodes[0].innerHTML: u.append(e.target)
+                    else: u.pop()
             else:
                 e.target.unbind("click", f)
                 q = u.pop(); q.childNodes[0].style.display = "none"; q.bind("click", f)
                 q = u.pop(); q.childNodes[0].style.display = "none"; q.bind("click", f)
                 e.target.childNodes[0].style.display = "block"
                 u.append(e.target)                   
-        def cell(x):
-            return DIV(chr(x), Class="o")
-        t = list(map(cell, list(range(kk, kk + n * n // 2)) * 2))
+        t = list(map(lambda x: DIV(chr(x) if x != 129484 else "🪶"), list(range(kk, kk + n * n // 2)) * 2))
         kever(t)
-        D <= H1("Mamóriajáték")
+        D <= H1("Memóriajáték")
         D <= TABLE([TR(map(TD, row)) for row in [[t[i + n * j] for j in range(n)] for i in range(n)]])
         for e in D.select("TD"):
-            y, x = e.parent.rowIndex, e.cellIndex
             e.bind("click", f)
-            e.id = f'l{x}-{y}'
+            e.id = f'l{e.cellIndex}-{e.parent.rowIndex}'
     </script>
     <style>
         body { text-align: center; user-select: none;}
@@ -62,7 +59,7 @@
             padding: 6px;
             cursor: pointer;
         }
-        div.o {
+        td div {
             display: none;
         }
     </style>
