@@ -1,32 +1,31 @@
 from random import shuffle as kever
-def jav(i):
-    n = len(t) - 1
-    max = 0
-    if 2 * i <= n:
-        max = t[2 * i]
-        maxp = 2 * i
-        if 2 * i + 1 <= n and t[2 * i + 1] > max:
-            max = t[2 * i + 1]
-            maxp = 2 * i + 1
-    if t[i] < max:
-        t[i], t[maxp] = t[maxp], t[i]
-        jav(maxp)
-t = list(range(30))
-kever(t)
-t = ["véletlen tömb:"] + t
-print(t)
-for i in range(len(t) // 2, 0, -1): jav(i)
-t[0] = "kupac:"
-print(t)
-r = 2
-for j in range(30-r): print(" ", end="")
-for i in range(1, len(t)):
-    s = str(t[i])
-    if len(s) == 1: s = "0"+s 
-    print(s, end="  ")
-    if i + 1 == r:
-        print()
-        r *= 2
-        for j in range(30-r): print(" ", end="")
+def max_heapify(A,k):
+    l = left(k)
+    r = right(k)
+    if l < len(A) and A[l] > A[k]:
+        largest = l
+    else:
+        largest = k
+    if r < len(A) and A[r] > A[largest]:
+        largest = r
+    if largest != k:
+        A[k], A[largest] = A[largest], A[k]
+        max_heapify(A, largest)
 
+def left(k):
+    return 2 * k + 1
 
+def right(k):
+    return 2 * k + 2
+
+def build_max_heap(A):
+    n = int((len(A)//2)-1)
+    for k in range(n, -1, -1):
+        max_heapify(A,k)
+arr = list(range(30))
+kever(arr)
+print(* arr)
+build_max_heap(arr)
+print(* arr)
+
+# https://favtutor.com/blogs/heap-in-python
