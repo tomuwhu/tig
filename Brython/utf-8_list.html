@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython_stdlib.js"></script>
+    <script type="text/python">
+        from browser import document as D
+        from browser.html import TABLE, TR, TD, H1, INPUT, DIV
+        bl = sum([
+          list(range(52,160)),
+          list(range(172,251)),
+          list(range(216,249)),
+          [252,253,270,275,277,281,283,284,286,287],
+          list(range(293,307)),
+          list(range(309,360)),
+          list(range(363,366)),
+          list(range(368,464)),
+          list(range(472,488))
+        ],[])
+        def ki(e = 0):
+            k = e if isinstance(e, int) else int(e.target.value)
+            D["x"].clear()
+            D["x"] <= TABLE([TR(map(TD, l)) for l in [[
+              chr(j) for j in range(0 + 16 * i + 256 * k, 16 + 16 * i + 256 * k)
+            ] for i in range(16)]])
+            D["x"] <= DIV(f'{k}. lap ({256 * k} - {256 * k + 255})', Class="k")
+        def inc(e):
+            i = int(D["i"].value)
+            if i < 506: i += 1
+            while i in bl:
+                i += 1
+            D["i"].value = i
+            ki(i)
+        def dec(e):
+            i = int(D["i"].value)
+            if i > 0: i -= 1
+            while i in bl:
+                i -= 1
+            D["i"].value = i
+            ki(i)
+        D <= H1( "UTF-8 Karakterek listája" )
+        D <= DIV("⇚", Class="g").bind("click", dec)
+        D <= INPUT(Id="i", Type="range", min = 0, max = 506, value="0").bind("change", ki)
+        D <= DIV("⇛", Class="g").bind("click", inc)
+        D <= DIV(Id="x")
+        ki()
+    </script>
+    <style media="screen">
+        body { text-align: center; user-select: none;}
+        input { width: 700px; }
+        table { margin: auto; border-spacing: 4px; }
+        h1 {
+            text-shadow: 1px 1px 3px rgb(34, 46, 49);
+            color: rgb(19, 67, 99);
+        }
+        td {
+            user-select: all;
+            width: 60px;
+            height: 60px;
+            font-size: 40px;
+            border-radius: 6px;
+            background-color: rgb(184, 221, 226);
+            color: rgb(19, 66, 85);
+            box-shadow: 1px 1px 3px inset black;
+            text-shadow: 1px 1px 3px rgb(34, 46, 49);
+            padding: 6px;
+        }
+        div.g {
+          display: inline-block;
+          padding: 16px;
+          margin: 10px;
+          font-size: 40px;
+          border-radius: 6px;
+          background-color: rgb(184, 221, 226);
+          color: rgb(19, 66, 85);
+          box-shadow: 1px 1px 3px black;
+          text-shadow: 1px 1px 3px rgb(72, 96, 102);
+          cursor: pointer;
+        }
+        div.k {
+          font-size: 27px;
+          color: rgb(44, 82, 97);
+          padding: 10px;
+          text-shadow: 1px 1px 3px rgb(138, 165, 172);
+        }
+    </style>
+</head>
+<body onload="brython()"></body>
