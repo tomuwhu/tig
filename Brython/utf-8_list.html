@@ -15,8 +15,11 @@
           list(range(309,360)),
           list(range(363,366)),
           list(range(368,464)),
-          list(range(472,488))
+          list(range(472,488)),
+          list(range(490,496))
         ],[])
+        def katt(e):
+            D["y"] <= DIV(e.target.innerHTML, Class="k k2")
         def ki(e = 0):
             k = e if isinstance(e, int) else int(e.target.value)
             D["x"].clear()
@@ -24,6 +27,8 @@
               chr(j) for j in range(0 + 16 * i + 256 * k, 16 + 16 * i + 256 * k)
             ] for i in range(16)]])
             D["x"] <= DIV(f'{k}. lap ({256 * k} - {256 * k + 255})', Class="k")
+            for x in D.select("TD"):
+                x.bind("click", katt)
         def inc(e):
             i = int(D["i"].value)
             if i < 506: i += 1
@@ -43,9 +48,10 @@
         D <= INPUT(Id="i", Type="range", min = 0, max = 506, value="0").bind("change", ki)
         D <= DIV("⇛", Class="g").bind("click", inc)
         D <= DIV(Id="x")
+        D <= DIV(Id="y")
         ki()
     </script>
-    <style media="screen">
+    <style>
         body { text-align: center; user-select: none;}
         input { width: 700px; }
         table { margin: auto; border-spacing: 4px; }
@@ -54,9 +60,8 @@
             color: rgb(19, 67, 99);
         }
         td {
-            user-select: all;
-            width: 60px;
-            height: 60px;
+            text-align: center;
+            user-select: none;
             font-size: 40px;
             border-radius: 6px;
             background-color: rgb(184, 221, 226);
@@ -64,6 +69,7 @@
             box-shadow: 1px 1px 3px inset black;
             text-shadow: 1px 1px 3px rgb(34, 46, 49);
             padding: 6px;
+            cursor: pointer;
         }
         div.g {
           display: inline-block;
@@ -71,17 +77,28 @@
           margin: 10px;
           font-size: 40px;
           border-radius: 6px;
-          background-color: rgb(184, 221, 226);
+          background-color: rgb(182, 157, 147);
           color: rgb(19, 66, 85);
           box-shadow: 1px 1px 3px black;
-          text-shadow: 1px 1px 3px rgb(72, 96, 102);
+          text-shadow: 1px 1px 3px rgb(102, 78, 72);
           cursor: pointer;
+        }
+        div.g:hover {
+            background-color: rgb(224, 140, 107);
         }
         div.k {
           font-size: 27px;
           color: rgb(44, 82, 97);
           padding: 10px;
           text-shadow: 1px 1px 3px rgb(138, 165, 172);
+          display: inline-block;
+        }
+        div.k2 {
+          font-size: 57px;
+        }
+        div.y {
+            display: flex;
+            user-select: all;
         }
     </style>
 </head>
