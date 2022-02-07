@@ -48,7 +48,7 @@
             ki(i)
         D <= H1( "UTF-8 Karakterek listája" )
         D <= DIV("🔙", Class="g").bind("click", dec)
-        D <= INPUT(Id="i", Type="range", min = 0, max = 506, value="0").bind("change", ki)
+        D <= INPUT(Id="i", Type="range", min = 0, max = 506, value="0").bind("mousemove", ki)
         D <= DIV("🔜", Class="g").bind("click", inc)
         D <= DIV(Id="x")
         D <= DIV(Id="y")
