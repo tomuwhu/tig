@@ -4,13 +4,12 @@
     <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython_stdlib.js"></script>
     <script type="text/python">
-        from browser import document as D, timer
+        from browser import document as D
         from browser.html import TABLE, TR, TD, DIV, H1
-        from random import shuffle as kever
-        kk = 129402
-        n = list(range(4,17,2))
-        kever(n)
-        n = n[0]
+        from random import shuffle as kever, randrange as rr
+        n = list(range(4,17,2))[rr(7)]
+        kk = [129402, 128000, 127744][rr(3)]
+        if n < 16: kk += rr(100 // n)
         u = []
         def f(e):
             if len(u)==0:
@@ -55,11 +54,11 @@
             background-color: rgb(184, 221, 226);
             color: rgb(19, 66, 85);
             box-shadow: 1px 1px 3px inset black;
-            text-shadow: 1px 1px 3px rgb(34, 46, 49);
             padding: 6px;
             cursor: pointer;
         }
         td div {
+            text-shadow: 1px 1px 3px rgb(34, 46, 49);
             display: none;
         }
     </style>
