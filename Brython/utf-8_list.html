@@ -44,9 +44,9 @@
             D["i"].value = i
             ki(i)
         D <= H1( "UTF-8 Karakterek listája" )
-        D <= DIV("⇚", Class="g").bind("click", dec)
+        D <= DIV("🔙", Class="g").bind("click", dec)
         D <= INPUT(Id="i", Type="range", min = 0, max = 506, value="0").bind("change", ki)
-        D <= DIV("⇛", Class="g").bind("click", inc)
+        D <= DIV("🔜", Class="g").bind("click", inc)
         D <= DIV(Id="x")
         D <= DIV(Id="y")
         ki()
@@ -72,19 +72,18 @@
             cursor: pointer;
         }
         div.g {
-          display: inline-block;
-          padding: 16px;
-          margin: 10px;
-          font-size: 40px;
-          border-radius: 6px;
-          background-color: rgb(182, 157, 147);
-          color: rgb(19, 66, 85);
-          box-shadow: 1px 1px 3px black;
-          text-shadow: 1px 1px 3px rgb(102, 78, 72);
-          cursor: pointer;
+            display: inline-block;
+            padding: 0px;
+            margin: 16px;
+            font-size: 28px;
+            text-shadow: 1px 1px 3px rgb(102, 78, 72);
+            cursor: pointer;
         }
         div.g:hover {
-            background-color: rgb(224, 140, 107);
+            text-shadow: 2px 2px 5px rgb(102, 78, 72);
+        }
+        div.g:active {
+            text-shadow: none;
         }
         div.k {
           font-size: 27px;
@@ -95,10 +94,10 @@
         }
         div.k2 {
           font-size: 57px;
+          user-select: text;
         }
         div.y {
             display: flex;
-            user-select: all;
         }
     </style>
 </head>
