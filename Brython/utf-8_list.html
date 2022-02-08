@@ -30,7 +30,7 @@
             D["x"] <= TABLE([TR(map(TD, l)) for l in [[
               chr(j) for j in range(0 + 16 * i + 256 * k, 16 + 16 * i + 256 * k)
             ] for i in range(16)]])
-            D["x"] <= DIV(f'{k}. lap ({256 * k} - {256 * k + 255})', Class="k")
+            D["x"] <= DIV(f'{(hex(k)[2:])}. lap', Class="k")
             for x in D.select("TD"):
                 x.bind("click", katt)
         def inc(e):
@@ -98,11 +98,11 @@
         }
         div.k2 {
           font-size: 57px;
-          user-select: text;
+          user-select: all;
         }
         div.k3 {
           font-size: 17px;
-          user-select: text;
+          user-select: all;
         }
         div.y {
             display: flex;
