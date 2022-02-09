@@ -1,4 +1,6 @@
+# coding=utf-8
 from random import randrange as r, shuffle as s
+
 # véletlen egész szám 1..20 között:
 print(r(1,21))
 
