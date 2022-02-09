@@ -1,4 +1,3 @@
-# coding=utf-8
 from random import randrange as r, shuffle as s
 
 # véletlen egész szám 1..20 között:
@@ -11,15 +10,9 @@ print([r(1,21) for i in range(10)])
 print([r(1,21) for i in range(r(1,21))])
 
 # 10 véletlen egész számból álló monoton növekvő (mn) lista:
-a = 0
-for i in range(10):
-    a += r(0,5)
-    print(a)
+print(sorted([r(50) for i in range(10)]))
 
 # 10 véletlen egész számból álló szigorúan monoton növekvő (szmn) lista:
-a = 0
-l = []
-for i in range(10):
-    a += r(1,10)
-    l.append(a)
-print(l)
+l = set()
+while len(l) < 10: l.add(r(1,50))
+print(sorted(list(l)))
