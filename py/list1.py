@@ -4,10 +4,10 @@ print("Keresés")
 print(32 in a, 31 in a)
 print(a.index(43))
 
-print("\nLista darabolása")
+print("\nLista darabolása") # -tól(alapértelmezetten 0):-ig(alapértelmezetten a lista utolsó eleme):lépésköz(alapértelmezetten 1)
 print(a[5])     # 5. elem (a sorszámozás 0.-val kezdődik)
-print(a[4:9:2]) # a 4. 6. és 8. elem
-print(a[:5])    # a 0. 1. ... 4. elem
+print(a[4:9:2]) # a 4. 6. és 8. elem (e >= 4 e < 9 lépésköz: 2)
+print(a[:5])    # a 0. 1. ... 4. elem (e >= 0 - alapértelmezett, e<5, lépésköz 1 alapértelmezetten)
 
 print("\nLista bejárása")
 for i in a: print(i, end=", ")
