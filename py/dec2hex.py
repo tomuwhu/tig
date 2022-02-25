@@ -1,3 +1,4 @@
+print(f"{'dec':^3s} :{'hex':^6s}- {'bin'}")
 print("\n".join([
-    f'{i:3d} : $[{i:2x}] - %({i:8b})' for i in range(0x100)
+    f'{i:3d} : $ {i:{0}2x} - % {i:{0}8b}' for i in range(0x100)
 ]))
