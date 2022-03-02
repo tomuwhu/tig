@@ -2,7 +2,7 @@ from bottle import route, run
 
 @route('/')
 def root():
-    return "Gyökér!"
+    return "Gyökér könyvtár!"
 
 @route('/cica')
 def cica():
