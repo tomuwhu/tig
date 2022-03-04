@@ -1,0 +1,132 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<meta charset="utf-8">
+<script>
+ql = [
+    `Az alábbiak közül melyik a kedvenc munkaformád?`,
+    `Az alábbiak közül melyik munkaformát szereted a legkevésbé?`,
+    `Mennyire tudod követni az órai feladatokat?`,
+    `Hogyan értékeled saját órai aktivitásod?`,
+    `Mennyire rendszeresen foglalkozol otthon az órai feladatokkal, házi feladatokkal, ajánlott anyagokkal?`,
+    `Mely feladatok tetszettek a legjobban, írj néhány példát?`
+]
+vl = [
+    [`csoportmunka`,`pármunka`,`lánckérdés`,`egyéni munka`,`hagyományos tanári magyarázat`],
+    [`csoportmunka`,`pármunka`,`lánckérdés`,`egyéni munka`,`hagyományos tanári magyarázat`],
+    [`Totál tudom követni`,`Többnyire képben vagyok`,`Többé-kevésbé O.K.`,`Általában totlál lemaradok`,`Meg se próbálom`],
+    [``,`nagyon aktívan részt veszek az órai munkában`,`többnyire részt veszek az órai munkában`,`néha előfordult, hogy részt vettem az órai munkában`,`szinte soha nem veszek részt az órai munkában`],
+    [`Heti 3-4 órát.`,`Heti 1-2 órát.`,`Hetente kb. fél órát.`,`Néha ránézek.`,`Szinte soha.`],
+    ['']
+]
+$( () => {
+    $.get( 
+        "https://inf.u-szeged.hu/~tnemeth/ufnget.php" 
+    )
+    .done( q => {
+        l = JSON.parse(q);
+        s = `<table><tr><th></th>`
+        ql.forEach( hc => {
+            s += `<th class="c">${hc}</th>`
+        })
+        s += "</tr>"
+        l.forEach(row => {
+            s += `<tr><td class="c">${row['ts'].split(" ")[1]}</td>`
+            row['data'].split('').forEach( (u, i) => {
+                s += `<td>${ vl[i][u-1].replaceAll(" ","&nbsp;") }</td>`
+            });
+            s += `</tr>`
+        });        
+        s += `</table>`
+        $('#echo').html(s)
+    })
+})    
+</script>
+<ul class="navigation">
+    <li><a href="../">Kezdőlap</a></li>
+    <li><a href="../tanttm.html">Tananyag</a></li>
+    <li><a href="../htmlexampl.html">HTML-CSS</a></li>
+    <li><a href="../pyexamples.html">Python</a></li>
+    <li><a href="../bryexamples.html">Brython</a></li>
+    <li><a href="../editor.html">Editor</a></li>
+    <li><a href="../probadogalista.html">Ellenőrzés</a></li>
+</ul>
+<div id="echo"></div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Shadows+Into+Light&family=Lemonada');
+.navigation {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    text-shadow: 1px 1px 3px black;
+    list-style: none;
+    margin: 0;
+    background: rgb(2, 98, 130);
+    font-family: 'Lemonada', cursive;
+    font-size: 12px;
+}
+
+.navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    color: white;
+}
+
+.navigation a:hover {
+    background: #1b334f;
+}
+
+@media all and (max-width: 800px) {
+    .navigation {
+        justify-content: space-around;
+    }
+}
+
+@media all and (max-width: 700px) {
+    .navigation {
+        flex-flow: column wrap;
+        padding: 0;
+    }
+    .navigation a {
+        text-align: center;
+        padding: 10px;
+        border-top: 1px solid rgba(255, 255, 255,0.3);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .navigation li:last-of-type a {
+        border-bottom: none;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+body {
+    font-family: 'Balsamiq Sans', cursive;
+    margin:0px;
+    background-color: darkkhaki;
+    user-select: none;
+}
+td {
+    font-size: 10px;
+    margin: 4px;
+    padding: 4px;
+    box-shadow: 1px 1px 3px black;
+    border-radius: 3px;
+    background-color: rgb(253, 241, 191);
+    color:rgb(7, 38, 39);
+    text-align: center;
+}
+td.c {
+    background-color: rgb(17, 63, 92);
+    color:rgb(253, 241, 191);
+}
+th.c {
+    font-size: 11px;
+    margin: 4px;
+    padding: 4px;
+    box-shadow: 1px 1px 3px black;
+    border-radius: 3px;
+    background-color: rgb(17, 63, 92);
+    color:rgb(253, 241, 191);
+}
+table {
+    user-select: all;
+}
+</style>
