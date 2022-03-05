@@ -1,8 +1,12 @@
-from bottle import route, run
+from bottle import route, run, request
 
-@route('/')
+@route('/', method='POST')
 def root():
-    return "<h1>Gyökér könyvtár!</h1>"
+    return f"<h1>Gyökér könyvtár!</h1><hr>{request.params['x']}<hr>{request.params['a']}"
+
+@route('/', method='GET')
+def root():
+    return f"<h1>Gyökér könyvtár, get!</h1>"
 
 @route('/<x>')
 def cica(x):
