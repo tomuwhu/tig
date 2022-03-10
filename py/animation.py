@@ -1,7 +1,6 @@
 import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib.animation import FuncAnimation
-plt.style.use('seaborn-pastel')
 
 
 fig = plt.figure()
@@ -17,8 +16,9 @@ def animate(i):
     line.set_data(x, y)
     return line,
 
-anim = FuncAnimation(fig, animate, init_func=init,
-                               frames=200, interval=20, blit=True)
+anim = FuncAnimation(
+    fig, animate, init_func=init, frames=200, interval=20, blit=True
+)
 
-
+plt.show()
 anim.save('sine_wave.gif', writer='imagemagick')
