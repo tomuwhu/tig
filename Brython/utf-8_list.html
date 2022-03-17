@@ -26,7 +26,7 @@
             D["y"] <= DIV(f'{x + 16 * y + 256 * k}', Class="k k3")
             D["y"] <= SPAN("(") + SPAN(s, Class="k k3") + SPAN("):")
             D["y"] <= DIV(e.target.innerHTML, Class="k k2")
-            D["y"] <= DIV(e.target.innerHTML, Class="k k4")
+            D["y"] <= SPAN(e.target.innerHTML, Class="k k3")
         def ki(e = 0):
             k = e if isinstance(e, int) else int(e.target.value)
             D["x"].clear()
