@@ -18,15 +18,18 @@ def g(i): # ragozás: 8-ra 10-re
         else: return f"{i}-ra"
 
 print(f"Gondoljon egy egész számra amley nem kisebb {f(a)} és nem nagyobb {f(b)}! Igyekszem {ksz} kérdésből kitalálni, melyikre gondolt.")
+j = 1
 while a != b:
     i = (a + b) // 2
-    v = input(f"A gondolt szám {f(i + 1)} kisebb? (i/n) ")
+    v = input(f"{j}. kérdésem: A gondolt szám {f(i + 1)} kisebb? (i/n) ")
+    j += 1
     if v[0] == "i":
         b = i
     else:
         a = i + 1
     if a != b:
-        print(f"Éretem, akkor a gondolt szám {a}...{b} között lesz valahol.")
+        print(f"Éretem, akkor {a}, ..., {b} között lesz valahol.")
         print("Hmmm...")
         
-print(f"Tehát (ha mindig helyesen válaszolt) a {g(a)} gondolt! Remek választás!")
+print("Nos...")
+print(f"Ha mindig helyesen válaszolt, akkor a {g(a)} gondolt! Remek választás!")
