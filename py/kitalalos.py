@@ -1,9 +1,9 @@
 a = 0
 b = 15
-def f(i): # -nál -nél
+def f(i): # 6-nál 7-nél
     if str(i)[-1] in "0124579": return f"{i}-nél"
     else: return f"{i}-nál"
-def g(i): #- ra -re
+def g(i): # 8-ra 10-re
     if str(i)[-1] in "0124579": return f"{i}-re"
     else: return f"{i}-ra"    
 print(f"Gondoljon egy egész számra amley nem kisebb {f(a)} és nem nagyobb {f(b)}!")
