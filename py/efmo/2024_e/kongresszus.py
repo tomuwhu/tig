@@ -101,3 +101,22 @@ while ossz <= kf:
         break
 if vé == 1: print("Már véget ért")
 if vé == -1: print("Még nem kezdődött el")
+# 9. feladat
+import sys
+f = open("idorend.txt","w")
+sys.stdout = f
+for i in nl:
+    print(f"november {i}.:")
+    kezd = 8 * 60
+    volt_ebéd = False
+    for j in nl[i]:
+        if kezd != 8*60:
+            print(f"{kezd // 60:02d}:{kezd % 60:02d} - {(kezd + 20) // 60:02d}:{(kezd + 20) % 60:02d} Vita")
+            kezd += 20
+        if not volt_ebéd and kezd > 12 * 60:
+            print(f"{kezd // 60:02d}:{kezd % 60:02d} - {(kezd + 60) // 60:02d}:{(kezd + 60) % 60:02d} Ebéd")
+            kezd += 60
+            volt_ebéd = True
+        veg = kezd + j[4]
+        print(f"{kezd // 60:02d}:{kezd % 60:02d} - {veg // 60:02d}:{veg % 60:02d} {j[3]}. {j[0]}: {j[5]} ({j[6]})")
+        kezd = veg
