@@ -1,0 +1,30 @@
+Bánkövi Alajos	11	6	1	29	Csernobil és az orvosi radiológia	-
+Bánkövi Alajos	11	5	4	40	Mesterséges intelligencia	-
+Carlo Catalano	11	5	5	33	International Day of Radiology	-
+Carlo Catalano	11	7	1	38	Radiology and COVID-19	-
+Carlo Catalano	11	7	7	46	The impact of COVID-19 on radiology trainees	-
+Csete János	11	7	6	50	A COVID-19 egészségügyi áldozatai	-
+Dobos Ildikó	11	5	8	48	Neuroradiológia a gyakorlatban	-
+Fejes Anikó	11	5	3	28	Onkológia és képalkotás	-
+Fekete Emese	11	6	6	38	Mellkas és kardiovaszkuláris radiológia	-
+Görbe Ferenc	11	7	8	39	A gyomor-bélrendszer radiológiája	-
+Imre Géza	11	7	3	40	Sürgősségi képalkotás a COVID tükrében	-
+Kaján Vidor	11	5	9	27	Betegbiztonság (szakdolgozói szekció)	-
+Katrine Riklund	11	7	5	29	European Congress of Radiology (ECR)	-
+Kerekes Erika	11	6	9	44	Gyermekradiológia	-
+Kis Ida	11	6	5	36	Sport és képalkotás	projektor
+Kis Ida	11	5	7	37	Betegbiztonság	sötétítés, mikrofon
+Kovács Lajos Tamás	11	8	2	30	Oktatás, képzés	-
+Kovács Lajos Tamás	11	5	1	32	Megnyitó	mikrofon, lézermutató
+Kövesdi Márton	11	6	2	30	Radiológusok és a halálozási kockázat	-
+Lelkes Péter	11	6	8	42	A Magyar Orvosi Kamara Radiológiai tagozata	-
+Madocsai Gáspár	11	5	6	41	Cardiovascularis képalkotás	-
+Minerva Becker	11	7	2	36	COVID-19 Open Radiology Database	-
+Palkó András	11	8	1	30	Szakmai minőségbiztosítás	-
+Palkó András	11	8	3	30	Záró előadás	-
+Palkó András	11	6	7	44	A hasi parenchymás szervek	-
+Pesti János	11	5	10	30	Intervenciós radiológia	-
+Porkoláb Bernadett	11	7	4	43	COVID-19 képalkotás	-
+Schmidt Benedek	11	6	3	32	Kontasztanyagok	-
+Sugár Zóra	11	5	2	43	Sport és képalkotás?	-
+Széll Péter András	11	6	4	34	Neuroradiológia	notebook
