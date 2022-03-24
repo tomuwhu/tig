@@ -20,24 +20,24 @@ november 5.:
 17:09 - 17:29 Vita
 17:29 - 17:59 10. Pesti János: Intervenciós radiológia (-)
 november 6.:
-08:00 - 08:29 1. Bánkövi Alajos: Csernobil és az orvosi radiológia (-)
-08:29 - 08:49 Vita
-08:49 - 09:19 2. Kövesdi Márton: Radiológusok és a halálozási kockázat (-)
-09:19 - 09:39 Vita
-09:39 - 10:11 3. Schmidt Benedek: Kontasztanyagok (-)
-10:11 - 10:31 Vita
-10:31 - 11:05 4. Széll Péter András: Neuroradiológia (notebook)
-11:05 - 11:25 Vita
-11:25 - 12:01 5. Kis Ida: Sport és képalkotás (projektor)
-12:01 - 12:21 Vita
-12:21 - 13:21 Ebéd
-13:21 - 13:59 6. Fekete Emese: Mellkas és kardiovaszkuláris radiológia (-)
-13:59 - 14:19 Vita
-14:19 - 15:01 8. Lelkes Péter: A Magyar Orvosi Kamara Radiológiai tagozata (-)
-15:01 - 15:21 Vita
-15:21 - 16:05 7. Palkó András: A hasi parenchymás szervek (-)
-16:05 - 16:25 Vita
-16:25 - 17:09 9. Kerekes Erika: Gyermekradiológia (-)
+08:00 - 08:44 7. Palkó András: A hasi parenchymás szervek (-)
+08:44 - 09:04 Vita
+09:04 - 09:48 9. Kerekes Erika: Gyermekradiológia (-)
+09:48 - 10:08 Vita
+10:08 - 10:50 8. Lelkes Péter: A Magyar Orvosi Kamara Radiológiai tagozata (-)
+10:50 - 11:10 Vita
+11:10 - 11:48 6. Fekete Emese: Mellkas és kardiovaszkuláris radiológia (-)
+11:48 - 12:08 Vita
+12:08 - 13:08 Ebéd
+13:08 - 13:44 5. Kis Ida: Sport és képalkotás (projektor)
+13:44 - 14:04 Vita
+14:04 - 14:38 4. Széll Péter András: Neuroradiológia (notebook)
+14:38 - 14:58 Vita
+14:58 - 15:30 3. Schmidt Benedek: Kontasztanyagok (-)
+15:30 - 15:50 Vita
+15:50 - 16:20 2. Kövesdi Márton: Radiológusok és a halálozási kockázat (-)
+16:20 - 16:40 Vita
+16:40 - 17:09 1. Bánkövi Alajos: Csernobil és az orvosi radiológia (-)
 november 7.:
 08:00 - 08:38 1. Carlo Catalano: Radiology and COVID-19 (-)
 08:38 - 08:58 Vita

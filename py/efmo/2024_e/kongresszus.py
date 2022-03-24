@@ -2,25 +2,11 @@ def f(x):
     e = x.strip()
     if e.isdigit(): e = int(e)
     return e
-l = list(
-        map(
-            lambda x: list(
-                map(
-                    f, 
-                    x.split("\t")
-                )
-            ), 
-            list(
-                open("eloadasok.txt", encoding = "utf-8")
-            )
-        )
-    )
+l = list(map(lambda x: list(map(f,  x.split("\t"))), open("eloadasok.txt", encoding = "utf-8")))
 fl = {}
 for i in l:
-    if i[0] in fl:
-        fl[i[0]] += 1
-    else:
-        fl[i[0]] = 1
+    if i[0] in fl: fl[i[0]] += 1
+    else: fl[i[0]] = 1
 l.sort(key = lambda x: x[2]*1000 + x[3])
 nl = {}
 for i in l:
@@ -55,8 +41,7 @@ l = nl[6]
 l.sort(key = lambda x: -x[4])
 lh = l[0][4]
 print("4. feladat:")
-for f4 in filter(lambda x: x[4] == lh, l):
-    print(f4[0])
+for f4 in filter(lambda x: x[4] == lh, l): print(f4[0])
 print("5. feladat:")
 for i in nl:
     p = evl[i]
@@ -65,22 +50,15 @@ print("6. feladat:")
 print( f"Az ebédszünet a 3. napon : {esz[7] // 60}:{esz[7] % 60:02d}-kor kezdődik.")
 print("7. feladat:")
 for i in fl:
-    if fl[i] > 1:
-        print(i, fl[i])
-"""        
-nap = int(input())
-o = int(input())
-p = int(input())
-"""
-nap = 6
-o = 7
-p = 59
+    if fl[i] > 1: print(i, fl[i])
+nap = int(input("Nap: "))
+o = int(input("Óra: "))
+p = int(input("Perc: "))
+if nap < 5: nap += 4
 kf = (o - 8) * 60 + p
 kn = nl[nap]
 kn.sort(key = lambda x: x[4])
-i = 0
-vé = -1
-ossz = 0
+i, vé, ossz = 0, -1, 0
 while ossz <= kf:
     vé = 1
     ossz += kn[i][4]
