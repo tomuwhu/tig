@@ -151,7 +151,7 @@
             fájlokat archiválja a <i>ok-vez_ker.zip</i> tömörített fájlba,<br>
             ahol <i>ok</i>: osztály ('9c','9d','9kny'), <i>vez</i>: vezetéknév, <i>ker</i>: keresztnév vagy keresztnevek "_" karakterrel elválasztva.
             Az <b>.zip</b> fájlt mentse saját google drive-jára és <a class="m ma" target="gd" href="https://drive.google.com/drive/folders/1pqhwb6Yzj_T1Nq3s4rv-n8dh2_dyoPwU?usp=sharing">ebbe</a>
-            a megosztott mappába!<br></div><br><b>Beküldési határidő meghosszabbítva: 2022. január 26. (szerda) 22:00!</b>
+            a megosztott mappába!<br></div><br><b>Beküldési határidő: tök mindegy, úgyse küldik be. <big>😒</big></b>
             <hr><a class="m" href="pyexamples.html?p8.py" target="mm">Megoldás minta (nem pontosan ehhez a feladathoz)</a>
         `
         i=0
@@ -184,18 +184,24 @@
                     <i>vez</i>: vezetéknév, <i>ker</i>: keresztnév vagy keresztnevek "_" karakterrel elválasztva!<br>
                     Az <i>.svg</i> fájlt mentse saját google drive-jára és
                     <a class="m ma" target="gd" href="https://drive.google.com/drive/folders/1pqhwb6Yzj_T1Nq3s4rv-n8dh2_dyoPwU?usp=sharing">ebbe</a>
-                    a megosztott mappába!<br><br><b>Beküldési határidő (meghosszabbítva) 2022. január 23. (vasárnap) 21:00!</b>
+                    a megosztott mappába!<br><br><b>Beküldési határidő: tök mindegy, úgyse küldik be. <big>😒</big></b>
                     </div>
                     <br><hr><br>
                     <div style="text-align: center;"><a 
                         id="start" class="m ma"
                         style="cursor:pointer;font-size:17px;"
-                        onclick="g()">Példa-animáció indítása<br>(a Pitagorasz-tétel bizonyítása)</a>
+                        onclick="g()">Példa-animáció indítása<br></a>
                     </div>`
     }
     function g() {
-        document.getElementById('anim').innerHTML=`<a href='html/pithx.svg'><img class='pici2' src='html/pithx.svg?p=${Math.random()*10000}'></a>`
-        setTimeout(h, 10000)
+        if (Math.random()>0.5) {
+            document.getElementById('anim').innerHTML=`<a href='html/pithx.svg'><img class='pici2' src='html/pithx.svg?p=${Math.random()*10000}'></a>`
+            setTimeout(h, 10000)
+        } else {
+            document.getElementById('anim').innerHTML=`<a href='pic/anim.gif.svg'><img class='pici2' src='pic/anim.gif?p=${Math.random()*10000}'></a>`
+            setTimeout(h, 48500)
+        }
+        
     }
     setTimeout(h, 100)
 </script>
