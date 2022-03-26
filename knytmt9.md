@@ -6,6 +6,7 @@
     - fájlnevek, kiterjesztések, fájltípusok
 - Visual Studio Code
     - telepítés
+    - beállítás, pluginok (markdown, python, live server, ...)
     - használata lokális környezetben
     - speciális karakterek használata (<>#&~\|;*.:`` '' "" ${ }[ ])
 - Markdown nyelv
