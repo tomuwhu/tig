@@ -1,0 +1,100 @@
+# 9 KNy tematika 🤪
+
+- Operációs rendszer használata:
+    - szoftverek telepítése, eltávolítása
+    - könyvtárstruktúra, programfájlok, adatfájlok
+    - fájlnevek, kiterjesztések, fájltípusok
+- Visual Studio Code
+    - telepítés
+    - használata lokális környezetben
+    - speciális karakterek használata (<>#&~\|;*.:`` '' "" ${ }[ ])
+- Markdown nyelv
+    - szöveg beírása
+    - header (címsor) szintek
+    - UTF-8 karakterkészlet 🙂, szöveg kódolása
+    - táblázat beillesztése
+    - kép, link, tex, code beillesztése
+- Tex nyelv használata
+- HTML nyelv alapjai
+    - VSCode beállítása, live szerver
+    - body, head, title
+    - div, span, a, b, i, hr, h1..h6
+    - img src=""
+    - fogalmak (element, attribute)
+    - attribútumok (title, href)
+    - táblázatok
+    - tabulálás használata az olvashatóság érdekében
+- CSS alapjai
+    - style attribútum
+    - style element
+    - link rel="stylesheet" href="..."
+    - HTML attribútumok II. (id, class, name)
+    - css syntax:
+``` selector {
+        property: value;
+    }
+```
+- CSS
+    - css property-k 
+        - color
+        - background-color
+        - font-size
+        - font-family
+        - text-shadow
+        - text-align
+    - css display
+    - css box model (margin, border, padding, outline, ...)
+    - css display=flex container property-k
+        - flex-direction
+        - justify-content
+        - align-items
+        - align-content
+        - flex-wrap,
+        - gap
+    - css selectors
+        - #id, .class, *, element, element.class
+        - element element, element > element
+        - [attribute=value], [attribute~=value],...
+        - :hover, ::after, ...
+- Operációs rendszer: terminál, parancsok
+    - help, dir (ls), cd, tree, ...
+    - parancs felépítése (paraméterek, kapcsolók)
+    - terminál kényelmi funkciók (tab, ...)
+- Python programozási nyelv
+    - python telepítése
+    - python futtatása terminálban
+        - számok (int, float, nagy számok)
+        - operátorok (+, -, *, /, //, %, **, ... )
+        - python függvények használata ( int(), float(), max(), min() )
+        - számrendszerek (0x, 0b, 0o, format())
+        - python stringek
+    - python futtatása vscode-ban
+        - print()
+        - input()
+        - if - elif - else, tabulálás a pythonban
+        - logikai típus és operátorai
+        - while ciklus és használata
+        - függvények definiálása
+            - bemeneti paraméterek
+            - visszatérési érték (return)
+            - generátor függvények (yield)
+            - rekurzió
+            - rekurzió a generátorokban (yield from)
+            - a *operátor
+        - range, python listák
+        - listák és generátorok bejárása, a for utasítás
+        - lista generátor használata [i for i in l if i]
+        - alapvető algoritmusok
+            - eldöntés (in)
+            - keresés (find)
+            - összegzés (max, min, sum, count)
+            - szűrés (filter)
+            - rendezés (sort, sorted)
+- HTML Forms
+- Archiválás, tömörítés (.zip)
+- HTML + CSS + Python alkalmazása (Brython)
+    - hello world
+    - live szerver használata
+    - browser modul
+        - document, szelektorok (document[])
+        - html ( <=, ```DIV("cica", Class="x1")```, H1..H6, .bind, ... )
