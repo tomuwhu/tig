@@ -90,6 +90,8 @@
             - összegzés (max, min, sum, count)
             - szűrés (filter)
             - rendezés (sort, sorted)
+        - további lista és stringműveletek
+        - szövegfájlok kezelése
 - HTML Forms
 - Archiválás, tömörítés (.zip)
 - HTML + CSS + Python alkalmazása (Brython)
@@ -98,3 +100,5 @@
     - browser modul
         - document, szelektorok (document[])
         - html ( <=, ```DIV("cica", Class="x1")```, H1..H6, .bind, ... )
+        - timer
+        - ajax
