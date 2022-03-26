@@ -108,6 +108,7 @@
         - ajax
 - Algoritmizálás I.
     - rendezések, algoritmus futási ideje
+    - fák ábrázolása, tulajdonságai
     - kupac adatszerkezet
     - kupacrendezés
     - keresőfák
@@ -120,4 +121,4 @@
     - rekurzió memorizálás
     - dinamikus programozás
     - mohó stratégia
-    - gráfalgoritmusok
+    - fa- és gráfalgoritmusok
