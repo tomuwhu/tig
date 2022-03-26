@@ -29,11 +29,7 @@
     - style element
     - link rel="stylesheet" href="..."
     - HTML attribútumok II. (id, class, name)
-    - css syntax:
-``` selector {
-        property: value;
-    }
-```
+    - css syntax: ``` selector { property: value; } ```
 - CSS
     - css property-k 
         - color
@@ -56,6 +52,9 @@
         - element element, element > element
         - [attribute=value], [attribute~=value],...
         - :hover, ::after, ...
+- SVG: vektorgrafika és alkalmazása
+    - statikus vektorgrafikák készítése
+    - css animációk készítése
 - Operációs rendszer: terminál, parancsok
     - help, dir (ls), cd, tree, ...
     - parancs felépítése (paraméterek, kapcsolók)
@@ -99,6 +98,7 @@
     - live szerver használata
     - browser modul
         - document, szelektorok (document[])
-        - html ( <=, ```DIV("cica", Class="x1")```, H1..H6, .bind, ... )
+        - html ( <=, ``` DIV("cica", Class="x1") ```, H1..H6, .bind, ... )
         - timer
+        - svg, programozott animációk készítése
         - ajax
