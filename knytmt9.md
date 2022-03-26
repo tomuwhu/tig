@@ -7,7 +7,7 @@
 - Visual Studio Code
     - telepítés
     - beállítás, pluginok (markdown, python, live server, ...)
-    - használata lokális környezetben
+    - használata (tabulálás, blokkok kezelése, egyidejű szerkesztés, ...)
     - speciális karakterek használata (<>#&~\|;*.:`` '' "" ${ }[ ])
 - Markdown nyelv
     - szöveg beírása
