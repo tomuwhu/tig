@@ -59,7 +59,7 @@
     - help, dir (ls), cd, tree, ...
     - parancs felépítése (paraméterek, kapcsolók)
     - terminál kényelmi funkciók (tab, ...)
-- Python programozási nyelv
+- Python programozási nyelv I.
     - python telepítése
     - python futtatása terminálban
         - számok (int, float, nagy számok)
@@ -91,6 +91,9 @@
             - rendezés (sort, sorted)
         - további lista és stringműveletek
         - szövegfájlok kezelése
+        - teknőcgrafika (like logo) vs. graphics
+        - random modul
+        - összetett feladatok
 - HTML Forms
 - Archiválás, tömörítés (.zip)
 - HTML + CSS + Python alkalmazása (Brython)
@@ -99,6 +102,22 @@
     - browser modul
         - document, szelektorok (document[])
         - html ( <=, ``` DIV("cica", Class="x1") ```, H1..H6, .bind, ... )
+        - turtle (teknőc a browserben)
         - timer
         - svg, programozott animációk készítése
         - ajax
+- Algoritmizálás I.
+    - rendezések, algoritmus futási ideje
+    - kupac adatszerkezet
+    - kupacrendezés
+    - keresőfák
+- Python programozási nyelv II.
+    - halmazok
+    - szótár adatszerkezet
+    - numpy, matplotlib
+- Algoritmizálás II.
+    - rekurzió alkalmazása
+    - rekurzió memorizálás
+    - dinamikus programozás
+    - mohó stratégia
+    - gráfalgoritmusok
