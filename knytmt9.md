@@ -107,12 +107,13 @@
     - button, input (number, date, time, range, color, ...), select, option
     - form validálás
 - Archiválás, tömörítés (.zip)
-- HTML + CSS + Python alkalmazása (Brython)
+- HTML + CSS + Python alkalmazása I (Brython)
     - hello world
     - live szerver használata
     - browser modul
         - document, szelektorok (document[])
         - html ( <=, ``` DIV("cica", Class="x1") ```, H1..H6, .bind, ... )
+        - HTML events
         - turtle (teknőc a browserben)
         - timer
         - svg, programozott animációk készítése
