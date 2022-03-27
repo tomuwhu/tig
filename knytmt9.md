@@ -113,13 +113,14 @@
         - ajax
 - Algoritmizálás I.
     - rendezések, algoritmus futási ideje
+    - verem, sor
     - fák ábrázolása, tulajdonságai
-    - kupac adatszerkezet
+    - kupac adatszerkezet, prioritási sor
     - kupacrendezés
-    - keresőfák
+    - keresőfák, hasítótáblák, halmazok (Set, Map)
 - Python programozási nyelv II.
-    - halmazok
-    - szótár adatszerkezet
+    - halmazok (Set)
+    - szótár adatszerkezet (Map)
     - numpy, matplotlib
 - Algoritmizálás II.
     - rekurzió alkalmazása
@@ -135,5 +136,14 @@
     - PageRank
     - Topológikus rendezés
     - Legrövidebb utak (Floyd-Warshall, Dijkstra)
-    - Feszítőfák
+    - Feszítőfák (Kruskal, halmazerdő)
     - Utazóügynök-probléma
+- Számelméleti algoritmusok:
+    - nyilvános kulcsú tikosítás
+    - számelmélet, kis Fermat-tétel
+    - Fermat-Wiles tétel*
+    - RSA algoritmus
+    - bővített euklideszi algoritmus
+    - véletlenített algoritmusok
+    - újjlenyomat módszer
+    - Miller-Rabin prímteszt
