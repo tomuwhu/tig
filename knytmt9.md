@@ -126,10 +126,13 @@
     - rekurzió memorizálás
     - dinamikus programozás
     - mohó stratégia
-    - fa- és gráfalgoritmusok
+    - visszalépéses keresés
+    - fa- és gráfséták
 - Alkalmazások
+    - Mintaillesztés, Szintaktikus elemzés
     - Damerau–Levenshtein távolság
     - Optimális pénváltás
+    - PageRank
     - Topológikus rendezés
     - Legrövidebb utak (Floyd-Warshall, Dijkstra)
     - Feszítőfák
