@@ -135,7 +135,8 @@
     - Optimális pénváltás
     - PageRank
     - Topológikus rendezés
-    - Legrövidebb utak (Floyd-Warshall, Dijkstra)
+    - Legrövidebb utak (Floyd-Warshall, Dijkstra, A*)
+    - Páros gráfok, magyar módszer, játékelmélet
     - Feszítőfák (Kruskal, halmazerdő)
     - Utazóügynök-probléma
 - Számelméleti algoritmusok:
