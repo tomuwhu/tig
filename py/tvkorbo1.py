@@ -11,6 +11,10 @@ for i in range(x):
     pszt.append(pa)
 for i in range(ksz-x):
     pszt.append(pa + 1)
+
+r = 1
+q = {}
+print("1. feladat: ")
 for t in tl:
     s = 0
     shuffle(p)
@@ -18,4 +22,9 @@ for t in tl:
     print(f"{t}:")
     for k, i in enumerate(pszt):
         print(f"    {k + 1}. kör:", *sorted(p[s:s + i]))
+        if r in p[s:s + i]: q[t] = k + 1
         s += i
+print()
+print("2. feladat: ")
+for i, l in q.items():
+    print(f"{i + ':':15s}{l:2d}. kör")
