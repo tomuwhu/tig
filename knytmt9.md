@@ -18,13 +18,15 @@
 - Tex nyelv használata
 - HTML nyelv alapjai
     - VSCode beállítása, live szerver
-    - body, head, title
+    - body, head, title, meta
     - div, span, a, b, i, hr, h1..h6
-    - img src=""
+    - ul, ol, li, hr, nav, dl, dt, dd
+    - figure, img src="", figcaption
     - fogalmak (element, attribute)
     - attribútumok (title, href)
     - táblázatok
     - tabulálás használata az olvashatóság érdekében
+    - menu, pre, code, kbd, 
 - CSS alapjai
     - style attribútum
     - style element
@@ -96,6 +98,8 @@
         - random modul
         - összetett feladatok
 - HTML Forms
+    - button, input (number, date, time, range, color, ...), select, option
+    - form validálás
 - Archiválás, tömörítés (.zip)
 - HTML + CSS + Python alkalmazása (Brython)
     - hello world
