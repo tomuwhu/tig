@@ -55,6 +55,12 @@
         - element element, element > element
         - [attribute=value], [attribute~=value],...
         - :hover, ::after, ...
+- Google Fonts
+- Csoportmunka támogató eszközök
+    - git
+    - GitHub regisztráció
+    - GitHub beállítása
+    - GitHub Pages
 - SVG: vektorgrafika és alkalmazása
     - statikus vektorgrafikák készítése
     - css animációk készítése
