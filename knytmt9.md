@@ -127,3 +127,10 @@
     - dinamikus programozás
     - mohó stratégia
     - fa- és gráfalgoritmusok
+- Alkalmazások
+    - Damerau–Levenshtein távolság
+    - Optimális pénváltás
+    - Topológikus rendezés
+    - Legrövidebb utak (Floyd-Warshall, Dijkstra)
+    - Feszítőfák
+    - Utazóügynök-probléma
