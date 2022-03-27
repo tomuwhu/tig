@@ -26,5 +26,6 @@ for t in tl:
         s += i
 print()
 print("2. feladat: ")
+print(f'Rajtszám: "{r}", körbeosztás:')
 for i, l in q.items():
     print(f"{i + ':':15s}{l:2d}. kör")

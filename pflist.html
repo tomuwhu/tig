@@ -14,7 +14,8 @@ a párosok körbeosztást kapnak.
 Írjon programot, mely egy adott fordulóban <b>n</b> párra körbeosztást generál véletlenszerűen, ha egy körben maximum k páros fér el a táncparketten.
 <b>p</b> a párosok rajtszámai, <b>t</b> a táncok neveit tartalmazó tömb.
 A generált körbeosztás az egyes körökben egyenletesen ossza el a párosokat, 
-ha nem lehet egyenlően elosztani, az egyes körökben a párosok számában maximum 1 külömbség lehet. 
+ha nem lehet egyenlően elosztani, az egyes körökben a párosok számában maximum 1 külömbség lehet.
+A program az egyes körök beosztását rajtszám szerint növekvő sorrendben listázza!
 
 Példa: 
 <code>
@@ -53,11 +54,12 @@ Példa:
 r = 1
 
 <i>Kimenet:</i>
-Angolkeringő:   3. kör
-Tangó:          1. kör
-Bécsikeringő:   1. kör
-Slowfox:        2. kör
-Quickstep:      3. kör
+Páros rajtszáma: "1", körbeosztása:
+Angolkeringő:     3.  kör
+Tangó:            1.  kör
+Bécsikeringő:     1.  kör
+Slowfox:          2.  kör
+Quickstep:        3.  kör
 </code>
 3. feladat*
 Módosítsa a programot úgy, hogy a program olyan körbeosztást generáljon (ha az adott paraméterek mellett lehetséges),
@@ -71,13 +73,14 @@ Az előbbi példánál az 1-es rajtszámú páros nem tud pihenni az angolkering
     @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&family=Source+Sans+Pro:wght@200&display=swap');
     body {
         background-color: rgb(25, 30, 31);
-        color:rgb(231, 200, 159);
+        color:rgb(191, 212, 160);
         margin: 20px;
         padding: 20px;
         font-family: 'Source Sans Pro', sans-serif;
         border: solid 1px rgb(254, 255, 173);
         border-radius: 10px;
         box-shadow: inset 1px 1px 6px white;
+        text-shadow: 1px 1px 6px rgb(255, 217, 167);
     }
     a {
         color: aquamarine;
