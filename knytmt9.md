@@ -55,6 +55,8 @@
         - element element, element > element
         - [attribute=value], [attribute~=value],...
         - :hover, ::after, ...
+    - position, left, top, z-index
+    - reszponzív oldalak, @media, @import
 - Google Fonts
 - Csoportmunka támogató eszközök
     - git
@@ -79,6 +81,7 @@
     - python futtatása vscode-ban
         - print()
         - input()
+        - string template, format
         - if - elif - else, tabulálás a pythonban
         - logikai típus és operátorai
         - while ciklus és használata
@@ -129,6 +132,7 @@
     - halmazok (Set)
     - szótár adatszerkezet (Map)
     - numpy, matplotlib
+    - osztályok, objektum-orientált programozás
 - Algoritmizálás II.
     - rekurzió alkalmazása
     - rekurzió memorizálás
