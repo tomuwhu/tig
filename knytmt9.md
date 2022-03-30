@@ -150,6 +150,28 @@
     - Páros gráfok, magyar módszer, játékelmélet
     - Feszítőfák (Kruskal, halmazerdő)
     - Utazóügynök-probléma
+- Adatbáziskezelés, SQL
+    - alapfogalmak (rekord, mező, tábla)
+    - Descartes-szorzat
+    - kulcsok, kapcsolatok táblák között
+    - SQLite szintaxisdiagramok
+    - DB Browser használata, csv, db fájlok kezelése
+    - SQLite adattípusok (Integer, Real, Text, Blob), Primary Key
+    - Select utasítás
+        - mezők, táblák kiválasztása
+        - szűrés (where, limit, between, in, like, glob,  is null)
+        - táblák közötti kapcsolatok (inner join, left join)
+        - összegzések (group by, having, max, sum, avg, count)
+        - rendezések (order by)
+        - összetett lekérdezések (union, except, intersect)
+    - Create Table
+    - Insert
+    - Delete
+- Python programozási nyelv III.
+    - SQLite modul
+    - http.server
+    - get, post
+    - full-stack alkalmazás (szerver és kliens oldal)
 - Számelméleti algoritmusok:
     - nyilvános kulcsú tikosítás
     - számelmélet, kis Fermat-tétel
