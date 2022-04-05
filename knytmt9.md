@@ -119,8 +119,8 @@
         - HTML events
         - turtle (teknőc a browserben)
         - timer
-        - svg, programozott animációk készítése
-        - ajax
+        - SVG, programozott animációk készítése
+        - Ajax
 - Algoritmizálás I.
     - rendezések, algoritmus futási ideje
     - verem, sor
@@ -145,11 +145,19 @@
     - Damerau–Levenshtein távolság
     - Optimális pénváltás
     - PageRank
-    - Topológikus rendezés
+    - Fa és gráf mélységi bejárása
+    - Szélességi bejárás
+    - Mélységi keresés
+        - Erősen összefüggő komponensek
+        - Topológikus rendezés
     - Legrövidebb utak (Floyd-Warshall, Dijkstra, A*)
     - Páros gráfok, magyar módszer, játékelmélet
-    - Feszítőfák (Kruskal, halmazerdő)
+    - Feszítőfák (Kruskal algoritmus, halmazerdő)
     - Utazóügynök-probléma
+    - Turing gép, Church-Turing tézis
+    - Problémák bonyolultsága, NP-teljesség
+    - Approximációs algoritmusok, mesterséges intelligencia
+    - Gépi tanulás
 - Adatbáziskezelés, SQL
     - alapfogalmak (rekord, mező, tábla)
     - Descartes-szorzat
