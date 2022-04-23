@@ -2,6 +2,7 @@ body {
     background: rgb(12, 12, 1);
     color: rgb(196, 240, 230);
     margin: 0;
+    user-select: none;
 }
 span.ss {
     font-size: 23px;

@@ -3,6 +3,7 @@ body.b {
     background: rgb(12, 12, 1);
     color: rgb(196, 240, 230);
     margin: 0;
+    user-select: none;
 }
 select.s {
     width: 320px;
