@@ -12,6 +12,23 @@ function ks(x) {
     "０１２３４５６７８９"
     return l+sv+" "
 }
+function lo2(f) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      html_content = xhttp.responseText
+      q = html_content
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;")
+      document.getElementById("code3").innerHTML = q.trim()
+      document.getElementById("code").innerHTML = ""
+      hljs.highlightAll()
+  }
+  xhttp.open("GET", "./"+f, true);
+  xhttp.send();
+}
 function load() {
     file="Brython/"+document.getElementById("sel").value
     var xhttp = new XMLHttpRequest();
@@ -24,13 +41,29 @@ function load() {
                     .replace(/>/g, "&gt;")
                     .replace(/"/g, "&quot;")
                     .replace(/'/g, "&#039;")
-                document.getElementById("code").innerHTML = q.trim()
-                document.getElementById("a").setAttribute('href', file)
+                l = file.split("/")
+                n = l.length
+                if (l[n-1].split(".")[1] == "py") {
+                    l.pop()
+                    document.getElementById("code2").innerHTML = q.trim()
+                    document.getElementById("code").innerHTML = ""
+                    document.getElementById("a").setAttribute('href', l.join("/")+"/index.html")
+                    document.getElementById("c1").style.display = "none"
+                    document.getElementById("tcode").style.display = "table"
+                    lo2(l.join("/")+"/design.css")
+                } else {
+                    document.getElementById("code").innerHTML = q.trim()
+                    document.getElementById("code2").innerHTML = ""
+                    document.getElementById("code3").innerHTML = ""
+                    document.getElementById("a").setAttribute('href', file)
+                    document.getElementById("c1").style.display = "block"
+                    document.getElementById("tcode").style.display = "none"
+                    hljs.highlightAll()
+                }
                 document.getElementById("a").innerHTML =
                   "<span class='pn'>" +
                     document.getElementById("sel").options[sel.selectedIndex].text +
                   "</span> példaprogram kipróbálása"
-                hljs.highlightAll()
         }
     };
     xhttp.open("GET", "./"+file, true);
@@ -84,6 +117,7 @@ function load() {
         <option value="utf-8_list.html">UTF-8 karakterek táblázata</option>
         <option value="hanoi.html">Hanoi tornyai Ⅰ</option>
         <option value="amoba.html">Amőba (ötöd-ölő) Ⅰ</option>
+        <option value="amoba/logic.py">Amőba (ötöd-ölő) Ⅰ - Py</option>
         <option value="sukodu_a.html">Táblázat generálása (sudoku) Ⅰ</option>
         <option value="labirint1.html">Táblázat generálása - Labirintus alap</option>
         <option value="szorzotabla2.html">Táblázat generálása + kattintás esemény Ⅰ</option>
@@ -103,11 +137,41 @@ function load() {
     <div class="d" style="text-align: center;">
         <a id="a" href="Brython/brython.html" class="a" target="_blank"></a>
     </div>
-    <pre><code class="language-html" id="code"></code></pre>
+    <pre id="c1">
+      <code id="code" class="language-html"></code>
+    </pre>
+    <table id="tcode">
+      <tr>
+        <td>
+          <pre>
+            <code id="code2" class="language-python"></code>
+          </pre>
+        </td>
+        <td>
+          <pre>
+            <code id="code3" class="language-css"></code>
+          </pre>
+        </td>
+      </tr>
+    </table>
 </div>
 </body>
 <style media="screen">
   #code {
     user-select: all;
+  }
+  #code2 {
+    user-select: all;
+  }
+  #code3 {
+    user-select: all;
+    color:rgb(209, 240, 230);
+  }
+  table#tcode {
+    width: 100%;
+  }
+  table#tcode tr td {
+    width: 50%;
+    vertical-align: top;
   }
 </style>

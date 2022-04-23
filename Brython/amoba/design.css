@@ -1,0 +1,36 @@
+h1 {
+    text-align: center;
+    text-shadow: 1px 1px 3px grey;
+    font-size: 40px;
+    font-weight: bold;
+    color:rgb(19, 79, 90);
+}
+td {
+    text-align: center;
+    text-shadow: 1px 1px 3px grey;
+    font-size: 30px;
+    font-weight: bold;
+    color:rgb(19, 79, 90);
+    box-shadow: inset 1px 1px 3px black;
+    border-radius: 4px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    user-select: none;
+    background-color: azure;
+}
+td:hover {
+    background-color: aquamarine;
+}
+body {
+    background-color: rgb(242, 244, 228);
+}
+table {
+    margin: auto;
+    text-align: center;
+    border-spacing: 5px;
+    background-color: aquamarine;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px black;
+    padding: 4px;
+}

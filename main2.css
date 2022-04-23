@@ -64,6 +64,18 @@ code#code {
     font-family: 'Courier Prime', monospace;
     font-size: smaller;
 }
+code#code2 {
+    border-radius: 12px;
+    box-shadow: 0px 0px 8px gray;
+    font-family: 'Courier Prime', monospace;
+    font-size: smaller;
+}
+code#code3 {
+    border-radius: 12px;
+    box-shadow: 0px 0px 8px gray;
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+}
 h1.h {
     font-size: 20px;
 }
