@@ -48,8 +48,10 @@ function load() {
                     document.getElementById("code2").innerHTML = q.trim()
                     document.getElementById("code").innerHTML = ""
                     document.getElementById("a").setAttribute('href', l.join("/")+"/index.html")
+                    document.getElementById("a2").setAttribute('href', l.join("/")+"/source.zip")
                     document.getElementById("c1").style.display = "none"
                     document.getElementById("tcode").style.display = "table"
+                    document.getElementById("a2").style.display = "inline"
                     lo2(l.join("/")+"/design.css")
                 } else {
                     document.getElementById("code").innerHTML = q.trim()
@@ -58,6 +60,7 @@ function load() {
                     document.getElementById("a").setAttribute('href', file)
                     document.getElementById("c1").style.display = "block"
                     document.getElementById("tcode").style.display = "none"
+                    document.getElementById("a2").style.display = "none"
                     hljs.highlightAll()
                 }
                 document.getElementById("a").innerHTML =
@@ -136,6 +139,7 @@ function load() {
     </select>
     <div class="d" style="text-align: center;">
         <a id="a" href="Brython/brython.html" class="a" target="_blank"></a>
+        <a id="a2" class="a" style="display: none;">Letöltés (zip)</a>
     </div>
     <pre id="c1">
       <code id="code" class="language-html"></code>
