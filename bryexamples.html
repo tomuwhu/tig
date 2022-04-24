@@ -12,24 +12,38 @@ function ks(x) {
     "０１２３４５６７８９"
     return l+sv+" "
 }
+lof = 0
 function lo2(f) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-      html_content = xhttp.responseText
-      q = html_content
-                    .replace(/&/g, "&amp;")
-                    .replace(/</g, "&lt;")
-                    .replace(/>/g, "&gt;")
-                    .replace(/"/g, "&quot;")
-                    .replace(/'/g, "&#039;")
-      document.getElementById("code3").innerHTML = q.trim()
-      document.getElementById("code").innerHTML = ""
-      hljs.highlightAll()
+      if (lof == 2) {
+        html_content = xhttp.responseText
+        q = html_content
+                      .replace(/&/g, "&amp;")
+                      .replace(/</g, "&lt;")
+                      .replace(/>/g, "&gt;")
+                      .replace(/"/g, "&quot;")
+                      .replace(/'/g, "&#039;")
+        document.getElementById("code3").innerHTML = q.trim()
+        document.getElementById("code").innerHTML = ""
+        hljs.highlightAll()
+        c3h = document.getElementById("code3").offsetHeight
+        c2h = document.getElementById("code2").offsetHeight
+        if (c2h > c3h) {
+          document.getElementById("code3").style.height = c2h - 25 + "px"
+        } else {
+          document.getElementById("code2").style.height = c3h - 25 + "px"
+        } 
+      }
+      lof++
   }
   xhttp.open("GET", "./"+f, true);
   xhttp.send();
 }
 function load() {
+    lof = 0
+    document.getElementById("code2").style.height = "auto"
+    document.getElementById("code3").style.height = "auto"
     file="Brython/"+document.getElementById("sel").value
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
