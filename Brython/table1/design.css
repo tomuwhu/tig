@@ -1,0 +1,35 @@
+td { 
+    text-shadow: 1px 1px 3px;
+    font-size: 30px;
+    width: 150px;
+    height: 50;
+    text-align: center;
+    border: dotted 3px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px black;
+    background-color: azure;
+    color: darkcyan;
+    cursor: pointer;
+}
+td:hover {
+    background-color: bisque;
+}
+table {
+    border-spacing: 8px;
+    margin:auto ; 
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px inset;
+    border: solid 3px rgb(145, 49, 49);
+    user-select: none;
+}
+h1 {
+    text-align: center;
+    text-shadow: 1px 1px 3px;
+    color: rgb(38, 80, 80);
+    user-select: none;
+}
+body {
+    background-color: antiquewhite;
+}
