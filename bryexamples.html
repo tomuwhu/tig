@@ -146,16 +146,10 @@ function load() {
     <table id="tcode">
       <tr>
         <td>
-          <pre>
-            <div class="pn">CSS</div> 
-            <code id="code3" class="language-css"></code>
-          </pre>
+          <pre class="z z3"><div class="pn">CSS</div><code id="code3" class="language-css"></code></pre>
         </td>
         <td>
-          <pre>
-            <div class="pn">Brython</div> 
-            <code id="code2" class="language-python"></code>
-          </pre>
+          <pre class="z z2"><div class="pn">Brython</div><code id="code2" class="language-python"></code></pre>
         </td>
       </tr>
     </table>
@@ -187,20 +181,31 @@ function load() {
   }
   div.pn {
     font-family: 'Indie Flower', cursive;
-    font-size: 20px;
-    color: rgb(18, 25, 44);
-    font-weight: bold;
+    font-size: 15px;
+    color: rgb(10, 45, 46);
     text-shadow: 1px 1px 3px;
     text-align: center;
     padding: 0px;
     margin: 0px;
     background-color: rgb(72, 159, 185);
     border-radius: 9px;
-    box-shadow: 1px 1px 4px inset rgb(28, 29, 16);
     padding: 8px;
+    box-shadow: 1px 1px 4px inset rgb(28, 29, 16);
   }
   pre code.hljs {
     margin-top: 0px;
+  }
+  pre.z {
+    border-radius: 10px;
+    border: solid 1px rgb(148, 165, 71);
+    box-shadow: 0px 0px 8px rgb(255, 255, 228);
+    padding: 6px
+  }
+  pre.z3 {
+    background-color: rgb(43, 75, 64);
+  }
+  pre.z2 {
+    background-color: rgb(10, 45, 46);
   }
   code#code3 {
     background-color: rgb(43, 75, 64);
