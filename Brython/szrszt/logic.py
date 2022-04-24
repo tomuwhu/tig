@@ -3,8 +3,8 @@ ALPHABET = \
   "0123456789abcdefghijkl"
 qv = [
     "kettes","hármas","négyes","ötös","hatos","hetes","nyolcas","kilences","tizes",
-    "tizeneggyes","tizenkettes","tizenhármas","tizennégyes","tizenötös","tizenhatos",
-    "tizenhetes","tizennyocas","tizenkilences","huszas","huszoneggyes","huszonkettes"
+    "tizenegyes","tizenkettes","tizenhármas","tizennégyes","tizenötös","tizenhatos",
+    "tizenhetes","tizennyocas","tizenkilences","huszas","huszonegyes","huszonkettes"
 ]
 def encode (n):
   return ALPHABET [n]
