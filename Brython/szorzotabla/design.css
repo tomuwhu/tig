@@ -1,0 +1,25 @@
+td {
+    box-shadow: 1px 1px 3px black;
+    width: 40px;
+    height: 40px;
+    background-color: antiquewhite;
+    border-radius: 8px;
+}
+td.x {
+    background-color: rgb(73, 73, 11);
+    color:rgb(228, 244, 237);
+    border: solid 3px rgb(137, 184, 197);
+}
+td.x2 {
+    border: solid 3px rgb(56, 77, 83);
+}
+body {
+    color:rgb(12, 88, 88);
+    text-shadow: 1px 1px 3px grey;
+    text-align: center;
+    background-color: rgb(228, 244, 237);
+}
+table {
+    margin: auto;
+    border-spacing: 7px;
+}
