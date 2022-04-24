@@ -67,14 +67,14 @@ code#code {
 }
 code#code2 {
     border-radius: 12px;
-    box-shadow: 0px 0px 8px gray;
+    box-shadow: 0px 0px 18px rgb(255, 255, 228);
     text-shadow: 1px 1px 3px black;
     color: rgb(243, 243, 200);
+    background-color: #202d35;
 }
 code#code3 {
     border-radius: 12px;
     box-shadow: 0px 0px 8px gray;
-    font-size: 12px;
     text-shadow: 1px 1px 3px black;
 }
 h1.h {

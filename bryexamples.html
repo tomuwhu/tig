@@ -102,8 +102,8 @@ function load() {
         <option value="svg02a.html">SVG grafika Ⅲ</option>
         <option value="svg04.html">SVG grafika Ⅳ</option>
         <option value="svg05.html">SVG grafika Ⅴ</option>
-        <option selected value="random.html">Lottószámok Ⅰ</option>
-        <option selected value="random2.html">Lottószámok Ⅱ</option>
+        <option value="random.html">Lottószámok Ⅰ</option>
+        <option value="random2.html">Lottószámok Ⅱ</option>
         <option value="clicks.html">Kattintás esemény</option>
         <option value="input.html">Bemenet feldolgozása</option>
         <option value="pd01mo1.html">Alapműveletek Ⅰ</option>
@@ -118,7 +118,7 @@ function load() {
         <option value="szorzotabla1.html">Táblázat generálása (szorzótábla)</option>
         <option value="savdiagram.html">Táblázat generálása (sávdiagram)</option>
         <option value="utf-8_list.html">UTF-8 karakterek táblázata</option>
-        <option value="hanoi/logic.py">Hanoi tornyai Ⅰ</option>
+        <option selected value="hanoi/logic.py">Hanoi tornyai Ⅰ</option>
         <option value="amoba/logic.py">Amőba (ötöd-ölő) Ⅰ</option>
         <option value="sukodu_a.html">Táblázat generálása (sudoku) Ⅰ</option>
         <option value="labirint1.html">Táblázat generálása - Labirintus alap</option>
@@ -147,12 +147,14 @@ function load() {
       <tr>
         <td>
           <pre>
-            <code id="code2" class="language-python"></code>
+            <div class="pn">CSS</div> 
+            <code id="code3" class="language-css"></code>
           </pre>
         </td>
         <td>
           <pre>
-            <code id="code3" class="language-css"></code>
+            <div class="pn">Brython</div> 
+            <code id="code2" class="language-python"></code>
           </pre>
         </td>
       </tr>
@@ -160,19 +162,20 @@ function load() {
 </div>
 </body>
 <style media="screen">
-  @import url('https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Xanh+Mono&display=swap');
   #code {
     user-select: all;
   }
   #code2 {
     user-select: all;
     font-family: 'Xanh Mono', monospace;
-    font-size: 16px;
+    font-size: 13px;
   }
   #code3 {
     user-select: all;
     color:rgb(209, 240, 230);
     font-family: 'Xanh Mono', monospace;
+    font-size: 13px;
   }
   table#tcode {
     width: 100%;
@@ -181,5 +184,25 @@ function load() {
     width: 50%;
     vertical-align: top;
     padding: 20px;
+  }
+  div.pn {
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    color: rgb(18, 25, 44);
+    font-weight: bold;
+    text-shadow: 1px 1px 3px;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(72, 159, 185);
+    border-radius: 9px;
+    box-shadow: 1px 1px 4px inset rgb(28, 29, 16);
+    padding: 8px;
+  }
+  pre code.hljs {
+    margin-top: 0px;
+  }
+  code#code3 {
+    background-color: rgb(43, 75, 64);
   }
 </style>
