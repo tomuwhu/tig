@@ -3,5 +3,8 @@ div {
     text-shadow: 1px 1px 3px grey;
     font-size: 40px;
     font-weight: bold;
-    color:rgb(19, 79, 90);
+    color:rgb(43, 135, 151);
+}
+span {
+    color:rgb(78, 66, 27);
 }
