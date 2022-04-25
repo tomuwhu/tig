@@ -18,6 +18,7 @@ body {
     text-shadow: 1px 1px 3px grey;
     text-align: center;
     background-color: rgb(228, 244, 237);
+    user-select: none;
 }
 table {
     margin: auto;
