@@ -1,4 +1,3 @@
-from contextlib import nullcontext
 from browser import document as D, html as H
 enc = "0123456789abcdefghijkl"
 qv = ["kettes","hármas","négyes","ötös","hatos","hetes","nyolcas","kilences","tizes",
