@@ -1,8 +1,8 @@
 from browser import document as D, html as H
 enc = "0123456789abcdefghijkl"
-qv = ["kettes","hármas","négyes","ötös","hatos","hetes","nyolcas","kilences","tizes",
-      "tizenegyes","tizenkettes","tizenhármas","tizennégyes","tizenötös","tizenhatos",
-      "tizenhetes","tizennyocas","tizenkilences","huszas","huszonegyes","huszonkettes"]
+qv = ["kettes", "hármas", "négyes", "ötös", "hatos", "hetes", "nyolcas", "kilences", "tizes",
+      "tizenegyes", "tizenkettes", "tizenhármas", "tizennégyes", "tizenötös", "tizenhatos",
+      "tizenhetes", "tizennyocas", "tizenkilences", "huszas", "huszonegyes", "huszonkettes"]
 def db(dec, base):
     return enc[dec] if dec < base else db(dec // base, base) + enc[dec % base]
 S = H.DIV()
