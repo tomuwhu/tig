@@ -6,7 +6,7 @@
         from browser import document, html
         from browser import ajax
         def x(req):
-            document <= html.TABLE([html.TR( html.TD(j, Class=f'x{j}') for j in i if j != " " ) for i in req.text.split("\r\n") ])
+            document <= html.TABLE(html.TR(html.TD(j, Class=f'x{j}') for j in i if j != " ") for i in req.text.split("\r\n"))
         ajax.get( "sukodu/konnyu.txt", oncomplete = x )
     </script>
     <style>
