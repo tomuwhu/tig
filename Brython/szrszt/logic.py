@@ -12,7 +12,6 @@ def f(e = None):
     S.clear()
     C.clear()
     C <= H.H1(["Szorzótábla", H.I(f" {qv[q-2]} "), "számrendszerhez"])
-    C <= H.DIV(q)
     S <= H.TABLE(H.TR(
          H.TD(db(i*j, q), Class="x" if i == 1 or j == 1 else "") for j in range(1,q+1)
     ) for i in range(1,q+1))
