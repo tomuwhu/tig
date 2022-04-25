@@ -14,7 +14,7 @@ def f(e = None):
     C.clear()
     C <= H.H1(["Szorzótábla ", H.I(f"{qv[q-2]}"), " számrendszerhez"])
     S <= H.TABLE(H.TR(
-         H.TD(db(i*j, q), Class="x" if i == 1 or j == 1 else "x2") for j in range(1,q+1)
+         H.TD(db(i*j, q), Class="x" if i == 1 or j == 1 else "") for j in range(1,q+1)
     ) for i in range(1,q+1))
 D <= C
 D <= H.INPUT(id="i", type="range", min=2, max=22, value=10).bind("change", f)
