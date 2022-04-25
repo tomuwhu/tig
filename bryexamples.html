@@ -79,7 +79,7 @@ function load() {
                 }
                 document.getElementById("a").innerHTML =
                   "<span class='pn'>" +
-                    document.getElementById("sel").options[sel.selectedIndex].text +
+                    document.getElementById("sel").options[sel.selectedIndex].text.slice(2,-1) +
                   "</span> példaprogram kipróbálása"
         }
     };
