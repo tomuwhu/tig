@@ -142,17 +142,3 @@ td, th {
         border-bottom: none;
     }
 }
-
-div#content a {
-    color: antiquewhite;
-}
-
-div#content a:hover {
-    color: rgb(249, 175, 158);
-}
-div#content a:visited {
-    color: rgb(184, 208, 223);
-}
-span.pn {
-  color: rgb(254, 137, 137);
-}

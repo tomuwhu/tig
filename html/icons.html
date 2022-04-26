@@ -1,8 +1,8 @@
 <div class="c">
-    <a href="../pic/p1f3.jpeg" target="pic">1f3</a>
-    <a href="../pic/p1f4.jpeg" target="pic">1f4</a>
-    <a href="../pic/p1f9.jpeg" target="pic">1f9</a>
-    <a href="../Brython/utf-8_list.html" target="pic">Lokális ikonkészlketek (Brython program)</a>
+    <a class="v" href="../pic/p1f3.jpeg" target="pic">1f3</a>
+    <a class="v" href="../pic/p1f4.jpeg" target="pic">1f4</a>
+    <a class="v" href="../pic/p1f9.jpeg" target="pic">1f9</a>
+    <a class="v" href="../Brython/utf-8_list.html" target="pic">Lokális ikonkészlketek (Brython program)</a>
     <iframe src="../pic/p1f3.jpeg" frameborder="0" name="pic"></iframe>
 </div>
 <style>
@@ -10,8 +10,20 @@
         width: 100%;
         height: 60%;
     }
-    a {
-        color: rgb(63, 45, 45);
+    a.v {
+        font-weight: bold;
+        color: rgb(100, 70, 70);
+        padding: 8px;
+        margin: 6px;
+        background-color: rgb(185, 224, 224);
+        border-radius: 7px;
+        box-shadow: 1px 1px 3px inset black;
+    }
+    a.v:hover {
+        background-color: rgb(41, 92, 92);
+    }
+    a.v:visited {
+        color: rgb(175, 120, 120);
     }
     div.c {
         text-align: center;
