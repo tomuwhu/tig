@@ -4,7 +4,7 @@ qv = ["kettes", "hármas", "négyes", "ötös", "hatos", "hetes", "nyolcas", "ki
       "tizenegyes", "tizenkettes", "tizenhármas", "tizennégyes", "tizenötös", "tizenhatos",
       "tizenhetes", "tizennyocas", "tizenkilences", "huszas", "huszonegyes", "huszonkettes"]
 def db(dec, base):
-    return enc[dec] if dec < base else db(dec // base, base) + enc[dec % base]
+    return enc[dec] if dec<base else db(dec//base, base) + enc[dec%base]
 S = H.DIV()
 C = H.DIV()
 def f(e = None):
@@ -13,8 +13,8 @@ def f(e = None):
     C.clear()
     C <= H.H1([" Szorzótábla ", H.I(qv[q-2]), " számrendszerhez "])
     S <= H.TABLE(H.TR(
-         H.TD(db(i*j, q), Class="x" if i == 1 or j == 1 else "") for j in range(1,q+1)
-    ) for i in range(1,q+1))
+         H.TD(db(i*j, q), Class="x" if i == 1 or j == 1 else "") for j in range(1, q+1)
+    ) for i in range(1, q+1))
 D <= C
 D <= H.INPUT(id="i", type="range", min=2, max=22, value=10).bind("input", f)
 f()
