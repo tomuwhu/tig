@@ -1,0 +1,28 @@
+* {
+    text-align: center;
+    background-color: rgb(233, 233, 207);
+}
+div#x, div#y, div#z {
+    user-select: none;
+    text-shadow: 1px 1px 3px black;
+    color: rgb(58, 72, 88);
+    margin:10px;
+    padding: 20px;
+    padding-bottom: 25px;
+    font-size: 30px;
+    position: absolute ;
+    box-shadow: 1px 1px 3px black;
+    border-radius: 10px;
+    background-color: aqua;
+}
+div#y {
+    background-color: rgb(134, 180, 180);
+    color: rgb(153, 123, 41);
+    left: 500px;
+    top: 50px;
+}
+div#x {
+    background-color: rgb(200, 209, 117);
+    color: rgb(41, 67, 153);
+    left: 200px;
+}
