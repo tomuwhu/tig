@@ -30,9 +30,9 @@ class ElementMove:
 
 ol = [  ( chr( first_charcode + i),
           { "backgroundColor": f"rgb({r(0, 255)}, {r(0, 255)}, {r(0, 255)})", 
-            "color": f"rgb({r(0, 255)}, {r(0, 255)}, {r(0, 255)})", 
-            "left": r(10, 1200), 
-            "top": r(10, 700) }
+            "color"          : f"rgb({r(0, 255)}, {r(0, 255)}, {r(0, 255)})", 
+            "left"           : r(10, 1200), 
+            "top"            : r(10, 700) }
         ) for i in range(number_of_cards) ]
    
 for i, ole in enumerate(ol):
