@@ -75,6 +75,7 @@ code#code2 {
 }
 code#code3 {
     text-shadow: 1px 1px 3px black;
+    background-color: rgb(43, 36, 9);
 }
 h1.h {
     font-size: 20px;
