@@ -81,6 +81,10 @@ function load() {
                   "<span class='pn'>" +
                     document.getElementById("sel").options[sel.selectedIndex].text.slice(2) +
                   "</span> példaprogram kipróbálása"
+                document.getElementById("a2").innerHTML =
+                  "<span class='pn'>" +
+                    document.getElementById("sel").options[sel.selectedIndex].text.slice(2) +
+                  "</span> példaprogram letöltése <span class='pn'>(source.zip)</span>"
         }
     };
     xhttp.open("GET", "./"+file, true);
@@ -225,5 +229,16 @@ function load() {
   }
   pre.z2 {
     background-color: rgb(30, 75, 77);
+  }
+  span.pn {
+    color: rgb(0, 200, 255);
+    text-shadow: 1px 1px 3px black;
+    display:inline-block;
+    background-color: rgb(74, 105, 135);
+    padding: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px inset rgb(0, 0, 0);
   }
 </style>
