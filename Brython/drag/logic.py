@@ -1,7 +1,7 @@
 from browser import document as D, html as H
 from random import randint as r
 
-first_charcode, number_of_cards = 127744, 130
+first_charcode, number_of_cards = 127744, 330
 
 class ElementMove:
     def __init__(self, m):
