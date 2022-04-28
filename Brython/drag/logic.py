@@ -1,6 +1,6 @@
 from browser import document as D, html as H
 from random import randint
-maxec = 131
+maxec = 130
 class ElementMove:
     def __init__(self, m):
         self.obj = m
@@ -33,7 +33,7 @@ ol = [
             "color": f"rgb({randint(0, 255)}, {randint(0, 255)}, {randint(0, 255)})", 
             "left": randint(0, 1200), 
             "top": randint(0, 700)}
-    ) for i in range(130)]
+    ) for i in range(maxec)]
    
 for i, ole in enumerate(ol):
     s, st = ole
