@@ -13,6 +13,21 @@ function ks(x) {
     return l+sv+" "
 }
 lof = 0
+loc = 0
+function lod(f) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (loc == 2) {
+        html_content = xhttp.responseText
+        document.getElementById("kfi").innerHTML = html_content
+        document.getElementById("kf").style.display = "block"
+        lof = 0
+      }
+      loc++
+  }
+  xhttp.open("GET", "fl/f"+f+".html", true);
+  xhttp.send();
+}
 function lo2(f) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -33,7 +48,8 @@ function lo2(f) {
           document.getElementById("code3").style.height = c2h - 28 + "px"
         } else {
           document.getElementById("code2").style.height = c3h - 32 + "px"
-        } 
+        }
+        loc = 0
       }
       lof++
   }
@@ -44,7 +60,15 @@ function load() {
     lof = 0
     document.getElementById("code2").style.height = "auto"
     document.getElementById("code3").style.height = "auto"
-    file="Brython/"+document.getElementById("sel").value
+    so = document.getElementById("sel").value
+    sox = so.split("|")
+    if (sox.length == 1) {
+      file = "Brython/"+sox[0]
+      document.getElementById("kf").style.display = "none"
+    } else {
+      file = "Brython/"+sox[1]
+      lod(sox[0])
+    }
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -108,27 +132,27 @@ function load() {
     <h1 class="h">Tex (MathJax) és Brython (HTML-CSS-Python) példák: 
     <select class="s" onchange="load()" id="sel">
         <option value="latex.html">📄 Tex és Latex (MathJax)</option>
-        <option value="a_ures.html">📄 Kiindulási alap (Hello World)</option>
+        <option value="hw|a_ures.html">📄 Kiindulási alap (Hello World)</option>
         <option value="9d_b1.html">📄 Órai munka 01.18.</option>
         <option value="korlevel.html">📄 Körlevél példa</option>
         <option value="random_table.html">📄 Véletlen számok</option>
-        <option value="cards/logic.py">📂 UTF-8 Kártyák</option>
-        <option value="numbergame1.html">📄 Számjáték 1</option>
-        <option value="turtle.html">📄 Logo 1</option>
-        <option value="turtle2.html">📄 Logo 2</option>
-        <option value="svg01.html">📄 SVG grafika 1</option>
-        <option value="svg02.html">📄 SVG grafika 2</option>
-        <option value="svg02a.html">📄 SVG grafika 3</option>
-        <option value="svg04.html">📄 SVG grafika 4</option>
-        <option value="svg05.html">📄 SVG grafika 5</option>
-        <option value="random.html">📄 Lottószámok 1/option>
-        <option value="random2.html">📄 Lottószámok 2</option>
+        <option value="0|cards/logic.py">📂 UTF-8 Kártyák</option>
+        <option value="numbergame1.html">📄 Számjáték - 1.</option>
+        <option value="turtle.html">📄 Logo - 1.</option>
+        <option value="turtle2.html">📄 Logo - 2.</option>
+        <option value="svg01.html">📄 SVG grafika - 1.</option>
+        <option value="svg02.html">📄 SVG grafika - 2.</option>
+        <option value="svg02a.html">📄 SVG grafika - 3.</option>
+        <option value="svg04.html">📄 SVG grafika - 4.</option>
+        <option value="svg05.html">📄 SVG grafika - 5.</option>
+        <option value="random.html">📄 Lottószámok - 1.</option>
+        <option value="random2.html">📄 Lottószámok - 2.</option>
         <option value="clicks.html">📄 Kattintás esemény</option>
         <option value="input.html">📄 Bemenet feldolgozása</option>
-        <option value="pd01mo1.html">📄 Számolótábla 1</option>
-        <option value="pd01mo2.html">📄 Számolótábla 2</option>
-        <option value="svg03.html">📄 SVG animáció 1</option>
-        <option value="svga01.html">📄 SVG animáció 2</option>
+        <option value="pd01mo1.html">📄 Számolótábla - 1.</option>
+        <option value="pd01mo2.html">📄 Számolótábla - 2.</option>
+        <option value="svg03.html">📄 SVG animáció - 1.</option>
+        <option value="svga01.html">📄 SVG animáció - 2.</option>
         <option value="svga02.html">📄 Vezérelt SVG animáció</option>
         <option value="alg_eukl.html">📄 Euklideszi algoritmus</option>
         <option value="alg_erasztot.html">📄 Eratoszthenész szitája</option>
@@ -138,24 +162,24 @@ function load() {
         <option value="szorzotabla1.html">📄 Táblázat generálása (szorzótábla)</option>
         <option value="savdiagram.html">📄 Táblázat generálása (sávdiagram)</option>
         <option value="utf-8_list.html">📄 UTF-8 karakterek táblázata</option>
-        <option selected value="hanoi/logic.py">📂 Hanoi tornyai 1</option>
-        <option value="amoba/logic.py">📂 XOX (5-in-a-row) 1</option>
-        <option value="sukodu_a.html">📄 Táblázat generálása (sudoku) 1</option>
+        <option selected value="h0|hanoi/logic.py">📂 Hanoi tornyai - 1.</option>
+        <option value="amoba/logic.py">📂 XOX (5-in-a-row) - 1.</option>
+        <option value="sukodu_a.html">📄 Táblázat generálása (sudoku) - 1.</option>
         <option value="labirint1.html">📄 Táblázat generálása - Labirintus alap</option>
-        <option value="szorzotabla2.html">📄 Táblázat generálása + kattintás esemény 1</option>
+        <option value="szorzotabla2.html">📄 Táblázat generálása + kattintás esemény - 1.</option>
         <option value="szrszt/logic.py">📂 Számrendszeres szorzótábla</option>
-        <option value="pd02.html">📄 Táblázat generálása + kattintás esemény 2</option>
-        <option value="amoba2.html">📄 XOX (5-in-a-row) 2</option>
-        <option value="numbergame2.html">📄 Számjáték 2</option>
+        <option value="pd02.html">📄 Táblázat generálása + kattintás esemény - 2.</option>
+        <option value="amoba2.html">📄 XOX (5-in-a-row) - 2.</option>
+        <option value="numbergame2.html">📄 Számjáték - 2.</option>
         <option value="memgame.html">📄 Memóriajáték</option>
         <option value="calc.html">📄 Brython számológép</option>
-        <option value="sukodu.html">📄 Táblázat generálása (sudoku) 2</option>
+        <option value="sukodu.html">📄 Táblázat generálása (sudoku) - 2.</option>
         <option value="labirint2.html">📄 Táblázat generálása - Labirintus design</option>
         <option value="labirint3.html">📄 Táblázat generálása - Labirintus: legrövidebb út</option>
-        <option value="hanoi2.html">📄 Hanoi tornyai 2</option>
-        <option value="hanoi3.html">📄 Hanoi tornyai 3</option>
+        <option value="hanoi2.html">📄 Hanoi tornyai - 2.</option>
+        <option value="hanoi3.html">📄 Hanoi tornyai - 3.</option>
         <option value="sukodu2.html">📄 Sudoku megoldó</option>
-        <option value="drag/logic.py">📂 UTF-8 kártyák + Drag & drop osztály</option>
+        <option value="1|drag/logic.py">📂 UTF-8 kártyák + Drag & drop osztály</option>
         <option value="niter.html">📄 Egyenletmegoldó (Newton-iterációval)</option>
     </select>
     </h1>
@@ -177,10 +201,37 @@ function load() {
         </td>
       </tr>
     </table>
+    <div id="kf" style="display: none;"><div class="pn pn3"><b>Kapcsolódó feladatok</b></div> 
+      <br>
+      <div class="kf">
+        <div id="kfi"></div>
+      </div>
+    </div>
 </div>
 </body>
 <style media="screen">
-  @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Xanh+Mono&family=B612+Mono&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Square+Peg&family=Indie+Flower&family=Xanh+Mono&family=B612+Mono&display=swap');
+  div.kfi {
+    font-family: 'B612 Mono', monospace;
+    user-select: all;
+    color:rgb(209, 240, 230);
+    font-size: 13px;
+    background-color: rgb(48, 70, 23);
+  }
+  div#kf {
+    border-radius: 10px;
+    border: solid 1px rgb(148, 165, 71);
+    box-shadow: 0px 0px 8px rgb(255, 255, 228);
+    padding: 6px;
+    background-color: rgb(48, 70, 23);
+    margin: 20px;
+  }
+  div#kfi {
+    padding: 10px;
+    font-family: 'Square Peg', cursive;
+    text-shadow: 1px 1px 3px black;
+    font-size: 25px;
+  }
   #code {
     user-select: all;
   }
@@ -217,6 +268,9 @@ function load() {
   }
   div.pn2 {
     background-color: rgb(153, 135, 45);
+  }
+  div.pn3 {
+    background-color: rgb(164, 209, 122);
   }
   pre code.hljs {
     margin-top: 0px;
