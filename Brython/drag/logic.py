@@ -1,7 +1,8 @@
 from browser import document as D, html as H
-from random import randint
+from random import randint as r
 
 maxec = 130
+firstcharcode = 127744
 
 class ElementMove:
     def __init__(self, m):
@@ -29,11 +30,11 @@ class ElementMove:
         self.moving = False
         D.unbind("mousemove")
 
-ol = [  ( chr(127744 + i),
-          { "backgroundColor": f"rgb({randint(0, 255)}, {randint(0, 255)}, {randint(0, 255)})", 
-            "color": f"rgb({randint(0, 255)}, {randint(0, 255)}, {randint(0, 255)})", 
-            "left": randint(0, 1200), 
-            "top": randint(0, 700) }
+ol = [  ( chr( firstcharcode + i),
+          { "backgroundColor": f"rgb({r(0, 255)}, {r(0, 255)}, {r(0, 255)})", 
+            "color": f"rgb({r(0, 255)}, {r(0, 255)}, {r(0, 255)})", 
+            "left": r(0, 1200), 
+            "top": r(0, 700) }
         ) for i in range(maxec) ]
    
 for i, ole in enumerate(ol):
