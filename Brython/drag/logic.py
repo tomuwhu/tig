@@ -1,7 +1,7 @@
 from browser import document as D, html as H
 from random import randint as r
 
-firstcharcode, numberofcards = 127744, 130
+first_charcode, number_of_cards = 127744, 130
 
 class ElementMove:
     def __init__(self, m):
@@ -16,7 +16,7 @@ class ElementMove:
         self.ep = [self.obj.left, self.obj.top]
         for o in D.select(".m"):
             if o.style.zIndex: o.style.zIndex = int(o.style.zIndex) - 1
-        e.target.style.zIndex = numberofcards
+        e.target.style.zIndex = number_of_cards
         e.target.style.opacity = 0.8
         D.bind("mousemove", self.move)
         e.preventDefault()
@@ -29,12 +29,12 @@ class ElementMove:
         self.moving = False
         D.unbind("mousemove")
 
-ol = [  ( chr( firstcharcode + i),
+ol = [  ( chr( first_charcode + i),
           { "backgroundColor": f"rgb({r(0, 255)}, {r(0, 255)}, {r(0, 255)})", 
             "color": f"rgb({r(0, 255)}, {r(0, 255)}, {r(0, 255)})", 
             "left": r(0, 1200), 
             "top": r(0, 700) }
-        ) for i in range(numberofcards) ]
+        ) for i in range(number_of_cards) ]
    
 for i, ole in enumerate(ol):
     s, st = ole
