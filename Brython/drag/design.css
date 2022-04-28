@@ -1,8 +1,8 @@
 * {
     background-color: rgb(233, 233, 207);
+    user-select: none;
 }
 div.m {
-    user-select: none;
     text-shadow: 1px 1px 3px black;
     padding: 10px;
     font-size: 60px;
