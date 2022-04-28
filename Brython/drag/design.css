@@ -8,4 +8,5 @@ div.m {
     position: absolute;
     box-shadow: 1px 1px 6px black;
     border: solid 4px;
+    cursor: move;
 }

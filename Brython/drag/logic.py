@@ -9,7 +9,6 @@ class ElementMove:
         self.moving = False
         m.bind("mousedown", self.start)
         m.bind("mouseup", self.stop)
-        m.style.cursor = "move"
     def start(self, e):
         self.moving = True
         self.mp = [e.x, e.y]
