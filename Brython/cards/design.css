@@ -1,0 +1,11 @@
+* {
+    background-color: rgb(233, 233, 207);
+    user-select: none;
+}
+div.m {
+    text-shadow: 1px 1px 6px black;
+    font-size: 60px;
+    position: absolute;
+    box-shadow: 1px 1px 6px black;
+    border: solid 4px;
+}
