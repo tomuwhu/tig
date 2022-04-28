@@ -1,6 +1,8 @@
 from browser import document as D, html as H
 from random import randint
+
 maxec = 130
+
 class ElementMove:
     def __init__(self, m):
         self.obj = m
@@ -26,6 +28,7 @@ class ElementMove:
         e.target.style.opacity = 1
         self.moving = False
         D.unbind("mousemove")
+
 ol = [  ( chr(127744 + i),
           { "backgroundColor": f"rgb({randint(0, 255)}, {randint(0, 255)}, {randint(0, 255)})", 
             "color": f"rgb({randint(0, 255)}, {randint(0, 255)}, {randint(0, 255)})", 
