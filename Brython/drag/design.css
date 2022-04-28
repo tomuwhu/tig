@@ -3,11 +3,9 @@
     user-select: none;
 }
 div.m {
-    text-shadow: 1px 1px 3px black;
-    padding: 10px;
+    text-shadow: 1px 1px 6px black;
     font-size: 60px;
-    position: absolute ;
+    position: absolute;
     box-shadow: 1px 1px 6px black;
-    border-radius: 12px;
-    border: solid 2px;
+    border: solid 4px;
 }

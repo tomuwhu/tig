@@ -39,6 +39,6 @@ ol = [  ( chr( first_charcode + i),
 for i, ole in enumerate(ol):
     s, st = ole
     st["zIndex"] = i
-    el = H.DIV(s, id = f"m{i}", Class = "m", style = st)
+    el = H.DIV(s, Class = "m", style = st)
     D <= el
     ElementMove(el)
