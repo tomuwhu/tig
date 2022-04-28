@@ -1,32 +1,15 @@
 * {
-    text-align: center;
     background-color: rgb(233, 233, 207);
 }
-div#x, div#y, div#z {
+div.m {
     user-select: none;
     text-shadow: 1px 1px 3px black;
-    color: rgb(58, 72, 88);
     margin:10px;
     padding: 20px;
     padding-bottom: 25px;
     font-size: 30px;
     position: absolute ;
-    box-shadow: 1px 1px 3px black;
-    border-radius: 10px;
-    background-color: aqua;
-    z-index: 1;
-}
-div#y {
-    background-color: rgb(134, 180, 180);
-    color: rgb(153, 123, 41);
-    left: 500px;
-    top: 50px;
-    z-index: 2;
-}
-div#x {
-    background-color: rgb(200, 209, 117);
-    color: rgb(41, 67, 153);
-    left: 200px;
-    z-index: 3;
-    top: 100px;
+    box-shadow: 1px 1px 6px black;
+    border-radius: 12px;
+    border: solid 2px;
 }

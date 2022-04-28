@@ -12,7 +12,7 @@ class ElementMove:
         self.ep = [self.obj.left, self.obj.top]
         for o in D.select(".m"):
             if o.style.zIndex: o.style.zIndex = int(o.style.zIndex) - 1
-        e.target.style.zIndex = 4
+        e.target.style.zIndex = 3
         e.target.style.opacity = 0.8
         D.bind("mousemove", self.move)
         e.preventDefault()
@@ -24,7 +24,13 @@ class ElementMove:
         e.target.style.opacity = 1
         self.moving = False
         D.unbind("mousemove")
-for id, s in [("x","Fogj meg és vigyél!"),("y","Engem is!"),("z","Mozgatható objektum vagyok.")]:
-    el = H.DIV(s, id=id, Class="m")
+ol = [
+    ("Fogj meg és vigyél!",{"backgroundColor": "rgb(104, 180, 180)", "color": "rgb(18, 72, 88)", "left": 0, "top": 0}),
+    ("Engem is!",{"backgroundColor": "rgb(134, 180, 180)", "color": "rgb(58, 172, 88)","left": 30,"top": 100}),
+    ("Mozgatható objektum vagyok.",{"backgroundColor": "rgb(234, 180, 180)", "color": "rgb(58, 72, 188)","left": 260,"top": 50})]
+for i, ole in enumerate(ol):
+    s, st = ole
+    st["zIndex"] = i
+    el = H.DIV(s, id = f"m{i}", Class = "m", style = st)
     D <= el
     ElementMove(el)
