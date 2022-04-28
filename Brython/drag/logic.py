@@ -1,4 +1,6 @@
 from browser import document as D, html as H
+from random import randint
+maxec = 131
 class ElementMove:
     def __init__(self, m):
         self.obj = m
@@ -12,7 +14,7 @@ class ElementMove:
         self.ep = [self.obj.left, self.obj.top]
         for o in D.select(".m"):
             if o.style.zIndex: o.style.zIndex = int(o.style.zIndex) - 1
-        e.target.style.zIndex = 3
+        e.target.style.zIndex = maxec
         e.target.style.opacity = 0.8
         D.bind("mousemove", self.move)
         e.preventDefault()
@@ -25,9 +27,14 @@ class ElementMove:
         self.moving = False
         D.unbind("mousemove")
 ol = [
-    ("Fogj meg és vigyél!",{"backgroundColor": "rgb(104, 180, 180)", "color": "rgb(18, 72, 88)", "left": 0, "top": 0}),
-    ("Engem is!",{"backgroundColor": "rgb(134, 180, 180)", "color": "rgb(58, 172, 88)","left": 30,"top": 100}),
-    ("Mozgatható objektum vagyok.",{"backgroundColor": "rgb(234, 180, 180)", "color": "rgb(58, 72, 188)","left": 260,"top": 50})]
+    (
+        chr(127744 + i),
+        {   "backgroundColor": f"rgb({randint(0, 255)}, {randint(0, 255)}, {randint(0, 255)})", 
+            "color": f"rgb({randint(0, 255)}, {randint(0, 255)}, {randint(0, 255)})", 
+            "left": randint(0, 1200), 
+            "top": randint(0, 700)}
+    ) for i in range(130)]
+   
 for i, ole in enumerate(ol):
     s, st = ole
     st["zIndex"] = i
