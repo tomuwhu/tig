@@ -102,14 +102,12 @@ function load() {
                     document.getElementById("a2").style.display = "none"
                     hljs.highlightAll()
                 }
+                qq = document.getElementById("sel").options[sel.selectedIndex].text.slice(2)
+                if (qq[0]+qq[1] == "🏠") qq = qq.slice(2)
                 document.getElementById("a").innerHTML =
-                  "<span class='pn'>" +
-                    document.getElementById("sel").options[sel.selectedIndex].text.slice(2) +
-                  "</span> példaprogram kipróbálása"
+                  "<span class='pn'>" + qq + "</span> példaprogram kipróbálása"
                 document.getElementById("a2").innerHTML =
-                  "<span class='pn'>" +
-                    document.getElementById("sel").options[sel.selectedIndex].text.slice(2) +
-                  "</span> példaprogram letöltése <span class='pn'>(source.zip)</span>"
+                  "<span class='pn'>" + qq + "</span> példaprogram letöltése <span class='pn'>(source.zip)</span>"
         }
     };
     xhttp.open("GET", "./"+file, true);
@@ -130,7 +128,7 @@ function load() {
     <li><a href="probadogalista.html">Ellenőrzés</a></li>
 </ul>
 <div class="m20">
-    <h1 class="h">Tex (MathJax) és Brython (HTML-CSS-Python) példák: 
+    <h1 class="h">Tex (MathJax) és Brython (HTML-CSS-Python) példák, feladatok: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
     <select class="s" onchange="load()" id="sel">
         <option value="latex.html">📄 Tex és Latex (MathJax)</option>
         <option value="hw|a_ures.html">📄🏠 Kiindulási alap (Hello World)</option>
@@ -202,7 +200,7 @@ function load() {
         </td>
       </tr>
     </table>
-    <div id="kf" style="display: none;"><div class="pn pn3"><b>Kapcsolódó feladatok</b></div> 
+    <div id="kf" style="display: none;"><div class="pn pn3">🏠 <b> Kapcsolódó feladatok </b> 🏠</div> 
       <br>
       <div class="kf">
         <div id="kfi"></div>
