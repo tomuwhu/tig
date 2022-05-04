@@ -8,19 +8,19 @@
     t = turtle.Turtle()
     t.speed("fastest")
     def k(x):
-        if x > 1:
+        if x > 3:
             t.forward(x)
-            t.left(20)
-            k(x // 2)
-            t.right(40)
-            k(x // 2)
-            t.left(20)
+            t.left(x / 3)
+            k(x // 2 + x // 5)
+            t.right(2 * x / 3)
+            k(x // 2 + x // 5)
+            t.left(x / 3)
             t.backward(x)
     t.penup()
     t.left(90)
-    t.backward(200)
+    t.backward(150)
     t.pendown()
-    k(200)
+    k(120)
     t.hideturtle()
     turtle.done()
 </script>
