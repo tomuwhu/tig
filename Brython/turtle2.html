@@ -6,13 +6,14 @@
     import turtle
     turtle.set_defaults( turtle_canvas_wrapper = document['td'] )
     t = turtle.Turtle()
+    t.color('#1c4e5d')
     t.speed("fastest")
     def k(x):
         for i in range(6):
             t.forward(x)
             t.left(60)
         t.left(10)
-        if x>10:
+        if x>6:
             k(34*x/35)
     k(120)
     t.hideturtle()
