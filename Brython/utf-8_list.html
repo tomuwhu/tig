@@ -4,7 +4,7 @@
     <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython_stdlib.js"></script>
     <script type="text/python">
-        from browser import document as D
+        from browser import document as D, window as W
         from browser.html import TABLE, TR, TD, H1, INPUT, DIV, SPAN
         bl = sum([
           list(range(52,160)),
@@ -52,11 +52,12 @@
             ki(i)
         D <= H1( "UTF-8 Karakterek listája" )
         D <= DIV("🔙", Class="g").bind("click", dec)
-        D <= INPUT(Id="i", Type="range", min = 0, max = 506, value="0").bind("mousemove", ki)
+        D <= INPUT(Id="i", Type="range", min = 0, max = 506, value="0").bind("change", ki)
         D <= DIV("🔜", Class="g").bind("click", inc)
         D <= DIV(Id="x")
         D <= DIV(Id="y")
-        ki()
+        D["i"].value = int(W.location.search[1:], 16)
+        ki(int(W.location.search[1:], 16))
     </script>
     <style>
         body { text-align: center; user-select: none;}
