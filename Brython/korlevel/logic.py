@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<head>
-<meta charset="utf-8">
-<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
-<script type="text/python">
 from browser import document as D, html as H
+
 D <= H.DIV((
     H.HEADER("GYAKBANK - SZEGED"),
     H.DIV( Class = "SB" ),
@@ -31,27 +27,3 @@ D <= H.DIV((
     { "nev": "Országh Zsófia", "tartozas": 16300 },
     { "nev": "Palócz Péter Pál", "tartozas": 21190 },
 ])
-</script>
-<style>
-body   { text-align:center; padding: 50px; background-color: antiquewhite;}
-div.C  { text-align: center; }
-div.L  { text-align: left;   }
-div.SB { height: 10px;       }
-div.Sx { height: 5px;        }
-td {
-    text-align: center;
-    width: 74%;
-}
-@media print {
-    header { page-break-before: always; }
-    div.SB { height: 100px;  }
-    div.Sx { height: 30px;   }
-    hr { visibility: hidden; }
-    footer {
-        position: fixed;
-        bottom: 0;
-    }
-}
-</style>
-</head>
-<body onload="brython()"></body>

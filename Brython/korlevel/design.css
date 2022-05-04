@@ -1,0 +1,23 @@
+body   { 
+    text-align:center; 
+    padding: 50px; 
+    background-color: antiquewhite;
+}
+div.C  { text-align: center; }
+div.L  { text-align: left;   }
+div.SB { height: 10px;       }
+div.Sx { height: 5px;        }
+td {
+    text-align: center;
+    width: 74%;
+}
+@media print {
+    header { page-break-before: always; }
+    div.SB { height: 100px;  }
+    div.Sx { height: 30px;   }
+    hr { visibility: hidden; }
+    footer {
+        position: fixed;
+        bottom: 0;
+    }
+}
