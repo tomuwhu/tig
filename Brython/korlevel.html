@@ -3,34 +3,35 @@
     <meta charset="utf-8">
     <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
     <script type="text/python">
-        from browser import document, html
-        def f( adat ):
-            page =  html.DIV( )
-            page <= html.HEADER("SZTIG BANK - SZEGED")
-            page <= html.DIV( Class = "SB" )
-            page <= html.H2( 'Fizetési felszólítás', Class="C" )
-            page <= html.DIV( Class = "SB" )
-            page <= html.DIV( f'Tisztelt {adat["nev"]}!', Class="L" )
-            page <= html.DIV( Class = "Sx" )
-            page <= html.DIV( f'Tartozása nyilvántartásunk szerint {adat["tartozas"]} Ft, \
-            melyet kérünk 1199-1119-34727456 számú bankszámlára befizetni!', Class="L")
-            page <= html.DIV( Class = "SB" )
-            page <= html.TABLE( html.TD() + html.TD( 'Dr. Árva Aladár Ákos<br>főosztályvezető', Class = "AI" ) )
-            page <= html.DIV( Class = "SB" )
-            page <= html.FOOTER( "Információ, adategyeztetés: (70) 727-34-56 - http://www.sztigbankszeged.hu" )
-            page <= html.HR()
-            document <= page
-        adatforras = [
-            { "nev": "Kiss Béla", "tartozas": 76325 },
-            { "nev": "Nagy Endre Zoltán", "tartozas": 26320 },
-            { "nev": "Országh Zsófia", "tartozas": 16300 },
-            { "nev": "Palócz Péter Pál", "tartozas": 21190 },
-        ]
-        for sor in  adatforras:
-            f( sor )
+        from browser import document as D, html as H
+        D <= H.DIV((
+                H.HEADER("GYAKBANK - SZEGED"),
+                H.DIV( Class = "SB" ),
+                H.H2( "Fizetési felszólítás", Class="C" ),
+                H.DIV( Class = "SB" ),
+                H.DIV( f"Tisztelt {adat['nev']}!", Class="L" ),
+                H.DIV( Class = "Sx" ),
+                H.DIV( f"""
+                    Tartozása nyilvántartásunk szerint {adat["tartozas"]} Ft, 
+                    melyet kérünk 1199-1119-34727456 számú bankszámlára befizetni!
+                    """, Class="L"),
+                H.DIV( Class = "SB" ),
+                H.TABLE((
+                    H.TD(),
+                    H.TD( "Dr. Árva Aladár Ákos<br>főosztályvezető", Class = "AI" )
+                )),
+                H.DIV( Class = "SB" ),
+                H.FOOTER( "Információ, adategyeztetés: (70) 727-34-56 - http://www.gyakbankszeged.hu" ),
+                H.HR()
+            ) for adat in [
+                { "nev": "Kiss Béla", "tartozas": 76325 },
+                { "nev": "Nagy Endre Zoltán", "tartozas": 26320 },
+                { "nev": "Országh Zsófia", "tartozas": 16300 },
+                { "nev": "Palócz Péter Pál", "tartozas": 21190 },
+            ])
     </script>
     <style>
-        body   { text-align:center;  }
+        body   { text-align:center; padding: 50px; background-color: antiquewhite;}
         div.C  { text-align: center; }
         div.L  { text-align: left;   }
         div.SB { height: 10px;       }
