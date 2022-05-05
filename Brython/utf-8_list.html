@@ -56,8 +56,9 @@
         D <= DIV("🔜", Class="g").bind("click", inc)
         D <= DIV(Id="x")
         D <= DIV(Id="y")
-        D["i"].value = int(W.location.search[1:], 16)
-        ki(int(W.location.search[1:], 16))
+        if W.location.search:
+            D["i"].value = int(W.location.search[1:], 16)
+        ki(int(D["i"].value))
     </script>
     <style>
         body { text-align: center; user-select: none;}

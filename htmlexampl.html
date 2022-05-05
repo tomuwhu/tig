@@ -21,12 +21,28 @@ function load() {
     xhttp.open("GET", "./"+file, true);
     xhttp.send();
 }
-
 </script>
 <body class="b" onload="load()">
 <link rel="stylesheet"
       href="hljs/a11y-dark.css">
 <link rel="stylesheet" href="main2.css">
+<style>
+    div#content {
+        box-shadow: 1px 1px 3px inset black;
+        margin: 20px;
+    }
+    code#code {
+        user-select: all;
+        border-radius: 12px;
+        box-shadow: 0px 0px 8px gray;
+        font-family: 'Courier Prime', monospace;
+        font-size: 14px;
+        background-color: rgb(40, 77, 57);
+        text-shadow: 1px 1px 3px black;
+        border: solid 13px black;
+        margin: 20px;
+    }
+</style>
 <script src="hljs/highlight.min.js"></script>
 <ul class="navigation">
     <ul class="navigation">
