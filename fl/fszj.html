@@ -1,0 +1,35 @@
+<style>
+    li.xx {
+        margin-left: 100px;
+    }
+    li.xxx {
+        margin-left: 140px;
+        list-style-type: circle
+    }
+    a.ml {
+        color: yellow;
+    }
+    a.ml:hover {
+        color: rgb(152, 139, 40);
+    }
+</style>
+Az alábbi példaprogram egy számjáték nyerő stratégiájának elvi algoritmusát mutatja be. <br>
+
+<li class="xx">A játék a következő:
+    <li class="xxx">adott egy egész számokból álló (páros) n elemű számsor,</li>
+    <li class="xxx">a játékot két játékos játsza, felváltva lépnek,</li>
+    <li class="xxx">mindkét játékos minden lépésben egy számot választhat (levehet) a számsor jobb vagy bal széléről,</li>
+    <li class="xxx">a játékosok pontszáma az általuk választott számok összege,</li>
+    <li class="xxx">az a játékos nyer, amelyiknek a játék végén (emikor elfogy a számsorból a szám) magasabb a pontszáma.</li>
+</li>
+<li class="xx">A kezdő játékosnak van "nem vesztő" stratégiája, ami a következő:
+    <li class="xxx">meghatározzuk a páros sorszámú helyen szereplő számok összegét (A),</li>
+    <li class="xxx">meghatározzuk a páratlan sorszámú helyen szereplő számok összegét (B),</li>
+    <li class="xxx">ha A &gt; B, akkor a kezdőjátékos mindig az eredetileg páros sorszámú helyen lévő számot választja</li>
+    <li class="xxx">ha A &lt;= B, akkor a kezdőjátékos mindig az eredetileg páros sorszámú helyen lévő számot választja</li>
+</li>
+<li class="xx">Feladat:
+    <li class="xxx">készítsük el a játékot (írjunk számokat kis papírfecnikre és rendezzük őket egy sorszámozott lapra),</li>
+    <li class="xxx">határozzuk meg a páros és páratlan sorszámon lévő számok összegét,</li>
+    <li class="xxx">játszuk el a játékot néhányszor és ellenőrizzük jól működik-e a nem vesztő stratégia!</li>
+</li>
