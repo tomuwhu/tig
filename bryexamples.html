@@ -46,9 +46,9 @@ function lo2(f) {
         c3h = document.getElementById("code3").offsetHeight
         c2h = document.getElementById("code2").offsetHeight
         if (c2h > c3h) {
-          document.getElementById("code3").style.height = c2h - 28 + "px"
+          document.getElementById("code3").style.height = c2h - 24 + "px"
         } else {
-          document.getElementById("code2").style.height = c3h - 32 + "px"
+          document.getElementById("code2").style.height = c3h - 28 + "px"
         }
         loc = 0
       }
@@ -188,9 +188,7 @@ function load() {
         <a id="a" href="Brython/brython.html" class="a" target="_blank"></a>
         <a id="a2" class="a" style="display: none;">Letöltés&nbsp;(zip)</a>
     </div>
-    <pre id="c1">
-      <code id="code" class="language-html"></code>
-    </pre>
+    <pre id="c1"><code id="code" class="language-html"></code></pre>
     <table id="tcode">
       <tr>
         <td>
@@ -258,6 +256,8 @@ function load() {
     font-size: 12px;
     text-shadow: 1px 1px 3px black;
     background-color: rgb(43, 36, 9);
+    margin-bottom: 0px;
+    margin-top: 0px;
   }
   table#tcode {
     width: 100%;
@@ -299,6 +299,9 @@ function load() {
   }
   pre.z2 {
     background-color: rgb(30, 75, 77);
+  }
+  pre#c1 {
+    margin: 0px;
   }
   span.pn {
     color: rgb(0, 200, 255);
