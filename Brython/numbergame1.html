@@ -9,9 +9,28 @@
         l = list(map(lambda _:rr(1,99),[0]*20))
         l1 = l[::2]
         l2 = l[1::2]
-        D <= H.H2( ", ".join( str(x) for x in l ) )
+        D <= H.H2( map( H.SPAN, l ) )
         D <= H.H3( " + ".join( str(x) for x in l1) + " = " + str(sum(l1)))
         D <= H.H3( " + ".join( str(x) for x in l2) + " = " + str(sum(l2))) 
     </script>
+    <style>
+        * {
+            text-shadow: 1px 1px 3px rgb(98, 92, 92);
+            color:rgb(57, 62, 69)
+        }
+        span {
+            display: inline-block;
+            padding: 6px;
+            margin:  8px;
+            box-shadow: 1px 1px 3px black;
+            border-radius: 8px;
+            background-color: beige;
+            width: 30px;
+            text-align: center;
+        }
+        h3 {
+            margin: 10px;
+        }
+    </style>
 </head>
 <body onload="brython()"></body>
