@@ -22,14 +22,16 @@ function load() {
     xhttp.send();
 }
 </script>
-<body class="b" onload="load()">
+
 <link rel="stylesheet"
       href="hljs/a11y-dark.css">
 <link rel="stylesheet" href="main2.css">
 <style>
     div#content {
-        box-shadow: 1px 1px 3px inset black;
+        box-shadow: 1px 1px 7px inset black;
         margin: 20px;
+        border: solid 3px black;
+        border-radius: 12px;
     }
     code#code {
         user-select: all;
@@ -54,6 +56,7 @@ function load() {
         <li><a href="probadogalista.html">Ellenőrzés</a></li>
     </ul>
 </ul>
+<body class="b" onload="load()"></body>
 <div class="m20">
     <h1 class="h">HTML-CSS p&eacute;ldák</h1>
     <select class="s" onchange="load()" id="sel">
