@@ -2,20 +2,14 @@
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
 <script type="text/python">
-    from browser import document, html
+    from browser import document, html as H
     from random import shuffle
     def f(e):
-        li = [ *range( 1, 90 ) ]
-        shuffle( li )
-        lo = li[ :5 ]
-        lo.sort(    )
-        s = html.TR()
-        for la in lo:
-            s <= html.TD(la) 
-        tx <= s
-    hd = html.TD("Start", colspan=5, Class="g").bind("click", f)
-    tx = html.TABLE(html.TR( hd ))
-    tx <= hd
+        li = list(range(1, 90))
+        shuffle(li)
+        tx <= H.TR(H.TD(x) for x in sorted(li[:5]))
+    hd = H.TD("Start", colspan = 5, Class = "g").bind("click", f)
+    tx = H.TABLE(H.TR(hd))
     document <= tx
 </script>
 <body onload="brython()"></body>
