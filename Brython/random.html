@@ -2,18 +2,10 @@
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
 <script type="text/python">
-	from browser import document, html as h
-	from random import shuffle
-	li = [ *range( 1, 90 ) ]
-	shuffle( li )
-	lo = li[ :5 ]
-	lo.sort(    )
-	s = h.UL()
-	for la in lo:
-		s <= h.LI(la)
-	document["op"] <= s
+	from browser import document as D, html as H
+	from random import shuffle as sh
+	l = list(range(1, 90))
+	sh(l)
+	D <= H.UL(map(H.LI, sorted(l[:5])))
 </script>
-<body>
-	<button onclick="brython()">Start</button>
-	<div id="op">...</div>
-</body>
+<body onload="brython()"></body>
