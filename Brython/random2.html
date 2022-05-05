@@ -8,18 +8,25 @@
         li = list(range(1, 90))
         shuffle(li)
         TX <= H.TR(map(H.TD, sorted(li[:5])))
-    START = H.TD("Start", colspan = 5, Class = "g").bind("click", f)
-    TX = H.TABLE(H.TR(START))
+    TX = H.TABLE(H.TR(H.TD("Sorsol", colspan = 5, Class = "g").bind("click", f)))
     D <= TX
 </script>
 <body onload="brython()"></body>
 <style>
+    body {
+        background-color: antiquewhite;
+        text-shadow: 1px 1px 3px rgb(100, 88, 88);
+        color: rgb(36, 70, 86);
+    }
+    table {
+        margin: auto;
+        width: 300px;
+        border-spacing: 5px;
+    }
     td {
+        width: 20%;
         user-select: none;
-        margin: 3px;
-        padding: 5px;
-        width: 10px;
-        border-radius: 4px;
+        border-radius: 5px;
         box-shadow: 1px  2px 2px black;
         text-align: center;
         background-color: aquamarine;
