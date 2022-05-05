@@ -4,14 +4,14 @@
     <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython_stdlib.js"></script>
     <script type="text/python">
-        from browser import document, html
+        from browser import document as D, html as H
         from random import randrange as rr
         l = list(map(lambda _:rr(1,99),[0]*20))
         l1 = l[::2]
         l2 = l[1::2]
-        document <= html.H2( ", ".join( str(x) for x in l ) )
-        document <= html.H3( " + ".join( str(x) for x in l1) + " : " + str(sum(l1)))
-        document <= html.H3( " + ".join( str(x) for x in l2) + " : " + str(sum(l2))) 
+        D <= H.H2( ", ".join( str(x) for x in l ) )
+        D <= H.H3( " + ".join( str(x) for x in l1) + " = " + str(sum(l1)))
+        D <= H.H3( " + ".join( str(x) for x in l2) + " = " + str(sum(l2))) 
     </script>
 </head>
 <body onload="brython()"></body>
