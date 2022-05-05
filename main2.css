@@ -59,24 +59,6 @@ a.a:active {
 a.a:visited {
     color:rgb(226, 249, 201);
 }
-code#code {
-    border-radius: 12px;
-    box-shadow: 0px 0px 8px gray;
-    font-family: 'Courier Prime', monospace;
-    font-size: 14px;
-    background-color: rgb(40, 77, 57);
-    text-shadow: 1px 1px 3px black;
-    border: solid 13px black;
-}
-code#code2 {
-    text-shadow: 1px 1px 3px black;
-    color: rgb(243, 243, 200);
-    background-color: rgb(30, 75, 77);
-}
-code#code3 {
-    text-shadow: 1px 1px 3px black;
-    background-color: rgb(43, 36, 9);
-}
 h1.h {
     font-size: 20px;
 }
