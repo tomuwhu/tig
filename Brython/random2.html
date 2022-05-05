@@ -2,15 +2,15 @@
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
 <script type="text/python">
-    from browser import document, html as H
+    from browser import document as D, html as H
     from random import shuffle
     def f(e):
         li = list(range(1, 90))
         shuffle(li)
-        tx <= H.TR(H.TD(x) for x in sorted(li[:5]))
-    hd = H.TD("Start", colspan = 5, Class = "g").bind("click", f)
-    tx = H.TABLE(H.TR(hd))
-    document <= tx
+        TX <= H.TR(map(H.TD, sorted(li[:5])))
+    START = H.TD("Start", colspan = 5, Class = "g").bind("click", f)
+    TX = H.TABLE(H.TR(START))
+    D <= TX
 </script>
 <body onload="brython()"></body>
 <style>
@@ -24,7 +24,7 @@
         text-align: center;
         background-color: aquamarine;
     }
-    td.g {
+    .g {
         cursor: pointer;
         background-color: bisque;
     }
