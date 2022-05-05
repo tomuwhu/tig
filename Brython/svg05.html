@@ -8,13 +8,18 @@
         border-radius: 10px; box-shadow: 1px 1px 3px black;
         width: 1200px; height: 900px;
     }
+    h1 {
+      text-align: center;
+      text-shadow: 1px 1px 3px black;
+      color: #705353;
+    }
 </style>
 <script type="text/python">
     from browser import document, svg
     def f(e):
       if e.buttons == 1:
         document['x'] <= svg.circle(
-          cx = int(e.x)-10, cy = int(e.y)-10, r = 10,
+          cx = int(e.x)-15, cy = int(e.y)-86, r = 10,
           stroke="blue", fill="rgb(170,230,220)"
         )
     document['x'] .bind( "mousedown", f ) \
@@ -22,4 +27,4 @@
                   .bind( "touchmove", f ) \
                   .bind( "touchstart", f )
 </script>
-<body onload="brython()"><svg id="x"></svg></body>
+<body onload="brython()"><h1>Rajzoló program</h1><svg id="x"></svg></body>
