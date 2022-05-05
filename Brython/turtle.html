@@ -3,22 +3,20 @@
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
 <script type="text/python">
     from browser import document
-    import turtle
-    turtle.set_defaults( turtle_canvas_wrapper = document['td'] )
-    t = turtle.Turtle()
+    from turtle import Turtle, set_defaults as S, done
+    S( turtle_canvas_wrapper = document.select("body")[0] )
+    t = Turtle()
     t.penup()
     t.goto(-160, 0)
     t.pendown()
     t.width(2)
-    t.color("orange","orange")
+    t.color("orange","#56edfe")
     t.begin_fill()
     for i in range(9):
         t.forward(400)
         t.left(160)
     t.end_fill()
     t.hideturtle()
-    turtle.done()
+    done()
 </script>
-<body onload="brython()">
-    <div id="td"></div>
-</body>
+<body onload="brython()"></body>
