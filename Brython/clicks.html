@@ -1,7 +1,7 @@
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
-<script>setTimeout( brython, 100 );document.title="BinSum"</script>
 <script type="text/python">
       from browser import document, html
+      document.title="BinSum"
       ossz = 0
       def m(e):
           global ossz
@@ -62,3 +62,4 @@
         margin: 20px auto;
     }
 </style>
+<body onload="brython()"></body>
