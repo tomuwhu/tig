@@ -1,87 +1,104 @@
-<meta charset="utf-8">
-<script src="hljs/markdown.min.js"></script>
-<link rel="stylesheet" href="main.css">
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Shadows+Into+Light&family=Lemonada');
-    .navigation {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-end;
-        text-shadow: 1px 1px 3px black;
-        list-style: none;
-        margin: 0;
-        background: rgb(2, 98, 130);
-        font-family: 'Lemonada', cursive;
-        font-size: 12px;
-    }
+<head>
+    <meta charset="utf-8">
+    <script src="hljs/markdown.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Shadows+Into+Light&family=Lemonada');
+        .navigation {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-end;
+            text-shadow: 1px 1px 3px black;
+            list-style: none;
+            margin: 0;
+            background: rgb(2, 98, 130);
+            font-family: 'Lemonada', cursive;
+            font-size: 12px;
+        }
+        h2.k {
+            cursor: pointer;
+        }
+        select {
+            width: 550px;
+        }
+        #content {
+            user-select: text;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        b {
+            text-shadow: 1px 1px 2px rgb(139, 134, 134);
+            font-size: 16px;
+        }
     </style>
-<script>
-    var tt
-    var ossz = 32
-    function f(e) {
-        ora = tt[e.srcElement.selectedIndex].split(";")
-        if (ora[5]) {
-                sss =  "<a href='"+ora[5]+"' target='_blank'>Tananyag</a>"
-        } 
-        else sss=""
-        document.getElementById('content').innerHTML = "<p>" + ora[0] + " " + ora[1] + "</p>" +
-        ora[2] + "<p>" + ora[3]+ "</p>" + "<p>" + ora[4]+ "</p>" + sss
-    }
-    function tmd(file) {
+    <script>
+        var tt
+        var ossz = 54
+        function f(e) {
+            ora = tt[e.srcElement.selectedIndex].split(";")
+            if (ora[5]) {
+                    sss =  "<a href='"+ora[5]+"' target='_blank'>Tananyag</a>"
+            } 
+            else sss=""
+            document.getElementById('content').innerHTML = "<p><b>" + ora[0] + " " + ora[1] + "</b></p>" +
+            ora[2] + "<p>" + ora[3]+ "</p>" + "<p>" + ora[4]+ "</p>" + sss
+        }
+        function tmd(file) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    html_content = markdown.toHTML( xhttp.responseText );
+                    document.getElementById('content').innerHTML = html_content;
+                    document.getElementById('content').style.visibility = "visible"
+                }
+            };
+            xhttp.open("GET", "./"+file, true);
+            xhttp.send();
+        }
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                html_content = markdown.toHTML( xhttp.responseText );
-                document.getElementById('content').innerHTML = html_content;
+                tt = xhttp.responseText.split("\r\n")
+                ora = tt[ossz-1].split(";")
+                if (ora[5]) {
+                    sss =  "<a href='"+ora[5]+"' target='_blank'>Tananyag</a>"
+                } 
+                else sss=""
+                document.getElementById('content').innerHTML = "<p><b>" + ora[0] + " " + ora[1] + "</b></p>" +
+                ora[2] + "<p>" + ora[3]+ "</p>" + "<p>" + ora[4]+ "</p>" + sss
                 document.getElementById('content').style.visibility = "visible"
+                document.getElementById('sp').innerHTML = "<select onchange='f(event)'>" +
+                tt.map(v => {
+                    row = v.split(';')
+                    return "<option " + (row[0]==ossz?"selected":"") + " value='"+row[0]+"'>"+row[0]+" "+row[1]+"</option>"
+                })
             }
         };
-        xhttp.open("GET", "./"+file, true);
-        xhttp.send();
-    }
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            tt = xhttp.responseText.split("\r\n")
-            ora = tt[ossz-1].split(";")
-            if (ora[5]) {
-                sss =  "<a href='"+ora[5]+"' target='_blank'>Tananyag</a>"
-            } 
-            else sss=""
-            document.getElementById('content').innerHTML = "<p>" + ora[0] + " " + ora[1] + "</p>" +
-            ora[2] + "<p>" + ora[3]+ "</p>" + "<p>" + ora[4]+ "</p>" + sss
-            document.getElementById('content').style.visibility = "visible"
-            document.getElementById('sp').innerHTML = "<select onchange='f(event)'>" +
-            tt.map(v => {
-                row = v.split(';')
-                return "<option " + (row[0]==ossz?"selected":"") + " value='"+row[0]+"'>"+row[0]+" "+row[1]+"</option>"
-            })
+        function f2() {
+            document.getElementById('content').innerHTML = `
+                <h2>Fő témakörök a NAT alapján a 9-12. évfolyamon</h2>
+                <ol>
+                    <li>Algoritmizálás, formális programozási nyelv használata</li>
+                    <li>Információs társadalom, e-Világ</li>
+                    <li>Mobiltechnológiai ismeretek</li>
+                    <li>Szövegszerkesztés</li>
+                    <li>Számítógépes grafika</li>
+                    <li>Multimédiás dokumentumok készítése</li>
+                    <li>Online kommunikáció</li>
+                    <li>Publikálás a világhálón</li>
+                    <li>Táblázatkezelés</li>
+                    <li>Adatbázis-kezelés</li>
+                    <li>A digitális eszközök használata</li>
+                </ol>
+            `
         }
-    };
-    function f2() {
-        document.getElementById('content').innerHTML = `
-            <h2>Fő témakörök a NAT alapján a 9-12. évfolyamon</h2>
-            <ol>
-                <li>Algoritmizálás, formális programozási nyelv használata</li>
-                <li>Információs társadalom, e-Világ</li>
-                <li>Mobiltechnológiai ismeretek</li>
-                <li>Szövegszerkesztés</li>
-                <li>Számítógépes grafika</li>
-                <li>Multimédiás dokumentumok készítése</li>
-                <li>Online kommunikáció</li>
-                <li>Publikálás a világhálón</li>
-                <li>Táblázatkezelés</li>
-                <li>Adatbázis-kezelés</li>
-                <li>A digitális eszközök használata</li>
-            </ol>
-        `
-    }
-    function f0() {
-        xhttp.open("GET", "./irodalom/tanmenet.csv", true);
-        xhttp.send();
-    }
-    f0()
-</script>
+        function f0() {
+            xhttp.open("GET", "./irodalom/tanmenet.csv", true);
+            xhttp.send();
+        }
+        f0()
+    </script>
+</head>
+<body>
     <ul class="navigation">
         <li><a href="./">Kezdőlap</a></li>
         <li><a href="htmlexampl.html">HTML-CSS</a></li>
@@ -119,9 +136,4 @@
         </div>
     </div>
 </div>
-
-<style>
-    h2.k {
-        cursor: pointer;
-    }
-</style>
+</body>
