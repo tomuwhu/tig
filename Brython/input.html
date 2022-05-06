@@ -26,19 +26,13 @@
     </style>
     <script type="text/python">
         from browser import document as D, html as H
-        r = H.DIV("Eredmény")
-        i1 = H.INPUT(value = "1", min = 1, max = 20, type="number")
-        i2 = H.INPUT(value = "1", min = 1, max = 12, type="number")
+        I1 = H.INPUT(value = 1, min = 1, max = 20, type="number")
+        I2 = H.INPUT(value = 1, min = 1, max = 12, type="number")
+        R = H.DIV("Eredmény")
         def f(e):
-            r.clear()
-            r <= [
-                H.SPAN(i1.value), H.SUP(i2.value), " = ",
-                int(i1.value) ** int(i2.value)
-            ]
-        D <= [
-            H.H1("Hatványozó"), i1, i2,
-            H.BUTTON("Számol", id="btn").bind( "click", f ), H.HR(), r
-        ]
+            R.clear()
+            R <= [H.SPAN(I1.value), H.SUP(I2.value), " = ", int(I1.value) ** int(I2.value)]
+        D <= [H.H1("Hatványozó"), I1, I2, H.BUTTON("Számol").bind( "click", f ), H.HR(), R]
     </script>
 </head>
 <body onload="brython()"></body>
