@@ -32,15 +32,10 @@
     <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython_stdlib.js"></script>
     <script type="text/python">
         from browser import document as D, html as H
-        cont = H.DIV( Class="cont" )
-        for i in range(1,33):
-            cont <= H.DIV(
-                      H.SPAN(i) +
-                      H.SUP(2) +
-                      H.SPAN(f' = {i**2}'),
-                      Class="e"
-                    )
-        D <= H.H1("Négyzetszámok") + cont
+        D <= (H.H1("Négyzetszámok"), H.DIV((
+            H.DIV((H.SPAN(i), H.SUP(2), H.SPAN(f' = {i ** 2}')), Class = "e") 
+            for i in range(1, 33) 
+        ), Class = "cont" ))
     </script>
 </head>
 <body onload="brython()"></body>
