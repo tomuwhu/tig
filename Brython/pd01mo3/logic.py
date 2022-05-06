@@ -7,8 +7,9 @@ def f(e):
 RES = H.TH('&nbsp', colspan = 3, id = "res")
 T = H.TABLE()
 T <= H.TR(H.TH( "Számoló tábla", colspan = 3))
-T <= [H.TR(H.TD(H.INPUT( value = 1, type = "number", min = 0, max = 9 )) for j in range(3))
-        for i in range(3)]
+T <= [H.TR(H.TD(
+      H.INPUT( value = 1, type = "number", min = 0, max = 9 ))
+      for j in range(3)) for i in range(3)]
 T <= H.TR(H.TH(H.BUTTON('Számol').bind("click", f), colspan = 3))
 T <= H.TR(RES)
 D <= T
