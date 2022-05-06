@@ -31,16 +31,16 @@
     <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/brython@3.10.3/brython_stdlib.js"></script>
     <script type="text/python">
-        from browser import document, html
-        cont = html.DIV( Class="cont" )
+        from browser import document as D, html as H
+        cont = H.DIV( Class="cont" )
         for i in range(1,33):
-            cont <= html.DIV(
-                      html.SPAN(i) +
-                      html.SUP(2) +
-                      html.SPAN(f' = {i**2}'),
+            cont <= H.DIV(
+                      H.SPAN(i) +
+                      H.SUP(2) +
+                      H.SPAN(f' = {i**2}'),
                       Class="e"
                     )
-        document <= html.H1("Négyzetszámok") + cont
+        D <= H.H1("Négyzetszámok") + cont
     </script>
 </head>
 <body onload="brython()"></body>
