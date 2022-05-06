@@ -7,41 +7,38 @@
             text-align: center;
             color: rgb(96, 6, 19);
             text-shadow: 1px 1px 3px gray;
+            font-family: Franklin, sans-serif;
+            background: azure;
         }
         input, button {
             width: 80px;
             font-size: larger;
         }
         div {
-            font-size: larger;
             box-shadow: 1px 1px 3px black;
             border-radius: 8px;
             font-size: 30px;
-            font-family: Franklin, sans-serif;
-            background-color: rgb(245, 245, 203);
-            text-align: center;
-            vertical-align: text-bottom;
+            background: rgb(245, 245, 203);
+            width: 400px;
             margin: auto;
-            height: 80px;
-            width: 500px;
+            padding: 50px;
         }
     </style>
     <script type="text/python">
-        from browser import document, html
+        from browser import document as D, html as H
+        r = H.DIV("Eredmény")
+        i1 = H.INPUT(value = "1", min = 1, max = 20, type="number")
+        i2 = H.INPUT(value = "1", min = 1, max = 12, type="number")
         def f(e):
-            r = document[ 'res' ]
             r.clear()
-            r <= html.SPAN( document[ 'i1' ].value ) \
-                + html.SUP( document[ 'i2' ].value ) + " = " \
-                + int( document[ 'i1' ].value ) ** \
-                    int( document[ 'i2' ].value )
-        document[ 'btn' ].bind( "click", f )
+            r <= [
+                H.SPAN(i1.value), H.SUP(i2.value), " = ",
+                int(i1.value) ** int(i2.value)
+            ]
+        D <= [
+            H.H1("Hatványozó"), i1, i2,
+            H.BUTTON("Számol", id="btn").bind( "click", f ), H.HR(), r
+        ]
     </script>
 </head>
-<body onload="brython()">
-    <h1>Hatványozó</h1>
-    <input id="i1" value="1" min=1 max=20 type="number">
-    <input id="i2" value="1" min=1 max=12 type="number">
-    <button id="btn">Számol</button>
-    <hr> <div id="res"></div>
-</body>
+<body onload="brython()"></body>
