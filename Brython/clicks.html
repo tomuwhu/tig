@@ -1,49 +1,46 @@
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
 <script type="text/python">
-      from browser import document, html
-      document.title="BinSum"
-      ossz = 0
-      def m(e):
-          global ossz
-          ossz -= int(e.target.id[1:])
-          e.target.style = { "background-color" : "blanchedalmond" }
-          document["sum"].html = ossz
-          e.target.unbind( "click", m )
-          e.target.bind( "click", f )
-      def f(e):
-          global ossz
-          ossz += int(e.target.id[1:])
-          e.target.style = { "background-color" : "red" }
-          document["sum"].html = ossz
-          e.target.unbind( "click", f )
-          e.target.bind( "click", m )
-      document <= html.H1( "Binary sums" )
-      df = html.DIV(Class="cont")
-      sum = html.DIV("0",Id="sum")
-      for i in range( 10 ):
-          df <= html.DIV( f'{2 ** i}', Class="x", Id=f'b{2 ** i}' )
-      document <= df + sum
-      for k in document.select( ".x" ):
-          k.bind( "click", f )
+    from browser import document as D, html as H
+    D.title = "BinSum"
+    ossz = 0
+    sum = H.DIV("0", Id="sum")
+    def m(e):
+        global ossz
+        ossz -= int(e.target.id[1:])
+        e.target.style.backgroundColor = "rgb(222, 203, 173)"
+        sum.clear()
+        sum <= ossz
+        e.target.unbind( "click", m )
+        e.target.bind( "click", f )
+    def f(e):
+        global ossz
+        ossz += int(e.target.id[1:])
+        e.target.style.backgroundColor = "rgb(170, 62, 53)"
+        sum.clear()
+        sum <= ossz
+        e.target.unbind( "click", f )
+        e.target.bind( "click", m )
+    D <= (H.H1( "Binary sums" ),
+          H.DIV(
+              (H.DIV( f'{2 ** i}', Class="x", Id=f'b{2 ** i}' ).bind( "click", f )
+              for i in range(10)), Class="cont"),
+          sum)
 </script>
 <style>
-    h1 {
-        text-align: center;
-        text-shadow: 1px 1px 3px black;
-        color: rgb(82, 52, 33)
-    }
     div.cont {
         display: flex;
         flex-wrap: wrap;
-        flex-direction: row;
         user-select: none;
         justify-content: center;
     }
     body {
-      text-align: center;
+        text-align: center;
+        background-color: rgb(226, 224, 207);
+        color: rgb(66, 34, 18);
+        text-shadow: 1px 1px 3px gray;
     }
     div.x {
-        background-color: blanchedalmond;
+        background-color: rgb(222, 203, 173);
         cursor: pointer;
         margin: 8px;
         padding: 7px;
@@ -57,9 +54,9 @@
         font-size: 20px;
         font-weight: bold;
         padding: 10px;
-        box-shadow: 1px 1px 3px black;
+        box-shadow: 1px 1px 3px inset black;
         border-radius: 10px;
-        background-color: rgb(193, 121, 72);
+        background-color: rgb(168, 156, 104);
         width: 300px;
         margin: 20px auto;
     }
