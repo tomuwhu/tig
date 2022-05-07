@@ -2,23 +2,23 @@
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
 <script type="text/python">
-    from browser import document
-    import turtle
-    turtle.set_defaults( turtle_canvas_wrapper = document['td'] )
-    t = turtle.Turtle()
+    from browser import document as D, html as H
+    import turtle as T
+    L = H.DIV()
+    D <= L
+    T.set_defaults( turtle_canvas_wrapper = L )
+    t = T.Turtle()
     t.color('#1c4e5d')
     t.speed("fastest")
     def k(x):
         for i in range(6):
             t.forward(x)
             t.left(60)
-        t.left(10)
+        t.left(12)
         if x>6:
-            k(34*x/35)
+            k(44*x/45)
     k(120)
     t.hideturtle()
-    turtle.done()
+    T.done()
 </script>
-<body onload="brython()">
-    <div id="td"></div>
-</body>
+<body onload="brython()"></body>
