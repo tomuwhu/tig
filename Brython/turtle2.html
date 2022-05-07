@@ -8,6 +8,7 @@
     D <= L
     T.set_defaults( turtle_canvas_wrapper = L )
     t = T.Turtle()
+    t.hideturtle()
     t.speed("fastest")
     t.width(2)
     def k(x):
@@ -21,7 +22,6 @@
         if x>2:
             k(44*x/45)
     k(120)
-    t.hideturtle()
     T.done()
 </script>
 <body onload="brython()"></body>
