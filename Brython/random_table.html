@@ -3,12 +3,9 @@
     <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
     <script type="text/python">
-        from browser import document, html
-        from random import randrange
-        cont = html.DIV( Class = "c" )
-        for i in [0] * randrange(30, 70):
-            cont <= html.DIV( randrange(1, 20) )
-        document <= cont
+        from browser import document as D, html as H
+        from random import randrange as R
+        D <= H.DIV([H.DIV(f"{i + 1}:{R(1, 20)}") for i in range(R(30, 70))], Class = "c")
     </script>
     <style>
         div.c {
@@ -26,7 +23,7 @@
             box-shadow: 1px 1px 4px black inset;
         }
         div.c div {
-            width: 40px;
+            width: 70px;
             background-color: aquamarine;
             font-family: Tahoma;
             font-size: x-large;
