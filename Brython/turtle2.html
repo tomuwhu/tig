@@ -13,7 +13,7 @@
     t.width(2)
     def k(x):
         t.begin_fill()
-        t.color(f'rgb({250 - 2 * x},{2*x},{250 - 2 * x})',f'rgb({2*x},45,120)')
+        t.color("blue", f'rgb({2 * x}, {105 + x}, {255 - x})')
         for i in range(6):
             t.forward(x)
             t.left(60)
