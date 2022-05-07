@@ -8,14 +8,17 @@
     D <= L
     T.set_defaults( turtle_canvas_wrapper = L )
     t = T.Turtle()
-    t.color('#1c4e5d')
     t.speed("fastest")
+    t.width(2)
     def k(x):
+        t.begin_fill()
+        t.color(f'rgb({250 - 2 * x},{2*x},{250 - 2 * x})',f'rgb({2*x},45,120)')
         for i in range(6):
             t.forward(x)
             t.left(60)
         t.left(12)
-        if x>6:
+        t.end_fill()
+        if x>2:
             k(44*x/45)
     k(120)
     t.hideturtle()
