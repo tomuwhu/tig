@@ -1,5 +1,7 @@
 # 9 KNy tematika 🤪
 
+## 0. évfolyam
+
 - Operációs rendszer használata:
     - szoftverek telepítése, eltávolítása
     - könyvtárstruktúra, programfájlok, adatfájlok
@@ -106,13 +108,21 @@
         - teknőcgrafika (like logo) vs. graphics
         - random modul
         - összetett feladatok
+- Brython programozás I
+    - Hello World alkalmazás
+    - live szerver használata
+    - Táblázatok
+    - Eseménykezelés (egér és billentyűzet események)
+    - SVG Byrgthonban
+
+## 9. évfolyam
+
 - HTML Forms
     - button, input (number, date, time, range, color, ...), select, option
     - form validálás
 - Archiválás, tömörítés (.zip)
-- HTML + CSS + Python alkalmazása I (Brython)
-    - hello world
-    - live szerver használata
+- HTML + CSS + Python alkalmazása II (Brython)
+    - hello world (ismétlés)
     - browser modul
         - document, szelektorok (document[])
         - html ( <=, ``` DIV("cica", Class="x1") ```, H1..H6, .bind, ... )
