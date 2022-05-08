@@ -1,6 +1,7 @@
-def fib(n):
-    a, b = 0, 1
-    while a < n:
-        a, b = b, a + b
+def fib():
+    a, b = 1, 1
+    while True:
         yield a
-print(*fib(1000)) 
+        a, b = b, a + b
+i = fib()
+print([next(i) for j in range(12)])
