@@ -60,6 +60,13 @@
     - position, left, top, z-index
     - reszponzív oldalak, @media, @import
 - Google Fonts
+- Böngésző funkciók
+  - Oldal forrása
+  - Oldal vizsgálata
+    - Elemek (elem vizsgálata, stílusok, számított..)
+    - Konzol
+    - Források
+    - Hálózat, Alkalmazás, ...
 - Csoportmunka támogató eszközök
     - git
     - GitHub regisztráció
