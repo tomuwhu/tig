@@ -3,62 +3,62 @@
 ## 0. évfolyam
 
 - Operációs rendszer használata:
-    - szoftverek telepítése, eltávolítása
-    - könyvtárstruktúra, programfájlok, adatfájlok
-    - fájlnevek, kiterjesztések, fájltípusok
+  - szoftverek telepítése, eltávolítása
+  - könyvtárstruktúra, programfájlok, adatfájlok
+  - fájlnevek, kiterjesztések, fájltípusok
 - Visual Studio Code
-    - telepítés
-    - beállítás, pluginok (markdown, python, live server, ...)
-    - használata (tabulálás, blokkok kezelése, egyidejű szerkesztés, ...)
-    - speciális karakterek használata (<>#&~\|;*.:`` '' "" ${ }[ ])
+  - telepítés
+  - beállítás, pluginok (markdown, python, live server, ...)
+  - használata (tabulálás, blokkok kezelése, egyidejű szerkesztés, ...)
+  - speciális karakterek használata (<>#&~\|;*.:`` '' "" ${ }[ ])
 - Markdown nyelv
-    - szöveg beírása
-    - header (címsor) szintek
-    - UTF-8 karakterkészlet 🙂, szöveg kódolása
-    - táblázat beillesztése
-    - kép, link, tex, code beillesztése
+  - szöveg beírása
+  - header (címsor) szintek
+  - UTF-8 karakterkészlet 🙂, szöveg kódolása
+  - táblázat beillesztése
+  - kép, link, tex, code beillesztése
 - Tex nyelv használata
 - HTML nyelv alapjai
-    - VSCode beállítása, live szerver
-    - body, head, title, meta
-    - div, span, a, b, i, hr, h1..h6
-    - ul, ol, li, hr, nav, dl, dt, dd
-    - figure, img src="", figcaption
-    - fogalmak (element, attribute)
-    - attribútumok (title, href)
-    - táblázatok
-    - tabulálás használata az olvashatóság érdekében
-    - menu, pre, code, kbd, 
+  - VSCode beállítása, live szerver
+  - body, head, title, meta
+  - div, span, a, b, i, hr, h1..h6
+  - ul, ol, li, hr, nav, dl, dt, dd
+  - figure, img src="", figcaption
+  - fogalmak (element, attribute)
+  - attribútumok (title, href)
+  - táblázatok
+  - tabulálás használata az olvashatóság érdekében
+  - menu, pre, code, kbd, 
 - CSS alapjai
-    - style attribútum
-    - style element
-    - link rel="stylesheet" href="..."
-    - HTML attribútumok II. (id, class, name)
-    - css syntax: ``` selector { property: value; } ```
+  - style attribútum
+  - style element
+  - link rel="stylesheet" href="..."
+  - HTML attribútumok II. (id, class, name)
+  - css syntax: ``` selector { property: value; } ```
 - CSS
-    - css property-k 
-        - color
-        - background-color
-        - font-size
-        - font-family
-        - text-shadow
-        - text-align
-    - css display
-    - css box model (margin, border, padding, outline, ...)
-    - css display=flex container property-k
-        - flex-direction
-        - justify-content
-        - align-items
-        - align-content
-        - flex-wrap,
-        - gap
-    - css selectors
-        - #id, .class, *, element, element.class
-        - element element, element > element
-        - [attribute=value], [attribute~=value],...
-        - :hover, ::after, ...
-    - position, left, top, z-index
-    - reszponzív oldalak, @media, @import
+  - css property-k 
+    - color
+    - background-color
+    - font-size
+    - font-family
+    - text-shadow
+    - text-align
+  - css display
+  - css box model (margin, border, padding, outline, ...)
+  - css display=flex container property-k
+    - flex-direction
+    - justify-content
+    - align-items
+    - align-content
+    - flex-wrap,
+    - gap
+  - css selectors
+    - #id, .class, *, element, element.class
+    - element element, element > element
+    - [attribute=value], [attribute~=value],...
+    - :hover, ::after, ...
+  - position, left, top, z-index
+  - reszponzív oldalak, @media, @import
 - Google Fonts
 - Böngésző funkciók
   - Oldal forrása
@@ -68,141 +68,141 @@
     - Források
     - Hálózat, Alkalmazás, ...
 - Csoportmunka támogató eszközök
-    - git
-    - GitHub regisztráció
-    - GitHub beállítása
-    - GitHub Pages
+  - git
+  - GitHub regisztráció
+  - GitHub beállítása
+  - GitHub Pages
 - SVG: vektorgrafika és alkalmazása
-    - statikus vektorgrafikák készítése
-    - css animációk készítése
+  - statikus vektorgrafikák készítése
+  - css animációk készítése
 - Operációs rendszer: terminál, parancsok
-    - help, dir (ls), cd, tree, ...
-    - parancs felépítése (paraméterek, kapcsolók)
-    - terminál kényelmi funkciók (tab, ...)
+  - help, dir (ls), cd, tree, ...
+  - parancs felépítése (paraméterek, kapcsolók)
+  - terminál kényelmi funkciók (tab, ...)
 - Python programozási nyelv I.
-    - python telepítése
-    - python futtatása terminálban
-        - számok (int, float, nagy számok)
-        - operátorok (+, -, *, /, //, %, **, ... )
-        - python függvények használata ( int(), float(), max(), min() )
-        - számrendszerek (0x, 0b, 0o, format())
-        - python stringek
-    - python futtatása vscode-ban
-        - print()
-        - input()
-        - string template, format
-        - if - elif - else, tabulálás a pythonban
-        - logikai típus és operátorai
-        - while ciklus és használata
-        - függvények definiálása
-            - bemeneti paraméterek
-            - visszatérési érték (return)
-            - generátor függvények (yield)
-            - rekurzió
-            - rekurzió a generátorokban (yield from)
-            - a *operátor
-        - range, python listák
-        - listák és generátorok bejárása, a for utasítás
-        - lista generátor használata [i for i in l if i]
-        - alapvető algoritmusok
-            - eldöntés (in)
-            - keresés (find)
-            - összegzés (max, min, sum, count)
-            - szűrés (filter)
-            - rendezés (sort, sorted)
-        - további lista és stringműveletek
-        - szövegfájlok kezelése
-        - teknőcgrafika (like logo) vs. graphics
-        - random modul
-        - összetett feladatok
-- Brython programozás I
+  - python telepítése
+  - python futtatása terminálban
+    - számok (int, float, nagy számok)
+    - operátorok (+, -, *, /, //, %, **, ... )
+    - python függvények használata ( int(), float(), max(), min() )
+    - számrendszerek (0x, 0b, 0o, format())
+    - python stringek
+  - python futtatása vscode-ban
+    - print()
+    - input()
+    - string template, format
+    - if - elif - else, tabulálás a pythonban
+    - logikai típus és operátorai
+    - while ciklus és használata
+    - függvények definiálása
+      - bemeneti paraméterek
+      - visszatérési érték (return)
+      - generátor függvények (yield)
+      - rekurzió
+      - rekurzió a generátorokban (yield from)
+      - a *operátor
+    - range, python listák
+    - listák és generátorok bejárása, a for utasítás
+    - lista generátor használata [i for i in l if i]
+    - alapvető algoritmusok
+      - eldöntés (in)
+      - keresés (find)
+      - összegzés (max, min, sum, count)
+      - szűrés (filter)
+      - rendezés (sort, sorted)
+    - további lista és stringműveletek
+    - szövegfájlok kezelése
+    - teknőcgrafika (like logo) vs. graphics
+    - random modul
+    - összetett feladatok
+  - HTML + CSS + Python alkalmazása I. (Brython)
     - Hello World alkalmazás
     - live szerver használata
-    - Táblázatok
-    - Eseménykezelés (egér és billentyűzet események)
-    - SVG Byrgthonban
+    - document, html
+    - Eseménykezelés (bind - egér és billentyűzet események)
+    - SVG Bythonban
 
 ## 9. évfolyam
 
 - HTML Forms
-    - button, input (number, date, time, range, color, ...), select, option
-    - form validálás
+  - button, input (number, date, time, range, color, ...), select, option
+  - form validálás
 - Archiválás, tömörítés (.zip)
-- HTML + CSS + Python alkalmazása II (Brython)
-    - hello world (ismétlés)
-    - browser modul
-        - document, szelektorok (document[])
-        - html ( <=, ``` DIV("cica", Class="x1") ```, H1..H6, .bind, ... )
-        - HTML events
-        - turtle (teknőc a browserben)
-        - timer
-        - SVG, programozott animációk készítése
-        - Ajax
+- HTML + CSS + Python alkalmazása II. (Brython)
+  - hello world (ismétlés)
+  - browser modul
+    - document, szelektorok (document[])
+    - html ( <=, ``` DIV("cica", Class="x1") ```, H1..H6, .bind, ... )
+    - HTML events
+    - turtle (teknőc a browserben)
+    - timer
+    - SVG, programozott animációk készítése
+    - Ajax
 - Algoritmizálás I.
-    - rendezések, algoritmus futási ideje
-    - verem, sor
-    - fák ábrázolása, tulajdonságai
-    - kupac adatszerkezet, prioritási sor
-    - kupacrendezés
-    - keresőfák, hasítótáblák, halmazok (Set, Map)
+  - rendezések, algoritmus futási ideje
+  - verem, sor
+  - fák ábrázolása, tulajdonságai
+  - kupac adatszerkezet, prioritási sor
+  - kupacrendezés
+  - keresőfák, hasítótáblák, halmazok (Set, Map)
 - Python programozási nyelv II.
-    - halmazok (Set)
-    - szótár adatszerkezet (Map)
-    - numpy, matplotlib
-    - osztályok, objektum-orientált programozás
+  - halmazok (Set)
+  - szótár adatszerkezet (Map)
+  - numpy, matplotlib
+  - osztályok, objektum-orientált programozás
 - Algoritmizálás II.
-    - rekurzió alkalmazása
-    - rekurzió memorizálás
-    - dinamikus programozás
-    - mohó stratégia
-    - visszalépéses keresés
-    - fa- és gráfséták
+  - rekurzió alkalmazása
+  - rekurzió memorizálás
+  - dinamikus programozás
+  - mohó stratégia
+  - visszalépéses keresés
+  - fa- és gráfséták
 - Alkalmazások
-    - Mintaillesztés, Szintaktikus elemzés
-    - Damerau–Levenshtein távolság
-    - Optimális pénváltás
-    - PageRank
-    - Fa és gráf mélységi bejárása
-    - Szélességi bejárás
-    - Mélységi keresés
-        - Erősen összefüggő komponensek
-        - Topológikus rendezés
-    - Legrövidebb utak (Floyd-Warshall, Dijkstra, A*)
-    - Páros gráfok, magyar módszer, játékelmélet
-    - Feszítőfák (Kruskal algoritmus, halmazerdő)
-    - Utazóügynök-probléma
-    - Turing gép, Church-Turing tézis
-    - Problémák bonyolultsága, NP-teljesség
-    - Approximációs algoritmusok, mesterséges intelligencia
-    - Gépi tanulás
+  - Mintaillesztés, Szintaktikus elemzés
+  - Damerau–Levenshtein távolság
+  - Optimális pénváltás
+  - PageRank
+  - Fa és gráf mélységi bejárása
+  - Szélességi bejárás
+  - Mélységi keresés
+    - Erősen összefüggő komponensek
+    - Topológikus rendezés
+  - Legrövidebb utak (Floyd-Warshall, Dijkstra, A*)
+  - Páros gráfok, magyar módszer, játékelmélet
+  - Feszítőfák (Kruskal algoritmus, halmazerdő)
+  - Utazóügynök-probléma
+  - Turing gép, Church-Turing tézis
+  - Problémák bonyolultsága, NP-teljesség
+  - Approximációs algoritmusok, mesterséges intelligencia
+  - Gépi tanulás
 - Adatbáziskezelés, SQL
-    - alapfogalmak (rekord, mező, tábla)
-    - Descartes-szorzat
-    - kulcsok, kapcsolatok táblák között
-    - SQLite szintaxisdiagramok
-    - DB Browser használata, csv, db fájlok kezelése
-    - SQLite adattípusok (Integer, Real, Text, Blob), Primary Key
-    - Select utasítás
-        - mezők, táblák kiválasztása
-        - szűrés (where, limit, between, in, like, glob,  is null)
-        - táblák közötti kapcsolatok (inner join, left join)
-        - összegzések (group by, having, max, sum, avg, count)
-        - rendezések (order by)
-        - összetett lekérdezések (union, except, intersect)
-    - Create Table
-    - Insert
-    - Delete
+  - alapfogalmak (rekord, mező, tábla)
+  - Descartes-szorzat
+  - kulcsok, kapcsolatok táblák között
+  - SQLite szintaxisdiagramok
+  - DB Browser használata, csv, db fájlok kezelése
+  - SQLite adattípusok (Integer, Real, Text, Blob), Primary Key
+  - Select utasítás
+    - mezők, táblák kiválasztása
+    - szűrés (where, limit, between, in, like, glob,  is null)
+    - táblák közötti kapcsolatok (inner join, left join)
+    - összegzések (group by, having, max, sum, avg, count)
+    - rendezések (order by)
+    - összetett lekérdezések (union, except, intersect)
+  - Create Table
+  - Insert
+  - Delete
 - Python programozási nyelv III.
-    - SQLite modul
-    - http.server
-    - get, post
-    - full-stack alkalmazás (szerver és kliens oldal)
+  - SQLite modul
+  - http.server
+  - get, post
+  - full-stack alkalmazás (szerver és kliens oldal)
 - Számelméleti algoritmusok:
-    - nyilvános kulcsú tikosítás
-    - számelmélet, kis Fermat-tétel
-    - Fermat-Wiles tétel*
-    - RSA algoritmus
-    - bővített euklideszi algoritmus
-    - véletlenített algoritmusok
-    - újjlenyomat módszer
-    - Miller-Rabin prímteszt
+  - nyilvános kulcsú tikosítás
+  - számelmélet, kis Fermat-tétel
+  - Fermat-Wiles tétel*
+  - RSA algoritmus
+  - bővített euklideszi algoritmus
+  - véletlenített algoritmusok
+  - újjlenyomat módszer
+  - Miller-Rabin prímteszt
