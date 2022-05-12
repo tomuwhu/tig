@@ -14,7 +14,7 @@ def list(tx, res):
         keys = W.js.ent(res.rows.item(0))
         T <= H.TR(H.TH(i) for i in keys)
         T <= [H.TR([
-            H.TD(res.rows.item(j)[i]) for i in keys
+            H.TD(res.rows.item(j)[i] or H.SPAN("NULL")) for i in keys
         ]) for j in range(res.rows.length)]
         RES <= T
     else:
@@ -39,14 +39,15 @@ if "openDatabase" in W:
         RES.clear()
     l = [
         'CREATE TABLE pp (id PRIMARY KEY, name)',
-        'SELECT name, sql from sqlite_master WHERE type = "table" and Length(SQL)<100',
+        'SELECT name, sql FROM sqlite_master WHERE TYPE IS "table" AND LENGTH(sql) < 100',
         'INSERT INTO pp VALUES(1, "Malacka")',
         'INSERT INTO pp VALUES(2, "Nyuszi")',
         'INSERT INTO pp VALUES(3, "Micimackó")',
-        'UPDATE pp SET name="Tigris" WHERE id=3',
+        'UPDATE pp SET name = "Tigris" WHERE id = 3',
         'SELECT * FROM pp ORDER BY name',
+        'ALTER TABLE pp ADD age',
         'SELECT SUM(id) as Összeg FROM pp',
-        'SELECT * FROM pp WHERE id<2 ORDER BY name',
+        'SELECT * FROM pp WHERE id IN (1, 2, 4) ORDER BY name',
         'DELETE FROM pp',
         'DROP TABLE pp',
     ]
