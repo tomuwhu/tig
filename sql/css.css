@@ -70,3 +70,6 @@ pre {
 pre:hover {
     background-color: rgb(212, 160, 113);
 }
+button {
+    cursor: pointer;
+}
