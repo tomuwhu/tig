@@ -8,7 +8,6 @@ def err(tx, err):
         RES <= H.DIV("Üres utasítás", Class="err")
 def list(tx, res):
     RES.clear()
-    RES <= H.DIV("Sikeres", Class="done")
     if res.rows.length > 0:
         T = H.TABLE()
         keys = W.js.ent(res.rows.item(0))
@@ -18,6 +17,8 @@ def list(tx, res):
         ]) for j in range(res.rows.length)]
         D['TX'].value = ""
         RES <= T
+    else:
+        RES <= H.DIV("Sikeres", Class="done")
 db = W.openDatabase('d', '1.0', 'x', 5*1024*1024)
 def f(e):
     db.transaction(lambda t: t.executeSql(D['TX'].value, [], list, err))
