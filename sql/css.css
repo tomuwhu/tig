@@ -1,0 +1,72 @@
+* {
+    text-shadow: 1px 1px 2px rgb(67, 64, 64);
+    text-align: center;
+}
+h1 {
+    color: rgb(77, 23, 23);
+}
+td, th {
+    margin: 7px;
+    padding: 5px;
+    border-radius: 5px;
+    min-width: 50px;
+    opacity: 0.95;
+}
+th {
+    box-shadow: 1px 1px 3px black;
+    color: rgb(7, 51, 51);
+    background: rgb(181, 211, 158);
+    text-align: center;
+}
+td {
+    box-shadow: 1px 1px 3px inset black;
+    color: rgb(11, 35, 35);
+    background: rgb(211, 158, 158);
+    text-align: left;
+}
+body {
+    background-color: rgb(234, 234, 214);
+    padding: 20mm;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+textarea {
+    width: 800px;
+    text-align: left;
+}
+div.done {
+    background-color: aquamarine;
+    color:rgb(32, 67, 55);
+    margin: 8px;
+    padding: 10px;
+    box-shadow: 1px 1px 3px inset black;
+    border-radius: 9px;
+}
+div.err {
+    background-color: rgb(255, 140, 127);
+    color:rgb(67, 36, 32);
+    margin: 8px;
+    padding: 10px;
+    box-shadow: 1px 1px 3px inset black;
+    border-radius: 9px;
+}
+table {
+    border-spacing: 5px;
+    margin: 8px auto;
+    background-color: rgb(246, 209, 205);
+    color:rgb(67, 36, 32);
+    box-shadow: 1px 1px 3px inset black;
+    border-radius: 9px;
+}
+pre {
+    display: inline-block;
+    background-color: rgb(203, 233, 223);
+    cursor: pointer;
+    padding: 6px;
+    margin: 4px;
+    border: solid 1px black;
+    box-shadow: 1px 1px 2px rgb(49, 45, 45);
+}
+pre:hover {
+    background-color: rgb(212, 160, 113);
+}
