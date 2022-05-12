@@ -44,6 +44,7 @@ if "openDatabase" in W:
         'INSERT INTO dd VALUES(3, "Micimackó")',
         'UPDATE dd SET name="Tigris" WHERE id=3',
         'SELECT * FROM dd ORDER BY name',
+        'SELECT SUM(id) as Összeg FROM dd',
         'SELECT * FROM dd WHERE id<2 ORDER BY name',
         'DELETE FROM dd',
         'DROP TABLE dd',
