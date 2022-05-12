@@ -14,7 +14,7 @@ def list(tx, res):
         keys = W.js.ent(res.rows.item(0))
         T <= H.TR(H.TH(i) for i in keys)
         T <= [H.TR([
-            H.TD(res.rows.item(j)[i] or H.SPAN("NULL")) for i in keys
+            H.TD(res.rows.item(j)[i] or H.SPAN("NULL"), Class = "n" if type(res.rows.item(j)[i] or 0) is int else "" ) for i in keys
         ]) for j in range(res.rows.length)]
         RES <= T
     else:
@@ -26,17 +26,10 @@ if "openDatabase" in W:
     def g(e):
         RES.clear()
         D['TX'].value = ""
-    D <= H.H1("Web SQL Playground")
-    D <= H.TEXTAREA(id="TX")
-    D <= H.HR()
-    D <= H.BUTTON("Futtat").bind("click", f)
-    D <= H.BUTTON("Reset").bind("click", g)
-    RES = H.DIV(Class="res")
-    D <= H.HR()
-    D <= RES
     def ins(e):
         D['TX'].value = e.target.text
         RES.clear()
+    D <= H.H1("SQL Playground")
     l = [
         'CREATE TABLE pp (id PRIMARY KEY, name)',
         'SELECT name, sql FROM sqlite_master WHERE TYPE IS "table" AND LENGTH(sql) < 100',
@@ -54,5 +47,12 @@ if "openDatabase" in W:
     D <= [
         H.PRE(li).bind("click", ins) for li in l
     ]
+    D <= H.TEXTAREA(id="TX")
+    D <= H.HR()
+    D <= H.BUTTON("Futtat").bind("click", f)
+    D <= H.BUTTON("Reset").bind("click", g)
+    RES = H.DIV(Class="res")
+    D <= H.HR()
+    D <= RES
 else:
     D <= H.H1("A Web SQL nem támogatott, használjon Chrome böngészőt!")
