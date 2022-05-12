@@ -7,6 +7,7 @@ def err(tx, err):
     else:
         RES <= H.DIV("Üres utasítás", Class="err")
 def list(tx, res):
+    D['TX'].value = ""
     RES.clear()
     if res.rows.length > 0:
         T = H.TABLE()
@@ -15,7 +16,6 @@ def list(tx, res):
         T <= [H.TR([
             H.TD(res.rows.item(j)[i]) for i in keys
         ]) for j in range(res.rows.length)]
-        D['TX'].value = ""
         RES <= T
     else:
         RES <= H.DIV("Sikeres", Class="done")
@@ -25,6 +25,7 @@ if "openDatabase" in W:
         db.transaction(lambda t: t.executeSql(D['TX'].value, [], list, err))
     def g(e):
         RES.clear()
+        D['TX'].value = ""
     D <= H.H1("Web SQL Playground")
     D <= H.TEXTAREA(id="TX")
     D <= H.HR()
