@@ -31,8 +31,9 @@ body {
     padding-bottom: 0px;
 }
 textarea {
-    width: 800px;
+    width: 99%;
     text-align: left;
+    min-height: 50px;
 }
 div.done {
     background-color: aquamarine;
@@ -72,4 +73,12 @@ pre:hover {
 }
 button {
     cursor: pointer;
+}
+div.res {
+    min-height: 150px;
+    box-shadow: 1px 1px 3px inset black;
+    padding: 6px;
+    background-color: rgb(205, 212, 177);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 20px;
 }

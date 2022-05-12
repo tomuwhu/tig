@@ -31,13 +31,14 @@ if "openDatabase" in W:
     D <= H.HR()
     D <= H.BUTTON("Futtat").bind("click", f)
     D <= H.BUTTON("Reset").bind("click", g)
-    RES = H.DIV()
+    RES = H.DIV(Class="res")
     D <= H.HR()
     D <= RES
     def ins(e):
         D['TX'].value = e.target.text
+        RES.clear()
     l = [
-        'CREATE TABLE dd (id UNIQUE, name)',
+        'CREATE TABLE dd (id PRIMARY KEY, name)',
         'SELECT name, sql from sqlite_master WHERE type = "table" and Length(SQL)<100',
         'INSERT INTO dd VALUES(1, "Malacka")',
         'INSERT INTO dd VALUES(2, "Nyuszi")',
