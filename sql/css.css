@@ -53,7 +53,7 @@ div.err {
 }
 table {
     border-spacing: 5px;
-    margin: 8px auto;
+    margin: 2px auto;
     background-color: rgb(246, 209, 205);
     color:rgb(67, 36, 32);
     box-shadow: 1px 1px 3px inset black;

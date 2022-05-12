@@ -38,17 +38,17 @@ if "openDatabase" in W:
         D['TX'].value = e.target.text
         RES.clear()
     l = [
-        'CREATE TABLE dd (id PRIMARY KEY, name)',
+        'CREATE TABLE pp (id PRIMARY KEY, name)',
         'SELECT name, sql from sqlite_master WHERE type = "table" and Length(SQL)<100',
-        'INSERT INTO dd VALUES(1, "Malacka")',
-        'INSERT INTO dd VALUES(2, "Nyuszi")',
-        'INSERT INTO dd VALUES(3, "Micimackó")',
-        'UPDATE dd SET name="Tigris" WHERE id=3',
-        'SELECT * FROM dd ORDER BY name',
-        'SELECT SUM(id) as Összeg FROM dd',
-        'SELECT * FROM dd WHERE id<2 ORDER BY name',
-        'DELETE FROM dd',
-        'DROP TABLE dd',
+        'INSERT INTO pp VALUES(1, "Malacka")',
+        'INSERT INTO pp VALUES(2, "Nyuszi")',
+        'INSERT INTO pp VALUES(3, "Micimackó")',
+        'UPDATE pp SET name="Tigris" WHERE id=3',
+        'SELECT * FROM pp ORDER BY name',
+        'SELECT SUM(id) as Összeg FROM pp',
+        'SELECT * FROM pp WHERE id<2 ORDER BY name',
+        'DELETE FROM pp',
+        'DROP TABLE pp',
     ]
     D <= [
         H.PRE(li).bind("click", ins) for li in l
