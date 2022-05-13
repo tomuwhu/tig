@@ -134,8 +134,8 @@ if "openDatabase" in W:
     D <= H.TEXTAREA(id="TX")
     D <= H.HR()
     D <= H.BUTTON("Futtat", id="run").bind("click", f)
-    D <= H.BUTTON("Reset").bind("click", g)
     D <= H.BUTTON("db struktúra").bind("click", ldb)
+    D <= H.BUTTON("Reset").bind("click", g)
     D <= BT
     D <= H.BUTTON("db => SQL").bind("click", ea)
     RES = H.DIV(Class="res")

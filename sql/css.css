@@ -4,6 +4,7 @@
 }
 h1 {
     color: rgb(77, 23, 23);
+    font-size: 23px;
 }
 td, th {
     margin: 7px;
@@ -70,6 +71,7 @@ table {
     box-shadow: 1px 1px 3px inset black;
     border-radius: 9px;
     padding: 8px;
+    font-size: 13px;
 }
 pre.b {
     display: inline-block;
