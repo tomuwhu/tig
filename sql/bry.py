@@ -30,11 +30,47 @@ def tr():
     if len(ali) > 1:
         db.transaction(lambda t: t.executeSql(ali, [], list, err))
 def f(e):
-        RES.clear()
-        if len(D['TX'].value) > 1:
-            Tim.set_timeout(tr, 100)
-        else:
-            RES <= H.DIV("Üres utasítás", Class="err")
+    RES.clear()
+    if len(D['TX'].value) > 1:
+        Tim.set_timeout(tr, 100)
+    else:
+        RES <= H.DIV("Üres utasítás", Class="err")
+def ead(tx, res):
+    RES.clear()
+    RES <= H.PRE([res.rows.item(i).sql + ";\n" for i in range(res.rows.length)], Class="l")
+    NL = [ res.rows.item(i).name for i in range(res.rows.length)]
+    s = ""
+    for name in NL:
+        s += f"SELECT * FROM {name};"
+    D['TX'].value = s
+    f2()
+def list2(tx, res):
+    li = D['TX'].value.split(";")
+    tn = li[0].split(" ")[-1]
+    if res.rows.length > 0:
+        pre = H.PRE(Class="l")
+        keys = W.js.ent(res.rows.item(0))
+        for j in range(res.rows.length):
+            pre <= f"INSERT INTO {tn} VALUES("
+            pre <= ",".join([f'"{res.rows.item(j)[i]}"' for i in keys])
+            pre <= ");\n"
+        RES <= pre
+        RES <= H.BR()
+    tli = li[1:]
+    if len(tli) > 0:
+        D['TX'].value = ";".join(tli).strip()
+        Tim.set_timeout(tr2, 100)
+def tr2():
+    li = D['TX'].value.split(";")
+    ali = li[0].strip()
+    if len(ali) > 1:
+        db.transaction(lambda t: t.executeSql(ali, [], list2, err))
+def f2():
+    if len(D['TX'].value) > 1:
+        Tim.set_timeout(tr2, 100)
+def ea(e):
+    db.transaction(lambda t: t.executeSql(
+        'SELECT name, sql FROM sqlite_master WHERE TYPE IS "table" AND name != "__WebKitDatabaseInfoTable__"',[], ead, err))
 if "openDatabase" in W: 
     db = W.openDatabase('d', '1.0', 'x', 5*1024*1024)
     def g(e):
@@ -75,7 +111,7 @@ if "openDatabase" in W:
         ]
         MT.clear()
         MT <= [
-            H.PRE(li).bind("click", ins) for li in l
+            H.PRE(li, Class="b").bind("click", ins) for li in l
         ]
         BT.clear()
         BT <= CSVM
@@ -101,6 +137,7 @@ if "openDatabase" in W:
     D <= H.BUTTON("Reset").bind("click", g)
     D <= H.BUTTON("ListAll").bind("click", ldb)
     D <= BT
+    D <= H.BUTTON("ExportAll").bind("click", ea)
     RES = H.DIV(Class="res")
     D <= H.HR()
     D <= RES
