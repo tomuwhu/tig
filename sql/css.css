@@ -99,18 +99,11 @@ div.res {
     padding-top: 20px;
     padding-bottom: 20px;
 }
-span {
-    display: inline-block;
-    color: rgb(109, 57, 52);
-    width: 100%;
-    text-align: center;
-    background-color: rgb(189, 237, 237);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 13px;
-    box-shadow: 0px 0px 4px inset rgb(75, 160, 175);
-}
 div.mv {
-
+    background-color: rgb(136, 142, 115);
+    border: solid 1px rgb(66, 88, 66);
+    box-shadow: 1px 1px 4px inset black;
+    padding: 5px;
 }
 input {
     text-align: left;

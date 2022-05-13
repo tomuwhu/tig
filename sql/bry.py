@@ -1,4 +1,7 @@
 from browser import document as D, window as W, html as H, timer as Tim
+def ldb(e):
+    D['TX'].value ='SELECT name, sql FROM sqlite_master WHERE TYPE IS "table" AND name != "__WebKitDatabaseInfoTable__"'
+    f(1)
 def err(tx, err):
     RES.clear()
     RES <= H.DIV(f"Hiba {err.code}: {err.message}", Class="err")
@@ -28,9 +31,9 @@ def tr():
         db.transaction(lambda t: t.executeSql(ali, [], list, err))
 def f(e):
         RES.clear()
-        usz = 1
-        Tim.set_timeout(tr, 100)
-        if usz == 0:
+        if len(D['TX'].value) > 1:
+            Tim.set_timeout(tr, 100)
+        else:
             RES <= H.DIV("Üres utasítás", Class="err")
 if "openDatabase" in W: 
     db = W.openDatabase('d', '1.0', 'x', 5*1024*1024)
@@ -59,7 +62,6 @@ if "openDatabase" in W:
     def nm(e):
         l = [
             'CREATE TABLE pp (id PRIMARY KEY, name)',
-            'SELECT name, sql FROM sqlite_master WHERE TYPE IS "table" AND name != "__WebKitDatabaseInfoTable__"',
             'INSERT INTO pp VALUES(1, "Malacka")',
             'INSERT INTO pp VALUES(2, "Nyuszi")',
             'INSERT INTO pp VALUES(3, "Micimackó")',
@@ -83,7 +85,7 @@ if "openDatabase" in W:
         MT.clear()
         MT <= H.INPUT(placeholder = "Tábla név", id = "tn")
         MT <= H.INPUT(placeholder = "Sep", id = "sep", value=";")
-        MT <= H.BUTTON("Beolvas").bind("click", conv)
+        MT <= H.BUTTON("Konvertál").bind("click", conv)
         BT.clear()
         BT <= SM
         D["run"].style.visibility = "hidden"
@@ -97,6 +99,7 @@ if "openDatabase" in W:
     D <= H.HR()
     D <= H.BUTTON("Futtat", id="run").bind("click", f)
     D <= H.BUTTON("Reset").bind("click", g)
+    D <= H.BUTTON("ListAll").bind("click", ldb)
     D <= BT
     RES = H.DIV(Class="res")
     D <= H.HR()
