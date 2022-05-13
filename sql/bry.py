@@ -1,9 +1,7 @@
 from browser import document as D, window as W, html as H
 def err(tx, err):
-    RES.clear()
     if err.code > 1:
-        RES <= H.DIV(f"{err.code}. hiba", Class="err")
-        RES <= H.DIV(err.message, Class="err")
+        RES <= H.DIV(f"Hiba {err.code}: {err.message}", Class="err")
     else:
         RES <= H.DIV("Üres utasítás", Class="err")
 def list(tx, res):
@@ -22,7 +20,16 @@ def list(tx, res):
 if "openDatabase" in W: 
     db = W.openDatabase('d', '1.0', 'x', 5*1024*1024)
     def f(e):
-        db.transaction(lambda t: t.executeSql(D['TX'].value, [], list, err))
+        RES.clear()
+        usz = 0
+        for q in D['TX'].value.split(";"):
+            sql = q.strip()
+            if len(sql) > 1:
+                usz += 1
+                print(sql)
+                db.transaction(lambda t: t.executeSql(sql, [], list, err))
+        if usz == 0:
+            RES <= H.DIV("Üres utasítás", Class="err")
     def g(e):
         RES.clear()
         D['TX'].value = ""
