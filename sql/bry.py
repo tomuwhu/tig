@@ -1,11 +1,8 @@
-from browser import document as D, window as W, html as H
+from browser import document as D, window as W, html as H, timer as Tim
 def err(tx, err):
-    if err.code > 1:
-        RES <= H.DIV(f"Hiba {err.code}: {err.message}", Class="err")
-    else:
-        RES <= H.DIV("Üres utasítás", Class="err")
+    RES.clear()
+    RES <= H.DIV(f"Hiba {err.code}: {err.message}", Class="err")
 def list(tx, res):
-    D['TX'].value = ""
     RES.clear()
     if res.rows.length > 0:
         T = H.TABLE()
@@ -17,19 +14,26 @@ def list(tx, res):
         RES <= T
     else:
         RES <= H.DIV("Sikeres", Class="done")
-if "openDatabase" in W: 
-    db = W.openDatabase('d', '1.0', 'x', 5*1024*1024)
-    def f(e):
+    li = D['TX'].value.split(";")
+    tli = li[1:]
+    if len(tli) > 0:
+        D['TX'].value = ";".join(tli).strip()
+        Tim.set_timeout(tr, 100)
+    else:
+        D['TX'].value = ""
+def tr():
+    li = D['TX'].value.split(";")
+    ali = li[0].strip()
+    if len(ali) > 1:
+        db.transaction(lambda t: t.executeSql(ali, [], list, err))
+def f(e):
         RES.clear()
-        usz = 0
-        for q in D['TX'].value.split(";"):
-            sql = q.strip()
-            if len(sql) > 1:
-                usz += 1
-                print(sql)
-                db.transaction(lambda t: t.executeSql(sql, [], list, err))
+        usz = 1
+        Tim.set_timeout(tr, 100)
         if usz == 0:
             RES <= H.DIV("Üres utasítás", Class="err")
+if "openDatabase" in W: 
+    db = W.openDatabase('d', '1.0', 'x', 5*1024*1024)
     def g(e):
         RES.clear()
         D['TX'].value = ""
@@ -55,7 +59,7 @@ if "openDatabase" in W:
     def nm(e):
         l = [
             'CREATE TABLE pp (id PRIMARY KEY, name)',
-            'SELECT name, sql FROM sqlite_master WHERE TYPE IS "table" AND LENGTH(sql) < 100',
+            'SELECT name, sql FROM sqlite_master WHERE TYPE IS "table" AND name != "__WebKitDatabaseInfoTable__"',
             'INSERT INTO pp VALUES(1, "Malacka")',
             'INSERT INTO pp VALUES(2, "Nyuszi")',
             'INSERT INTO pp VALUES(3, "Micimackó")',
