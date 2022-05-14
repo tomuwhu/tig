@@ -8,7 +8,8 @@ h1 {
 }
 td, th {
     margin: 7px;
-    padding: 5px;
+    padding: 4px;
+    padding-left: 9px;
     border-radius: 5px;
     min-width: 50px;
     opacity: 0.95;
@@ -18,6 +19,7 @@ th {
     color: rgb(7, 51, 51);
     background: rgb(141, 174, 175);
     text-align: center;
+    padding: 4px;
 }
 td {
     box-shadow: 1px 1px 3px inset black;
@@ -64,13 +66,13 @@ div.err {
     border-radius: 9px;
 }
 table {
-    border-spacing: 5px;
+    border-spacing: 3px;
     margin: 2px auto;
     background-color: rgb(246, 209, 205);
     color:rgb(67, 36, 32);
     box-shadow: 1px 1px 3px inset black;
     border-radius: 9px;
-    padding: 8px;
+    padding: 2px;
     font-size: 13px;
 }
 pre.b {

@@ -12,7 +12,7 @@ def list(tx, res):
         keys = W.js.ent(res.rows.item(0))
         T <= H.TR(H.TH(i) for i in keys)
         T <= [H.TR([
-            H.TD(res.rows.item(j)[i] or H.SPAN("NULL"), Class = "n" if type(res.rows.item(j)[i] or 0) is int else "" ) for i in keys
+            H.TD(res.rows.item(j)[i] or H.SPAN("NULL"), Class = "n" if type(res.rows.item(j)[i] or 0) is int or type(res.rows.item(j)[i] or 0) is float else "" ) for i in keys
         ]) for j in range(res.rows.length)]
         RES <= T
     else:
@@ -44,6 +44,11 @@ def ead(tx, res):
         s += f"SELECT * FROM {name};"
     D['TX'].value = s
     f2()
+def sznsz(v):
+    if type(v) is int or type(v) is float:
+        return f'{v}'
+    else:    
+        return f'"{v}"'
 def list2(tx, res):
     li = D['TX'].value.split(";")
     tn = li[0].split(" ")[-1]
@@ -52,7 +57,7 @@ def list2(tx, res):
         keys = W.js.ent(res.rows.item(0))
         for j in range(res.rows.length):
             pre <= f"INSERT INTO {tn} VALUES("
-            pre <= ",".join([f'"{res.rows.item(j)[i]}"' for i in keys])
+            pre <= ",".join([sznsz(res.rows.item(j)[i]) for i in keys])
             pre <= ");\n"
         RES <= pre
         RES <= H.BR()
