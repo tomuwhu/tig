@@ -151,7 +151,7 @@ if "openDatabase" in W:
     BT = H.SPAN()
     D <= H.TEXTAREA(id="TX")
     D <= H.HR()
-    D <= H.BUTTON("Futtat", id="run").bind("click", f)
+    D <= H.BUTTON("SQL végrehajtása", id="run").bind("click", f)
     D <= H.BUTTON("<i>db</i> struktúra").bind("click", ldb)
     D <= H.BUTTON("Töröl").bind("click", g)
     D <= BT
