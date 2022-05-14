@@ -19,7 +19,7 @@ def list(tx, res):
                     (res.rows.item(j)[i] or "").isnumeric() else "" ) 
             for i in keys
         ]) for j in range(res.rows.length)]
-        RES <= T
+        RES <= H.PRE(T, Class="l l2")
     else:
         RES <= H.DIV("Sikeres", Class="done")
     li = D['TX'].value.split(";")
@@ -131,7 +131,7 @@ def nm(e):
     ]
     BT.clear()
     BT <= CSVM
-    D["run"].style.visibility = "visible"
+    D["run"].style.display = "inline-block"
 def cm(e):
     global LX
     MT.clear()
@@ -140,7 +140,7 @@ def cm(e):
     MT <= H.BUTTON("Konvertál").bind("click", conv)
     BT.clear()
     BT <= SM
-    D["run"].style.visibility = "hidden"
+    D["run"].style.display = "none"
 if "openDatabase" in W: 
     db = W.openDatabase('d', '1.0', 'x', 5*1024*1024)
     D <= H.H1("SQL Gyakorló")
