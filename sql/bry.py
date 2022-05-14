@@ -12,7 +12,12 @@ def list(tx, res):
         keys = W.js.ent(res.rows.item(0))
         T <= H.TR(H.TH(i) for i in keys)
         T <= [H.TR([
-            H.TD(res.rows.item(j)[i] or H.SPAN("NULL"), Class = "n" if type(res.rows.item(j)[i] or 0) is int or type(res.rows.item(j)[i] or 0) is float else "" ) for i in keys
+            H.TD(res.rows.item(j)[i] or H.SPAN("NULL"), 
+                Class = "n" if 
+                    type(res.rows.item(j)[i] or 0) is int or 
+                    type(res.rows.item(j)[i] or 0) is float or 
+                    (res.rows.item(j)[i] or "").isnumeric() else "" ) 
+            for i in keys
         ]) for j in range(res.rows.length)]
         RES <= T
     else:
@@ -44,8 +49,16 @@ def ead(tx, res):
         s += f"SELECT * FROM {name};"
     D['TX'].value = s
     f2()
+def is_number(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
 def sznsz(v):
     if type(v) is int or type(v) is float:
+        return f'{v}'
+    elif is_number(v):
         return f'{v}'
     else:    
         return f'"{v}"'
@@ -76,60 +89,60 @@ def f2():
 def ea(e):
     db.transaction(lambda t: t.executeSql(
         'SELECT name, sql FROM sqlite_master WHERE TYPE IS "table" AND name != "__WebKitDatabaseInfoTable__"',[], ead, err))
-if "openDatabase" in W: 
-    db = W.openDatabase('d', '1.0', 'x', 5*1024*1024)
-    def g(e):
+def g(e):
         RES.clear()
         D['TX'].value = ""
-    def ins(e):
-        D['TX'].value = e.target.text
+def ins(e):
+    D['TX'].value = e.target.text
+    RES.clear()
+def conv(e):
+    LX = D['TX'].value.splitlines()
+    if len(D['tn'].value) and len(LX)>1:
+        FL = LX[0].split(D['sep'].value)
+        DL = map(lambda x: x.split(D['sep'].value), LX[1:])
+        s = f"CREATE TABLE {D['tn'].value} (" + FL[0] + " PRIMARY KEY, "
+        s = f"CREATE TABLE {D['tn'].value} (" + FL[0] + " PRIMARY KEY, " + ", ".join(FL[1:]) + ");\n"
+        for i in DL:
+            s += f"INSERT INTO {D['tn'].value} VALUES(" + ", ".join(map(lambda x: sznsz(x), i)) + ");\n"
+        D['TX'].value = s
+        nm(1)
         RES.clear()
-    def conv(e):
-        LX = D['TX'].value.splitlines()
-        if len(D['tn'].value) and len(LX)>1:
-            FL = LX[0].split(D['sep'].value)
-            DL = map(lambda x: x.split(D['sep'].value), LX[1:])
-            s = f"CREATE TABLE {D['tn'].value} (" + FL[0] + " PRIMARY KEY, "
-            s = f"CREATE TABLE {D['tn'].value} (" + FL[0] + " PRIMARY KEY, " + ", ".join(FL[1:]) + ");\n"
-            for i in DL:
-                s += f"INSERT INTO {D['tn'].value} VALUES(" + ", ".join(map(lambda x: f'"{x}"', i)) + ");\n"
-            D['TX'].value = s
-            nm(1)
-            RES.clear()
-            RES <= H.DIV("Sikeres beolvasás", Class="done")
-        else:
-            RES.clear()
-            RES <= H.DIV("Rövid táblanév vagy hibás input", Class="err")
-    def nm(e):
-        l = [
-            'CREATE TABLE pp (id PRIMARY KEY, name)',
-            'INSERT INTO pp VALUES(1, "Malacka")',
-            'INSERT INTO pp VALUES(2, "Nyuszi")',
-            'INSERT INTO pp VALUES(3, "Micimackó")',
-            'UPDATE pp SET name = "Tigris" WHERE id = 3',
-            'SELECT * FROM pp ORDER BY name',
-            'ALTER TABLE pp ADD age',
-            'SELECT SUM(id) as Összeg FROM pp',
-            'SELECT * FROM pp WHERE id IN (1, 2, 4) ORDER BY name',
-            'DELETE FROM pp',
-            'DROP TABLE pp',
-        ]
-        MT.clear()
-        MT <= [
-            H.PRE(li, Class="b").bind("click", ins) for li in l
-        ]
-        BT.clear()
-        BT <= CSVM
-        D["run"].style.visibility = "visible"
-    def cm(e):
-        global LX
-        MT.clear()
-        MT <= H.INPUT(placeholder = "Tábla név", id = "tn")
-        MT <= H.INPUT(placeholder = "Sep", id = "sep", value=";")
-        MT <= H.BUTTON("Konvertál").bind("click", conv)
-        BT.clear()
-        BT <= SM
-        D["run"].style.visibility = "hidden"
+        RES <= H.DIV("Sikeres beolvasás", Class="done")
+    else:
+        RES.clear()
+        RES <= H.DIV("Rövid táblanév vagy hibás input", Class="err")
+def nm(e):
+    l = [
+        'CREATE TABLE pp (id PRIMARY KEY, name)',
+        'INSERT INTO pp VALUES(1, "Malacka")',
+        'INSERT INTO pp VALUES(2, "Nyuszi")',
+        'INSERT INTO pp VALUES(3, "Micimackó")',
+        'UPDATE pp SET name = "Tigris" WHERE id = 3',
+        'SELECT * FROM pp ORDER BY name',
+        'ALTER TABLE pp ADD age',
+        'SELECT SUM(id) as Összeg FROM pp',
+        'SELECT * FROM pp WHERE id IN (1, 2, 4) ORDER BY name',
+        'DELETE FROM pp',
+        'DROP TABLE pp',
+    ]
+    MT.clear()
+    MT <= [
+        H.PRE(li, Class="b").bind("click", ins) for li in l
+    ]
+    BT.clear()
+    BT <= CSVM
+    D["run"].style.visibility = "visible"
+def cm(e):
+    global LX
+    MT.clear()
+    MT <= H.INPUT(placeholder = "Tábla név", id = "tn")
+    MT <= H.INPUT(placeholder = "Sep", id = "sep", value=";")
+    MT <= H.BUTTON("Konvertál").bind("click", conv)
+    BT.clear()
+    BT <= SM
+    D["run"].style.visibility = "hidden"
+if "openDatabase" in W: 
+    db = W.openDatabase('d', '1.0', 'x', 5*1024*1024)
     D <= H.H1("SQL Playground")
     MT = H.DIV(Class="mv")
     D <= MT
