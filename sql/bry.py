@@ -66,7 +66,7 @@ def list2(tx, res):
     li = D['TX'].value.split(";")
     tn = li[0].split(" ")[-1]
     if res.rows.length > 0:
-        pre = H.PRE(Class="l")
+        pre = H.PRE(Class="l l2")
         keys = W.js.ent(res.rows.item(0))
         for j in range(res.rows.length):
             pre <= f"INSERT INTO {tn} VALUES("
@@ -143,7 +143,7 @@ def cm(e):
     D["run"].style.visibility = "hidden"
 if "openDatabase" in W: 
     db = W.openDatabase('d', '1.0', 'x', 5*1024*1024)
-    D <= H.H1("SQL Playground")
+    D <= H.H1("SQL Gyakorló")
     MT = H.DIV(Class="mv")
     D <= MT
     SM = H.BUTTON("SQL mód").bind("click", nm)
