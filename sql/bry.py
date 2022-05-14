@@ -21,7 +21,7 @@ def list(tx, res):
     tli = li[1:]
     if len(tli) > 0:
         D['TX'].value = ";".join(tli).strip()
-        Tim.set_timeout(tr, 100)
+        Tim.set_timeout(tr, 1)
     else:
         D['TX'].value = ""
 def tr():
@@ -32,7 +32,7 @@ def tr():
 def f(e):
     RES.clear()
     if len(D['TX'].value) > 1:
-        Tim.set_timeout(tr, 100)
+        Tim.set_timeout(tr, 1)
     else:
         RES <= H.DIV("Üres utasítás", Class="err")
 def ead(tx, res):
