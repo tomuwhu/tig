@@ -17,10 +17,17 @@
     <div id="tb" onclick="f()">Teszt</div>
     <div id="te" onclick="ef()">Teszt vége</div>
 </div>
+<pre id="c"></pre>
 <div id="target"></div>
 <script src="ace/ace.js"></script>
 <script src="ace/ext-language_tools.js"></script>
 <script>
+console.stdlog = console.log.bind(console);
+console.log = function(){
+    document.getElementById("c").style.display="block"
+    document.getElementById("c").innerHTML += Array.from(arguments).join("")
+    console.stdlog.apply(console, arguments);
+}
 function load1() {
     file = window.location.search.substr(1).split('&')[0]+"/logic.py"
     var xhttp = new XMLHttpRequest();
@@ -74,8 +81,10 @@ editor2.setValue(`h1 {
 text-shadow: 1px 1px 3px black;
 text-align: center;
 }`)
-load1()
-load2()
+if (window.location.search.substr(1)) {
+    load1()
+    load2()
+}
 setTimeout( v=> {
         document.getElementsByClassName("ace_marker-layer")[0].innerHTML=""
 }, 500 )
@@ -112,6 +121,8 @@ function ef() {
     document.querySelectorAll(".ace_print-margin").forEach( v => {
         { v.style.visibility= "visible" }
     })
+    document.getElementById("c").innerHTML = ""
+    document.getElementById("c").style.display="none"
 }
 </script>
 <div id="lasttag"></div>
