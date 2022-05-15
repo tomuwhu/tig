@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="author" content="Dr. Németh Tamás">
+  <meta name="keywords" content="Brython IDE Online Editor">
   <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
-  <title>ACE Autocompletion demo</title>
+  <title>Brython IDE</title>
   <link rel="stylesheet" href="brygyak.css">
 </head>
 <body>
@@ -57,7 +59,7 @@ D <= H.H1("Hello, World!")\n`)
         document.getElementById('target').innerHTML= s.replaceAll('&lt','<')
         document.getElementById('editor1').style.visibility = "hidden"
         document.getElementById('editor2').style.visibility = "hidden"
-        document.getElementById('BBIDE').style.visibility = "hidden"
+        document.getElementById('BBIDE').style.display = "none"
         document.getElementById('te').style.display = "inline-block"
         document.getElementById('tb').style.display = "none"
         document.querySelectorAll(".ace_print-margin").forEach( v => {
@@ -69,7 +71,7 @@ D <= H.H1("Hello, World!")\n`)
         document.getElementById('target').innerHTML=""
         document.getElementById('editor1').style.visibility = "visible"
         document.getElementById('editor2').style.visibility = "visible"
-        document.getElementById('BBIDE').style.visibility = "visible"
+        document.getElementById('BBIDE').style.display = "block"
         document.getElementById('tb').style.display = "inline-block"
         document.getElementById('te').style.display = "none"
         while (document.getElementById('lasttag').nextElementSibling) {
