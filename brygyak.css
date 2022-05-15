@@ -1,0 +1,68 @@
+body {
+    overflow: hidden;
+    background-color: #1b334f;
+    margin: 0;
+}
+#editor1 {
+    margin: 10px;
+    box-shadow: 1px 1px 6px black;
+    border: solid 2px rgb(104, 9, 9);
+    position: absolute;
+    top: 30px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 48%;
+    height: 80%;
+}
+#editor2 {
+    margin: 10px;
+    box-shadow: 1px 1px 6px black;
+    border: solid 2px rgb(104, 9, 9);
+    position: absolute;
+    top: 30px;
+    bottom: 0;
+    left: 49%;
+    right: 0;
+    width: 48%;
+    height: 80%;
+}
+h1#BBIDE {
+    margin: 3px;
+    padding: 0px;
+    text-align: center;
+    color: rgb(255, 238, 238);
+    font-size: 27px;
+    text-shadow: 0px 0px 1px red;
+}
+pre {
+    display: inline-block;
+}
+div#teszt {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+div#tb, div#te {
+    width: 90px;
+    padding: 6px;
+    color:antiquewhite;
+    text-shadow: 1px 1px 3px black;
+    border-radius: 3px;
+    background-color: #376396;
+    text-align: center;
+    box-shadow: 1px 1px 3px black;
+    cursor:pointer;
+    display: inline-block;
+    user-select: none;
+}
+div#tb:hover, div#te:hover {
+    background-color: #226c55;
+}
+div#tb:active, div#te:active {
+    background-color: #6c2262;
+}
+div#te {
+    display: none;
+}

@@ -1,0 +1,15 @@
+body {
+    overflow: hidden;
+    background-color: #1b334f;
+    margin: 0;
+}
+#editor {
+    margin: 10px;
+    box-shadow: 1px 1px 3px black;
+    border: solid 2px rgb(104, 9, 9);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
