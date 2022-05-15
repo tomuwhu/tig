@@ -101,13 +101,29 @@ def g(e):
 def ins(e):
     D['TX'].value = e.target.text
     RES.clear()
+def insma(e):
+    D['TX'].value ="""DROP TABLE IF EXISTS pp ;
+CREATE TABLE pp (id PRIMARY KEY, name, age);
+INSERT INTO pp VALUES(1, "Malacka", 7);
+INSERT INTO pp VALUES(2, "Tigris", 2);
+INSERT INTO pp VALUES(3, "Nyuszi", 5);
+INSERT INTO pp VALUES(4, "Füles", 6);
+INSERT INTO pp VALUES(5, "Zsebibaba", 1);
+INSERT INTO pp VALUES(6, "Kanga", 7);
+INSERT INTO pp VALUES(7, "Bagoly", 5);
+INSERT INTO pp VALUES(8, "Róbert Gida", 14);"""
+    RES.clear()
+    f(1)
 def conv(e):
     LX = D['TX'].value.splitlines()
     if len(D['tn'].value) and len(LX)>1:
         FL = LX[0].split(D['sep'].value)
         DL = map(lambda x: x.split(D['sep'].value), LX[1:])
-        s = f"CREATE TABLE {D['tn'].value} (" + FL[0] + " PRIMARY KEY, "
-        s = f"CREATE TABLE {D['tn'].value} (" + FL[0] + " PRIMARY KEY, " + ", ".join(FL[1:]) + ");\n"
+        s = f"CREATE TABLE {D['tn'].value} (" + FL[0] + " PRIMARY KEY"
+        if len(FL[1:]):
+            s += ", " + ", ".join(FL[1:]) + ");\n"
+        else:
+            s += ");\n"
         for i in DL:
             s += f"INSERT INTO {D['tn'].value} VALUES(" + ", ".join(map(lambda x: sznsz(x), i)) + ");\n"
         D['TX'].value = s
@@ -133,6 +149,7 @@ def nm(e):
     MT <= [
         H.PRE(li, Class="b").bind("click", ins) for li in l
     ]
+    MT <= H.PRE("Százholdas Pagony mintaadatbázis betöltése", Class="b b2").bind("click", insma)
     BT.clear()
     BT <= CSVM
     D["run"].style.display = "inline-block"
@@ -150,16 +167,16 @@ if "openDatabase" in W:
     D <= H.H1("SQL Gyakorló")
     MT = H.DIV(Class="mv")
     D <= MT
-    SM = H.BUTTON("SQL mód").bind("click", nm)
-    CSVM = H.BUTTON("CSV mód").bind("click", cm)
+    SM = H.BUTTON("SQL mód", Class="cvm").bind("click", nm)
+    CSVM = H.BUTTON("CSV mód", Class="cvm").bind("click", cm)
     BT = H.SPAN()
     D <= H.TEXTAREA(id="TX")
     D <= H.HR()
     D <= H.BUTTON("SQL végrehajtása", id="run").bind("click", f)
     D <= H.BUTTON("<i>db</i> struktúra lekérdezése").bind("click", ldb)
     D <= H.BUTTON("Töröl").bind("click", g)
-    D <= BT
     D <= H.BUTTON("<i>db</i> => SQL").bind("click", ea)
+    D <= BT
     RES = H.DIV(Class="res")
     D <= H.HR()
     D <= RES
