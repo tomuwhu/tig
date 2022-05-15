@@ -21,66 +21,98 @@
 <script src="ace/ace.js"></script>
 <script src="ace/ext-language_tools.js"></script>
 <script>
-    ace.require("ace/ext/language_tools");
-    var editor1 = ace.edit("editor1");
-    editor1.session.setMode("ace/mode/python");
-    editor1.setTheme("ace/theme/solarized_dark");
-    editor1.setOptions({
-        enableBasicAutocompletion: true,
-        enableSnippets: true,
-        enableLiveAutocompletion: false
-    });
-    editor1.setValue(`from browser import document as D, html as H
-D <= H.H1("Hello, World!")\n`)
-    var editor2 = ace.edit("editor2");
-    editor2.session.setMode("ace/mode/css");
-    editor2.setTheme("ace/theme/tomorrow_night");
-    editor2.setOptions({
-        enableBasicAutocompletion: true,
-        enableSnippets: true,
-        enableLiveAutocompletion: false
-    });
-    editor2.setValue(`h1 {
-   text-shadow: 1px 1px 3px black;
-   text-align: center;
-}`)
-    setTimeout( v=> {
-          document.getElementsByClassName("ace_marker-layer")[0].innerHTML=""
-    }, 500 )
-    setTimeout( v=> {
-          document.getElementsByClassName("ace_marker-layer")[2].innerHTML=""
-    }, 500 )
-    function f() {
-        s = '<style>\nbody {\n    background: white;\n  height: 100%;\n   width: 100%;\n}\n' + editor2.getValue() +
-            '</style>\n'+
-            '&ltscript type="text/python">\n'
-            + editor1.getValue() + '\n' +
-            '&lt/script>\n'
-        document.getElementById('target').innerHTML= s.replaceAll('&lt','<')
-        document.getElementById('editor1').style.visibility = "hidden"
-        document.getElementById('editor2').style.visibility = "hidden"
-        document.getElementById('BBIDE').style.display = "none"
-        document.getElementById('te').style.display = "inline-block"
-        document.getElementById('tb').style.display = "none"
-        document.querySelectorAll(".ace_print-margin").forEach( v => {
-            { v.style.visibility= "hidden" }
-        })
-        brython()
-    }
-    function ef() {
-        document.getElementById('target').innerHTML=""
-        document.getElementById('editor1').style.visibility = "visible"
-        document.getElementById('editor2').style.visibility = "visible"
-        document.getElementById('BBIDE').style.display = "block"
-        document.getElementById('tb').style.display = "inline-block"
-        document.getElementById('te').style.display = "none"
-        while (document.getElementById('lasttag').nextElementSibling) {
-            document.getElementById('lasttag').nextElementSibling.remove()
+function load1() {
+    file = window.location.search.substr(1).split('&')[0]+"/logic.py"
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            editor1.setValue( xhttp.responseText )
         }
-        document.querySelectorAll(".ace_print-margin").forEach( v => {
-            { v.style.visibility= "visible" }
-        })
+    };
+    xhttp.open("GET", "./"+file, true);
+    xhttp.send();
+    setTimeout( v=> {
+        document.getElementsByClassName("ace_marker-layer")[0].innerHTML=""
+        document.getElementsByClassName("ace_marker-layer")[0].focus()
+    }, 1000 )
+}
+function load2() {
+    file = window.location.search.substr(1).split('&')[0]+"/design.css"
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            editor2.setValue( xhttp.responseText )
+        }
+    };
+    xhttp.open("GET", "./"+file, true);
+    xhttp.send();
+    setTimeout( v=> {
+        document.getElementsByClassName("ace_marker-layer")[0].innerHTML=""
+        document.getElementsByClassName("ace_marker-layer")[0].focus()
+    }, 1000 )
+}
+ace.require("ace/ext/language_tools");
+var editor1 = ace.edit("editor1");
+editor1.session.setMode("ace/mode/python");
+editor1.setTheme("ace/theme/solarized_dark");
+editor1.setOptions({
+    enableBasicAutocompletion: true,
+    enableSnippets: true,
+    enableLiveAutocompletion: false
+});
+editor1.setValue(`from browser import document as D, html as H
+D <= H.H1("Hello, World!")\n`)
+var editor2 = ace.edit("editor2");
+editor2.session.setMode("ace/mode/css");
+editor2.setTheme("ace/theme/tomorrow_night");
+editor2.setOptions({
+    enableBasicAutocompletion: true,
+    enableSnippets: true,
+    enableLiveAutocompletion: false
+});
+editor2.setValue(`h1 {
+text-shadow: 1px 1px 3px black;
+text-align: center;
+}`)
+load1()
+load2()
+setTimeout( v=> {
+        document.getElementsByClassName("ace_marker-layer")[0].innerHTML=""
+}, 500 )
+setTimeout( v=> {
+        document.getElementsByClassName("ace_marker-layer")[2].innerHTML=""
+}, 500 )
+function f() {
+    s = '<style>\nbody {\n    background: white;\n  height: 100%;\n   width: 100%;\n}\n' + editor2.getValue() +
+        '</style>\n'+
+        '&ltscript type="text/python">\n'
+        + editor1.getValue() + '\n' +
+        '&lt/script>\n'
+    document.getElementById('target').innerHTML= s.replaceAll('&lt','<')
+    document.getElementById('editor1').style.visibility = "hidden"
+    document.getElementById('editor2').style.visibility = "hidden"
+    document.getElementById('BBIDE').style.display = "none"
+    document.getElementById('te').style.display = "inline-block"
+    document.getElementById('tb').style.display = "none"
+    document.querySelectorAll(".ace_print-margin").forEach( v => {
+        { v.style.visibility= "hidden" }
+    })
+    brython()
+}
+function ef() {
+    document.getElementById('target').innerHTML=""
+    document.getElementById('editor1').style.visibility = "visible"
+    document.getElementById('editor2').style.visibility = "visible"
+    document.getElementById('BBIDE').style.display = "block"
+    document.getElementById('tb').style.display = "inline-block"
+    document.getElementById('te').style.display = "none"
+    while (document.getElementById('lasttag').nextElementSibling) {
+        document.getElementById('lasttag').nextElementSibling.remove()
     }
+    document.querySelectorAll(".ace_print-margin").forEach( v => {
+        { v.style.visibility= "visible" }
+    })
+}
 </script>
 <div id="lasttag"></div>
 </body>

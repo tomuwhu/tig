@@ -88,9 +88,11 @@ function load() {
                     document.getElementById("code").innerHTML = ""
                     document.getElementById("a").setAttribute('href', l.join("/")+"/index.html")
                     document.getElementById("a2").setAttribute('href', l.join("/")+"/source.zip")
+                    document.getElementById("a3").setAttribute('href', "brygyak.html?" + l.join("/"))
                     document.getElementById("c1").style.display = "none"
                     document.getElementById("tcode").style.display = "table"
                     document.getElementById("a2").style.display = "inline"
+                    document.getElementById("a3").style.display = "inline"
                     lo2(l.join("/")+"/design.css")
                 } else {
                     document.getElementById("code").innerHTML = q.trim()
@@ -104,10 +106,7 @@ function load() {
                 }
                 qq = document.getElementById("sel").options[sel.selectedIndex].text.slice(2)
                 if (qq[0]+qq[1] == "🏠") qq = qq.slice(2)
-                document.getElementById("a").innerHTML =
-                  "<span class='pn'>" + qq + "</span> példaprogram kipróbálása"
-                document.getElementById("a2").innerHTML =
-                  "<span class='pn'>" + qq + "</span> példaprogram letöltése <span class='pn'>(source.zip)</span>"
+                document.getElementById("pc").innerHTML = "<span class='pn'>" + qq + "</span> példaprogram"
         }
     };
     xhttp.open("GET", "./"+file, true);
@@ -187,8 +186,10 @@ function load() {
     </h1>
     <br>
     <div class="d" style="text-align: center;">
-        <a id="a" href="Brython/brython.html" class="a" target="_blank"></a>
-        <a id="a2" class="a" style="display: none;">Letöltés&nbsp;(zip)</a>
+        <span id="pc"></span>
+        <a id="a" href="Brython/brython.html" class="a" target="_blank">kipróbálás</a>
+        <a id="a2" class="a" style="display: none;">letöltés <span class='pn'>(source.zip)</span></a>
+        <a id="a3" class="a" style="display: none;" target="ide">szerkesztés helyben</a>
     </div>
     <pre id="c1"><code id="code" class="language-html"></code></pre>
     <table id="tcode">
@@ -311,9 +312,9 @@ function load() {
     text-shadow: 1px 1px 3px black;
     display:inline-block;
     background-color: rgb(74, 105, 135);
-    padding: 5px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     border-radius: 5px;
     box-shadow: 1px 1px 3px inset rgb(0, 0, 0);
   }
@@ -323,5 +324,12 @@ function load() {
     font-size: 16px;
     box-shadow: 1px 1px 6px white;
     border: solid 2px rgb(119, 12, 114);
+  }
+  span#pc {
+    padding: 9px;
+    border: solid 1px brown;
+    background-color: rgb(28, 45, 39);
+    border-radius: 9px;
+    box-shadow: 1px 1px 4px inset black;
   }
 </style>
