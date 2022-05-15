@@ -28,7 +28,8 @@
         enableSnippets: true,
         enableLiveAutocompletion: false
     });
-    editor1.setValue( 'from browser import document as D, html as H\nD <= H.H1("Hello, World!")\n' )
+    editor1.setValue(`from browser import document as D, html as H
+D <= H.H1("Hello, World!")\n`)
     var editor2 = ace.edit("editor2");
     editor2.session.setMode("ace/mode/css");
     editor2.setTheme("ace/theme/tomorrow_night");
@@ -37,7 +38,10 @@
         enableSnippets: true,
         enableLiveAutocompletion: false
     });
-    editor2.setValue( 'h1 {\n   text-shadow: 1px 1px 3px black;\n   text-align: center;\n}' )
+    editor2.setValue(`h1 {
+   text-shadow: 1px 1px 3px black;
+   text-align: center;
+}`)
     setTimeout( v=> {
           document.getElementsByClassName("ace_marker-layer")[0].innerHTML=""
     }, 500 )
@@ -45,7 +49,7 @@
           document.getElementsByClassName("ace_marker-layer")[2].innerHTML=""
     }, 500 )
     function f() {
-        s = '<style>\nbody {\n    background: white;\n}\n' + editor2.getValue() +
+        s = '<style>\nbody {\n    background: white;\n  height: 100%;\n   width: 100%;\n}\n' + editor2.getValue() +
             '</style>\n'+
             '&ltscript type="text/python">\n'
             + editor1.getValue() + '\n' +
@@ -56,6 +60,9 @@
         document.getElementById('BBIDE').style.visibility = "hidden"
         document.getElementById('te').style.display = "inline-block"
         document.getElementById('tb').style.display = "none"
+        document.querySelectorAll(".ace_print-margin").forEach( v => {
+            { v.style.visibility= "hidden" }
+        })
         brython()
     }
     function ef() {
@@ -68,6 +75,9 @@
         while (document.getElementById('lasttag').nextElementSibling) {
             document.getElementById('lasttag').nextElementSibling.remove()
         }
+        document.querySelectorAll(".ace_print-margin").forEach( v => {
+            { v.style.visibility= "visible" }
+        })
     }
 </script>
 <div id="lasttag"></div>
