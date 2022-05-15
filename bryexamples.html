@@ -188,10 +188,10 @@ function load() {
     <br>
     <div class="d" style="text-align: center;">
         <span id="pc"></span>
-        <a id="a" href="Brython/brython.html" class="a" target="_blank">kipróbálás</a>
-        <a id="a2" class="a" style="display: none;">letöltés <span class='pn'>(source.zip)</span></a>
-        <a id="a3" class="a" style="display: none;" target="ide">szerkesztés helyben</a>
-    </div>
+        <a id="a" href="Brython/brython.html" class="a" target="_blank">futtat</a>
+        <a id="a3" class="a pa" style="display: none;" target="ide">szerkeszt</a>
+        <a id="a2" class="a" style="display: none;">letölt</a>
+      </div>
     <pre id="c1"><code id="code" class="language-html"></code></pre>
     <table id="tcode">
       <tr>
@@ -315,9 +315,10 @@ function load() {
     background-color: rgb(74, 105, 135);
     padding: 6px;
     padding-top: 3px;
-    padding-bottom: 3px;
+    padding-bottom: 1px;
     border-radius: 5px;
     box-shadow: 1px 1px 3px inset rgb(0, 0, 0);
+    font-family: 'Indie Flower', cursive;
   }
   select {
     font-family: 'Indie Flower', cursive;
@@ -336,5 +337,9 @@ function load() {
   a.a {
     font-family: 'Indie Flower', cursive;
     font-size: 15px;
+    border: solid 3px rgb(167, 98, 98);
+  }
+  a.pa {
+    background-color: rgb(28, 58, 58);
   }
 </style>
