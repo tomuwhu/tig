@@ -93,18 +93,23 @@ pre.b:hover {
 }
 button {
     cursor: pointer;
-    color:rgb(10, 70, 70);
+    color:rgb(31, 117, 117);
     background-color: rgb(222, 237, 172);
     user-select: none;
     margin: 3px;
-    border: solid 1px rgb(50, 50, 108);
+    border: solid 1px rgb(111, 161, 173);
     box-shadow: 1px 1px 3px black;
+}
+button#run {
+    color:rgb(10, 70, 70);
+    background-color: rgb(149, 193, 128);
+    border: solid 1px rgb(50, 50, 108);
 }
 button:hover {
     background-color: rgb(221, 170, 141);
 }
 button:active {
-    background-color: rgb(178, 221, 141);
+    background-color: rgb(178, 207, 152);
     box-shadow: 0px 0px 3px rgb(0, 0, 0);
 }
 div.res {
