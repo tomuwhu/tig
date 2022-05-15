@@ -76,7 +76,7 @@ def list2(tx, res):
         keys = W.js.ent(res.rows.item(0))
         for j in range(res.rows.length):
             pre <= f"INSERT INTO {tn} VALUES("
-            pre <= ",".join([sznsz(res.rows.item(j)[i] or "NULL") for i in keys])
+            pre <= ", ".join([sznsz(res.rows.item(j)[i] or "NULL") for i in keys])
             pre <= ");\n"
         RES <= pre
         RES <= H.BR()
