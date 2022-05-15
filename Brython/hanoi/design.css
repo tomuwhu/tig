@@ -1,13 +1,13 @@
-div {
+div.x1 {
     text-align: center;
     text-shadow: 1px 1px 3px grey;
-    font-size: 40px;
+    font-size: 25px;
     font-weight: bold;
     color:rgb(43, 135, 151);
     display: block;
     padding: 15px;
     padding-top: 0px;
-    padding-bottom: 3px;
+    padding-bottom: 0px;
     background-color: rgb(210, 243, 232);
     margin: 10px;
     border-radius: 10px;

@@ -1,4 +1,4 @@
-from browser import document as D, html as H, timer as T
+from browser import document as D, html as H
 
 def h(n, i, j):
     t = ["⓵","⓶","⓷"]
@@ -10,6 +10,4 @@ def h(n, i, j):
 l = [["❴", H.SPAN(i), "➺", H.SPAN(j), "❵"] for i, j in h(6, 0, 1)]
 l.reverse()
 
-def f(): D <= H.DIV(l.pop())
-
-T.set_interval(f, 1000)
+D <= [H.DIV(x, Class="x1") for x in l]
