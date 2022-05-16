@@ -25,7 +25,7 @@
 console.stdlog = console.log.bind(console);
 console.log = function(){
     document.getElementById("c").style.display="block"
-    document.getElementById("c").innerHTML += Array.from(arguments).join("")
+    document.getElementById("c").innerHTML += Array.from(arguments).join("").replaceAll("\n","<br>")
     console.stdlog.apply(console, arguments);
 }
 function load1() {

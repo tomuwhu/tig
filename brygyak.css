@@ -75,7 +75,7 @@ div#te {
     background-color: #1b334f;
     box-shadow: 1px 1px 5px inset black;
     opacity: 0.7;
-    display: block;
+    width: 100%;
     color:rgb(255, 245, 131);
     text-shadow: 1px 1px 4px black;
     display: none;
