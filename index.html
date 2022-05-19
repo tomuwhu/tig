@@ -2,7 +2,10 @@
 <meta charset="utf-8">
 <title>Digitális kultúra</title>
 <!-- Global site tag (gtag.js) - Google Analytics -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159037546-1"></script>
+
+<meta name="google-signin-client_id" content="AIzaSyCQ8YYtSWBxI32QwKYBwkwN8OS_bCTO1nM.es6.eu">
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -426,9 +429,17 @@ body {
        <img style="background-color: rgb(242, 242, 229);border-radius: 25px;"
        src="github.png" alt="github"
     ></a>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
 </div>
 </body>
 <style>
+    div.g-signin2 {
+        margin: auto;
+        box-shadow: 1px 1px 3px black;
+        background-color: white;
+        width: 140px;
+        cursor: pointer;
+    }
     div.ww {
         display: none;
     }
