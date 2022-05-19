@@ -3,22 +3,11 @@
 <title>Digitális kultúra</title>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script src="https://apis.google.com/js/platform.js" async defer></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-159037546-1"></script>
-
-<meta name="google-signin-client_id" content="AIzaSyCQ8YYtSWBxI32QwKYBwkwN8OS_bCTO1nM.es6.eu">
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'UA-159037546-1');
-
-function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-}
 </script>
 <script src="hljs/markdown.min.js"></script>
 <script>
@@ -437,17 +426,9 @@ body {
        <img style="background-color: rgb(242, 242, 229);border-radius: 25px;"
        src="github.png" alt="github"
     ></a>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
 </div>
 </body>
 <style>
-    div.g-signin2 {
-        margin: auto;
-        box-shadow: 1px 1px 3px black;
-        background-color: white;
-        width: 140px;
-        cursor: pointer;
-    }
     div.ww {
         display: none;
     }
