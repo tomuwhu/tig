@@ -18,9 +18,10 @@ class Golyo:
             self.vx = -self.vx * flexibility / 100
             self.xp += self.vx
         if self.yp + self.r  > 690:
+            if abs(self.vy) < 0.2: self.vy = 0
             self.vy = -self.vy * flexibility / 100
             self.vx = self.vx * flexibility / 100
-            self.yp += self.vy
+            self.yp += self.vy / 2
         self.Obj.attrs["cx"] = self.xp
         self.Obj.attrs["cy"] = self.yp
 SVG <= [Golyo(y = R(150, 500), r = R(10,40), vx = R(10,40)/40, vy = R(10,40)/40,
