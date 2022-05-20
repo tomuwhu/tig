@@ -19,6 +19,7 @@ class Golyo:
             self.xp += self.vx
         if self.yp + self.r  > 690:
             self.vy = -self.vy * flexibility / 100
+            self.vx = self.vx * flexibility / 100
             self.yp += self.vy
         self.Obj.attrs["cx"] = self.xp
         self.Obj.attrs["cy"] = self.yp
