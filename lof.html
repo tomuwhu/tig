@@ -1,0 +1,103 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    sid = Math.round(Math.random()*1000000000)
+    if (localStorage.getItem('sid')) {
+        sid = localStorage.getItem('sid')
+    } else {
+        localStorage.setItem('sid', sid)
+    }
+    xhttp = new XMLHttpRequest()
+    xhttp.onload = () => {
+        v = JSON.parse(xhttp.responseText)
+        console.log(v);
+        if (v[1]) {
+            document.getElementById("content").innerHTML = `
+                Bejelentkezve:
+            ` + v[1].v_name + " " + v[1].k_name + `<br><br>
+                <button onclick="lo()">Kijelentkezés</button>
+            `
+        } else {
+            document.getElementById("content").innerHTML = `
+                <h2>Bejelentkezés</h2>
+                <div class="lof">
+                    <div class="la">
+                    <input placeholder="gmail cím" type="text" id="un">@gmail.com
+                    </div>
+                    <div class="la">
+                    <input placeholder="jelszó" type="password" id="pw">
+                    </div>
+                    <div class="lb">
+                    <button onclick="f()">Login</button>
+                    </div>
+                </div>
+            `
+        }
+    }
+    function lo() {
+        xhttp.open("POST", "http://inf.u-szeged.hu/~tnemeth/login.php")
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+        sid = Math.round(Math.random()*1000000000)
+        localStorage.setItem('sid', sid)
+        console.log(sid);
+        xhttp.send(`sid=${sid}`)
+    }
+    function f() {
+        xhttp.open("POST", "http://inf.u-szeged.hu/~tnemeth/login.php")
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+        if (document.getElementById('un')) {
+            ss = [
+                `sid=${sid}`,
+                `ln=${document.getElementById('un').value}`,
+                `pw=${CryptoJS.
+                        SHA512(
+                            document.getElementById('pw').value
+                        ).words.join('')}`
+            ].join("&")
+            xhttp.send(ss)
+        } else xhttp.send(`sid=${sid}`)
+    }
+    f()
+</script>
+<h1>Intranet</h1>
+<div id="content"></div>
+<style>
+* {
+    color:rgb(3, 31, 31);
+    text-shadow: 1px 1px 3px gray;
+}
+body {
+    background-color: antiquewhite;
+}
+#content {
+    text-align: center;
+}
+.lof {
+    display: inline-block;
+    margin: auto;
+    padding: 7px;
+    margin: 6px;
+    background-color: rgb(195, 222, 175);
+    box-shadow: 1px 1px 3px inset black;
+}
+h1 {
+    text-align: center;
+    text-shadow: 1px 1px 4px gray;
+    color: rgb(9, 50, 36);
+}
+.la {
+    display: block;
+    text-align: left;
+    margin: auto;
+    padding: 7px;
+    margin: 6px;
+    background-color: rgb(214, 214, 180);
+    box-shadow: 1px 1px 3px inset black;
+}
+.lb {
+    text-align: right;
+    padding: 7px;
+    margin: 6px;
+    background-color: rgb(175, 222, 222);
+    box-shadow: 1px 1px 3px inset black;
+}
+</style>
