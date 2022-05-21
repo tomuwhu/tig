@@ -1,6 +1,8 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
- 
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage{graphicx}
+\graphicspath{ {./pic/} }
 \title{Sections and Chapters}
 \author{Gubert Farnsworth}
 \date{ }
@@ -8,18 +10,28 @@
 \begin{document}
   
 \maketitle
-  
+
 \tableofcontents
 
 \section{Introduction}
    
 This is the first section.
-      
+
+\subsection{Introduction}
+Árvíztűrő tükörfúrógép.
+
 Lorem  ipsum  dolor  sit  amet,  consectetuer  adipiscing  
 elit.   Etiam  lobortisfacilisis sem.  Nullam nec mi et 
 neque pharetra sollicitudin.  Praesent imperdietmi nec ante. 
 Donec ullamcorper, felis non sodales...
-       
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.6]{joskabacsi}
+    \caption{a nice plot}
+    \label{fig:mesh1}
+\end{figure}
+
 \addcontentsline{toc}{section}{Unnumbered Section}
 \section*{Unnumbered Section}
 
@@ -65,5 +77,7 @@ Col1 & Col2 & Col2 & Col3 \\ [0.5ex]
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  
 Etiam lobortis facilisissem.  Nullam nec mi et neque pharetra 
 sollicitudin.  Praesent imperdiet mi necante...
-         
+
+\listoffigures
+
 \end{document}
