@@ -2,26 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ACE Autocompletion demo</title>
-  <link rel="stylesheet" href="pygyak.css">
+  <meta name="author" content="Dr. Németh Tamás">
+  <meta name="keywords" content="Brython IDE Online Editor">
+  <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+  <title>Brython IDE</title>
+  <link rel="stylesheet" href="brygyak.css">
 </head>
 <body>
-<pre id="editor"></pre>
+<h1 id="BBIDE">Python Browser IDE</h1>
+<pre id="editor1"></pre>
+<pre id="editor2"></pre>
+<div id="teszt">
+    <div id="tb" onclick="f()">Teszt</div>
+    <div id="te" onclick="ef()">Teszt vége</div>
+</div>
+<pre id="c"></pre>
+<div id="target"></div>
 <script src="ace/ace.js"></script>
 <script src="ace/ext-language_tools.js"></script>
 <script>
-    ace.require("ace/ext/language_tools");
-    var editor = ace.edit("editor");
-    editor.session.setMode("ace/mode/python");
-    editor.setTheme("ace/theme/tomorrow_night_bright");
-    editor.setOptions({
-        enableBasicAutocompletion: true,
-        enableSnippets: true,
-        enableLiveAutocompletion: false
-    });
+psz = window.location.search.substr(1).split('&').length
+if (psz>3) {
+  dis = window.location.search.substr(1).split('&')[3]
+  if (dis=="n") {
+    document.getElementById("teszt").style.display="none"
+    document.getElementById("editor1").style.userSelect="none"
+    document.getElementById("editor2").style.userSelect="none"
+  }
+}
+tf = window.location.search.substr(1).split('&')[1]
+console.stdlog = console.log.bind(console);
+console.log = function(){
+    document.getElementById("c").style.display="block"
+    document.getElementById("c").innerHTML += Array.from(arguments).join("").replaceAll("\n","<br>")
+    console.stdlog.apply(console, arguments);
+}
+function load1() {
+    file = window.location.search.substr(1).split('&')[0]+window.location.search.substr(1).split('&')[2]
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            editor1.setValue( xhttp.responseText )
+        }
+    };
+    xhttp.open("GET", "./"+file, true);
+    xhttp.send();
     setTimeout( v=> {
-      document.getElementsByClassName("ace_marker-layer")[0].innerHTML=""
-    }, 300 )
+        document.getElementsByClassName("ace_marker-layer")[0].innerHTML=""
+        document.getElementsByClassName("ace_marker-layer")[0].focus()
+    }, 1000 )
+}
+function load2() {
+  if (tf) {
+    file = window.location.search.substr(1).split('&')[0] + tf 
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            editor2.setValue( xhttp.responseText )
+        }
+    };
+    xhttp.open("GET", "./"+file, true);
+    xhttp.send();
+    setTimeout( v=> {
+        document.getElementsByClassName("ace_marker-layer")[0].innerHTML=""
+        document.getElementsByClassName("ace_marker-layer")[0].focus()
+    }, 1000 )
+  } else {
+    editor2.setValue( "Nincs input fájl" )
+  }
+}
+ace.require("ace/ext/language_tools");
+var editor1 = ace.edit("editor1");
+editor1.session.setMode("ace/mode/python");
+editor1.setTheme("ace/theme/solarized_dark");
+editor1.setOptions({
+    enableBasicAutocompletion: true,
+    enableSnippets: true,
+    enableLiveAutocompletion: false
+});
+editor1.setValue(`s = open("input.txt")\nprint(s)`)
+var editor2 = ace.edit("editor2");
+editor2.session.setMode("ace/mode/text");
+editor2.setTheme("ace/theme/tomorrow_night");
+editor2.setOptions({
+    enableBasicAutocompletion: true,
+    enableSnippets: true,
+    enableLiveAutocompletion: false
+});
+editor2.setValue(`3 2\n3 3 4 5 6 7 8 9 3 3 3\n6 3 7 5 6 8 8 9 1 2 1`)
+if (window.location.search.substr(1)) {
+    load1()
+    load2()
+}
+setTimeout( v=> {
+        document.getElementsByClassName("ace_marker-layer")[0].innerHTML=""
+}, 500 )
+setTimeout( v=> {
+        document.getElementsByClassName("ace_marker-layer")[2].innerHTML=""
+}, 500 )
+function f() {
+    s = '<style>\nbody {\n    background: white;\n  height: 100%;\n   width: 100%;\n}\n' +
+        '</style>\n'+
+        '&ltscript type="text/python">\n'
+        + editor1.getValue() //open("eloadasok.txt", encoding = "utf-8")
+                  .replace("open('"+ tf +"')", "'''" + editor2.getValue() + "''';" )
+                  .replace('open("' + tf + '")', "'''" + editor2.getValue() + "'''" )
+                  .replace('open("' + tf + '", encoding = "utf-8")', "'''" + editor2.getValue() + "'''" )
+                   + '\n' +
+        '&lt/script>\n'
+    document.getElementById('target').innerHTML= s.replaceAll('&lt','<')
+    document.getElementById('editor1').style.visibility = "hidden"
+    document.getElementById('editor2').style.visibility = "hidden"
+    document.getElementById('BBIDE').style.display = "none"
+    document.getElementById('te').style.display = "inline-block"
+    document.getElementById('tb').style.display = "none"
+    document.querySelectorAll(".ace_print-margin").forEach( v => {
+        { v.style.visibility= "hidden" }
+    })
+    setTimeout( v=> {
+      brython()
+    }, 1000 )
+}
+function ef() {
+    document.getElementById('target').innerHTML=""
+    document.getElementById('editor1').style.visibility = "visible"
+    document.getElementById('editor2').style.visibility = "visible"
+    document.getElementById('BBIDE').style.display = "block"
+    document.getElementById('tb').style.display = "inline-block"
+    document.getElementById('te').style.display = "none"
+    while (document.getElementById('lasttag').nextElementSibling) {
+        document.getElementById('lasttag').nextElementSibling.remove()
+    }
+    document.querySelectorAll(".ace_print-margin").forEach( v => {
+        { v.style.visibility= "visible" }
+    })
+    document.getElementById("c").innerHTML = ""
+    document.getElementById("c").style.display="none"
+}
 </script>
+<div id="lasttag"></div>
 </body>
 </html>
