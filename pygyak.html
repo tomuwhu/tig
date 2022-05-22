@@ -117,9 +117,9 @@ function f() {
         '</style>\n'+
         '&ltscript type="text/python">\n'
         + editor1.getValue() //open("eloadasok.txt", encoding = "utf-8")
-                  .replace("open('"+ tf +"')", "'''" + editor2.getValue() + "''';" )
-                  .replace('open("' + tf + '")', "'''" + editor2.getValue() + "'''" )
-                  .replace('open("' + tf + '", encoding = "utf-8")', "'''" + editor2.getValue() + "'''" )
+                  .replace("open('"+ tf +"')", "list('''" + editor2.getValue() + "'''.split('\\n'))" )
+                  .replace('open("' + tf + '")', "list('''" + editor2.getValue() + "'''.split('\\n'))" )
+                  .replace('open("' + tf + '", encoding = "utf-8")', "list('''" + editor2.getValue() + "'''.split('\n'))" )
                    + '\n' +
         '&lt/script>\n'
     document.getElementById('target').innerHTML= s.replaceAll('&lt','<')
