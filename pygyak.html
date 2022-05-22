@@ -35,7 +35,7 @@ tf = window.location.search.substr(1).split('&')[1]
 console.stdlog = console.log.bind(console);
 console.log = function(){
     document.getElementById("c").style.display="block"
-    document.getElementById("c").innerHTML += Array.from(arguments).join("").replaceAll("\n","<br>")
+    document.getElementById("c").innerHTML += Array.from(arguments).join("").replaceAll("\n","<br>").replaceAll(" ","&nbsp;")
     console.stdlog.apply(console, arguments);
 }
 function load1() {
