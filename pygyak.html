@@ -87,7 +87,7 @@ editor1.setOptions({
     enableLiveAutocompletion: false
 });
 editor1.setValue(`print(
-    [row.split(" ") for row in open("input.txt").split("\\n")]
+    [row.split(" ") for row in open("input.txt").read().split("\\n")]
 )`)
 var editor2 = ace.edit("editor2");
 editor2.session.setMode("ace/mode/text");
@@ -117,8 +117,8 @@ function f() {
         '</style>\n'+
         '&ltscript type="text/python">\n'
         + editor1.getValue() //open("eloadasok.txt", encoding = "utf-8")
-                  .replace("open('"+ tf +"')", "list('''" + editor2.getValue() + "'''.split('\\n'))" )
-                  .replace('open("' + tf + '")', "list('''" + editor2.getValue() + "'''.split('\\n'))" )
+                  .replace("open('"+ tf +"').read()", "'''" + editor2.getValue() + "'''" )
+                  .replace('open("' + tf + '").read()', "'''" + editor2.getValue() + "'''" )
                    + '\n' +
         '&lt/script>\n'
     document.getElementById('target').innerHTML= s.replaceAll('&lt','<')

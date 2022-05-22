@@ -1,3 +1,3 @@
 print( # Két dimenziós tömb beolvasása
-    *[v.split(" ") for v in open("inp2.txt").split("\n")], sep="\n"
+    *[v.split(" ") for v in open("inp2.txt").read().split("\n")], sep="\n"
 )
