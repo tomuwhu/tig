@@ -119,7 +119,6 @@ function f() {
         + editor1.getValue() //open("eloadasok.txt", encoding = "utf-8")
                   .replace("open('"+ tf +"')", "list('''" + editor2.getValue() + "'''.split('\\n'))" )
                   .replace('open("' + tf + '")', "list('''" + editor2.getValue() + "'''.split('\\n'))" )
-                  .replace('open("' + tf + '", encoding = "utf-8")', "list('''" + editor2.getValue() + "'''.split('\n'))" )
                    + '\n' +
         '&lt/script>\n'
     document.getElementById('target').innerHTML= s.replaceAll('&lt','<')

@@ -2,7 +2,7 @@ def f(x):
     e = x.strip()
     if e.isdigit(): e = int(e)
     return e
-l = list(map(lambda x: list(map(f,  x.split("\t"))), open("eloadasok.txt", encoding = "utf-8")))
+l = list(map(lambda x: list(map(f,  x.split("\t"))), open("eloadasok.txt")))
 fl = {}
 for i in l:
     if i[0] in fl: fl[i[0]] += 1
