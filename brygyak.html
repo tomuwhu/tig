@@ -17,7 +17,7 @@
     <div id="tb" onclick="f()">Teszt</div>
     <div id="te" onclick="ef()">Teszt vége</div>
 </div>
-<pre id="c"></pre>
+<textarea disabled id="c"></textarea>
 <div id="target"></div>
 <script src="ace/ace.js"></script>
 <script src="ace/ext-language_tools.js"></script>
@@ -25,9 +25,12 @@
 console.stdlog = console.log.bind(console);
 console.log = function(){
     document.getElementById("c").style.display="block"
-    document.getElementById("c").innerHTML += Array.from(arguments).join("").replaceAll("\n","<br>")
+    document.getElementById("c").value += Array.from(arguments).join("")
     console.stdlog.apply(console, arguments);
 }
+setTimeout( v=> {
+        document.getElementById("c").style.display="none"
+}, 500 )
 function load1() {
     file = window.location.search.substr(1).split('&')[0]+"/logic.py"
     var xhttp = new XMLHttpRequest();

@@ -71,13 +71,14 @@ div#te {
     padding: 5px;
     padding-left: 15px;
     position: fixed;
-    bottom: 46px;
+    top: 82%;
+    height: 40px;
     background-color: #1b334f;
     box-shadow: 1px 1px 5px inset black;
     opacity: 0.65;
-    width: 100%;
+    left: 4px;
+    right: 4px;
     color:rgb(255, 245, 131);
     text-shadow: 1px 1px 4px black;
-    display: none;
     white-space: pre-line;
 }
