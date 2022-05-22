@@ -94,8 +94,11 @@
         }
     });
     function load() {
-        file = "py/" + document.getElementById("sel").value
-        fn = document.getElementById("sel").value
+        kv = document.getElementById("sel").value.split("|")
+        file = "py/" + kv[0]
+        if (kv.length > 1) inpf = kv[1]
+        else inpf=""
+        fn = kv[0]
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -123,7 +126,7 @@
     <a 
         class="btn bx"
         target="_blank"
-        href="pygyak.html?py/&&${fn}">szerkesztés / kipróbálás</a>
+        href="pygyak.html?py/&${inpf}&${fn}">szerkesztés / kipróbálás</a>
     `
     }
     setTimeout(v => { load()}, 400)
@@ -195,7 +198,7 @@
             <option value="covid_dr.py">Szövegfájl, csv fájl beolvasása</option>
             <option value="fileread.py">Szövegfájl adatok feldolgozása Ⅰ.</option>
             <option value="fileio.py">Szövegfájl Input/Output</option>
-            <option value="fileread2.py">Szövegfájl adatok feldolgozása Ⅱ.</option>
+            <option value="fileread2.py|inp2.txt">Szövegfájl adatok feldolgozása Ⅱ.</option>
             <option value="p8.py">*** 8. próbadolgozat -> mintamegoldás ***</option>
             <option value="tvkorbo1.py">*** 1. dolgozat 1. és 2. feladatának megoldása ***</option>
             <option value="efmo/2024_k/szamolo.py">Érettségi 2024_K</option>
