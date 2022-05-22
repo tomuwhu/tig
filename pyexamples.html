@@ -95,6 +95,7 @@
     });
     function load() {
         file = "py/" + document.getElementById("sel").value
+        fn = document.getElementById("sel").value
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -122,7 +123,7 @@
     <a 
         class="btn bx"
         target="_blank"
-        href="https://runpython.org/?gui_edit=https://github.com/tomuwhu/tig/blob/main/${file}">Megnyitás a runpythonon</a>
+        href="pygyak.html?py/&&${fn}">Szerkesztés</a>
     `
     }
     setTimeout(v => { load()}, 400)
