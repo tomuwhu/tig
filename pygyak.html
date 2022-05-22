@@ -102,6 +102,7 @@ setTimeout( v=> {
         document.getElementsByClassName("ace_marker-layer")[2].innerHTML=""
 }, 500 )
 function f() {
+    if (!tf) tf="input.txt"
     s = '<style>\nbody {\n    background: white;\n  height: 100%;\n   width: 100%;\n}\n' +
         '</style>\n'+
         '&ltscript type="text/python">\n'
@@ -122,7 +123,7 @@ function f() {
     })
     setTimeout( v=> {
       brython()
-    }, 1000 )
+    }, 100 )
 }
 function ef() {
     document.getElementById('target').innerHTML=""
