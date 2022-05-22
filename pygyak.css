@@ -57,7 +57,7 @@ div#tb, div#te {
     display: inline-block;
     user-select: none;
 }
-div#tb:hover, div#te:hover {
+div#tb:hover {
     background-color: #226c55;
 }
 div#tb:active, div#te:active {
@@ -65,6 +65,10 @@ div#tb:active, div#te:active {
 }
 div#te {
     display: none;
+    width: 200px;
+}
+div#te:hover {
+    background-color: #0d153f;
 }
 div#input {
     position: fixed;
