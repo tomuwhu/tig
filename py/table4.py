@@ -7,7 +7,7 @@ for j in range(m-1):
 print(vv+jf)
 i = 0
 for j in range(m):
-    print(f"{fv}{i+1:1d},{j+1:d}", end="")
+    print(f"{fv}{i+1:1d}-{j+1:d}", end="")
 print(fv)
 for i in range(1,n):
     print(bk, end="")
