@@ -41,9 +41,9 @@ console.log = function(){
     console.stdlog.apply(console, arguments);
 }
 function load1() {
-    tf = window.location.search.substr(1).split('&')[2]
-    file = window.location.search.substr(1).split('&')[0] + tf
-    if (tf) document.getElementById("program").innerHTML = tf
+    tt = window.location.search.substr(1).split('&')[2]
+    file = window.location.search.substr(1).split('&')[0] + tt
+    if (tt) document.getElementById("program").innerHTML = tt
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -59,7 +59,8 @@ function load1() {
 }
 function load2() {
   if (tf) {
-    file = window.location.search.substr(1).split('&')[0] + tf 
+    file = window.location.search.substr(1).split('&')[0] + tf
+    document.getElementById("input").innerHTML = tf
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
