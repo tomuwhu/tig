@@ -66,6 +66,32 @@ div#tb:active, div#te:active {
 div#te {
     display: none;
 }
+div#input {
+    position: fixed;
+    left:20px;
+    top: 8px;
+    background-color: #051e37;
+    box-shadow: 1px 1px 6px black;
+    padding-bottom: 2px;
+    padding-left:20px;
+    padding-right: 20px;
+    color: rgb(191, 191, 123);
+    text-shadow: 1px 1px 3px black;
+    border: solid 1px rgb(114, 31, 31);
+}
+div#program{
+    position: fixed;
+    top: 8px;
+    right:30px;
+    background-color: #051e37;
+    box-shadow: 1px 1px 6px black;
+    padding-bottom: 2px;
+    padding-left:20px;
+    padding-right: 20px;
+    color: rgb(191, 191, 123);
+    text-shadow: 1px 1px 3px black;
+    border: solid 1px rgb(114, 31, 31);
+}
 #c {
     text-align: left;
     padding: 5px;

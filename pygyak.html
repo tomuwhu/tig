@@ -17,6 +17,8 @@
     <div id="tb" onclick="f()">Teszt</div>
     <div id="te" onclick="ef()">Teszt vége</div>
 </div>
+<div id="input">input.txt</div>
+<div id="program">program.py</div>
 <textarea id="c"></textarea>
 <div id="target"></div>
 <script src="ace/ace.js"></script>
@@ -39,7 +41,9 @@ console.log = function(){
     console.stdlog.apply(console, arguments);
 }
 function load1() {
-    file = window.location.search.substr(1).split('&')[0]+window.location.search.substr(1).split('&')[2]
+    tf = window.location.search.substr(1).split('&')[2]
+    file = window.location.search.substr(1).split('&')[0] + tf
+    if (tf) document.getElementById("program").innerHTML = tf
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -69,7 +73,7 @@ function load2() {
         document.getElementsByClassName("ace_marker-layer")[0].focus()
     }, 1000 )
   } else {
-    editor2.setValue( "Nincs input fájl" )
+    editor2.setValue( "" )
   }
 }
 ace.require("ace/ext/language_tools");
