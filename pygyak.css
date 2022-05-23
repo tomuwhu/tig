@@ -111,3 +111,9 @@ div#program{
     text-shadow: 1px 1px 4px black;
     white-space: pre-line;
 }
+.noselection .ace_marker-layer .ace_selection {
+    background: transparent;
+ }
+ .noselection .ace_cursor {
+    color: transparent;
+ }

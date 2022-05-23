@@ -25,12 +25,11 @@
 <script src="ace/ext-language_tools.js"></script>
 <script>
 psz = window.location.search.substr(1).split('&').length
+dis = ""
 if (psz>3) {
   dis = window.location.search.substr(1).split('&')[3]
   if (dis=="n") {
     document.getElementById("teszt").style.display="none"
-    document.getElementById("editor1").style.userSelect="none"
-    document.getElementById("editor2").style.userSelect="none"
   }
 }
 tf = window.location.search.substr(1).split('&')[1]
@@ -48,6 +47,7 @@ function load1() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             editor1.setValue( xhttp.responseText )
+            if (dis=="n") editor1.setReadOnly(true)
         }
     };
     xhttp.open("GET", "./"+file, true);
@@ -65,6 +65,7 @@ function load2() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             editor2.setValue( xhttp.responseText )
+            if (dis=="n") editor2.setReadOnly(true)
         }
     };
     xhttp.open("GET", "./"+file, true);
