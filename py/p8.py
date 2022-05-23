@@ -2,7 +2,7 @@
 # windows: win  + shift + s
 # mac-os:  ctrl + shift + mac + 4
 
-t = list(map(lambda x: list(map(int, x.split("-"))),open("input.txt")))
+t = list(map(lambda x: list(map(int, x.split("-"))),open("input.txt").read().split("\n")))
 
 print("2. feladat")
 print(f'Az 1. sorban szereplő számok átlaga: {sum(t[0])/len(t[0]):0.2f}')
