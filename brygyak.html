@@ -37,14 +37,11 @@ function load1() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             editor1.setValue( xhttp.responseText )
+            editor1.clearSelection()
         }
     };
     xhttp.open("GET", "./"+file, true);
     xhttp.send();
-    setTimeout( v=> {
-        document.getElementsByClassName("ace_marker-layer")[0].innerHTML=""
-        document.getElementsByClassName("ace_marker-layer")[0].focus()
-    }, 1000 )
 }
 function load2() {
     file = window.location.search.substr(1).split('&')[0]+"/design.css"
@@ -52,14 +49,11 @@ function load2() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             editor2.setValue( xhttp.responseText )
+            editor2.clearSelection()
         }
     };
     xhttp.open("GET", "./"+file, true);
     xhttp.send();
-    setTimeout( v=> {
-        document.getElementsByClassName("ace_marker-layer")[0].innerHTML=""
-        document.getElementsByClassName("ace_marker-layer")[0].focus()
-    }, 1000 )
 }
 ace.require("ace/ext/language_tools");
 var editor1 = ace.edit("editor1");

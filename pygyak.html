@@ -48,14 +48,11 @@ function load1() {
         if (this.readyState == 4 && this.status == 200) {
             editor1.setValue( xhttp.responseText )
             if (dis=="n") editor1.setReadOnly(true)
+            editor1.clearSelection()
         }
     };
     xhttp.open("GET", "./"+file, true);
     xhttp.send();
-    setTimeout( v=> {
-        document.getElementsByClassName("ace_marker-layer")[0].innerHTML=""
-        document.getElementsByClassName("ace_marker-layer")[0].focus()
-    }, 1000 )
 }
 function load2() {
   if (tf) {
@@ -66,14 +63,11 @@ function load2() {
         if (this.readyState == 4 && this.status == 200) {
             editor2.setValue( xhttp.responseText )
             if (dis=="n") editor2.setReadOnly(true)
+            editor2.clearSelection()
         }
     };
     xhttp.open("GET", "./"+file, true);
     xhttp.send();
-    setTimeout( v=> {
-        document.getElementsByClassName("ace_marker-layer")[0].innerHTML=""
-        document.getElementsByClassName("ace_marker-layer")[0].focus()
-    }, 1000 )
   } else {
     editor2.setValue( "" )
   }
