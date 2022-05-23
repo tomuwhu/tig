@@ -4,70 +4,75 @@
 <script src="hljs/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 <meta charset="utf-8">
-<ul class="navigation">
-    <li><a href="./">Kezdőlap</a></li>
-    <li><a href="tanttm.html">Tananyag</a></li>
-    <li><a href="htmlexampl.html">HTML-CSS</a></li>
-    <li><a href="pyexamples.html">Python</a></li>
-    <li><a href="bryexamples.html">Brython</a></li>
-    <li><a href="editor.html">Editor</a></li>
-    <li><a href="probadogalista.html">Számonkérés</a></li>
-</ul>
-<div class="m20">
-<h1 class="c x">Python&nbsp;kiegészítő&nbsp;anyagok a&nbsp;9.&nbsp;évfolyam&nbsp;számára</h1>
-<a class="btn" href="irodalom/python-a-gepben.epub" download>Python könyv letöltése (epub)</a> -
-<a class="btn" href="https://www.hackerrank.com/" target="_blank">HackerRank</a> -
-<a class="btn" href="pyexamples.html">További példaprogramok</a>
-<hr>
-<main class="grid">
-<article>
-<b>38. óra - Egyenletmegoldás ciklussal</b><br><br>
-<a class="btn"  href="https://secure.math.ubc.ca/~pwalls/math-python/roots-optimization/newton/" target="_blank">Newton iteráció</a>
-TK. 117. (1.e. megoldás)
-<pre><code class="language-python"
->fx = lambda x: 2*x**3 - 3*x + 1
-Df = lambda x: 6*x**2 - 3
-xn = 0
-for n in range(0,10):
-    print(xn) # Megoldásközelítés az n. iterációban.
-    xn = xn - fx(xn)/Df(xn)
-</code></pre>
-</article>
-<article>
-<b>40. óra - Ciklus + Teknőcgrafika</b><br><br>
-<pre><code class="language-python"
->from turtle import *
-color("red","blue")
-begin_fill()
-for i in range(9):
-    forward(400)
-    left(160)
-end_fill()
-mainloop()
-</code></pre>
-</article>
-<article>
-<b>41. óra - Listák és bejárásuk</b><br><br>
-Összegzés
-TK. 124. - 125.
-<pre><code class="language-python"
->f = open("input.txt","r")
-z = 0
-for i in f.read().split("\n"):
-    z += int(i)
-print(z)
-</code></pre>
-    5-ös lottó nyerőszám generátor példaprogram
-<pre><code class="language-python"
->from random import shuffle # a keverés(shuffle) importálása
-li = [ *range( 1, 90 ) ]   # vegyük a számokat 1-től 90-ig
-shuffle( li )              # keverjük össze a sorrendjüket
-lo = li[ :5 ]              # vegyük az első 5-öt (ez az 5 nyerőszámunk)
-lo.sort(    )              # rendezzük őket növekvő sorrendbe
-print ("Az 5 nyerőszám:")
-for la in lo:
-    print(la)              # írjuk ki a képernyőre őket
-</code></pre>
-</article>
-</main>
-</div>
+<body>
+    <ul class="navigation">
+        <li><a href="./">Kezdőlap</a></li>
+        <li><a href="tanttm.html">Tananyag</a></li>
+        <li><a href="htmlexampl.html">HTML-CSS</a></li>
+        <li><a href="pyexamples.html">Python</a></li>
+        <li><a href="bryexamples.html">Brython</a></li>
+        <li><a href="probadogalista.html">Számonkérés</a></li>
+    </ul>
+    <div class="m20">
+    <h1 class="h c x">Python&nbsp;kiegészítő&nbsp;anyagok a&nbsp;9.&nbsp;évfolyam&nbsp;számára</h1>
+    <a class="btn" href="irodalom/python-a-gepben.epub" download>Python könyv letöltése (epub)</a> -
+    <a class="btn" href="https://www.hackerrank.com/" target="_blank">HackerRank</a> -
+    <a class="btn" href="pyexamples.html">További példaprogramok</a>
+    <hr>
+    <div class="h">
+        <main class="grid">
+            <article>
+            <b>38. óra - Egyenletmegoldás ciklussal</b><br><br>
+            <a class="btn"  href="https://secure.math.ubc.ca/~pwalls/math-python/roots-optimization/newton/" target="_blank">Newton iteráció</a>
+            TK. 117. (1.e. megoldás)
+            <pre><code class="language-python"
+            >fx = lambda x: 2*x**3 - 3*x + 1
+            Df = lambda x: 6*x**2 - 3
+            xn = 0
+            for n in range(0,10):
+                print(xn) # Megoldásközelítés az n. iterációban.
+                xn = xn - fx(xn)/Df(xn)
+            </code></pre>
+            </article>
+            <article>
+            <b>40. óra - Ciklus + Teknőcgrafika</b><br><br>
+            <pre><code class="language-python"
+            >from turtle import *
+            color("red","blue")
+            begin_fill()
+            for i in range(9):
+                forward(400)
+                left(160)
+            end_fill()
+            mainloop()
+            </code></pre>
+            </article>
+            <article>
+            <b>41. óra - Listák és bejárásuk</b><br><br>
+            Összegzés
+            TK. 124. - 125.
+            <pre><code class="language-python"
+            >f = open("input.txt","r")
+            z = 0
+            for i in f.read().split("\n"):
+                z += int(i)
+            print(z)
+            </code></pre>
+                5-ös lottó nyerőszám generátor példaprogram
+            <pre><code class="language-python"
+            >from random import shuffle # a keverés(shuffle) importálása
+            li = [ *range( 1, 90 ) ]   # vegyük a számokat 1-től 90-ig
+            shuffle( li )              # keverjük össze a sorrendjüket
+            lo = li[ :5 ]              # vegyük az első 5-öt (ez az 5 nyerőszámunk)
+            lo.sort(    )              # rendezzük őket növekvő sorrendbe
+            print ("Az 5 nyerőszám:")
+            for la in lo:
+                print(la)              # írjuk ki a képernyőre őket
+            </code></pre>
+            </article>
+            </main>
+            </div>
+    </div>
+    
+</body>
+
