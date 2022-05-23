@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Shadows+Into+Light&family=Lemonada');
 body.b {
     background: rgb(0, 21, 28);
+    background-image: url("img/bgi.jpeg");
     color: rgb(196, 240, 230);
     margin: 0;
     user-select: none;
@@ -19,6 +20,13 @@ div#content {
 }
 h1.x, h2.x {
     font-family: cursive;
+}
+h1.h {
+    text-shadow: 1px 1px 4px black;
+    box-shadow: 1px 1px 3px inset black;
+    background-color: rgb(8, 87, 113);
+    padding: 9px;
+    border-radius: 4px;
 }
 .c {
     text-align: center;
