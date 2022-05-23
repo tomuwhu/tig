@@ -53,6 +53,9 @@ a.btn {
 a.b2 {
     background-color: rgb(71, 27, 19);
 }
+a.b3 {
+    background-color: rgb(126, 122, 12);
+}
 a.btn:hover {
     color:rgb(183, 236, 255);
     background-color: rgb(72, 72, 15);
