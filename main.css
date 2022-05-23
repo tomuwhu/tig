@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Shadows+Into+Light&family=Lemonada');
 body {
     background: rgb(53, 53, 8);
     color: rgb(196, 240, 230);
@@ -91,7 +92,6 @@ img {
     border-radius: 6px;
     box-shadow: 0px 0px 8px gray;
 }
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Shadows+Into+Light&family=Lemonada');
 .navigation {
     display: flex;
     flex-flow: row wrap;
