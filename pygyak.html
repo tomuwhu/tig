@@ -119,6 +119,11 @@ function f() {
 class o1_2:
     s="""`+ editor2.getValue() +`"""
     def __init__(self, *args):
+        self.fn = args[0]
+        return None
+    def write(self, *args):
+        print(self.fn + " <= ", *args)
+    def close(self):
         return None
     def read(self):
         return self.s
