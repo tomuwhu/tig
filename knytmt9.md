@@ -6,6 +6,14 @@
   - szoftverek telepítése, eltávolítása
   - könyvtárstruktúra, programfájlok, adatfájlok
   - fájlnevek, kiterjesztések, fájltípusok
+- Böngésző használata
+  - http://
+  - keresés az interneten
+  - letöltések
+  - pluginok
+  - file://
+  - about:blank
+  - about:about
 - Visual Studio Code
   - telepítés
   - beállítás, pluginok (markdown, python, live server, ...)
@@ -60,8 +68,6 @@
   - reszponzív oldalak, @media, @import
 - Google Fonts
 - Böngésző funkciók
-  - about:blank
-  - about:about
   - Oldal forrása
   - Oldal vizsgálata
     - Mobil nézet (reszponzivitás)
