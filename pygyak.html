@@ -110,10 +110,29 @@ function f() {
     if (!tf) tf="input.txt"
     s = '<style>\nbody {\n    background: white;\n  height: 100%;\n   width: 100%;\n}\n' +
         '</style>\n'+
-        '&ltscript type="text/python">\n'
-        + editor1.getValue() //open("eloadasok.txt", encoding = "utf-8")
-                  .replace("open('"+ tf +"').read()", "'''" + editor2.getValue() + "'''" )
-                  .replace('open("' + tf + '").read()', "'''" + editor2.getValue() + "'''" )
+        '&ltscript type="text/python">\n' + `def o1_1(*args):
+    s="""`+ editor2.getValue() +`"""
+    l = s.split("\\n")
+    for i in l[:-1]:
+        yield(i+"\\n")
+    yield(l[-1])
+class o1_2:
+    s="""`+ editor2.getValue() +`"""
+    def __init__(self, *args):
+        return None
+    def read(self):
+        return self.s
+    def readlines(self):
+        l = self.s.split("\\n")
+        for i in l[:-1]:
+            yield(i+"\\n")
+        yield(l[-1])
+`
+        + editor1.getValue()
+                  .replace("open('"+ tf +"').", "o1_2('"+ tf +"')." )
+                  .replace('open("'+ tf +'").', "o1_2('"+ tf +"')." )
+                  .replace("open('"+ tf +"')", "o1_1('"+ tf +"')" )
+                  .replace('open("'+ tf +'")', "o1_1('"+ tf +"')" )
                    + '\n' +
         '&lt/script>\n'
     document.getElementById('target').innerHTML= s.replaceAll('&lt','<')
