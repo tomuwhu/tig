@@ -19,24 +19,23 @@
   - kép, link, tex, code beillesztése
 - Tex nyelv használata
 - HTML nyelv alapjai
-  - VSCode beállítása, live szerver
   - body, head, title, meta
+  - VSCode -> live szerver
   - div, span, a, b, i, hr, h1..h6
   - ul, ol, li, hr, nav, dl, dt, dd
   - figure, img src="", figcaption
   - fogalmak (element, attribute)
-  - attribútumok (title, href)
+  - attribútumok (title, href, ...)
   - táblázatok
   - tabulálás használata az olvashatóság érdekében
-  - menu, pre, code, kbd, 
-- CSS alapjai
+  - menu, pre, code, kbd, ...
+- CSS
   - style attribútum
   - style element
   - link rel="stylesheet" href="..."
   - HTML attribútumok II. (id, class, name)
   - css syntax: ``` selector { property: value; } ```
-- CSS
-  - css property-k 
+  - css property-k
     - color
     - background-color
     - font-size
@@ -61,8 +60,11 @@
   - reszponzív oldalak, @media, @import
 - Google Fonts
 - Böngésző funkciók
+  - about:blank
+  - about:about
   - Oldal forrása
   - Oldal vizsgálata
+    - Mobil nézet (reszponzivitás)
     - Elemek (elem vizsgálata, stílusok, számított..)
     - Konzol
     - Források
@@ -82,45 +84,45 @@
 - Python programozási nyelv I.
   - python telepítése
   - python futtatása terminálban
-    - számok (int, float, nagy számok)
-    - operátorok (+, -, *, /, //, %, **, ... )
-    - python függvények használata ( int(), float(), max(), min() )
-    - számrendszerek (0x, 0b, 0o, format())
-    - python stringek
-  - python futtatása vscode-ban
-    - print()
-    - input()
-    - string template, format
-    - if - elif - else, tabulálás a pythonban
-    - logikai típus és operátorai
-    - while ciklus és használata
-    - függvények definiálása
-      - bemeneti paraméterek
-      - visszatérési érték (return)
-      - generátor függvények (yield)
-      - rekurzió
-      - rekurzió a generátorokban (yield from)
-      - a *operátor
-    - range, python listák
-    - listák és generátorok bejárása, a for utasítás
-    - lista generátor használata [i for i in l if i]
-    - alapvető algoritmusok
-      - eldöntés (in)
-      - keresés (find)
-      - összegzés (max, min, sum, count)
-      - szűrés (filter)
-      - rendezés (sort, sorted)
-    - további lista és stringműveletek
-    - szövegfájlok kezelése
-    - teknőcgrafika (like logo) vs. graphics
-    - random modul
-    - összetett feladatok
-  - HTML + CSS + Python alkalmazása I. (Brython)
-    - Hello World alkalmazás
-    - live szerver használata
-    - document, html
-    - Eseménykezelés (bind - egér és billentyűzet események)
-    - SVG Bythonban
+  - számok (int, float, nagy számok)
+  - operátorok (+, -, *, /, //, %, **, ... )
+  - python függvények használata ( int(), float(), max(), min() )
+  - számrendszerek (0x, 0b, 0o, format())
+  - python stringek
+  - python programok szerkesztése vscode-ban
+  - print()
+  - input()
+  - string template, format
+  - if - elif - else, tabulálás a pythonban
+  - logikai típus és operátorai
+  - while ciklus és használata
+  - függvények definiálása
+    - bemeneti paraméterek
+    - visszatérési érték (return)
+    - generátor függvények (yield)
+    - rekurzió
+    - rekurzió a generátorokban (yield from)
+    - a *operátor
+  - range, python listák
+  - listák és generátorok bejárása, a for utasítás
+  - lista generátor használata [i for i in l if i]
+  - alapvető algoritmusok
+    - eldöntés (in)
+    - keresés (find)
+    - összegzés (max, min, sum, count)
+    - szűrés (filter)
+    - rendezés (sort, sorted)
+  - további lista és stringműveletek
+  - szövegfájlok kezelése
+  - teknőcgrafika (like logo) vs. graphics
+  - random modul
+  - összetett feladatok
+- HTML + CSS + Python alkalmazása I. (Brython)
+  - Hello World alkalmazás
+  - live szerver használata
+  - document, html
+  - Eseménykezelés (bind - egér és billentyűzet események)
+  - SVG Bythonban
 
 ## 9. évfolyam
 
