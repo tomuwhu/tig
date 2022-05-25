@@ -14,7 +14,6 @@ class ElementMove:
         self.moving = True
         self.mp = [e.x, e.y]
         self.ep = [self.obj.left, self.obj.top]
-        e.target.style.zIndex = 64
         D.bind("mousemove", self.move)
     def move(self, e):
         L.clear()
@@ -39,7 +38,7 @@ class ElementMove:
         D.unbind("mousemove")
         if len(l)>1:
             x, y = l[2][1:].split(",")
-            if x=="5" and y=="5" and e.target.text=="♕":
+            if x=="5" and y=="5":
                 if t: el.text=""
             else:
                 if x=="5" and y=="1" and e.target.text=="♕":
