@@ -28,6 +28,7 @@ class ElementMove:
             self.obj.left = self.ep[0] + e.x - self.mp[0]
             self.obj.top  = self.ep[1] + e.y - self.mp[1]
     def stop(self, e):
+        t = 1
         e.target.style.opacity = 1
         self.moving = False
         self.obj.style.color = self.origcolor
@@ -36,22 +37,25 @@ class ElementMove:
         if el.className == "sf":
             el.clear()
             el = D.elementFromPoint(e.clientX, e.clientY)
-        else: el.text=""
+        else: t = 0
         l = el.className.split(" ")
         e.target.style.visibility = "visible"
         D.unbind("mousemove")
         if len(l)>1:
             x, y = l[2][1:].split(",")
-            if x=="5" and y=="1" and e.target.text=="♕":
-                ERT = H.DIV("Jó megoldás, gratulálok!", Class="e")
-            else: ERT = H.DIV("Hibás megoldás!", Class="e x")
-            L.clear()
-            L <= ERT
-            L.style.zIndex = 100
-            p = el.getBoundingClientRect()
-            lastelement[0].style.left = p.left + 10
-            lastelement[0].style.top = p.top - 12
-            for e in objlist: e.obj.unbind("mousedown", e.start)
+            if x=="5" and y=="5":
+                if t: el.text=""
+            else:
+                if x=="5" and y=="1" and e.target.text=="♕":
+                    ERT = H.DIV("Jó megoldás, gratulálok!", Class="e")
+                else: ERT = H.DIV("Hibás megoldás!", Class="e x")
+                L.clear()
+                L <= ERT
+                L.style.zIndex = 100
+                p = el.getBoundingClientRect()
+                lastelement[0].style.left = p.left + 10
+                lastelement[0].style.top = p.top - 12
+                for e in objlist: e.obj.unbind("mousedown", e.start)
 def f(e):
     el = H.SPAN(e, Class="sf")
     ElementMove(el)
