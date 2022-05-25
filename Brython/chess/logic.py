@@ -1,7 +1,8 @@
 from browser import document as D, svg as S, html as H
 objlist = []
 lastelement = [0]
-class ElementMove:
+lastzindex = [64]
+class CPMove:
     def __init__(self, m):
         m.style.position = "fixed"
         self.origcolor = m.style.color
@@ -14,17 +15,16 @@ class ElementMove:
         self.moving = True
         self.mp = [e.x, e.y]
         self.ep = [self.obj.left, self.obj.top]
+        e.target.style.zIndex = lastzindex[0]
+        lastzindex[0] += 1
         D.bind("mousemove", self.move)
     def move(self, e):
-        L.clear()
         lastelement[0] = self.obj
         if self.moving: 
             self.obj.style.color = "red"
             self.obj.left = self.ep[0] + e.x - self.mp[0]
             self.obj.top  = self.ep[1] + e.y - self.mp[1]
     def stop(self, e):
-        t = 1
-        e.target.style.opacity = 1
         self.moving = False
         self.obj.style.color = self.origcolor
         e.target.style.visibility = "hidden"
@@ -32,48 +32,20 @@ class ElementMove:
         if el.className == "sf":
             el.clear()
             el = D.elementFromPoint(e.clientX, e.clientY)
-        else: t = 0
-        l = el.className.split(" ")
+        p = el.getBoundingClientRect()
+        lastelement[0].style.left = p.left + 10
+        lastelement[0].style.top = p.top - 12
         e.target.style.visibility = "visible"
         D.unbind("mousemove")
-        if len(l)>1:
-            x, y = l[2][1:].split(",")
-            if x=="5" and y=="5":
-                if t: el.text=""
-            else:
-                if x=="5" and y=="1" and e.target.text=="♕":
-                    ERT = H.DIV("Jó megoldás, gratulálok!", Class="e")
-                else: ERT = H.DIV("Hibás megoldás!", Class="e x")
-                L.clear()
-                L <= ERT
-                L.style.zIndex = 100
-                p = el.getBoundingClientRect()
-                lastelement[0].style.left = p.left + 10
-                lastelement[0].style.top = p.top - 12
-                for e in objlist: e.obj.unbind("mousedown", e.start)
 def f(e):
     el = H.SPAN(e, Class="sf")
-    ElementMove(el)
+    CPMove(el)
     return el
-D <= H.H1("Sakkfeladadvány")
-D <= H.DIV("Adja meg világos lépését, hogy sötét mattot kapjon!", Class="fel")
-D <= H.TABLE([
+D <= H.H1("Sakk") + H.TABLE([
     H.TR([
-        H.TD(x, Class=f"x{(i+j)%2} {'b' if ord(x.text)>9817 else 'w' } p{i},{j}")
-        for i, x in enumerate(map(f, r)) 
-    ]) for j, r in enumerate([  "♜♞♝♛♚ ♞♜",
-                                "♟♟♟  ♟♟♟",
-                                "   ♟    ",
-                                "  ♝ ♟   ",
-                                "  ♗ ♙   ",
-                                "     ♕  ",
-                                "♙♙♙♙ ♙♙♙",
-                                "♖♘♗ ♔ ♘♖"])])
-L = H.DIV(Class="ec")
-D <= L
-L.style.position = "fixed"
-L.style.top = 270
+        H.TD(x, Class=f"x{(i+j)%2} {'b' if ord(x.text)>9817 else 'w' }")
+        for i, x in enumerate(map(f, r))]) for j, r in enumerate(
+        ["♜♞♝♛♚♝♞♜", "♟♟♟♟♟♟♟♟"] + [" "*8]*4 + ["♙♙♙♙♙♙♙♙", "♖♘♗♕♔♗♘♖"])])
 for e in objlist:
     p = e.obj.getBoundingClientRect()
-    e.obj.style.left = p.left - 22
-    e.obj.style.top = p.top - 42
+    e.obj.style.left, e.obj.style.top = p.left - 22, p.top - 42

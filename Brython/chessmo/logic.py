@@ -25,7 +25,6 @@ class ElementMove:
             self.obj.top  = self.ep[1] + e.y - self.mp[1]
     def stop(self, e):
         t = 1
-        e.target.style.opacity = 1
         self.moving = False
         self.obj.style.color = self.origcolor
         e.target.style.visibility = "hidden"
