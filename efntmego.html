@@ -2,10 +2,9 @@
 <meta charset="utf-8">
 <body>
     <ul class="navigation">
-        <li><a href="./">Kezdőlap</a></li>
         <li><a href="tanttm.html">Tananyag</a></li>
         <li><a href="htmlexampl.html">HTML-CSS</a></li>
-        <li><a href="brythonide">Python</a></li>
+        <li><a href="pyexamples.html">Python</a></li>
         <li><a href="bryexamples.html">Brython</a></li>
         <li><a href="probadogalista.html">Ellenőrzés</a></li>
     </ul>
@@ -14,7 +13,7 @@
     <div class="h">
         <table>
             <tr>
-                <th colspan="7" class="cat"><a href="http://nemes.inf.elte.hu/nemes_aktualis.html#eredmenyek" target="_blank">2021/2022</a></th>
+                <th colspan="7" class="cat"><a href="http://nemes.inf.elte.hu/nemes_aktualis.html#eredmenyek" target="_blank">2021 / 2022</a></th>
             </tr>
             <tr>
                 <th>1. korcsoport</th>
@@ -52,7 +51,12 @@
     th.cat {
         background-color: rgb(121, 85, 38);
         box-shadow: inset 1px 1px 3px black;
-        text-align: left;
+        text-align: center;
+        font-size: 14px;
+        font-family: Haettenschweiler;
+    }
+    a { 
+        text-decoration: none; 
     }
     table {
         font-family: Tahoma;
@@ -68,12 +72,19 @@
         background-color: rgb(30, 80, 63);
     }
     td:hover, th:hover {
-        background-color: rgb(80, 42, 30);
+        background-color: rgb(68, 80, 30);
     }
     td.b, th.b {
         background-color: transparent;
         cursor: default;
         box-shadow: none
+    }
+    td.c {
+        background-color: rgb(80, 42, 30);
+        box-shadow: 1px 1px 3px black;
+    }
+    td.c:hover {
+        background-color: rgb(177, 127, 0);
     }
     a {
         color: aquamarine;
