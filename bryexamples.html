@@ -58,12 +58,17 @@ function lo2(f) {
   xhttp.open("GET", "./"+f, true);
   xhttp.send();
 }
+tilt = 0
 function load() {
     lof = 0
     document.getElementById("code2").style.height = "auto"
     document.getElementById("code3").style.height = "auto"
     so = document.getElementById("sel").value
     sox = so.split("|")
+    if (sox[0] =="-") {
+      sox = Array(sox[1])
+      tilt = 1
+    } else tilt = 0
     if (sox.length == 1) {
       file = "Brython/"+sox[0]
       document.getElementById("kf").style.display = "none"
@@ -93,7 +98,8 @@ function load() {
                     document.getElementById("c1").style.display = "none"
                     document.getElementById("tcode").style.display = "table"
                     document.getElementById("a2").style.display = "inline"
-                    document.getElementById("a3").style.display = "inline"
+                    if (!tilt) document.getElementById("a3").style.display = "inline"
+                    else document.getElementById("a3").style.display = "none"
                     lo2(l.join("/")+"/design.css")
                 } else {
                     document.getElementById("code").innerHTML = q.trim()
@@ -182,6 +188,7 @@ function load() {
         <option value="hanoi3.html">📄🙋 Hanoi tornyai - 3.</option>
         <option value="sukodu2.html">📄🙋 Sudoku megoldó</option>
         <option value="1|drag/logic.py">📂🙋🏡 UTF-8 kártyák + Drag & drop osztály</option>
+        <option value="-|chessmo/logic.py">📂🏩 Sakk feladat megoldása</option>
         <option value="balls/logic.py">📂🙋🏡 Fizikai szimuláció (SVG, Class)</option>
         <option value="niter.html">📄🐲 Egyenletmegoldó (Newton-iterációval)</option>
     </select>
