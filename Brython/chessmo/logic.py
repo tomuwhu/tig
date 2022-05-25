@@ -55,7 +55,7 @@ def f(e):
     el = H.SPAN(e, Class="sf")
     ElementMove(el)
     return el
-D <= H.H1("Sakkfeladadvány")
+D <= H.H1("Sakkfeladvány")
 D <= H.DIV("Adja meg világos lépését, hogy sötét mattot kapjon!", Class="fel")
 D <= H.TABLE([
     H.TR([
