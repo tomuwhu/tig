@@ -1,0 +1,72 @@
+td {
+    width: 60px;
+    height: 60px;
+    background-color: rgb(183, 206, 226);
+    box-shadow: 1px 1px 3px inset black;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 70px;
+    cursor: pointer;
+}
+td:hover {
+    background-color: rgb(71, 146, 146);
+}
+td.x1 {
+    background-color: rgb(95, 118, 132);
+}
+td.x1:hover {
+    background-color: rgb(9, 63, 63);
+}
+td.b {
+    color: rgb(23, 82, 95);
+    text-shadow: 0px 0px 6px rgb(243, 252, 160);
+}
+td.w {
+    color:rgb(252, 238, 188);
+    text-shadow: 0px 0px 6px rgb(11, 55, 64);
+}
+table {
+    border-spacing: 7px;
+    margin:auto ; 
+    background-color: rgb(181, 216, 215);
+    padding: 7px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px inset;
+    border: solid 3px rgb(19, 40, 78);
+    user-select: none;
+}
+h1 {
+    text-align: center;
+    color:rgb(19, 40, 78);
+    text-shadow: 1px 1px 3px gray;
+}
+div.e {
+    text-align: center;
+    font-size: 50px;
+    background-color: aqua;
+    text-shadow: 0px 0px 6px rgb(11, 55, 64);
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px black;
+    margin: auto;
+    display: inline-block;
+    padding: 15px;
+    margin: 9px;
+    opacity: 0.8;
+}
+div.fel {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-shadow: 0px 0px 6px rgb(11, 55, 64);
+}
+div.x {
+    background-color: rgb(220, 171, 159);
+    color: red
+}
+div.ec {
+    text-align: center;
+    width: 100%;
+}
+body {
+    user-select: none;
+}
