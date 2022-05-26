@@ -116,11 +116,12 @@ function f() {
     for i in l[:-1]:
         yield(i+"\\n")
     if len(l[-1]): yield(l[-1])
+q = [""]
 class o1_2:
     s="""`+ editor2.getValue() +`"""
     def __init__(self, *args):
         self.fn = args[0]
-        return None
+        return q[0]
     def write(self, *args):
         print(self.fn + " <= ", *args)
     def close(self):
