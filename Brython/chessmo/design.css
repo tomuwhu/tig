@@ -72,3 +72,6 @@ body {
     user-select: none;
     background-color: antiquewhite;
 }
+span {
+    cursor: grab;
+}
