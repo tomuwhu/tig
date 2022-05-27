@@ -24,8 +24,7 @@ class CPMove:
         self.obj.style.color = self.origcolor
         e.target.style.visibility = "hidden"
         el = D.elementFromPoint(e.clientX, e.clientY)
-        bs = el.className.split(" ")
-        if bs[0] == "sf":
+        if el.className.split(" ")[0] == "sf":
             el.clear()
             el = D.elementFromPoint(e.clientX, e.clientY)
         t = self.obj.innerHTML
