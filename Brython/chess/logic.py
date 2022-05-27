@@ -24,7 +24,8 @@ class CPMove:
         self.obj.style.color = self.origcolor
         e.target.style.visibility = "hidden"
         el = D.elementFromPoint(e.clientX, e.clientY)
-        if el.className.split(" ")[0] == "sf":
+        bs = el.className.split(" ")
+        if bs[0] == "sf":
             el.clear()
             el = D.elementFromPoint(e.clientX, e.clientY)
         t = self.obj.innerHTML
@@ -32,7 +33,7 @@ class CPMove:
         CPMove(ub)
         el.clear()
         el <= ub
-        self.clear()
+        del self
 def f(e):
     el = H.SPAN(e, Class=f"sf {'b' if ord(e)>9817 else 'w' }")
     CPMove(el)
