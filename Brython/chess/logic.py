@@ -9,15 +9,15 @@ class CPMove:
     def start(self, e):
         self.moving = True
         self.obj.style.position = "fixed"
-        self.obj.style.fontSize = "55px"
+        self.obj.style.fontSize = "75px"
         self.obj.left -= 18
-        self.obj.top -= 30
+        self.obj.top -= 20
         self.mp = [e.x, e.y]
         self.ep = [self.obj.left, self.obj.top]
         D.bind("mousemove", self.move)
     def move(self, e):
         if self.moving: 
-            self.obj.style.color = "red"
+            self.obj.style.color = "rgb(200,50,20)"
             self.obj.left = self.ep[0] + e.x - self.mp[0]
             self.obj.top  = self.ep[1] + e.y - self.mp[1]
     def stop(self, e):

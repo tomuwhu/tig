@@ -6,7 +6,7 @@ td {
     box-shadow: 1px 1px 3px inset black;
     border-radius: 4px;
     text-align: center;
-    font-size: 45px;
+    font-size: 65px;
     cursor: pointer;
 }
 td:hover {
@@ -49,4 +49,7 @@ span {
     color:rgb(135, 238, 229);
     text-shadow: 0px 0px 6px rgb(55, 58, 34);
     cursor: grab;
+    display: inline-block;
+    height: 50px;
+    margin-top: -30px;
 }
