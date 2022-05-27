@@ -6,7 +6,7 @@ td {
     box-shadow: 1px 1px 3px inset black;
     border-radius: 4px;
     text-align: center;
-    font-size: 70px;
+    font-size: 45px;
     cursor: pointer;
 }
 td:hover {
@@ -18,7 +18,7 @@ td.x1 {
 td.x1:hover {
     background-color: rgb(9, 63, 63);
 }
-td.b {
+span.b {
     color: rgb(12, 16, 64);
     text-shadow: 0px 0px 6px rgb(243, 252, 160);
 }
@@ -46,5 +46,7 @@ body {
     background-color: antiquewhite;
 }
 span {
+    color:rgb(135, 238, 229);
+    text-shadow: 0px 0px 6px rgb(55, 58, 34);
     cursor: grab;
 }
