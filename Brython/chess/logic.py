@@ -1,6 +1,7 @@
 from browser import document as D, html as H
 m = ["f", 0, 0, 0, 0, None]
 def fc(m, t):
+    # példa lépésellenőrzések gyalog lépések
     if m[0]=="♟" and m[2]==m[4] and m[1]==m[3]-1:
         return True
     if m[0]=="♟" and m[2]==m[4] and m[1]==2 and m[3]==4:
@@ -17,7 +18,10 @@ def fc(m, t):
         return True
     if m[0]=="♟" and t == "♙" and m[2]==m[4]-1 and m[1]==m[3]-1:
         return True
-    print(m[:-1], t)
+    # további figurák lépésellenőrzései, felváltva lépés ellenőrzése stb...
+    # HF, kidolgozandó!
+    if m[0]!="♟" and m[0]!="♙": # kidolgozatlan lépésellenőrzések
+        return True
 class CPMove:
     def __init__(self, m):
         self.origcolor = m.style.color
@@ -29,6 +33,7 @@ class CPMove:
         fig = self.obj.text
         td = self.obj.parent
         m[0], m[1], m[2], m[5] = fig, td.parent.rowIndex + 1, td.cellIndex + 1, td
+        self.startobj = td
         self.moving = True
         self.obj.style.position = "fixed"
         self.obj.style.fontSize = "75px"
@@ -51,18 +56,22 @@ class CPMove:
         el = D.elementFromPoint(e.clientX, e.clientY)
         fig=el.text
         if el.className.split(" ")[0] == "sf":
-            el.clear()
+            el.style.visibility = "hidden"
+            elo = el
             el = D.elementFromPoint(e.clientX, e.clientY)
         if (el.className and el.className[0]=="x"):
             m[3],m[4] = el.parent.rowIndex + 1, el.cellIndex + 1
         t = self.obj.innerHTML
-        if not fc(m, fig):
-            print("?", m[:-1], "?")
         ub = H.SPAN(t, Class=f"sf {'b' if ord(t)>9817 else 'w' }")
         CPMove(ub)
-        el.clear()
-        el <= ub
-        self.moving = False
+        if fc(m, fig):
+            el.clear()
+            el <= ub
+            self.moving = False
+        else:
+            self.startobj <= ub
+            if "elo" in locals(): elo.style.visibility = "visible"
+            self.moving = False
 def f(e):
     el = H.SPAN(e, Class=f"sf {'b' if ord(e)>9817 else 'w' }")
     CPMove(el)
