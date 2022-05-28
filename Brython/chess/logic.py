@@ -63,6 +63,7 @@ class CPMove:
         if fc(m, fig):
             el.clear()
             el <= ub
+            self.startobj.clear()
             self.moving = False
         else:
             self.startobj <= ub
