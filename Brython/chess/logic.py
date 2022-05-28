@@ -18,10 +18,19 @@ def fc(m, t):
         return True
     if m[0]=="♟" and t == "♙" and m[2]==m[4]-1 and m[1]==m[3]-1:
         return True
+    # ellenőrzi, hogy saját bábut nem üthet:
+    if ord(m[0])>9817 and ord(t)>9817:
+        return False
+    if ord(m[0])<9818 and ord(t)<9818 and ord(t)>9800:
+        return False
+    
+    if len(t)>10: return False # Nem a cellába lép
     # további figurák lépésellenőrzései, felváltva lépés ellenőrzése stb...
     # HF, kidolgozandó!
+
     if m[0]!="♟" and m[0]!="♙": # kidolgozatlan lépésellenőrzések
         return True
+    return False
 class CPMove:
     def __init__(self, m):
         self.origcolor = m.style.color
