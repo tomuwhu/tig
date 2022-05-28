@@ -74,4 +74,7 @@ def f(e):
     return el
 D <= H.H1("Sakk") + H.TABLE([
     H.TR([H.TD(x, Class=f"x{(i+j)%2}") for i, x in enumerate(map(f, r))])
-    for j, r in enumerate(["♜♞♝♛♚♝♞♜", "♟♟♟♟♟♟♟♟"] + [" "*8]*4 + ["♙♙♙♙♙♙♙♙", "♖♘♗♕♔♗♘♖"])])
+    for j, r in enumerate(
+        ["♜♞♝♛♚♝♞♜", "♟♟♟♟♟♟♟♟"] + 
+        [" "*8]*4 + 
+        ["♙♙♙♙♙♙♙♙", "♖♘♗♕♔♗♘♖"])])
