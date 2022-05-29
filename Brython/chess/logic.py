@@ -14,6 +14,19 @@ def fc(m, t):
     if ord(m[0])>9817 and ord(t)>9817 and ord(t)<9827: return False
     if ord(m[0])<9818 and ord(t)<9818 and ord(t)>9811: return False
     if len(t)>10: return False # Nem a cellába lép
+
+    if  m[0]=="♚" and m[1]==1 and m[2]==5 and m[3]==1 and m[4]==7:
+        D.select("tr td:nth-child(6)")[0].clear()
+        D.select("tr td:nth-child(6)")[0] <= D.select("tr td:nth-child(8)")[0].children[0]
+    if  m[0]=="♚" and m[1]==1 and m[2]==5 and m[3]==1 and m[4]==3:
+        D.select("tr td:nth-child(4)")[0].clear()
+        D.select("tr td:nth-child(4)")[0] <= D.select("tr td:nth-child(1)")[0].children[0]
+    if  m[0]=="♔" and m[1]==8 and m[2]==5 and m[3]==8 and m[4]==7:
+        D.select("tr td:nth-child(6)")[7].clear()
+        D.select("tr td:nth-child(6)")[7] <= D.select("tr td:nth-child(8)")[7].children[0]
+    if  m[0]=="♔" and m[1]==8 and m[2]==5 and m[3]==8 and m[4]==3:
+        D.select("tr td:nth-child(4)")[7].clear()
+        D.select("tr td:nth-child(4)")[7] <= D.select("tr td:nth-child(1)")[7].children[0]
     # további figurák lépésellenőrzései, felváltva lépés ellenőrzése stb...
     # HF, kidolgozandó!
     if m[0]!="♟" and m[0]!="♙": return True # Kidolgozatlan lépésellenőrzések
