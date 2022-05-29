@@ -6,15 +6,14 @@ def fc(m, t):
     if m[0]=="♟" and m[2]==m[4] and m[1]==2 and m[3]==4: return True
     if m[0]=="♙" and m[2]==m[4] and m[1]==m[3]+1: return True
     if m[0]=="♙" and m[2]==m[4] and m[1]==7 and m[3]==5: return True
-    if m[0]=="♙" and t == "♟" and m[2]==m[4]+1 and m[1]==m[3]+1: return True
-    if m[0]=="♙" and t == "♟" and m[2]==m[4]-1 and m[1]==m[3]+1: return True
-    if m[0]=="♟" and t == "♙" and m[2]==m[4]+1 and m[1]==m[3]-1: return True
-    if m[0]=="♟" and t == "♙" and m[2]==m[4]-1 and m[1]==m[3]-1: return True
+    if m[0]=="♙" and t in "♟♜♞♝♛♚" and m[2]==m[4]+1 and m[1]==m[3]+1: return True
+    if m[0]=="♙" and t in "♟♜♞♝♛♚" and m[2]==m[4]-1 and m[1]==m[3]+1: return True
+    if m[0]=="♟" and t == "♙♖♘♗♕♔" and m[2]==m[4]+1 and m[1]==m[3]-1: return True
+    if m[0]=="♟" and t == "♙♖♘♗♕♔" and m[2]==m[4]-1 and m[1]==m[3]-1: return True
     # ellenőrzi, hogy saját bábut nem üthet:
     if ord(m[0])>9817 and ord(t)>9817 and ord(t)<9827: return False
     if ord(m[0])<9818 and ord(t)<9818 and ord(t)>9811: return False
     if len(t)>10: return False # Nem a cellába lép
-
     if  m[0]=="♚" and m[1]==1 and m[2]==5 and m[3]==1 and m[4]==7:
         D.select("tr td:nth-child(6)")[0].clear()
         D.select("tr td:nth-child(6)")[0] <= D.select("tr td:nth-child(8)")[0].children[0]
