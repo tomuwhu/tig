@@ -1,0 +1,13 @@
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="main.js"></script>
+    <!-- [START load_google_apis] -->
+    <script src="https://apis.google.com/js/platform.js?onload=loadAuthClient" async defer></script>
+  </head>
+  <!-- [END load_google_apis] -->
+  <body>
+    <button id='sign-in-btn' onclick="signIn();" disabled>Sign In</button>
+    <button id='sign-out-btn' onclick="signOut();" hidden>Sign Out</button>
+    <button id='send-request-btn' onclick="sendSampleRequest();" disabled>Send sample request</button>
+  </body>
+</html>
