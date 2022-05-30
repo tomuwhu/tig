@@ -107,8 +107,8 @@ class CPMove:
         self.moving = True
         self.obj.style.position = "fixed"
         self.obj.style.fontSize = "75px"
-        self.obj.left -= 18
-        self.obj.top -= 20
+        self.obj.left = e.x - int(self.obj.width) // 2
+        self.obj.top = e.y - int(self.obj.height) // 2
         self.mp = [e.x, e.y]
         self.ep = [self.obj.left, self.obj.top]
         D.bind("mousemove", self.move)
