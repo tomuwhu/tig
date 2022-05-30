@@ -55,7 +55,7 @@ def fc(m, t):
     # további figurák lépésellenőrzései, felváltva lépés ellenőrzése stb...
     # HF, kidolgozandó!
     if m[0] not in "♙♟♔♚" and len(m[5].innerHTML)<130 :
-        if lm[0]=="b": lm[0] = "w"
+        if lm[0] == "b": lm[0] = "w"
         else: lm[0] = "b"
         return True # Kidolgozatlan lépésellenőrzések
     return False #Bármi más nem jó lépés
