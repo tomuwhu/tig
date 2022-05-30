@@ -1,34 +1,63 @@
 from browser import document as D, html as H
 m = ["f", 0, 0, 0, 0, None]
+def gp(x,y):
+    l = D.select(f"tr td:nth-child({x})")[y]
+    if len(l.innerHTML) > 6:
+        if (l.children[0].text == " "):
+            return "-"
+        return l.children[0].text
+    else: return "-"
 def fc(m, t):
-    # példa lépésellenőrzések gyalog lépések
+    if len(t)>10: return False # Nem a cellába lép
+    # ellenőrzi, hogy saját bábut nem üthet:
+    if ord(m[0])>9817 and ord(t)>9817 and ord(t)<9827: return False
+    if ord(m[0])<9818 and ord(t)<9818 and ord(t)>9811: return False
+    # gyalog lépések
+    # gyalog előre lépés
     if m[0]=="♟" and m[2]==m[4] and m[1]==m[3]-1: return True
     if m[0]=="♟" and m[2]==m[4] and m[1]==2 and m[3]==4: return True
     if m[0]=="♙" and m[2]==m[4] and m[1]==m[3]+1: return True
     if m[0]=="♙" and m[2]==m[4] and m[1]==7 and m[3]==5: return True
+    # anpassen
+    if m[0]=="♟" and m[2]==m[4]+1 and m[1]==m[3]-1 and gp(m[2]-1, m[1]-1)=="♙":
+        D.select(f"tr td:nth-child({m[2]-1})")[m[1]-1].clear()
+        return True
+    if m[0]=="♟" and m[2]==m[4]-1 and m[1]==m[3]-1 and gp(m[2]+1, m[1]-1)=="♙":
+        D.select(f"tr td:nth-child({m[2]+1})")[m[1]-1].clear()
+        return True
+    if m[0]=="♙" and m[2]==m[4]+1 and m[1]==m[3]+1 and gp(m[2]-1, m[1]-1)=="♟":
+        D.select(f"tr td:nth-child({m[2]-1})")[m[1]-1].clear()
+        return True
+    if m[0]=="♙" and m[2]==m[4]-1 and m[1]==m[3]+1 and gp(m[2]+1, m[1]-1)=="♟":
+        D.select(f"tr td:nth-child({m[2]+1})")[m[1]-1].clear()
+        return True
+    # gyalog normál ütés
     if m[0]=="♙" and t in "♟♜♞♝♛♚" and m[2]==m[4]+1 and m[1]==m[3]+1: return True
     if m[0]=="♙" and t in "♟♜♞♝♛♚" and m[2]==m[4]-1 and m[1]==m[3]+1: return True
-    if m[0]=="♟" and t == "♙♖♘♗♕♔" and m[2]==m[4]+1 and m[1]==m[3]-1: return True
-    if m[0]=="♟" and t == "♙♖♘♗♕♔" and m[2]==m[4]-1 and m[1]==m[3]-1: return True
-    # ellenőrzi, hogy saját bábut nem üthet:
-    if ord(m[0])>9817 and ord(t)>9817 and ord(t)<9827: return False
-    if ord(m[0])<9818 and ord(t)<9818 and ord(t)>9811: return False
-    if len(t)>10: return False # Nem a cellába lép
-    if  m[0]=="♚" and m[1]==1 and m[2]==5 and m[3]==1 and m[4]==7:
-        D.select("tr td:nth-child(6)")[0].clear()
+    if m[0]=="♟" and t in "♙♖♘♗♕♔" and m[2]==m[4]+1 and m[1]==m[3]-1: return True
+    if m[0]=="♟" and t in "♙♖♘♗♕♔" and m[2]==m[4]-1 and m[1]==m[3]-1: return True
+    # király lépések
+    # sánc
+    if  m[0]=="♚" and m[1]==1 and m[2]==5 and m[3]==1 and m[4]==7 and gp(6, 0)=="-":
         D.select("tr td:nth-child(6)")[0] <= D.select("tr td:nth-child(8)")[0].children[0]
-    if  m[0]=="♚" and m[1]==1 and m[2]==5 and m[3]==1 and m[4]==3:
-        D.select("tr td:nth-child(4)")[0].clear()
+        return True
+    if  m[0]=="♚" and m[1]==1 and m[2]==5 and m[3]==1 and m[4]==3 and gp(4, 0)=="-" and gp(2, 0)=="-":
         D.select("tr td:nth-child(4)")[0] <= D.select("tr td:nth-child(1)")[0].children[0]
-    if  m[0]=="♔" and m[1]==8 and m[2]==5 and m[3]==8 and m[4]==7:
-        D.select("tr td:nth-child(6)")[7].clear()
+        return True
+    if  m[0]=="♔" and m[1]==8 and m[2]==5 and m[3]==8 and m[4]==7 and gp(6, 7)=="-":
         D.select("tr td:nth-child(6)")[7] <= D.select("tr td:nth-child(8)")[7].children[0]
-    if  m[0]=="♔" and m[1]==8 and m[2]==5 and m[3]==8 and m[4]==3:
-        D.select("tr td:nth-child(4)")[7].clear()
+        return True
+    if  m[0]=="♔" and m[1]==8 and m[2]==5 and m[3]==8 and m[4]==3 and gp(4, 7)=="-" and gp(2, 7)=="-":
         D.select("tr td:nth-child(4)")[7] <= D.select("tr td:nth-child(1)")[7].children[0]
+        return True
+    # király normál lépés
+    if  m[0]=="♔" and abs(m[1]-m[3])<2 and abs(m[2]-m[4])<2:
+        return True
+    if  m[0]=="♚" and abs(m[1]-m[3])<2 and abs(m[2]-m[4])<2:
+        return True
     # további figurák lépésellenőrzései, felváltva lépés ellenőrzése stb...
     # HF, kidolgozandó!
-    if m[0]!="♟" and m[0]!="♙": return True # Kidolgozatlan lépésellenőrzések
+    if m[0] not in "♙♟♔♚": return True # Kidolgozatlan lépésellenőrzések
     return False #Bármi más nem jó lépés
 class CPMove:
     def __init__(self, m):
