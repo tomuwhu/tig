@@ -4,8 +4,7 @@ lm = ["b"]
 def gp(x,y):
     l = D.select(f"tr td:nth-child({x})")[y-1]
     if len(l.innerHTML) > 6:
-        if (l.children[0].text == " "):
-            return "-"
+        if (l.children[0].text == " "): return "-"
         return l.children[0].text
     else: return "-"
 def fc(m, t):
@@ -17,7 +16,6 @@ def fc(m, t):
     if ord(m[0])<9818 and ord(t)<9818 and ord(t)>9811: return False
     # gyalog lépések
     # gyalog előre lépés
-    print(gp(m[2], 2))
     if m[0]=="♟" and m[2]==m[4] and m[1]==m[3]-1: lm[0] = "b"; return True
     if m[0]=="♟" and m[2]==m[4] and m[1]==2 and m[3]==4 and gp(m[2], 3) == "-": lm[0] = "b"; return True
     if m[0]=="♙" and m[2]==m[4] and m[1]==m[3]+1: lm[0] = "w"; return True
