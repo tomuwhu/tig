@@ -2,7 +2,7 @@ from browser import document as D, html as H
 m = ["f", 0, 0, 0, 0, None]
 lm = ["b"]
 def gp(x,y):
-    l = D.select(f"tr td:nth-child({x})")[y]
+    l = D.select(f"tr td:nth-child({x})")[y-1]
     if len(l.innerHTML) > 6:
         if (l.children[0].text == " "):
             return "-"
@@ -19,17 +19,17 @@ def fc(m, t):
     # gyalog előre lépés
     print(gp(m[2], 2))
     if m[0]=="♟" and m[2]==m[4] and m[1]==m[3]-1: lm[0] = "b"; return True
-    if m[0]=="♟" and m[2]==m[4] and m[1]==2 and gp(m[2], 2) == "-" and m[3]==4: lm[0] = "b"; return True
+    if m[0]=="♟" and m[2]==m[4] and m[1]==2 and m[3]==4 and gp(m[2], 3) == "-": lm[0] = "b"; return True
     if m[0]=="♙" and m[2]==m[4] and m[1]==m[3]+1: lm[0] = "w"; return True
-    if m[0]=="♙" and m[2]==m[4] and m[1]==7 and gp(m[2], 5)  == "-" and m[3]==5: lm[0] = "w"; return True
+    if m[0]=="♙" and m[2]==m[4] and m[1]==7 and m[3]==5 and gp(m[2], 6)  == "-": lm[0] = "w"; return True
     # anpassen
-    if m[0]=="♟" and m[2]==m[4]+1 and m[1]==m[3]-1 and gp(m[2]-1, m[1]-1)=="♙":
+    if m[0]=="♟" and m[2]==m[4]+1 and m[1]==m[3]-1 and gp(m[2]-1, m[1])=="♙":
         lm[0] = "b"; D.select(f"tr td:nth-child({m[2]-1})")[m[1]-1].clear(); return True
-    if m[0]=="♟" and m[2]==m[4]-1 and m[1]==m[3]-1 and gp(m[2]+1, m[1]-1)=="♙":
+    if m[0]=="♟" and m[2]==m[4]-1 and m[1]==m[3]-1 and gp(m[2]+1, m[1])=="♙":
         lm[0] = "b"; D.select(f"tr td:nth-child({m[2]+1})")[m[1]-1].clear(); return True
-    if m[0]=="♙" and m[2]==m[4]+1 and m[1]==m[3]+1 and gp(m[2]-1, m[1]-1)=="♟":
+    if m[0]=="♙" and m[2]==m[4]+1 and m[1]==m[3]+1 and gp(m[2]-1, m[1])=="♟":
         lm[0] = "w"; D.select(f"tr td:nth-child({m[2]-1})")[m[1]-1].clear(); return True
-    if m[0]=="♙" and m[2]==m[4]-1 and m[1]==m[3]+1 and gp(m[2]+1, m[1]-1)=="♟":
+    if m[0]=="♙" and m[2]==m[4]-1 and m[1]==m[3]+1 and gp(m[2]+1, m[1])=="♟":
         lm[0] = "w"; D.select(f"tr td:nth-child({m[2]+1})")[m[1]-1].clear(); return True
     # gyalog normál ütés
     if m[0]=="♙" and t in "♟♜♞♝♛♚" and m[2]==m[4]+1 and m[1]==m[3]+1: lm[0] = "w"; return True
@@ -38,16 +38,16 @@ def fc(m, t):
     if m[0]=="♟" and t in "♙♖♘♗♕♔" and m[2]==m[4]-1 and m[1]==m[3]-1: lm[0] = "b"; return True
     # király lépések
     # sánc
-    if  m[0]=="♚" and m[1]==1 and m[2]==5 and m[3]==1 and m[4]==7 and gp(6, 0)=="-":
+    if  m[0]=="♚" and m[1]==1 and m[2]==5 and m[3]==1 and m[4]==7 and gp(6, 1)=="-":
         D.select("tr td:nth-child(6)")[0] <= D.select("tr td:nth-child(8)")[0].children[0]
         lm[0] = "b"; return True
-    if  m[0]=="♚" and m[1]==1 and m[2]==5 and m[3]==1 and m[4]==3 and gp(4, 0)=="-" and gp(2, 0)=="-":
+    if  m[0]=="♚" and m[1]==1 and m[2]==5 and m[3]==1 and m[4]==3 and gp(4, 1)=="-" and gp(2, 1)=="-":
         D.select("tr td:nth-child(4)")[0] <= D.select("tr td:nth-child(1)")[0].children[0]
         lm[0] = "b"; return True
-    if  m[0]=="♔" and m[1]==8 and m[2]==5 and m[3]==8 and m[4]==7 and gp(6, 7)=="-":
+    if  m[0]=="♔" and m[1]==8 and m[2]==5 and m[3]==8 and m[4]==7 and gp(6, 8)=="-":
         D.select("tr td:nth-child(6)")[7] <= D.select("tr td:nth-child(8)")[7].children[0]
         lm[0] = "w"; return True
-    if  m[0]=="♔" and m[1]==8 and m[2]==5 and m[3]==8 and m[4]==3 and gp(4, 7)=="-" and gp(2, 7)=="-":
+    if  m[0]=="♔" and m[1]==8 and m[2]==5 and m[3]==8 and m[4]==3 and gp(4, 8)=="-" and gp(2, 8)=="-":
         D.select("tr td:nth-child(4)")[7] <= D.select("tr td:nth-child(1)")[7].children[0]
         lm[0] = "w"; return True
     # király normál lépés
