@@ -35,6 +35,9 @@ def fc(m, t):
     if m[0]=="♟" and t in "♙♖♘♗♕♔" and m[2]==m[4]+1 and m[1]==m[3]-1: lm[0] = "b"; return True
     if m[0]=="♟" and t in "♙♖♘♗♕♔" and m[2]==m[4]-1 and m[1]==m[3]-1: lm[0] = "b"; return True
     # király lépések
+    # király normál lépés
+    if  m[0]=="♔" and abs(m[1]-m[3])<2 and abs(m[2]-m[4])<2: lm[0] = "w"; return True
+    if  m[0]=="♚" and abs(m[1]-m[3])<2 and abs(m[2]-m[4])<2: lm[0] = "w"; return True
     # sánc
     if  m[0]=="♚" and m[1]==1 and m[2]==5 and m[3]==1 and m[4]==7 and gp(6, 1)=="-":
         D.select("tr td:nth-child(6)")[0] <= D.select("tr td:nth-child(8)")[0].children[0]
@@ -48,11 +51,8 @@ def fc(m, t):
     if  m[0]=="♔" and m[1]==8 and m[2]==5 and m[3]==8 and m[4]==3 and gp(4, 8)=="-" and gp(2, 8)=="-":
         D.select("tr td:nth-child(4)")[7] <= D.select("tr td:nth-child(1)")[7].children[0]
         lm[0] = "w"; return True
-    # király normál lépés
-    if  m[0]=="♔" and abs(m[1]-m[3])<2 and abs(m[2]-m[4])<2: lm[0] = "w"; return True
-    if  m[0]=="♚" and abs(m[1]-m[3])<2 and abs(m[2]-m[4])<2: lm[0] = "w"; return True
     # további figurák lépésellenőrzései, felváltva lépés ellenőrzése stb...
-    # kidolgozandó még ♖♘♗♕♜♞♝♛, sakk kezelése
+    # kidolgozandó még ♖♘♗♕♜♞♝♛, sakk kezelése, matt
     if m[0] not in "♙♟♔♚" and len(m[5].innerHTML)<130 :
         if lm[0] == "b": lm[0] = "w"
         else: lm[0] = "b"
