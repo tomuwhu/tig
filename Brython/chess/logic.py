@@ -17,10 +17,11 @@ def fc(m, t):
     if ord(m[0])<9818 and ord(t)<9818 and ord(t)>9811: return False
     # gyalog lépések
     # gyalog előre lépés
+    print(gp(m[2], 2))
     if m[0]=="♟" and m[2]==m[4] and m[1]==m[3]-1: lm[0] = "b"; return True
-    if m[0]=="♟" and m[2]==m[4] and m[1]==2 and m[3]==4: lm[0] = "b"; return True
+    if m[0]=="♟" and m[2]==m[4] and m[1]==2 and gp(m[2], 2) == "-" and m[3]==4: lm[0] = "b"; return True
     if m[0]=="♙" and m[2]==m[4] and m[1]==m[3]+1: lm[0] = "w"; return True
-    if m[0]=="♙" and m[2]==m[4] and m[1]==7 and m[3]==5: lm[0] = "w"; return True
+    if m[0]=="♙" and m[2]==m[4] and m[1]==7 and gp(m[2], 5)  == "-" and m[3]==5: lm[0] = "w"; return True
     # anpassen
     if m[0]=="♟" and m[2]==m[4]+1 and m[1]==m[3]-1 and gp(m[2]-1, m[1]-1)=="♙":
         lm[0] = "b"; D.select(f"tr td:nth-child({m[2]-1})")[m[1]-1].clear(); return True
