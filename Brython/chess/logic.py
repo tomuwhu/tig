@@ -53,7 +53,7 @@ def fc(m, t):
     if  m[0]=="♔" and abs(m[1]-m[3])<2 and abs(m[2]-m[4])<2: lm[0] = "w"; return True
     if  m[0]=="♚" and abs(m[1]-m[3])<2 and abs(m[2]-m[4])<2: lm[0] = "w"; return True
     # további figurák lépésellenőrzései, felváltva lépés ellenőrzése stb...
-    # HF, kidolgozandó!
+    # kidolgozandó még ♖♘♗♕♜♞♝♛, sakk kezelése
     if m[0] not in "♙♟♔♚" and len(m[5].innerHTML)<130 :
         if lm[0] == "b": lm[0] = "w"
         else: lm[0] = "b"
