@@ -80,9 +80,6 @@ class CPMove:
         D.bind("mousemove", self.move)
     def move(self, e):
         if self.moving:
-            el = D.elementFromPoint(e.clientX, e.clientY)
-            el.style.visibility = "hidden"
-            el.style.visibility = "visible"
             self.obj.style.color = "rgb(200,50,20)"
             self.obj.left = self.ep[0] + e.x - self.mp[0]
             self.obj.top  = self.ep[1] + e.y - self.mp[1]
