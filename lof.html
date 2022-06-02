@@ -12,14 +12,14 @@
         console.log(v);
         if (v[1]) {
             document.getElementById("content").innerHTML = `
-                Bejelentkezve:
-            ` + v[1].v_name + " " + v[1].k_name + `<br><br><div class="sa">`+
-                v[1].vhtml
-            + `</div><br><button onclick="lo()">Kijelentkezés</button>
-            `
+            <div class="lcont">
+            <div class="lc">Bejelentkezve: <i>` + v[1].v_name + " " + v[1].k_name + `</i></div>
+            <div class="lc"><button onclick="lo()">Kijelentkezés</button></div>
+            </div>
+            <div class="la">` + v[1].vhtml + `</div>`
         } else {
             document.getElementById("content").innerHTML = `
-                <h2>Bejelentkezés</h2>
+                <h2 class="c">Bejelentkezés</h2>
                 <form>
                 <div class="lof">
                     <div class="la">
@@ -29,7 +29,7 @@
                     <input placeholder="jelszó" autocomplete="current-password" type="password" id="pw">
                     </div>
                     <div class="lb">
-                    <button onclick="f()">Login</button>
+                    <button onclick="f()">Bejelentkezés</button>
                     </div>
                 </div>
                 </form>
@@ -61,40 +61,30 @@
     }
     f()
 </script>
-<h1>Intranet</h1>
+<link rel="stylesheet" href="main.css">
+<ul class="navigation">
+    <li><a href="./">Kezdőlap</a></li>
+    <li><a href="tanttm.html">Tananyag</a></li>
+    <li><a href="htmlexampl.html">HTML-CSS</a></li>
+    <li><a href="pyexamples.html">Python</a></li>
+    <li><a href="probadogalista.html">Ellenőrzés</a></li>
+</ul>
+<h1 class="h c">Intranet «es6.eu»</h1>
 <div id="content"></div>
 <style>
-* {
-    color:rgb(3, 31, 31);
-    text-shadow: 1px 1px 3px gray;
-}
-body {
-    background-color: antiquewhite;
-}
-#content {
-    text-align: center;
-}
 .lof {
-    display: inline-block;
-    margin: auto;
-    padding: 7px;
-    margin: 6px;
-    background-color: rgb(195, 222, 175);
-    box-shadow: 1px 1px 3px inset black;
-}
-h1 {
     text-align: center;
-    text-shadow: 1px 1px 4px gray;
-    color: rgb(9, 50, 36);
+    width: 300px;
+    margin: auto;
 }
 .la {
     display: block;
     text-align: left;
-    margin: auto;
+    margin: 6px auto;
     padding: 7px;
-    margin: 6px;
     background-color: rgb(214, 214, 180);
     box-shadow: 1px 1px 3px inset black;
+    color: rgb(14, 52, 14);
 }
 .lb {
     text-align: right;
@@ -103,9 +93,18 @@ h1 {
     background-color: rgb(175, 222, 222);
     box-shadow: 1px 1px 3px inset black;
 }
+.lc {
+    display: inline-block;
+    text-shadow: 1px 1px 3px black;
+}
+.lcont {
+    display: flex;
+    justify-content: space-between;
+}
 div.sa {
     background-color: bisque;
-    border-radius: 15px;
-    box-shadow: 1px 1px 3px gray;
+    box-shadow: 1px 1px 3px inset gray;
+    margin: 6px;
+    padding: 10px;
 }
 </style>
