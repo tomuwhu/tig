@@ -9,40 +9,30 @@
     xhttp = new XMLHttpRequest()
     xhttp.onload = () => {
         v = JSON.parse(xhttp.responseText)
-        console.log(v);
-        if (v[1]) {
+        if (v[1] && v[1].v_name) {
+            document.getElementById("lif").style.display="none"
+            document.getElementById("lc").style.display="flex"
+            document.getElementById("ln").innerHTML = v[1].v_name + " " + v[1].k_name
+            document.getElementById("content").style.display="block"
             document.getElementById("content").innerHTML = `
-            <div class="lcont">
-            <div class="lc">Bejelentkezve: <i>` + v[1].v_name + " " + v[1].k_name + `</i></div>
-            <div class="lc"><button onclick="lo()">Kijelentkezés</button></div>
-            </div>
             <div class="la">` + v[1].vhtml + `</div>`
+            document.getElementById("sid").innerHTML="SId: "+v[0]
         } else {
-            document.getElementById("content").innerHTML = `
-                <h2 class="c">Bejelentkezés</h2>
-                <form>
-                <div class="lof">
-                    <div class="la">
-                    <input autocomplete="username" placeholder="gmail cím" type="text" id="un">@gmail.com
-                    </div>
-                    <div class="la">
-                    <input placeholder="jelszó" autocomplete="current-password" type="password" id="pw">
-                    </div>
-                    <div class="lb">
-                    <button onclick="f()">Bejelentkezés</button>
-                    </div>
-                </div>
-                </form>
-            `
+            document.getElementById("lif").style.display="block"
+            document.getElementById("lc").style.display="none"
+            document.getElementById("content").style.display="none"
         }
     }
     function lo() {
         xhttp.open("POST", "https://inf.u-szeged.hu/~tnemeth/login.php")
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
         sid = Math.round(Math.random()*1000000000)
+        document.getElementById("sid").innerHTML="SID: "+sid
         localStorage.setItem('sid', sid)
-        console.log(sid);
         xhttp.send(`sid=${sid}`)
+        document.getElementById("lc").display="none"
+        document.getElementById("content").innerHTML = ""
+        document.getElementById("lif").style.display="block"
     }
     function f() {
         xhttp.open("POST", "https://inf.u-szeged.hu/~tnemeth/login.php")
@@ -62,16 +52,45 @@
     f()
 </script>
 <link rel="stylesheet" href="main.css">
-<ul class="navigation">
-    <li><a href="./">Kezdőlap</a></li>
-    <li><a href="tanttm.html">Tananyag</a></li>
-    <li><a href="htmlexampl.html">HTML-CSS</a></li>
-    <li><a href="pyexamples.html">Python</a></li>
-    <li><a href="probadogalista.html">Ellenőrzés</a></li>
-</ul>
-<h1 class="h c">Intranet «es6.eu»</h1>
-<div id="content"></div>
 <style>
+span#sid {
+    font-size: 10px;
+    font-family: Cochin;
+    font-weight: 100;
+    color:rgb(135, 187, 187)
+}
+h2.hx {
+    text-align: center;
+    background-color: rgb(24, 16, 16);
+    padding: 5px;
+}
+i {
+    color: rgb(237, 237, 150);
+}
+div.a {
+    font-size: 10px;
+    color: rgb(230, 171, 255);
+    padding: 3px;
+    padding-left: 9px;
+    padding-right: 9px;
+    cursor: pointer;
+    background-color: rgb(19, 50, 50);
+    box-shadow: 0px 0px 5px rgb(255, 139, 139);
+    border-radius: 5px;
+    margin-right: 6px;
+}
+div.a:hover {
+    color: rgb(242, 212, 254);
+    cursor: pointer;
+    background-color: rgb(32, 9, 34);
+}
+div#content {
+    margin-top: 0px;
+    padding: 3px;
+    padding-left: 9px;
+    padding-right: 9px;
+    display: none;
+}
 .lof {
     text-align: center;
     width: 300px;
@@ -82,29 +101,67 @@
     text-align: left;
     margin: 6px auto;
     padding: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
     background-color: rgb(214, 214, 180);
     box-shadow: 1px 1px 3px inset black;
     color: rgb(14, 52, 14);
 }
+.lo {
+    padding-left: 10px;
+}
 .lb {
     text-align: right;
     padding: 7px;
-    margin: 6px;
+    margin: 0px;
     background-color: rgb(175, 222, 222);
     box-shadow: 1px 1px 3px inset black;
 }
 .lc {
-    display: inline-block;
-    text-shadow: 1px 1px 3px black;
+    text-align: right;
+    padding: 7px;
+    margin: 6px auto;
+    background-color: rgb(44, 74, 74);
+    box-shadow: 1px 1px 3px inset black;
+    width: 500px;
 }
 .lcont {
     display: flex;
     justify-content: space-between;
-}
-div.sa {
-    background-color: bisque;
-    box-shadow: 1px 1px 3px inset gray;
-    margin: 6px;
-    padding: 10px;
+    background-color: rgb(72, 37, 37);
+    box-shadow: 1px 1px 3px inset black;
+    border-radius: 5px;
+    padding: 5px;
 }
 </style>
+<body>
+    <ul class="navigation">
+        <li><a href="./">Kezdőlap</a></li>
+        <li><a href="tanttm.html">Tananyag</a></li>
+        <li><a href="htmlexampl.html">HTML-CSS</a></li>
+        <li><a href="pyexamples.html">Python</a></li>
+        <li><a href="probadogalista.html">Ellenőrzés</a></li>
+    </ul>
+    <h1 class="h c">Intranet «es6.eu» <span id="sid"></span></h1>
+    <form id="lif">
+        <div class="lc">
+            <h2 class="hx">Bejelentkezés</h2>
+            <div class="lof">
+                <div class="la">
+                <input autocomplete="username" placeholder="gmail cím" type="text" id="un">@gmail.com
+                </div>
+                <div class="la">
+                <input placeholder="jelszó" autocomplete="current-password" type="password" id="pw">
+                </div>
+                <div class="lb">
+                <button onclick="f()">Bejelentkezés</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div id="lc" class="lcont">
+        <div class="lo">Bejelentkezve: <i id="ln"></i></div>
+        <div class="a" onclick="lo()">Kijelentkezés</div>
+    </div>
+    <div id="content"></div>
+</body>
