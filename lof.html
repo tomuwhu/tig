@@ -13,23 +13,26 @@
         if (v[1]) {
             document.getElementById("content").innerHTML = `
                 Bejelentkezve:
-            ` + v[1].v_name + " " + v[1].k_name + `<br><br>
-                <button onclick="lo()">Kijelentkezés</button>
+            ` + v[1].v_name + " " + v[1].k_name + `<br><br><div class="sa">`+
+                v[1].vhtml
+            + `</div><br><button onclick="lo()">Kijelentkezés</button>
             `
         } else {
             document.getElementById("content").innerHTML = `
                 <h2>Bejelentkezés</h2>
+                <form>
                 <div class="lof">
                     <div class="la">
-                    <input placeholder="gmail cím" type="text" id="un">@gmail.com
+                    <input autocomplete="username" placeholder="gmail cím" type="text" id="un">@gmail.com
                     </div>
                     <div class="la">
-                    <input placeholder="jelszó" type="password" id="pw">
+                    <input placeholder="jelszó" autocomplete="current-password" type="password" id="pw">
                     </div>
                     <div class="lb">
                     <button onclick="f()">Login</button>
                     </div>
                 </div>
+                </form>
             `
         }
     }
@@ -99,5 +102,10 @@ h1 {
     margin: 6px;
     background-color: rgb(175, 222, 222);
     box-shadow: 1px 1px 3px inset black;
+}
+div.sa {
+    background-color: bisque;
+    border-radius: 15px;
+    box-shadow: 1px 1px 3px gray;
 }
 </style>
