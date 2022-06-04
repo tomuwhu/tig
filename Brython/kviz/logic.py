@@ -7,7 +7,7 @@ kl = [
 "Az alábbiak közül melyik NEM programozási nyelv:",
 "Melyik Python utasítás adja meg egy szöveg karaktereinek számát?",
 """Melyik Python utasítás adja meg ha a változó értéke 
-NEM egyenlő b változó értékével?""",
+   NEM egyenlő b változó értékével?""",
 "Az alábbiak közül melyik css parancs állítja be a szöveg színét?",
 "Az alábbi karakterek közül melyik a \"class\" selector?",
 "Az alábbi karakterek közül melyik az \"id\" selector?"
