@@ -1,0 +1,37 @@
+body {
+    color: rgb(61, 21, 21);
+    text-shadow: 1px 1px 3px black;
+    text-align: center;
+    background-color: rgb(150, 219, 219);
+    user-select: none;
+}
+.k {
+    margin: 10px;
+    padding: 6px;
+    box-shadow: 1px 1px 3px black;
+    border-radius: 5px;
+    background-color: rgb(200, 197, 105);
+}
+.b {
+    display: inline-block;
+    margin: 10px;
+    padding: 6px;
+    box-shadow: 1px 1px 3px black;
+    border-radius: 5px;
+    min-width: 50px;
+    cursor: pointer;
+    background-color: rgb(159, 200, 105);
+}
+.b:hover {
+    background-color: rgb(204, 127, 255);
+}
+.psz {
+    margin: 10px;
+    padding: 6px;
+    box-shadow: 1px 1px 3px black;
+    border-radius: 5px;
+    background-color: rgb(105, 195, 200);
+}
+.psze {
+    display: inline-block;
+}
