@@ -7,4 +7,4 @@ D <= H.SVG([
         stroke = "blue",
         fill=f'rgb({50 + 10 * i} ,{250 - 10 * i}, 220)'
     ) for i in range(20)], 
-    viewBox="0, 0, 1020, 500")
+    viewBox = "0, 0, 1020, 500")
