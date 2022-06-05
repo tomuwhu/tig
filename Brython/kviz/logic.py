@@ -36,6 +36,10 @@ def g(e):
     else: 
         K.clear()
         K <= H.DIV("Gratulálok!", Class = "m k")
+        K <= H.DIV(
+            f"<b>{len(kl)}</b> kérdésből <b>{G.psz}</b> jó válasz.",
+            Class = "m psz"
+        )
 def f(i):
     K.clear()
     K <= H.DIV(kl[i], Class = "m k")
