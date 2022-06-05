@@ -1,0 +1,12 @@
+svg {
+    margin: auto;
+    width: 95%;
+    height: 95%;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px black;
+    border: solid 2px rgb(132, 94, 94);
+}
+body {
+    text-align: center;
+}
