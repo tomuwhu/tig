@@ -11,14 +11,14 @@ body {
     border-radius: 5px;
 }
 .k {background-color: rgb(201, 199, 130)}
-b  {color: rgb(135, 16, 16)}
+ b {color: rgb(135, 16, 16)}
 .b {
     display: inline-block;
     min-width: 50px;
     cursor: pointer;
     background-color: rgb(159, 200, 105);
 }
-.b:hover    {background-color: rgb(204, 127, 255)}
-.psz        {background-color: rgb(105, 195, 200)}
-.psze       {display: inline-block}
-.c          {background-color: rgb(127, 97, 63)} 
+.b:hover {background-color: rgb(204, 127, 255)}
+.psz     {background-color: rgb(105, 195, 200)}
+.psze    {display: inline-block}
+.c       {background-color: rgb(127, 97, 63)} 
