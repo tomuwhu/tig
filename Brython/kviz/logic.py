@@ -37,13 +37,13 @@ def g(e):
     if G.af<len(kl): f(G.af)
     else: 
         K.clear()
-        K <= H.DIV("Gratulálok!", Class = "k")
+        K <= H.DIV("Gratulálok!", Class = "m k")
 def f(i):
     K.clear()
-    K <= H.DIV(kl[i], Class = "k")
-    K <= [H.DIV(j, Class = "b").bind("click", g) for j in vl[i]]
-K = H.DIV(Class = "c")
+    K <= H.DIV(kl[i], Class = "m k")
+    K <= [H.DIV(j, Class = "m b").bind("click", g) for j in vl[i]]
+K = H.DIV(Class = "m c")
 PSZ = H.DIV(0, Class = "psze")
 D <= K
-D <= H.DIV(["Elért pontszám: ", PSZ, " pont"], Class="psz")
+D <= H.DIV(["Elért pontszám: ", PSZ, " pont"], Class="m psz")
 f(G.af)

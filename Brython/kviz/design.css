@@ -5,43 +5,20 @@ body {
     background-color: rgb(150, 219, 219);
     user-select: none;
 }
-.k {
-    margin: 10px;
-    padding: 6px;
+.m {
+    margin: 10px; padding: 6px;
     box-shadow: 1px 1px 3px black;
     border-radius: 5px;
-    background-color: rgb(201, 199, 130);
 }
-b {
-    color: rgb(135, 16, 16);
-}
+.k {background-color: rgb(201, 199, 130)}
+b  {color: rgb(135, 16, 16)}
 .b {
     display: inline-block;
-    margin: 10px;
-    padding: 6px;
-    box-shadow: 1px 1px 3px black;
-    border-radius: 5px;
     min-width: 50px;
     cursor: pointer;
     background-color: rgb(159, 200, 105);
 }
-.b:hover {
-    background-color: rgb(204, 127, 255);
-}
-.psz {
-    margin: 10px;
-    padding: 6px;
-    box-shadow: 1px 1px 3px black;
-    border-radius: 5px;
-    background-color: rgb(105, 195, 200);
-}
-.psze {
-    display: inline-block;
-}
-.c {
-    margin: 10px;
-    padding: 6px;
-    box-shadow: 1px 1px 3px black;
-    border-radius: 5px;
-    background-color: rgb(127, 97, 63);
-}
+.b:hover    {background-color: rgb(204, 127, 255)}
+.psz        {background-color: rgb(105, 195, 200)}
+.psze       {display: inline-block}
+.c          {background-color: rgb(127, 97, 63)} 
