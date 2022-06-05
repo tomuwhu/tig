@@ -114,7 +114,7 @@ function load() {
                 }
                 qq = document.getElementById("sel").options[sel.selectedIndex].text.slice(2)
                 if (qq[0]+qq[1] == "🏠") qq = qq.slice(2)
-                document.getElementById("pc").innerHTML = "<span class='pn'>" + qq + "</span> példaprogram"
+                document.getElementById("pc").innerHTML = "<span class='pn'>" + qq + "</span>"
         }
     };
     xhttp.open("GET", "./"+file, true);
@@ -198,10 +198,15 @@ function load() {
     </h1>
     <br>
     <div class="d" style="text-align: center;">
-        <span id="pc"></span>
-        <a id="a" href="Brython/brython.html" class="a" target="_blank">futtat</a>
-        <a id="a3" class="a pa" style="display: none;" target="ide">szerkeszt</a>
-        <a id="a2" class="a" style="display: none;">letölt</a>
+        <span class="pc">
+          A példa/feladat:
+          <span id="pc">
+          </span>
+          program
+          <a id="a" href="Brython/brython.html" class="a" target="_blank">futtatása</a>
+          <a id="a3" class="a pa" style="display: none;" target="ide">szerkesztése</a>
+          <a id="a2" class="a" style="display: none;"><i class="i">.zip</i> letöltése</a>
+        </span>
       </div>
     <pre id="c1"><code id="code" class="language-html"></code></pre>
     <table id="tcode">
@@ -255,6 +260,9 @@ function load() {
     text-shadow: 1px 1px 3px black;
     border: solid 13px black;
     margin: 20px;
+  }
+  .i {
+    color: rgb(180, 116, 116);
   }
   code#code2 {
     text-shadow: 1px 1px 3px black;
@@ -338,17 +346,23 @@ function load() {
     box-shadow: 1px 1px 6px white;
     border: solid 2px rgb(119, 12, 114);
   }
-  span#pc {
-    padding: 9px;
+  span.pc {
+    padding-top: 12px;
+    padding-bottom: 10px;
+    padding-left: 6px;
     border: solid 1px brown;
-    background-color: rgb(28, 45, 39);
+    background-color: rgb(90, 140, 110);
     border-radius: 9px;
     box-shadow: 1px 1px 4px inset black;
+    color:rgb(216, 226, 105);
+    font-family: 'Indie Flower', cursive;
+    text-shadow: 1px 1px 3px rgb(48, 42, 42);
   }
   a.a {
     font-family: 'Indie Flower', cursive;
     font-size: 15px;
-    border: solid 3px rgb(167, 98, 98);
+    border: solid 1px rgb(167, 98, 98);
+    padding-bottom: 0px;
   }
   a.pa {
     background-color: rgb(28, 58, 58);
