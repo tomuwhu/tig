@@ -6,11 +6,11 @@ class G:
 kl = [
 "Az alábbiak közül melyik NEM programozási nyelv:",
 "Melyik Python utasítás adja meg egy szöveg karaktereinek számát?",
-"""Melyik Python utasítás adja meg ha a változó értéke 
-   NEM egyenlő b változó értékével?""",
-"Az alábbiak közül melyik css parancs állítja be a szöveg színét?",
-"Az alábbi karakterek közül melyik a \"class\" selector?",
-"Az alábbi karakterek közül melyik az \"id\" selector?"
+"""Melyik Python utasítás adja meg azt, hogy <b>a</b> változó értéke 
+   NEM egyenlő <b>b</b> változó értékével?""",
+"Az alábbiak közül melyik <b>CSS</b> parancs állítja be a szöveg színét?",
+"Az alábbi karakterek közül melyik a <b>\"class\"</b> selector?",
+"Az alábbi karakterek közül melyik az <b>\"id\"</b> selector?"
 ]
 vl = [
 ["C++", "C#", "Basic", "JS", "HTML", "Python"],

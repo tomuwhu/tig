@@ -1,6 +1,6 @@
 body {
     color: rgb(61, 21, 21);
-    text-shadow: 1px 1px 3px black;
+    text-shadow: 1px 1px 3px rgb(109, 80, 80);
     text-align: center;
     background-color: rgb(150, 219, 219);
     user-select: none;
@@ -11,6 +11,9 @@ body {
     box-shadow: 1px 1px 3px black;
     border-radius: 5px;
     background-color: rgb(201, 199, 130);
+}
+b {
+    color: rgb(135, 16, 16);
 }
 .b {
     display: inline-block;
