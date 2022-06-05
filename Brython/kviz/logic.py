@@ -4,7 +4,8 @@ class G:
     af = 0
     psz = 0
 kl = [
-"Az alábbiak közül melyik NEM programozási nyelv:",
+"""Az alábbi számítógépes nyelvek közül melyik 
+   NEM programozási nyelv:""",
 """Melyik Python utasítás adja meg az <b>s</b> változóban 
    tárolt szöveg karaktereinek számát?""",
 """Melyik Python utasítás adja meg azt, hogy <b>a</b>  
@@ -18,10 +19,12 @@ kl = [
 ]
 vl = [
 ["C++", "C#", "Basic", "JS", "HTML", "Python"],
-["len(s)", "length(s)", "long(s)", "count(s)", "string(s)", "list(s)"],
+["len(s)", "length(s)", "long(s)", "count(s)", 
+ "string(s)", "list(s)"],
 ["a not = b", "not a=b", "a != b", "a == b not", 
  "a in b", "a not in b", "a not equal b"],
-["color: red;", "textcolor: red;", "text-color: red;", "background-color: red;"],
+["color: red;", "textcolor: red;", "text-color: red;",
+ "background-color: red;"],
 ["#", ".", "+", "&", "»", ">", "<", "!"],
 [">", "<", "!", "#", ".", "+", "&", "»"]
 ]
