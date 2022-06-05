@@ -5,23 +5,27 @@ class G:
     psz = 0
 kl = [
 "Az alábbiak közül melyik NEM programozási nyelv:",
-"Melyik Python utasítás adja meg egy szöveg karaktereinek számát?",
-"""Melyik Python utasítás adja meg azt, hogy <b>a</b> változó értéke 
-   NEM egyenlő <b>b</b> változó értékével?""",
-"Az alábbiak közül melyik <b>CSS</b> parancs állítja be a szöveg színét?",
-"Az alábbi karakterek közül melyik a <b>\"class\"</b> selector?",
-"Az alábbi karakterek közül melyik az <b>\"id\"</b> selector?"
+"""Melyik Python utasítás adja meg az <b>s</b> változóban 
+   tárolt szöveg karaktereinek számát?""",
+"""Melyik Python utasítás adja meg azt, hogy <b>a</b>  
+   változó értéke NEM egyenlő <b>b</b> változó értékével?""",
+"""Az alábbiak közül melyik <b>CSS</b> parancs 
+   állítja pirosra a kiválasztott szöveg színét?""",
+"""Az alábbi karakterek közül melyik a 
+    <b>\"class\"</b> selector?""",
+"""Az alábbi karakterek közül melyik az 
+    <b>\"id\"</b> selector?"""
 ]
 vl = [
 ["C++", "C#", "Basic", "JS", "HTML", "Python"],
-["len", "length", "long", "count", "string", "list"],
+["len(s)", "length(s)", "long(s)", "count(s)", "string(s)", "list(s)"],
 ["a not = b", "not a=b", "a != b", "a == b not", 
  "a in b", "a not in b", "a not equal b"],
-["color", "textcolor", "text-color", "background-color"],
+["color: red;", "textcolor: red;", "text-color: red;", "background-color: red;"],
 ["#", ".", "+", "&", "»", ">", "<", "!"],
 [">", "<", "!", "#", ".", "+", "&", "»"]
 ]
-hv = [ "HTML", "len", "a != b", "color", ".", "#" ]
+hv = [ "HTML", "len(s)", "a != b", "color: red;", ".", "#" ]
 def g(e):
     if e.target.text == hv[G.af]: G.psz += 1
     PSZ.clear()
