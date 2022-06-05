@@ -42,7 +42,7 @@ def f(i):
     K.clear()
     K <= H.DIV(kl[i], Class = "k")
     K <= [H.DIV(j, Class = "b").bind("click", g) for j in vl[i]]
-K = H.DIV()
+K = H.DIV(Class = "c")
 PSZ = H.DIV(0, Class = "psze")
 D <= K
 D <= H.DIV(["Elért pontszám: ", PSZ, " pont"], Class="psz")
