@@ -207,18 +207,21 @@
         xhttp.send();
     }
     function f(x) {
-        z =  document.querySelectorAll('.u')
-        if (z) {
-            z.forEach( (v, i) => {
-                v.style.display="none"
-            })
-        }
+        ca()
         z =  document.querySelectorAll('.gg'+x)
         if (z) {
             z.forEach( v => {
                 setTimeout( q =>v.style.display='flex', 10 )
             })
         } 
+    }
+    function ca() {
+        z =  document.querySelectorAll('.u')
+        if (z) {
+            z.forEach( (v, i) => {
+                v.style.display="none"
+            })
+        }
     }
     function g() {
         document.getElementById("id").innerHTML = il[Math.floor(Math.random() * il.length)]
@@ -446,9 +449,6 @@ body {
 <style>
     div.ww {
         display: none;
-    }
-    div.gg7 {
-        display: flex;
     }
     span.z {
         width: 420px;
