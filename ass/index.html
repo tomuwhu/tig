@@ -99,8 +99,8 @@
                                  ng-repeat="m in memory.data track by $index"
                                  ng-class="getMemoryCellCss($index)">
                                  <div ng-class="getMemoryInnerCellCss($index)" ng-switch="isInstruction($index)">
-                                     <small ng-switch-default title="{{ '0x' + $index.toString(16).toUpperCase() }}">{{ m | number:displayHex }}</small>
-                                     <a ng-switch-when="true" ng-click="jumpToLine($index)" title="{{ '0x' + $index.toString(16).toUpperCase() }}">
+                                     <small ng-switch-default title="{{ 'Memory adress: 0x' + ($index.toString(16).length < 2 ? '0' : '') + $index.toString(16).toUpperCase() }}">{{ m | number:displayHex }}</small>
+                                     <a ng-switch-when="true" ng-click="jumpToLine($index)" title="{{ 'Memory adress: 0x'  + ($index.toString(16).length < 2 ? '0' : '') + $index.toString(16).toUpperCase() }}">
                                          <small>{{ m | number:displayHex }}</small>
                                      </a>
                                  </div>
