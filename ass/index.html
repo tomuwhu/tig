@@ -52,7 +52,7 @@
             <div class="col-lg-5 col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Output - <span class="ad">ASC II from memory: 0xE8 - 0xFF</span></h4>
+                        <h4 class="panel-title">Output CRT Display - <span class="ad">ASC II from memory: 0xE8 - 0xFF</span></h4>
                     </div>
                     <div class="panel-body source-code">
                         <div style="float:left;" class="output"
@@ -78,20 +78,18 @@
                                     <th style="text-align:center" title="Stack Pointer">SP</th>
                                     <th style="text-align:center" title="Zero Flag">Z</th>
                                     <th style="text-align:center" title="Carry Flag">C</th>
-                                    <th style="text-align:center">F</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr style="text-align:center;" class="source-code">
+                                <tr style="text-align:center;" class="source-code xx">
                                     <td><div style="margin:auto;" ng-class="displayA && 'marker marker-a'"><small>{{ cpu.gpr[0] | number:displayHex }}</small></div></td>
                                     <td><div style="margin:auto;" ng-class="displayB && 'marker marker-b'"><small>{{ cpu.gpr[1] | number:displayHex }}</small></div></td>
                                     <td><div style="margin:auto;" ng-class="displayC && 'marker marker-c'"><small>{{ cpu.gpr[2] | number:displayHex }}</small></div></td>
                                     <td><div style="margin:auto;" ng-class="displayD && 'marker marker-d'"><small>{{ cpu.gpr[3] | number:displayHex }}</small></div></td>
                                     <td><div style="margin:auto;" class="marker marker-ip"><small>{{ cpu.ip | number:displayHex }}</small></div></td>
                                     <td><div style="margin:auto;" class="marker marker-sp"><small>{{ cpu.sp | number:displayHex }}</small></div></td>
-                                    <td><small>{{ cpu.zero | flag }}</small></td>
-                                    <td><small>{{ cpu.carry | flag }}</small></td>
-                                    <td><small>{{ cpu.fault | flag }}</small></td>
+                                    <td class="xxx"><small>{{ cpu.zero | flag }}</small></td>
+                                    <td class="xxx"><small>{{ cpu.carry | flag }}</small></td>
                                 </tr>
                             </tbody>
                         </table>

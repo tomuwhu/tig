@@ -1361,7 +1361,8 @@ var app = angular.module('ASMSimulator', []);
     $scope.speeds = [{speed: 1, desc: "1 HZ"},
                      {speed: 4, desc: "4 HZ"},
                      {speed: 8, desc: "8 HZ"},
-                     {speed: 16, desc: "16 HZ"}];
+                     {speed: 16, desc: "16 HZ"},
+                     {speed: 32, desc: "32 HZ"}];
     $scope.speed = 4;
     $scope.outputStartIndex = 232;
     $scope.code = `       MOV A, 'A'  ;Set code of 'A' into the A
@@ -1385,7 +1386,7 @@ loop:   MOV A, [C]	; Get char from var
         CMP B, [C]      ; Check if end
         JNZ loop        ; jump if not
         HLT             ; Stop execution
-hello:  DB "Hello, World!"       ; Variable
+hello:  DB "Hello World!"       ; Variable
         DB 0            ; String terminator`
         $scope.error = '';
         $scope.selectedLine = -1;
@@ -1394,7 +1395,7 @@ hello:  DB "Hello, World!"       ; Variable
         cpu.reset();
         memory.reset();
         $scope.code = `        JMP start
-hello:  DB "Hello, World!" ; Variable
+hello:  DB "Hello World!" ; Variable
         DB 0	           ; String terminator
 start:  MOV C, hello       ; Point to var
         MOV D, 0xE8	   ; Point to output

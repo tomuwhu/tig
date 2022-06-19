@@ -11,7 +11,7 @@
 }
 
 .output {
-    width: 14px;
+    width: 32px;
     margin-right: 3px;
     margin-bottom: 1px;
     text-align: center;
@@ -86,4 +86,20 @@ small.x1 {
 
 span.ad {
     color: #428BCA;
+}
+.panel-title {
+    color: #204664;
+}
+
+.ng-binding {
+    text-shadow: 1px 1px 2px gray;
+}
+.xx td {
+    width: 40px;
+}
+.xx .xxx {
+    width: 60px;
+}
+a {
+    cursor: pointer;
 }
