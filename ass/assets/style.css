@@ -65,3 +65,13 @@
 .codelabel-line a {
     cursor: pointer;
 }
+
+p {
+    margin: 0px;
+    padding: 0px;
+}
+
+small.x1 {
+
+    font-size: 6px;
+}
