@@ -8,6 +8,5 @@ def h(n, i, j):
             yield from i 
 
 l = [["❴", H.SPAN(i), "➺", H.SPAN(j), "❵"] for i, j in h(6, 0, 1)]
-l.reverse()
 
 D <= [H.DIV(x, Class="x1") for x in l]

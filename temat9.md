@@ -1,16 +1,19 @@
 # Tematika - Digitális kultúra 9. évfolyam
 
-## 0. Iskolai laborok használata
+## 0. Iskolai laborok használata, alapok, alapfogalmak
 
 - Laborrend, iskolai accountok, felhasználói jogosultságok
 - Netikett
 - Google account létrehozása
 - Operációs rendszerek, Parancssor, Terminálok
+- Fájlok struktúrája, Fa adatszerkezet
+- Git, GitHub account létrehozása
+- Szám fogalma, halmazok, számok a számítógépben
 
 ## I. Szövegszerkesztés (11 óra)
 
 - Karakterek tárolása a számítógépen
-- Plain Text
+- Plain Text, Plain Text Editor és még több (VSCode)
 - Formázott szöveg kódolása
 - MarkDown
 - HTML
