@@ -50,7 +50,7 @@
             <div class="col-lg-5 col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Output</h4>
+                        <h4 class="panel-title">Output <span class="ad">0xE8 - 0xFF</span></h4>
                     </div>
                     <div class="panel-body source-code">
                         <div style="float:left;" class="output"
@@ -99,8 +99,8 @@
                                  ng-repeat="m in memory.data track by $index"
                                  ng-class="getMemoryCellCss($index)">
                                  <div ng-class="getMemoryInnerCellCss($index)" ng-switch="isInstruction($index)">
-                                     <small ng-switch-default>{{ m | number:displayHex }}</small>
-                                     <a ng-switch-when="true" ng-click="jumpToLine($index)">
+                                     <small ng-switch-default title="{{ '0x' + $index.toString(16).toUpperCase() }}">{{ m | number:displayHex }}</small>
+                                     <a ng-switch-when="true" ng-click="jumpToLine($index)" title="{{ '0x' + $index.toString(16).toUpperCase() }}">
                                          <small>{{ m | number:displayHex }}</small>
                                      </a>
                                  </div>
