@@ -1365,7 +1365,7 @@ var app = angular.module('ASMSimulator', []);
     $scope.speed = 4;
     $scope.outputStartIndex = 232;
 
-    $scope.code = "	JMP start\nhello: DB \"Hello, World!\" ; Variable\n       DB 0	; String terminator\n\nstart:\n	MOV C, hello    ; Point to var \n	MOV D, 0xE8	; Point to output\n	CALL print\n        HLT             ; Stop execution\n\nprint:			; print(C:*from, D:*to)\n	MOV B, 0\n.loop:\n	MOV A, [C]	; Get char from var\n	MOV [D], A	; Write to output\n	INC C\n	INC D  \n	CMP B, [C]	; Check if end\n	JNZ .loop	; jump if not\n\n	RET";
+    $scope.code = "	JMP start\nhello:  DB \"Hello, World!\" ; Variable\n        DB 0	; String terminator\n\nstart:\n	MOV C, hello    ; Point to var \n	MOV D, 0xE8	; Point to output\n	CALL print\n        HLT             ; Stop execution\n\nprint:			; print(C:*from, D:*to)\n	MOV B, 0\n.loop:\n	MOV A, [C]	; Get char from var\n	MOV [D], A	; Write to output\n	INC C\n	INC D  \n	CMP B, [C]	; Check if end\n	JNZ .loop	; jump if not\n\n	RET";
 
     $scope.reset = function () {
         cpu.reset();
