@@ -3,14 +3,22 @@
 }
 
 .output, .output-bg {
-    background-color: #DFDFDF;
+    background-color: #e7ffc9;
+}
+
+.output-bg {
+    font-weight: bold;
 }
 
 .output {
-    width: 1em;
-    margin-right: 1px;
+    width: 14px;
+    margin-right: 3px;
     margin-bottom: 1px;
     text-align: center;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px inset rgb(103, 95, 95);
+    font-weight: bold;
+    color:#204664;
 }
 
 .instr-bg {

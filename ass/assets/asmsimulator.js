@@ -1370,24 +1370,23 @@ START: MOV [B], A  ;Write the character from A
        INC A       ;Set the next character
        INC B       ;Set the next memory address
        CMP A, 'Y'  ;If A not "Y"
-       JNZ START   ;Jump to START
-       HLT         ;Halt processor`
+       JNZ START   ;Jump to START`
 
     $scope.ex1 = function () {
         cpu.reset();
         memory.reset();
-        $scope.code = `        MOV C, hello            ; Point to var
-        MOV D, 0xE8	        ; Point to output
+        $scope.code = `        MOV C, hello    ; Point to var
+        MOV D, 0xE8	; Point to output
         MOV B, 0
-loop:   MOV A, [C]	        ; Get char from var
-        MOV [D], A	        ; Write to output
+loop:   MOV A, [C]	; Get char from var
+        MOV [D], A	; Write to output
         INC C
         INC D
-        CMP B, [C]	        ; Check if end
-        JNZ loop	        ; jump if not
-        HLT
-hello:  DB "Hello, World!"      ; Variable
-        DB 0	                ; String terminator`
+        CMP B, [C]      ; Check if end
+        JNZ loop        ; jump if not
+        HLT             ; Stop execution
+hello:  DB "Hello, World!"       ; Variable
+        DB 0            ; String terminator`
         $scope.error = '';
         $scope.selectedLine = -1;
     };
@@ -1395,19 +1394,19 @@ hello:  DB "Hello, World!"      ; Variable
         cpu.reset();
         memory.reset();
         $scope.code = `        JMP start
-hello:  DB "Hello, World!"      ; Variable
-        DB 0	                ; String terminator
-start:  MOV C, hello            ; Point to var
-        MOV D, 0xE8	        ; Point to output
+hello:  DB "Hello, World!" ; Variable
+        DB 0	           ; String terminator
+start:  MOV C, hello       ; Point to var
+        MOV D, 0xE8	   ; Point to output
         CALL print
-        HLT                     ; Stop execution
+        HLT                ; Stop execution
 print:  MOV B, 0
-loop:   MOV A, [C]	        ; Get char from var
-        MOV [D], A	        ; Write to output
+loop:   MOV A, [C]         ; Get char from var
+        MOV [D], A         ; Write to output
         INC C
         INC D
-        CMP B, [C]	        ; Check if end
-        JNZ loop	        ; jump if not
+        CMP B, [C]         ; Check if end
+        JNZ loop           ; jump if not
         RET`;
         $scope.error = '';
         $scope.selectedLine = -1;
