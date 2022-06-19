@@ -1,13 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
 .source-code {
-    font-family: source-code-pro, Courier New;
+    font-family: 'Syne Mono', monospace;
+    text-shadow: 1px 1px 3px gray;
+    color: #10442e;
 }
 
 .output, .output-bg {
-    background-color: #e7ffc9;
-}
-
-.output-bg {
-    font-weight: bold;
+    font-family: 'Syne Mono', monospace;
+    background-color: rgb(175, 213, 197);
 }
 
 .output {
@@ -80,7 +80,6 @@ p {
 }
 
 small.x1 {
-
     font-size: 6px;
 }
 
@@ -93,7 +92,14 @@ span.ad {
 
 .ng-binding {
     text-shadow: 1px 1px 2px gray;
+    color: #4b2305;
 }
+
+.output-bg {
+    font-weight: bold;
+    color: #10442e;
+}
+
 .xx td {
     width: 40px;
 }
@@ -105,4 +111,9 @@ a {
 }
 i {
     color: #174c29;
+}
+
+textarea#sourceCode {
+    background-color: rgb(250, 247, 242);
+    box-shadow: 1px 1px 3px inset rgb(90, 82, 82);
 }
