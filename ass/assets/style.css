@@ -85,7 +85,7 @@ small.x1 {
 }
 
 span.ad {
-    color: #428BCA;
+    color: #443010;
 }
 .panel-title {
     color: #204664;
@@ -102,4 +102,7 @@ span.ad {
 }
 a {
     cursor: pointer;
+}
+i {
+    color: #174c29;
 }
