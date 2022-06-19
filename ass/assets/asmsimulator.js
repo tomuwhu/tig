@@ -1364,11 +1364,11 @@ var app = angular.module('ASMSimulator', []);
                      {speed: 16, desc: "16 HZ"}];
     $scope.speed = 4;
     $scope.outputStartIndex = 232;
-    $scope.code = `       MOV A, 0x41 ;Set code of "A" into the A register 
+    $scope.code = `       MOV A, 0x41 ;Set code of "A" into the A
        MOV B, 0xE8 ;Point to output
-START: MOV [B], A  ;Write an "A" Character to the output
+START: MOV [B], A  ;Write the character from A
        INC A       ;Set the next character
-       INC B       ;Set the next memory address for output
+       INC B       ;Set the next memory address
        CMP A, 0x59 ;If A not "Y"
        JNZ START   ;Jump to START
        HLT         ;Halt processor`
