@@ -1364,8 +1364,55 @@ var app = angular.module('ASMSimulator', []);
                      {speed: 16, desc: "16 HZ"}];
     $scope.speed = 4;
     $scope.outputStartIndex = 232;
+    $scope.code = `       MOV A, 0x41 ;Set code of "A" into the A register 
+       MOV B, 0xE8 ;Point to output
+START: MOV [B], A  ;Write an "A" Character to the output
+       INC A       ;Set the next character
+       INC B       ;Set the next memory address for output
+       CMP A, 0x59 ;If A not "Y"
+       JNZ START   ;Jump to START
+       HLT         ;Halt processor`
 
-    $scope.code = "	JMP start\nhello:  DB \"Hello, World!\" ; Variable\n        DB 0	; String terminator\n\nstart:\n	MOV C, hello    ; Point to var \n	MOV D, 0xE8	; Point to output\n	CALL print\n        HLT             ; Stop execution\n\nprint:			; print(C:*from, D:*to)\n	MOV B, 0\n.loop:\n	MOV A, [C]	; Get char from var\n	MOV [D], A	; Write to output\n	INC C\n	INC D  \n	CMP B, [C]	; Check if end\n	JNZ .loop	; jump if not\n\n	RET";
+    $scope.ex1 = function () {
+        cpu.reset();
+        memory.reset();
+        $scope.code = `        MOV C, hello            ; Point to var
+        MOV D, 0xE8	        ; Point to output
+        MOV B, 0
+loop:   MOV A, [C]	        ; Get char from var
+        MOV [D], A	        ; Write to output
+        INC C
+        INC D
+        CMP B, [C]	        ; Check if end
+        JNZ loop	        ; jump if not
+        HLT
+hello:  DB "Hello, World!"      ; Variable
+        DB 0	                ; String terminator`
+        $scope.error = '';
+        $scope.selectedLine = -1;
+    };
+    $scope.ex2 = function () {
+        cpu.reset();
+        memory.reset();
+        $scope.code = `        JMP start
+hello:  DB "Hello, World!"      ; Variable
+        DB 0	                ; String terminator
+start:  MOV C, hello            ; Point to var
+        MOV D, 0xE8	        ; Point to output
+        CALL print
+        HLT                     ; Stop execution
+print:  MOV B, 0
+loop:   MOV A, [C]	        ; Get char from var
+        MOV [D], A	        ; Write to output
+        INC C
+        INC D
+        CMP B, [C]	        ; Check if end
+        JNZ loop	        ; jump if not
+        RET`;
+        $scope.error = '';
+        $scope.selectedLine = -1;
+    };
+    
 
     $scope.reset = function () {
         cpu.reset();

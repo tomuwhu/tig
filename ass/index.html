@@ -18,6 +18,8 @@
                     <button type="button" class="btn btn-default navbar-btn" ng-click="executeStep()" ng-disabled="isRunning"><span class="glyphicon glyphicon-forward"></span> Step</button>
                 </div>
                 <button type="button" class="btn btn-default navbar-btn" ng-click="reset()">Reset</button>
+                <button type="button" class="btn btn-default navbar-btn" ng-click="ex1()">Ex.1</button>
+                <button type="button" class="btn btn-default navbar-btn" ng-click="ex2()">Ex.2</button>
             </div>
             <div class="navbar-header navbar-right">
                 <a class="navbar-brand" style="color:#FFFFFF; text-shadow: 1px 1px 3px rgb(69, 61, 61);">8-bit Assembler Simulator - SZTE Gyakorló Gimnázium</a>
@@ -30,7 +32,7 @@
             <div class="col-lg-7 col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Assamby Code - <a href="./instruction-set.html" target="_blank" style="color: #337AB7">Instruction Set</a></h4>
+                        <h4 class="panel-title">Assamby Source Code - <a href="./instruction-set.html" target="_blank" style="color: #337AB7">Instruction Set</a></h4>
                     </div>
                     <div class="panel-body">
                         <form role="form">
@@ -64,7 +66,7 @@
                         <h4 class="panel-title">CPU & Memory</h4>
                     </div>
                     <div class="panel-body">
-                        <p class="text-muted">Registers / Flags</p>
+                        <p class="text-muted">Registers / Flags (CPU State)</p>
                         <table class="table table-condensed table-striped">
                             <thead>
                                 <tr>
@@ -72,10 +74,10 @@
                                     <th style="text-align:center">B</th>
                                     <th style="text-align:center">C</th>
                                     <th style="text-align:center">D</th>
-                                    <th style="text-align:center">IP</th>
-                                    <th style="text-align:center">SP</th>
-                                    <th style="text-align:center">Z</th>
-                                    <th style="text-align:center">C</th>
+                                    <th style="text-align:center" title="Program Counter">IP</th>
+                                    <th style="text-align:center" title="Stack Pointer">SP</th>
+                                    <th style="text-align:center" title="Zero Flag">Z</th>
+                                    <th style="text-align:center" title="Carry Flag">C</th>
                                     <th style="text-align:center">F</th>
                                 </tr>
                             </thead>
@@ -93,7 +95,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <p class="text-muted">RAM</p>
+                        <p class="text-muted">RAM 256 Bytes &lt;0x00 - 0xFF&gt; (Machine Code + Data)</p>
                         <div style="width:29em;" class="source-code">
                             <div class="memory-block"
                                  ng-repeat="m in memory.data track by $index"
