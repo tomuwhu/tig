@@ -1386,8 +1386,8 @@ START: MOV [B], A  ;Write the character from A
         MOV B, 0
 loop:   MOV A, [C]	; Get char from var
         MOV [D], A	; Write to output
-        INC C
-        INC D
+        INC C           ; Next source
+        INC D           ; Next destination
         CMP B, [C]      ; Check if end
         JNZ loop        ; jump if not
         HLT             ; Stop execution
