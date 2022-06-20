@@ -85,6 +85,7 @@ small.x1 {
 
 span.ad {
     color: #443010;
+    font-family: 'Syne Mono', monospace;
 }
 .panel-title {
     color: #204664;
@@ -110,7 +111,10 @@ a {
     cursor: pointer;
 }
 i {
-    color: #174c29;
+    color: #8c3838;
+    font-family: 'Syne Mono', monospace;
+    text-shadow: 1px 1px 2px rgb(83, 95, 108);
+    font-size: 13px;
 }
 
 textarea#sourceCode {

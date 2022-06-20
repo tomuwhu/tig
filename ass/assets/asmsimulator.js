@@ -1404,17 +1404,17 @@ hello:  DB "Hello World!"       ; Variable
         $scope.displayB = false;
         $scope.displayA = false;
         $scope.code = `        JMP start
-hello:  DB "Hello World!" ; Variable
+hello:  DB "Hello World!"  ; Variable
         DB 0	           ; String terminator
 start:  MOV C, hello       ; Point to var
         MOV D, 0xE8	   ; Point to output
-        CALL print
+        CALL print         ; Call "print" function
         HLT                ; Stop execution
-print:  MOV B, 0
+print:  MOV B, 0           ; "print" function
 loop:   MOV A, [C]         ; Get char from var
         MOV [D], A         ; Write to output
-        INC C
-        INC D
+        INC C              ; Next source
+        INC D              ; Next destination
         CMP B, [C]         ; Check if end
         JNZ loop           ; jump if not
         RET`;
