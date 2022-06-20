@@ -1365,6 +1365,7 @@ var app = angular.module('ASMSimulator', []);
                      {speed: 32, desc: "32 HZ"}];
     $scope.speed = 4;
     $scope.outputStartIndex = 232;
+    $scope.displayB = true;
     $scope.code = `       MOV A, 'A'  ;Set code of 'A' into the A
        MOV B, 0xE8 ;Point to output
 START: MOV [B], A  ;Write the character from A
@@ -1376,6 +1377,10 @@ START: MOV [B], A  ;Write the character from A
     $scope.ex1 = function () {
         cpu.reset();
         memory.reset();
+        $scope.displayD = true;
+        $scope.displayC = false;
+        $scope.displayB = false;
+        $scope.displayA = false;
         $scope.code = `        MOV C, hello    ; Point to var
         MOV D, 0xE8	; Point to output
         MOV B, 0
@@ -1394,6 +1399,10 @@ hello:  DB "Hello World!"       ; Variable
     $scope.ex2 = function () {
         cpu.reset();
         memory.reset();
+        $scope.displayD = true;
+        $scope.displayC = false;
+        $scope.displayB = false;
+        $scope.displayA = false;
         $scope.code = `        JMP start
 hello:  DB "Hello World!" ; Variable
         DB 0	           ; String terminator
