@@ -1429,18 +1429,18 @@ loop:   MOV A, [C]         ; Get char from var
         $scope.displayC = false;
         $scope.displayB = false;
         $scope.displayA = false;
-        $scope.code = `        MOV A, 0x40
-        MOV D, 0xE8
-        CALL f
-        HLT
-    f:	INC A
-        MOV [D], A
-        INC D
-        CMP A, 0x58
-        JZ j1
-        CALL f
-    j1:	INC B
-        RET`;
+        $scope.code = `    MOV A, 0x40
+    MOV D, 0xE8
+    CALL f
+    HLT
+f:  INC A
+    MOV [D], A
+    INC D
+    CMP A, 0x58
+    JZ j1
+    CALL f
+j1: INC B
+    RET`;
     $scope.error = '';
     $scope.selectedLine = -1;
 };
