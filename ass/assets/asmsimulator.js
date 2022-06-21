@@ -1421,6 +1421,33 @@ loop:   MOV A, [C]         ; Get char from var
         $scope.error = '';
         $scope.selectedLine = -1;
     };
+
+    $scope.ex3 = function () {
+        cpu.reset();
+        memory.reset();
+        $scope.displayD = true;
+        $scope.displayC = false;
+        $scope.displayB = false;
+        $scope.displayA = false;
+        $scope.code = `	MOV A, 24
+	MOV D, 0xE8
+	CALL f
+	ADD A, 0x40
+	MOV [D], A
+	HLT
+f:	CMP A, 1
+	JZ j1
+	DEC A
+	MOV B, A
+	ADD B, 0x41
+	MOV [D], B
+	INC D
+	CALL f
+j1:	ADD B, 1
+	RET`;
+    $scope.error = '';
+    $scope.selectedLine = -1;
+};
     
 
     $scope.reset = function () {
