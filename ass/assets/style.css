@@ -121,3 +121,7 @@ textarea#sourceCode {
     background-color: rgb(255, 252, 203);
     box-shadow: 1px 1px 3px inset rgb(90, 82, 82);
 }
+span.num {
+    color:#125b33;
+    font-weight: 100;
+}

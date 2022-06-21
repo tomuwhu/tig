@@ -58,7 +58,8 @@
                     <div class="panel-body source-code">
                         <div style="float:left;" class="output"
                              ng-repeat="m in memory.data | startFrom: outputStartIndex track by $index">
-                            <span>{{ getChar(m) }}</span>
+                            <span ng-if="m > 29">{{ getChar(m) }}</span>
+                            <span ng-if="m < 30" class="num">{{ m.toString(16).toUpperCase() }}</span>
                         </div>
                     </div>
                 </div>
