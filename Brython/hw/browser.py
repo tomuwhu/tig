@@ -109,7 +109,7 @@ if False:
 
     # by this some IDE's can auto complete document objects.
     document = [dom]
-
+    D = [dom]
     mouseCoords = None
     prompt = None
     win = None
