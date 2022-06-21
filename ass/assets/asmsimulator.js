@@ -1429,16 +1429,14 @@ loop:   MOV A, [C]         ; Get char from var
         $scope.displayC = false;
         $scope.displayB = false;
         $scope.displayA = false;
-        $scope.code = `        MOV A, 0x18
+        $scope.code = `        MOV A, 0x40
         MOV D, 0xE8
         CALL f
         HLT
-    f:	DEC A
-        MOV B, A
-        ADD B, 0x41
-        MOV [D], B
+    f:	INC A
+        MOV [D], A
         INC D
-        CMP A, 0
+        CMP A, 0x58
         JZ j1
         CALL f
     j1:	INC B
