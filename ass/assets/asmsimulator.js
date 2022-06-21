@@ -1443,7 +1443,7 @@ f:	CMP A, 1
 	MOV [D], B
 	INC D
 	CALL f
-j1:	ADD B, 1
+j1:	INC B
 	RET`;
     $scope.error = '';
     $scope.selectedLine = -1;
