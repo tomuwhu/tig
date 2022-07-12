@@ -5,14 +5,14 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
 - [Rovio Entertainment](https://en.wikipedia.org/wiki/Rovio_Entertainment)
 - Operációs rendszerek
   - operációs rendszer fogalma
-  - DOS, Windows ([Bill Gates](https://en.wikipedia.org/wiki/Bill_Gates))
-  - Unix, Linux ([Andrew S. Tanenbaum](https://hu.wikipedia.org/wiki/Andrew_S._Tanenbaum))
-  - MacOS, iOS ([Steve Jobs](https://en.wikipedia.org/wiki/Steve_Jobs))
+  - Unix <1969>, Linux <1991> ([Andrew S. Tanenbaum](https://hu.wikipedia.org/wiki/Andrew_S._Tanenbaum))
+  - DOS <1981>, Windows <1985> ([Bill Gates](https://en.wikipedia.org/wiki/Bill_Gates))
+  - MacOS <2001>, iOS <2019> ([Steve Jobs](https://en.wikipedia.org/wiki/Steve_Jobs))
   - szoftverek telepítése, eltávolítása
   - könyvtárstruktúra, programfájlok, adatfájlok
   - fájlnevek, kiterjesztések, fájltípusok
   - operációs rendszer feladata, funkciói
-- Böngésző használata ([Marc Andreessen](https://en.wikipedia.org/wiki/Marc_Andreessen))
+- Böngésző <1984> használata ([Marc Andreessen](https://en.wikipedia.org/wiki/Marc_Andreessen))
   - http://
   - keresés az interneten
   - letöltések
@@ -20,16 +20,14 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - file://
   - about:blank
   - about:about
-- Visual Studio Code
+- Visual Studio Code <2015>
   - telepítés
   - beállítás, pluginok (markdown, python, live server, ...)
   - használata (tabulálás, blokkok kezelése, egyidejű szerkesztés, ...)
   - speciális karakterek használata (<>#&~\|;*.:`` '' "" ${ }[ ])
 - Csoportmunka támogató eszközök
-  - git
-  - GitHub regisztráció
-  - GitHub beállítása
-  - GitHub Pages
+  - git, GitHub <2007> (regisztráció, beállítás, GitHub Pages)
+  [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds)
 - Markdown nyelv ([Aaron Swartz](https://hu.wikipedia.org/wiki/Aaron_Swartz))
   - szöveg beírása
   - header (címsor) szintek
@@ -103,7 +101,8 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - mozgások fizikai modellezése
     - [Isaac Newton](https://hu.wikipedia.org/wiki/Isaac_Newton)
   - fizikai modelleken alapuló játékprogramok készítése
-    - [Rovio Entertainment](https://en.wikipedia.org/wiki/Rovio_Entertainment)
+    - Pac Man - 1955 [Namco](https://en.wikipedia.org/wiki/Namco)
+    - Angry Birds - 2014 [Rovio Entertainment](https://en.wikipedia.org/wiki/Rovio_Entertainment)
 - Operációs rendszer: terminál, parancsok
   - help, dir (ls), cd, tree, ...
   - parancs felépítése (paraméterek, kapcsolók)
@@ -114,12 +113,10 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
 [George Boole](https://hu.wikipedia.org/wiki/George_Boole)
   - logikai áramkörök
   - sorrendi áramkörök
-  - számítógép elvi felépítése, Neumann-elv
-[Neumann János](https://hu.wikipedia.org/wiki/Neumann_J%C3%A1nos)
-  - egyszerű számítógép szimulációja
-  [Simonyi Károly](https://hu.wikipedia.org/wiki/Charles_Simonyi) - virtuális gép (számítógép szimulációja)
-  - gépi kód
-  - assembly nyelv
+  - számítógép elvi felépítése, Neumann-elv ([Neumann János](https://hu.wikipedia.org/wiki/Neumann_J%C3%A1nos))
+  - egyszerű számítógép szimulációja ([Simonyi Károly](https://hu.wikipedia.org/wiki/Charles_Simonyi))
+  - gépi kód <1936> ([Alan Turing](https://hu.wikipedia.org/wiki/Alan_Turing))
+  - assembly nyelv <1951> ([Maurice Wilkes](https://en.wikipedia.org/wiki/Maurice_Wilkes))
 - C programozási nyelv ([Dennis Ritchie](https://en.wikipedia.org/wiki/Dennis_Ritchie))
   - fordítóprogramok
   - hello world c-ben
