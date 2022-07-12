@@ -3,10 +3,15 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
 - [Ada Lovelace](https://hu.wikipedia.org/wiki/Ada_Lovelace)
 - [Wikipédia](https://hu.wikipedia.org/wiki/Wikip%C3%A9dia)
 - [Rovio Entertainment](https://en.wikipedia.org/wiki/Rovio_Entertainment)
-- Operációs rendszer használata ([Andrew S. Tanenbaum](https://hu.wikipedia.org/wiki/Andrew_S._Tanenbaum)):
+- Operációs rendszerek
+  - operációs rendszer fogalma
+  - DOS, Windows ([Bill Gates](https://en.wikipedia.org/wiki/Bill_Gates))
+  - Unix, Linux ([Andrew S. Tanenbaum](https://hu.wikipedia.org/wiki/Andrew_S._Tanenbaum))
+  - MacOS, iOS ([Steve Jobs](https://en.wikipedia.org/wiki/Steve_Jobs))
   - szoftverek telepítése, eltávolítása
   - könyvtárstruktúra, programfájlok, adatfájlok
   - fájlnevek, kiterjesztések, fájltípusok
+  - operációs rendszer feladata, funkciói
 - Böngésző használata ([Marc Andreessen](https://en.wikipedia.org/wiki/Marc_Andreessen))
   - http://
   - keresés az interneten
@@ -20,6 +25,11 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - beállítás, pluginok (markdown, python, live server, ...)
   - használata (tabulálás, blokkok kezelése, egyidejű szerkesztés, ...)
   - speciális karakterek használata (<>#&~\|;*.:`` '' "" ${ }[ ])
+- Csoportmunka támogató eszközök
+  - git
+  - GitHub regisztráció
+  - GitHub beállítása
+  - GitHub Pages
 - Markdown nyelv ([Aaron Swartz](https://hu.wikipedia.org/wiki/Aaron_Swartz))
   - szöveg beírása
   - header (címsor) szintek
@@ -83,11 +93,6 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - Listák
   - JS függvények
   - Vezérlési szerkezetek
-- Csoportmunka támogató eszközök
-  - git
-  - GitHub regisztráció
-  - GitHub beállítása
-  - GitHub Pages
 - SVG: vektorgrafika és alkalmazása
   - síkgeometria, grafikai primitívek
     - [Eukleidész](https://hu.wikipedia.org/wiki/Eukleid%C3%A9sz_(matematikus))
