@@ -1,0 +1,255 @@
+Számítástechnika, Számítógéptudomány, Számítástudomány
+
+- [Ada Lovelace](https://hu.wikipedia.org/wiki/Ada_Lovelace)
+- [Wikipédia](https://hu.wikipedia.org/wiki/Wikip%C3%A9dia)
+- [Rovio Entertainment](https://en.wikipedia.org/wiki/Rovio_Entertainment)
+- Operációs rendszer használata ([Andrew S. Tanenbaum](https://hu.wikipedia.org/wiki/Andrew_S._Tanenbaum)):
+  - szoftverek telepítése, eltávolítása
+  - könyvtárstruktúra, programfájlok, adatfájlok
+  - fájlnevek, kiterjesztések, fájltípusok
+- Böngésző használata ([Marc Andreessen](https://en.wikipedia.org/wiki/Marc_Andreessen))
+  - http://
+  - keresés az interneten
+  - letöltések
+  - pluginok
+  - file://
+  - about:blank
+  - about:about
+- Visual Studio Code
+  - telepítés
+  - beállítás, pluginok (markdown, python, live server, ...)
+  - használata (tabulálás, blokkok kezelése, egyidejű szerkesztés, ...)
+  - speciális karakterek használata (<>#&~\|;*.:`` '' "" ${ }[ ])
+- Markdown nyelv ([Aaron Swartz](https://hu.wikipedia.org/wiki/Aaron_Swartz))
+  - szöveg beírása
+  - header (címsor) szintek
+  - UTF-8 karakterkészlet 🙂, szöveg kódolása
+  - táblázat beillesztése
+  - kép, link, tex, code beillesztése
+- Tex nyelv használata ([Donald Knuth](https://hu.wikipedia.org/wiki/Donald_Knuth))
+- HTML nyelv alapjai ([Tim Berners-Lee](https://hu.wikipedia.org/wiki/Tim_Berners-Lee))
+  - body, head, title, meta
+  - VSCode -> live szerver
+  - div, span, a, b, i, hr, h1..h6
+  - ul, ol, li, hr, nav, dl, dt, dd
+  - figure, img src="", figcaption
+  - fogalmak (element, attribute)
+  - attribútumok (title, href, ...)
+  - táblázatok
+  - tabulálás használata az olvashatóság érdekében
+  - menu, pre, code, kbd, ...
+- CSS
+  - style attribútum
+  - style element
+  - link rel="stylesheet" href="..."
+  - HTML attribútumok II. (id, class, name)
+  - css syntax: ``` selector { property: value; } ```
+  - css property-k
+    - color
+    - background-color
+    - font-size
+    - font-family
+    - text-shadow
+    - text-align
+  - css display
+  - css box model (margin, border, padding, outline, ...)
+  - css display=flex container property-k
+    - flex-direction
+    - justify-content
+    - align-items
+    - align-content
+    - flex-wrap,
+    - gap
+  - css selectors
+    - #id, .class, *, element, element.class
+    - element element, element > element
+    - [attribute=value], [attribute~=value],...
+    - :hover, ::after, ...
+  - position, left, top, z-index
+  - reszponzív oldalak, @media, @import
+- Google Fonts
+- Böngésző funkciók
+  - Oldal forrása
+  - Oldal vizsgálata
+    - Mobil nézet (reszponzivitás)
+    - Elemek (elem vizsgálata, stílusok, számított..)
+    - Konzol
+    - Források
+    - Hálózat, Alkalmazás, ...
+- JavaScript ([Brendan Eich](https://hu.wikipedia.org/wiki/Brendan_Eich))
+  - JavaScript HTML DOM
+  - JS változók
+    - Objektumok
+    - Listák
+  - JS függvények
+  - Vezérlési szerkezetek
+- Csoportmunka támogató eszközök
+  - git
+  - GitHub regisztráció
+  - GitHub beállítása
+  - GitHub Pages
+- SVG: vektorgrafika és alkalmazása
+  - statikus vektorgrafikák készítése
+  - css animációk készítése
+- Operációs rendszer: terminál, parancsok
+  - help, dir (ls), cd, tree, ...
+  - parancs felépítése (paraméterek, kapcsolók)
+  - terminál kényelmi funkciók (tab, ...)
+- Számítógép működésének alapjai
+  - számrendszerek
+  - matematikai logika (boole algebra)
+[George Boole](https://hu.wikipedia.org/wiki/George_Boole)
+  - logikai áramkörök
+  - sorrendi áramkörök
+  - számítógép elvi felépítése, Neumann-elv
+[Neumann János](https://hu.wikipedia.org/wiki/Neumann_J%C3%A1nos)
+  - egyszerű számítógép szimulációja
+  - gépi kód
+  - assembly nyelv
+- C programozási nyelv ([Dennis Ritchie](https://en.wikipedia.org/wiki/Dennis_Ritchie))
+  - fordítóprogramok
+  - hello world c-ben
+  - hello world c++-ban  
+- Python programozási nyelv I.
+  - python telepítése
+  - python futtatása terminálban
+  - hello world pythonban
+  - számok (int, float, nagy számok)
+  - operátorok (+, -, *, /, //, %, **, ... )
+  - python függvények használata ( int(), float(), max(), min() )
+  - számrendszerek (0x, 0b, 0o, format())
+  - python stringek
+  - python programok szerkesztése vscode-ban
+  - print()
+  - input()
+  - string template, format
+  - if - elif - else, tabulálás a pythonban
+  - logikai típus és operátorai
+  - while ciklus és használata
+  - függvények definiálása
+    - bemeneti paraméterek
+    - visszatérési érték (return)
+    - generátor függvények (yield)
+    - rekurzió
+    - rekurzió a generátorokban (yield from)
+    - a *operátor
+  - range, python listák
+  - listák és generátorok bejárása, a for utasítás
+  - lista generátor használata [i for i in l if i]
+  - alapvető algoritmusok
+    - eldöntés (in)
+    - keresés (find)
+    - összegzés (max, min, sum, count)
+    - szűrés (filter)
+    - rendezés (sort, sorted)
+  - további lista és stringműveletek
+  - szövegfájlok kezelése
+  - teknőcgrafika (like logo) vs. graphics
+  - random modul
+  - összetett feladatok
+- HTML + CSS + Python alkalmazása I. (Brython)
+  - Hello World alkalmazás
+  - live szerver használata
+  - document, html
+  - Eseménykezelés (bind - egér és billentyűzet események)
+  - SVG Bythonban
+- HTML Forms
+  - button, input (number, date, time, range, color, ...), select, option
+  - form validálás
+- Archiválás, tömörítés (.zip)
+- HTML + CSS + Python alkalmazása II. (Brython)
+  - hello world (ismétlés)
+  - browser modul
+    - document, szelektorok (document[])
+    - html ( <=, ``` DIV("cica", Class="x1") ```, H1..H6, .bind, ... )
+    - HTML events
+    - turtle (teknőc a browserben)
+    - timer
+    - SVG, programozott animációk készítése
+    - Ajax
+- Algoritmizálás I. ([Ron Rivest](https://en.wikipedia.org/wiki/Ron_Rivest))
+  - euklideszi algorimtus
+    - [Eukleidész](https://hu.wikipedia.org/wiki/Eukleid%C3%A9sz_(matematikus))
+  - eratoszthenészi szita
+    - [Eratoszthenész Pentatlosz](https://hu.wikipedia.org/wiki/Eratoszthen%C3%A9sz_Pentatlosz)
+  - rendezések, algoritmus futási ideje
+  - verem, sor
+  - fák ábrázolása, tulajdonságai
+  - kupac adatszerkezet, prioritási sor
+  - kupacrendezés
+  - keresőfák, hasítótáblák, halmazok (Set, Map)
+- Python programozási nyelv II.
+  - halmazok (Set)
+  - szótár adatszerkezet (Map)
+  - numpy, matplotlib
+  - osztályok, objektum-orientált programozás
+- Algoritmizálás II.
+  - rekurzió alkalmazása
+  - rekurzió memorizálás
+  - dinamikus programozás
+  - mohó stratégia
+  - visszalépéses keresés
+  - gráfelmélet alapjai, Königsbergi hidak problémája
+    - [Leonhard Euler](https://hu.wikipedia.org/wiki/K%C3%B6nigsbergi_hidak_probl%C3%A9m%C3%A1ja) 
+  - fa- és gráfséták
+- Alkalmazások
+  - Mintaillesztés, Szintaktikus elemzés
+  - Damerau–Levenshtein távolság
+    - [Vladimir Levenshtein](https://en.wikipedia.org/wiki/Vladimir_Levenshtein)
+  - Optimális pénváltás
+  - PageRank
+  - Fa és gráf mélységi bejárása
+  - Szélességi bejárás
+  - Mélységi keresés
+    - Erősen összefüggő komponensek
+    - Topológikus rendezés
+  - [PageRank algoritmus](https://web.archive.org/web/20060902004750/http://dbpubs.stanford.edu:8090/pub/showDoc.Fulltext?lang=en&doc=1999-66&format=pdf&compression=&name=1999-66.pdf)
+    - [Lawrence E. Page](https://hu.wikipedia.org/wiki/Larry_Page)
+  - Legrövidebb utak (Floyd-Warshall, Dijkstra, A*)
+    - [Robert W. Floyd](https://en.wikipedia.org/wiki/Robert_W._Floyd)
+    - [Edsger Wybe Dijkstra](https://hu.wikipedia.org/wiki/Edsger_Wybe_Dijkstra)
+  - Páros gráfok, magyar módszer, játékelmélet
+    - [Egerváry Jenő](https://hu.wikipedia.org/wiki/Egerv%C3%A1ry_Jen%C5%91)
+    - [Kőnig Dénes](https://hu.wikipedia.org/wiki/K%C5%91nig_D%C3%A9nes)
+  - Feszítőfák (Kruskal algoritmus, halmazerdő)
+    - [Joseph Kruskal](https://en.wikipedia.org/wiki/Joseph_Kruskal)
+  - Utazóügynök-probléma
+  - Turing gép, Church-Turing tézis
+    - [Alan Turing](https://hu.wikipedia.org/wiki/Alan_Turing)
+  - Problémák bonyolultsága, NP-teljesség
+  - Approximációs algoritmusok, mesterséges intelligencia
+  - Gépi tanulás
+- Adatbáziskezelés, SQL
+  - alapfogalmak (rekord, mező, tábla)
+  - Descartes-szorzat
+  - kulcsok, kapcsolatok táblák között
+  - SQLite szintaxisdiagramok
+  - DB Browser használata, csv, db fájlok kezelése
+  - SQLite adattípusok (Integer, Real, Text, Blob), Primary Key
+  - Select utasítás
+    - mezők, táblák kiválasztása
+    - szűrés (where, limit, between, in, like, glob,  is null)
+    - táblák közötti kapcsolatok (inner join, left join)
+    - összegzések (group by, having, max, sum, avg, count)
+    - rendezések (order by)
+    - összetett lekérdezések (union, except, intersect)
+  - Create Table
+  - Insert
+  - Delete
+- Python programozási nyelv III.
+  - SQLite modul
+  - http.server
+  - get, post
+  - full-stack alkalmazás (szerver és kliens oldal)
+- Számelméleti algoritmusok:
+  - nyilvános kulcsú tikosítás
+  - számelmélet, kis Fermat-tétel
+  - Fermat-Wiles tétel*
+  - RSA algoritmus
+    - [Ron Rivest](https://en.wikipedia.org/wiki/Ron_Rivest)
+    - [Adi Shamir](https://en.wikipedia.org/wiki/Adi_Shamir)
+  - bővített euklideszi algoritmus
+    - [Eukleidész](https://hu.wikipedia.org/wiki/Eukleid%C3%A9sz_(matematikus))
+  - véletlenített algoritmusok
+  - újjlenyomat módszer
+  - Miller-Rabin prímteszt
