@@ -268,7 +268,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - [Erdős Pál](https://hu.wikipedia.org/wiki/Erd%C5%91s_P%C3%A1l)
     - [Andrew Wiles](https://en.wikipedia.org/wiki/Andrew_Wiles)
   - nyilvános kulcsú tikosítás
-    - titkosítás és digitális aláírás solyamata
+    - titkosítás és digitális aláírás folyamata
   - számelmélet, kis Fermat-tétel
   - Fermat-Wiles tétel*
   - RSA algoritmus
