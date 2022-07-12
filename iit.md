@@ -26,7 +26,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - UTF-8 karakterkészlet 🙂, szöveg kódolása
   - táblázat beillesztése
   - kép, link, tex, code beillesztése
-- Tex nyelv használata ([Donald Knuth](https://hu.wikipedia.org/wiki/Donald_Knuth))
+- TeX nyelv használata ([Donald Knuth](https://hu.wikipedia.org/wiki/Donald_Knuth))
 - HTML nyelv alapjai ([Tim Berners-Lee](https://hu.wikipedia.org/wiki/Tim_Berners-Lee))
   - body, head, title, meta
   - VSCode -> live szerver
@@ -89,8 +89,16 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - GitHub beállítása
   - GitHub Pages
 - SVG: vektorgrafika és alkalmazása
+  - síkgeometria, grafikai primitívek
+    - [Eukleidész](https://hu.wikipedia.org/wiki/Eukleid%C3%A9sz_(matematikus))
+    - [Bolyai János](https://hu.wikipedia.org/wiki/Bolyai_J%C3%A1nos)
   - statikus vektorgrafikák készítése
   - css animációk készítése
+- Processing
+  - mozgások fizikai modellezése
+    - [Isaac Newton](https://hu.wikipedia.org/wiki/Isaac_Newton)
+  - fizikai modelleken alapuló játékprogramok készítése
+    - [Rovio Entertainment](https://en.wikipedia.org/wiki/Rovio_Entertainment)
 - Operációs rendszer: terminál, parancsok
   - help, dir (ls), cd, tree, ...
   - parancs felépítése (paraméterek, kapcsolók)
@@ -169,6 +177,13 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - SVG, programozott animációk készítése
     - Ajax
 - Algoritmizálás I. ([Ron Rivest](https://en.wikipedia.org/wiki/Ron_Rivest))
+  - szám fogalom, halmazelmélet
+    - [Ernst Zermelo](https://hu.wikipedia.org/wiki/Ernst_Zermelo)
+    - [Püthagorasz](https://hu.wikipedia.org/wiki/P%C3%BCthagorasz)
+  - Duffin-Schaeffer-tétel (Dimitris Koukoulopoulos 2019!)
+  - Fermat-Wiles tétel 1995
+  - számítási probléma, függvény fogalma, Church–Turing-tézis I.
+    - [Alonzo Church](https://hu.wikipedia.org/wiki/Alonzo_Church)
   - euklideszi algorimtus
     - [Eukleidész](https://hu.wikipedia.org/wiki/Eukleid%C3%A9sz_(matematikus))
   - eratoszthenészi szita
@@ -215,7 +230,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Feszítőfák (Kruskal algoritmus, halmazerdő)
     - [Joseph Kruskal](https://en.wikipedia.org/wiki/Joseph_Kruskal)
   - Utazóügynök-probléma
-  - Turing gép, Church-Turing tézis
+  - Turing gép, Church-Turing tézis  II.
     - [Alan Turing](https://hu.wikipedia.org/wiki/Alan_Turing)
   - Problémák bonyolultsága, NP-teljesség
   - Approximációs algoritmusok, mesterséges intelligencia
@@ -223,6 +238,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
 - Adatbáziskezelés, SQL
   - alapfogalmak (rekord, mező, tábla)
   - Descartes-szorzat
+    - [René Descartes](https://hu.wikipedia.org/wiki/Ren%C3%A9_Descartes)
   - kulcsok, kapcsolatok táblák között
   - SQLite szintaxisdiagramok
   - DB Browser használata, csv, db fájlok kezelése
@@ -243,6 +259,12 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - get, post
   - full-stack alkalmazás (szerver és kliens oldal)
 - Számelméleti algoritmusok:
+  - számelmélet
+    - [Püthagorasz](https://hu.wikipedia.org/wiki/P%C3%BCthagorasz)
+    - [Diophantosz](https://hu.wikipedia.org/wiki/Diophantosz)
+    - [Pierre de Fermat](https://hu.wikipedia.org/wiki/Pierre_de_Fermat)
+    - [Erdős Pál](https://hu.wikipedia.org/wiki/Erd%C5%91s_P%C3%A1l)
+    - [Andrew Wiles](https://en.wikipedia.org/wiki/Andrew_Wiles)
   - nyilvános kulcsú tikosítás
   - számelmélet, kis Fermat-tétel
   - Fermat-Wiles tétel*
