@@ -200,44 +200,47 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
 - Python programozási nyelv II.
   - halmazok (Set)
   - szótár adatszerkezet (Map)
-  - numpy, matplotlib
+  - numpy, matplotlib, pygame, 
   - osztályok, objektum-orientált programozás
 - Algoritmizálás II.
   - rekurzió alkalmazása
   - rekurzió memorizálás
-  - dinamikus programozás
+  - dinamikus programozás, Bellman-egyenlet
   - mohó stratégia
   - visszalépéses keresés
   - gráfelmélet alapjai, Königsbergi hidak problémája
     - [Leonhard Euler](https://hu.wikipedia.org/wiki/K%C3%B6nigsbergi_hidak_probl%C3%A9m%C3%A1ja) 
   - fa- és gráfséták
 - Alkalmazások
-  - Mintaillesztés, Szintaktikus elemzés
+  - Mintaillesztés (automata-elmélet), Szintaktikus elemzés
   - Damerau–Levenshtein távolság
     - [Vladimir Levenshtein](https://en.wikipedia.org/wiki/Vladimir_Levenshtein)
-  - Optimális pénváltás
+  - Optimális pénzváltás, tükörszó, hátizsák, pakolás és ütemezés
   - PageRank
   - Fa és gráf mélységi bejárása
-  - Szélességi bejárás
-  - Mélységi keresés
+  - Szélességi bejárás alkalmazásai
+  - Mélységi keresés alkalmazásai
+    - Elérhetőség gráfokban
     - Erősen összefüggő komponensek
     - Topológikus rendezés
+  - Számított gráf, gráfos feladatok megoldása
   - [PageRank algoritmus](https://web.archive.org/web/20060902004750/http://dbpubs.stanford.edu:8090/pub/showDoc.Fulltext?lang=en&doc=1999-66&format=pdf&compression=&name=1999-66.pdf)
     - [Lawrence E. Page](https://hu.wikipedia.org/wiki/Larry_Page)
-  - Legrövidebb utak (Floyd-Warshall, Dijkstra, A*)
+  - Legrövidebb utak (DAG, P+: Floyd-Warshall, Dijkstra, A*, P-: Bellman-Ford algoritmus)
     - [Robert W. Floyd](https://en.wikipedia.org/wiki/Robert_W._Floyd)
     - [Edsger Wybe Dijkstra](https://hu.wikipedia.org/wiki/Edsger_Wybe_Dijkstra)
+    - [Richard Bellman](https://hu.wikipedia.org/wiki/Richard_Bellman)
   - Páros gráfok, magyar módszer, játékelmélet
     - [Egerváry Jenő](https://hu.wikipedia.org/wiki/Egerv%C3%A1ry_Jen%C5%91)
     - [Kőnig Dénes](https://hu.wikipedia.org/wiki/K%C5%91nig_D%C3%A9nes)
   - Feszítőfák (Kruskal algoritmus, halmazerdő)
     - [Joseph Kruskal](https://en.wikipedia.org/wiki/Joseph_Kruskal)
-  - Utazóügynök-probléma
   - Turing gép, Church-Turing tézis  II.
     - [Alan Turing](https://hu.wikipedia.org/wiki/Alan_Turing)
+  - Utazóügynök-probléma, Leghosszabb utak nem DAG-ban, Ládapakolás (FFD)
   - Problémák bonyolultsága, NP-teljesség
-  - Approximációs algoritmusok, mesterséges intelligencia
-  - Gépi tanulás
+  - Approximációs algoritmusok, mesterséges intelligencia (AI)
+  - Gépi tanulás, Neural Networks (Keras, TensorFlow, PyTorch, ...)
 - Adatbáziskezelés, SQL
   - alapfogalmak (rekord, mező, tábla)
   - Descartes-szorzat
