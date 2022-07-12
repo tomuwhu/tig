@@ -277,7 +277,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - bővített euklideszi algoritmus
     - [Eukleidész](https://hu.wikipedia.org/wiki/Eukleid%C3%A9sz_(matematikus))
   - véletlenített algoritmusok
-  - újjlenyomat módszer
+  - Ujjlenyomat módszer
   - Miller-Rabin prímteszt
 - Algoritmizálás III.
   - Bináris keresőfák (ismétlés)
@@ -289,3 +289,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Binomiális fa
   - Kupac adatszerkezet (ismétlés)
   - Binomiális kupac
+- Decentralizált rendszerek
+  - World Wide Web <1991> [Tim Berners-Lee](https://hu.wikipedia.org/wiki/Tim_Berners-Lee)
+  - Bitchoin <1982> [David Chaum](https://en.wikipedia.org/wiki/David_Chaum)
+  - BitTorrent <2001> [Bram Cohen](https://en.wikipedia.org/wiki/Bram_Cohen)
