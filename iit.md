@@ -78,7 +78,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - Hálózat, Alkalmazás, ...
 - JavaScript ([Brendan Eich](https://hu.wikipedia.org/wiki/Brendan_Eich))
   - JavaScript HTML DOM
-  - JS változók
+  - JS változók [Magyar jelölés](https://hu.wikipedia.org/wiki/Magyar_jel%C3%B6l%C3%A9s)
     - Objektumok
     - Listák
   - JS függvények
@@ -104,12 +104,13 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - számítógép elvi felépítése, Neumann-elv
 [Neumann János](https://hu.wikipedia.org/wiki/Neumann_J%C3%A1nos)
   - egyszerű számítógép szimulációja
+  [Simonyi Károly](https://hu.wikipedia.org/wiki/Charles_Simonyi) - virtuális gép (számítógép szimulációja)
   - gépi kód
   - assembly nyelv
 - C programozási nyelv ([Dennis Ritchie](https://en.wikipedia.org/wiki/Dennis_Ritchie))
   - fordítóprogramok
   - hello world c-ben
-  - hello world c++-ban  
+  - hello world c++-ban
 - Python programozási nyelv I.
   - python telepítése
   - python futtatása terminálban
