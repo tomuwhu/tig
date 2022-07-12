@@ -84,8 +84,9 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - Konzol
     - Források
     - Hálózat, Alkalmazás, ...
-- JavaScript ([Brendan Eich](https://hu.wikipedia.org/wiki/Brendan_Eich))
+- Browser JavaScript ([Brendan Eich](https://hu.wikipedia.org/wiki/Brendan_Eich))
   - JavaScript HTML DOM
+  - Események
   - JS változók [Magyar jelölés](https://hu.wikipedia.org/wiki/Magyar_jel%C3%B6l%C3%A9s)
     - Objektumok
     - Listák
