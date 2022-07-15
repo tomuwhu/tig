@@ -12,6 +12,9 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - könyvtárstruktúra, programfájlok, adatfájlok
   - fájlnevek, kiterjesztések, fájltípusok
   - operációs rendszer feladata, funkciói
+- Böngészőben futó interaktív fejlesztőeszközök
+  - [Scratch](https://scratch.mit.edu/)
+  - [micro:bit](https://makecode.microbit.org/)
 - Böngésző <1984> használata ([Marc Andreessen](https://en.wikipedia.org/wiki/Marc_Andreessen))
   - http://
   - keresés az interneten
@@ -99,8 +102,15 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - statikus vektorgrafikák készítése
   - css animációk készítése
 - Processing
+  - koordináta-rendszer
+  [René Descartes](https://hu.wikipedia.org/wiki/Ren%C3%A9_Descartes)
+  - grafikai primitívek
+  [Pierre Bézier](https://en.wikipedia.org/wiki/Pierre_B%C3%A9zier)
+  - python nyelvi elemek
+    - for, if, range, ...
   - mozgások fizikai modellezése
     - [Isaac Newton](https://hu.wikipedia.org/wiki/Isaac_Newton)
+  - interaktivitás (user input)
   - fizikai modelleken alapuló játékprogramok készítése
     - Pac Man - 1955 [Namco](https://en.wikipedia.org/wiki/Namco)
     - Angry Birds - 2014 [Rovio Entertainment](https://en.wikipedia.org/wiki/Rovio_Entertainment)
