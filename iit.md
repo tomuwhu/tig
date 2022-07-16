@@ -101,7 +101,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - [Bolyai János](https://hu.wikipedia.org/wiki/Bolyai_J%C3%A1nos)
   - statikus vektorgrafikák készítése
   - css animációk készítése
-- Processing
+- Processing 
   - koordináta-rendszer
   [René Descartes](https://hu.wikipedia.org/wiki/Ren%C3%A9_Descartes)
   - grafikai primitívek
