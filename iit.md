@@ -300,7 +300,8 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - [Andrew Wiles](https://en.wikipedia.org/wiki/Andrew_Wiles)
   - nyilvános kulcsú tikosítás
     - titkosítás és digitális aláírás folyamata
-  - számelmélet, kis Fermat-tétel
+  - prímszám-tétel, kis Fermat-tétel, prímfaktorizáció
+    [Prímtesztelés és prímfaktorizáció - Diplomamunka](https://web.cs.elte.hu/blobs/diplomamunkak/alkmat/2011/gerbicz_robert.pdf)
   - Fermat-Wiles tétel*
   - RSA algoritmus
     - [Ron Rivest](https://en.wikipedia.org/wiki/Ron_Rivest)
