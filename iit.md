@@ -128,6 +128,10 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - egyszerű számítógép szimulációja ([Simonyi Károly](https://hu.wikipedia.org/wiki/Charles_Simonyi))
   - gépi kód <1936> ([Alan Turing](https://hu.wikipedia.org/wiki/Alan_Turing))
   - assembly nyelv <1951> ([Maurice Wilkes](https://en.wikipedia.org/wiki/Maurice_Wilkes))
+    - regiszterek és memória
+    - a programkód és az adatok
+    - elágazások, ciklusok
+    - a függvényhívás mechanizmusa, a verem
 - C programozási nyelv ([Dennis Ritchie](https://en.wikipedia.org/wiki/Dennis_Ritchie))
   - fordítóprogramok
   - hello world c-ben
@@ -197,6 +201,8 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Fermat-Wiles tétel 1995
   - számítási probléma, függvény fogalma, Church–Turing-tézis I.
     - [Alonzo Church](https://hu.wikipedia.org/wiki/Alonzo_Church)
+  - zárt formulák, faltoriális, fibonacci sorozat
+    - [Leonardo Fibonacci](https://hu.wikipedia.org/wiki/Fibonacci)
   - euklideszi algorimtus
     - [Eukleidész](https://hu.wikipedia.org/wiki/Eukleid%C3%A9sz_(matematikus))
   - eratoszthenészi szita
