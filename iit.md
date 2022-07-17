@@ -271,6 +271,8 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Descartes-szorzat
     - [René Descartes](https://hu.wikipedia.org/wiki/Ren%C3%A9_Descartes)
   - kulcsok, kapcsolatok táblák között
+  - Adatbázisok tervezése, EK-diagram
+  - Normalizálás, Normálformák
   - SQLite szintaxisdiagramok
   - DB Browser használata, csv, db fájlok kezelése
   - SQLite adattípusok (Integer, Real, Text, Blob), Primary Key
