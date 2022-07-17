@@ -194,7 +194,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - SVG, programozott animációk készítése
     - Ajax
 - Algoritmizálás I. ([Ron Rivest](https://en.wikipedia.org/wiki/Ron_Rivest))
-  - szám fogalom, halmazelmélet
+  - szám fogalom, halmazelmélet, számelmélet, logika
     - [Ernst Zermelo](https://hu.wikipedia.org/wiki/Ernst_Zermelo)
     - [Püthagorasz](https://hu.wikipedia.org/wiki/P%C3%BCthagorasz)
   - Duffin-Schaeffer-tétel (Dimitris Koukoulopoulos 2019!)
@@ -207,7 +207,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - [Eukleidész](https://hu.wikipedia.org/wiki/Eukleid%C3%A9sz_(matematikus))
   - eratoszthenészi szita
     - [Eratoszthenész Pentatlosz](https://hu.wikipedia.org/wiki/Eratoszthen%C3%A9sz_Pentatlosz)
-  - rendezések, algoritmus futási ideje
+  - rendezések, algoritmus futási ideje, tárigény
   - verem, sor
   - fák ábrázolása, tulajdonságai
   - kupac adatszerkezet, prioritási sor
@@ -224,7 +224,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - dinamikus programozás, Bellman-egyenlet
   - mohó stratégia
   - visszalépéses keresés
-  - gráfelmélet alapjai, Königsbergi hidak problémája
+  - a gráfelmélet, Königsbergi hidak problémája
     - [Leonhard Euler](https://hu.wikipedia.org/wiki/K%C3%B6nigsbergi_hidak_probl%C3%A9m%C3%A1ja) 
   - fa- és gráfséták
 - Alkalmazások
@@ -242,19 +242,23 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Számított gráf, gráfos feladatok megoldása
   - [PageRank algoritmus](https://web.archive.org/web/20060902004750/http://dbpubs.stanford.edu:8090/pub/showDoc.Fulltext?lang=en&doc=1999-66&format=pdf&compression=&name=1999-66.pdf)
     - [Lawrence E. Page](https://hu.wikipedia.org/wiki/Larry_Page)
+  - Speciális gráfok (Fa, DAG, Síkbarajzolható gráf, ...)
   - Legrövidebb utak (DAG, P+: Floyd-Warshall, Dijkstra, A*, P-: Bellman-Ford algoritmus)
     - [Robert W. Floyd](https://en.wikipedia.org/wiki/Robert_W._Floyd)
     - [Edsger Wybe Dijkstra](https://hu.wikipedia.org/wiki/Edsger_Wybe_Dijkstra)
     - [Richard Bellman](https://hu.wikipedia.org/wiki/Richard_Bellman)
+  - Leghosszabb utak DAG-ban
   - Páros gráfok, magyar módszer, játékelmélet
     - [Egerváry Jenő](https://hu.wikipedia.org/wiki/Egerv%C3%A1ry_Jen%C5%91)
     - [Kőnig Dénes](https://hu.wikipedia.org/wiki/K%C5%91nig_D%C3%A9nes)
   - Feszítőfák (Kruskal algoritmus, halmazerdő)
     - [Joseph Kruskal](https://en.wikipedia.org/wiki/Joseph_Kruskal)
+  - Egyéb gráf-problémák (gráfszínezés, gráf-lefogás)
+    - [Gallai Tibor](https://hu.wikipedia.org/wiki/Gallai_Tibor)
   - Turing gép, Church-Turing tézis  II.
     - [Alan Turing](https://hu.wikipedia.org/wiki/Alan_Turing)
   - Utazóügynök-probléma, Leghosszabb utak nem DAG-ban, Ládapakolás (FFD)
-  - Problémák bonyolultsága, NP-teljesség
+  - Számítási bonyolultság fogalma, számítási problémák osztályozása (P, NP, ...)
   - Approximációs algoritmusok, mesterséges intelligencia (AI)
   - Gépi tanulás, Neural Networks (Keras, TensorFlow, PyTorch, ...)
 - Adatbáziskezelés, SQL
