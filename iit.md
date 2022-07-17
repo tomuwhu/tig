@@ -225,14 +225,16 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - mohó stratégia
   - visszalépéses keresés
   - a gráfelmélet, Königsbergi hidak problémája
-    - [Leonhard Euler](https://hu.wikipedia.org/wiki/K%C3%B6nigsbergi_hidak_probl%C3%A9m%C3%A1ja) 
+    - [Leonhard Euler](https://hu.wikipedia.org/wiki/K%C3%B6nigsbergi_hidak_probl%C3%A9m%C3%A1ja)
+    - [Hálózatelemzés](http://real-eod.mtak.hu/9267/1/Rendszerelmelet_10.36250_00734.07.pdf)
   - fa- és gráfséták
 - Alkalmazások
   - Mintaillesztés (automata-elmélet), Szintaktikus elemzés
   - Damerau–Levenshtein távolság
     - [Vladimir Levenshtein](https://en.wikipedia.org/wiki/Vladimir_Levenshtein)
   - Optimális pénzváltás, tükörszó, hátizsák, pakolás és ütemezés
-  - PageRank
+  - Turing gép, Church-Turing tézis  II.
+    - [Alan Turing](https://hu.wikipedia.org/wiki/Alan_Turing)
   - Fa és gráf mélységi bejárása
   - Szélességi bejárás alkalmazásai
   - Mélységi keresés alkalmazásai
@@ -247,7 +249,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - [Robert W. Floyd](https://en.wikipedia.org/wiki/Robert_W._Floyd)
     - [Edsger Wybe Dijkstra](https://hu.wikipedia.org/wiki/Edsger_Wybe_Dijkstra)
     - [Richard Bellman](https://hu.wikipedia.org/wiki/Richard_Bellman)
-  - Leghosszabb utak DAG-ban
+  - Leghosszabb utak DAG-ban, folyamok, vágás
   - Páros gráfok, magyar módszer, játékelmélet
     - [Egerváry Jenő](https://hu.wikipedia.org/wiki/Egerv%C3%A1ry_Jen%C5%91)
     - [Kőnig Dénes](https://hu.wikipedia.org/wiki/K%C5%91nig_D%C3%A9nes)
@@ -255,8 +257,11 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - [Joseph Kruskal](https://en.wikipedia.org/wiki/Joseph_Kruskal)
   - Egyéb gráf-problémák (gráfszínezés, gráf-lefogás)
     - [Gallai Tibor](https://hu.wikipedia.org/wiki/Gallai_Tibor)
-  - Turing gép, Church-Turing tézis  II.
-    - [Alan Turing](https://hu.wikipedia.org/wiki/Alan_Turing)
+  - Véletlen gráfok, Erdős-Rényi Modell
+    - [Erdős Pál](https://hu.wikipedia.org/wiki/Erd%C5%91s_P%C3%A1l)
+    - [Rényi Alfréd](https://hu.wikipedia.org/wiki/R%C3%A9nyi_Alfr%C3%A9d)
+  - Skálafüggetlen hálózatok, hálózatelemzési módszerek
+    - [Barabási Albert László](https://hu.wikipedia.org/wiki/Barab%C3%A1si_Albert_L%C3%A1szl%C3%B3)
   - Utazóügynök-probléma, Leghosszabb utak nem DAG-ban, Ládapakolás (FFD)
   - Számítási bonyolultság fogalma, számítási problémák osztályozása (P, NP, ...)
   - Approximációs algoritmusok, mesterséges intelligencia (AI)
