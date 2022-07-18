@@ -119,7 +119,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - parancs felépítése (paraméterek, kapcsolók)
   - terminál kényelmi funkciók (tab, ...)
 - Számítógép működésének alapjai
-  - számrendszerek
+  - számrendszerek, számábrázolás, tulcsordulás
   - matematikai logika (boole algebra)
 [George Boole](https://hu.wikipedia.org/wiki/George_Boole)
   - logikai áramkörök
@@ -171,8 +171,9 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - további lista és stringműveletek
   - szövegfájlok kezelése
   - teknőcgrafika (like logo) vs. graphics
-  - random modul
+  - random modul, valószínűségszámítás, statisztika
   - összetett feladatok
+  - objektum, referencia
 - HTML + CSS + Python alkalmazása I. (Brython)
   - Hello World alkalmazás
   - live szerver használata
@@ -209,6 +210,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - [Eratoszthenész Pentatlosz](https://hu.wikipedia.org/wiki/Eratoszthen%C3%A9sz_Pentatlosz)
   - rendezések, algoritmus futási ideje, tárigény
   - verem, sor
+  - lánc, láncolt lista, pointerek
   - fák ábrázolása, tulajdonságai
   - kupac adatszerkezet, prioritási sor
   - kupacrendezés
@@ -216,7 +218,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
 - Python programozási nyelv II.
   - halmazok (Set)
   - szótár adatszerkezet (Map)
-  - numpy, matplotlib, pygame, 
+  - numpy, matplotlib, pygame
   - osztályok, objektum-orientált programozás
 - Algoritmizálás II.
   - rekurzió alkalmazása
