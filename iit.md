@@ -101,6 +101,11 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - [Bolyai János](https://hu.wikipedia.org/wiki/Bolyai_J%C3%A1nos)
   - statikus vektorgrafikák készítése
   - css animációk készítése
+- Multimédia
+  - kép és hang kódolása, mintavételezés, kvantálás
+  - Decibel skála, hangerősség
+  - kép és hang tömörítése (veszteséges és veszteségmentes tömörítés)
+  - Videóvágás, Youtube Studio, Szerzői jogok és ellenőrzésük, plágium
 - Processing
   - koordináta-rendszer
   [René Descartes](https://hu.wikipedia.org/wiki/Ren%C3%A9_Descartes)
