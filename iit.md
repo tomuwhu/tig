@@ -261,6 +261,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - [Kőnig Dénes](https://hu.wikipedia.org/wiki/K%C5%91nig_D%C3%A9nes)
   - Feszítőfák (Jarník-algoritmus, Kruskal algoritmus, halmazerdő)
     - [Joseph Kruskal](https://en.wikipedia.org/wiki/Joseph_Kruskal)
+  - Klaszterezés, Single link clustering
   - Egyéb gráf-problémák (gráfszínezés, gráf-lefogás)
     - [Gallai Tibor](https://hu.wikipedia.org/wiki/Gallai_Tibor)
   - Véletlen gráfok, Erdős-Rényi Modell
@@ -318,6 +319,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Ujjlenyomat módszer
   - Miller-Rabin prímteszt
 - Algoritmizálás III.
+  - Halmazerdő, Kruskal algroritmus (ismétlés)
   - Bináris keresőfák (ismétlés)
   - Általános keresőfák
   - AVL-fák
@@ -327,6 +329,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Binomiális fa
   - Kupac adatszerkezet (ismétlés)
   - Binomiális kupac
+  - Fibonacci kupac, Jarník-algoritmus (ismétlés)
 - Elosztott (Decentralizált) rendszerek
   - World Wide Web <1991> [Tim Berners-Lee](https://hu.wikipedia.org/wiki/Tim_Berners-Lee)
   - Bitchoin <1982> [David Chaum](https://en.wikipedia.org/wiki/David_Chaum)
