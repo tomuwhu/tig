@@ -235,7 +235,6 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - [Leonhard Euler](https://hu.wikipedia.org/wiki/K%C3%B6nigsbergi_hidak_probl%C3%A9m%C3%A1ja)
     - [Hálózatelemzés](http://real-eod.mtak.hu/9267/1/Rendszerelmelet_10.36250_00734.07.pdf)
   - fa- és gráfséták
-- Alkalmazások
   - Mintaillesztés (automata-elmélet), Szintaktikus elemzés
   - Damerau–Levenshtein távolság
     - [Vladimir Levenshtein](https://en.wikipedia.org/wiki/Vladimir_Levenshtein)
@@ -260,7 +259,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Páros gráfok, magyar módszer, játékelmélet
     - [Egerváry Jenő](https://hu.wikipedia.org/wiki/Egerv%C3%A1ry_Jen%C5%91)
     - [Kőnig Dénes](https://hu.wikipedia.org/wiki/K%C5%91nig_D%C3%A9nes)
-  - Feszítőfák (Kruskal algoritmus, halmazerdő)
+  - Feszítőfák (Jarník-algoritmus, Kruskal algoritmus, halmazerdő)
     - [Joseph Kruskal](https://en.wikipedia.org/wiki/Joseph_Kruskal)
   - Egyéb gráf-problémák (gráfszínezés, gráf-lefogás)
     - [Gallai Tibor](https://hu.wikipedia.org/wiki/Gallai_Tibor)
