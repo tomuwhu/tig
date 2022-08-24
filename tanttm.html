@@ -32,7 +32,7 @@
     </style>
     <script>
         var tt
-        var ossz = 67
+        var ossz = 1
         function f(e) {
             ora = tt[e.srcElement.selectedIndex].split(";")
             if (ora[5]) {
@@ -58,6 +58,8 @@
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 tt = xhttp.responseText.split("\r\n")
+                //tt = xhttp.responseText.split("\\r\\n")
+                console.log(tt)
                 ora = tt[ossz-1].split(";")
                 if (ora[5]) {
                     sss =  "<a href='"+ora[5]+"' target='_blank'>Tananyag</a>"
