@@ -37,7 +37,7 @@
         function f(e) {
             ora = tt[e.srcElement.selectedIndex].split(";")
             if (ora[5]) {
-                    sss =  "<a href='"+ora[5]+"' target='_blank'>Tananyag</a>"
+                if (tem==9) sss =  "<a href='"+ora[5]+"' target='_blank'>Tananyag</a>"
             } 
             else sss=""
             document.getElementById('content').innerHTML = "<p><b>" + ora[0] + " " + ora[1] + "</b></p>" +
