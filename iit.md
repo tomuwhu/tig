@@ -12,6 +12,10 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - könyvtárstruktúra, programfájlok, adatfájlok
   - fájlnevek, kiterjesztések, fájltípusok
   - operációs rendszer feladata, funkciói
+  - operációs rendszerek kezelése
+    - grafikus interfészek
+    - terminál, terminál parancsok
+  - archiválás, tömörítés (.zip)
 - Böngészőben futó interaktív fejlesztőeszközök
   - [Scratch](https://scratch.mit.edu/)
   - [micro:bit](https://makecode.microbit.org/)
@@ -95,6 +99,10 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - Listák
   - JS függvények
   - Vezérlési szerkezetek
+- Internet szabványok és protokollok I.
+  - IPv4, IPv6, TCP/IP, DNS, DHCP
+  - http, https
+  - ftp, sftp, smtp, ssh
 - SVG: vektorgrafika és alkalmazása
   - síkgeometria, grafikai primitívek
     - [Eukleidész](https://hu.wikipedia.org/wiki/Eukleid%C3%A9sz_(matematikus))
@@ -105,7 +113,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - kép és hang kódolása, mintavételezés, kvantálás
   - Decibel skála, hangerősség
   - kép és hang tömörítése (veszteséges és veszteségmentes tömörítés)
-  - Videóvágás, Youtube Studio, Szerzői jogok és ellenőrzésük, plágium
+  - videóvágás, Youtube Studio, Szerzői jogok és ellenőrzésük, plágium
 - Processing
   - koordináta-rendszer
   [René Descartes](https://hu.wikipedia.org/wiki/Ren%C3%A9_Descartes)
@@ -119,7 +127,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - fizikai modelleken alapuló játékprogramok készítése
     - Pac Man - 1955 [Namco](https://en.wikipedia.org/wiki/Namco)
     - Angry Birds - 2014 [Rovio Entertainment](https://en.wikipedia.org/wiki/Rovio_Entertainment)
-- Operációs rendszer: terminál, parancsok
+- Operációs rendszer: terminál, parancsok (ismétlés), windows - linux különbségek
   - help, dir (ls), cd, tree, ...
   - parancs felépítése (paraméterek, kapcsolók)
   - terminál kényelmi funkciók (tab, ...)
@@ -141,7 +149,8 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - fordítóprogramok
   - hello world c-ben
   - hello world c++-ban
-- Python programozási nyelv I.
+  - változók és típusaik
+- Python I.
   - python telepítése
   - python futtatása terminálban
   - hello world pythonban
@@ -188,7 +197,16 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
 - HTML Forms
   - button, input (number, date, time, range, color, ...), select, option
   - form validálás
-- Archiválás, tömörítés (.zip)
+- Internet szabványok és protokollok II.
+  - FullStack Web Application
+    - Server Side
+    - Client Side
+  - Restful Services, SSE, WebSockets
+  - OAUTH 2.0
+- HTML + CSS + JS
+  - Eseménykezelés
+  - Node JS telepítése és alkalmazása
+  - Szerver és kliens oldal JS-ben
 - HTML + CSS + Python alkalmazása II. (Brython)
   - hello world (ismétlés)
   - browser modul
@@ -220,7 +238,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - kupac adatszerkezet, prioritási sor
   - kupacrendezés
   - keresőfák, hasítótáblák, halmazok (Set, Map)
-- Python programozási nyelv II.
+- Python nyelv II.
   - halmazok (Set)
   - szótár adatszerkezet (Map)
   - numpy, matplotlib, pygame
@@ -297,7 +315,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - SQLite modul
   - http.server
   - get, post
-  - full-stack alkalmazás (szerver és kliens oldal)
+  - full-stack alkalmazások python nyelven (szerver és kliens oldal)
 - Számelméleti algoritmusok:
   - számelmélet
     - [Püthagorasz](https://hu.wikipedia.org/wiki/P%C3%BCthagorasz)

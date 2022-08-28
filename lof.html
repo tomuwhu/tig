@@ -23,6 +23,23 @@
             document.getElementById("content").style.display="none"
         }
     }
+    xhttpr = new XMLHttpRequest()
+    xhttpr.onload = () => {
+        v = JSON.parse(xhttpr.responseText)
+        if (v[1] && v[1].v_name) {
+            document.getElementById("lif").style.display="none"
+            document.getElementById("lc").style.display="flex"
+            document.getElementById("ln").innerHTML = v[1].v_name + " " + v[1].k_name
+            document.getElementById("content").style.display="block"
+            document.getElementById("content").innerHTML = `
+            <div class="la">` + v[1].vhtml + `</div>`
+            document.getElementById("sid").innerHTML="SId: "+v[0]
+        } else {
+            document.getElementById("lif").style.display="block"
+            document.getElementById("lc").style.display="none"
+            document.getElementById("content").style.display="none"
+        }
+    }
     function lo() {
         xhttp.open("POST", "https://inf.u-szeged.hu/~tnemeth/login.php")
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
@@ -49,6 +66,53 @@
             xhttp.send(ss)
         } else xhttp.send(`sid=${sid}`)
     }
+    function rf() {
+        xhttpr.open("POST", "https://inf.u-szeged.hu/~tnemeth/nreg.php")
+        xhttpr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+        if (document.getElementById('un')) {
+            ss = [
+                `sid=${sid}`,
+                `ln=${document.getElementById('un').value}`,
+                `pw=${CryptoJS.
+                        SHA512(
+                            document.getElementById('pw').value
+                        ).words.join('')}`,
+                `vnev=${document.getElementById('v_name').value}`,
+                `knev=${document.getElementById('k_name').value}`,
+                `oszt=${document.getElementById('oszt').value}`,
+                `ghname=${document.getElementById('gh_name').value}`,
+                `ghrep=${document.getElementById('gh_rep').value}`,
+                `ghwww=${document.getElementById('gh_www').value}`
+            ].join("&")
+            xhttpr.send(ss)
+            console.log(ss);
+        } else xhttp.send(`sid=${sid}`)
+    }
+    function reg() {
+        document.getElementById("reg").style.display="block"
+        document.getElementById("rb").style.display="none"
+        document.getElementById("bb").innerHTML = "Beküld"
+        document.getElementById("bb").setAttribute('onclick','rf()')
+    }
+    function chl() {
+        document.getElementById("gh_www").value = `https://${document.getElementById("gh_name").value}.github.io/${document.getElementById("gh_rep").value}`
+        document.getElementById("ahref").innerHTML = `
+            <a target="mywebpage" href='https://${document.getElementById("gh_name").value}.github.io/${document.getElementById("gh_rep").value}/' title="Weboldalam megnyitása">
+                <svg stroke="blue" aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-link-external">
+                    <path fill-rule="evenodd" d="M10.604 1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1zM3.75 2A1.75 1.75 0 002 3.75v8.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 12.25v-3.5a.75.75 0 00-1.5 0v3.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-8.5a.25.25 0 01.25-.25h3.5a.75.75 0 000-1.5h-3.5z"></path>
+                </svg>
+            </a>`
+        document.getElementById("ahref").style.display = "block"
+    }
+    function chl2() {
+        document.getElementById("ahref").innerHTML = `
+        <a target="mywebpage" href='${document.getElementById("gh_www").value}' title="Weboldalam megnyitása">
+            <svg stroke="blue" aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-link-external">
+                <path fill-rule="evenodd" d="M10.604 1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1zM3.75 2A1.75 1.75 0 002 3.75v8.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 12.25v-3.5a.75.75 0 00-1.5 0v3.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-8.5a.25.25 0 01.25-.25h3.5a.75.75 0 000-1.5h-3.5z"></path>
+            </svg>
+        </a>`
+        document.getElementById("ahref").style.display = "block"
+    }
     f()
 </script>
 <link rel="stylesheet" href="main.css">
@@ -66,6 +130,9 @@ h2.hx {
 }
 i {
     color: rgb(237, 237, 150);
+}
+div.c {
+    text-align: center;
 }
 div.a {
     font-size: 10px;
@@ -126,12 +193,27 @@ div#content {
     width: 500px;
 }
 .lcont {
-    display: flex;
+    display: none;
     justify-content: space-between;
     background-color: rgb(72, 37, 37);
     box-shadow: 1px 1px 3px inset black;
     border-radius: 5px;
     padding: 5px;
+}
+div.button {
+    display: inline-block;
+    margin: 5px;
+    padding: 4px;
+    border: solid 1px blue;
+    border-radius: 5px;
+    color:rgb(32, 9, 34);
+    background-color: bisque;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px black;
+}
+div.button:hover {
+    box-shadow: 1px 1px 3px rgb(54, 41, 41);
+    background-color: rgb(189, 94, 94);
 }
 div#content a {
     color: rgb(59, 34, 34);
@@ -143,6 +225,20 @@ div#content a:hover {
 div#content a:visited {
     color: rgb(62, 68, 119);
     font-weight: bold;
+}
+div#reg {
+    display: none;
+}
+select#oszt{
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
+}
+input.li {
+    width: 250px;
+}
+div.hidden {
+    display: none;
 }
 </style>
 
@@ -165,8 +261,40 @@ div#content a:visited {
                 <div class="la">
                 <input placeholder="jelszó" autocomplete="current-password" type="password" id="pw">
                 </div>
+                <div id="reg">
+                    <div class="la">
+                        <input placeholder="Vezetéknév" type="text" id="v_name" class="li">
+                    </div>
+                    <div class="la">
+                        <input placeholder="Keresztnév" type="text" id="k_name" class="li">
+                    </div>
+                    <div class="la c">
+                        Osztály:
+                        <select id="oszt">
+                            <option value="9/KNy">9/KNy</option>
+                            <option value="9/F">9/F</option>
+                            <option value="9/C">9/C</option>
+                            <option value="10/D">10/D</option>
+                            <option value="10/D">10/I</option>
+                            <option value="11/I">11/I</option>
+                        </select>
+                    </div>
+                    <div class="la">
+                        <input placeholder="GitHub Account" type="text" id="gh_name" onkeyup="chl()" class="li">
+                    </div>
+                    <div class="la">
+                        <input placeholder="GitHub Reposatory értékeléshez" value="sagvari" type="text" id="gh_rep" onkeyup="chl()" class="li">
+                    </div>
+                    <div class="la">
+                        <input placeholder="GitHub Reposatory értékeléshez" type="text" id="gh_www" onkeyup="chl2()" class="li">
+                    </div>
+                    <div class="la c hidden" id="ahref">
+                        
+                    </div>
+                </div>
                 <div class="lb">
-                <button onclick="f()">Bejelentkezés</button>
+                <!--div class="button" onclick="reg()" id="rb">Regisztráció</div-->
+                <div class="button" onclick="f()" id="bb">Bejelentkezés</div>
                 </div>
             </div>
         </div>
