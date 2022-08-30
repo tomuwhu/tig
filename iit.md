@@ -150,6 +150,8 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - hello world c-ben
   - hello world c++-ban
   - változók és típusaik
+  - program fordítás és futtatás (visual studio vagy más)
+  - HackerRank tanfolyam
 - Python I.
   - python telepítése
   - python futtatása terminálban
