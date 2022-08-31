@@ -145,7 +145,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - a programkód és az adatok
     - elágazások, ciklusok
     - a függvényhívás mechanizmusa, a verem
-- C programozási nyelv ([Dennis Ritchie](https://en.wikipedia.org/wiki/Dennis_Ritchie))
+- C/C++ programozási nyelv ([Dennis Ritchie](https://en.wikipedia.org/wiki/Dennis_Ritchie))
   - fordítóprogramok
   - hello world c-ben
   - hello world c++-ban, konzol alkalmazások
