@@ -1,14 +1,8 @@
-#include <cmath>
-#include <cstdio>
-#include <vector>
 #include <iostream>
-#include <algorithm>
 using namespace std;
-
-
-int main() {
-    int a, b, c;
-    cin >> a >> b >> c;
-    cout << a + b + c;
-    return 0;
+int main( int argc, char *argv[] ) {
+    int a, b;
+    a = *argv[3] - '0';
+    b = *argv[4] - '0';
+    cout << a + b << "\n";
 }
