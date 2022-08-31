@@ -148,7 +148,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
 - C programozási nyelv ([Dennis Ritchie](https://en.wikipedia.org/wiki/Dennis_Ritchie))
   - fordítóprogramok
   - hello world c-ben
-  - hello world c++-ban
+  - hello world c++-ban, konzol alkalmazások
   - program fordítás és futtatás (visual studio vagy más)
   - változók és típusaik
   - cin >> _ ;  cout << _ ;
