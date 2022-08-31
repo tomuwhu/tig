@@ -149,9 +149,12 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - fordítóprogramok
   - hello world c-ben
   - hello world c++-ban
-  - változók és típusaik
   - program fordítás és futtatás (visual studio vagy más)
+  - változók és típusaik
+  - cin >> _ ;  cout << _ ;
+  - elágatások, ciklusok, függvények
   - HackerRank tanfolyam
+  - Unreal Engine, Udemy courses
 - Python I.
   - python telepítése
   - python futtatása terminálban
