@@ -11,10 +11,10 @@
             e.target.style.backgroundColor = c
         }
     }
-    document.write(`<table>
+    document.body.innerHTML += `<table>
     ${Array(16).fill(`<tr>${
         Array(16).fill("<td onclick='f(event)'></td>").join("")
-    }</tr>`).join("")}</table>`)
+    }</tr>`).join("")}</table>`
 </script>
 <style>
     body {
