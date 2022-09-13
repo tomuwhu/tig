@@ -1,0 +1,48 @@
+<body>
+    <h1>Amőba</h1>
+</body>
+<script>
+    next = "O"
+    function f(e) {
+        e.target.innerHTML = next;
+        if (next == "O") {
+            next = "X"
+            c = "red"
+        } else {
+            next = "O"
+            c = "blue"
+        }
+        e.target.style.backgroundColor = c
+    }
+    document.write(`<table>
+    ${Array(16).fill(`<tr>${
+        Array(16).fill("<td onclick='f(event)'></td>").join("")
+    }</tr>`).join("")}</table>`)
+</script>
+<style>
+    body {
+        text-align: center;
+        background-color: antiquewhite;
+        color: rgb(22, 61, 69);
+        text-shadow: 1px 1px 3px gray;
+    }
+    td {
+        width: 40px;
+        height: 50px;
+        background-color: rgb(62, 114, 114);
+        box-shadow: 1px 1px 3px black;
+        border-radius: 10px;
+        border: double 4px rgb(6, 37, 49); 
+        cursor: pointer;
+        text-align: center;
+        font-size: 30px;
+        color: white;
+    }
+    .o {
+        background-color: rgb(163, 228, 206);
+    }
+    table {
+        border-spacing: 6px;
+        margin: auto;
+    }
+</style>
