@@ -1,0 +1,46 @@
+<body>
+    <div id="content">Eredeti szöveg</div><br>
+    <div class="b" onclick="f1()">1. tükörszó</div>
+    <div class="b" onclick="f2()">2. tükörszó</div>
+</body>
+<style>
+    body {
+        text-align: center;
+    }
+    #content {
+        border: solid 1px black;
+        padding: 7px;
+        background-color: rgb(225, 191, 167);
+        box-shadow: 1px 1px 3px black;
+        cursor: pointer;
+        height: 100px;
+        border-radius: 16px;
+    }
+    .b {
+        border: solid 1px black;
+        display:inline-block;
+        padding: 7px;
+        background-color: chocolate;
+        box-shadow: 1px 1px 3px black;
+        cursor: pointer;
+        color:aqua;
+        text-shadow: 1px 1px 3px rgb(41, 40, 40);
+        user-select: none;
+    }
+    .b:hover {
+        background-color: rgb(69, 140, 140);
+    }
+    .b:active {
+        background-color: rgb(87, 29, 57);
+    }
+</style>
+<script>
+    function f1() {
+        document.querySelectorAll("#content")[0].innerHTML = 
+        "Géza kék az ég"
+    }
+    function f2() {
+        document.querySelectorAll("#content")[0].innerHTML =
+        "Indul a görög aludni"
+    }
+</script>
