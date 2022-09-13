@@ -1,0 +1,37 @@
+<body>
+    <h1>Sakktábla</h1>
+</body>
+<script>
+    tbl = document.createElement('table')
+    for (let i = 0; i < 8; i++) {
+        tr = tbl.insertRow()
+        for (let j = 0; j < 8; j++) {
+            td = tr.insertCell()
+            if ((i + j) % 2) td.setAttribute('class', 'o')
+        }
+    }
+    document.body.appendChild(tbl)
+</script>
+<style>
+    body {
+        text-align: center;
+        background-color: antiquewhite;
+        color: rgb(41, 99, 111);
+        text-shadow: 1px 1px 3px gray;
+    }
+    td {
+        width: 80px;
+        height: 80px;
+        background-color: rgb(28, 68, 68);
+        box-shadow: 1px 1px 3px black;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .o {
+        background-color: aquamarine;
+    }
+    table {
+        border-spacing: 6px;
+        margin: auto;
+    }
+</style>
