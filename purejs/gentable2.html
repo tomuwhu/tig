@@ -11,8 +11,7 @@
             e.target.style.backgroundColor = c
         }
     }
-    document.body.innerHTML += `<table>
-    ${Array(16).fill(`<tr>${
+    document.body.innerHTML += `<table>${Array(16).fill(`<tr>${
         Array(16).fill("<td onclick='f(event)'></td>").join("")
     }</tr>`).join("")}</table>`
 </script>
@@ -37,9 +36,6 @@
     }
     td:hover {
         background-color: aqua;
-    }
-    .o {
-        background-color: rgb(163, 228, 206);
     }
     table {
         margin: auto;
