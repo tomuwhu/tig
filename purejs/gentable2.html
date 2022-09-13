@@ -4,10 +4,9 @@
 <script>
     next = "O"
     function f(e) {
-        if (e.target.innerHTML=="") {
-            if (next == "O") [next, c] = ["X", "pink"]
-            else [next, c] = ["O", "blueviolet"]
-            e.target.innerHTML = next;
+        if (e.target.innerHTML == "") {
+            [next, c] = next == "O" ? ["X", "pink"] : ["O", "blueviolet"]
+            e.target.innerHTML = next
             e.target.style.backgroundColor = c
         }
     }
