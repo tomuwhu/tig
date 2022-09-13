@@ -3,9 +3,9 @@
 </body>
 <script>
     tbl = document.createElement('table')
-    for (let i = 0; i < 8; i++) {
+    for (i = 0; i < 8; i++) {
         tr = tbl.insertRow()
-        for (let j = 0; j < 8; j++) {
+        for (j = 0; j < 8; j++) {
             td = tr.insertCell()
             if ((i + j) % 2) td.setAttribute('class', 'o')
         }
