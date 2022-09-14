@@ -13,7 +13,7 @@
         document[ 'nx' ].style = { "display": "block" }
       stop = 1
     def katt( e ):
-      global stop; xy = e.target.id.split( '-' )
+      global stop, next; xy = e.target.id.split( '-' )
       x, y = int( xy[ 0 ] ), int( xy[ 1 ] )
       if stop == 0 and t[ x + 1 ][ y + 1 ] == 0:
         global next; e.target.html = next
