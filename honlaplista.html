@@ -1,0 +1,73 @@
+<script>
+    xhttp = new XMLHttpRequest()
+    xhttp.onload = () => {
+        v = JSON.parse(xhttp.responseText.slice(0, -1))
+        document.getElementById("t").innerHTML=`${v.map( s => `
+                <div class="hh"><a target="hh" href="${s[7]}">${s[1]} ${s[2]}</a></div>
+        `).join("")}</table>`
+    }
+    function f() {
+        xhttp.open("POST", "https://inf.u-szeged.hu/~tnemeth/gethlist.php")
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+        pp = document.getElementById('oszt').value
+        if (pp) {
+            ss = [
+                `oszt=${pp}`,
+                `cica=1`
+            ].join("&")
+            xhttp.send(ss)
+        } else xhttp.send(`oszt=10/DA`)
+    }
+    setTimeout(f, 1000)
+</script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+    body {
+        background-color: beige;
+    }
+    a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+    h1 {
+        text-align: center;
+        font-family: 'Playfair Display', serif;
+        color: rgb(57, 72, 72);
+        text-shadow: 1px 1px 3px gray;
+    }
+    div.hh {
+        padding: 10px;
+        margin: 10px;
+        background-color: antiquewhite;
+        border-radius: 6px;
+        box-shadow: 1px 1px 3px black;
+        width: 200px;
+        display: inline-block;
+        text-align: center;
+        font-family: 'Playfair Display', serif;
+    }
+    div.c {
+        text-align: center;
+        padding: 10px;
+        margin: 10px;
+        background-color: rgb(217, 235, 152);
+        border-radius: 6px;
+        box-shadow: 1px 1px 3px inset black;
+    }
+</style>
+<body>
+    <h1>Tanulói honlapok</h1>
+    <div class="la c">
+        Osztály:
+        <select id="oszt" onchange="f()">
+            <option value="8.5/F">8.5/F</option>
+            <option value="9/F">9/F</option>
+            <option value="9/C">9/C</option>
+            <option value="10/DA">10/DA</option>
+            <option value="10/DB">10/DB</option>
+            <option value="10/I">10/I</option>
+            <option value="11/I">11/I</option>
+        </select>
+    </div>
+    <div id="t" class="c"></div>
+</body>
