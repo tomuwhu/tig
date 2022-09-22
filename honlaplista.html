@@ -1,7 +1,7 @@
 <script>
     xhttp = new XMLHttpRequest()
     xhttp.onload = () => {
-        v = JSON.parse(xhttp.responseText.slice(0, -1))
+        v = JSON.parse(xhttp.responseText)
         document.getElementById("t").innerHTML=`${v.map( s => `
                 <div class="hh"><a target="hh" href="${s[7]}">${s[1]} ${s[2]}</a></div>
         `).join("")}</table>`
@@ -58,7 +58,7 @@
 <body>
     <h1>Tanulói honlapok</h1>
     <div class="la c">
-        Osztály:
+        Csoport:
         <select id="oszt" onchange="f()">
             <option value="8.5/F">8.5/F</option>
             <option value="9/F">9/F</option>
