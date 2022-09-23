@@ -2,6 +2,7 @@
     xhttp = new XMLHttpRequest()
     xhttp.onload = () => {
         v = JSON.parse(xhttp.responseText)
+        console.log(v);
         document.getElementById("t").innerHTML=`${v.map( s => `
                 <div class="hh"><a target="hh" href="${s[7]}">${s[1]} ${s[2]}</a></div>
         `).join("")}</table>`
