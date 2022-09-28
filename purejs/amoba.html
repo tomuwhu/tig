@@ -1,0 +1,64 @@
+<body>
+    <h1>Amőba</h1>
+    <div id="t"></div>
+</body>
+<script>
+    next = "O", nyert = null
+    tabla = Array(16).fill(0).map(() => Array(16).fill(""))
+    function f(e) {
+        if (e.innerHTML == "") {
+            [next, c] = next == "O" ? ["X", "pink"] : ["O", "blueviolet"]
+            e.innerHTML = next
+            e.style.backgroundColor = c
+            x = e.cellIndex
+            y = e.parentElement.rowIndex
+            tabla[x][y] = next;
+            [[1,1],[1,0],[0,1],[-1,1]].forEach( v => {
+                xp=x, yp=y, maxh=0
+                while (tabla[xp][yp] === next) 
+                    xp+=v[0], yp+=v[1], maxh++
+                xp=x, yp=y
+                while (tabla[xp][yp] === next) 
+                    xp-=v[0], yp-=v[1], maxh++
+                if (maxh>5) {
+                    alert(`Nyert ${next}`)
+                    tabla = Array(16).fill(0).map(() => Array(16).fill(""))
+                    kezd()
+                }
+            })
+        }
+    }
+    function kezd() {
+        document.getElementById("t").innerHTML = `<table>${Array(16).fill(`<tr>${
+            Array(16).fill("<td onclick='f(this)'></td>").join("")
+        }</tr>`).join("")}</table>`
+    }
+    kezd()
+</script>
+<style>
+    body {
+        text-align: center;
+        background-color: antiquewhite;
+        color: rgb(22, 61, 69);
+        text-shadow: 1px 1px 3px rgb(23, 20, 20);
+    }
+    td {
+        width: 40px;
+        height: 40px;
+        background-color: rgb(121, 188, 188);
+        box-shadow: 1px 1px 3px black;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 30px;
+        color: rgb(248, 246, 201);
+        user-select: none;
+    }
+    td:hover {
+        background-color: aqua;
+    }
+    table {
+        margin: auto;
+        border-spacing: 5px;
+    }
+</style>
