@@ -21,7 +21,7 @@
         }
     }
     function kezd() {
-        tabla = Array(16).fill(0).map(() => Array(16).fill(""))
+        tabla = Array(16).fill().map(() => Array(16).fill())
         document.getElementById("t").innerHTML = `<table>${Array(16).fill(`<tr>${
             Array(16).fill("<td onclick='f(this)'></td>").join("")
         }</tr>`).join("")}</table>`
