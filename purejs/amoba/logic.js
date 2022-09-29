@@ -21,7 +21,7 @@ function init() {
     <table>
         ${Array(n).fill(`
         <tr>
-            ${Array(n).fill(`<td onmouseup="f(this)"></td>`).join('')}
+            ${Array(n).fill(`<td onmouseup="f(this)" />`).join('')}
         </tr>
         `).join('')}
     </table>`
