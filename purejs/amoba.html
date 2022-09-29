@@ -6,18 +6,18 @@
     next = "O", nyert = null, tabla = {}, n = 16
     function f(e) {
         if (e.innerHTML == "") {
-            [next, c] = next == "O" ? ["X", "pink"] : ["O", "blueviolet"]
-            e.innerHTML = next, e.style.backgroundColor = c, x = e.cellIndex
+            next = next == "O" ? "X" : "O"
+            e.innerHTML = next, e.setAttribute('class', next), x = e.cellIndex
             y = e.parentElement.rowIndex, tabla[x][y] = next
             setTimeout( () =>
-                [[1,1],[1,0],[0,1],[-1,1]].forEach( v => {
-                    xp=x, yp=y, maxh=0, [vx, vy] = v
-                    while (tabla[xp][yp] === next) xp+=vx, yp+=vy, maxh++
+                [[1,1],[1,0],[0,1],[-1,1]].forEach( direction => {
+                    xp=x, yp=y, maxh=0, [vx, vy] = direction
+                    while (tabla[xp][yp] === next) xp += vx, yp += vy, maxh++
                     xp=x, yp=y
-                    while (tabla[xp][yp] === next) xp-=vx, yp-=vy, maxh++
-                    if (maxh>5) alert(`Nyert ${next}`), kezd()
+                    while (tabla[xp][yp] === next) xp -= vx, yp -= vy, maxh++
+                    if (maxh > 5) alert(`Nyert: ${next}`), kezd()
                 } 
-            ), 100)
+            ), 200)
         }
     }
     function kezd() {
@@ -41,22 +41,34 @@
         text-shadow: 1px 1px 3px rgb(23, 20, 20);
     }
     td {
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         background-color: rgb(121, 188, 188);
-        box-shadow: 1px 1px 3px black;
+        box-shadow: 1px 1px 3px inset black;
         border-radius: 8px;
         cursor: pointer;
         text-align: center;
-        font-size: 30px;
+        font-size: 20px;
         color: rgb(248, 246, 201);
         user-select: none;
+    }
+    td.x {
+        background-color: rgb(113, 64, 159);
+        color: rgb(255, 193, 253);
+    }
+    td.o {
+        background-color: rgb(25, 100, 165);
+        color:rgb(198, 235, 255)
     }
     td:hover {
         background-color: aqua;
     }
     table {
         margin: auto;
-        border-spacing: 5px;
+        padding: 6px;
+        border-spacing: 4px;
+        background-color: azure;
+        border-radius: 7px;
+        box-shadow: 1px 1px 4px black;
     }
 </style>
