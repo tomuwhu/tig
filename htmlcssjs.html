@@ -15,9 +15,10 @@
                 disp = document.getElementById("code")
                 disp.innerHTML = q.trim()
                 disp.setAttribute('class', 'language-html')
-                disp.style.backgroundColor= "rgb(40, 187, 157)"
+                disp.style.backgroundColor= "rgb(40, 117, 157)"
+                disp.style.borderColor= "rgb(70, 10, 7)"
                 disp.style.display= "inline-block"
-                disp.style.textShadow="0px 0px 2px rgb(0,0,0)"
+                disp.style.textShadow="0px 0px 2px rgb(0,30,30)"
                 hljs.highlightAll()
             }
             xhttp.open("GET", "purejs/"+f+"/index.html", true);
@@ -37,6 +38,7 @@
                 disp.innerHTML = q.trim()
                 disp.setAttribute('class', 'language-css')
                 disp.style.backgroundColor= "rgb(20,130,150)"
+                disp.style.borderColor= "rgb(10, 40, 40)"
                 disp.style.textShadow="1px 1px 3px rgb(40,50,70)"
                 disp.style.display= "inline-block"
                 hljs.highlightAll()
@@ -58,6 +60,7 @@
                 disp.innerHTML = q.trim()
                 disp.setAttribute('class', 'language-js')
                 disp.style.backgroundColor= "rgb(20,30,50)"
+                disp.style.borderColor= "rgb(0, 10, 20)"
                 disp.style.display= "inline-block"
                 hljs.highlightAll()
             }
@@ -93,8 +96,8 @@
     }
     code#code {
         user-select: all;
-        border-radius: 12px;
-        box-shadow: 0px 0px 8px gray;
+        border-radius: 30px;
+        box-shadow: 0px 0px 8px inset rgb(0, 0, 0);
         font-family: 'Courier Prime', monospace;
         font-size: 14px;
         background-color: rgb(40, 77, 57);
