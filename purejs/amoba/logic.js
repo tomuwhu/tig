@@ -10,7 +10,7 @@ function f(e) {
                 while (table[xp][yp] === next) xp += vx, yp += vy, maxh++
                 xp=x, yp=y
                 while (table[xp][yp] === next) xp -= vx, yp -= vy, maxh++
-                if (maxh > 5) alert(`Nyert: ${next}`), kezd()
+                if (maxh > 5) alert(`Nyert: ${next}`), init()
             } 
         ), 100)
     }
