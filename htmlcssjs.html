@@ -17,10 +17,13 @@
                 disp.setAttribute('class', 'language-html')
                 disp.style.backgroundColor= "rgb(40, 117, 157)"
                 disp.style.borderColor= "rgb(70, 10, 7)"
-                disp.style.display= "inline-block"
+                setTimeout(() => {
+                    disp.style.display= "inline-block"
+                }, 150);
                 disp.style.textShadow="0px 0px 2px rgb(0,30,30)"
                 hljs.highlightAll()
             }
+            document.getElementById("code").style.display="none"
             xhttp.open("GET", "purejs/"+f+"/index.html", true);
             xhttp.send();
         }
@@ -40,9 +43,12 @@
                 disp.style.backgroundColor= "rgb(20,130,150)"
                 disp.style.borderColor= "rgb(10, 40, 40)"
                 disp.style.textShadow="1px 1px 3px rgb(40,50,70)"
-                disp.style.display= "inline-block"
+                setTimeout(() => {
+                    disp.style.display= "inline-block"
+                }, 150);
                 hljs.highlightAll()
             }
+            document.getElementById("code").style.display="none"
             xhttp.open("GET", "purejs/"+f+"/stylus.css", true);
             xhttp.send();
         }
@@ -61,9 +67,12 @@
                 disp.setAttribute('class', 'language-js')
                 disp.style.backgroundColor= "rgb(20,30,50)"
                 disp.style.borderColor= "rgb(0, 10, 20)"
-                disp.style.display= "inline-block"
+                setTimeout(() => {
+                    disp.style.display= "inline-block"
+                }, 150);
                 hljs.highlightAll()
             }
+            document.getElementById("code").style.display="none"
             xhttp.open("GET", "purejs/"+f+"/logic.js", true);
             xhttp.send();
         }
