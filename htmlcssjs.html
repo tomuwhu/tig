@@ -15,8 +15,9 @@
                 disp = document.getElementById("code")
                 disp.innerHTML = q.trim()
                 disp.setAttribute('class', 'language-html')
-                disp.style.backgroundColor= "rgb(40, 77, 57)"
+                disp.style.backgroundColor= "rgb(40, 187, 157)"
                 disp.style.display= "inline-block"
+                disp.style.textShadow="0px 0px 2px rgb(0,0,0)"
                 hljs.highlightAll()
             }
             xhttp.open("GET", "purejs/"+f+"/index.html", true);
@@ -36,6 +37,7 @@
                 disp.innerHTML = q.trim()
                 disp.setAttribute('class', 'language-css')
                 disp.style.backgroundColor= "rgb(20,130,150)"
+                disp.style.textShadow="1px 1px 3px rgb(40,50,70)"
                 disp.style.display= "inline-block"
                 hljs.highlightAll()
             }
@@ -119,11 +121,11 @@
     <h1 class="h">HTML-CSS-JS példaprogramok</h1>
     <table>
         <tr>
-            <td><a href="purejs/amoba/index.html" target="_blank">Amőba</a></td>
+            <td><a href="purejs/amoba/index.html" target="_blank">Amőba (kipróbálása)</a></td>
             <td><span onclick="lh('amoba')">index.HTML</span></td>
             <td><span onclick="lc('amoba')">stylus.CSS</span></td>
             <td><span onclick="lj('amoba')">logic.JS</span></td>
-            <td><a href="purejs/amoba.zip">Teljes program letöltése</a></td>
+            <td><a href="purejs/amoba.zip">Amőba program letöltése (.zip)</a></td>
         </tr>
     </table>
     <div class="c"><br><pre id="c1"><code id="code"></code></pre></div>
