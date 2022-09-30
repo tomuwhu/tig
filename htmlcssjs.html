@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function lh(f) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                html_content = xhttp.responseText
+                q = html_content
+                            .replace(/&/g, "&amp;")
+                            .replace(/</g, "&lt;")
+                            .replace(/>/g, "&gt;")
+                            .replace(/"/g, "&quot;")
+                            .replace(/'/g, "&#039;")
+                disp = document.getElementById("code")
+                disp.innerHTML = q.trim()
+                disp.setAttribute('class', 'language-html')
+                disp.style.backgroundColor= "rgb(40,30,50)"
+                disp.style.display= "inline-block"
+                hljs.highlightAll()
+            }
+            xhttp.open("GET", "purejs/"+f+"/index.html", true);
+            xhttp.send();
+        }
+        function lc(f) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                html_content = xhttp.responseText
+                q = html_content
+                            .replace(/&/g, "&amp;")
+                            .replace(/</g, "&lt;")
+                            .replace(/>/g, "&gt;")
+                            .replace(/"/g, "&quot;")
+                            .replace(/'/g, "&#039;")
+                disp = document.getElementById("code")
+                disp.innerHTML = q.trim()
+                disp.setAttribute('class', 'language-css')
+                disp.style.backgroundColor= "rgb(20,130,150)"
+                disp.style.display= "inline-block"
+                hljs.highlightAll()
+            }
+            xhttp.open("GET", "purejs/"+f+"/stylus.css", true);
+            xhttp.send();
+        }
+        function lj(f) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                html_content = xhttp.responseText
+                q = html_content
+                            .replace(/&/g, "&amp;")
+                            .replace(/</g, "&lt;")
+                            .replace(/>/g, "&gt;")
+                            .replace(/"/g, "&quot;")
+                            .replace(/'/g, "&#039;")
+                disp = document.getElementById("code")
+                disp.innerHTML = q.trim()
+                disp.setAttribute('class', 'language-js')
+                disp.style.backgroundColor= "rgb(20,30,50)"
+                disp.style.display= "inline-block"
+                hljs.highlightAll()
+            }
+            xhttp.open("GET", "purejs/"+f+"/logic.js", true);
+            xhttp.send();
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="hljs/a11y-dark.css">
+    <script src="hljs/highlight.min.js"></script>
+    <style>
+    td {
+        background-color: aqua;
+        margin: 5px;
+        padding: 8px;
+        box-shadow: 1px 1px 4px inset black;
+        border-radius: 6px;
+        color: black;
+        text-shadow: 1px 1px 3px black;
+    }
+    h1.h {
+        font-size: 14px;
+    }
+    div#content {
+        box-shadow: 1px 1px 7px inset black;
+        margin: 20px;
+        border: solid 3px black;
+        border-radius: 12px;
+    }
+    code#code {
+        user-select: all;
+        border-radius: 12px;
+        box-shadow: 0px 0px 8px gray;
+        font-family: 'Courier Prime', monospace;
+        font-size: 14px;
+        background-color: rgb(40, 77, 57);
+        text-shadow: 1px 1px 3px black;
+        border: solid 13px black;
+        margin: 20px;
+    }
+    span {
+        cursor: pointer;
+        color:blueviolet;
+    }
+    span:hover {
+        color: red;
+    }
+    pre#c1 {
+        margin: 0px;
+    }
+    #code {
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <h1 class="h">HTML-CSS-JS példaprogramok</h1>
+    <table>
+        <tr>
+            <td><a href="purejs/amoba/index.html" target="_blank">Amőba</a></td>
+            <td><span onclick="lh('amoba')">HTML</span></td>
+            <td><span onclick="lc('amoba')">CSS</span></td>
+            <td><span onclick="lj('amoba')">JS</span></td>
+            <td><a href="purejs/amoba.zip">Teljes program letöltése</a></td>
+        </tr>
+    </table>
+    <div class="c"><br><pre id="c1"><code id="code"></code></pre></div>
+</body>
+</html>
