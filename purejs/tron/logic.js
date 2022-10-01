@@ -17,7 +17,7 @@ function init() {
     iv = setInterval(step, 100)
     addEventListener("keydown", e => {
         switch (e.key) {
-            case "ArrowUp".   : [xd, yd] = [0, -1]; break
+            case "ArrowUp"    : [xd, yd] = [0, -1]; break
             case "ArrowDown"  : [xd, yd] = [0, 1]; break
             case "ArrowLeft"  : [xd, yd] = [-1, 0]; break
             case "ArrowRight" : [xd, yd] = [1, 0]; break
