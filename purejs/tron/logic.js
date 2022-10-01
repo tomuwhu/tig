@@ -5,7 +5,7 @@ function step() {
         clearInterval(iv)
     } else {
         table[y][x] = 1
-        to.children[y].children[x].style.backgroundColor="red"
+        to.children[y].children[x].style.backgroundColor = "red"
     }
 }
 function init() {
@@ -18,14 +18,14 @@ function init() {
         </tr>`).join('')}
     </table>`
     to = to.children[0].children[0], table[y][x] = 1
-    to.children[y].children[x].style.backgroundColor="red"
+    to.children[y].children[x].style.backgroundColor = "red"
     iv = setInterval(step, 100)
     addEventListener("keydown", e => {
         switch (e.key) {
             case "ArrowUp"    : [xd, yd] = [0, -1]; break
-            case "ArrowDown"  : [xd, yd] = [0, 1]; break
+            case "ArrowDown"  : [xd, yd] = [0, 1] ; break
             case "ArrowLeft"  : [xd, yd] = [-1, 0]; break
-            case "ArrowRight" : [xd, yd] = [1, 0]; break
+            case "ArrowRight" : [xd, yd] = [1, 0] ; break
         }
     })
 }
