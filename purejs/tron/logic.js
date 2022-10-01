@@ -11,7 +11,12 @@ function step() {
 function init() {
     table = Array(n).fill().map(() => Array(n).fill())
     to = document.getElementById('t')
-    to.innerHTML = `<table>${Array(m).fill(`<tr>${Array(n).fill(`<td/>`).join('')}</tr>`).join('')}</table>`
+    to.innerHTML = `
+    <table>${Array(m).fill(`
+        <tr>
+        ${Array(n).fill(`<td/>`).join('')}
+        </tr>`).join('')}
+    </table>`
     to = to.children[0].children[0], table[y][x] = 1
     to.children[y].children[x].style.backgroundColor="red"
     iv = setInterval(step, 100)
