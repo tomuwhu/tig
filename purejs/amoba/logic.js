@@ -1,5 +1,5 @@
 next = "O", n = 16
-function f(e) {
+f = e => {
     if (e.innerHTML == "") {
         next = next == "O" ? "X" : "O"
         e.innerHTML = next, e.setAttribute('class', next), x = e.cellIndex
@@ -15,7 +15,7 @@ function f(e) {
         ), 100)
     }
 }
-function init() {
+(init = () => {
     table = Array(n).fill().map(() => Array(n).fill())
     document.getElementById('t').innerHTML = `
     <table>
@@ -25,5 +25,4 @@ function init() {
         </tr>
         `).join('')}
     </table>`
-}
-init()
+})()
