@@ -1,10 +1,8 @@
 p = list(input("Kérem a robot parancsait:"))
 def f(c):
     return len(list(filter(lambda x: x == c, p)))
-print("E betűk száma:", f("E"))
-print("D betűk száma:", f("D"))
-print("K betűk száma:", f("K"))
-print("N betűk száma:", f("N"))
+for b in "EDKN":
+    print(b, "betűk száma:", f(b))
 s = ""
 if (f("E")>f("D")):
     for i in range(f("E") - f("D")): s += "E"
