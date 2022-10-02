@@ -22,4 +22,3 @@ addEventListener("keydown", e => { switch (e.key) {
     case "ArrowLeft"  : [xd, yd] = [-1, 0]; break
     case "ArrowRight" : [xd, yd] = [ 1, 0]; break
 }})
-
