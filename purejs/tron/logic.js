@@ -8,6 +8,12 @@ to = document.getElementById('t'), to.innerHTML = `
 </table>`
 to = to.children[0].children[0], table[y][x] = 1
 to.children[y].children[x].style.backgroundColor = "red"
+addEventListener("keydown", e => { switch (e.key) {
+    case "ArrowUp"    : [xd, yd] = [ 0,-1]; break
+    case "ArrowDown"  : [xd, yd] = [ 0, 1]; break
+    case "ArrowLeft"  : [xd, yd] = [-1, 0]; break
+    case "ArrowRight" : [xd, yd] = [ 1, 0]; break
+}})
 iv = setInterval(() => {
     x += xd, y += yd
     if (x >= n || y >= m || x < 0 || y < 0 || table[y][x] == 1)
@@ -16,9 +22,3 @@ iv = setInterval(() => {
         table[y][x] = 1,
         to.children[y].children[x].style.backgroundColor = "red"
 }, 100)
-addEventListener("keydown", e => { switch (e.key) {
-    case "ArrowUp"    : [xd, yd] = [ 0,-1]; break
-    case "ArrowDown"  : [xd, yd] = [ 0, 1]; break
-    case "ArrowLeft"  : [xd, yd] = [-1, 0]; break
-    case "ArrowRight" : [xd, yd] = [ 1, 0]; break
-}})
