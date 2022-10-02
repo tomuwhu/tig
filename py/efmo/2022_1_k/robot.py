@@ -1,27 +1,17 @@
 p = list(input("Kérem a robot parancsait:"))
-ne = len(list(filter(lambda x: x=="E", p)))
-nd = len(list(filter(lambda x: x=="D", p)))
-nk = len(list(filter(lambda x: x=="K", p)))
-nn = len(list(filter(lambda x: x=="N", p)))
-print("E betűk száma:", ne)
-print("D betűk száma:", nd)
-print("K betűk száma:", nk)
-print("N betűk száma:", nn)
+def f(c):
+    return len(list(filter(lambda x: x == c, p)))
+print("E betűk száma:", f("E"))
+print("D betűk száma:", f("D"))
+print("K betűk száma:", f("K"))
+print("N betűk száma:", f("N"))
 s = ""
-if (ne>nd):
-    es = ne - nd
-    for i in range(es):
-        s += "E"
+if (f("E")>f("D")):
+    for i in range(f("E") - f("D")): s += "E"
 else:
-    ds = nd - ne
-    for i in range(ds):
-        s += "D"
-if (nk>nn):
-    ks = nk - nn
-    for i in range(ks):
-        s += "K"
+    for i in range(f("D") - f("E")): s += "D"
+if (f("K")>f("N")):
+    for i in range(f("K") - f("N")): s += "K"
 else:
-    ns = nn - nk
-    for i in range(ns):
-        s += "N"
+    for i in range(f("N")-f("K")): s += "N"
 print("Egy legrövidebb út parancsszava:", s)
