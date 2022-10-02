@@ -1,4 +1,4 @@
-table = {}, n = 60, m = 40, x = 50, y = 20, xd = -1, yd = 0, to = {}
+n = 60, m = 40, x = 50, y = 20, xd = -1, yd = 0
 function step() {
     x += xd, y += yd
     if (x >= n || y >= m || x < 0 || y < 0 || table[y][x] == 1) {

@@ -1,4 +1,4 @@
-next = "O", table = {}, n = 16
+next = "O", n = 16
 function f(e) {
     if (e.innerHTML == "") {
         next = next == "O" ? "X" : "O"
