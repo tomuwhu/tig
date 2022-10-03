@@ -1,5 +1,4 @@
 h1 {
-    text-align: center;
     color: rgb(43, 62, 117);
     text-shadow: 1px 1px 3px gray;
 }
@@ -7,8 +6,20 @@ h1 {
     text-align: center;
     background-color: aquamarine;
     border-radius: 6px;
-    box-shadow: 1px 1px 3px black;
-    border: solid 1px blue;
-    margin: 15px;
-    padding: 10px;
+    box-shadow: 1px 1px 3px rgb(36, 28, 28);
+    border: solid 1px rgb(78, 78, 114);
+    padding: 0px;
+    background-color: aliceblue;
+    display: inline-block;
+    margin: auto;
+}
+.c:hover {
+    background-color: rgb(138, 181, 181);
+}
+body {
+    background-color: rgb(208, 239, 229);
+    text-align: center;
+}
+img {
+    width: 70px;
 }
