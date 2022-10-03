@@ -1,0 +1,14 @@
+h1 {
+    text-align: center;
+    color: rgb(43, 62, 117);
+    text-shadow: 1px 1px 3px gray;
+}
+.c {
+    text-align: center;
+    background-color: aquamarine;
+    border-radius: 6px;
+    box-shadow: 1px 1px 3px black;
+    border: solid 1px blue;
+    margin: 15px;
+    padding: 10px;
+}
