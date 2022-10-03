@@ -1,4 +1,4 @@
-const ctx = document.getElementById('myChart');
+const ctx = document.getElementById('myChart')
 const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -11,4 +11,4 @@ const myChart = new Chart(ctx, {
             borderWidth: 1
         }]
     }
-});
+})
