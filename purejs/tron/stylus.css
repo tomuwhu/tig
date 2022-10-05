@@ -5,7 +5,7 @@ body {
     color: rgb(22, 61, 69);
     text-shadow: 1px 1px 3px rgb(23, 20, 20);
 }
-td {
+td.o {
     width: 15px;
     height: 15px;
     background-color: rgb(121, 188, 188);
@@ -14,9 +14,8 @@ td {
     text-align: center;
     font-size: 10px;
     color: rgb(248, 246, 201);
-    user-select: none;
 }
-table {
+table.main {
     cursor: none;
     margin: auto;
     padding: 6px;
@@ -24,4 +23,34 @@ table {
     background-color: azure;
     border-radius: 7px;
     box-shadow: 1px 1px 4px black;
+}
+table.m2 {
+    margin: 5px auto;
+    border-radius: 7px;
+    background-color: rgb(171, 245, 220);
+    box-shadow: 1px 1px 7px black;
+}
+table.ir { border-spacing: 6px }
+td.x {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(249, 226, 166);
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px inset black;
+}
+span.r { color: red   }
+span.g { color: green }
+div#psz {
+    font-size: 30px;
+    margin: 20px;
+    padding: 10px;
+    display: inline-block;
+    border: solid 1px green;
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px inset black;
+    background-color: rgb(201, 241, 241);
+    color: rgb(116, 116, 220);
 }

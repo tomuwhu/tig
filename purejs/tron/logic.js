@@ -1,24 +1,40 @@
-n = 60, m = 40, x = 50, y = 20, xd = -1, yd = 0
-table = Array(n).fill().map(() => Array(n).fill())
-to = document.getElementById('t'), to.innerHTML = `
-<table>${Array(m).fill(`
-    <tr>
-    ${Array(n).fill(`<td/>`).join('')}
-    </tr>`).join('')}
-</table>`
-to = to.children[0].children[0], table[y][x] = 1
-to.children[y].children[x].style.backgroundColor = "red"
-addEventListener("keydown", e => { switch (e.key) {
-    case "ArrowUp"    : [xd, yd] = [ 0,-1]; break
-    case "ArrowDown"  : [xd, yd] = [ 0, 1]; break
-    case "ArrowLeft"  : [xd, yd] = [-1, 0]; break
-    case "ArrowRight" : [xd, yd] = [ 1, 0]; break
-}})
-iv = setInterval(() => {
-    x += xd, y += yd
-    if (x >= n || y >= m || x < 0 || y < 0 || table[y][x] == 1)
-        clearInterval(iv)
-    else
-        table[y][x] = 1,
-        to.children[y].children[x].style.backgroundColor = "red"
-}, 100)
+psz = [0, 0], maxpsz = 5
+start = () => {
+    n = 60, m = 40, x = [50, 10], y = [20, 20], xd = [-1, 1], yd = [0, 0]
+    color = ["red", "green"], 
+    gi = [[ {key: "ArrowUp", ir: [0, -1]}, {key: "ArrowDown", ir: [0, 1]}, 
+            {key: "ArrowLeft", ir: [-1, 0]}, {key: "ArrowRight", ir: [1, 0]}],[
+            {key: "w", ir: [0, -1]}, {key: "s", ir: [0, 1]}, 
+            {key: "a", ir: [-1, 0]}, {key: "d", ir: [1, 0]}]]
+    table = Array(n).fill(0).map(() => Array(n).fill(0))
+    to = document.getElementById('t'), to.innerHTML = `
+    <table class="main">${Array(m).fill(`
+        <tr>
+        ${Array(n).fill(`<td class="o" />`).join('')}
+        </tr>`).join('')}
+    </table>`, to = to.children[0].children[0]
+    color.forEach( (c, i) => {
+        table[y[i]][x[i]] = i+1
+        to.children[y[i]].children[x[i]].style.backgroundColor = c
+    })
+    iv = setInterval(() => color.forEach( (c, i) => {
+        x[i] += xd[i], y[i] += yd[i], f = (x[i] >= n || y[i] >= m || x[i] < 0 || y[i] < 0)
+        if (f || table[y[i]][x[i]] != 0) {
+            if ( (( xd[0] + xd[1] != 0 ) || x[0] != x[1]) &&
+                 (( yd[0] + yd[1] != 0 ) || y[0] != y[1]) ) {
+                    psz[i]++
+                    if (!f) to.children[y[i]].children[x[i]].style.backgroundColor = "yellow"
+            }
+            clearInterval(iv)
+            document.getElementById("psz").innerHTML = `
+            <span class="g">${psz[0]}</span> : <span class="r">${psz[1]}</span>`
+            if ( (psz[0] < maxpsz) && (psz[1] < maxpsz)) setTimeout(start, 1000)
+        } else 
+            table[y[i]][x[i]] = i + 1,
+            to.children[y[i]].children[x[i]].style.backgroundColor = c
+    }), 100)
+}
+addEventListener("keydown", e => gi.forEach( (pl, i) => pl.forEach( ire => {
+        if (e.key == ire.key) [xd[i], yd[i]] = ire.ir
+})))
+start()
