@@ -36,7 +36,7 @@ start = () => {
             clearInterval(iv)
             document.getElementById("psz").innerHTML = `
             <span class="g">${psz[0]}</span> : <span class="r">${psz[1]}</span>`
-            if ( (psz[0] < maxpsz) && (psz[1] < maxpsz)) setTimeout(start, 1000)
+            if ( (psz[0] < maxpsz) && (psz[1] < maxpsz) || psz[0] == psz[1]) setTimeout(start, 1000)
         }
     }, 100)
 }
