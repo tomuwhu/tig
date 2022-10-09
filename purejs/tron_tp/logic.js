@@ -40,7 +40,7 @@ start = () => {
         }
     }, 100)
 }
-addEventListener("keydown", e => gi.forEach( (pl, i) => pl.forEach( ire => {
-        if (e.key == ire.key) [xd[i], yd[i]] = ire.ir
-})))
+addEventListener("keydown", e => gi.forEach( (pl, i) => pl.forEach( ire => 
+        [xd[i], yd[i]] = e.key == ire.key ? ire.ir : [xd[i], yd[i]]
+)))
 start()
