@@ -17,22 +17,28 @@ start = () => {
         table[y[i]][x[i]] = i+1
         to.children[y[i]].children[x[i]].style.backgroundColor = c
     })
-    iv = setInterval(() => color.forEach( (c, i) => {
-        x[i] += xd[i], y[i] += yd[i], f = (x[i] >= n || y[i] >= m || x[i] < 0 || y[i] < 0)
-        if (f || table[y[i]][x[i]] != 0) {
-            if ( (( xd[0] + xd[1] != 0 ) || x[0] != x[1]) &&
-                 (( yd[0] + yd[1] != 0 ) || y[0] != y[1]) ) {
-                    psz[i]++
-                    if (!f) to.children[y[i]].children[x[i]].style.backgroundColor = "yellow"
-            }
+    iv = setInterval(() => {
+        eg = false
+        color.forEach( (c, i) => {
+            x[i] += xd[i], y[i] += yd[i], f = (x[i] >= n || y[i] >= m || x[i] < 0 || y[i] < 0)
+            if (f || table[y[i]][x[i]] != 0) {
+                if ( (( xd[0] + xd[1] != 0 ) || x[0] != x[1]) &&
+                    (( yd[0] + yd[1] != 0 ) || y[0] != y[1]) ) {
+                        psz[i]++
+                        if (!f) to.children[y[i]].children[x[i]].style.backgroundColor = "yellow"
+                }
+                eg = true
+            } else 
+                table[y[i]][x[i]] = i + 1,
+                to.children[y[i]].children[x[i]].style.backgroundColor = c
+        })
+        if (eg) {
             clearInterval(iv)
             document.getElementById("psz").innerHTML = `
             <span class="g">${psz[0]}</span> : <span class="r">${psz[1]}</span>`
             if ( (psz[0] < maxpsz) && (psz[1] < maxpsz)) setTimeout(start, 1000)
-        } else 
-            table[y[i]][x[i]] = i + 1,
-            to.children[y[i]].children[x[i]].style.backgroundColor = c
-    }), 100)
+        }
+    }, 100)
 }
 addEventListener("keydown", e => gi.forEach( (pl, i) => pl.forEach( ire => {
         if (e.key == ire.key) [xd[i], yd[i]] = ire.ir
