@@ -1,0 +1,125 @@
+<script>
+class Stack {
+    constructor() {
+        this.container = [], this.size = 0
+    }
+    put(x) {
+        if (Array.isArray(x)) {
+            x.forEach(element => {
+                this.container.push(element), 
+                this.size++
+            })
+        } else {
+            this.container.push(x), this.size++
+        } //O(1)
+    }
+    get() { // O( 1 )
+        if (this.size) {
+            this.size--
+            return this.container.pop() // O( 1 )
+        } else return null
+    }
+    check() {
+        return this.container[0] // O( 1 )
+    }
+    toarray() { // O( n * get() )
+            let rv = []
+            while (this.size) 
+                rv.push(this.get())
+            return rv
+        }
+        [Symbol.iterator]() { // O( n * get() )
+            return {
+                next: () => {
+                    if (this.size > 0) {
+                        return {
+                            value: this.get(),
+                            done: false
+                        }
+                    } else {
+                        return {
+                            done: true
+                        }
+                    }
+                }
+            }
+        }
+}
+class BadQueue extends Stack {
+    constructor() {
+        super()
+        this.offset = 0
+    }
+    get() { // O( n )
+        if (this.size) {
+            this.size--
+            return this.container.shift() // O( n )
+        } else return null
+    }
+}
+class Queue extends Stack {
+    constructor() {
+        super()
+        this.offset = 0
+    }
+    get() { // O( 1 )
+        if (this.size) {
+            this.size--
+            let elem = this.container[this.offset++]
+            if (this.offset * 2 >= this.container.length) {
+                this.container = this.container.slice(this.offset)
+                this.offset = 0
+            }
+            return elem // O( 1 )
+        } else return false
+    }
+    check() {
+        return this.container[this.offset] // O( 1 )
+    }
+}
+class PQueue extends Stack {
+    put(x) { // O(1) / element
+        if (Number(x)==x) x=Number(x)
+        if (Array.isArray(x)) {
+            x.forEach(element => {
+                this.container.push(element), this.fix(this.size++)
+            })
+        } else {
+            this.container.push(x), this.fix(this.size++)
+        }
+    }
+    get() { // O(log n)
+        if (this.size) {
+            let ret = this.container[0]
+            if (--this.size) {
+                this.container[0] = this.container.pop()
+                this.fixup(0)
+            } else this.container.pop()
+            return ret
+        } else return null
+    }
+    fixup(p) { // O(log n)
+        let q1 = ( p + 1 ) * 2 ,
+            q2 = q1 - 1,
+            q = 0
+        if (q1 > this.size + 2) q1 = p
+        if (q2 > this.size + 2) q2 = q1
+        this.container[q1] > this.container[q2] ? q = q1 : q = q2
+        console.log(this.container[q1],this.container[q2],q)
+
+        if (p != q) {
+            this.cshn(q, p), this.fixup(q)
+        }
+    }
+    fix(p) { // O(log n)
+        let q = Math.round( (p+1) / 2 - 0.4 ) - 1
+        this.cshn(p, q)
+        if (q > 0) this.fix(q)
+    }
+    cshn(a, b) { // O(1)
+        if ( this.container[a] > this.container[b] )
+        [ this.container[a], this.container[b] ] =
+        [ this.container[b], this.container[a] ]
+    }
+}    
+</script>
