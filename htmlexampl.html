@@ -16,7 +16,7 @@
                     .replace(/'/g, "&#039;");
                 document.getElementById("content").innerHTML=`
                     <div style="text-align:center;">
-                    <a href=${file} target=_blank>Kipróbálás új ablakban</a>
+                    <a class="run" href=${file} target=_blank>Kipróbálás új ablakban</a>
                     </div>
                 `
                 document.getElementById('content').style.visibility = "visible"
@@ -81,6 +81,18 @@ function load() {
     a:hover {
         color: rgb(234, 255, 100);
     }
+    a.run:hover {
+        color: rgb(66, 36, 36);
+        background-color: rgb(197, 116, 116);
+    }
+    a.run {
+        background-color: aquamarine;
+        box-shadow: 1px 1px 4px black;
+        border-radius: 6px;
+        border: soild 2px red;
+        color: rgb(62, 64, 47);
+        padding: 6px;
+    }
 </style>
 <script src="hljs/highlight.min.js"></script>
 <ul class="navigation">
@@ -117,6 +129,7 @@ function load() {
                 <option value="onclick.html">OnClick esemény</option>
                 <option value="gentable.html">Táblázat generálása - sakktábla</option>
                 <option value="gentable2.html">Táblázat generálása - amőba</option>
+                <option value="hanoi.html">Hanoi tornyai - rekurzió</option>
                 <option value="stackobject.html">Verem objektum</option>
                 <option value="stackclass.html">Verem osztály</option>
                 <option value="queueclass.html">Sor osztály</option>

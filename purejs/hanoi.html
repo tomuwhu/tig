@@ -1,0 +1,9 @@
+Futási eredmény: Jobb gomb -> vizsgálat -> konzol
+<script>
+h = ( n, a, b ) => (
+n < 2
+    ? `${ a } -> ${ b }`
+    : `${ h( n-1, a, 6-a-b ) }\n${ a } -> ${ b }\n${ h( n-1, 6-a-b, b ) }`
+)
+console.log(h(5, 1, 2))
+</script>
