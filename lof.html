@@ -29,12 +29,11 @@
                 <div class="la c">
                     <table>
                         <tr><th colspan=2>Ponthatárok</th>
-                        <tr><td class="r"><20</td><td class="l">elégtelen (1)</td></tr>
-                        <tr><td class="r">>=20</td><td class="l">elégséges(2)</td></tr>
-                        <tr><td class="r">>=30</td><td class="l">közepes (3)</td></tr>
-                        <tr><td class="r">>=40</td><td class="l">jó (4)</td></tr>
-                        <tr><td class="r">>=50</td><td class="l">jeles (5)</td></tr>
-
+                        <tr><td class="r">p.sz. < 20</td><td class="l">elégtelen (1)</td></tr>
+                        <tr><td class="r">p.sz. ≥ 20</td><td class="l">elégséges(2)</td></tr>
+                        <tr><td class="r">p.sz. ≥ 30</td><td class="l">közepes (3)</td></tr>
+                        <tr><td class="r">p.sz. ≥ 40</td><td class="l">jó (4)</td></tr>
+                        <tr><td class="r">p.sz. ≥ 50</td><td class="l">jeles (5)</td></tr>
                     </table><hr>
                     Az értékelés (érdemjegyek beírása) <b>2022. október 27-én történik</b>, az akkor aktuális pontszámok alapján.
                 </div>`
@@ -283,9 +282,12 @@ td {
 }
 .l {
     text-align: left;
+    text-shadow: 1px 1px 7px rgb(57, 89, 103);
+    color:rgb(22, 87, 87);
 }
 .r {
     text-align: right;
+    text-shadow: 1px 1px 3px rgb(29, 130, 86);
 }
 table {
     background-color: rgba(100,200,300,0.5);
