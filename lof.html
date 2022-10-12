@@ -18,26 +18,27 @@
             document.getElementById("content").innerHTML = `
             <div class="la">` + v[1].vhtml + `</div>`
             document.getElementById("sid").innerHTML="SId: "+v[0]
-            if (v[1].we || v[1].pp)
-            document.getElementById("content").innerHTML += `
-            <div class="la c">
-                Jelenlegi értékelés -> -> 
-                Honlap: <i>${v[1].we} pont</i> , egyéb feladatok, programok: <i>${v[1].pp} pont</i>.
-                <b>Összpontszám: <i>${Number(v[1].we) + Number(v[1].pp)} pont</i></b>
-            </div>
-            <div class="la c">
-                <table>
-                    <tr><th colspan=2>Ponthatárok</th>
-                    <tr><td class="r"><20</td><td class="l">elégtelen (1)</td></tr>
-                    <tr><td class="r">>=20</td><td class="l">elégséges(2)</td></tr>
-                    <tr><td class="r">>=30</td><td class="l">közepes (3)</td></tr>
-                    <tr><td class="r">>=40</td><td class="l">jó (4)</td></tr>
-                    <tr><td class="r">>=50</td><td class="l">jeles (5)</td></tr>
+            if (v[1].we || v[1].pp) {
+                if (v[1].pp == null) v[1].pp = 0
+                document.getElementById("content").innerHTML += `
+                <div class="la c">
+                    Jelenlegi értékelés -> -> 
+                    Honlap: <i>${v[1].we} pont</i> , egyéb feladatok, programok: <i>${v[1].pp} pont</i>.
+                    <b>Összpontszám: <i>${Number(v[1].we) + Number(v[1].pp)} pont</i></b>
+                </div>
+                <div class="la c">
+                    <table>
+                        <tr><th colspan=2>Ponthatárok</th>
+                        <tr><td class="r"><20</td><td class="l">elégtelen (1)</td></tr>
+                        <tr><td class="r">>=20</td><td class="l">elégséges(2)</td></tr>
+                        <tr><td class="r">>=30</td><td class="l">közepes (3)</td></tr>
+                        <tr><td class="r">>=40</td><td class="l">jó (4)</td></tr>
+                        <tr><td class="r">>=50</td><td class="l">jeles (5)</td></tr>
 
-                </table><hr>
-                Az értékelés (érdemjegyek beírása) <b>2022 október 27-én történik</b>, az akkor aktuális pontszámok alapján.
-            </div>
-            `
+                    </table><hr>
+                    Az értékelés (érdemjegyek beírása) <b>2022 október 27-én történik</b>, az akkor aktuális pontszámok alapján.
+                </div>`
+            }
         } else {
             document.getElementById("lif").style.display="block"
             document.getElementById("lc").style.display="none"
