@@ -16,7 +16,10 @@
             document.getElementById("ln").innerHTML = v[1].v_name + " " + v[1].k_name
             document.getElementById("content").style.display="block"
             document.getElementById("content").innerHTML = `
-            <div class="la">` + v[1].vhtml + `</div>`
+            <div class="la">` + v[1].vhtml + `</div>
+            <div class="la c">
+                <a href="${v[1].gh_www}" target="_blank">Saját honlapom</a>
+            </div>`
             document.getElementById("sid").innerHTML="SId: "+v[0]
             if (v[1].we || v[1].pp) {
                 if (v[1].pp == null) v[1].pp = 0
