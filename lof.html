@@ -21,10 +21,10 @@
             if (v[1].we || v[1].pp) {
                 if (v[1].pp == null) v[1].pp = 0
                 document.getElementById("content").innerHTML += `
-                <div class="la c">
+                <div class="la c cc">
                     Jelenlegi értékelés ⇒ 
                     Honlap: <i>${v[1].we} pont</i> , egyéb feladatok, programok: <i>${v[1].pp} pont</i>.
-                    <b>Összpontszám: <i>${Number(v[1].we) + Number(v[1].pp)} pont</i></b>
+                    <b>Összpontszám: <i class="op">${Number(v[1].we) + Number(v[1].pp)} pont</i></b>
                 </div>
                 <div class="la c">
                     <table>
@@ -223,8 +223,9 @@ div#content {
     justify-content: space-between;
     background-color: rgb(72, 37, 37);
     box-shadow: 1px 1px 3px inset black;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 5px;
+    border: solid 3px rgb(225, 157, 157);
 }
 div.button {
     display: inline-block;
@@ -280,6 +281,15 @@ i#ln {
     color:rgb(218, 227, 125);
     text-shadow: 1px 1px 5px rgb(24, 9, 9);
 }
+i.op {
+    background-color: rgb(225, 192, 149);
+    padding: 4px;
+    border-radius: 12px;
+    box-shadow: 1px 1px 3px inset gray;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-shadow: 1px 1px 6px rgb(114, 77, 77);
+}
 td {
     padding-left: 10px;
     padding-right: 10px;
@@ -305,6 +315,11 @@ table {
     border: solid 1px gray;
     border-radius: 5px;
     padding-top: 0px;
+}
+.cc {
+    background-color: antiquewhite;
+    border-radius: 15px;
+    max-width: 530px;
 }
 </style>
 
