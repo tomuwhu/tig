@@ -11,5 +11,10 @@ lst.forEach( (a, i) => {
     if (a && i > 1) pl.push(i)
 })
 pl.sort( () => Math.random() - 0.5)
-console.log(`n = ${pl[0]*pl[1]}, φ(n)=${(pl[0]-1)*(pl[1]-1)}`);
+n = pl[0]*pl[1]
+fn = (pl[0]-1)*(pl[1]-1)
+
+e = Math.floor(Math.random() * fn/100)+7
+console.log(`n = ${n}, φ(n)=${fn}, e=${e}`);
+console.log(fn/e);
 </script>
