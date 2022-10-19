@@ -12,7 +12,7 @@ a {
   box-shadow: 1px 1px 4px black;
   border-radius: 6px;
   padding: 10px;
-  color: gray;
+  color: rgb(36, 19, 19);
   text-shadow: 1px 1px 4px rgb(118, 116, 116);
   font-size: 20px;
 }
@@ -35,7 +35,7 @@ a:hover {
   display: block;
   margin-bottom: 25px;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(64, 59, 59);
 }
 #paper-window {
   height: 100vh;
@@ -141,4 +141,17 @@ a:hover {
 }
 .close:after {
   transform: translateY(-50%) rotate(-45deg);
+}
+.ref {
+  font-size: 9px;
+  background-color: transparent;
+  box-shadow: none;
+}
+.ref:hover {
+  background-color: transparent;
+  color:#243040;
+}
+.d > a {
+  position: absolute;
+  bottom: 0;
 }
