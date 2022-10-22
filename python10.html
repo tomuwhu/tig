@@ -30,9 +30,9 @@
                     <span id="t1">x_{1,2} = {-b \pm \sqrt{b^2-4ac} \over 2a}.</span>
                     <pre><code class="language-python"
             >from math import sqrt
-            def mfegy(a,b,c):
-                return (-b+sqrt(b**2-4*a*c))/2*a,(-b-sqrt(b**2-4*a*c))/2*a
-            print(mfegy(1,-2,-3))</code></pre>
+def mfegy(a,b,c):
+    return (-b+sqrt(b**2-4*a*c))/2*a,(-b-sqrt(b**2-4*a*c))/2*a
+print(mfegy(1,-2,-3))</code></pre>
             </article>
             
             <article>
@@ -42,11 +42,11 @@
             <span id="t2">x_{n+1}=x_n-\frac{f\left(x_n\right)}{f'\left(x_n\right)},n=[0,1,...]</span>
             <pre><code class="language-python"
             >fx = lambda x: 2*x**3 - 3*x + 1
-            Df = lambda x: 6*x**2 - 3
-            xn = 0
-            for n in range(0,10):
-                print(xn) # Megoldásközelítés az n. iterációban.
-                xn = xn - fx(xn)/Df(xn)
+Df = lambda x: 6*x**2 - 3
+xn = 0
+for n in range(0,10):
+    print(xn) # Megoldásközelítés az n. iterációban.
+    xn = xn - fx(xn)/Df(xn)
             </code></pre>
             </article>
             
@@ -61,15 +61,15 @@
             
             <pre><code class="language-python"
             >def h(n, a, b):
-                if ( n == 1 ):
-                    return "( {} => {} )".format(a, b)
-                else:
-                    return (
-                        h( n-1, a,     6-a-b )+
-                        h( 1,   a,     b )+
-                        h( n-1, 6-a-b, b )
-                    )
-            print( h( 3, 1, 2 ) )
+    if ( n == 1 ):
+        return "( {} => {} )".format(a, b)
+    else:
+        return (
+            h( n-1, a,     6-a-b )+
+            h( 1,   a,     b )+
+            h( n-1, 6-a-b, b )
+        )
+print( h( 3, 1, 2 ) )
             </code></pre>
             micro:bit blocks<br>
             <div class="imgcont">
@@ -82,19 +82,19 @@
             <b>22. óra - Teknőcgrafika + rekurzív fügvény</b><br><br>
             <pre><code class="language-python"
             >from turtle import *
-            speed("fastest")
-            color("red","blue")
-            def k(x):
-                for i in range(6):
-                    forward(x)
-                    left(60)
-                left(10)
-                if x>8:
-                    k(34*x/35)
-            begin_fill()
-            k(250)
-            end_fill()
-            mainloop()
+speed("fastest")
+color("red","blue")
+def k(x):
+    for i in range(6):
+        forward(x)
+        left(60)
+    left(10)
+    if x>8:
+        k(34*x/35)
+begin_fill()
+k(250)
+end_fill()
+mainloop()
             </code></pre>
             </article>
             

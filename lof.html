@@ -1,5 +1,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <title>«es6.eu» Intranet</title>
+<script src="hljs/markdown.min.js"></script>
 <script>
     sid = Math.round(Math.random()*1000000000)
     if (localStorage.getItem('sid')) {
@@ -28,7 +29,20 @@
                     Jelenlegi értékelés ⇒ 
                     Honlap: <i>${v[1].we} pont</i> , egyéb feladatok, programok: <i>${v[1].pp} pont</i>.
                     <b>Összpontszám: <i class="op">${Number(v[1].we) + Number(v[1].pp)} pont</i></b>
+                </div>`
+            }
+            if (v[1].megj) {
+                document.getElementById("content").innerHTML += `
+                <div class="mdc">
+                    <div class="md">
+                        ${markdown.toHTML(v[1].megj)}
+                    </div>
                 </div>
+                `
+            }
+            if (v[1].we || v[1].pp) {
+                if (v[1].pp == null) v[1].pp = 0
+                document.getElementById("content").innerHTML += `
                 <div class="la c">
                     <table>
                         <tr><th colspan=2>Ponthatárok</th>
@@ -143,10 +157,39 @@
 </script>
 <link rel="stylesheet" href="main.css">
 <style>
-    .kz {
-        font-size: 50px;
-        text-shadow: 1px 1px 4px black;
-    }
+div#content a {
+    text-decoration: none;
+    padding: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px black;
+    background-color: aquamarine;
+    color: rgb(14, 68, 14);
+    text-shadow: 1px 1px 4px rgb(28, 41, 28);
+}   
+div#content a:hover {
+    background-color: rgb(255, 202, 127);
+}
+.mdc {
+    text-align: center;
+}
+.md {
+    display: inline-block;
+    text-align: left;
+    background-color: rgb(223, 251, 188);
+    padding: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    color: rgb(101, 29, 29);
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px inset black;
+    text-shadow: 1px 1px 4px gray;
+}
+.kz {
+    font-size: 50px;
+    text-shadow: 1px 1px 4px black;
+}
 span#sid {
     font-size: 10px;
     font-family: Cochin;
@@ -246,17 +289,6 @@ div.button:hover {
     box-shadow: 1px 1px 3px rgb(54, 41, 41);
     background-color: rgb(189, 94, 94);
 }
-div#content a {
-    color: rgb(59, 34, 34);
-}
-div#content a:hover {
-    color: rgb(119, 62, 62);
-    font-weight: bold;
-}
-div#content a:visited {
-    color: rgb(62, 68, 119);
-    font-weight: bold;
-}
 div#reg {
     display: none;
 }
@@ -324,6 +356,13 @@ table {
     background-color: antiquewhite;
     border-radius: 15px;
     max-width: 530px;
+}
+hr {
+    height: 10px;
+    background-color: rgb(166, 62, 62);
+    box-shadow: 1px 1px 4px inset black;
+    border-radius: 15px;
+    border: solid 3px rgb(179, 180, 141);
 }
 </style>
 
