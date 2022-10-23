@@ -15,6 +15,7 @@
             background-color: rgb(202, 89, 89);
         }
         table {
+            user-select: none;
             background-color: rgba(255, 254, 252, 0.822);
             margin: auto;
             border-spacing: 6px;
@@ -35,7 +36,7 @@
     </style>
     <script>
         function f(e, a) {
-            e.target.innerHTML= Math.round(100000*Math.sin(Math.PI * a))/100000
+            e.target.innerHTML = Math.round(100000*Math.sin(Math.PI * a))/100000
         }
         function g(e, a) {
             e.target.innerHTML= Math.round(100000*Math.sin(Math.PI * a))/100000
@@ -68,23 +69,23 @@
         <tr class="o">
             <td>$π/12$</td>
             <td>15˚</td>
-            <td onclick="f(event, 1/12)">?</td>
-            <td onclick="g(event, 1/12)">?</td>
-            <td onclick="h(event, 1/12)">?</td>
+            <td onclick="f(event, 1/12)"><span>?</span></td>
+            <td onclick="g(event, 1/12)"><span>?</span></td>
+            <td onclick="h(event, 1/12)"><span>?</span></td>
         </tr>
         <tr class="o2">
             <td>$π/10$</td>
             <td>18˚</td>
-            <td onclick="f(event, 1/10)">?</td>
-            <td onclick="g(event, 1/10)">?</td>
-            <td onclick="h(event, 1/10)">?</td>
+            <td onclick="f(event, 1/10)"><span>?</span></td>
+            <td onclick="g(event, 1/10)"><span>?</span></td>
+            <td onclick="h(event, 1/10)"><span>?</span></td>
         </tr>
         <tr class="o2">
             <td>$π/9$</td>
             <td>20˚</td>
-            <td onclick="f(event, 1/9)">?</td>
-            <td onclick="g(event, 1/9)">?</td>
-            <td onclick="h(event, 1/9)">?</td>
+            <td onclick="f(event, 1/9)"><span>?</span></td>
+            <td onclick="g(event, 1/9)"><span>?</span></td>
+            <td onclick="h(event, 1/9)"><span>?</span></td>
         </tr>
         <tr>
             <td>$π/6$</td>
@@ -96,9 +97,9 @@
         <tr class="o2">
             <td>$π/5$</td>
             <td>36˚</td>
-            <td onclick="f(event, 1/5)">?</td>
-            <td onclick="g(event, 1/5)">?</td>
-            <td onclick="h(event, 1/5)">?</td>
+            <td onclick="f(event, 1/5)"><span>?</span></td>
+            <td onclick="g(event, 1/5)"><span>?</span></td>
+            <td onclick="h(event, 1/5)"><span>?</span></td>
         </tr>
         <tr class="o">
             <td>$π/4$</td>
@@ -117,16 +118,16 @@
         <tr class="o2">
             <td>$2π/5$</td>
             <td>72˚</td>
-            <td onclick="f(event, 2/5)">?</td>
-            <td onclick="g(event, 2/5)">?</td>
-            <td onclick="h(event, 2/5)">?</td>
+            <td onclick="f(event, 2/5)"><span>?</span></td>
+            <td onclick="g(event, 2/5)"><span>?</span></td>
+            <td onclick="h(event, 2/5)"><span>?</span></td>
         </tr>
         <tr class="o">
             <td>$5π/12$</td>
             <td>75˚</td>
-            <td onclick="f(event, 5/12)">?</td>
-            <td onclick="g(event, 5/12)">?</td>
-            <td onclick="h(event, 5/12)">?</td>
+            <td onclick="f(event, 5/12)"><span>?</span></td>
+            <td onclick="g(event, 5/12)"><span>?</span></td>
+            <td onclick="h(event, 5/12)"><span>?</span></td>
         </tr>
         <tr>
             <td>$π/2$</td>
