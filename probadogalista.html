@@ -14,12 +14,15 @@
     }
     function f(x) {
         document.querySelectorAll('.px').forEach( v => {
-            v.style="display:none;"
+            v.style="display:none"
         })
         document.querySelectorAll('.gg').forEach( v => {
             v.style="display:table-cell;"
         })
         document.getElementById(x+'x').style.display='table-cell'
+        document.getElementById(x+'x').style.background="rgba(255,100,110,0.5)"
+        document.getElementById(x+'x').style.borderRadius="15px"
+        document.getElementById(x+'x').style.boxShadow="1px 1px 4px inset black"
         document.getElementById(x+'g').style.display='none'
     }
     il = [5,7,9,11,14,15,17,19,21,24,27]
@@ -247,7 +250,7 @@
             </tr>
             <tr><td colspan=2 id="pd3g" class="gg red"
                 onclick="f('pd3')" >2. kötelező feladat (HTML+CSS) <big>😳</big></td></tr>
-            <tr id="pd3x" class="px" style="display:none;">
+            <tr id="pd3x" class="px">
                 <td>
                     <a href="img/pd03.jpg" target="op"><img src="img/pd03.jpg" alt="" class="pici3"></a>
                     <hr>
@@ -339,7 +342,7 @@
                 onclick="f('pd7')" >3. kötelező feladat (SVG animáció)</td></tr>
             <tr id="pd7x" class="px" style="display:none;">
                 <td id="h7x2" style="vertical-align: top;">
-                    <div id="anim" style="width:560px;text-align:left;">
+                    <div id="anim" style="text-align:left;">
                     </div><br>
                     <a class="m" target="_blank" href="https://app.svgator.com/">SVG Animation Editor</a>
                 </td>
@@ -648,3 +651,6 @@ b.br {
     color: rgb(148, 9, 9);
 }
 </style>
+<script>
+        f('pd3')
+</script>
