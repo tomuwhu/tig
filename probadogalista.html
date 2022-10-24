@@ -181,7 +181,7 @@
         document.getElementById('anim').innerHTML=`<div style="background: lemonchiffon;padding:10px;margin:5px;box-shadow: 1px 1px 3px black;border-radius:10px;color:rgb(48, 41, 38);font-family: 'Syne Mono', monospace;font-size:12px;">
                     Készítsen az alábbi animációhoz hasonló, egy, a tanulmányaival összefüggő (a lenti pédákkkal megegyező, vagy azokat meghaladó összetettségű) animációt <b>SVG</b> vagy <b>HTML (+SVG +CSS +JS)</b> formátumban!
                     Az elkészült animációt helyezze el a honlapján (úgy, hogy megtaláljam)!<br>
-                    <br><b class="br">Határidő: 2022. november 25., 16:00</b>
+                    <br><b class="br">Határidő: 2022. december 16., 16:00</b>
                         <br><center>😼</center>
                     </div>
                     <div class="mx"><a 
@@ -233,13 +233,13 @@
             </tr>
             <tr><td colspan=2 id="pd2g" class="gg red"
                 onclick="f('pd2')" >1. kötelező feladat (HTML+CSS) <big>🤓</big></td></tr>
-            <tr id="pd2x" class="px" style="display:none;">
+            <tr id="pd2x" class="px">
                 <td>
                     <a href="img/pd02.jpg" target="op"><img class="pici2" src="img/pd02.jpg" alt=""></a>
                     <hr>
                     <b class="br">Határidő: 2022. november 4., 16:00</b>
                 </td>
-                <th>
+                <th class="pir">
                     1. kötelező feladat (HTML+CSS)
                 </th>
             </tr>
@@ -251,7 +251,7 @@
                     <hr>
                     <b class="br">Határidő: 2022. november 11., 16:00</b>
                 </td>
-                <th>
+                <th  class="pir">
                     2. kötelező feladat (HTML+CSS)
                 </th>
             </tr>
@@ -265,16 +265,27 @@
                     2. gyakorló feladat (HTML+CSS)
                 </th>
             </tr>
-            <tr><td colspan=2 id="pd7g" class="gg red" style="display:none;"
-                onclick="f('pd7')" >3. kötelező feladat</td></tr>
-            <tr id="pd7x" class="px">
+            <tr><td colspan=2 id="pd5g" class="gg" 
+                onclick="f('pd5')" >3. gyakorló feladat (SVG) <big>🎅</big></td></tr>
+            <tr id="pd5x" class="px" style="display:none;">
+                <td>
+                    Készítsen hóembert és fenyőfát ábrázoló ábrát SVG segítségével! A rajz elkészítéséhez<br>
+                    csak kód-szerkesztőt (pl. VScode) használjon, segédprogramot ne!
+                </td>
+                <th>
+                    3. gyakorló feladat (SVG)
+                </th>
+            </tr>
+            <tr><td colspan=2 id="pd7g" class="gg red"
+                onclick="f('pd7')" >3. kötelező feladat (SVG animáció)</td></tr>
+            <tr id="pd7x" class="px" style="display:none;">
                 <td id="h7x2" style="vertical-align: top;">
                     <div id="anim" style="width:720px;text-align:left;">
                     </div><br>
                     <a class="m" target="_blank" href="https://app.svgator.com/">SVG Animation Editor</a>
                 </td>
-                <th id="h7x">
-                    3. kötelező feladat
+                <th id="h7x" class="pir">
+                    (SVG animáció)<br>3. kötelező feladat
                 </th>
             </tr>
             <!--tr><td colspan=2 class="gg" id="pd8g"
@@ -323,6 +334,10 @@
 </body>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Lemonada&display=swap');
+.pir {
+    color:rgb(114, 0, 0);
+    background-color: #dbaaae;
+}
 td.red {
     color: red;
 }
