@@ -2,7 +2,7 @@ h1 {
     color: rgb(43, 62, 117);
     text-shadow: 1px 1px 3px gray;
 }
-.c {
+.c, #g {
     text-align: center;
     background-color: aquamarine;
     border-radius: 6px;
@@ -12,8 +12,9 @@ h1 {
     background-color: aliceblue;
     display: inline-block;
     margin: auto;
+    cursor: pointer;
 }
-.c:hover {
+.c:hover, #g:hover {
     background-color: rgb(138, 181, 181);
 }
 body {
@@ -22,4 +23,8 @@ body {
 }
 img {
     width: 70px;
+}
+#g {
+    background-color: aquamarine;
+    padding: 10px;
 }
