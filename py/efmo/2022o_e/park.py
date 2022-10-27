@@ -17,7 +17,7 @@ def k(r): return \
 print("4. feladat")
 kop = k(int(input("Adja meg az ágyás sorszámát! ")))
 print("A felajánlók száma: ", len(kop))
-print("A virágágyás színe, ha csak az első ültet: ",kop[0][3])
+print("A virágágyás színe, ha csak az első ültet: ", kop[0][3])
 print("A virágágyás színei: ",*{i[3] for i in kop})
 jsz = [len(k(i)) for i in range(1, n + 1)]
 print("5. feladat")
@@ -32,7 +32,7 @@ er = ["#"] * (n + 1)
 for i in range(1, n + 1):
     l = k(i)
     l.sort(key = lambda x: x[0])
-    if len(l) and er[i]=="#": er[i] = (l[0][3], l[0][0])
+    if len(l) and er[i] == "#": er[i] = (l[0][3], l[0][0])
 f = open("szinek.txt", "w")
 for i in er[1:]:
     if i == "#": f.write(f"{i} {0}\n")
