@@ -36,8 +36,6 @@ for ass in range(1, n+1):
     if len(l) and er[ass]=="#": er[ass] = (l[0][3], l[0][0])
 f = open("szinek.txt", "w")
 for i in er[1:]:
-    if i == "#":
-        f.write(f"{i} {0}\n")
-    else:
-       f.write(f"{i[0]} {i[1]}\n")
+    if i == "#": f.write(f"{i} {0}\n")
+    else:        f.write(f"{i[0]} {i[1]}\n")
 f.close()
