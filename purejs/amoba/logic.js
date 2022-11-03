@@ -15,10 +15,10 @@ f = e => { if (e.innerHTML == "") {
     t = Array(n).fill().map(() => Array(n-1).fill())
     document.getElementById('t').innerHTML = `
     <table>
-        ${Array(n).fill(`
+    ${Array(n).fill(`
         <tr>
         ${Array(n).fill(`<td onmouseup="f(this)"></td>`).join('')}
         </tr>
-        `).join('')}
+    `).join('')}
     </table>`
 })()
