@@ -17,7 +17,7 @@ f = e => { if (e.innerHTML == "") {
     <table>
         ${Array(n).fill(`
         <tr>
-        ${Array(n).fill(`<td onmouseup="f(this)" />`).join('')}
+        ${Array(n).fill(`<td onmouseup="f(this)"></td>`).join('')}
         </tr>
         `).join('')}
     </table>`
