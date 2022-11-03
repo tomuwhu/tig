@@ -96,6 +96,14 @@ a:visited{
 
 .msg-time {
     color: blue;
+    font-size: 10px;
+    background-color: aquamarine;
+    padding: 2px;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin: 6px;
+    box-shadow: 1px 1px 4px inset black;
+    border-radius: 6px;
 }
 
 .cueMsg {

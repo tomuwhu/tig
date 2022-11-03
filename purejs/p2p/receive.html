@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width">
-        <title>Peer-to-Peer Cue System --- Reciever</title>
+        <title>Reciever</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -38,10 +38,6 @@
                 recvId = document.getElementById("receiver-id")
                 var status = document.getElementById("status")
                 message = document.getElementById("message")
-                standbyBox = document.getElementById("standby")
-                goBox = document.getElementById("go")
-                fadeBox = document.getElementById("fade")
-                offBox = document.getElementById("off")
                 sendMessageBox = document.getElementById("sendMessageBox")
                 sendButton = document.getElementById("sendButton")
                 clearMsgsButton = document.getElementById("clearMsgsButton")
@@ -82,8 +78,7 @@
                 }
                 function ready() {
                     conn.on('data', data => {
-                        cueString = "<span class=\"cueMsg\">Cue: </span>"
-                        addMessage("<span class=\"peerMsg\">Peer: </span>" + data)
+                        addMessage(`<span class="peerMsg">${data}</span>`)
                     })
                     conn.on('close', function () {
                         status.innerHTML = "Connection reset<br>Awaiting connection..."
@@ -101,7 +96,7 @@
                         if (t < 10) t = "0" + t
                         return t
                     }
-                    message.innerHTML = "<br><span class=\"msg-time\">" + h + ":" + m + ":" + s + "</span>  -  " + msg + message.innerHTML
+                    message.innerHTML = `<br><span class="msg-time">${h}:${m}:${s}</span> ${msg} ${message.innerHTML}`
                 }
                 function clearMessages() {
                     message.innerHTML = ""
@@ -117,7 +112,7 @@
                         msg = sendMessageBox.value
                         sendMessageBox.value = ""
                         conn.send(msg)
-                        addMessage("<span class=\"selfMsg\">Self: </span>" + msg)
+                        addMessage(`<span class="selfMsg">${msg}</span> `)
                     } 
                 })
                 clearMsgsButton.addEventListener('click', clearMessages)
