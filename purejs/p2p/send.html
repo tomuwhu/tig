@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width">
+        <title>Sender</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Sender</h1>
+        <table class="control">
+            <tr>
+                <td class="title">Status:</td>
+                <td class="title">Messages:</td>
+            </tr>
+            <tr>
+                <td>
+                    <span style="font-weight: bold">ID: </span>
+                    <input type="text" id="receiver-id" title="Input the ID from receive.html">
+                    <button id="connect-button">Connect</button>
+                </td>
+                <td>
+                    <input type="text" id="sendMessageBox" placeholder="Enter a message..." autofocus="true" />
+                    <button type="button" id="sendButton">Send</button>
+                    <button type="button" id="clearMsgsButton">Clear</button>
+                </td>
+            </tr>
+            <tr>
+                <td><div id="status" class="status"></div></td>
+                <td><div class="message" id="message"></div></td>
+            </tr>
+        </table>
+        <script src="peerjs.min.js"></script>
+        <script type="text/javascript">
+            (() => {
+                lastPeerId = null
+                peer = null 
+                conn = null
+                recvIdInput = document.getElementById("receiver-id")
+                var status = document.getElementById("status")
+                message = document.getElementById("message")
+                sendMessageBox = document.getElementById("sendMessageBox")
+                sendButton = document.getElementById("sendButton")
+                clearMsgsButton = document.getElementById("clearMsgsButton")
+                connectButton = document.getElementById("connect-button")
+                cueString = "<span class=\"cueMsg\">Cue: </span>"
+                function initialize() {
+                    peer = new Peer(null, { debug: 2 })
+                    peer.on('open', id => {
+                        if (peer.id === null) { peer.id = lastPeerId } 
+                        else { lastPeerId = peer.id }
+                    })
+                    peer.on('connection', c => {
+                        c.on('open', () => {
+                            c.send("Sender does not accept incoming connections")
+                            setTimeout(() => { c.close();}, 500)
+                        })
+                    })
+                    peer.on('disconnected', () => {
+                        status.innerHTML = "Connection lost. Please reconnect"
+                        peer.id = lastPeerId
+                        peer._lastServerId = lastPeerId
+                        peer.reconnect()
+                    })
+                    peer.on('close', () => {
+                        conn = null
+                        status.innerHTML = "Connection destroyed. Please refresh"
+                    })
+                    peer.on('error', err => {
+                        alert('' + err)
+                    })
+                }
+                function join() {
+                    if (conn) {
+                        conn.close()
+                    }
+                    conn = peer.connect(recvIdInput.value, {
+                        reliable: true
+                    })
+                    conn.on('open', () => {
+                        status.innerHTML = "Connected to: " + conn.peer
+                        command = getUrlParam("command")
+                        if (command) conn.send(command)
+                    })
+                    conn.on('data', function (data) {
+                        addMessage("<span class=\"peerMsg\">Peer:</span> " + data)
+                    })
+                    conn.on('close', function () {
+                        status.innerHTML = "Connection closed"
+                    })
+                }
+                function getUrlParam(name) {
+                    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]")
+                    regexS = "[\\?&]" + name + "=([^&#]*)"
+                    regex = new RegExp(regexS)
+                    results = regex.exec(window.location.href)
+                    if (results == null) return null
+                    else return results[1]
+                }
+                 function signal(sigName) {
+                    if (conn && conn.open) {
+                        conn.send(sigName)
+                        addMessage(cueString + sigName)
+                    } 
+                }
+                function addMessage(msg) {
+                    now = new Date()
+                    h = now.getHours()
+                    m = addZero(now.getMinutes())
+                    s = addZero(now.getSeconds())
+                    if (h > 12) h -= 12
+                    else if (h === 0) h = 12
+                    function addZero(t) {
+                        if (t < 10) t = "0" + t
+                        return t
+                    }
+                    message.innerHTML = "<br><span class=\"msg-time\">" + h + ":" + m + ":" + s + "</span>  -  " + msg + message.innerHTML
+                }
+                function clearMessages() {
+                    message.innerHTML = ""
+                    addMessage("Msgs cleared")
+                }
+                sendMessageBox.addEventListener('keypress', function (e) {
+                    event = e || window.event
+                    char = event.which || event.keyCode
+                    if (char == '13')
+                        sendButton.click()
+                })
+                sendButton.addEventListener('click', function () {
+                    if (conn && conn.open) {
+                        msg = sendMessageBox.value
+                        sendMessageBox.value = ""
+                        conn.send(msg)
+                        addMessage("<span class=\"selfMsg\">Self: </span> " + msg)
+                    }
+                })
+                clearMsgsButton.addEventListener('click', clearMessages)
+                connectButton.addEventListener('click', join)
+                initialize()
+            })()
+        </script>
+    </body>
+</html>

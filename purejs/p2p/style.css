@@ -1,0 +1,111 @@
+body {
+    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+    background-color: rgb(238, 249, 229);
+	min-width: 450px;
+}
+h1 {
+    font-size: 1.75em;
+}
+h2 {
+    text-align: center;
+    font-size: 4em; 
+}
+td {
+    width: 50%;
+    vertical-align: top;
+}
+input {
+	margin-bottom: 5px;
+    width: 260px;
+}
+button {
+    box-shadow: 1px 1px 4px black;
+    cursor: pointer;
+}
+a:visited{ 
+	color: blue; 
+}
+
+.display {
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.control {
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.control-button {
+    width: 100%;
+    min-height: 50px;
+}
+
+.display-box {
+    border: 2px solid black;
+}
+
+.title {
+    vertical-align: top;
+}
+
+.standby {
+    background-color: red;
+}
+
+.go {
+    background-color: green;
+}
+
+.fade {
+    background-color: yellow;
+}
+
+.off {
+    background-color: gray;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.no-display {
+    display: none;
+}
+
+.status {
+    vertical-align: text-top;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 4px black;
+    background-color: rgb(209, 161, 161);
+}
+
+.message {
+    vertical-align: text-top;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 4px black;
+    background-color: rgb(161, 204, 209);
+    overflow: auto;
+}
+
+.msg-time {
+    color: blue;
+}
+
+.cueMsg {
+    color: orange;
+}
+
+.selfMsg {
+    color: green;
+}
+
+.peerMsg {
+    color: red;
+}

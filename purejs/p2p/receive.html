@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width">
+        <title>Peer-to-Peer Cue System --- Reciever</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <table class="display">
+            <tr>
+                <td class="title">Status:</td>
+                <td class="title">Messages:</td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="receiver-id" style="font-weight: bold;" title="Copy this ID to the input on send.html.">ID:</div>
+                </td>
+                <td>
+                    <input type="text" id="sendMessageBox" placeholder="Enter a message..." autofocus="true" />
+                    <button type="button" id="sendButton">Send</button>
+                    <button type="button" id="clearMsgsButton">Clear</button>
+                </td>
+            </tr>
+            <tr>
+                <td><div id="status" class="status"></div></td>
+                <td><div class="message" id="message"></div></td>
+            </tr>
+        </table>
+
+        <script src="peerjs.min.js"></script>
+        <script type="text/javascript">
+            (() => {
+                lastPeerId = null
+                peer = null
+                peerId = null
+                conn = null
+                recvId = document.getElementById("receiver-id")
+                var status = document.getElementById("status")
+                message = document.getElementById("message")
+                standbyBox = document.getElementById("standby")
+                goBox = document.getElementById("go")
+                fadeBox = document.getElementById("fade")
+                offBox = document.getElementById("off")
+                sendMessageBox = document.getElementById("sendMessageBox")
+                sendButton = document.getElementById("sendButton")
+                clearMsgsButton = document.getElementById("clearMsgsButton")
+                 function initialize() {
+                    peer = new Peer(null, {debug: 2})
+                    peer.on('open', function (id) {
+                        if (peer.id === null) {
+                            peer.id = lastPeerId
+                        } else {
+                            lastPeerId = peer.id
+                        }
+                        recvId.innerHTML = "ID: " + peer.id
+                        status.innerHTML = "Awaiting connection..."
+                    })
+                    peer.on('connection',  c => {
+                        if (conn && conn.open) {
+                            c.on('open', () => {
+                                c.send("Already connected to another client")
+                                setTimeout(() => { c.close(); }, 500)
+                            })
+                            return
+                        }
+                        conn = c
+                        status.innerHTML = "Connected"
+                        ready()
+                    })
+                    peer.on('disconnected', () => {
+                        status.innerHTML = "Connection lost. Please reconnect"
+                        peer.id = lastPeerId
+                        peer._lastServerId = lastPeerId
+                        peer.reconnect()
+                    })
+                    peer.on('close', () => {
+                        conn = null
+                        status.innerHTML = "Connection destroyed. Please refresh"
+                    });
+                    peer.on('error', err => { alert('' + err)})
+                }
+                function ready() {
+                    conn.on('data', data => {
+                        cueString = "<span class=\"cueMsg\">Cue: </span>"
+                        addMessage("<span class=\"peerMsg\">Peer: </span>" + data)
+                    })
+                    conn.on('close', function () {
+                        status.innerHTML = "Connection reset<br>Awaiting connection..."
+                        conn = null
+                    })
+                }
+                function addMessage(msg) {
+                    now = new Date()
+                    h = now.getHours()
+                    m = addZero(now.getMinutes())
+                    s = addZero(now.getSeconds())
+                    if (h > 12) h -= 12
+                    else if (h === 0) h = 12
+                    function addZero(t) {
+                        if (t < 10) t = "0" + t
+                        return t
+                    }
+                    message.innerHTML = "<br><span class=\"msg-time\">" + h + ":" + m + ":" + s + "</span>  -  " + msg + message.innerHTML
+                }
+                function clearMessages() {
+                    message.innerHTML = ""
+                    addMessage("Msgs cleared")
+                }
+                sendMessageBox.addEventListener('keypress', e => {
+                    event = e || window.event
+                    char = event.which || event.keyCode
+                    if (char == '13') sendButton.click()
+                })
+                sendButton.addEventListener('click', () => {
+                    if (conn && conn.open) {
+                        msg = sendMessageBox.value
+                        sendMessageBox.value = ""
+                        conn.send(msg)
+                        addMessage("<span class=\"selfMsg\">Self: </span>" + msg)
+                    } 
+                })
+                clearMsgsButton.addEventListener('click', clearMessages)
+                initialize()
+            })()
+        </script>
+    </body>
+</html>
