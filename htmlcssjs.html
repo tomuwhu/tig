@@ -174,6 +174,29 @@
         color: red;
         background-color: pink;
     }
+    .d {
+        visibility: hidden;
+    }
+    .tc {
+        background-color: rgb(232, 232, 159);
+        box-shadow: 1px 1px 3px black;
+        border-radius: 7px;
+    }
+    .tc:hover {
+        background-color: rgb(59, 66, 42);
+        color: rgb(194, 196, 160);
+        text-shadow: none;
+    }
+    .tc:hover> span.m {
+        color: rgb(198, 198, 146);
+    }
+    .tc > span.m {
+        color: rgb(54, 54, 27);
+    }
+    .tc > span.m:hover {
+        color: rgb(194, 196, 160);
+        text-shadow: none;
+    }
     </style>
 </head>
 <body>
@@ -215,6 +238,13 @@
                 <td class="tc"><span class="m" onclick="lc('chart')">stylus.css</span></td>
                 <td class="tc"><span class="m" onclick="lj('chart')">logic.js</span></td>
                 <td class="r"><a class="m" href="purejs/chart.zip">Chart program letöltése (.zip)</a></td>
+            </tr>
+            <tr>
+                <td class="l"><a class="m" href="purejs/p2p/send.html" target="_blank">Chat Cliens</a></td>
+                <td class="l"><a class="m" href="purejs/p2p/receive.html" target="_blank">Chat Szerver</a></td>
+                <td class="d"></td>
+                <td class="d"></td>
+                <td class="r"><a class="m" href="purejs/p2p.zip">Chat program letöltése (.zip)</a></td>
             </tr>
         </table>
     </h1>
