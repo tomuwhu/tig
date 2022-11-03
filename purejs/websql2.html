@@ -1,0 +1,67 @@
+<body>
+    <h1>Hex-2-Bin</h1>
+    <div id="x"></div>
+    <br>
+    <div class="p c" onclick="c()">Clear</div>
+    <hr>
+    <div id="y"></div>
+</body>
+<script>
+    db = openDatabase('db1', '1.0', 'cica', 10**7)
+    db.transaction(t => t.executeSql("CREATE TABLE S (a, b)", [], g, g) )
+    f = i => db.transaction(t => t.executeSql(`INSERT INTO S VALUES (${i}, ${i})`,[], g, err))
+    c = () => db.transaction(t => t.executeSql("DROP TABLE s", [], h, err))
+    h = () => db.transaction(t => t.executeSql("CREATE TABLE S (a, b)", [], g, err))
+    g = () => db.transaction(t => t.executeSql("SELECT * FROM s", [], (res, answ) => {
+        arr = Array.from(answ.rows)
+        document.getElementById("y").innerHTML =
+            arr.map( (v, i) => `
+            <div class="e">${v.a.toString(2)}</div>`
+            ).join("")
+    }))
+    err = (em, m) => console.log(m)
+    document.getElementById("x").innerHTML = 
+    Array(15)
+        .fill(0)
+        .map((v, i) => `
+            <div class="p" onclick="f(${i+1})">${(i+1).toString(16)}</div>
+        `)
+        .join("")
+</script>
+<style>
+    div.p, div.e {
+        display: inline-block;
+        padding: 6px;
+        margin: 4px;
+        width: 20px;
+        text-align: center;
+        box-shadow: 1px 1px 5px black;
+        border-radius: 6px;
+        background-color: rgb(110, 209, 176);
+        font-size: 20px;
+        cursor: pointer;
+    }
+    div.c {
+        background-color: rgb(220, 199, 147);
+        width: 60px;
+    }
+    div.e {
+        padding: 4px;
+        margin: 2px;
+        width: auto;
+        background-color: rgb(195, 205, 111);
+        color: rgb(28, 79, 28);
+        font-size: 12px;
+    }
+    div.p:hover {
+        background-color: rgb(109, 59, 131);
+        color: yellow;
+    }
+    body {
+        background-color: rgb(225, 240, 178);
+        text-align: center;
+        user-select: none;
+        text-shadow: 1px 1px 4px gray;
+        color: rgb(61, 102, 61);
+    }
+</style>
