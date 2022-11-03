@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <script>
+        function tmo() {
+            document.getElementById('tmo').style.display = 'table-row'
+            document.getElementById('tfel').style.display = 'none'
+        }
         function lh(f) {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
@@ -80,7 +84,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>«es6.eu» HTML-CSS-JS</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="hljs/a11y-dark.css">
     <script src="hljs/highlight.min.js"></script>
@@ -163,6 +167,13 @@
         padding-left: 10px;
         padding-right: 15px;
     }
+    #tmog {
+        cursor: pointer;
+    }
+    #tmog:hover {
+        color: red;
+        background-color: pink;
+    }
     </style>
 </head>
 <body>
@@ -183,16 +194,30 @@
                 <td class="tc"><span class="m" onclick="lj('amoba')">logic.js</span></td>
                 <td class="r"><a class="m" href="purejs/amoba.zip">Amőba program letöltése (.zip)</a></td>
             </tr>
+            <tr id="tfel" style="display: none;">
+                <td class="l"><a class="m" href="purejs/tron_half/index.html" target="_blank">Tron (kipróbálása)</a></td>
+                <td class="tc"><span class="m" onclick="lh('tron_half')">index.html</span></td>
+                <td class="tc"><span class="m" onclick="lc('tron_half')">stylus.css</span></td>
+                <td class="tc"><span class="m" onclick="lj('tron_half')">logic.js</span></td>
+                <td class="r"><a class="m" href="purejs/tron_half.zip">Tron program letöltése (.zip)</a></td>
+                <td id="tmog" ><span onclick="tmo()">mo</span></td>
+            </tr>
+            <tr id="tmo">
+                <td class="l"><a class="m" href="purejs/tron_tp/index.html" target="_blank">Tron (kipróbálása)</a></td>
+                <td class="tc"><span class="m" onclick="lh('tron_tp')">index.html</span></td>
+                <td class="tc"><span class="m" onclick="lc('tron_tp')">stylus.css</span></td>
+                <td class="tc"><span class="m" onclick="lj('tron_tp')">logic.js</span></td>
+                <td class="r"><a class="m" href="purejs/tron_tp.zip">Tron program letöltése (.zip)</a></td>
+            </tr>
             <tr>
-                <td class="l"><a class="m" href="purejs/tron/index.html" target="_blank">Tron (kipróbálása)</a></td>
-                <td class="tc"><span class="m" onclick="lh('tron')">index.html</span></td>
-                <td class="tc"><span class="m" onclick="lc('tron')">stylus.css</span></td>
-                <td class="tc"><span class="m" onclick="lj('tron')">logic.js</span></td>
-                <td class="r"><a class="m" href="purejs/amoba.zip">Tron program letöltése (.zip)</a></td>
+                <td class="l"><a class="m" href="purejs/chart/index.html" target="_blank">Chart (kipróbálása)</a></td>
+                <td class="tc"><span class="m" onclick="lh('chart')">index.html</span></td>
+                <td class="tc"><span class="m" onclick="lc('chart')">stylus.css</span></td>
+                <td class="tc"><span class="m" onclick="lj('chart')">logic.js</span></td>
+                <td class="r"><a class="m" href="purejs/chart.zip">Chart program letöltése (.zip)</a></td>
             </tr>
         </table>
     </h1>
-
     <div class="c"><br><pre id="c1"><code id="code"></code></pre></div>
 </body>
 </html>

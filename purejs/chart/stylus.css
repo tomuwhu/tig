@@ -1,0 +1,30 @@
+h1 {
+    color: rgb(43, 62, 117);
+    text-shadow: 1px 1px 3px gray;
+}
+.c, #g {
+    text-align: center;
+    background-color: aquamarine;
+    border-radius: 6px;
+    box-shadow: 1px 1px 3px rgb(36, 28, 28);
+    border: solid 1px rgb(78, 78, 114);
+    padding: 0px;
+    background-color: aliceblue;
+    display: inline-block;
+    margin: auto;
+    cursor: pointer;
+}
+.c:hover, #g:hover {
+    background-color: rgb(138, 181, 181);
+}
+body {
+    background-color: rgb(208, 239, 229);
+    text-align: center;
+}
+img {
+    width: 70px;
+}
+#g {
+    background-color: aquamarine;
+    padding: 10px;
+}

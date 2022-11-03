@@ -1,0 +1,55 @@
+Futási eredmény: Jobb gomb -> vizsgálat -> konzol
+<script>
+class OSet {
+    has( key ) {
+        return !this.ik( this.root, key )
+    }
+    ik(p, key) {
+        if (p) {
+            if (p.key === key) return false
+            else {
+                this.up = p
+                if ( p.key < key ) {
+                    this.rd = true
+                    return this.ik( p.r, key )
+                } else {
+                    this.rd = false
+                    return this.ik( p.l, key )
+                }
+            }
+        } else return { key }
+    }
+    add( key ) {
+        if ( this.root ) {
+            var uo
+            if ( uo = this.ik( this.root, key )) {
+                if ( this.rd ) this.up.r = uo
+                else this.up.l = uo
+                return true
+            } else return false
+        } else {
+            this.root = { key }
+        }
+    }
+    ib( p, f ) { 
+        if ( p ) {
+            this.ib( p.l, f )
+            f( p.key, this.i++ ) //inorder traversal
+            this.ib( p.r, f )
+        }
+    }
+    forEach( f ) {
+        this.i = 0
+        this.ib( this.root, f )
+    }
+}
+ 
+m = new OSet()
+ 
+t = [7, 4, 1, 2, 14, 16, 6, 12, 5, 8, 18, 0, 5.5, 13]
+t.forEach( v => m.add( v ) )
+ 
+console.log( m )
+ 
+m.forEach( console.log )
+</script>

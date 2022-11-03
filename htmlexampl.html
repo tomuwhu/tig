@@ -1,4 +1,5 @@
 <meta charset="UTF-8">
+<title>«es6.eu» HTML-CSS-JS</title>
 <script src="hljs/markdown.min.js"></script>
 <script>
     function load2() {
@@ -15,7 +16,7 @@
                     .replace(/'/g, "&#039;");
                 document.getElementById("content").innerHTML=`
                     <div style="text-align:center;">
-                    <a href=${file} target=_blank>Kipróbálás új ablakban</a>
+                    <a class="run" href=${file} target=_blank>Kipróbálás új ablakban</a>
                     </div>
                 `
                 document.getElementById('content').style.visibility = "visible"
@@ -80,6 +81,18 @@ function load() {
     a:hover {
         color: rgb(234, 255, 100);
     }
+    a.run:hover {
+        color: rgb(66, 36, 36);
+        background-color: rgb(197, 116, 116);
+    }
+    a.run {
+        background-color: aquamarine;
+        box-shadow: 1px 1px 4px black;
+        border-radius: 6px;
+        border: soild 2px red;
+        color: rgb(62, 64, 47);
+        padding: 6px;
+    }
 </style>
 <script src="hljs/highlight.min.js"></script>
 <ul class="navigation">
@@ -93,7 +106,7 @@ function load() {
 </ul>
 <body class="b" onload="load()"></body>
 <div class="m20">
-    <h1 class="h">P&eacute;ldák: &nbsp; &nbsp; HTML-CSS <b>🧾</b>
+    <h1 class="h">P&eacute;ldák: &nbsp; &nbsp; HTML-SVG-CSS <b>🧾</b>
         <select class="s" onchange="load()" id="sel">
             <option selected value="alap.html">HTML alapok</option>
             <option value="cica.html">CSS alapok</option>
@@ -116,10 +129,16 @@ function load() {
                 <option value="onclick.html">OnClick esemény</option>
                 <option value="gentable.html">Táblázat generálása - sakktábla</option>
                 <option value="gentable2.html">Táblázat generálása - amőba</option>
-                <option value="amoba.html">Amőba - győzelem ellenőrzése</option>
+                <option value="hanoi.html">Hanoi tornyai - rekurzió</option>
+                <option value="stackobject.html">Verem objektum</option>
+                <option value="stackclass.html">Verem osztály</option>
+                <option value="queueclass.html">Sor osztály</option>
+                <option value="binsearchtree.html">Bináris keresőfa osztály</option>
+                <option value="sqpq.html">Stack-Queue-Priority Queue osztályok</option>
             </select> <b>🧾</b><hr>
             <div class="c">
-                <a href="htmlcssjs.html">További HTML-CSS-JS példaprogramok</a>
+                <a href="htmlcssjs.html">További HTML-SVG-CSS-JS példaprogramok</a> < - - - >
+                <a href="probadogalista.html">HTML-SVG-CSS-JS Házi feladatok</a>
             </div>
             
     </h1>
