@@ -92,6 +92,8 @@ a:visited{
     box-shadow: 1px 1px 4px black;
     background-color: rgb(161, 204, 209);
     overflow: auto;
+    font-size: 13px;
+    text-shadow: 1px 1px 3px gray;
 }
 
 .msg-time {
@@ -106,14 +108,10 @@ a:visited{
     border-radius: 6px;
 }
 
-.cueMsg {
-    color: orange;
-}
-
 .selfMsg {
-    color: green;
+    color: rgb(6, 71, 6);
 }
 
 .peerMsg {
-    color: red;
+    color: rgb(92, 9, 9);
 }
