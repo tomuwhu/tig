@@ -27,7 +27,7 @@
                 <td><div class="message" id="message"></div></td>
             </tr>
         </table>
-        <div class="cb"><div id="qrcode"></div></div>
+        <div class="cb"><a id="a" target="_blank"><div id="qrcode"></div></a></div>
         <script src="qrcode.min.js"></script>
         <script src="peerjs.min.js"></script>
         <script type="text/javascript">
@@ -51,13 +51,15 @@
                             lastPeerId = peer.id
                         }
                         recvId.innerHTML = "ID: " + peer.id
+                        lt = "https://es6.eu/purejs/p2pg/client.html?"+ peer.id
                         new QRCode(document.getElementById("qrcode"), {
-                            text: "https://es6.eu/purejs/p2pg/client.html?"+ peer.id,
+                            text: lt,
                             width: 256,
                             height: 256,
                             colorDark : "#0a5050",
                             colorLight : "rgb(238, 249, 229)",
                         })
+                        document.getElementById("a").setAttribute("href", lt)
                         document.getElementById("qrcode").childNodes[1].style.display="inline-block"
                         document.getElementById("qrcode").style.display="flex"
                         document.getElementById("qrcode").style.width = "260px"
