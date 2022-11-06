@@ -224,25 +224,23 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - SVG, programozott animációk készítése
     - Ajax
 - Adatbáziskezelés és SQL
-  - Adatbáziskezelés alapfogalmak (Tábla, Mező, Rekord, Kulcs, Index)
-  - Descartes-szorzat
+  - adatbáziskezelés alapfogalmak (Tábla, Mező, Rekord, Kulcs, Index)
+  - descartes-szorzat
     - [René Descartes](https://hu.wikipedia.org/wiki/Ren%C3%A9_Descartes)
   - külső kulcsok, kapcsolatok táblák között
-  - Adatbázisok tervezése, EK-diagram
-  - Normalizálás, Normálformák
+  - adatbázisok tervezése, EK-diagram
+  - normalizálás, Normálformák
   - SQLite szintaxisdiagramok
   - DB Browser használata, csv, db fájlok kezelése
   - SQLite adattípusok (Integer, Real, Text, Blob), Primary Key
-  - Select utasítás
+  - DQL (SELECT utasítás)
     - mezők, táblák kiválasztása
     - szűrés (where, limit, between, in, like, glob, is null)
     - táblák közötti kapcsolatok (where a kulcspáron, inner join, left join)
     - rendezések (order by)
     - csoportosítások, összegzések (group by, having, max, sum, avg, count)
     - összetett lekérdezések (union, except, intersect)
-  - Create Table
-  - Insert
-  - Delete
+  - DML (CREATE TABLE, INSERT, DELETE)
 - Browser JavaScript II.
   - Event loop
   - Objektumok és osztályok
