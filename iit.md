@@ -224,8 +224,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - SVG, programozott animációk készítése
     - Ajax
 - Adatbáziskezelés és SQL
-  - Adatbáziskezelés alapfogalmak (Tábla, Mező, Rekord, Kulcs, Kapcsolatok)
-  - alapfogalmak (rekord, mező, tábla)
+  - Adatbáziskezelés alapfogalmak (Tábla, Mező, Rekord, Kulcs, Index)
   - Descartes-szorzat
     - [René Descartes](https://hu.wikipedia.org/wiki/Ren%C3%A9_Descartes)
   - kulcsok, kapcsolatok táblák között
