@@ -99,16 +99,11 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - Listák
   - JS függvények
   - Vezérlési szerkezetek
-- Adatbáziskezelés és SQL
-  - Adatbáziskezelés alapfogalmak (Tábla, Mező, Rekord, Kulcs, Kapcsolatok)
-  - SQL szintaxis DQL
-  - DML szintaxis (SELECT utasítás)
-  - SQL gyakorlatok
-  - SQLite, WebSQL és használata Browser - JavaScript-ben
 - Internet szabványok és protokollok I.
   - IPv4, IPv6, TCP/IP, DNS, DHCP
   - http, https
   - ftp, sftp, smtp, ssh
+  - VoIP, STUN szerver
 - SVG: vektorgrafika és alkalmazása
   - síkgeometria, grafikai primitívek
     - [Eukleidész](https://hu.wikipedia.org/wiki/Eukleid%C3%A9sz_(matematikus))
@@ -228,6 +223,33 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - timer
     - SVG, programozott animációk készítése
     - Ajax
+- Adatbáziskezelés és SQL
+  - Adatbáziskezelés alapfogalmak (Tábla, Mező, Rekord, Kulcs, Kapcsolatok)
+  - alapfogalmak (rekord, mező, tábla)
+  - Descartes-szorzat
+    - [René Descartes](https://hu.wikipedia.org/wiki/Ren%C3%A9_Descartes)
+  - kulcsok, kapcsolatok táblák között
+  - Adatbázisok tervezése, EK-diagram
+  - Normalizálás, Normálformák
+  - SQLite szintaxisdiagramok
+  - DB Browser használata, csv, db fájlok kezelése
+  - SQLite adattípusok (Integer, Real, Text, Blob), Primary Key
+  - Select utasítás
+    - mezők, táblák kiválasztása
+    - szűrés (where, limit, between, in, like, glob,  is null)
+    - táblák közötti kapcsolatok (inner join, left join)
+    - összegzések (group by, having, max, sum, avg, count)
+    - rendezések (order by)
+    - összetett lekérdezések (union, except, intersect)
+  - Create Table
+  - Insert
+  - Delete
+- SQLite, WebSQL és használata Browser - JavaScript-ben
+- Python programozási nyelv III.
+  - SQLite modul
+  - http.server
+  - get, post
+  - full-stack alkalmazások python nyelven (szerver és kliens oldal)
 - Back-end nyelvek használata
   - Python mint webserver, FastAPI vs. FLASK
   - NodeJS és alkalmazása
@@ -245,7 +267,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - egy másik (SQLite-NodeJS-HTMLJ+JS)
   - egy harmadik (MySQL-Python-NodeJS)
   - egy negyedik (MongoDB-valami-valami)
-- Peer to Peer alkalmazásfejlesztés
+- Peer to Peer alkalmazásfejlesztés (WebRTC, PeerJS)
 - Algoritmizálás I. ([Ron Rivest](https://en.wikipedia.org/wiki/Ron_Rivest))
   - szám fogalom, halmazelmélet, számelmélet, logika
     - [Ernst Zermelo](https://hu.wikipedia.org/wiki/Ernst_Zermelo)
@@ -322,31 +344,6 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Számítási bonyolultság fogalma, számítási problémák osztályozása (P, NP, ...)
   - Approximációs algoritmusok, mesterséges intelligencia (AI)
   - Gépi tanulás, Neural Networks (Keras, TensorFlow, PyTorch, ...)
-- Adatbáziskezelés, SQL
-  - alapfogalmak (rekord, mező, tábla)
-  - Descartes-szorzat
-    - [René Descartes](https://hu.wikipedia.org/wiki/Ren%C3%A9_Descartes)
-  - kulcsok, kapcsolatok táblák között
-  - Adatbázisok tervezése, EK-diagram
-  - Normalizálás, Normálformák
-  - SQLite szintaxisdiagramok
-  - DB Browser használata, csv, db fájlok kezelése
-  - SQLite adattípusok (Integer, Real, Text, Blob), Primary Key
-  - Select utasítás
-    - mezők, táblák kiválasztása
-    - szűrés (where, limit, between, in, like, glob,  is null)
-    - táblák közötti kapcsolatok (inner join, left join)
-    - összegzések (group by, having, max, sum, avg, count)
-    - rendezések (order by)
-    - összetett lekérdezések (union, except, intersect)
-  - Create Table
-  - Insert
-  - Delete
-- Python programozási nyelv III.
-  - SQLite modul
-  - http.server
-  - get, post
-  - full-stack alkalmazások python nyelven (szerver és kliens oldal)
 - Számelméleti algoritmusok:
   - számelmélet
     - [Püthagorasz](https://hu.wikipedia.org/wiki/P%C3%BCthagorasz)
