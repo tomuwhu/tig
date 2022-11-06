@@ -99,6 +99,12 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - Listák
   - JS függvények
   - Vezérlési szerkezetek
+- Adatbáziskezelés és SQL
+  - Adatbáziskezelés alapfogalmak (Tábla, Mező, Rekord, Kulcs, Kapcsolatok)
+  - SQL szintaxis DQL
+  - DML szintaxis (SELECT utasítás)
+  - SQL gyakorlatok
+  - SQLite, WebSQL és használata Browser - JavaScript-ben
 - Internet szabványok és protokollok I.
   - IPv4, IPv6, TCP/IP, DNS, DHCP
   - http, https
@@ -222,6 +228,24 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - timer
     - SVG, programozott animációk készítése
     - Ajax
+- Back-end nyelvek használata
+  - Python mint webserver, FastAPI vs. FLASK
+  - NodeJS és alkalmazása
+    - NodeJS környezet és használata
+    - NodeJS modulok
+    - ExpressJS
+  - a PHP nyelv
+    - XAMPP, PHP webserever
+- MySQL és MariaDB, SQL ismétlés
+  - MySQL gyakorlatok
+  - a PHPMyadmin használata
+- FullStack alkalmazásfejlesztés
+  - a FullStack alkalmazésok felépítése, működdése
+  - egy FullStack példaprogram (MySQL-PHP-HTML)
+  - egy másik (SQLite-NodeJS-HTMLJ+JS)
+  - egy harmadik (MySQL-Python-NodeJS)
+  - egy negyedik (MongoDB-valami-valami)
+- Peer to Peer alkalmazásfejlesztés
 - Algoritmizálás I. ([Ron Rivest](https://en.wikipedia.org/wiki/Ron_Rivest))
   - szám fogalom, halmazelmélet, számelmélet, logika
     - [Ernst Zermelo](https://hu.wikipedia.org/wiki/Ernst_Zermelo)
@@ -261,6 +285,8 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Mintaillesztés (automata-elmélet), Szintaktikus elemzés
   - Damerau–Levenshtein távolság
     - [Vladimir Levenshtein](https://en.wikipedia.org/wiki/Vladimir_Levenshtein)
+    - npm: damerau-levenshtein
+    - cdnjs: levenshtein
   - Optimális pénzváltás, tükörszó, hátizsák, pakolás és ütemezés
   - Turing gép, Church-Turing tézis  II.
     - [Alan Turing](https://hu.wikipedia.org/wiki/Alan_Turing)
