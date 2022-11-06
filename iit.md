@@ -349,6 +349,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Gépi tanulás, Neural Networks (Keras, TensorFlow, PyTorch, ...)
 - Számelméleti algoritmusok:
 - [YOUPROOF-Kriptográfia](https://youproof.hu/kriptografia/)
+  - Fermat-Wiles tétel*
   - számelmélet
     - [Püthagorasz](https://hu.wikipedia.org/wiki/P%C3%BCthagorasz)
     - [Diophantosz](https://hu.wikipedia.org/wiki/Diophantosz)
@@ -359,7 +360,6 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - titkosítás és digitális aláírás folyamata
   - prímszám-tétel, Euler-Fermat-tétel, prímfaktorizáció
     [Prímtesztelés és prímfaktorizáció - Diplomamunka](https://web.cs.elte.hu/blobs/diplomamunkak/alkmat/2011/gerbicz_robert.pdf)
-  - Fermat-Wiles tétel*
   - RSA algoritmus
     - [Ron Rivest](https://en.wikipedia.org/wiki/Ron_Rivest)
     - [Adi Shamir](https://en.wikipedia.org/wiki/Adi_Shamir)
@@ -377,7 +377,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Piros-fekete fák
   - B-fák
   - Binomiális fa
-  - Kupac adatszerkezet (ismétlés)
+  - Bináris kupac, d-kupac
   - Binomiális kupac
   - Fibonacci kupac, Jarník-algoritmus (ismétlés)
 - Elosztott (Decentralizált) rendszerek
