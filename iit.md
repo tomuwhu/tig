@@ -347,8 +347,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Számítási bonyolultság fogalma, számítási problémák osztályozása (P, NP, ...)
   - Approximációs algoritmusok, mesterséges intelligencia (AI)
   - Gépi tanulás, Neural Networks (Keras, TensorFlow, PyTorch, ...)
-- Számelméleti algoritmusok:
-- [YOUPROOF-Kriptográfia](https://youproof.hu/kriptografia/)
+- Számelméleti algoritmusok: [Kriptográfia (YOUPROOF)](https://youproof.hu/kriptografia/)
   - Fermat-Wiles tétel*
   - számelmélet
     - [Püthagorasz](https://hu.wikipedia.org/wiki/P%C3%BCthagorasz)
