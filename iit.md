@@ -350,6 +350,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Approximációs algoritmusok, mesterséges intelligencia (AI)
   - Gépi tanulás, Neural Networks (Keras, TensorFlow, PyTorch, ...)
 - Számelméleti algoritmusok:
+- [YOUPROOF-Kriptográfia](https://youproof.hu/kriptografia/)
   - számelmélet
     - [Püthagorasz](https://hu.wikipedia.org/wiki/P%C3%BCthagorasz)
     - [Diophantosz](https://hu.wikipedia.org/wiki/Diophantosz)
@@ -358,7 +359,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - [Andrew Wiles](https://en.wikipedia.org/wiki/Andrew_Wiles)
   - nyilvános kulcsú tikosítás
     - titkosítás és digitális aláírás folyamata
-  - prímszám-tétel, kis Fermat-tétel, prímfaktorizáció
+  - prímszám-tétel, Euler-Fermat-tétel, prímfaktorizáció
     [Prímtesztelés és prímfaktorizáció - Diplomamunka](https://web.cs.elte.hu/blobs/diplomamunkak/alkmat/2011/gerbicz_robert.pdf)
   - Fermat-Wiles tétel*
   - RSA algoritmus
