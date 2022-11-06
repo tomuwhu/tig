@@ -91,7 +91,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - Konzol
     - Források
     - Hálózat, Alkalmazás, ...
-- Browser JavaScript ([Brendan Eich](https://hu.wikipedia.org/wiki/Brendan_Eich))
+- Browser JavaScript I. ([Brendan Eich](https://hu.wikipedia.org/wiki/Brendan_Eich))
   - JavaScript HTML DOM
   - Események
   - JS változók [Magyar jelölés](https://hu.wikipedia.org/wiki/Magyar_jel%C3%B6l%C3%A9s)
@@ -227,7 +227,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Adatbáziskezelés alapfogalmak (Tábla, Mező, Rekord, Kulcs, Index)
   - Descartes-szorzat
     - [René Descartes](https://hu.wikipedia.org/wiki/Ren%C3%A9_Descartes)
-  - kulcsok, kapcsolatok táblák között
+  - külső kulcsok, kapcsolatok táblák között
   - Adatbázisok tervezése, EK-diagram
   - Normalizálás, Normálformák
   - SQLite szintaxisdiagramok
@@ -235,15 +235,21 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - SQLite adattípusok (Integer, Real, Text, Blob), Primary Key
   - Select utasítás
     - mezők, táblák kiválasztása
-    - szűrés (where, limit, between, in, like, glob,  is null)
-    - táblák közötti kapcsolatok (inner join, left join)
-    - összegzések (group by, having, max, sum, avg, count)
+    - szűrés (where, limit, between, in, like, glob, is null)
+    - táblák közötti kapcsolatok (where a kulcspáron, inner join, left join)
     - rendezések (order by)
+    - csoportosítások, összegzések (group by, having, max, sum, avg, count)
     - összetett lekérdezések (union, except, intersect)
   - Create Table
   - Insert
   - Delete
-- SQLite, WebSQL és használata Browser - JavaScript-ben
+- Browser JavaScript II.
+  - Event loop
+  - Objektumok és osztályok
+  - Callback függvények, Promisse objektum
+  - SetInterval, SetTimeout
+  - Változók érvényességi tarománya, életciklusa
+  - SQLite, WebSQL és használata Browser - JavaScript-ben
 - Python programozási nyelv III.
   - SQLite modul
   - http.server
