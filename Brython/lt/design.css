@@ -4,3 +4,21 @@ body {
     text-align: center;
     background-color: rgb(150, 219, 219);
 }
+div.c div {
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 1px 1px 3px black;
+    border-radius: 8px;
+    background-color: blanchedalmond;
+    border: solid 7px rgb(208, 208, 136);
+}
+div.c div:hover {
+    background-color: aquamarine;
+    border: solid 7px rgb(115, 115, 71);
+}
+div.c {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
