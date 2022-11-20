@@ -22,6 +22,7 @@
                 <a href="${v[1].gh_www}" target="_blank">Saját honlapom ➪</a>
             </div>`
             document.getElementById("sid").innerHTML="SId: "+v[0]
+            /*
             if (v[1].we || v[1].pp) {
                 if (v[1].pp == null) v[1].pp = 0
                 document.getElementById("content").innerHTML += `
@@ -30,7 +31,7 @@
                     Honlap: <i>${v[1].we} pont</i> , egyéb feladatok, programok: <i>${v[1].pp} pont</i>.
                     <b>Összpontszám: <i class="op">${Number(v[1].we) + Number(v[1].pp)} pont</i></b>
                 </div>`
-            }
+            }*/
             if (v[1].megj) {
                 document.getElementById("content").innerHTML += `
                 <div class="mdc">
@@ -40,7 +41,7 @@
                 </div>
                 `
             }
-            if (v[1].we || v[1].pp) {
+            /*if (v[1].we || v[1].pp) {
                 if (v[1].pp == null) v[1].pp = 0
                 document.getElementById("content").innerHTML += `
                 <div class="la c">
@@ -53,10 +54,19 @@
                         <tr><td class="r">p.sz. ≥ 50</td><td class="l">jeles (5)</td></tr>
                     </table><hr>
                     <div class="kz">🧟</div>
-                    <!--div class="kz">🏁</div-->
+                    <div class="kz">🏁</div>
                     Az értékelés (érdemjegyek beírása ✍) <b>2022. október 27-én történik</b>, az akkor aktuális pontszámok alapján.
                 </div>`
-            }
+            }*/
+            document.getElementById("content").innerHTML += `
+                <div class="la c cc xc">
+                    A <a href="probadogalista.html">házi feladatok</a> a legtöbbjüknél elmaradást mutatnak! Kérem mihamarabb pótolják!
+                    <hr>
+                    Aki már elkészítette, de még nem tette fel a honlapjára, kérem tegye fel úgy, hogy könnyen megtaláljam!
+                    <br>
+                    Aki \"lopta\" a honlapját, kérem cserélje le olyanra, amit saját maga készített, mert novembertől a 
+                    <a href="https://hu.wikipedia.org/wiki/Pl%C3%A1gium" target=_blank">plágium</a> értékelése <b>elégtelen</b> érdemjeggyel történik!
+                </div>`
         } else {
             document.getElementById("lif").style.display="block"
             document.getElementById("lc").style.display="none"
@@ -358,11 +368,14 @@ table {
     max-width: 530px;
 }
 hr {
-    height: 10px;
-    background-color: rgb(166, 62, 62);
-    box-shadow: 1px 1px 4px inset black;
+    height: 5px;
+    background-color: rgba(0, 255, 247, 0.135);
+    box-shadow: 1px 1px 3px inset black;
     border-radius: 15px;
-    border: solid 3px rgb(179, 180, 141);
+    border: solid 1px rgb(179, 180, 141);
+}
+.xc {
+    line-height: 20px;
 }
 </style>
 
