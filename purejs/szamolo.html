@@ -1,28 +1,46 @@
 <body>
-    <h1>Téglalap számoló</h1>
-    <input type="number" onchange="a=Number(this.value);f()" placeholder="a oldal hossza">
-    <input type="number" onchange="b=Number(this.value);f()" placeholder="b oldal hossza">
-    <div>Téglalap területe: <span>-</span></div>
-    <div>Téglalap kerülete: <span>-</span></div>
-    <div>Átló hossza: <span>-</span></div>
+    <h1>Téglalap számoló, rajzoló</h1>
+    <input type="range" onmousemove="a=Number(this.value);f()" min="1" max="990" value="300">
+    <input type="range" onmousemove="b=Number(this.value);f()" min="1" max="990" value="200">
+    <div><div class="x">"a" oldal hossza: </div><span>-</span></div>
+    <div><div class="x">"b" oldal hossza: </div><span>-</span></div>
+    <div><div class="x">Téglalap területe: </div><span>-</span></div>
+    <div><div class="x">Téglalap kerülete: </div><span>-</span></div>
+    <div><div class="x">Átló hossza: </div><span>-</span></div>
+    <svg width="1000" height="700">
+        <rect id = "r" stroke="green" stroke-width="1" fill="yellow" />
+    </svg>
 </body>
 <script>
-    a = 0, b = 0
-    fx = [ (x, y) => x * y, (x, y) => 2 * (x + y), (x, y) => Math.sqrt(x ** 2 + y ** 2).toFixed(2)]
-    f = () =>  
+    a = 300, b = 200
+    fx = [ (x, y) => x, (x, y) => y, (x, y) => x * y, (x, y) => 2 * (x + y), (x, y) => Math.sqrt(x ** 2 + y ** 2).toFixed(2)]
+    f = () => {  
         Array.from(document.querySelectorAll("span")).forEach( (v, i) => 
             v.innerHTML = a > 0 && b >0 ? fx[i](a, b) : "Nem téglalap"
-        ) 
+        )
+        document.getElementById("r").setAttribute("width", a)
+        document.getElementById("r").setAttribute("height", b)
+        document.getElementById("r").setAttribute("x", 500-a/2)
+    }
+    f()
 </script>
 <style>
     body {
         background-color: antiquewhite;
         text-align: center;
     }
-    div {
-        padding: 10px;
+    div.x {
+        display: inline-block;
+        box-shadow: 1px 1px 3px black;
+        padding: 6px;
+        width: 150px;
+        text-align: left;
+        background-color: rgb(250, 250, 215);
+        margin: 5px;
+        border-radius: 6px;
     }
     span {
+        margin: 5px;
         display: inline-block;
         background-color: aqua;
         box-shadow: 1px 1px 3px black;
