@@ -12,15 +12,12 @@
     </svg>
 </body>
 <script>
-    a = 300, b = 200
+    g = document.getElementById("r"), a = 300, b = 200
     fx = [ (x, y) => x, (x, y) => y, (x, y) => x * y, (x, y) => 2 * (x + y), (x, y) => Math.sqrt(x ** 2 + y ** 2).toFixed(2)]
     f = () => {  
-        Array.from(document.querySelectorAll("span")).forEach( (v, i) => 
-            v.innerHTML = a > 0 && b >0 ? fx[i](a, b) : "Nem téglalap"
-        )
-        document.getElementById("r").setAttribute("width", a)
-        document.getElementById("r").setAttribute("height", b)
-        document.getElementById("r").setAttribute("x", 500-a/2)
+        Array.from(document.querySelectorAll("span")).map( (v, i) => 
+            v.innerHTML = a > 0 && b >0 ? fx[i](a, b) : "Nem téglalap")
+        g.setAttribute("width", a), g.setAttribute("height", b), g.setAttribute("x", 500-a/2)
     }
     f()
 </script>
