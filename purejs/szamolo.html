@@ -1,11 +1,19 @@
 <body>
     <h1>Téglalap számoló</h1>
-    <input type="number" onchange="a=Number(this.value)" placeholder="a oldal hossza">
-    <input type="number" onchange="b=Number(this.value)" placeholder="b oldal hossza">
-    <div>Téglalap területe: <span onclick="this.innerHTML = a * b">Számol</span></div>
-    <div>Téglalap kerülete: <span onclick="this.innerHTML = 2 * (a + b)">Számol</span></div>
-    <div>Átló hossza: <span onclick="this.innerHTML = Math.sqrt(a ** 2 + b ** 2).toFixed(2)">Számol</span></div>
+    <input type="number" onchange="a=Number(this.value);f()" placeholder="a oldal hossza">
+    <input type="number" onchange="b=Number(this.value);f()" placeholder="b oldal hossza">
+    <div>Téglalap területe: <span>-</span></div>
+    <div>Téglalap kerülete: <span>-</span></div>
+    <div>Átló hossza: <span>-</span></div>
 </body>
+<script>
+    a = 0, b = 0
+    fx = [ (x, y) => x * y, (x, y) => 2 * (x + y), (x, y) => Math.sqrt(x ** 2 + y ** 2).toFixed(2)]
+    f = () =>  
+        Array.from(document.querySelectorAll("span")).forEach( (v, i) => 
+            v.innerHTML = a > 0 && b >0 ? fx[i](a, b) : "Nem téglalap"
+        ) 
+</script>
 <style>
     body {
         background-color: antiquewhite;
@@ -15,14 +23,13 @@
         padding: 10px;
     }
     span {
-        cursor: pointer;
+        display: inline-block;
         background-color: aqua;
         box-shadow: 1px 1px 3px black;
-        width: 40px;
+        width: 100px;
         padding: 6px;
+        padding-right: 16px;
+        text-align: right;
         border-radius: 6px;
-    }
-    span:hover {
-        background-color: rgb(118, 230, 131);
     }
 </style>
