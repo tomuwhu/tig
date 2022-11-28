@@ -36,8 +36,8 @@ class PQ:
                 self.t[i - 1], self.t[l - 1] = self.t[l - 1], self.t[i - 1]
             self.__fixdown(l)
     def printit(self):
-        print(self.t)
+        print(*self.t)
 pq = PQ()
-for i in range(20): pq.insert(rr(1,256))
+for i in range(20): pq.insert(rr(100,999))
 pq.printit()
 print(*[pq.pull() for _ in range(20)])
