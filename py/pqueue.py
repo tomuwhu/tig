@@ -38,8 +38,6 @@ class PQ:
     def printit(self):
         print(self.t)
 pq = PQ()
-for i in range(20):
-    pq.insert(rr(1,256))
+for i in range(20): pq.insert(rr(1,256))
 pq.printit()
-for i in range(20):
-    print(pq.pull())
+print(*[pq.pull() for _ in range(20)])
