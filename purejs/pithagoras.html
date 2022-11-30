@@ -1,0 +1,20 @@
+<body>
+    <button onclick="f()">Adj egyet!</button>
+    <div id="o"></div>
+</body>
+<script>
+    a = 0, b = 0, c = 0
+    function q() {
+        a = Math.floor(100*Math.random() + 3)
+        b = Math.floor(100*Math.random() + 3)
+        c = Math.sqrt(a^2 + b^2)
+        console.log(a, b, c);
+    }
+    function f() {
+        q()
+        while (c != Math.floor(c)) q()
+        document.getElementById("o").innerHTML= `
+            ${a}<sup>2</sup> + ${b}<sup>2</sup> = ${c}<sup>2</sup>
+        `
+    }
+</script>
