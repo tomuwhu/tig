@@ -3,7 +3,7 @@
 </body>
 <script>
     f = (a, b) => a==0?'':`${f(a - 1, b)}<td class="x${a%2}">${(a*b).toString(16)}</td>`  
-    g = a => a==0?'':`${g(a - 1)}<tr class="x${a%2}">${f(16, a)}</tr>`
+    g = a => a==0?'':`${g(a - 1)}<tr class="x${a%2}">${f(a, a)}</tr>`
     document.body.innerHTML += `<table>${g(16)}</table>`
 </script>
 <style>
