@@ -2,7 +2,9 @@
     <h1>Rekurzív táblázat</h1>
 </body>
 <script>
-    f = (a, b) => a==0?'':`${f(a - 1, b)}<td class="x${a%2}">${(b+16*a-17).toString(16)}</td>`  
+    f = (a, b) => a == 0 ? `` : `
+        ${f(a - 1, b)}
+        <td class="x${a%2}">${(b+16*a-17).toString(16)}</td>`  
     g = a => a==0?'':`${g(a - 1)}<tr class="x${a%2}">${f(a, a)}</tr>`
     document.body.innerHTML += `<table>${g(16)}</table>`
 </script>
