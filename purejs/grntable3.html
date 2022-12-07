@@ -2,7 +2,7 @@
     <h1>Rekurzív táblázat</h1>
 </body>
 <script>
-    f = (a, b) => a==0?'':`${f(a - 1, b)}<td class="x${a%2}">${(a*b).toString(16)}</td>`  
+    f = (a, b) => a==0?'':`${f(a - 1, b)}<td class="x${a%2}">${(b+16*a-17).toString(16)}</td>`  
     g = a => a==0?'':`${g(a - 1)}<tr class="x${a%2}">${f(a, a)}</tr>`
     document.body.innerHTML += `<table>${g(16)}</table>`
 </script>
@@ -14,17 +14,17 @@
         text-shadow: 1px 1px 3px gray;
     }
     td {
-        width: 40px;
-        height: 40px;
-        background-color: rgb(161, 165, 42);
-        box-shadow: 1px 1px 3px black;
+        font-size: 10px;
+        width: 30px;
+        height: 25px;
+        background-color: rgb(110, 246, 117);
+        box-shadow: 1px 1px 3px inset black;
         border-radius: 10px;
-        border: double 4px rgb(6, 37, 49); 
         cursor: pointer;
         text-align: center;
     }
     .x0 {
-        background-color: rgb(217, 254, 242);
+        background-color: rgb(250, 191, 162);
     }
     .x0 td {
         background-color: aqua;
@@ -35,5 +35,8 @@
     table {
         border-spacing: 6px;
         margin: auto;
+        background-color: antiquewhite;
+        box-shadow: 1px 1px 3px inset black;
+        border-radius: 10px;
     }
 </style>
