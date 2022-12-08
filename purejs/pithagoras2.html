@@ -1,0 +1,52 @@
+<body>
+    <h1>Pihagoraszi számhármas-generátor</h1>
+    <div id="x0">
+        <input type="range" id="xt" onmousemove="f(this.value)" value="0">
+        <div>a = <span id="a"></span></div>
+        <div>b = <span id="b"></span></div>
+        <div>c = <span id="c"></span></div>
+    </div>
+</body>
+<script>
+    function lnko(a, b) {
+        if (a < b) [a, b] = [b, a]
+        return a > b ? lnko(a - b, b) : a
+    }
+    l = new Set()
+    lab = []
+    for (a = 3; a < 10000; a++) for (b = a; b < 10000; b++) {
+        c = Math.sqrt(a ** 2 + b ** 2)
+        if (c == Math.floor(c)) {
+            o = lnko(a, b)
+            m = a / b
+            if (!l.has(m)) {
+                l.add(m)
+                lab.push([a / o, b / o])
+            }
+        }
+    }
+    lab.sort( (a, b) => (a[0] / a[1]) - (b[0] / b[1]) )
+    document.getElementById("xt").setAttribute("max", lab.length-1)
+    function f(i) {
+        ax = document.getElementById("a")
+        bx = document.getElementById("b")
+        cx = document.getElementById("c")
+        a = lab[i][0]
+        b = lab[i][1]
+        ax.innerHTML = a
+        bx.innerHTML = b
+        cx.innerHTML = Math.sqrt( a ** 2 + b ** 2 )
+    }
+    f(0)
+</script>
+<style>
+    body {
+        text-align: center;
+    }
+    #xt {
+        width: 800px;
+    }
+    body {
+        background-color: azure;
+    }
+</style>
