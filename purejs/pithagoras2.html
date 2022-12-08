@@ -1,5 +1,5 @@
 <body>
-    <h1>Pihagoraszi számhármas-generátor</h1>
+    <h1>Pithagoraszi számhármas-generátor</h1>
     <div id="x0">
         <button onclick="
             document.getElementById('xt').value--
@@ -12,9 +12,9 @@
                 document.getElementById('xt').value++
                 f(document.getElementById('xt').value)
             ">+</button>
-        <div>a = <span id="a"></span></div>
-        <div>b = <span id="b"></span></div>
-        <div>c = <span id="c"></span></div>
+        <div class="p">a = <span id="a"></span></div>
+        <div class="p">b = <span id="b"></span></div>
+        <div class="p">c = <span id="c"></span></div>
     </div>
 </body>
 <script>
@@ -58,5 +58,19 @@
     }
     body {
         background-color: azure;
+    }
+    .p, h1 {
+        font-size: 30px;
+        text-shadow: 1px 1px 4px gray;
+        color: rgb(24, 55, 82);
+        background-color: aquamarine;
+        border-radius: 5px;
+        box-shadow: 1px 1px 4px inset black;
+        margin: 10px;
+    }
+    span {
+        width: 77px;
+        display: inline-block;
+        text-align: right;
     }
 </style>
