@@ -22,6 +22,7 @@
         <div class="p">a = <span id="a"></span></div>
         <div class="p">b = <span id="b"></span></div>
         <div class="p">c = <span id="c"></span></div>
+        <div class="p">a / b = <span id="ab"></span></div>
     </div>
 </body>
 <script>
@@ -46,11 +47,13 @@
         ax = document.getElementById("a")
         bx = document.getElementById("b")
         cx = document.getElementById("c")
+        abx = document.getElementById("ab")
         a = lab[i][0]
         b = lab[i][1]
         ax.innerHTML = a
         bx.innerHTML = b
         cx.innerHTML = Math.sqrt( a ** 2 + b ** 2 )
+        abx.innerHTML = a / b
     }
     f(1406)
 </script>
