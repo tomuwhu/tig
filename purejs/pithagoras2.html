@@ -12,6 +12,13 @@
                 document.getElementById('xt').value++
                 f(document.getElementById('xt').value)
             ">+</button>
+            <hr>
+            <div class="x6">
+                <button id="x345" onclick="
+                    document.getElementById('xt').value=1406
+                    f(document.getElementById('xt').value)
+                ">3 - 4 - 5</button>
+            </div>
         <div class="p">a = <span id="a"></span></div>
         <div class="p">b = <span id="b"></span></div>
         <div class="p">c = <span id="c"></span></div>
@@ -34,6 +41,8 @@
     lab.sort( (a, b) => (a[0] / a[1]) - (b[0] / b[1]) )
     document.getElementById("xt").setAttribute("max", lab.length-1)
     function f(i) {
+        if (i==1406) document.getElementById("x345").style.display="None"
+        else document.getElementById("x345").style.display="inline-block"
         ax = document.getElementById("a")
         bx = document.getElementById("b")
         cx = document.getElementById("c")
@@ -72,5 +81,8 @@
         width: 77px;
         display: inline-block;
         text-align: right;
+    }
+    .x6 {
+        height: 40px;
     }
 </style>
