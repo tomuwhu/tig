@@ -27,12 +27,8 @@
     for (a = 3; a < 10000; a++) for (b = a; b < 10000; b++) {
         c = Math.sqrt(a ** 2 + b ** 2)
         if (c == Math.floor(c)) {
-            o = lnko(a, b)
-            m = a / b
-            if (!l.has(m)) {
-                l.add(m)
-                lab.push([a / o, b / o])
-            }
+            o = lnko(a, b), m = a / b
+            if (!l.has(m)) l.add(m), lab.push([a / o, b / o])
         }
     }
     lab.sort( (a, b) => (a[0] / a[1]) - (b[0] / b[1]) )
@@ -56,6 +52,9 @@
     #xt {
         width: 800px;
         cursor: pointer;
+    }
+    button {
+        cursor:pointer;
     }
     body {
         background-color: azure;
