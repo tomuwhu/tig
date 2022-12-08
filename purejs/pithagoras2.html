@@ -1,7 +1,17 @@
 <body>
     <h1>Pihagoraszi számhármas-generátor</h1>
     <div id="x0">
-        <input type="range" id="xt" onmousemove="f(this.value)" value="0">
+        <button onclick="
+            document.getElementById('xt').value--
+            f(document.getElementById('xt').value)
+        ">-</button>
+        <input type="range" id="xt" value="1406" max="10000"
+            onmousemove="f(this.value)" 
+            onchange="f(this.value)" value="0">
+            <button onclick="
+                document.getElementById('xt').value++
+                f(document.getElementById('xt').value)
+            ">+</button>
         <div>a = <span id="a"></span></div>
         <div>b = <span id="b"></span></div>
         <div>c = <span id="c"></span></div>
@@ -37,7 +47,7 @@
         bx.innerHTML = b
         cx.innerHTML = Math.sqrt( a ** 2 + b ** 2 )
     }
-    f(0)
+    f(1406)
 </script>
 <style>
     body {
@@ -45,6 +55,7 @@
     }
     #xt {
         width: 800px;
+        cursor: pointer;
     }
     body {
         background-color: azure;
