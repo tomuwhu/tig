@@ -30,8 +30,7 @@
         if (a < b) [a, b] = [b, a]
         return a > b ? lnko(a - b, b) : a
     }
-    l = new Set()
-    lab = []
+    l = new Set(), lab = []
     for (a = 3; a < 10000; a++) for (b = a; b < 10000; b++) {
         c = Math.sqrt(a ** 2 + b ** 2)
         if (c == Math.floor(c)) {
@@ -42,18 +41,11 @@
     lab.sort( (a, b) => (a[0] / a[1]) - (b[0] / b[1]) )
     document.getElementById("xt").setAttribute("max", lab.length-1)
     function f(i) {
-        if (i==1406) document.getElementById("x345").style.display="None"
-        else document.getElementById("x345").style.display="inline-block"
-        ax = document.getElementById("a")
-        bx = document.getElementById("b")
-        cx = document.getElementById("c")
-        abx = document.getElementById("ab")
-        a = lab[i][0]
-        b = lab[i][1]
-        ax.innerHTML = a
-        bx.innerHTML = b
-        cx.innerHTML = Math.sqrt( a ** 2 + b ** 2 )
-        abx.innerHTML = a / b
+        sobj = document.getElementById("x345").style
+        if (i==1406) sobj.display="None"; else sobj.display="inline-block";
+        [a, b] = lab[i], [ax, bx, cx, abx] = Array([
+            ["a", a], ["b", b], ["c", Math.sqrt( a ** 2 + b ** 2 )], ["ab", a / b]
+        ].forEach( v => document.getElementById(v[0]).innerHTML = v[1]))
     }
     f(1406)
 </script>
