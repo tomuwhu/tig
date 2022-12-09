@@ -1,7 +1,9 @@
 <body>
-    <h1>Erathosztenészi szita</h1>
-    <input  type="range" min=10 max=1000 step=10 onchange="f(this.value)" 
-            onmousemove="f(this.value)" value="100">
+    <h1>Eratoszthenészi szita</h1>
+    <button onclick="f(100)">100</button> -
+    <button onclick="f(1000)">1000</button> -
+    <button onclick="f(10000)">10000</button>
+    <hr>
     <div class="c" id="x"></div>
 </body>
 <script>
@@ -20,7 +22,6 @@
        document.getElementById("x").innerHTML =  
             Array.from(pszt).map(v => `<div>${v}</div>`).join("")
     }
-    f(100)
 </script>
 <style>
     h1 {
