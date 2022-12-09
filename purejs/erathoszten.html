@@ -1,0 +1,51 @@
+<body>
+    <h1>Erathosztenészi szita</h1>
+    <input  type="range" min=10 max=1000 step=10 onchange="f(this.value)" 
+            onmousemove="f(this.value)" value="100">
+    <div class="c" id="x"></div>
+</body>
+<script>
+    function f(n) {
+        g = Math.sqrt()
+        pszt = new Set()
+        pszt.add(2)
+        for (i = 3; i < n; i++) {
+            psz = true
+            pszt.forEach( (v, ind, arr) => { 
+                if (i % v == 0) psz = false
+                if (v > g) arr.length = ind + 1
+            })
+            if (psz) pszt.add(i)
+        }
+       document.getElementById("x").innerHTML =  
+            Array.from(pszt).map(v => `<div>${v}</div>`).join("")
+    }
+    f(100)
+</script>
+<style>
+    h1 {
+        text-shadow: 1px 1px 4px gray;
+        color: rgb(93, 16, 16);
+    }
+    input {
+        width: 500px;
+    }
+    body {
+        background-color: antiquewhite;
+        text-align: center;
+    }
+    .c {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .c div {
+        text-align: center;
+        width: 100px;
+        border-radius: 6px;
+        box-shadow: 1px 1px 6px inset black;
+        padding: 5px;
+        margin: 4px;
+        background-color: aqua;
+    }
+</style>
