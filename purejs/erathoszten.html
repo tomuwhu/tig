@@ -8,18 +8,13 @@
 </body>
 <script>
     function f(n) {
-        g = Math.sqrt()
         pszt = new Set()
-        pszt.add(2)
-        for (i = 3; i < n; i++) {
-            psz = true
-            pszt.forEach( (v, ind, arr) => { 
-                if (i % v == 0) psz = false
-                if (v > g) arr.length = ind + 1
-            })
-            if (psz) pszt.add(i)
+        for (i = 2; i < n; i++) {
+            p = true
+            pszt.forEach( v => { if (i % v == 0) p = false } )
+            if (p) pszt.add(i)
         }
-       document.getElementById("x").innerHTML =  
+        document.getElementById("x").innerHTML =  
             Array.from(pszt).map(v => `<div>${v}</div>`).join("")
     }
 </script>
