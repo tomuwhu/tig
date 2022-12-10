@@ -8,7 +8,7 @@
     maxrunningit = 60000
     function f(n) {
         s = `<div class="s">${n}</div>`, on = Math.sqrt(n)
-        pszt = new Set(), fakt = [], i = 1
+        pszt = new Set(), fakt = [], i = 1, sp = ""
         if (n > 1) do {
             do {
                 i ++
@@ -23,8 +23,9 @@
         if (n != 1) 
             if ( n > on ) fakt.push(`<i>${n}</i>`)
             else fakt.push(n)
-        document.getElementById("f").innerHTML = s + `<div class="mj">=</div>` +
-            fakt.map(v => `<div>${v}</div>`).join(`<div class="mj">*</div>`)
+        if (fakt.length > 1) sp = s + `<div class="mj">=</div>`
+        document.getElementById("f").innerHTML = sp + fakt.map(v => 
+            `<div>${v}</div>`).join(`<div class="mj">*</div>`)
     }
 </script>
 <style>
