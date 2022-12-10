@@ -9,18 +9,22 @@
         pszt = new Set()
         fakt = []
         i = 1
+        if (n > 1)
         do {
             do {
                 i ++
                 p = true
                 pszt.forEach( v => { if (i % v == 0) p = false } )
                 if (p) pszt.add(i)
+                if (i > 100000) break;
             } while (n % i != 0)
             while (n % i == 0) {
                 n = n / i
                 fakt.push(i)
             }
+            if (i > 100000) break;
         } while (n!=1)
+        if (n!=1) fakt.push("Err")
         document.getElementById("x").innerHTML =  
             Array.from(pszt).map(v => `<div>${v}</div>`).join("")
         document.getElementById("f").innerHTML =  
