@@ -2,33 +2,24 @@
     <h1>Prímfaktorizáció</h1>
     <input type="number" min=2 onchange="f(this.value)">
     <hr>
-    Prímszámok
-    <div class="c" id="x"></div>
-    <hr>
-    Prímfelbontás
-    <div class="c c2" id="f"></div>
+    <div class="c" id="f"></div>
 </body>
 <script>
     function f(n) {
         s = `<div class="s">${n}</div>`
-        pszt = new Set()
-        fakt = []
-        i = 1
-        if (n > 1)
-        do {
+        pszt = new Set(), fakt = [], i = 1
+        if (n > 1) do {
             do {
                 i ++
                 p = true
                 pszt.forEach( v => { if (i % v == 0) p = false } )
                 if (p) pszt.add(i)
-                if (i > 10000) break
+                if (i > 60000) break
             } while (n % i != 0)
             while (n % i == 0) n = n / i, fakt.push(i)
-            if (i > 10000) break
+            if (i > 60000) break
         } while (n!=1)
-        if (n!=1) fakt.push("Err")
-        document.getElementById("x").innerHTML =  
-            Array.from(pszt).map(v => `<div>${v}</div>`).join("")
+        if (n!=1) fakt.push(`<i>${n}</i>`)
         document.getElementById("f").innerHTML = s + `<div class="mj">=</div>` +
             fakt.map(v => `<div>${v}</div>`).join(`<div class="mj">*</div>`)
     }
@@ -41,6 +32,8 @@
     body {
         background-color: antiquewhite;
         text-align: center;
+        text-shadow: 1px 1px 3px gray;
+        color: rgb(10, 52, 93);
     }
     .c {
         display: flex;
@@ -57,13 +50,7 @@
         border-radius: 6px;
         box-shadow: 1px 1px 6px inset black;
         margin: 4px;
-        background-color: aqua;
-    }
-    .c2 div {
-        background-color: rgb(236, 190, 190);
-        width: auto;
-        padding-left: 10px;
-        padding-right: 10px;
+        background-color: rgb(190, 240, 240);
     }
     div.mj {
         width: 10px;
@@ -77,5 +64,8 @@
         background-color: rgb(255, 157, 127);
         padding-left: 20px;
         padding-right: 20px;
+    }
+    i {
+        color: rgb(77, 0, 0);
     }
 </style>
