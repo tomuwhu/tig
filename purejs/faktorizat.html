@@ -6,7 +6,7 @@
 </body>
 <script>
     function f(n) {
-        s = `<div class="s">${n}</div>`
+        s = `<div class="s">${n}</div>`, on = Math.sqrt(n)
         pszt = new Set(), fakt = [], i = 1
         if (n > 1) do {
             do {
@@ -14,12 +14,14 @@
                 p = true
                 pszt.forEach( v => { if (i % v == 0) p = false } )
                 if (p) pszt.add(i)
-                if (i > 60000) break
+                if (i > 30000) break
             } while (n % i != 0)
             while (n % i == 0) n = n / i, fakt.push(i)
-            if (i > 60000) break
+            if (i > 30000) break
         } while (n!=1)
-        if (n!=1) fakt.push(`<i>${n}</i>`)
+        if (n != 1) 
+            if ( n > on ) fakt.push(`<i>${n}</i>`)
+            else fakt.push(n)
         document.getElementById("f").innerHTML = s + `<div class="mj">=</div>` +
             fakt.map(v => `<div>${v}</div>`).join(`<div class="mj">*</div>`)
     }
