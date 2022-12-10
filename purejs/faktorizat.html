@@ -1,0 +1,56 @@
+<body>
+    <h1>Prímfaktorizáció</h1>
+    <input type="number" onchange="f(this.value)">
+    <hr>
+    <div class="c" id="x"></div> <div class="c c2" id="f"></div>
+</body>
+<script>
+    function f(n) {
+        pszt = new Set()
+        fakt = []
+        i = 1
+        do {
+            do {
+                i ++
+                p = true
+                pszt.forEach( v => { if (i % v == 0) p = false } )
+                if (p) pszt.add(i)
+            } while (n % i != 0)
+            while (n % i == 0) {
+                n = n / i
+                fakt.push(i)
+            }
+        } while (n!=1)
+        document.getElementById("x").innerHTML =  
+            Array.from(pszt).map(v => `<div>${v}</div>`).join("")
+        document.getElementById("f").innerHTML =  
+            fakt.map(v => `<div>${v}</div>`).join("")
+    }
+</script>
+<style>
+    h1 {
+        text-shadow: 1px 1px 4px gray;
+        color: rgb(93, 16, 16);
+    }
+    body {
+        background-color: antiquewhite;
+        text-align: center;
+    }
+    .c {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .c div {
+        text-align: center;
+        width: 50px;
+        border-radius: 6px;
+        box-shadow: 1px 1px 6px inset black;
+        padding: 5px;
+        margin: 4px;
+        background-color: aqua;
+    }
+    .c2 div {
+        background-color: rgb(236, 190, 190);
+    }
+</style>
