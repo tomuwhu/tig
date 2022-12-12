@@ -1,0 +1,108 @@
+<meta charset="UTF-8">
+<title>«es6.eu» HTML-CSS-JS</title>
+<script src="hljs/markdown.min.js"></script>
+<script>
+    function load2() {
+    file="cpp/"+document.getElementById("sel2").value
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            html_content = xhttp.responseText
+            document.getElementById("code").innerHTML = html_content
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+            hljs.highlightAll()
+        }
+    };
+    xhttp.open("GET", "./"+file, true);
+    xhttp.send();
+}
+function load() {
+    file="cpp/"+document.getElementById("sel").value
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            html_content = xhttp.responseText
+            document.getElementById("code").innerHTML = html_content
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+            hljs.highlightAll()
+        }
+    };
+    xhttp.open("GET", "./"+file, true);
+    xhttp.send();
+}
+</script>
+
+<link rel="stylesheet"
+      href="hljs/a11y-dark.css">
+<link rel="stylesheet" href="main2.css">
+<style>
+    h1.h {
+        font-size: 14px;
+    }
+    div#content {
+        box-shadow: 1px 1px 7px inset black;
+        margin: 20px;
+        border: solid 3px black;
+        border-radius: 12px;
+    }
+    code#code {
+        user-select: all;
+        border-radius: 12px;
+        box-shadow: 0px 0px 8px gray;
+        font-family: 'Courier Prime', monospace;
+        font-size: 14px;
+        background-color: rgb(40, 77, 57);
+        text-shadow: 1px 1px 3px black;
+        border: solid 13px black;
+        margin: 20px;
+    }
+    select.s {
+        width: 250px;
+    }
+    a {
+        color: white;
+    }
+    a:hover {
+        color: rgb(234, 255, 100);
+    }
+    a.run:hover {
+        color: rgb(66, 36, 36);
+        background-color: rgb(197, 116, 116);
+    }
+    a.run {
+        background-color: aquamarine;
+        box-shadow: 1px 1px 4px black;
+        border-radius: 6px;
+        border: soild 2px red;
+        color: rgb(62, 64, 47);
+        padding: 6px;
+    }
+</style>
+<script src="hljs/highlight.min.js"></script>
+<ul class="navigation">
+    <ul class="navigation">
+        <li><a href="./">Kezdőlap</a></li>
+        <li><a href="tanttm.html">Tananyag</a></li>
+        <li><a href="pyexamples.html">Python</a></li>
+        <li><a href="bryexamples.html">Brython</a></li>
+        <li><a href="lof.html">Intranet</a></li>
+    </ul>
+</ul>
+<body class="b" onload="load()"></body>
+<div class="m20">
+    <h1 class="h">C++ P&eacute;ldák: <b>🧾</b>
+        <select class="s" onchange="load()" id="sel">
+            <option selected value="verem.cpp">Verem megvalósítása láncolt listával</option>
+        </select>
+    </h1>
+    <pre><code class="language-cpp" id="code"></code></pre>
+</div>
+</body>
