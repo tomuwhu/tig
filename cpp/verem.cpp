@@ -46,8 +46,7 @@ class verem {
             }
         }
 };
-int main()
-{
+int main() {
     verem<int> v;
     v.verembe(7);
     v.verembe(5);
