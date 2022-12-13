@@ -17,10 +17,16 @@ h1 {
 .c div {
     display: inline-block;
     padding: 6px;
+    color: rgb(11, 35, 35);
+}
+.c div.text {
+    background-color: aquamarine;
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px inset black;
 }
 div#dsz, div#ksz {
-    width: 100px;
-    text-align: left;
+    width: 70px;
+    text-align: right;
 }
 input {
     width: 200px;
@@ -36,4 +42,20 @@ img {
 #g {
     background-color: aquamarine;
     padding: 10px;
+}
+div.btn {
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: rgb(229, 154, 147);
+    box-shadow: 1px 1px 3px rgb(36, 28, 28);
+    user-select: none;
+}
+div.btn:hover {
+    background-color: rgb(236, 120, 109);
+    box-shadow: 1px 1px 5px rgb(36, 28, 28);
+}
+div.btn:active {
+    background-color: rgb(249, 93, 78);
+    box-shadow: 1px 1px 1px rgb(36, 28, 28);
+    color: yellow;
 }
