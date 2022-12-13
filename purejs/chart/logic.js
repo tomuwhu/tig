@@ -1,25 +1,50 @@
 const ctx = document.getElementById('myChart')
+ksz = 1
+dsz = 10
+data = [0, 0, 0, 0, 0, 0]
 const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Opel', 'Ford', 'Subaru', 'Suzuki', 'Mazda', 'Skoda'],
+        labels: [1, 2, 3, 4, 5, 6],
         datasets: [{
-            label: 'Szavazatok száma',
-            data: [12, 19, 7, 5, 12, 14],
+            label: `Dobások összegének darabszáma ${ksz} kockával ${dsz} dobás után`,
+            data: [0, 0, 0, 0, 0, 0],
             backgroundColor: 'rgba(54, 162, 235, 0.2)',
             borderColor: 'rgba(54, 162, 235, 1)',
             borderWidth: 1
         }]
     }
 })
-function f() {
-    myChart.data.datasets.push({
-            label: 'Eladási számok',
-            data: [17, 16, 3, 15, 8, 17],
-            backgroundColor: 'rgba(154, 62, 135, 0.2)',
-            borderColor: 'rgba(154, 62, 135, 1)',
-            borderWidth: 1
-    })
-    myChart.update()
-    document.getElementById("g").style.display = "none"
+function f(v) {
+    ksz = Number(v)
+    rd()
 }
+function g(v) {
+    dsz = 2 ** Number(v)
+    rd()
+}
+function rd() {
+    data = Array(ksz*5+1).fill(0)
+    for (i=0; i < dsz; i++) {
+        dobo = 0
+        for (j=0; j < ksz; j++) {
+            dobas = Math.floor(Math.random()*6 + 1)
+            dobo += dobas 
+        }
+        data[dobo-ksz]++
+    }
+    myChart.data = {
+        labels: data.map((v, i) => i + ksz),
+        datasets: [{
+            label: `Dobások összegének darabszáma ${ksz} kockával ${dsz} dobás után`,
+            data: data,
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+        }]
+    }
+    myChart.update()
+}
+setTimeout(() => {
+    rd()
+}, 1000);
