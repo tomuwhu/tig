@@ -21,7 +21,7 @@ function f(v) {
     rd()
 }
 function g(v) {
-    dsz = 2 ** Number(v)
+    dsz = 10 ** Number(v)
     document.getElementById("dsz").innerHTML = dsz
     rd()
 }
