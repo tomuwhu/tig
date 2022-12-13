@@ -17,10 +17,12 @@ const myChart = new Chart(ctx, {
 })
 function f(v) {
     ksz = Number(v)
+    document.getElementById("ksz").innerHTML = ksz
     rd()
 }
 function g(v) {
     dsz = 2 ** Number(v)
+    document.getElementById("dsz").innerHTML = dsz
     rd()
 }
 function rd() {
