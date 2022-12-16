@@ -3,11 +3,9 @@
 <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
 <script type="text/python">
     from browser import document as D, html as H
-    from random import shuffle
+    from random import sample as s
     def f(e):
-        li = list(range(1, 90))
-        shuffle(li)
-        TX <= H.TR(map(H.TD, sorted(li[:5])))
+        TX <= H.TR(map(H.TD, sorted(s(list(range(1, 91)),5))))
     TX = H.TABLE(H.TR(H.TD("Sorsol", colspan = 5, Class = "g").bind("click", f)))
     D <= TX
 </script>
