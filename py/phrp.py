@@ -3,10 +3,7 @@ def lnko(a, b):
     if b < a: a, b = b, a
     while a > 0: a, b = b % a, a
     return b
-"""
-print(
-    lnko(681074446243, 681152363466)
-)"""
+print( lnko(681074446243, 681152363466) )
 from math import sqrt
 l = set()
 n = 260
