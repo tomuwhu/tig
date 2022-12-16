@@ -1,4 +1,4 @@
-from random import randrange as r, shuffle as s
+from random import randrange as r, shuffle as sh, sample as sam
 
 # véletlen egész szám 1..20 között:
 print(r(1,21))
@@ -16,3 +16,14 @@ print(sorted([r(50) for i in range(10)]))
 l = set()
 while len(l) < 10: l.add(r(1,50))
 print(sorted(list(l)))
+
+# számok összekeverése
+l = list(range(1, 11))
+sh(l)
+print(l)
+
+#vagy
+print(sam(list(range(1, 11)), 10))
+
+#lottószámgenerátor (5-ös lottó)
+print(sorted(sam(list(range(1, 91)), 5)))
