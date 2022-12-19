@@ -1,6 +1,6 @@
 from functools import cmp_to_key as cp, cache as mem
 
-a = [5,3,5,6,7,8,95,32,43,54,23,12,32,43]
+a = [5, 3, 5, 6, 7, 8, 95, 32, 43, 54, 23, 12, 32, 43]
 # rendezés egyedi indexxel (két szomszédos elem összemérése)
 a.sort( key = cp( lambda a, b: a % 2 - b % 2 ) )
 print( *a )
