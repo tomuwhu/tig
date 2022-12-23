@@ -1,6 +1,2 @@
-def f( a, b ):
-    if a % b:
-        return f( b, a % b )
-    else:
-        return b
+f = lambda a, b: f( b, a % b ) if a % b else b
 print(f(25, 40))
