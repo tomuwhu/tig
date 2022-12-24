@@ -1,7 +1,4 @@
-# [Programozás feladatok](https://www.webotlet.hu/?p=2952)
-
-Mikó Csaba
-[Forrás](https://www.webotlet.hu/?page_id=2768)
+# Programozás feladatok
 
 1. Sorsolj ki egy számot az [1;10000000] intervallumból! Hozz létre egy tömböt, melyben az elemek a kisorsolt szám számjegyei! String műveleteket nem használhatsz!
 
