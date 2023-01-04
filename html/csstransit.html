@@ -1,9 +1,16 @@
 <div class="b">
     <div class="o" onclick="
-        this.style.borderRadius = '100%'
-        this.style.backgroundColor = 'red'
-        this.style.left = '80%'
-    ">
+        if (v == 1) {
+            this.style.borderRadius = '5%'
+            this.style.left = '10%'
+            v = 0
+        } else {
+            this.style.borderRadius = '100%'
+            this.style.left = '80%'
+            v = 1
+        }
+    " onmouseover="this.style.backgroundColor = 'green'"
+      onmouseleave="this.style.backgroundColor = 'violet'">
     </div>
 </div>
 <style>
@@ -21,7 +28,7 @@
         position: absolute;
         left: 10%;
     }
-    .o:hover{
-        background-color: yellow;
-    }
 </style>
+<script>
+    v = 0
+</script>
