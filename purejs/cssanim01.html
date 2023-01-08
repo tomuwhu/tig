@@ -4,11 +4,12 @@
 <style>
     body {
         height: 100px;
+        background-color: bisque;
     }
     #o1 {
         display: inline-block;
-        width: 100px;
-        height: 100px;
+        width: 60px;
+        height: 60px;
         cursor: pointer;
         background-color: aquamarine;
         box-shadow: 1px 1px 3px black;
@@ -26,17 +27,21 @@
             o1.borderRadius = '10%'
             o1.left = '90%'
             o1.width = "130px"
+            o1.height = "130px"
             o1.top = '2%'
             o1.backgroundColor = "red"
         },() => {
             o1.borderRadius = '50%'
             o1.left = '5%'
             o1.top = '2%'
+            o1.width = "80px"
+            o1.height = "80px"
             o1.backgroundColor = "green"
         },() => {
             o1.left = '50%'
             o1.top = '80%'
             o1.width = "20px"
+            o1.height = "20px"
             o1.backgroundColor = "yellow"
         }][v])()
         v = v < 2 ? v + 1 : 0
