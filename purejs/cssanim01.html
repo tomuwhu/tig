@@ -1,0 +1,44 @@
+<body>
+    <div id="o1"></div>
+</body>
+<style>
+    body {
+        height: 100px;
+    }
+    #o1 {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+        background-color: aquamarine;
+        box-shadow: 1px 1px 3px black;
+        transition: 2s;
+        position: absolute;
+        left: 50%;
+        top: 2%;
+        border-radius: 10%;
+    }
+</style>
+<script>
+    v = 0
+    o1 = document.getElementById("o1").style
+    setInterval(() => {
+        ([() => {
+            o1.borderRadius = '10%'
+            o1.left = '90%'
+            o1.top = '2%'
+            o1.backgroundColor = "red"
+        },() => {
+            o1.borderRadius = '50%'
+            o1.left = '10%'
+            o1.top = '2%'
+            o1.backgroundColor = "green"
+        },() => {
+            o1.borderRadius = '50%'
+            o1.left = '50%'
+            o1.top = '80%'
+            o1.backgroundColor = "yellow"
+        }][v])()
+        v = v < 2 ? v + 1 : 0
+    }, 3000)
+</script>
