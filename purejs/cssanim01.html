@@ -16,7 +16,6 @@
         position: absolute;
         left: 50%;
         top: 2%;
-        border-radius: 10%;
     }
 </style>
 <script>
@@ -26,17 +25,18 @@
         ([() => {
             o1.borderRadius = '10%'
             o1.left = '90%'
+            o1.width = "130px"
             o1.top = '2%'
             o1.backgroundColor = "red"
         },() => {
             o1.borderRadius = '50%'
-            o1.left = '10%'
+            o1.left = '5%'
             o1.top = '2%'
             o1.backgroundColor = "green"
         },() => {
-            o1.borderRadius = '50%'
             o1.left = '50%'
             o1.top = '80%'
+            o1.width = "20px"
             o1.backgroundColor = "yellow"
         }][v])()
         v = v < 2 ? v + 1 : 0
