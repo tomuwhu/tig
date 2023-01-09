@@ -1,32 +1,35 @@
 <body>
     <h1>SVG Animáció</h1>
-    <svg id="my-svg" width="1200" height="400" viewBox="0 0 1200 400">
+    <svg id="my-svg" width="600" height="600" viewBox="0 0 600 600">
         <rect x="5" y="5" width="20" height="20" id="r" stroke-width="3"
-              fill="rgb(243, 236, 160)" stroke="#568998" rx="7" />
+              fill="rgb(243, 236, 160)" stroke="#568998" rx="10" />
     </svg>
 </body>
 <script>
     t = 0
     function step() {
-        t++
-        document.getElementById("r").setAttribute("x", 570*Math.cos(t / 113) + 590)
-        document.getElementById("r").setAttribute("y", 180*Math.sin(t / 47)+ 190)
+        t += 2*Math.PI/60
+        document.getElementById("r").setAttribute("x", 270*Math.cos(t) + 290)
+        document.getElementById("r").setAttribute("y", 270*Math.sin(t) + 290)
     }
-    setInterval(step, 10)
+    setInterval(step, 1000)
 </script>
 <style>
     body {
         text-align: center;
-        background-color: azure;
+        background-color: rgb(157, 210, 210);
     }
     svg {
         border: solid 2px geen;
         box-shadow: 1px 1px 4px inset black;
-        border-radius: 6px;
-        background-color: white;
+        border-radius: 300px;
+        background-color: rgb(220, 189, 189);
     }
     h1 {
         text-shadow: 1px 1px 4px gray;
         color:rgb(17, 66, 66);
+    }
+    #r {
+        transition: 0.5s;
     }
 </style>
