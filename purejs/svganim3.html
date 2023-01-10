@@ -1,0 +1,43 @@
+<body>
+    <h1>SVG Animáció III.</h1>
+    <svg id="my-svg" width="600" height="600" viewBox="0 0 600 600" onclick="f(event)">
+    </svg>
+</body>
+<script>
+    i = 0
+    function f(e) {
+        e.target.setAttribute("onclick", "")
+        e.target.style.backgroundColor="rgb(240, 199, 199)"
+        epos = e.target.getBoundingClientRect()
+        sx = epos.left
+        sy = epos.top
+        i++
+        document.getElementById("my-svg").innerHTML += `
+            <rect x="300" y="300" width="20" height="20" id="r${i}" stroke-width="3"
+                  fill="rgb(243, 236, 160)" stroke="#568998" rx="10" style="transition: 1s;"/>
+        `
+        setTimeout(() => {
+            document.getElementById(`r${i}`).setAttribute("x", e.x - sx - 10)
+            document.getElementById(`r${i}`).setAttribute("y", e.y - sy - 10)
+        }, 100)
+        setTimeout(() => {
+            e.target.setAttribute("onclick", "f(event)")
+            e.target.style.backgroundColor="rgb(220, 189, 189)"
+        }, 800)
+    }
+</script>
+<style>
+    body {
+        text-align: center;
+        background-color: rgb(157, 210, 210);
+    }
+    svg {
+        border: solid 2px geen;
+        box-shadow: 1px 1px 4px inset black;
+        background-color: rgb(220, 189, 189);
+    }
+    h1 {
+        text-shadow: 1px 1px 4px gray;
+        color:rgb(17, 66, 66);
+    }
+</style>
