@@ -1,0 +1,128 @@
+<body>
+    <div id="t1_b" onclick="f('t1')">Témakör1</div>
+    <div id="t1">
+        <div>Gomb1</div>
+        <div>Gomb2</div>
+        <div>Gomb3</div>
+        <div>Gomb4</div>
+        <div>Gomb5</div>
+    </div>
+    <div id="t2_b" onclick="f('t2')">Témakör2</div>
+    <div id="t2">
+        <div>Gomb6</div>
+        <div>Gomb7</div>
+        <div>Gomb8</div>
+        <div>Gomb9</div>
+        <div>Gomb10</div>
+    </div>
+    <div id="t3_b" onclick="f('t3')">A cicamegamája</div>
+    <div id="t3">
+        <div>Cuccc</div>
+        <div>Csacsi</div>
+        <div>Eznemműködik</div>
+        <div>Vagyigen</div>
+        <div>Nemtom</div>
+    </div>
+ </body>
+ <style>
+    #t1_b, #t2_b, #t3_b {
+        text-align: center;
+        cursor: pointer;
+        background-color: aquamarine;
+        box-shadow: 1px 1px 4px black;
+        user-select: none;
+        border-radius: 6px;
+        margin-top: 5px;
+        text-shadow: 1px 1px 3px gray;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    #t1_b:hover, #t2_b:hover, #t3_b:hover {
+        text-shadow: 1px 1px 7px rgb(67, 57, 57);
+        color: rgb(131, 1, 1);
+    }
+    #t1, #t2, #t3 {
+        height: 0px;
+        transform: scale(1, 0.0);
+        background-color: rgb(246, 176, 208);
+        transition: 0.2s;
+        text-align: center;
+        box-shadow: 1px 1px 4px inset black;
+        border-radius: 5px;
+        user-select: none;
+    }
+    #t1 > div, #t2 > div, #t3 > div {
+        display: inline-block;
+        background-color: rgb(219, 198, 238);
+        padding: 10px;
+        margin: 6px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 1px 1px 4px black;
+        transition: 0.2s;
+        transform: scale(1, 0.0);
+    }
+    #t1 > div:hover,
+    #t2 > div:hover,
+    #t3 > div:hover {
+        background-color: rgb(210, 148, 148);
+    }
+    #t1 > div:active,
+    #t2 > div:active,
+    #t3 > div:active {
+        background-color: rgb(233, 89, 89);
+    }
+    body {
+        background-color: rgb(210, 246, 246);
+    }
+ </style>
+ <script>
+    opened = null
+    ol = ""
+    function f(o) {
+        document
+            .getElementById(o)
+            .style
+            .height="auto"
+        document
+            .getElementById(o)
+            .style
+            .transform="scale(1, 1)"
+        document
+            .getElementById(o+"_b")
+            .style
+            .fontWeight="bold"
+        document
+            .getElementById(o+"_b")
+            .style
+            .backgroundColor="rgb(233, 89, 89)"
+        for (d of document.getElementById(o).children) {
+            d.style.transform="scale(1, 1)"
+        }
+        if (opened && ol != o) {
+            opened
+                .style
+                .height="0px"
+            opened
+                .style
+                .transform="scale(1, 0)"
+            for (d of opened.children) {
+                d.style.transform="scale(1, 0)"
+            }
+            document
+                .getElementById(ol+"_b")
+                .style
+                .fontWeight="normal"
+            document
+                .getElementById(ol+"_b")
+                .style
+                .backgroundColor="aquamarine"
+        }
+        opened = document
+            .getElementById(o)
+        ol = o
+    }
+    f('t2')
+ </script>
