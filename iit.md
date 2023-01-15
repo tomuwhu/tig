@@ -139,6 +139,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - logikai áramkörök
   - sorrendi áramkörök
   - számítógép elvi felépítése, Neumann-elv ([Neumann János](https://hu.wikipedia.org/wiki/Neumann_J%C3%A1nos))
+  - Moore-törvény, Bell-törvény, Raja-törvény, [Nooszféra](https://qubit.hu/2020/07/13/a-moore-torveny-halalatol-a-tech-nooszfera-szuleteseig)
   - egyszerű számítógép szimulációja ([Simonyi Károly](https://hu.wikipedia.org/wiki/Charles_Simonyi))
   - gépi kód <1936> ([Alan Turing](https://hu.wikipedia.org/wiki/Alan_Turing))
   - assembly nyelv <1951> ([Maurice Wilkes](https://en.wikipedia.org/wiki/Maurice_Wilkes))
@@ -347,6 +348,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Számítási bonyolultság fogalma, számítási problémák osztályozása (P, NP, ...)
   - Approximációs algoritmusok, mesterséges intelligencia (AI)
   - Gépi tanulás, Neural Networks (Keras, TensorFlow, PyTorch, ...)
+  - MI alkalmazások ([https://qubit.hu/2022/02/04/attorest-hoz-a-biologiaba-a-minden-eddiginel-pontosabb-feherjekutato-algoritmus-az-alphafold2](AlphaFold), [https://qubit.hu/2020/12/01/a-feherjestruktura-elorejelzes-fel-evszazados-problemajanak-megoldasaval-egy-csapasra-forradalmasithatja-a-biologiat-a-deepmind-algoritmusa](DeepMind), ...)
 - Számelméleti algoritmusok: [Kriptográfia (YOUPROOF)](https://youproof.hu/kriptografia/)
   - Fermat-Wiles tétel*
   - számelmélet
