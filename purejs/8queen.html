@@ -8,10 +8,10 @@
 </body>
 <script>
     function f(n) {
-        m = n % 12
         l = Array(n / 2).fill(0).map( (v, i) => 2 * i + 1 )
-        l2 = Array(n / 2).fill(0).map( (v, i) => 2 * i )
-        if (m == 8) for (i=0; i < n / 4; i++) [l2[2 * i], l2[2 * i + 1]] = [l2[2 * i + 1], l2[2 * i]]
+        l2 = Array(n / 2).fill(0).map( (v, i) => 2 * i );
+        if (n == 8)
+            [l2[0], l2[1]] = [l2[1], l2[0]], [l2[2], l2[3]] = [l2[3], l2[2]] 
         l = l.concat(l2)
         tbl = "<table>"
         for (i = 0; i < n; i++) {
