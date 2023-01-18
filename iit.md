@@ -348,7 +348,9 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Számítási bonyolultság fogalma, számítási problémák osztályozása (P, NP, ...)
   - Approximációs algoritmusok, mesterséges intelligencia (AI)
   - Gépi tanulás, Neural Networks (Keras, TensorFlow, PyTorch, ...)
-  - MI alkalmazások ([https://qubit.hu/2022/02/04/attorest-hoz-a-biologiaba-a-minden-eddiginel-pontosabb-feherjekutato-algoritmus-az-alphafold2](AlphaFold), [https://qubit.hu/2020/12/01/a-feherjestruktura-elorejelzes-fel-evszazados-problemajanak-megoldasaval-egy-csapasra-forradalmasithatja-a-biologiat-a-deepmind-algoritmusa](DeepMind), ...)
+  - MI alkalmazások
+    - [AlphaFold](https://qubit.hu/2022/02/04/attorest-hoz-a-biologiaba-a-minden-eddiginel-pontosabb-feherjekutato-algoritmus-az-alphafold2)  
+    - [DeepMind](https://qubit.hu/2020/12/01/a-feherjestruktura-elorejelzes-fel-evszazados-problemajanak-megoldasaval-egy-csapasra-forradalmasithatja-a-biologiat-a-deepmind-algoritmusa)
 - Számelméleti algoritmusok: [Kriptográfia (YOUPROOF)](https://youproof.hu/kriptografia/)
   - Fermat-Wiles tétel*
   - számelmélet
