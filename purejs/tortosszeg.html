@@ -64,27 +64,26 @@ table {
 </style>
 <script>
 [a, b, c, d] = Array(4).fill(1)
+szamlalo = document.getElementById("sz")
+nevezo = document.getElementById("n")
 function lnko(a, b) {
-    if (a * b == 0) return 0
-    if (a > b) return lnko(a - b, b)
-    if (b > a) return lnko(a, b - a)
-    return a
+        [a, b] = a < b ? [b, a] : [a, b]
+        return a > b ? lnko(a - b, b) : a
 }
 function f() {
-    if ( b== 0 || d == 0) {
-        document.getElementById("sz").innerHTML = "Érvénytelen bemenet"
-        document.getElementById("n").innerHTML = ""
+    if ( b == 0 || d == 0) {
+        szamlalo.innerHTML = "Érvénytelen bemenet"
+        nevezo.innerHTML = ""
         return
     }
     if (b < 0) [a, b] = [-a, -b]
     if (d < 0) [c, d] = [-c, -d]
     sz = a * d + b * c
     n = b * d
-    e = lnko(Math.abs(sz), Math.abs(n))
+    e = sz * n ? lnko(Math.abs(sz), Math.abs(n)) : 0
     if (e > 0) {
-        document.getElementById("sz").innerHTML = sz / e
-        document.getElementById("n").innerHTML = n / e
-    } else document.getElementById("sz").innerHTML = "0"
-
+        szamlalo.innerHTML = sz / e
+        nevezo.innerHTML = n / e
+    } else szamlalo.innerHTML = "0"
 }
 </script>
