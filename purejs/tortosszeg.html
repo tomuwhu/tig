@@ -52,6 +52,7 @@ table {
     margin: 0 auto;
     border-spacing: 16px;
     background-color: aquamarine;
+    box-shadow: 1px 1px 4px black;
 }
 .e {
     font-size: 25px;
@@ -64,6 +65,7 @@ table {
 <script>
 [a, b, c, d] = Array(4).fill(1)
 function lnko(a, b) {
+    if (a * b == 0) return 0
     if (a > b) return lnko(a - b, b)
     if (b > a) return lnko(a, b - a)
     return a
@@ -76,17 +78,13 @@ function f() {
     }
     if (b < 0) [a, b] = [-a, -b]
     if (d < 0) [c, d] = [-c, -d]
-    k = lnko(b, d)
-    csz = b / k
-    asz = d / k
-    sz = a*asz + c*csz
-    n = asz*csz*k
-    szs = sz
-    ns = n
-    if (sz<0) szs = -sz
-    if (n<0) ns = -n 
-    e = lnko(szs, ns)
-    document.getElementById("sz").innerHTML = sz / e
-    document.getElementById("n").innerHTML = n / e
+    sz = a * d + b * c
+    n = b * d
+    e = lnko(Math.abs(sz), Math.abs(n))
+    if (e > 0) {
+        document.getElementById("sz").innerHTML = sz / e
+        document.getElementById("n").innerHTML = n / e
+    } else document.getElementById("sz").innerHTML = "0"
+
 }
 </script>
