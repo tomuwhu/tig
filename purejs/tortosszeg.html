@@ -1,0 +1,92 @@
+<body>
+    <h1>
+        Törtek összeadása
+    </h1>
+    <table>
+        <td>
+            <input type="number" onchange="a=Number(this.value)" value="1"><hr>
+            <input type="number" onchange="b=Number(this.value)" value="1">
+        </td>
+        <td class="e">
+            +
+        </td>
+        <td>
+            <input type="number" onchange="c=Number(this.value)" value="1"><hr>
+            <input type="number" onchange="d=Number(this.value)" value="1">
+        </td>
+        <td>
+            <button onclick="f()">=</button>
+        </td>
+        <td class="e">
+            <div id="sz">-</div>
+            <hr>
+            <div id="n">-</div>
+        </td>
+    </table>
+</body>
+<style>
+h1 {
+    text-align: center;
+    color: rgb(57, 28, 11);
+    text-shadow: 1px 1px 3px gray;
+}
+body {
+    user-select: none;
+    background-color: antiquewhite;
+}
+input {
+    width: 100px;
+    font-size: 20px;
+    text-align: center;
+}
+button {
+    font-size: 25px;
+    cursor: pointer;
+    height: 70px;
+    box-shadow: 1px 1px 3px black;
+}
+table {
+    border: solid 1px rgb(18, 66, 70);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 0 auto;
+    border-spacing: 16px;
+    background-color: aquamarine;
+}
+.e {
+    font-size: 25px;
+    text-align: right;
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 5px;
+}
+</style>
+<script>
+[a, b, c, d] = Array(4).fill(1)
+function lnko(a, b) {
+    if (a > b) return lnko(a - b, b)
+    if (b > a) return lnko(a, b - a)
+    return a
+}
+function f() {
+    if ( b== 0 || d == 0) {
+        document.getElementById("sz").innerHTML = "Érvénytelen bemenet"
+        document.getElementById("n").innerHTML = ""
+        return
+    }
+    if (b < 0) [a, b] = [-a, -b]
+    if (d < 0) [c, d] = [-c, -d]
+    k = lnko(b, d)
+    csz = b / k
+    asz = d / k
+    sz = a*asz + c*csz
+    n = asz*csz*k
+    szs = sz
+    ns = n
+    if (sz<0) szs = -sz
+    if (n<0) ns = -n 
+    e = lnko(szs, ns)
+    document.getElementById("sz").innerHTML = sz / e
+    document.getElementById("n").innerHTML = n / e
+}
+</script>
