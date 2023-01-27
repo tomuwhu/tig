@@ -1,0 +1,75 @@
+<script>MathJax = {tex: {inlineMath: [['$', '$']]}}</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<body>
+    <h1>Python dolgozatkérdések gyűjteménye II. - Szövegfájl adatainak feldolgozása</h1>
+A következő dolgozat kérdései:<br><br>
+<b>
+Készítsen felhasználói programot, mely a megadott formátumú input.txt fájlból beolvassa a bemeneti adatokat egy megfelelő adatszerkezetbe, majd a megfelelő algoritmusok és beépített függvények segítségével meghatározza a kért kimeneti adatot/adatokat, és kiírja azokat a kért formátumban az output.txt fájlba.
+<br>
+Ha a feladat másképp nem definiálja, az input.txt-ben a bemeneti <i>n</i> szám egy sorban, a számok egymástól szóközzel elválasztva szerepelnek, a kimenetre <i>n</i> számot szintén egy sorba szóközzel elválasztva kell kiírni.
+</b>
+<hr>
+<div>
+1.  Bemenet: $n$ egész szám.
+    Kimenet: Rendre az $n$ szám négyzetösszege $\sum_{i=1}^n{}i^2$, a páros számok összege és a páratlan számok összege.<br>
+2.  Bemenet: $m$ valós szám. ( $A=\{a_1, a_2, ..., a_m\}$ )
+    Kimenet: A bemeneti számok közül a legnagyobb. ( $max(A)$ )<br>
+3.  Bemenet: $n$ egész szám vesszővel elválasztva.
+    Kimenet: A bemenet azon elemei amelyek párosak, pontosvesszővel elválasztva.<br>
+4.  Bemenet: $n$ egész szám vesszővel elválasztva.
+    Kimenet: A bemenet első $m$ száma, amely $\not=42$.<br>
+5.  Bemenet: $n$ egész szám.
+    Kimenet: A bemenet azon elemei amelyek négyzetszámok.<br>
+6.  Bemenet: $m$ természetes szám. ($A=\{a_1, a_2, ..., a_m\}$, legyen $n=max(A)$)
+<span class="a1">
+    Kimenet: A bemenet azon elemei amelyek a Fibonacci sorozatnak ( $f_i={\Biggl\{\begin{matrix} \hfill i, & \textrm{ha} \space i<2; \\ f_{i-1}+f_{i-2},& \textrm{ha} \space i \geq 2.  \end{matrix}} \space , \space \space i = 0,1,2,...,n$ ) is elemei.</span>
+7.  Bemenet: $n$ természetes szám.
+    Kimenet: A bemenet azon elemei amelyek prímek.
+    <span class="a2">Prímnek nevezzük azokat a természetes számokat, amelyeknek pontosan két osztójuk van a természetes számok között.</span><br>
+8.  Bemenet: $n$ valós szám.
+    Kimenet: A bemenet elemei növekvő sorrendben.<br>
+9.  Bemenet: $n$ egész szám.
+    Kimenet: A bemenet páros elemei növekvő sorrendben.<br>
+10. Bemenet: $n$ természetes szám.
+    Kimenet: A bemenet páros elemei növekvő sorrendben, majd a bemenet páratlan elemei csökkenő sorrendben.<br>
+</div>
+
+</body>
+<style>
+    h1 {
+        text-align: center;
+        font-size: 24px;
+    }
+    b {
+        color: rgb(124, 16, 20);
+        text-shadow: 1px 1px 2px rgb(158, 104, 87);
+    }
+    div {
+        white-space: pre;
+        tab-size: 6;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 13px;
+        color: rgb(23, 23, 143);
+        
+    }
+    body {
+        background-color: rgb(225, 227, 212);
+        text-shadow: 1px 1px 2px rgb(87, 158, 129);
+    }
+    svg {
+        filter: drop-shadow(1px 1px 4px rgb(0 0 0 / 0.4));
+        color:rgb(64, 27, 99);
+        font-size: 15px;
+    }
+    i {
+        color: rgb(52, 2, 14);
+        font-size: 16px;
+    }
+    span.a1 {
+        position: relative;
+        top: -26px;
+    }
+    span.a2 {
+        color: rgb(30, 93, 56);
+    }
+</style>
