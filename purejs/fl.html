@@ -2,11 +2,12 @@
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <body>
     <h1>Python dolgozatkérdések gyűjteménye I. - Felhasználói input felsolgozása</h1>
+    <div class="p">
 <b>
 Készítsen felhasználói programot, mely az alábbi feladatokhoz bekéri a felhasználóktól a szükséges bemeneti adatokat (számokat), ha szükséges ellenőrzi azok érvényességét, majd kiszámítja a kért kimeneti adatokat. Ha nincs a feltételeknek megfelelő kimeneti érték akkor azt írja ki!
 </b>
 <hr>
-<div>
+<div class="ws">
 1.  Bemenet: Derékszögű háromszög egyik befogója és átfogója.
     Kimenet: A háromszög másik befogója, kerülete, területe.<br>
 2.  Bemenet: Derékszögű háromszög két befogója.
@@ -51,24 +52,33 @@ Készítsen felhasználói programot, mely az alábbi feladatokhoz bekéri a fel
 20. Bemenet: Gömb átmérője.
     Kimenet: A gömb térfogata és felszíne.<br>
 </div>
-
+</div>
 </body>
 <style>
+    body {
+        margin: 40px;
+    }
     h1 {
         text-align: center;
         font-size: 24px;
     }
     b {
-        color: rgb(124, 16, 20);
+        color: rgb(81, 28, 29);
         text-shadow: 1px 1px 2px rgb(158, 104, 87);
+        font-weight: 200;
     }
-    div {
+    div.ws {
         white-space: pre;
         tab-size: 6;
         font-family: 'Courier New', Courier, monospace;
         font-size: 13px;
         color: rgb(23, 23, 143);
-        
+    }
+    div.p {
+        background-color: rgb(207, 214, 205);
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px inset black;
     }
     body {
         background-color: rgb(225, 227, 212);
