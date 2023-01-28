@@ -1,60 +1,73 @@
 <script>MathJax = {tex: {inlineMath: [['$', '$']]}}</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <body>
-    <h1>Python dolgozatkérdések gyűjteménye II. - Szövegfájl adatainak feldolgozása</h1>
-<b>
-Készítsen felhasználói programot, mely a megadott formátumú input.txt fájlból beolvassa a bemeneti adatokat egy megfelelő adatszerkezetbe, majd a megfelelő algoritmusok és beépített függvények segítségével meghatározza a kért kimeneti adatot/adatokat, és kiírja azokat a kért formátumban az output.txt fájlba.
-<br>
-Ha a feladat másképp nem definiálja, az input.txt-ben a bemeneti <i>n</i> szám egy sorban, a számok egymástól szóközzel elválasztva szerepelnek, a kimenetre <i>n</i> számot szintén egy sorba szóközzel elválasztva kell kiírni.
-</b>
-<hr>
-<div>
-1.  Bemenet: $n$ egész szám.              <a class="hr" href="https://www.hackerrank.com/challenges/simple-array-sum/problem" target="_blank"><img class="hr" src="https://hrcdn.net/fcore/assets/brand/logo-new-white-green-a5cb16e0ae.svg"></a>
-    Kimenet: A bemeneti számok összege.<br>
-2.  Bemenet: $n$ egész szám ($a_1, a_2, ..., a_n$).
-    Kimenet: Rendre az $n$ szám négyzetösszege $\sum_{i=1}^n{}a_i^2$, a páros számok összege és a páratlan számok összege.<br>
-3.  Bemenet: $m$ valós szám. ( $A=\{a_1, a_2, ..., a_m\}$ )
-    Kimenet: A bemeneti számok közül rendre a legnagyobb, a legkisebb és a számtani közepük. ( $max(A),\space min(A),\space\frac{\sum_{i=1}^m{a_i}}{m}$ )<br>
-4.  Bemenet: $n$ egész szám vesszővel elválasztva.
-    Kimenet: A bemenet azon elemei amelyek párosak, pontosvesszővel elválasztva.<br>
-5.  Bemenet: $n$ egész szám vesszővel elválasztva.  <a href="https://www.spoj.com/problems/TEST/" target="_blank"><img class="spoj" src="https://stx1.spoj.com/gfx/2015e.png"></a>
-    Kimenet: A bemenet első $m$ száma, amely $\not=42$.<br>
-6.  Bemenet: $n$ egész szám.
-    Kimenet: A bemenet azon elemei amelyek négyzetszámok.<br>
-7.  Bemenet: $m$ természetes szám. ($A=\{a_1, a_2, ..., a_m\}$, legyen $n=max(A)$)
-<span class="a1">
-    Kimenet: A bemenet azon elemei amelyek a Fibonacci sorozatnak ( $f_i={\Biggl\{\begin{matrix} \hfill i, & \textrm{ha} \space i<2; \\ f_{i-1}+f_{i-2},& \textrm{ha} \space i \geq 2.  \end{matrix}} \space , \space \space i = 0,1,2,...,n$ ) is elemei.</span>
-8.  Bemenet: $n$ természetes szám.
-    Kimenet: A bemenet azon elemei amelyek prímek.
-    <span class="a2">Prímnek nevezzük azokat a természetes számokat, amelyeknek pontosan két osztójuk van a természetes számok között.</span><br>
-9.  Bemenet: $n$ természetes szám.
-    Kimenet: A bemenet azon elemei amelyek nem tökéletes számok.
-    <span class="a2">Tökéletes számnak nevezzük azokat a természetes számokat, amelyek megegyeznek az önmaguknál kisebb osztóik összegével.</span><br>
-10. Bemenet: $n$ valós szám.
-    Kimenet: A bemenet elemei növekvő sorrendben.<br>
-11. Bemenet: $n$ egész szám.
-    Kimenet: A bemenet páros elemei növekvő sorrendben.<br>
-12. Bemenet: $n$ természetes szám.
-    Kimenet: A bemenet páros elemei növekvő sorrendben, majd a bemenet páratlan elemei csökkenő sorrendben.<br>
+<h1>Python dolgozatkérdések gyűjteménye II. - Szövegfájl adatainak feldolgozása</h1>
+<div class="p">
+    <b>
+        Készítsen felhasználói programot, mely a megadott formátumú input.txt fájlból beolvassa a bemeneti adatokat egy megfelelő adatszerkezetbe, majd a megfelelő algoritmusok és beépített függvények segítségével meghatározza a kért kimeneti adatot/adatokat, és kiírja azokat a kért formátumban az output.txt fájlba!
+        <br>
+        Ha a feladat másképp nem definiálja, az input.txt-ben a bemeneti <i>n</i> szám egy sorban, a számok egymástól szóközzel elválasztva szerepelnek, a kimenetre <i>n</i> számot szintén egy sorba szóközzel elválasztva kell kiírni.
+        </b>
+        <hr>
+        <div class="ws">
+    1.  Bemenet: $n$ egész szám.              <a class="hr" href="https://www.hackerrank.com/challenges/simple-array-sum/problem" target="_blank"><img class="hr" src="https://hrcdn.net/fcore/assets/brand/logo-new-white-green-a5cb16e0ae.svg"></a>
+        Kimenet: A bemeneti számok összege.<br>
+    2.  Bemenet: $n$ egész szám ($a_1, a_2, ..., a_n$).
+        Kimenet: Rendre az $n$ szám négyzetösszege $\sum_{i=1}^n{}a_i^2$, a páros számok összege és a páratlan számok összege.<br>
+    3.  Bemenet: $m$ valós szám. ( $A=\{a_1, a_2, ..., a_m\}$ )
+        Kimenet: A bemeneti számok közül rendre a legnagyobb, a legkisebb és a számtani közepük. ( $max(A),\space min(A),\space\frac{\sum_{i=1}^m{a_i}}{m}$ )<br>
+    4.  Bemenet: $n$ egész szám vesszővel elválasztva.
+        Kimenet: A bemenet azon elemei amelyek párosak, pontosvesszővel elválasztva.<br>
+    5.  Bemenet: $n$ egész szám vesszővel elválasztva.  <a class="spoj" href="https://www.spoj.com/problems/TEST/" target="_blank"><img class="spoj" src="https://stx1.spoj.com/gfx/2015e.png"> - Life, the Universe, and Everything</a>
+        Kimenet: A bemenet első $m$ száma, amely $\not=42$.<br>
+    6.  Bemenet: $n$ egész szám.
+        Kimenet: A bemenet azon elemei amelyek négyzetszámok.<br>
+    7.  Bemenet: $m$ természetes szám. ($A=\{a_1, a_2, ..., a_m\}$, legyen $n=max(A)$)
+    <span class="a1">
+        Kimenet: A bemenet azon elemei amelyek a Fibonacci sorozatnak ( $f_i={\Biggl\{\begin{matrix} \hfill i, & \textrm{ha} \space i<2; \\ f_{i-1}+f_{i-2},& \textrm{ha} \space i \geq 2.  \end{matrix}} \space , \space \space i = 0,1,2,...,n$ ) is elemei.</span>
+    8.  Bemenet: $n$ természetes szám.
+        Kimenet: A bemenet azon elemei amelyek prímek.
+        <span class="a2">Prímnek nevezzük azokat a természetes számokat, amelyeknek pontosan két osztójuk van a természetes számok között.</span><br>
+    9.  Bemenet: $n$ természetes szám.
+        Kimenet: A bemenet azon elemei amelyek nem tökéletes számok.
+        <span class="a2">Tökéletes számnak nevezzük azokat a természetes számokat, amelyek megegyeznek az önmaguknál kisebb osztóik összegével.</span><br>
+    10. Bemenet: $n$ valós szám.
+        Kimenet: A bemenet elemei növekvő sorrendben.<br>
+    11. Bemenet: $n$ egész szám.
+        Kimenet: A bemenet páros elemei növekvő sorrendben.<br>
+    12. Bemenet: $n$ természetes szám.
+        Kimenet: A bemenet páros elemei növekvő sorrendben, majd a bemenet páratlan elemei csökkenő sorrendben.<br>
+    13. Bemenet: A bemenet első sorában $n$ valós szám ;-vel elválasztva ( $a_1;a_2;...;a_n$ ), 
+                 A bemenet második sorában további $n$ valós szám ;-vel elválasztva ( $b_1;b_2;...;b_n$ ).
+        Kimenet: Az első és második sor elemeinek négyzetösszege ;-vel elválasztva ( $a_1^2+b_1^2;a_2^2+b_2^2;...;a_n^2+b_n^2$ ).<br>
+        </div>
 </div>
-
 </body>
 <style>
+    body {
+        margin: 40px;
+    }
     h1 {
         text-align: center;
         font-size: 24px;
     }
     b {
-        color: rgb(124, 16, 20);
+        color: rgb(81, 28, 29);
         text-shadow: 1px 1px 2px rgb(158, 104, 87);
+        font-weight: 200;
     }
-    div {
+    div.ws {
         white-space: pre;
         tab-size: 6;
         font-family: 'Courier New', Courier, monospace;
         font-size: 13px;
         color: rgb(23, 23, 143);
-        
+    }
+    div.p {
+        background-color: rgb(207, 214, 205);
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px inset black;
     }
     body {
         background-color: rgb(225, 227, 212);
@@ -80,7 +93,17 @@ Ha a feladat másképp nem definiálja, az input.txt-ben a bemeneti <i>n</i> sz�
         position: relative;
         width: 100px;
         padding: 3px;
-        top: 10px;
+        top: 6px;
+    }
+    a.spoj {
+        position: relative;
+        top: 8px;
+        text-decoration: none;
+        font-size: 10px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    a.spoj:hover {
+        text-shadow: 1px 1px 3px rgb(123, 57, 57);
     }
     img.hr {
         width: 60px;
