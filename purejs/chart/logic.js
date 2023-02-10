@@ -16,10 +16,9 @@ r = { d() {
     data = Array(ksz*5+1).fill(0)
     for (i = 0; i < dsz; i++) {
         összeg = 0
-        for (j = 0; j < ksz; j++) {
-            dobas = Math.floor(Math.random() * 6 + 1)
+        for (j = 0; j < ksz; j++) 
+            dobas = Math.floor(Math.random() * 6 + 1),
             összeg += dobas 
-        }
         data[összeg - ksz]++
     }
     myChart.data = {
