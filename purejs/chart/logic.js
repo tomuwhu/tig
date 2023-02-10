@@ -13,7 +13,7 @@ const myChart = new Chart(ctx, { type: 'bar', data: {
 f = v => ( ksz = Number(v), document.getElementById("ksz").innerHTML = ksz, r.d() )
 g = v => ( dsz = 10 ** Number(v), document.getElementById("dsz").innerHTML = dsz, r.d() )
 r = { d() {
-    data = Array(ksz*5+1).fill(0)
+    data = Array(ksz * 5 + 1).fill(0)
     for (i = 0; i < dsz; i++) {
         összeg = 0
         for (j = 0; j < ksz; j++) 
