@@ -16,10 +16,30 @@
             ">+</button>
         <hr>
         <div class="x6">
-            <button id="x345" onclick="
-                    document.getElementById('xt').value=1406
-                    f(document.getElementById('xt').value)
-                ">3 - 4 - 5</button>
+            <span class="gc">
+                <button id="x7-24-25" onclick="
+                                document.getElementById('xt').value=584
+                                f(document.getElementById('xt').value)
+            ">7 - 24 - 25</button>
+            </span>
+            <span class="gc">
+                <button id="x5-12-13" onclick="
+                                            document.getElementById('xt').value=823
+                                            f(document.getElementById('xt').value)
+                        ">5 - 12 - 13</button>
+            </span>
+            <span class="gc">
+                <button id="x8-15-17" onclick="
+                                            document.getElementById('xt').value=1036
+                                            f(document.getElementById('xt').value)
+                        ">8 - 15 - 17</button>
+            </span>
+            <span class="gc">
+                <button id="x345" onclick="
+                                document.getElementById('xt').value=1406
+                                f(document.getElementById('xt').value)
+            ">3 - 4 - 5</button>
+            </span>
         </div>
         <div class="p">a = <span id="a"></span></div>
         <div class="p">b = <span id="b"></span></div>
@@ -28,6 +48,7 @@
         <div class="p">$\frac{a}{c} =$<span class="q" id="ac"></span></div>
         <div class="p">$\alpha = $<span class="q" id="alpha"></span></div>
         <div class="p">$\beta = $<span class="q" id="beta"></span></div>
+        <div class="p">i<span class="q" id="i"></span></div>
     </div>
 </body>
 <script>
@@ -52,10 +73,16 @@
     lab.sort((a, b) => (a[0] / a[1]) - (b[0] / b[1]))
     document.getElementById("xt").setAttribute("max", lab.length - 1)
     function f(i) {
-        sobj = document.getElementById("x345").style
-        if (i == 1406) sobj.display = "None"; else sobj.display = "inline-block";
-        [a, b, c] = lab[i], [ax, bx, cx, abx, acx, alphax, betax] = Array([
-            ["a", a], ["b", b], ["c", c], ["ab", a / b], ["ac", a / c], ["alpha", 180 * Math.asin(a / c) / Math.PI], ["beta", 180 * Math.acos(a / c) / Math.PI]
+        sobj1 = document.getElementById("x345").style
+        sobj2 = document.getElementById("x8-15-17").style
+        sobj3 = document.getElementById("x7-24-25").style
+        sobj4 = document.getElementById("x5-12-13").style
+        if (i == 1406) sobj1.display = "None"; else sobj1.display = "inline-block";
+        if (i == 1036) sobj2.display = "None"; else sobj2.display = "inline-block";
+        if (i == 584) sobj3.display = "None"; else sobj3.display = "inline-block";
+        if (i == 823) sobj4.display = "None"; else sobj4.display = "inline-block";
+        [a, b, c] = lab[i], [ax, bx, cx, abx, acx, alphax, betax, ix] = Array([
+            ["a", a], ["b", b], ["c", c], ["ab", a / b], ["ac", a / c], ["alpha", 180 * Math.asin(a / c) / Math.PI], ["beta", 180 * Math.acos(a / c) / Math.PI], ["i", Number(i)]
         ].forEach(v => document.getElementById(v[0]).innerHTML = fix(v[1])))
     }
     f(1406)
@@ -64,16 +91,20 @@
     body {
         text-align: center;
     }
+
     #xt {
         width: 800px;
         cursor: pointer;
     }
+
     button {
         cursor: pointer;
     }
+
     body {
         background-color: azure;
     }
+
     .p,
     h1 {
         font-size: 30px;
@@ -85,16 +116,27 @@
         box-shadow: 1px 1px 4px inset black;
         margin: 5px;
     }
+
     span {
         width: 77px;
         display: inline-block;
         text-align: right;
     }
+
     .x6 {
         height: 40px;
     }
+
     .q {
         width: 150px;
         text-align: center;
+    }
+
+    .gc {
+        width: 200px;
+        text-align: center;
+        background-color: aquamarine;
+        border-radius: 4px;
+        box-shadow: 1px 1px 4px black;
     }
 </style>
