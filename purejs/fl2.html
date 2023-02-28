@@ -43,10 +43,17 @@
                  a bemenet második sorában további $n$ valós szám szintén ;-vel elválasztva ( $b_1;b_2;...;b_n$ ).
         Kimenet: Az első és második sor elemeinek négyzetösszege ;-vel elválasztva ( $a_1^2+b_1^2;a_2^2+b_2^2;...;a_n^2+b_n^2$ ).<br>
     15. Bemenet: A bemenet első sorában egy egész szám ($1 < n < 10^9$), a második sorban $n-1$ különböző $1$ és $n$ közötti valós szám: $\{a_1, a_2, ..., a_{n-1}\}$, $1 \leq a_i \leq n, i \in \{1, 2, ..., n-1\} $
-        Kimenet: A bemebet számai közül hiányzó szám ( $\{1, 2, ..., n\} \setminus \{a_1, a_2, ..., a_{n-1}\}$ ).  <a class="cses" href="https://cses.fi/problemset/task/1083" target="_blank"><img class="cses" src="https://cses.fi/logo.png?1"> - Missing Number</a>
+        Kimenet: A bemebet számai közül hiányzó szám ( $x \in \{1, 2, ..., n\} \setminus \{a_1, a_2, ..., a_{n-1}\}$ ).  <a class="cses" href="https://cses.fi/problemset/task/1083" target="_blank"><img class="cses" src="https://cses.fi/logo.png?1"> - Missing Number</a> &nbsp; <span id="x1" onclick="f()">Segítség a megoldáshoz</span>
+        <span id="x2">$x = (1+2+...+n)-\sum_{i=1}^{n-1}{a_i} = \frac{n(n+1)}{2} - \sum_{i=1}^{n-1}{a_i}$</span>
         </div>
 </div>
 </body>
+<script>
+    function f() {
+        document.getElementById("x2").style.display="block"
+        document.getElementById("x1").style.display="none"
+    }
+</script>
 <style>
     body {
         margin: 40px;
@@ -154,5 +161,22 @@
         padding: 3px;
         border-radius: 6px;
         background-color: rgb(196, 235, 222);
+    }
+    #x2 {
+        display: none;
+        text-align: center;
+    }
+    #x1 {
+        margin: 6px;
+        text-align: center;
+        cursor: pointer;
+        display: inline-block;
+        background-color: aquamarine;
+        padding: 4px;
+        border-radius: 6px;
+        box-shadow: 1px 1px 3px black;
+    }
+    #x1:hover {
+        color: brown;
     }
 </style>
