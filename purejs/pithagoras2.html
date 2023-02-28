@@ -1,3 +1,6 @@
+<script>MathJax = { tex: { inlineMath: [['$', '$']] } }</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
 <body>
     <h1>Pithagoraszi számhármas-generátor</h1>
     <div id="x0">
@@ -5,27 +8,35 @@
             document.getElementById('xt').value--
             f(document.getElementById('xt').value)
         ">-</button>
-        <input type="range" id="xt" value="1406" max="10000"
-            onmousemove="f(this.value)" 
-            onchange="f(this.value)" value="0">
-            <button onclick="
+        <input type="range" id="xt" value="1406" max="10000" onmousemove="f(this.value)" onchange="f(this.value)"
+            value="0">
+        <button onclick="
                 document.getElementById('xt').value++
                 f(document.getElementById('xt').value)
             ">+</button>
-            <hr>
-            <div class="x6">
-                <button id="x345" onclick="
+        <hr>
+        <div class="x6">
+            <button id="x345" onclick="
                     document.getElementById('xt').value=1406
                     f(document.getElementById('xt').value)
                 ">3 - 4 - 5</button>
-            </div>
+        </div>
         <div class="p">a = <span id="a"></span></div>
         <div class="p">b = <span id="b"></span></div>
         <div class="p">c = <span id="c"></span></div>
-        <div class="p">a/b<br><span class="q" id="ab"></span></div>
+        <div class="p">$\frac{a}{b} =$<span class="q" id="ab"></span></div>
+        <div class="p">$\frac{a}{c} =$<span class="q" id="ac"></span></div>
+        <div class="p">$\alpha$ = <span class="q" id="alpha"></span></div>
+        <div class="p">$\beta$ = <span class="q" id="beta"></span></div>
     </div>
 </body>
 <script>
+    function fix(a) {
+        for (i = 0; i < 3; i++) {
+            if (a == a.toFixed(i)) return a.toFixed(i)
+        }
+        return a.toFixed(4)
+    }
     function lnko(a, b) {
         if (a < b) [a, b] = [b, a]
         return a > b ? lnko(a - b, b) : a
@@ -35,17 +46,17 @@
         c = Math.sqrt(a ** 2 + b ** 2)
         if (c == Math.floor(c)) {
             o = lnko(a, b), m = a / b
-            if (!l.has(m)) l.add(m), lab.push([a / o, b / o])
+            if (!l.has(m)) l.add(m), lab.push([a / o, b / o, c / o])
         }
     }
-    lab.sort( (a, b) => (a[0] / a[1]) - (b[0] / b[1]) )
-    document.getElementById("xt").setAttribute("max", lab.length-1)
+    lab.sort((a, b) => (a[0] / a[1]) - (b[0] / b[1]))
+    document.getElementById("xt").setAttribute("max", lab.length - 1)
     function f(i) {
         sobj = document.getElementById("x345").style
-        if (i==1406) sobj.display="None"; else sobj.display="inline-block";
-        [a, b] = lab[i], [ax, bx, cx, abx] = Array([
-            ["a", a], ["b", b], ["c", Math.sqrt( a ** 2 + b ** 2 )], ["ab", a / b]
-        ].forEach( v => document.getElementById(v[0]).innerHTML = v[1]))
+        if (i == 1406) sobj.display = "None"; else sobj.display = "inline-block";
+        [a, b, c] = lab[i], [ax, bx, cx, abx, acx, alphax, betax] = Array([
+            ["a", a], ["b", b], ["c", c], ["ab", a / b], ["ac", a / c], ["alpha", 180 * Math.asin(a / c) / Math.PI], ["beta", 180 * Math.acos(a / c) / Math.PI]
+        ].forEach(v => document.getElementById(v[0]).innerHTML = fix(v[1])))
     }
     f(1406)
 </script>
@@ -53,35 +64,44 @@
     body {
         text-align: center;
     }
+
     #xt {
         width: 800px;
         cursor: pointer;
     }
+
     button {
-        cursor:pointer;
+        cursor: pointer;
     }
+
     body {
         background-color: azure;
     }
-    .p, h1 {
+
+    .p,
+    h1 {
         font-size: 30px;
         text-shadow: 1px 1px 4px gray;
         color: rgb(24, 55, 82);
         background-color: aquamarine;
+        padding: 10px;
         border-radius: 5px;
         box-shadow: 1px 1px 4px inset black;
-        margin: 10px;
+        margin: 5px;
     }
+
     span {
         width: 77px;
         display: inline-block;
         text-align: right;
     }
+
     .x6 {
         height: 40px;
     }
+
     .q {
-        width: 600px;
+        width: 150px;
         text-align: center;
     }
 </style>
