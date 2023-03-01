@@ -8,7 +8,7 @@
             document.getElementById('xt').value--
             f(document.getElementById('xt').value)
         ">-</button>
-        <input type="range" id="xt" value="1406" max="10000" onmousemove="f(this.value)" onchange="f(this.value)"
+        <input type="range" id="xt" value="1406" max="10000" onchange="f(this.value)"
             value="0">
         <button onclick="
                 document.getElementById('xt').value++
@@ -17,38 +17,46 @@
         <hr>
         <div class="x6">
             <span class="gc">
+                <button id="x9-40-41" onclick="
+                                            document.getElementById('xt').value=454
+                                            f(document.getElementById('xt').value)
+                ">9 - 40 - 41</button>
+            </span>
+            <span class="gc">
                 <button id="x7-24-25" onclick="
                                 document.getElementById('xt').value=584
                                 f(document.getElementById('xt').value)
-            ">7 - 24 - 25</button>
+                ">7 - 24 - 25</button>
             </span>
             <span class="gc">
                 <button id="x5-12-13" onclick="
                                             document.getElementById('xt').value=823
                                             f(document.getElementById('xt').value)
-                        ">5 - 12 - 13</button>
+                ">5 - 12 - 13</button>
             </span>
             <span class="gc">
                 <button id="x8-15-17" onclick="
                                             document.getElementById('xt').value=1036
                                             f(document.getElementById('xt').value)
-                        ">8 - 15 - 17</button>
+                ">8 - 15 - 17</button>
             </span>
             <span class="gc">
                 <button id="x345" onclick="
                                 document.getElementById('xt').value=1406
                                 f(document.getElementById('xt').value)
-            ">3 - 4 - 5</button>
+                ">3 - 4 - 5</button>
             </span>
         </div>
-        <div class="p">a = <span id="a"></span></div>
-        <div class="p">b = <span id="b"></span></div>
-        <div class="p">c = <span id="c"></span></div>
-        <div class="p">$\frac{a}{b} =$<span class="q" id="ab"></span></div>
-        <div class="p">$\frac{a}{c} =$<span class="q" id="ac"></span></div>
-        <div class="p">$\alpha = $<span class="q" id="alpha"></span></div>
-        <div class="p">$\beta = $<span class="q" id="beta"></span></div>
-        <div class="p">#<span class="q" id="i"></span></div>
+        <div class="c">
+            <div class="p">a = <span id="a"></span></div>
+            <div class="p">b = <span id="b"></span></div>
+            <div class="p">c = <span id="c"></span></div>
+            <div class="p">$\frac{a}{b}=$<span class="q" id="ab"></span></div>
+            <div class="p">$\frac{a}{c}=$<span class="q" id="ac"></span></div>
+            <div class="p">$\alpha=$<span class="q" id="alpha"></span></div>
+            <div class="p">$\beta=$<span class="q" id="beta"></span></div>
+            <div class="p">#<span class="q" id="i"></span></div>
+        </div>
     </div>
 </body>
 <script>
@@ -77,10 +85,12 @@
         sobj2 = document.getElementById("x8-15-17").style
         sobj3 = document.getElementById("x7-24-25").style
         sobj4 = document.getElementById("x5-12-13").style
+        sobj5 = document.getElementById("x9-40-41").style
         if (i == 1406) sobj1.display = "None"; else sobj1.display = "inline-block";
         if (i == 1036) sobj2.display = "None"; else sobj2.display = "inline-block";
         if (i == 584) sobj3.display = "None"; else sobj3.display = "inline-block";
         if (i == 823) sobj4.display = "None"; else sobj4.display = "inline-block";
+        if (i == 454) sobj5.display = "None"; else sobj5.display = "inline-block";
         [a, b, c] = lab[i], [ax, bx, cx, abx, acx, alphax, betax, ix] = Array([
             ["a", a], ["b", b], ["c", c], ["ab", a / b], ["ac", a / c], ["alpha", 180 * Math.asin(a / c) / Math.PI], ["beta", 180 * Math.acos(a / c) / Math.PI], ["i", Number(i) + 1]
         ].forEach(v => document.getElementById(v[0]).innerHTML = fix(v[1])))
@@ -93,7 +103,7 @@
     }
 
     #xt {
-        width: 800px;
+        width: 90%;
         cursor: pointer;
     }
 
@@ -124,7 +134,6 @@
     }
 
     span {
-        width: 77px;
         display: inline-block;
         text-align: right;
     }
@@ -134,12 +143,10 @@
     }
 
     .q {
-        width: 150px;
         text-align: center;
     }
 
     .gc {
-        width: 200px;
         text-align: center;
         background-color: rgb(110, 194, 166);
         border-radius: 4px;
@@ -148,5 +155,17 @@
         min-height: 10px;
         position: relative;
         top: -5px;
+        width: 90px;
+    }
+
+    .c {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .p {
+        display: inline-block;
+        white-space: nowrap;
     }
 </style>
