@@ -92,7 +92,9 @@
         if (i == 823) sobj4.display = "None"; else sobj4.display = "inline-block";
         if (i == 454) sobj5.display = "None"; else sobj5.display = "inline-block";
         [a, b, c] = lab[i], [ax, bx, cx, abx, acx, alphax, betax, ix] = Array([
-            ["a", a], ["b", b], ["c", c], ["ab", a / b], ["ac", a / c], ["alpha", 180 * Math.asin(a / c) / Math.PI], ["beta", 180 * Math.acos(a / c) / Math.PI], ["i", Number(i) + 1]
+            ["a", a], ["b", b], ["c", c], ["ab", a / b], ["ac", a / c], 
+            ["alpha", 180 * Math.asin(a / c) / Math.PI], 
+            ["beta", 180 * Math.acos(a / c) / Math.PI], ["i", Number(i) + 1]
         ].forEach(v => document.getElementById(v[0]).innerHTML = fix(v[1])))
     }
     f(1406)
