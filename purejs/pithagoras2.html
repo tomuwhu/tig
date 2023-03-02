@@ -8,8 +8,7 @@
             document.getElementById('xt').value--
             f(document.getElementById('xt').value)
         ">-</button>
-        <input type="range" id="xt" value="1406" max="10000" onchange="f(this.value)"
-            value="0">
+        <input type="range" id="xt" value="1406" max="10000" onchange="f(this.value)" value="0">
         <button onclick="
                 document.getElementById('xt').value++
                 f(document.getElementById('xt').value)
@@ -48,6 +47,7 @@
             </span>
         </div>
         <div class="c">
+            <div class="p">#<span class="q" id="i"></span></div>
             <div class="p">a = <span id="a"></span></div>
             <div class="p">b = <span id="b"></span></div>
             <div class="p">c = <span id="c"></span></div>
@@ -55,7 +55,6 @@
             <div class="p">$\frac{a}{c}=$<span class="q" id="ac"></span></div>
             <div class="p">$\alpha=$<span class="q" id="alpha"></span></div>
             <div class="p">$\beta=$<span class="q" id="beta"></span></div>
-            <div class="p">#<span class="q" id="i"></span></div>
         </div>
     </div>
 </body>
@@ -92,8 +91,8 @@
         if (i == 823) sobj4.display = "None"; else sobj4.display = "inline-block";
         if (i == 454) sobj5.display = "None"; else sobj5.display = "inline-block";
         [a, b, c] = lab[i], [ax, bx, cx, abx, acx, alphax, betax, ix] = Array([
-            ["a", a], ["b", b], ["c", c], ["ab", a / b], ["ac", a / c], 
-            ["alpha", 180 * Math.asin(a / c) / Math.PI], 
+            ["a", a], ["b", b], ["c", c], ["ab", a / b], ["ac", a / c],
+            ["alpha", 180 * Math.asin(a / c) / Math.PI],
             ["beta", 180 * Math.acos(a / c) / Math.PI], ["i", Number(i) + 1]
         ].forEach(v => document.getElementById(v[0]).innerHTML = fix(v[1])))
     }
@@ -166,5 +165,6 @@
     .p {
         display: inline-block;
         white-space: nowrap;
+        color: rgb(39, 72, 122);
     }
 </style>
