@@ -8,6 +8,7 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Lemonada&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Square+Peg&family=Indie+Flower&family=Xanh+Mono&family=B612+Mono&display=swap');
+
     .navigation {
         display: flex;
         flex-flow: row wrap;
@@ -19,6 +20,7 @@
         font-family: 'Lemonada', cursive;
         font-size: 12px;
     }
+
     pre.c {
         font-family: 'B612 Mono', monospace;
         font-size: 13px;
@@ -31,29 +33,34 @@
         box-shadow: 1px 1px 3px inset rgb(0, 0, 0);
         word-wrap: break-word;
     }
+
     div.fi {
         margin: 0 auto;
         padding: 3px;
         padding-left: 6px;
-        color:bisque;
+        color: bisque;
     }
+
     div.row {
         width: 100%;
     }
+
     select {
         width: 400px;
     }
+
     pre.c {
         user-select: text;
         white-space: pre-wrap;
         text-shadow: 1px 1px 3px rgb(6, 6, 6);
     }
+
     code#code {
         user-select: text;
         font-family: 'Xanh Mono', monospace;
         font-size: 16px;
         text-shadow: 0px 0px 7px;
-        border:solid 1px rgb(252, 247, 195);
+        border: solid 1px rgb(252, 247, 195);
         background-color: rgb(8, 43, 28);
         padding-top: 5px;
         padding-bottom: 9px;
@@ -66,17 +73,17 @@
     const runner = new BrythonRunner({
         stdout: {
             write(content) {
-                t = content.replace("<","❮").replace(">","❯")
+                t = content.replace("<", "❮").replace(">", "❯")
                 document.getElementById("cons").innerHTML += `${t}`
             },
-            flush() {},
+            flush() { },
         },
         stderr: {
             write(content) {
                 document.getElementById("cons").innerHTML += `Ez a mintaprogram nem futtatható online. :(`
                 console.log(content);
             },
-            flush() {},
+            flush() { },
         },
         stdin: {
             async readline() {
@@ -90,10 +97,10 @@
         kv = document.getElementById("sel").value.split("|")
         file = "py/" + kv[0]
         if (kv.length > 1) inpf = kv[1]
-        else inpf=""
+        else inpf = ""
         fn = kv[0]
         var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
+        xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 if (file.split('.')[1] == 'md') {
                     html_content = markdown.toHTML(xhttp.responseText)
@@ -122,9 +129,10 @@
         href="pygyak.html?py/&${inpf}&${fn}">szerkesztés / kipróbálás</a>
     `
     }
-    setTimeout(v => { load()}, 400)
+    setTimeout(v => { load() }, 400)
 </script>
 <script src="hljs/highlight.min.js"></script>
+
 <body>
     <ul class="navigation">
         <ul class="navigation">
@@ -139,14 +147,10 @@
         <h2 class="h">Python p&eacute;ldaprogramok</h2>
         <select onchange="load()" id="sel">
             <option></option>
-                    <option value="input.py">Input</option>
+            <option value="input.py">Input</option>
             <option value="inpsform.py">Input + String formázás</option>
-            <option value="tt.py">Float számformázás</option>
-            <option value="colors.py">Színek</option>
-            <option value="dec2hex.py">Számrendszerek</option>
-            <option value="strings.py">Karakterek listája</option>
+            <option selected value="wcount.py">While számlálás</option>
             <option value="rcount.py">Rekurzív számlálás</option>
-            <option selected  value="wcount.py">While számlálás</option>
             <option value="range_rek.py">Rekurzív range Ⅰ.</option>
             <option value="range_while.py">While range Ⅰ.</option>
             <option value="list1.py">Python listák Ⅰ.</option>
@@ -161,6 +165,10 @@
             <option value="fizzbuzz.py">fizzbuzz</option>
             <option value="tk119_5.py">TK 119. oldal 5. feladat</option>
             <option value="tk126_123.py">TK 126. oldal 1-3. feladat</option>
+            <option value="tt.py">Float számformázás</option>
+            <option value="colors.py">Színek</option>
+            <option value="dec2hex.py">Számrendszerek</option>
+            <option value="strings.py">Karakterek listája</option>
             <option value="kitalalos.py">Kitalálós játék</option>
             <option value="table1.py">Táblázatok a konzolon Ⅰ.</option>
             <option value="table2.py">Konzol-táblázat alkalmazása</option>
@@ -206,7 +214,7 @@
             <option value="gyok.py">Négyzetgyök</option>
             <option value="gyok2.py">Négyzetgyök törtekkel</option>
             <option value="eratoszthenesz.py">Eratoszthenész szitája</option>
-            <option value="sumprimes.py">Komlex feladat  Ⅰ. (szűrés - prímszámok összege)</option>
+            <option value="sumprimes.py">Komlex feladat Ⅰ. (szűrés - prímszámok összege)</option>
             <option value="deque.py">Verem/Sor adatszerkezet</option>
             <option value="find.py">Keresés rendezett listában</option>
             <option value="find2.py">Keresések futási idő mérése</option>
@@ -244,6 +252,9 @@
         <div style="text-align: center;">
             <div id="content" style="display: none;"></div>
         </div>
-        <div><div class="fi">A program futási eredménye:</div><pre class="c" id="cons"></pre></div>
+        <div>
+            <div class="fi">A program futási eredménye:</div>
+            <pre class="c" id="cons"></pre>
+        </div>
     </div>
 </body>
