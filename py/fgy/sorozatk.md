@@ -26,6 +26,6 @@
 
 3. készítsen generátor-függvényt az alábbi feladatok végrehajtására:
 
-|feladat|leírás|bemenet|
-|---:|---|---|
-|1.|$n$ prímtényezős felbotása|$n$|
+|feladat|leírás|bemenet|kimenet|
+|---:|---|---|---|
+|1.|$n$ prímtényezős felbotása|$n$|$n$ prímtényezői növekvő sorrendben|

@@ -68,6 +68,10 @@
         box-shadow: 1px 1px 3px inset black;
         background-image: url('pic/phg.jpg');
     }
+
+    button {
+        cursor: pointer;
+    }
 </style>
 <script>
     const runner = new BrythonRunner({
@@ -129,6 +133,128 @@
         href="pygyak.html?py/&${inpf}&${fn}">szerkesztés / kipróbálás</a>
     `
     }
+    ot = [
+        ["input.py", "Input"],
+        ["ifelse.py", "Elágazás"],
+        ["inpsform.py", "Input + String formázás"],
+        ["wcount.py", "While számlálás"],
+        ["rcount.py", "Rekurzív számlálás"],
+        ["range_while.py", "While range Ⅰ."],
+        ["range_rek.py", "Rekurzív range Ⅰ."],
+        ["list1.py", "Python listák Ⅰ."],
+        ["tetelek/sum.py", "Sum (összegzés ciklussal)"],
+        ["tetelek/sum2.py", "Sum (összegzés, rekurzív)"],
+        ["tetelek/max.py", "Max (keresés ciklussal)"],
+        ["tetelek/max2.py", "Max (keresés, rekurzív)"],
+        ["szures.py", "Szűrés (leválogatás)"],
+        ["lambda.py", "Függvények"],
+        ["tetelek/filter.py", "\"filter\" objektum (leválogatás)"],
+        ["tetelek/map.py", "\"map\" objektum"],
+        ["fizzbuzz.py", "fizzbuzz"],
+        ["tk119_5.py", "TK 119. oldal 5. feladat"],
+        ["tk126_123.py", "TK 126. oldal 1-3. feladat"],
+        ["tt.py", "Float számformázás"],
+        ["colors.py", "Színek"],
+        ["dec2hex.py", "Számrendszerek"],
+        ["strings.py", "Karakterek listája"],
+        ["kitalalos.py", "Kitalálós játék"],
+        ["table1.py", "Táblázatok a konzolon Ⅰ."],
+        ["table2.py", "Konzol-táblázat alkalmazása"],
+        ["table3.py", "Táblázatok a konzolon Ⅱ."],
+        ["table4.py", "Táblázatok a konzolon Ⅲ."],
+        ["table5.py", "Szorzótábla"],
+        ["list2.py", "Python listák Ⅱ."],
+        ["random_ex1.py", "Random modul"],
+        ["alapok2.py", "Python halmazok, szótárak"],
+        ["refvsobj.py", "Objektum - Referencia Ⅰ."],
+        ["arrvsstring.py", "Objektum - Referencia Ⅱ."],
+        ["range_while2.py", "While range Ⅱ. (generátor objektum)"],
+        ["enum.py", "Enumerate (generátor objektum)"],
+        ["range_rek2.py", "Rekurzív range Ⅱ. (generátor objektum)"],
+        ["fibn.py", "Fibonacci sorozat Ⅰ."],
+        ["fibn2.py", "Fibonacci sorozat Ⅱ. (generátor függvény)"],
+        ["fib_gen_rek.py", "Fibonacci sorozat Ⅲ. (rekurzív generátor függvény)"],
+        ["alapok3.py", "Modulok használata (egyedi index, memorizálás)"],
+        ["a_time_meas.py", "Futási idő mérése"],
+        ["pitszh.py", "Pitagoraszi számhármasok Ⅰ."],
+        ["phrp.py", "Pitagoraszi számhármasok Ⅱ."],
+        ["pitszh.py", "Pitagoraszi számhármasok Ⅲ."],
+        ["pithsz.py", "Pitagoraszi háromszögek és szögei"],
+        ["alg_eukl1.py", "Euklideszi algoritmus kivonással"],
+        ["alg_eukl2.py", "Euklideszi algoritmus maradékképzéssel"],
+        ["a_time_meas_eukl.py", "Futási idő mérése: Euklideszi algoritmusok összehasonlítása"],
+        ["nfakt.py", "Faktoriális Ⅰ."],
+        ["fakt.py", "Faktoriális Ⅱ."],
+        ["nfakt2.py", "Faktoriálisok sorozata Ⅰ."],
+        ["nfakt3.py", "Faktoriálisok sorozata Ⅱ."],
+        ["redu.py", "Faktoriálisok sorozata Ⅲ. (reduce)"],
+        ["covid_dr.py", "Szövegfájl, csv fájl beolvasása"],
+        ["fileread.py|inp.txt", "Szövegfájl adatok feldolgozása Ⅰ."],
+        ["fileio.py", "Szövegfájl Input/Output"],
+        ["fileread2.py|inp2.txt", "Szövegfájl adatok feldolgozása Ⅱ."],
+        ["p8.py|input.txt", "*** 8. próbadolgozat -> mintamegoldás ***"],
+        ["tvkorbo1.py", "*** 1. hf 1. és 2. feladatának megoldása ***"],
+        ["efmo/2024_k/szamolo.py", "Érettségi 2024_K"],
+        ["efmo/2020_1/metjelentes.py", "Érettségi 2020_1"],
+        ["efmo/2020_2/sorozatok.py", "Érettségi 2020_2"],
+        ["efmo/2021_1/godor.py", "Érettségi 2021_1"],
+        ["efmo/2021_2/sudoku.py", "Érettségi 2021_2"],
+        ["gyok.py", "Négyzetgyök"],
+        ["gyok2.py", "Négyzetgyök törtekkel"],
+        ["eratoszthenesz.py", "Eratoszthenész szitája"],
+        ["sumprimes.py", "Komlex feladat Ⅰ. (szűrés - prímszámok összege)"],
+        ["deque.py", "Verem/Sor adatszerkeze"],
+        ["find.py", "Keresés rendezett listában"],
+        ["find2.py", "Keresések futási idő mérése"],
+        ["inssort.py", "Beszúró rendezés"],
+        ["heap.py", "Kupac adatszerkezet"],
+        ["heapsort.py", "Kupacrendezés"],
+        ["dict.py", "Szótár adatszerkezet"],
+        ["feladatgy.md", "Feladatgyűlytemény"],
+        ["feladatgy1.py", "Megoldások I."],
+        ["mfem.py", "Másodfokú egyenlet megoldó"],
+        ["py2svg.py", "SVG generátor"],
+        ["squarenlist.py", "Generátorok"],
+        ["szamrendszerek.py", "Számrendszerek"],
+        ["tdb.py", "NoSQL adatkezelés"],
+        ["tek01.py", "SVG"],
+        ["animation.py", "Animáció"],
+        ["teknoc.py", "Teknőcgrafika"],
+        ["time.py", "Lokalizáció (dátum)"],
+        ["async.py", "Aszinkron IO*"],
+        ["hr_lkp.py", "HackerrRank: list-comprehensions"],
+        ["hr_ftp.py", "HackerrRank: finding-the-percentage"],
+        ["FCTRL.py", "Spoj: FCTRL"],
+        ["hanoi.py", "Hanoi tornyai Ⅰ."],
+        ["hanoi_gen.py", "Hanoi tornyai Ⅱ."],
+        ["pqueue.py", "Osztályok, Kupac, Prioritási sor adatszerkezet"],
+        ["tukorszo.py", "Tükörszavasíthatósági mérték*"],
+        ["tukorszo2.py", "Tükörszavasító*"],
+        ["hatizsak.py", "Hátizsák probléma*"],
+        ["lis.py", "A leghosszab növekvő részsorozat hossza*"],
+        ["lis2.py", "A leghosszab növekvő részsorozat*"],
+        ["npp.py", "Lineáris egyenletrendszer megoldó*"]
+    ]
+    a = {}
+    a.s = 3
+    function selc(x) {
+        document.getElementById("selc").innerHTML =
+            '<select onchange="load()" id="sel">' +
+            ot.map((v, i) =>
+                `<option ${i == a.s ? "selected" : ""} value="${v[0]}">${v[1]}</option>`
+            ).join('')
+    }
+    function prev() {
+        a.s--
+        selc(a.s)
+        setTimeout(v => { load() }, 400)
+    }
+    function next() {
+        a.s++
+        selc(a.s)
+        setTimeout(v => { load() }, 400)
+    }
+    setTimeout(v => { selc(a.s) }, 100)
     setTimeout(v => { load() }, 400)
 </script>
 <script src="hljs/highlight.min.js"></script>
@@ -145,108 +271,9 @@
     </ul>
     <div class="h m20">
         <h2 class="h">Python p&eacute;ldaprogramok</h2>
-        <select onchange="load()" id="sel">
-            <option></option>
-            <option value="input.py">Input</option>
-            <option value="inpsform.py">Input + String formázás</option>
-            <option selected value="wcount.py">While számlálás</option>
-            <option value="rcount.py">Rekurzív számlálás</option>
-            <option value="range_rek.py">Rekurzív range Ⅰ.</option>
-            <option value="range_while.py">While range Ⅰ.</option>
-            <option value="list1.py">Python listák Ⅰ.</option>
-            <option value="tetelek/sum.py">Sum (összegzés ciklussal)</option>
-            <option value="tetelek/sum2.py">Sum (összegzés, rekurzív)</option>
-            <option value="tetelek/max.py">Max (keresés ciklussal)</option>
-            <option value="tetelek/max2.py">Max (keresés, rekurzív)</option>
-            <option value="szures.py">Szűrés (leválogatás)</option>
-            <option value="lambda.py">Függvények</option>
-            <option value="tetelek/filter.py">"filter" objektum (leválogatás)</option>
-            <option value="tetelek/map.py">"map" objektum</option>
-            <option value="fizzbuzz.py">fizzbuzz</option>
-            <option value="tk119_5.py">TK 119. oldal 5. feladat</option>
-            <option value="tk126_123.py">TK 126. oldal 1-3. feladat</option>
-            <option value="tt.py">Float számformázás</option>
-            <option value="colors.py">Színek</option>
-            <option value="dec2hex.py">Számrendszerek</option>
-            <option value="strings.py">Karakterek listája</option>
-            <option value="kitalalos.py">Kitalálós játék</option>
-            <option value="table1.py">Táblázatok a konzolon Ⅰ.</option>
-            <option value="table2.py">Konzol-táblázat alkalmazása</option>
-            <option value="table3.py">Táblázatok a konzolon Ⅱ.</option>
-            <option value="table4.py">Táblázatok a konzolon Ⅲ.</option>
-            <option value="table5.py">Szorzótábla</option>
-            <option value="list2.py">Python listák Ⅱ.</option>
-            <option value="random_ex1.py">Random modul</option>
-            <option value="alapok2.py">Python halmazok, szótárak</option>
-            <option value="refvsobj.py">Objektum - Referencia Ⅰ.</option>
-            <option value="arrvsstring.py">Objektum - Referencia Ⅱ.</option>
-            <option value="range_while2.py">While range Ⅱ. (generátor objektum)</option>
-            <option value="enum.py">Enumerate (generátor objektum)</option>
-            <option value="range_rek2.py">Rekurzív range Ⅱ. (generátor objektum)</option>
-            <option value="fibn.py">Fibonacci sorozat Ⅰ.</option>
-            <option value="fibn2.py">Fibonacci sorozat Ⅱ. (generátor függvény)</option>
-            <option value="fib_gen_rek.py">Fibonacci sorozat Ⅲ. (rekurzív generátor függvény)</option>
-            <option value="alapok3.py">Modulok használata (egyedi index, memorizálás)</option>
-            <option value="a_time_meas.py">Futási idő mérése</option>
-            <option value="pitszh.py">Pitagoraszi számhármasok Ⅰ.</option>
-            <option value="phrp.py">Pitagoraszi számhármasok Ⅱ.</option>
-            <option value="pitszh.py">Pitagoraszi számhármasok Ⅲ.</option>
-            <option value="pithsz.py">Pitagoraszi háromszögek és szögei</option>
-            <option value="alg_eukl1.py">Euklideszi algoritmus kivonással</option>
-            <option value="alg_eukl2.py">Euklideszi algoritmus maradékképzéssel</option>
-            <option value="a_time_meas_eukl.py">Futási idő mérése: Euklideszi algoritmusok összehasonlítása</option>
-            <option value="nfakt.py">Faktoriális Ⅰ.</option>
-            <option value="fakt.py">Faktoriális Ⅱ.</option>
-            <option value="nfakt2.py">Faktoriálisok sorozata Ⅰ.</option>
-            <option value="nfakt3.py">Faktoriálisok sorozata Ⅱ.</option>
-            <option value="redu.py">Faktoriálisok sorozata Ⅲ. (reduce)</option>
-            <option value="covid_dr.py">Szövegfájl, csv fájl beolvasása</option>
-            <option value="fileread.py|inp.txt">Szövegfájl adatok feldolgozása Ⅰ.</option>
-            <option value="fileio.py">Szövegfájl Input/Output</option>
-            <option value="fileread2.py|inp2.txt">Szövegfájl adatok feldolgozása Ⅱ.</option>
-            <option value="p8.py|input.txt">*** 8. próbadolgozat -> mintamegoldás ***</option>
-            <option value="tvkorbo1.py">*** 1. dolgozat 1. és 2. feladatának megoldása ***</option>
-            <option value="efmo/2024_k/szamolo.py">Érettségi 2024_K</option>
-            <option value="efmo/2020_1/metjelentes.py">Érettségi 2020_1</option>
-            <option value="efmo/2020_2/sorozatok.py">Érettségi 2020_2</option>
-            <option value="efmo/2021_1/godor.py">Érettségi 2021_1</option>
-            <option value="efmo/2021_2/sudoku.py">Érettségi 2021_2</option>
-            <option value="gyok.py">Négyzetgyök</option>
-            <option value="gyok2.py">Négyzetgyök törtekkel</option>
-            <option value="eratoszthenesz.py">Eratoszthenész szitája</option>
-            <option value="sumprimes.py">Komlex feladat Ⅰ. (szűrés - prímszámok összege)</option>
-            <option value="deque.py">Verem/Sor adatszerkezet</option>
-            <option value="find.py">Keresés rendezett listában</option>
-            <option value="find2.py">Keresések futási idő mérése</option>
-            <option value="inssort.py">Beszúró rendezés</option>
-            <option value="heap.py">Kupac adatszerkezet</option>
-            <option value="heapsort.py">Kupacrendezés</option>
-            <option value="dict.py">Szótár adatszerkezet</option>
-            <option value="feladatgy.md">Feladatgyűlytemény</option>
-            <option value="feladatgy1.py">Megoldások I.</option>
-            <option value="mfem.py">Másodfokú egyenlet megoldó</option>
-            <option value="py2svg.py">SVG generátor</option>
-            <option value="squarenlist.py">Generátorok</option>
-            <option value="szamrendszerek.py">Számrendszerek</option>
-            <option value="tdb.py">NoSQL adatkezelés</option>
-            <option value="tek01.py">SVG</option>
-            <option value="animation.py">Animáció</option>
-            <option value="teknoc.py">Teknőcgrafika</option>
-            <option value="time.py">Lokalizáció (dátum)</option>
-            <option value="async.py">Aszinkron IO*</option>
-            <option value="hr_lkp.py">HackerrRank: list-comprehensions</option>
-            <option value="hr_ftp.py">HackerrRank: finding-the-percentage</option>
-            <option value="FCTRL.py">Spoj: FCTRL</option>
-            <option value="hanoi.py">Hanoi tornyai Ⅰ.</option>
-            <option value="hanoi_gen.py">Hanoi tornyai Ⅱ.</option>
-            <option value="pqueue.py">Osztályok, Kupac, Prioritási sor adatszerkezet</option>
-            <option value="tukorszo.py">Tükörszavasíthatósági mérték*</option>
-            <option value="tukorszo2.py">Tükörszavasító*</option>
-            <option value="hatizsak.py">Hátizsák probléma*</option>
-            <option value="lis.py">A leghosszab növekvő részsorozat hossza*</option>
-            <option value="lis2.py">A leghosszab növekvő részsorozat*</option>
-            <option value="npp.py">Lineáris egyenletrendszer megoldó*</option>
-        </select>
+        <button onclick="prev()">〈 &nbsp;</button>
+        <span id="selc"></span>
+        <button onclick="next()">&nbsp; 〉</button>
         <span id="linkk"></span>
         <pre><code class="language-python" id="code"></code></pre>
         <div style="text-align: center;">
