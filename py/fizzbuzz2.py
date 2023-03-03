@@ -1,0 +1,1 @@
+print(*[f"{'fizz' if not i % 3 else ''}{'buzz' if not i % 5 else ''}{i if i%3 and i % 5 else ''}" for i in range(1, 21)], sep="\n")
