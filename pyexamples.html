@@ -8,12 +8,14 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Lemonada&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Square+Peg&family=Indie+Flower&family=Xanh+Mono&family=B612+Mono&display=swap');
+
     input {
         border-radius: 6px;
         box-shadow: 1px 1px 4px black;
         border: solid 1px black;
         padding: 5px;
     }
+
     button {
         background-color: aquamarine;
         border: solid 1px black;
@@ -56,6 +58,7 @@
         padding: 3px;
         padding-left: 6px;
         color: bisque;
+        font-size: 10px;
     }
 
     div.row {
@@ -64,6 +67,10 @@
 
     select {
         width: 500px;
+        border-radius: 6px;
+        box-shadow: 1px 1px 4px black;
+        border: solid 1px black;
+        padding: 5px;
     }
 
     pre.c {
@@ -88,6 +95,19 @@
 
     button {
         cursor: pointer;
+    }
+
+    #xx {
+        font-family: 'B612 Mono', monospace;
+        font-size: 11px;
+        text-align: left;
+        margin: 0;
+        border-radius: 5px;
+        border: solid 1px white;
+        padding: 6px;
+        background-color: rgb(99, 32, 32);
+        box-shadow: 1px 1px 3px inset rgb(0, 0, 0);
+        word-wrap: break-word;
     }
 </style>
 <script>
@@ -118,7 +138,7 @@
     function load() {
         kv = document.getElementById("sel").value.split("|")
         a.s = document.getElementById("sel").selectedIndex
-        document.getElementById("xx").innerHTML = a.s
+        document.getElementById("xx").innerHTML = "#" + a.s
         file = "py/" + kv[0]
         if (kv.length > 1) inpf = kv[1]
         else inpf = ""
@@ -279,13 +299,13 @@
         a.s--
         selc()
         setTimeout(v => { load() }, 100)
-        document.getElementById("xx").innerHTML = a.s
+        document.getElementById("xx").innerHTML = "#" + a.s
     }
     function next() {
         a.s++
         selc()
         setTimeout(v => { load() }, 100)
-        document.getElementById("xx").innerHTML = a.s
+        document.getElementById("xx").innerHTML = "#" + a.s
     }
     function szukit(mire) {
         if (mire.length) {
@@ -300,7 +320,7 @@
         }
         if (ot.length < 4) a.s = ot.length
         else a.s = 4
-        document.getElementById("xx").innerHTML = a.s
+        document.getElementById("xx").innerHTML = "#"+a.s
     }
     setTimeout(v => { selc() }, 100)
     setTimeout(v => { load() }, 400)
@@ -319,7 +339,7 @@
     </ul>
     <div class="h m20">
         <h2 class="h">Python p&eacute;ldaprogramok</h2>
-        <span id="xx">4</span>
+        <span id="xx">#4</span>
         <button onclick="prev()">⬅</button>
         <span id="selc"></span>
         <input type="text" id="i1" onkeyup="szukit(this.value)" placeholder="szűrés">
@@ -330,7 +350,7 @@
             <div id="content" style="display: none;"></div>
         </div>
         <div>
-            <div class="fi">A program futási eredménye:</div>
+            <div class="fi">A script futási eredménye (terminal output):</div>
             <pre class="c" id="cons"></pre>
         </div>
     </div>
