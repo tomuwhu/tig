@@ -260,9 +260,10 @@
         ["lis2.py", "A leghosszab növekvő részsorozat*"],
         ["npp.py", "Lineáris egyenletrendszer megoldó*"]
     ]
+    oe = [...ot]
     a = {}
     a.s = 5
-    function selc(x) {
+    function selc() {
         document.getElementById("selc").innerHTML =
             '<select onchange="load()" id="sel">' +
             ot.map((v, i) =>
@@ -271,15 +272,25 @@
     }
     function prev() {
         a.s--
-        selc(a.s)
+        selc()
         setTimeout(v => { load() }, 100)
     }
     function next() {
         a.s++
-        selc(a.s)
+        selc()
         setTimeout(v => { load() }, 100)
     }
-    setTimeout(v => { selc(a.s) }, 100)
+    function szukit(mire) {
+        if (mire.length) {
+            r = new RegExp(`${mire.toUpperCase()}*`)
+            ot = [...oe].filter(v => r.test(v[1].toUpperCase()))
+        } else {
+            ot = [...oe]
+        }
+        selc()
+        setTimeout(v => { load() }, 100)
+    }
+    setTimeout(v => { selc() }, 100)
     setTimeout(v => { load() }, 400)
 </script>
 <script src="hljs/highlight.min.js"></script>
@@ -298,6 +309,7 @@
         <h2 class="h">Python p&eacute;ldaprogramok</h2>
         <button onclick="prev()">⬅</button>
         <span id="selc"></span>
+        <input type="text" id="i1" onkeyup="szukit(this.value)" placeholder="szűrés">
         <button onclick="next()">⮕</button>
         <span id="linkk"></span>
         <pre><code class="language-python" id="code"></code></pre>
