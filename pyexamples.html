@@ -9,6 +9,18 @@
     @import url('https://fonts.googleapis.com/css2?family=Lemonada&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Square+Peg&family=Indie+Flower&family=Xanh+Mono&family=B612+Mono&display=swap');
 
+    button {
+        background-color: aquamarine;
+        border: solid 1px black;
+        border-radius: 7px;
+        color: rgb(96, 7, 7);
+    }
+
+    button:hover {
+        background-color: aqua;
+        box-shadow: 1px 1px 4px black;
+    }
+
     .navigation {
         display: flex;
         flex-flow: row wrap;
@@ -247,12 +259,12 @@
     function prev() {
         a.s--
         selc(a.s)
-        setTimeout(v => { load() }, 400)
+        setTimeout(v => { load() }, 100)
     }
     function next() {
         a.s++
         selc(a.s)
-        setTimeout(v => { load() }, 400)
+        setTimeout(v => { load() }, 100)
     }
     setTimeout(v => { selc(a.s) }, 100)
     setTimeout(v => { load() }, 400)
@@ -271,9 +283,9 @@
     </ul>
     <div class="h m20">
         <h2 class="h">Python p&eacute;ldaprogramok</h2>
-        <button onclick="prev()">〈 &nbsp;</button>
+        <button onclick="prev()">⬅</button>
         <span id="selc"></span>
-        <button onclick="next()">&nbsp; 〉</button>
+        <button onclick="next()">⮕</button>
         <span id="linkk"></span>
         <pre><code class="language-python" id="code"></code></pre>
         <div style="text-align: center;">
