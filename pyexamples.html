@@ -111,6 +111,7 @@
     });
     function load() {
         kv = document.getElementById("sel").value.split("|")
+        a.s = document.getElementById("sel").selectedIndex
         file = "py/" + kv[0]
         if (kv.length > 1) inpf = kv[1]
         else inpf = ""
@@ -153,13 +154,16 @@
         ["rcount.py", "Rekurzív számlálás"],
         ["range_while.py", "While range Ⅰ."],
         ["range_rek.py", "Rekurzív range Ⅰ."],
+        ["ranges.py", "Range alkalmazása Ⅰ."],
+        ["ranges2.py", "Range alkalmazása Ⅱ."],
+        ["ranges3.py", "Range alkalmazása Ⅲ."],
+        ["lambda.py", "Függvények"],
         ["list1.py", "Python listák Ⅰ."],
         ["tetelek/sum.py", "Sum (összegzés ciklussal)"],
         ["tetelek/sum2.py", "Sum (összegzés, rekurzív)"],
         ["tetelek/max.py", "Max (keresés ciklussal)"],
         ["tetelek/max2.py", "Max (keresés, rekurzív)"],
         ["szures.py", "Szűrés (leválogatás)"],
-        ["lambda.py", "Függvények"],
         ["tetelek/filter.py", "\"filter\" objektum (leválogatás)"],
         ["tetelek/map.py", "\"map\" objektum"],
         ["fizzbuzz.py", "fizzbuzz"],
