@@ -5,5 +5,5 @@ def f(n):
     else:
         yield 1
 print(
-    sum(f(20))
+    sum(f(10))
 )
