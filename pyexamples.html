@@ -138,7 +138,7 @@
     function load() {
         kv = document.getElementById("sel").value.split("|")
         a.s = document.getElementById("sel").selectedIndex
-        document.getElementById("xx").innerHTML = "#" + a.s
+        document.getElementById("xx").innerHTML = "#" + (a.s + 1)
         file = "py/" + kv[0]
         if (kv.length > 1) inpf = kv[1]
         else inpf = ""
@@ -179,6 +179,7 @@
         ["ifelse2.py", "Elágazás Ⅱ."],
         ["ifelsehelyett.py", "Elágazás Ⅲ."],
         ["inpsform.py", "Input + String formázás"],
+        ["tt.py", "Float számformázás"],
         ["wcount.py", "While számlálás"],
         ["rcount.py", "Rekurzív számlálás"],
         ["range_while.py", "While range Ⅰ."],
@@ -203,7 +204,6 @@
         ["string2list.py", "Számokat tartalmazó szöveg átalakítása számokat tarzalmazó listává"],
         ["tk119_5.py", "TK 119. oldal 5. feladat"],
         ["tk126_123.py", "TK 126. oldal 1-3. feladat"],
-        ["tt.py", "Float számformázás"],
         ["colors.py", "Színek"],
         ["szr.py", "Számrendszerek Ⅰ."],
         ["dec2hex.py", "Számrendszerek Ⅱ."],
@@ -292,20 +292,20 @@
         document.getElementById("selc").innerHTML =
             '<select onchange="load()" id="sel">' +
             ot.map((v, i) =>
-                `<option ${i == a.s ? "selected" : ""} value="${v[0]}">${v[1]}</option>`
+                `<option ${i == a.s ? "selected" : ""} value="${v[0]}">#${i + 1}: ${v[1]}</option>`
             ).join('')
     }
     function prev() {
         a.s--
         selc()
         setTimeout(v => { load() }, 100)
-        document.getElementById("xx").innerHTML = "#" + a.s
+        document.getElementById("xx").innerHTML = "#" + (a.s + 1)
     }
     function next() {
         a.s++
         selc()
         setTimeout(v => { load() }, 100)
-        document.getElementById("xx").innerHTML = "#" + a.s
+        document.getElementById("xx").innerHTML = "#" + (a.s + 1)
     }
     function szukit(mire) {
         if (mire.length) {
@@ -320,7 +320,7 @@
         }
         if (ot.length < 4) a.s = ot.length
         else a.s = 4
-        document.getElementById("xx").innerHTML = "#"+a.s
+        document.getElementById("xx").innerHTML = "#" + (a.s + 1)
     }
     setTimeout(v => { selc() }, 100)
     setTimeout(v => { load() }, 400)
@@ -339,7 +339,7 @@
     </ul>
     <div class="h m20">
         <h2 class="h">Python p&eacute;ldaprogramok</h2>
-        <span id="xx">#4</span>
+        <span id="xx"></span>
         <button onclick="prev()">⬅</button>
         <span id="selc"></span>
         <input type="text" id="i1" onkeyup="szukit(this.value)" placeholder="szűrés">
