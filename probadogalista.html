@@ -132,16 +132,16 @@
         }
         sx = ''
         for (j = 0; j < 5; j++) {
-            sx += `<b>${j + 2}. feladat</b>: Határozza meg ${j == 0 || j == 4 ? 'az' : 'a&nbsp;'} ${j + 1}. sorban szereplő ${f1[q[j]]} ${f2[w[j]]}!<br>`
+            sx += `<b class="f">${j + 2}. feladat</b>: Határozza meg ${j == 0 || j == 4 ? 'az' : 'a&nbsp;'} ${j + 1}. sorban szereplő ${f1[q[j]]} ${f2[w[j]]}!<br>`
         }
-        sx += `<b>7. feladat</b>: Határozza meg az összes számra a ${f1[q[5]]} ${f2[w[5]]}!<hr>`
+        sx += `<b  class="f">7. feladat</b>: Határozza meg az összes számra a ${f1[q[5]]} ${f2[w[5]]}!<hr>`
         sx += `<b class="bek mm">Minta a szöveges kimenet kialakításához:</b><br><div class="hh"></div><div id="min">`
         for (j = 0; j < 5; j++) {
-            sx += `<b>${j + 2}. feladat</b>:<br> ${j == 0 || j == 4 ? 'Az' : 'A&nbsp;'} ${j + 1}. sorban szereplő ${f1[q[j]]} ${f2v[w[j]]}<b class="r">${f2l[w[j]](f1l[q[j]](ms[j]))}</b><br>`
+            sx += `<b class="f">${j + 2}. feladat</b>:<br> &nbsp;  &nbsp; ${j == 0 || j == 4 ? 'Az' : 'A&nbsp;'} ${j + 1}. sorban szereplő ${f1[q[j]]} ${f2v[w[j]]}<b class="r">${f2l[w[j]](f1l[q[j]](ms[j]))}</b><br>`
         }
         ks = `
             Név: <input placeholder="Név"> Csoport: <select><option></option><option>9/C</option><option>10/DA</option><option>10/DB</option></select><hr>
-            <b>1. feladat</b>: Mentse el ezt a feladatkiírást (mintával együtt) képként <b>hf5_oszt_vez_ker.jpg</b> néven!<br>
+            <b class="f">1. feladat</b>: Mentse el ezt a feladatkiírást (mintával együtt) képként <b>hf5_oszt_vez_ker.jpg</b> néven!<br>
             (A képernyő kijelölt terülezének másolása windows alatt: «win»  + «shift» + «s»)
             <br><br>
             Az alábbi szöveges fájl soraiban egész számok vannak ${z[zz][0]} ('${z[zz][1]}') elválasztva.<div class="hh"></div>
@@ -151,8 +151,8 @@
             A nem egész számokat két tizedesjegyre kerekítve adja meg, a nagyságrendet 10^n alakban!
             <br><br>
         ` + sx + `
-            <b>7. feladat</b>:<br>Az inputban szereplő összes szám közül a ${f1[q[5]]} ${f2v[w[5]]}<b class="r">${f2l[w[5]](f1l[q[5]](mos))}</b></br></div><hr>
-            Amikor kész <b class="bek" onclick="document.getElementById('bek').style.display='inline'">így</b> töltse fel a weblapjára!
+            <b class="f">7. feladat</b>:<br> &nbsp;  &nbsp; Az inputban szereplő összes szám közül a ${f1[q[5]]} ${f2v[w[5]]}<b class="r">${f2l[w[5]](f1l[q[5]](mos))}</b></br></div><hr>
+            Amikor kész <b class="bek hand" onclick="document.getElementById('bek').style.display='inline'">így</b> töltse fel a weblapjára!
             <div id="bek" style="display: none;"><b>:</b> Az <b>hf5_oszt_vez_ker.jpg</b>, az <b>input.txt</b> és a <b>hf5_oszt_vez_ker.py</b>
             fájlokat archiválja <i>oszt_vez_ker.zip</i> tömörített fájlba, ahol <i>oszt</i>: osztály ('9C','10DA','10DB'), <i>vez</i>: vezetéknév, <i>ker</i>: keresztnév vagy keresztnevek "_" karakterrel elválasztva.
             <br>Az <b>.zip</b> fájlt letöltő hivatkozást helyezze el a weboldalára, úgy hogy onnan könnyen letölthető legyen és megtaláljam!<br></div><br><div class="hi">Határidő: 2023. március 12.</div>
@@ -479,7 +479,17 @@
     </div>
 </body>
 <style>
+    .hand {
+        cursor: pointer;
+    }
+    .hand:hover {
+        color: red;
+    }
     @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Lemonada&display=swap');
+    b.f {
+        color:rgb(151, 83, 27);
+        text-shadow: 1px 1px 3px gray;
+    }
     body {
         background-image: url("img/bgi.jpeg");
         color: rgb(196, 240, 230);
