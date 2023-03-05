@@ -140,6 +140,7 @@
             sx += `<b>${j + 2}. feladat</b>:<br> ${j == 0 || j == 4 ? 'Az' : 'A&nbsp;'} ${j + 1}. sorban szereplő ${f1[q[j]]} ${f2v[w[j]]}<b class="r">${f2l[w[j]](f1l[q[j]](ms[j]))}</b><br>`
         }
         ks = `
+            Név: <input placeholder="Név"> Csoport: <select><option></option><option>9/C</option><option>10/DA</option><option>10/DB</option></select><hr>
             <b>1. feladat</b>: Mentse el ezt a feladatkiírást (mintával együtt) képként <b>hf5_oszt_vez_ker.jpg</b> néven!<br><br>
             Az alábbi szöveges fájl soraiban egész számok vannak ${z[zz][0]} ('${z[zz][1]}') elválasztva.<br><br>
             <a class="m" id="ax" download="input.txt">INPUT.TXT</a><br><br>
@@ -427,6 +428,26 @@
 </body>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Lemonada&display=swap');
+
+    input {
+        width: 300px;
+        border: none;
+        border-bottom: solid 1px blue;
+        font-size: 12px;
+        text-shadow: 1px 1px 3px rgb(70, 51, 5);
+        font-family: 'Comfortaa', cursive;
+        color: blue;
+    }
+    select {
+        width: 80px;
+        border: none;
+        border-bottom: solid 1px blue;
+        font-size: 12px;
+        text-align: center;
+        text-shadow: 1px 1px 3px rgb(70, 51, 5);
+        font-family: 'Comfortaa', cursive;
+        color: blue;
+    }
 
     div.an {
         width: 560px;
