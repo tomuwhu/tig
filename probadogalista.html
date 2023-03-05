@@ -135,15 +135,15 @@
             sx += `<b>${j + 2}. feladat</b>: Határozza meg ${j == 0 || j == 4 ? 'az' : 'a&nbsp;'} ${j + 1}. sorban szereplő ${f1[q[j]]} ${f2[w[j]]}!<br>`
         }
         sx += `<b>7. feladat</b>: Határozza meg az összes számra a ${f1[q[5]]} ${f2[w[5]]}!<hr>`
-        sx += `<b class="bek mm" onclick="document.getElementById('min').style.display='inline'">Minta a szöveges kimenet kialakításához:</b><br><div id="min" style="display:none;"><br>`
+        sx += `<b class="bek mm">Minta a szöveges kimenet kialakításához:</b><br><div class="hh"></div><div id="min">`
         for (j = 0; j < 5; j++) {
             sx += `<b>${j + 2}. feladat</b>:<br> ${j == 0 || j == 4 ? 'Az' : 'A&nbsp;'} ${j + 1}. sorban szereplő ${f1[q[j]]} ${f2v[w[j]]}<b class="r">${f2l[w[j]](f1l[q[j]](ms[j]))}</b><br>`
         }
         ks = `
             Név: <input placeholder="Név"> Csoport: <select><option></option><option>9/C</option><option>10/DA</option><option>10/DB</option></select><hr>
             <b>1. feladat</b>: Mentse el ezt a feladatkiírást (mintával együtt) képként <b>hf5_oszt_vez_ker.jpg</b> néven!<br><br>
-            Az alábbi szöveges fájl soraiban egész számok vannak ${z[zz][0]} ('${z[zz][1]}') elválasztva.<br><br>
-            <a class="m" id="ax" download="input.txt">INPUT.TXT</a><br><br>
+            Az alábbi szöveges fájl soraiban egész számok vannak ${z[zz][0]} ('${z[zz][1]}') elválasztva.<div class="hh"></div>
+            <a class="m" id="ax" download="input.txt">INPUT.TXT</a><div class="hh"></div>
             Készítsen programot <i>python</i> nyelven, mely beolvassa a számokat és eltárolja egy alkalmas<br>
             adatszerkezetben, majd az alábbi számításokat végrehajtja! A program neve <b>hf5_oszt_vez_ker.py</b> legyen!<br>
             A nem egész számokat két tizedesjegyre kerekítve adja meg, a nagyságrendet 10^n alakban!
@@ -483,6 +483,10 @@
         color: #87a3c3;
     }
 
+    div.hh {
+        height: 5px;
+    }
+
     body {
         margin: 0;
         background: rgb(0, 21, 28);
@@ -553,9 +557,6 @@
 
     b.mm {
         text-shadow: 1px 1px 3px rgb(70, 51, 5);
-        font-family: 'Comfortaa', cursive;
-        font-size: 13px;
-        user-select: none;
     }
 
     a.m {
@@ -563,8 +564,10 @@
         text-shadow: 1px 1px 6px rgb(5, 49, 70);
         font-family: 'Comfortaa', cursive;
         letter-spacing: 1px;
-        font-size: 7px;
+        font-size: 10px;
         user-select: none;
+        text-align: center;
+        display: block;
     }
 
     a.m:hover {
@@ -710,16 +713,6 @@ td#pd6g:hover, td#pd5g:hover {
         font-size: 10px;
         font-weight: bold;
         cursor: pointer;
-    }
-
-    b.bek {
-        cursor: pointer;
-        color: #6e060f;
-    }
-
-    b.bek:hover {
-        cursor: pointer;
-        color: #d63946;
     }
 
     div.fg {
