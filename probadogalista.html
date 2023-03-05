@@ -141,7 +141,9 @@
         }
         ks = `
             Név: <input placeholder="Név"> Csoport: <select><option></option><option>9/C</option><option>10/DA</option><option>10/DB</option></select><hr>
-            <b>1. feladat</b>: Mentse el ezt a feladatkiírást (mintával együtt) képként <b>hf5_oszt_vez_ker.jpg</b> néven!<br><br>
+            <b>1. feladat</b>: Mentse el ezt a feladatkiírást (mintával együtt) képként <b>hf5_oszt_vez_ker.jpg</b> néven!<br>
+            (A képernyő kijelölt terülezének másolása windows alatt: «win»  + «shift» + «s»)
+            <br><br>
             Az alábbi szöveges fájl soraiban egész számok vannak ${z[zz][0]} ('${z[zz][1]}') elválasztva.<div class="hh"></div>
             <a class="m" id="ax" download="input.txt">INPUT.TXT</a><div class="hh"></div>
             Készítsen programot <i>python</i> nyelven, mely beolvassa a számokat és eltárolja egy alkalmas<br>
@@ -153,7 +155,7 @@
             Amikor kész <b class="bek" onclick="document.getElementById('bek').style.display='inline'">így</b> töltse fel a weblapjára!
             <div id="bek" style="display: none;"><b>:</b> Az <b>hf5_oszt_vez_ker.jpg</b>, az <b>input.txt</b> és a <b>hf5_oszt_vez_ker.py</b>
             fájlokat archiválja <i>oszt_vez_ker.zip</i> tömörített fájlba, ahol <i>oszt</i>: osztály ('9C','10DA','10DB'), <i>vez</i>: vezetéknév, <i>ker</i>: keresztnév vagy keresztnevek "_" karakterrel elválasztva.
-            <br>Az <b>.zip</b> fájlt letöltő hivatkozást helyezze el a weboldalára, úgy hogy onnan könnyen letölthető legyen és megtaláljam!<br></div><br><b>Határidő: 2023. március 12.</b>
+            <br>Az <b>.zip</b> fájlt letöltő hivatkozást helyezze el a weboldalára, úgy hogy onnan könnyen letölthető legyen és megtaláljam!<br></div><br><div class="hi">Határidő: 2023. március 12.</div>
             <hr><a class="m" href="pygyak.html?py/&input.txt&p8.py" target="mm">Megoldás minta (nem pontosan ehhez a feladathoz)</a>
         `
         i = 0
@@ -183,8 +185,7 @@
         document.getElementById('anim').innerHTML = `<div class="an">
                     Készítsen az alábbi animációhoz hasonló, egy, a tanulmányaival összefüggő (a lenti pédákkkal megegyező, vagy azokat meghaladó összetettségű) animációt <b>HTML(SVG) + CSS + JavaScript</b> formátumban!
                     Az elkészült animációt helyezze el a honlapján (úgy, hogy megtaláljam)!<br>
-                    <br><b class="br">Határidő: 2022. december 16., 16:00</b>
-                        <br><center>😼</center>
+                    <br><div class="hi">Határidő: 2022. december 16., 16:00</div>
                     </div>
                     <div class="mx"><a 
                         id="start" class="m ma"
@@ -258,9 +259,16 @@
             </tr>
             <tr id="pd2x" class="px">
                 <td>
-                    <a href="img/pd02.jpg" target="op"><img class="pici2" src="img/pd02.jpg" alt=""></a>
-                    <hr>
-                    <b class="br">Határidő: 2022. november 4., 16:00</b>
+                    <div class="an" style="text-align: left;">
+                        Készítse el az alábbi képen szereplő billentyűzetet HTML-CSS segítségével, úgy, hogy minél
+                        jobban hasonlítson!
+                        <div class="hh"></div>
+                        <a href="img/pd02.jpg" target="op"><img class="pici2" src="img/pd02.jpg" alt=""></a>
+                        <div class="hh"></div>
+                        Az elkészült billentyűzetet helyezze el a honlapján!
+                        <div class="hh"></div>
+                        <div class="hi">Határidő: 2022. november 4., 16:00<div class="hi">
+                    </div>
                 </td>
                 <th class="pir">
                     1. kötelező feladat (HTML+CSS)
@@ -272,16 +280,24 @@
             </tr>
             <tr id="pd3x" class="px">
                 <td>
-                    <a href="img/pd03.jpg" target="op"><img src="img/pd03.jpg" alt="" class="pici3"></a>
-                    <hr>
-                    <b class="br">Határidő: 2022. november 11., 16:00</b>
+                    <div class="an" style="text-align: left;">
+                        Készítse el az alábbi képen szereplő billentyűzetet HTML-CSS segítségével, úgy, hogy minél
+                        jobban hasonlítson!
+                        <div class="hh"></div>
+                        <a href="img/pd03.jpg" target="op"><img src="img/pd03.jpg" alt="" class="pici3"></a>
+                        <div class="hh"></div>
+                        Az elkészült billentyűzetet helyezze el a honlapján!
+                        <div class="hh"></div>
+                        <div class="hi">Határidő: 2022. november 11., 16:00</div>
+                    </div>
+
                 </td>
                 <th class="pir">
                     2. kötelező feladat (HTML+CSS)
                 </th>
             </tr>
             <tr>
-                <td colspan=2 id="pd5g" class="gg" onclick="f('pd5')">3. gyakorló feladat (SVG) <big>🎅</big></td>
+                <td colspan=2 id="pd5g" class="gg or" onclick="f('pd5')">1. szorgalmi feladat (SVG) <big>🎅</big></td>
             </tr>
             <tr id="pd5x" class="px" style="display:none;">
                 <td>
@@ -332,11 +348,11 @@
                         <div style="text-align: left;">
                             Az elkészült ábrát jelenítse meg a honlapján!
                         </div><br>
-                        <b class="br">Határidő: 2022. december 6., 6:00</b>
+                        <div class="hi">Határidő: 2022. december 6., 6:00</div>
                     </div>
                 </td>
-                <th>
-                    3. gyakorló feladat (SVG)
+                <th class="pr">
+                    1. szorgalmi feladat (SVG)
                 </th>
             </tr>
             <tr>
@@ -369,10 +385,13 @@
                             könnyen áttekinthetők!
                             <br>
                             <br>
+                            Az elkészült programot helyezze el a honlapján, úgy, hogy könnyen megtaláljam!
+                            <br>
+                            <br>
                             <div class="c1"><a target="_blank"
                                     href="https://es6.eu/purejs/pithagoras2.html">példaprogram</a></div>
                             <hr>
-                            <b class="br">Határidő: 2023. január 15., 18:00</b>
+                            <div class="hi">Határidő: 2023. január 15., 18:00</div>
                         </div>
                     </div><br>
                 </td>
@@ -438,6 +457,7 @@
         font-family: 'Comfortaa', cursive;
         color: blue;
     }
+
     select {
         width: 80px;
         border: none;
@@ -461,6 +481,13 @@
         font-size: 12px;
     }
 
+    div.hi {
+        color: rgb(72, 4, 4);
+        text-shadow: 1px 1px 2px rgb(104, 97, 97);
+        text-align: right;
+        font-weight: bold;
+    }
+
     .pir {
         color: rgb(114, 0, 0);
         background-color: #dbaaae;
@@ -472,6 +499,15 @@
 
     td.red {
         color: red;
+    }
+
+    td.or {
+        color: rgb(65, 97, 107);
+    }
+
+    th.pr {
+        color: rgb(24, 37, 69);
+        background-color: #aadbd8;
     }
 
     div.x {
@@ -700,11 +736,6 @@ td#pd6g:hover, td#pd5g:hover {
     color:#08274b;
     cursor: pointer;
 }*/
-    b.r {
-        color: rgb(72, 4, 4);
-        text-shadow: 1px 1px 2px rgb(104, 97, 97);
-    }
-
     b {
         text-shadow: 1px 1px 2px rgb(104, 97, 97);
     }
