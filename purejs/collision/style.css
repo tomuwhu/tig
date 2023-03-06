@@ -71,16 +71,22 @@ body {
     0% {
         left: 50%;
         top: 70%;
+        background-color: rgb(13, 16, 69);
+        border-radius: 50px;
     }
 
     50% {
         left: 10%;
         top: 1%;
+        background-color: rgb(196, 219, 82);
+        border-radius: 0px;
     }
 
     100% {
         left: 50%;
         top: 70%;
+        background-color: rgb(13, 16, 69);
+        border-radius: 50px;
     }
 }
 

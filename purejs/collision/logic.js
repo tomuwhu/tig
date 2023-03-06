@@ -8,14 +8,15 @@ function coll(el1, el2) {
       rect1.left > rect2.right
     )
 }
-setInterval(() => {
+l = setInterval(() => {
     x1 = document.getElementById("o1")
     x2 = document.getElementById("o2")
     if (coll(x1, x2)) {
+        clearInterval(l)
         setTimeout(() => {
             x1.style.display = "none"
             x2.style.display = "none"
             document.getElementById("go").style.display = "block"
         }, 50)
     }
-})
+}, 10)
