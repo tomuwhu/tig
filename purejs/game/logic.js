@@ -5,6 +5,9 @@ ty = ym - 150
 xv = 0
 yv = 0
 speed = 50
+last = {
+    key: ""
+}
 function start(b) {
     b.style.display = "none"
     tank = document.getElementById("tank")
@@ -14,7 +17,10 @@ function start(b) {
     tank.style.left = `${tx}px`
 }
 function f(e) {
-    switch (e.key) {
+    last.key = e.key
+}
+setInterval(() => {
+    switch (last.key) {
         case "ArrowRight":
             xv = speed
             yv = 0
@@ -36,10 +42,8 @@ function f(e) {
             yv = 0
             break
     }
-}
-setInterval(() => { 
     tx += xv
     ty += yv
     tank.style.top = `${ty}px`
     tank.style.left = `${tx}px`
-}, 100)
+}, 200)
