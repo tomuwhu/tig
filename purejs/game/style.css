@@ -1,0 +1,20 @@
+body {
+    user-select: none;
+    background-color: rgb(205, 185, 185);
+    text-align: center;
+}
+
+button {
+    margin-top: 300px;
+}
+
+#tank {
+    display: none;
+    width: 100px;
+    height: 100px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 5px;
+    background-color: blue;
+    transition: 0.1s;
+    transition-timing-function: linear;
+}
