@@ -1,0 +1,89 @@
+body {
+    background-color: rgb(226, 227, 200);
+}
+
+#o1 {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background-color: aquamarine;
+    box-shadow: 1px 1px 3px black;
+    transition: 2s;
+    position: absolute;
+    left: 50%;
+    top: 2%;
+    animation: a1 8s infinite;
+}
+
+@keyframes a1 {
+    0% {
+        left: 50%;
+        top: 2%;
+    }
+
+    20% {
+        left: 90%;
+        top: 70%;
+        background-color: rgb(219, 82, 201);
+        width: 60px;
+    }
+
+    40% {
+        left: 10%;
+        top: 70%;
+        width: 200px;
+    }
+
+    60% {
+        left: 90%;
+        top: 10%;
+        width: 60px;
+    }
+
+    80% {
+        left: 10%;
+        top: 10%;
+        border-radius: 50px;
+    }
+
+    100% {
+        left: 50%;
+        top: 2%;
+    }
+}
+
+#o2 {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background-color: aquamarine;
+    box-shadow: 1px 1px 3px black;
+    transition: 2s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation: a2 7s infinite;
+}
+
+@keyframes a2 {
+    0% {
+        left: 50%;
+        top: 70%;
+    }
+
+    50% {
+        left: 10%;
+        top: 1%;
+    }
+
+    100% {
+        left: 50%;
+        top: 70%;
+    }
+}
+
+#go {
+    display: none;
+}

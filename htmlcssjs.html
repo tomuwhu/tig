@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script>
         function tmo() {
@@ -8,76 +9,76 @@
         }
         function lh(f) {
             var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
+            xhttp.onreadystatechange = function () {
                 html_content = xhttp.responseText
                 q = html_content
-                            .replace(/&/g, "&amp;")
-                            .replace(/</g, "&lt;")
-                            .replace(/>/g, "&gt;")
-                            .replace(/"/g, "&quot;")
-                            .replace(/'/g, "&#039;")
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;")
                 disp = document.getElementById("code")
                 disp.innerHTML = q.trim()
                 disp.setAttribute('class', 'language-html')
-                disp.style.backgroundColor= "rgb(40, 117, 157)"
-                disp.style.borderColor= "rgb(70, 10, 7)"
+                disp.style.backgroundColor = "rgb(40, 117, 157)"
+                disp.style.borderColor = "rgb(70, 10, 7)"
                 setTimeout(() => {
-                    disp.style.display= "inline-block"
+                    disp.style.display = "inline-block"
                 }, 150);
-                disp.style.textShadow="0px 0px 2px rgb(0,30,30)"
+                disp.style.textShadow = "0px 0px 2px rgb(0,30,30)"
                 hljs.highlightAll()
             }
-            document.getElementById("code").style.display="none"
-            xhttp.open("GET", "purejs/"+f+"/index.html", true);
+            document.getElementById("code").style.display = "none"
+            xhttp.open("GET", "purejs/" + f + "/index.html", true);
             xhttp.send();
         }
         function lc(f) {
             var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
+            xhttp.onreadystatechange = function () {
                 html_content = xhttp.responseText
                 q = html_content
-                            .replace(/&/g, "&amp;")
-                            .replace(/</g, "&lt;")
-                            .replace(/>/g, "&gt;")
-                            .replace(/"/g, "&quot;")
-                            .replace(/'/g, "&#039;")
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;")
                 disp = document.getElementById("code")
                 disp.innerHTML = q.trim()
                 disp.setAttribute('class', 'language-css')
-                disp.style.backgroundColor= "rgb(20,130,150)"
-                disp.style.borderColor= "rgb(10, 40, 40)"
-                disp.style.textShadow="1px 1px 3px rgb(40,50,70)"
+                disp.style.backgroundColor = "rgb(20,130,150)"
+                disp.style.borderColor = "rgb(10, 40, 40)"
+                disp.style.textShadow = "1px 1px 3px rgb(40,50,70)"
                 setTimeout(() => {
-                    disp.style.display= "inline-block"
+                    disp.style.display = "inline-block"
                 }, 150);
                 hljs.highlightAll()
             }
-            document.getElementById("code").style.display="none"
-            xhttp.open("GET", "purejs/"+f+"/stylus.css", true);
+            document.getElementById("code").style.display = "none"
+            xhttp.open("GET", "purejs/" + f + "/stylus.css", true);
             xhttp.send();
         }
         function lj(f) {
             var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
+            xhttp.onreadystatechange = function () {
                 html_content = xhttp.responseText
                 q = html_content
-                            .replace(/&/g, "&amp;")
-                            .replace(/</g, "&lt;")
-                            .replace(/>/g, "&gt;")
-                            .replace(/"/g, "&quot;")
-                            .replace(/'/g, "&#039;")
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;")
                 disp = document.getElementById("code")
                 disp.innerHTML = q.trim()
                 disp.setAttribute('class', 'language-js')
-                disp.style.backgroundColor= "rgb(20,60,50)"
-                disp.style.borderColor= "rgb(0, 40, 20)"
+                disp.style.backgroundColor = "rgb(20,60,50)"
+                disp.style.borderColor = "rgb(0, 40, 20)"
                 setTimeout(() => {
-                    disp.style.display= "inline-block"
+                    disp.style.display = "inline-block"
                 }, 150);
                 hljs.highlightAll()
             }
-            document.getElementById("code").style.display="none"
-            xhttp.open("GET", "purejs/"+f+"/logic.js", true);
+            document.getElementById("code").style.display = "none"
+            xhttp.open("GET", "purejs/" + f + "/logic.js", true);
             xhttp.send();
         }
     </script>
@@ -89,123 +90,148 @@
     <link rel="stylesheet" href="hljs/a11y-dark.css">
     <script src="hljs/highlight.min.js"></script>
     <style>
-    table {
-        border-spacing: 6px;
-        background-color: aqua;
-        border-radius: 7px;
-        box-shadow: 0px 0px 4px black;
-    }
-    td {
-        background-color: rgb(148, 212, 212);
-        margin: 2px;
-        padding: 4px;
-        box-shadow: 1px 1px 4px inset black;
-        border-radius: 2px;
-        color: black;
-        text-shadow: 1px 1px 3px black;
-    }
-    h1.h {
-        font-size: 14px;
-        background-color: rgb(57, 116, 116);
-    }
-    div#content {
-        box-shadow: 1px 1px 7px inset black;
-        margin: 20px;
-        border: solid 3px black;
-        border-radius: 12px;
-    }
-    code#code {
-        user-select: all;
-        border-radius: 30px;
-        box-shadow: 0px 0px 8px inset rgb(0, 0, 0);
-        font-family: 'Courier Prime', monospace;
-        font-size: 14px;
-        background-color: rgb(40, 77, 57);
-        text-shadow: 1px 1px 3px black;
-        border: solid 13px black;
-        margin: 20px;
-    }
-    span.m {
-        cursor: pointer;
-        color: rgb(8, 92, 62);
-        text-shadow: 1px 1px 3px rgb(119, 80, 80);
-    }
-    span:hover {
-        color: rgb(92, 43, 66);
-        text-shadow: 0px 0px 2px rgb(255, 255, 255);
-    }
-    pre#c1 {
-        margin: 0px;
-    }
-    #code {
-        display: none;
-    }
-    a.m:visited {
-        color: rgb(7, 64, 44);
-        text-shadow: 0px 0px 7px rgb(255, 255, 255);
-    }
-    a.m:hover {
-        color: rgb(92, 43, 66);
-        text-shadow: 0px 0px 2px rgb(255, 255, 255);
-    }
-    a.m {
-        text-decoration: none;
-        color: rgb(8, 92, 62);
-        text-shadow: 0px 0px 2px rgb(135, 102, 102);
-    }
-    .r {
-        text-align: right;
-        padding-left: 15px;
-        padding-right: 10px;
-    }
-    .tc {
-        text-align: center;
-        width: 100px;
-    }
-    .l {
-        text-align: left;
-        padding-left: 10px;
-        padding-right: 15px;
-    }
-    #tmog {
-        cursor: pointer;
-    }
-    #tmog:hover {
-        color: red;
-        background-color: pink;
-    }
-    .d {
-        visibility: hidden;
-    }
-    .tc {
-        background-color: rgb(232, 232, 159);
-        box-shadow: 1px 1px 3px black;
-        border-radius: 7px;
-    }
-    .tc:hover {
-        background-color: rgb(59, 66, 42);
-        color: rgb(194, 196, 160);
-        text-shadow: none;
-    }
-    .tc:hover> span.m {
-        color: rgb(198, 198, 146);
-    }
-    .tc > span.m {
-        color: rgb(54, 54, 27);
-    }
-    .tc > span.m:hover {
-        color: rgb(194, 196, 160);
-        text-shadow: none;
-    }
-    a.x {
-        color: aliceblue;
-        text-decoration: none;
-    }
-    a.x:hover {
-        color: pink;
-    }
+        table {
+            border-spacing: 6px;
+            background-color: aqua;
+            border-radius: 7px;
+            box-shadow: 0px 0px 4px black;
+        }
+
+        td {
+            background-color: rgb(148, 212, 212);
+            margin: 2px;
+            padding: 4px;
+            box-shadow: 1px 1px 4px inset black;
+            border-radius: 2px;
+            color: black;
+            text-shadow: 1px 1px 3px black;
+        }
+
+        h1.h {
+            font-size: 14px;
+            background-color: rgb(57, 116, 116);
+        }
+
+        div#content {
+            box-shadow: 1px 1px 7px inset black;
+            margin: 20px;
+            border: solid 3px black;
+            border-radius: 12px;
+        }
+
+        code#code {
+            user-select: all;
+            border-radius: 30px;
+            box-shadow: 0px 0px 8px inset rgb(0, 0, 0);
+            font-family: 'Courier Prime', monospace;
+            font-size: 14px;
+            background-color: rgb(40, 77, 57);
+            text-shadow: 1px 1px 3px black;
+            border: solid 13px black;
+            margin: 20px;
+        }
+
+        span.m {
+            cursor: pointer;
+            color: rgb(8, 92, 62);
+            text-shadow: 1px 1px 3px rgb(119, 80, 80);
+        }
+
+        span:hover {
+            color: rgb(92, 43, 66);
+            text-shadow: 0px 0px 2px rgb(255, 255, 255);
+        }
+
+        pre#c1 {
+            margin: 0px;
+        }
+
+        #code {
+            display: none;
+        }
+
+        a.m:visited {
+            color: rgb(7, 64, 44);
+            text-shadow: 0px 0px 7px rgb(255, 255, 255);
+        }
+
+        a.m:hover {
+            color: rgb(92, 43, 66);
+            text-shadow: 0px 0px 2px rgb(255, 255, 255);
+        }
+
+        a.m {
+            text-decoration: none;
+            color: rgb(8, 92, 62);
+            text-shadow: 0px 0px 2px rgb(135, 102, 102);
+        }
+
+        .r {
+            text-align: right;
+            padding-left: 15px;
+            padding-right: 10px;
+        }
+
+        .tc {
+            text-align: center;
+            width: 100px;
+        }
+
+        .l {
+            text-align: left;
+            padding-left: 10px;
+            padding-right: 15px;
+        }
+
+        #tmog {
+            cursor: pointer;
+        }
+
+        #tmog:hover {
+            color: red;
+            background-color: pink;
+        }
+
+        .d {
+            visibility: hidden;
+        }
+
+        .tc {
+            background-color: rgb(232, 232, 159);
+            box-shadow: 1px 1px 3px black;
+            border-radius: 7px;
+        }
+
+        .tc:hover {
+            background-color: rgb(59, 66, 42);
+            color: rgb(194, 196, 160);
+            text-shadow: none;
+        }
+
+        .tc:hover>span.m {
+            color: rgb(198, 198, 146);
+        }
+
+        .tc>span.m {
+            color: rgb(54, 54, 27);
+        }
+
+        .tc>span.m:hover {
+            color: rgb(194, 196, 160);
+            text-shadow: none;
+        }
+
+        a.x {
+            color: aliceblue;
+            text-decoration: none;
+        }
+
+        a.x:hover {
+            color: pink;
+        }
     </style>
 </head>
+
 <body>
     <ul class="navigation">
         <li><a href="./">Kezdőlap</a></li>
@@ -218,6 +244,15 @@
         <br><br>
         <table>
             <tr>
+                <td class="l"><a class="m" href="purejs/collision/index.html" target="_blank">Egyszerű ütközésdetektálás
+                        játékhoz</a></td>
+                <td class="tc"><span class="m" onclick="lh('collision')">index.html</span></td>
+                <td class="tc"><span class="m" onclick="lc('collision')">stylus.css</span></td>
+                <td class="tc"><span class="m" onclick="lj('collision')">logic.js</span></td>
+                <td class="r"><a class="m" href="purejs/collision.zip">Ütközésdetektálás program letöltése (.zip)</a>
+                </td>
+            </tr>
+            <tr>
                 <td class="l"><a class="m" href="purejs/amoba/index.html" target="_blank">Amőba (kipróbálása)</a></td>
                 <td class="tc"><span class="m" onclick="lh('amoba')">index.html</span></td>
                 <td class="tc"><span class="m" onclick="lc('amoba')">stylus.css</span></td>
@@ -225,12 +260,13 @@
                 <td class="r"><a class="m" href="purejs/amoba.zip">Amőba program letöltése (.zip)</a></td>
             </tr>
             <tr id="tfel" style="display: none;">
-                <td class="l"><a class="m" href="purejs/tron_half/index.html" target="_blank">Tron (kipróbálása)</a></td>
+                <td class="l"><a class="m" href="purejs/tron_half/index.html" target="_blank">Tron (kipróbálása)</a>
+                </td>
                 <td class="tc"><span class="m" onclick="lh('tron_half')">index.html</span></td>
                 <td class="tc"><span class="m" onclick="lc('tron_half')">stylus.css</span></td>
                 <td class="tc"><span class="m" onclick="lj('tron_half')">logic.js</span></td>
                 <td class="r"><a class="m" href="purejs/tron_half.zip">Tron program letöltése (.zip)</a></td>
-                <td id="tmog" ><span onclick="tmo()">mo</span></td>
+                <td id="tmog"><span onclick="tmo()">mo</span></td>
             </tr>
             <tr id="tmo">
                 <td class="l"><a class="m" href="purejs/tron_tp/index.html" target="_blank">Tron (kipróbálása)</a></td>
@@ -256,8 +292,7 @@
             <tr>
                 <td class="l"><a class="m" href="purejs/p2pg/index.html" target="_blank">Chat</a></td>
                 <td colspan="3">
-                    <a class="x" href="https://www.toptal.com/webrtc/taming-webrtc-with-peerjs"
-                       target="_blank">
+                    <a class="x" href="https://www.toptal.com/webrtc/taming-webrtc-with-peerjs" target="_blank">
                         WebRTC Peer2Peer Game Dev
                     </a>
                 </td>
@@ -265,6 +300,9 @@
             </tr>
         </table>
     </h1>
-    <div class="c"><br><pre id="c1"><code id="code"></code></pre></div>
+    <div class="c"><br>
+        <pre id="c1"><code id="code"></code></pre>
+    </div>
 </body>
+
 </html>
