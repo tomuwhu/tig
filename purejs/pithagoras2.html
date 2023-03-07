@@ -45,6 +45,12 @@
                                 f(document.getElementById('xt').value)
                 ">3 - 4 - 5</button>
             </span>
+            <span class="gc">
+                <button id="x20-21-29" class="x" onclick="
+                                            document.getElementById('xt').value=1719
+                                            f(document.getElementById('xt').value)
+                            ">20 - 21 - 29</button>
+            </span>
         </div>
         <div class="c">
             <div class="p">#<span class="q" id="i"></span></div>
@@ -85,11 +91,13 @@
         sobj3 = document.getElementById("x7-24-25").style
         sobj4 = document.getElementById("x5-12-13").style
         sobj5 = document.getElementById("x9-40-41").style
+        sobj6 = document.getElementById("x20-21-29").style
         if (i == 1406) sobj1.display = "None"; else sobj1.display = "inline-block";
         if (i == 1036) sobj2.display = "None"; else sobj2.display = "inline-block";
         if (i == 584) sobj3.display = "None"; else sobj3.display = "inline-block";
         if (i == 823) sobj4.display = "None"; else sobj4.display = "inline-block";
         if (i == 454) sobj5.display = "None"; else sobj5.display = "inline-block";
+        if (i == 1719) sobj6.display = "None"; else sobj6.display = "inline-block";
         [a, b, c] = lab[i], [ax, bx, cx, abx, acx, alphax, betax, ix] = Array([
             ["a", a], ["b", b], ["c", c], ["ab", a / b], ["ac", a / c],
             ["alpha", 180 * Math.asin(a / c) / Math.PI],
@@ -117,6 +125,10 @@
         background-color: yellow;
         color: blue;
         text-shadow: 1px 1px 3px rgb(91, 79, 79);
+    }
+
+    button.x {
+        background-color: rgb(215, 215, 123);
     }
 
     .p,
