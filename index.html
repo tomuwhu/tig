@@ -208,12 +208,24 @@
     }
     function f(x) {
         ca()
+        setTimeout(q => {
+            tt = document.getElementById(`z${x}`)
+            tt.style.backgroundColor = "rgba(120,220,170)"
+            tt.style.color = "rgba(80,10,40)"
+        }, 20)
         z = document.querySelectorAll('.gg' + x)
         if (z) {
             z.forEach(v => {
                 setTimeout(q => v.style.display = 'flex', 10)
             })
         }
+        z = document.querySelectorAll('.z')
+        z.forEach(v => {
+            setTimeout(q => {
+                v.style.backgroundColor = 'rgba(30,50,60)'
+                v.style.color = 'rgba(200,230,180)'
+            }, 10)
+        })
     }
     function ca() {
         z = document.querySelectorAll('.u')
@@ -268,7 +280,7 @@
         <hr>
         <!-- Ⅰ Ⅱ Ⅲ Ⅳ Ⅴ Ⅵ Ⅶ -->
         <!--➀ ➁ ➂ ➃ ➄ ➅ ➆ ➇ ➈ ➉ -->
-        <h3 class="c" onclick="f(1)"><span class="ss rs">Ⅰ</span> <span class="z">Otthonra telepítendő szoftverek</span>
+        <h3 class="c" onclick="f(1)"><span class="ss rs">Ⅰ</span> <span class="z" id="z1">Otthonra telepítendő szoftverek</span>
             <span class="ss rs">Ⅰ</span>
         </h3>
         <div class="ww cont gg1 u">
@@ -303,7 +315,7 @@
                 (Word, Excel, ...) - nem ingyenes, de nem kötelező!</a>
             <a class="btn bx" target="hh" href="https://www.princexml.com/download/">Prince</a>
         </div>
-        <h3 class="c" onclick="f(2)"><span class="ss rs">Ⅱ</span> <span class="z">Kötelező és ajánlott irodalom</span>
+        <h3 class="c" onclick="f(2)"><span class="ss rs">Ⅱ</span> <span class="z" id="z2">Kötelező és ajánlott irodalom</span>
             <span class="ss rs">Ⅱ</span>
         </h3>
         <div class="ww cont gg2 u">
@@ -346,7 +358,7 @@
 
             </div>
         </div>
-        <h3 class="c" onclick="f(3)"><span class="ss rs">Ⅲ</span> <span class="z">Követelmények, önértékelés, kiegészítő
+        <h3 class="c" onclick="f(3)"><span class="ss rs">Ⅲ</span> <span class="z" id="z3">Követelmények, önértékelés, kiegészítő
                 anyagok</span> <span class="ss rs">Ⅲ</span></h3>
         <div class="ww cont gg3 u">
             <a class="btn bx" target="x" href="https://scratch.mit.edu/">Scratch</a>
@@ -384,7 +396,7 @@
             <div id="content" style="width:550px;"></div>
         </div>
         <hr>
-        <h3 class="c" onclick="f(4)"><span class="ss">➀</span> <span class="z">Publikálás a
+        <h3 class="c" onclick="f(4)"><span class="ss">➀</span> <span class="z" id="z4">Publikálás a
                 világhálón,&nbsp;grafika,&nbsp;multimédia</span> <span class="ss">➀</span></h3>
         <div class="cont ww gg4 u">
             <a class="btn bx" target="x" href="https://www.markdownguide.org/basic-syntax/">Markdown szintaxis</a>
@@ -410,7 +422,7 @@
             <a class="btn bx" target="x" href="https://editor.method.ac/">SVG Editor</a>
             <a class="btn bx" target="x" href="https://app.svgator.com/">SVG Animation Editor</a>
         </div>
-        <h3 class="c" onclick="f(5)"><span class="ss">➁</span> <span class="z">Számítógép működése, Assembly, C++</span>
+        <h3 class="c" onclick="f(5)"><span class="ss">➁</span> <span class="z" id="z5">Számítógép működése, Assembly, C++</span>
             <span class="ss">➁</span>
         </h3>
         <div class="ww cont gg5 u">
@@ -440,7 +452,7 @@
                     Reference</a>
             </div>
         </div>
-        <h3 class="c" onclick="f(6)"><span class="ss">➂</span> <span class="z">Python</span> <span class="ss">➂</span>
+        <h3 class="c" onclick="f(6)"><span class="ss">➂</span> <span class="z"  id="z6">Python</span> <span class="ss">➂</span>
         </h3>
         <div class="ww cont gg6 u">
             <div class="imgdiv">
@@ -502,7 +514,7 @@
             <a class="btn bx b2" href="pdl2.html">Házi feladatok II.</a>
         </div>
 
-        <h3 class="c" onclick="f(7)"><span class="ss">➃</span> <span class="z">Algoritmizálás</span> <span
+        <h3 class="c" onclick="f(7)"><span class="ss">➃</span> <span class="z" id="z7">Algoritmizálás</span> <span
                 class="ss">➃</span></h3>
         <div class="ww cont gg7 u">
             <div class="imgdiv">
@@ -530,7 +542,7 @@
             <a class="btn bx" href="irodalom/Robotos.pdf">Robotos prezentáció* (pdf)</a>
         </div>
         <h3 class="c" onclick="f(8)"><span class="ss">➄</span> <span
-                class="z">Komplex&nbsp;feladatok&nbsp;{&nbsp;HTML&nbsp;+&nbsp;CSS&nbsp;+&nbsp;Python&nbsp;}&nbsp;&nbsp;&nbsp;⇒&nbsp;&nbsp;&nbsp;Brython</span>
+                class="z" id="z8">Komplex&nbsp;feladatok&nbsp;{&nbsp;HTML&nbsp;+&nbsp;CSS&nbsp;+&nbsp;Python&nbsp;}&nbsp;&nbsp;&nbsp;⇒&nbsp;&nbsp;&nbsp;Brython</span>
             <span class="ss">➄</span>
         </h3>
         <div class="ww cont gg8 u">
@@ -541,7 +553,7 @@
             <a class="btn bx" target="x" href="https://brython.info/static_tutorial/en/index.html">Brython tutorial</a>
             <a class="btn bx" target="x" href="https://www.youtube.com/watch?v=VJj-H4we71g">Brython video course</a>
         </div>
-        <h3 class="c" onclick="f(9)"><span class="ss">➅</span> <span class="z">Szövegszerkesztés, Táblázatkezelés,
+        <h3 class="c" onclick="f(9)"><span class="ss">➅</span> <span class="z" id="z9">Szövegszerkesztés, Táblázatkezelés,
                 Prezentáció</span> <span class="ss">➅</span></h3>
         <div class="ww cont gg9 u">
             <a class="btn bx" target="x"
@@ -557,7 +569,7 @@
             <a class="btn bx" target="x" href="https://xlmotyo.hu/vba/">Excel VBA</a>
             <a class="btn bx" target="x" href="https://excelmarketing.hu/tag/excel-vba-alapok/?">Excel VBA tanfolyam</a>
         </div>
-        <h3 class="c" onclick="f(10)"><span class="ss">➆</span> <span class="z">Adatbáziskezelés, SQL</span> <span
+        <h3 class="c" onclick="f(10)"><span class="ss">➆</span> <span class="z" id="z10">Adatbáziskezelés, SQL</span> <span
                 class="ss">➆</span></h3>
         <div class="ww cont gg10 u">
             <a class="btn bx" href="irodalom/TK10-91-104-Adatb.pdf">Adatbáziskezelés rész a tankönyvben</a>
@@ -572,7 +584,7 @@
             <a class="btn bx" target="x" href="https://www.sqlitetutorial.net/">SQLite tutorial</a>
             <a class="btn bx" target="x" href="https://www.sqlite.org/lang.html">SQLite Syntax</a>
         </div>
-        <h3 class="c" onclick="f(11)"><span class="ss">➇</span> <span class="z">Emelt szintű témakörök, versenyek</span>
+        <h3 class="c" onclick="f(11)"><span class="ss">➇</span> <span class="z" id="z11">Emelt szintű témakörök, versenyek</span>
             <span class="ss">➇</span>
         </h3>
         <div class="ww cont gg11 u">
@@ -636,13 +648,14 @@
     span.z {
         width: 420px;
         display: inline-block;
-        border-top: solid 1px rgb(47, 93, 93);
-        border-bottom: solid 1px rgb(47, 93, 93);
+        border-top: solid 3px rgb(16, 20, 20);
+        border-bottom: solid 3px rgb(21, 24, 24);
         background-color: rgb(18, 34, 34);
     }
 
     span.z:hover {
-        background-color: rgb(42, 77, 77);
+        border-top: solid 3px rgb(111, 212, 212);
+        border-bottom: solid 3px rgb(87, 213, 213);
     }
 
     span.ss {
