@@ -16,10 +16,13 @@
 <body>
     <h1 id="BBIDE">1. Python Dolgozat</h1>
     <div class="feladat">
-        <span class="tab">Feladat:</span>Adott <i>kétszer $n$ darab szám, határozzuk meg a számok összegét</i>! (A piros szövegek helyett más lesz és mindenkinek különböző.)<br>
-        <span class="tab">Bemenet:</span>A bemeneti fájl pontosan <i>két</i> sort tartalmaz, <i>mindkét</i> sorban <i>$n$ szám</i> van <i>szóközzel elválasztva</i>.<br>
-        <span class="tab">Kimenet:</span>A Standard Outputra pontosan <i>két számot</i> kell kiírni <i>szóközzel elválasztva</i>: <i>Az első és második sorban szereplő számok
-        összegét</i>!<br>
+        <span class="tab">Feladat:</span>Adott <i>kétszer $n$ darab szám, határozzuk meg a számok összegét</i>! (A piros
+        szövegek helyett más lesz és mindenkinek különböző.)<br>
+        <span class="tab">Bemenet:</span>A bemeneti fájl pontosan <i>két</i> sort tartalmaz, <i>mindkét</i> sorban
+        <i>$n$ szám</i> van <i>szóközzel elválasztva</i>.<br>
+        <span class="tab">Kimenet:</span>A Standard Outputra pontosan <i>két számot</i> kell kiírni <i>szóközzel
+            elválasztva</i>: <i>Az első és második sorban szereplő számok
+            összegét</i>!<br>
         <span class="tab">Példa:</span><br>
         <table>
             <tr>
@@ -27,9 +30,13 @@
                 <th>Kimenet</th>
             </tr>
             <tr>
-                <td><pre class="si">5 4 3 2 3 4 5 6
-3 5 6 7 5 4 5 6</pre></td>
-                <td><pre class="si">32 41</pre></td>
+                <td>
+                    <pre class="si">5 4 3 2 3 4 5 6
+3 5 6 7 5 4 5 6</pre>
+                </td>
+                <td>
+                    <pre class="si">32 41</pre>
+                </td>
             </tr>
         </table>
     </div>
@@ -82,8 +89,9 @@
             enableSnippets: true,
             enableLiveAutocompletion: false
         });
-        
-        editor2.setValue(`3 3 4 5 6 7 8 9 3 3 3\n6 3 7 5 6 8 8 9 1 2 1`)
+
+        editor2.setValue(`5 4 3 2 3 4 5 6
+3 5 6 7 5 4 5 6`)
         setTimeout(v => {
             document.getElementsByClassName("ace_marker-layer")[0].innerHTML = ""
         }, 500)
