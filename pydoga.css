@@ -20,6 +20,9 @@ td {
     box-shadow: 1px 1px 3px black;
     vertical-align: top;
 }
+i {
+    color: red;
+}
 .feladat {
     margin: 10px;
     background-color: aliceblue;
