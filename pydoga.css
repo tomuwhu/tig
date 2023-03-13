@@ -1,0 +1,170 @@
+body {
+    overflow: hidden;
+    background-color: #1b334f;
+    margin: 0;
+}
+table {
+    border-spacing: 10px;
+}
+th {
+    text-align: left;
+}
+td {
+    width: 400px;
+    border: solid 1px black;
+    background-color: #051e37;
+    color: yellow;
+    padding: 10px;
+    margin: 7px;
+    margin-top: 0px;
+    box-shadow: 1px 1px 3px black;
+    vertical-align: top;
+}
+.feladat {
+    margin: 10px;
+    background-color: aliceblue;
+    color: #1b334f;
+    padding: 10px;
+    border: solid 2px white;
+    box-shadow: 1px 1px 3px inset black;
+}
+pre.si {
+    margin: 0px;
+}
+span.tab {
+    display: inline-block;
+    width: 80px;
+    color: #6c2262;
+    text-decoration: underline;
+    text-shadow: 1px 1px 3px gray;
+}
+#editor2 {
+    margin: 10px;
+    box-shadow: 1px 1px 6px black;
+    border: solid 2px rgb(104, 9, 9);
+    position: absolute;
+    top: 250px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 38%;
+    height: 50%;
+}
+
+#editor1 {
+    margin: 10px;
+    box-shadow: 1px 1px 6px black;
+    border: solid 2px rgb(104, 9, 9);
+    position: absolute;
+    top: 250px;
+    bottom: 0;
+    left: 39%;
+    right: 0;
+    width: 58%;
+    height: 50%;
+}
+
+h1#BBIDE {
+    margin: 3px;
+    padding: 0px;
+    text-align: center;
+    color: rgb(255, 238, 238);
+    font-size: 27px;
+    text-shadow: 0px 0px 1px red;
+}
+
+pre {
+    display: inline-block;
+}
+
+div#teszt {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+div#tb,
+div#te {
+    width: 90px;
+    padding: 6px;
+    color: antiquewhite;
+    text-shadow: 1px 1px 3px black;
+    border-radius: 3px;
+    background-color: #376396;
+    text-align: center;
+    box-shadow: 1px 1px 3px black;
+    cursor: pointer;
+    display: inline-block;
+    user-select: none;
+}
+
+div#tb:hover {
+    background-color: #226c55;
+}
+
+div#tb:active,
+div#te:active {
+    background-color: #6c2262;
+}
+
+div#te {
+    display: none;
+    width: 200px;
+}
+
+div#te:hover {
+    background-color: #0d153f;
+}
+
+div#input {
+    position: fixed;
+    left: 20px;
+    top: 8px;
+    background-color: #051e37;
+    box-shadow: 1px 1px 6px black;
+    padding-bottom: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: rgb(191, 191, 123);
+    text-shadow: 1px 1px 3px black;
+    border: solid 1px rgb(114, 31, 31);
+}
+
+div#program {
+    position: fixed;
+    top: 8px;
+    right: 30px;
+    background-color: #051e37;
+    box-shadow: 1px 1px 6px black;
+    padding-bottom: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: rgb(191, 191, 123);
+    text-shadow: 1px 1px 3px black;
+    border: solid 1px rgb(114, 31, 31);
+}
+
+#c {
+    text-align: left;
+    padding: 5px;
+    padding-left: 15px;
+    position: fixed;
+    bottom: 55px;
+    top: 5px;
+    background-color: #1b334f;
+    box-shadow: 1px 1px 5px inset black;
+    left: 4px;
+    right: 4px;
+    color: rgb(255, 245, 131);
+    text-shadow: 1px 1px 4px black;
+    white-space: pre-line;
+}
+
+.noselection .ace_marker-layer .ace_selection {
+    background: transparent;
+}
+
+.noselection .ace_cursor {
+    color: transparent;
+}

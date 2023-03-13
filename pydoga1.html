@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>MathJax = { tex: { inlineMath: [['$', '$']] } }</script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <meta charset="UTF-8">
+    <meta name="author" content="Dr. Németh Tamás">
+    <meta name="keywords" content="Brython IDE Online Editor">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+    <title>Brython IDE</title>
+    <link rel="stylesheet" href="pydoga.css">
+</head>
+
+<body>
+    <h1 id="BBIDE">1. Python Dolgozat</h1>
+    <div class="feladat">
+        <span class="tab">Feladat:</span>Adott kétszer $n$ darab szám, határozzuk meg a számok összegét!<br>
+        <span class="tab">Bemenet:</span>A bemeneti fájl pontosan két sort tartalmaz, mindkét sor $n$ számot tartalmaz szóközzel elválasztva.<br>
+        <span class="tab">Kimenet:</span>A Standard Outputra pontosan két számot kell kiírni szóközzel elválasztva: az első és második sorban szereplő számok
+        összegét!<br>
+        <span class="tab">Példa:</span><br>
+        <table>
+            <tr>
+                <th>Bemenet</th>
+                <th>Kimenet</th>
+            </tr>
+            <tr>
+                <td><pre class="si">5 4 3 2 3 4 5 6
+3 5 6 7 5 4 5 6</pre></td>
+                <td><pre class="si">32 41</pre></td>
+            </tr>
+        </table>
+    </div>
+    <pre id="editor1"></pre>
+    <pre id="editor2"></pre>
+    <div id="teszt">
+        <div id="tb" onclick="f()">Futat</div>
+        <div id="te" onclick="ef()">Vissza a szerkesztéshez</div>
+    </div>
+    <div id="input">input.txt</div>
+    <div id="program">program.py</div>
+    <textarea id="c"></textarea>
+    <div id="target"></div>
+    <script src="ace/ace.js"></script>
+    <script src="ace/ext-language_tools.js"></script>
+    <script>
+        psz = window.location.search.substr(1).split('&').length
+        dis = ""
+        if (psz > 3) {
+            dis = window.location.search.substr(1).split('&')[3]
+            if (dis == "n") {
+                document.getElementById("teszt").style.display = "none"
+            }
+        }
+        tf = window.location.search.substr(1).split('&')[1]
+        console.stdlog = console.log.bind(console);
+        console.log = function () {
+            document.getElementById("c").style.display = "block"
+            document.getElementById("c").value += Array.from(arguments).join("")
+            console.stdlog.apply(console, arguments);
+        }
+        ace.require("ace/ext/language_tools");
+        var editor1 = ace.edit("editor1");
+        editor1.session.setMode("ace/mode/python");
+        editor1.setTheme("ace/theme/solarized_dark");
+        editor1.setOptions({
+            enableBasicAutocompletion: true,
+            enableSnippets: true,
+            enableLiveAutocompletion: false
+        });
+        editor1.setValue(`print(*[
+    sum(map(int, row.split(" ")))
+    for row in open("input.txt").read().split("\\n")
+])`)
+        var editor2 = ace.edit("editor2");
+        editor2.session.setMode("ace/mode/text");
+        editor2.setTheme("ace/theme/tomorrow_night");
+        editor2.setOptions({
+            enableBasicAutocompletion: true,
+            enableSnippets: true,
+            enableLiveAutocompletion: false
+        });
+        
+        editor2.setValue(`3 3 4 5 6 7 8 9 3 3 3\n6 3 7 5 6 8 8 9 1 2 1`)
+        setTimeout(v => {
+            document.getElementsByClassName("ace_marker-layer")[0].innerHTML = ""
+        }, 500)
+        setTimeout(v => {
+            document.getElementsByClassName("ace_marker-layer")[2].innerHTML = ""
+        }, 500)
+        setTimeout(v => {
+            document.getElementById("c").style.display = "none"
+        }, 500)
+        function f() {
+            if (!tf) tf = "input.txt"
+            s = '<style>\nbody {\n    background: white;\n  height: 100%;\n   width: 100%;\n}\n' +
+                '</style>\n' +
+                '&ltscript type="text/python">\n' + `def o1_1(*args):
+    s="""`+ editor2.getValue() + `"""
+    l = s.split("\\n")
+    for i in l[:-1]:
+        yield(i+"\\n")
+    if len(l[-1]): yield(l[-1])
+q = [""]
+class o1_2:
+    s="""`+ editor2.getValue() + `"""
+    def __init__(self, *args):
+        self.fn = args[0]
+        return q[0]
+    def write(self, *args):
+        print(self.fn + " <= ", *args)
+    def close(self):
+        return None
+    def read(self):
+        return self.s
+    def readlines(self):
+        l = self.s.split("\\n")
+        for i in l[:-1]:
+            yield(i+"\\n")
+        if len(l[-1]): yield(l[-1])
+`
+                + editor1.getValue()
+                    .replace("open('" + tf + "').", "o1_2('" + tf + "').")
+                    .replace('open("' + tf + '").', "o1_2('" + tf + "').")
+                    .replace("open('" + tf + "')", "o1_1('" + tf + "')")
+                    .replace('open("' + tf + '")', "o1_1('" + tf + "')")
+                    .replace('open(', 'o1_1(')
+                + '\n' +
+                '&lt/script>\n'
+            document.getElementById('target').innerHTML = s.replaceAll('&lt', '<')
+            document.getElementById('editor1').style.visibility = "hidden"
+            document.getElementById('editor2').style.visibility = "hidden"
+            document.getElementById('input').style.visibility = "hidden"
+            document.getElementById('program').style.visibility = "hidden"
+            document.getElementById('BBIDE').style.display = "none"
+            document.getElementById('te').style.display = "inline-block"
+            document.getElementById('tb').style.display = "none"
+            document.querySelectorAll(".ace_print-margin").forEach(v => {
+                { v.style.visibility = "hidden" }
+            })
+            setTimeout(v => {
+                brython()
+            }, 100)
+        }
+        function ef() {
+            document.getElementById('target').innerHTML = ""
+            document.getElementById('editor1').style.visibility = "visible"
+            document.getElementById('editor2').style.visibility = "visible"
+            document.getElementById('input').style.visibility = "visible"
+            document.getElementById('program').style.visibility = "visible"
+            document.getElementById('BBIDE').style.display = "block"
+            document.getElementById('tb').style.display = "inline-block"
+            document.getElementById('te').style.display = "none"
+            while (document.getElementById('lasttag').nextElementSibling) {
+                document.getElementById('lasttag').nextElementSibling.remove()
+            }
+            document.querySelectorAll(".ace_print-margin").forEach(v => {
+                { v.style.visibility = "visible" }
+            })
+            document.getElementById("c").value = ""
+            document.getElementById("c").style.display = "none"
+        }
+    </script>
+    <div id="lasttag"></div>
+</body>
+
+</html>
