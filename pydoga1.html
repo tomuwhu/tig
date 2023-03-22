@@ -112,7 +112,8 @@
         setTimeout(v => {
             document.getElementById("c").style.display = "none"
         }, 500)
-        function f() {
+        function f(p = 1) {
+            document.getElementById("c").style.backgroundColor="red"
             if (!tf) tf = "input.txt"
             s = '<style>\nbody {\n    background: white;\n  height: 100%;\n   width: 100%;\n}\n' +
                 '</style>\n' +
@@ -160,7 +161,7 @@ class o1_2:
                 { v.style.visibility = "hidden" }
             })
             setTimeout(v => {
-                brython()
+                if (p) brython()
                 setTimeout(q => {
                     out = document.getElementById("c").value.split("\n")[0]
                     if (out == sk.trim()) {
@@ -169,23 +170,35 @@ class o1_2:
                         editor2.setValue(inp2)
                         ef()
                         setTimeout( q2 => {
-                             f()
-                             brython()
-                             setTimeout(q3 => {
-                                out = document.getElementById("c").value.split("\n")[0]
-                                if (out == sk2.trim()) {
-                                    alert("Sikeres teljesítés! A titkos kód az ötöshöz: 'Csajágaröcsöge'.")
-                                } else {
-                                    alert("Ügyes próbálkozás, de nem!")
-                                }
-                                document.getElementById("c").value = ""
-                                editor2.setValue(inp)
-                                document.getElementById("ek").innerHTML = sk
-                            }, 100)
+                            if (p) {
+                                f(p - 1)
+                                brython()
+                                setTimeout(q3 => {
+                                    out = document.getElementById("c").value.split("\n")[0]
+                                    document.getElementById("c").value = ""
+                                    document.getElementById("c").style.backgroundColor="red"
+                                    if (out == sk2.trim()) {
+                                        document.getElementById("c").style.backgroundColor="green"
+                                        setTimeout(q4 => {
+                                            document.getElementById("c").value = sk
+                                        }, 150)
+                                        setTimeout(q4 => {
+                                            alert("Sikeres teljesítés! A titkos kód az ötöshöz: 'Csajágaröcsöge'.")
+                                            editor2.setValue(inp)
+                                        }, 200)
+                                    } else {
+                                        alert("Ügyes próbálkozás, de nem!")
+                                    }
+                                    setTimeout(q4 => {
+                                        editor2.setValue(inp)
+                                        document.getElementById("ek").innerHTML = sk
+                                    }, 200)
+                                }, 200)
+                            }
                         })
                     }
-                }, 100)
-            }, 100)
+                }, 200)
+            }, 200)
         }
         function ef() {
             document.getElementById('target').innerHTML = ""
