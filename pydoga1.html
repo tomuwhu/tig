@@ -114,6 +114,7 @@
         }, 500)
         function f(p = 1) {
             document.getElementById("c").style.backgroundColor="red"
+            document.getElementById("c").value = ""
             if (!tf) tf = "input.txt"
             s = '<style>\nbody {\n    background: white;\n  height: 100%;\n   width: 100%;\n}\n' +
                 '</style>\n' +
@@ -175,7 +176,6 @@ class o1_2:
                                 brython()
                                 setTimeout(q3 => {
                                     out = document.getElementById("c").value.split("\n")[0]
-                                    document.getElementById("c").value = ""
                                     document.getElementById("c").style.backgroundColor="red"
                                     if (out == sk2.trim()) {
                                         document.getElementById("c").style.backgroundColor="green"
