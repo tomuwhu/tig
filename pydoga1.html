@@ -31,11 +31,10 @@
             </tr>
             <tr>
                 <td>
-                    <pre class="si">5 4 3 2 3 4 5 6
-3 5 6 7 5 4 5 6</pre>
+                    <pre class="si" id="inp"></pre>
                 </td>
                 <td>
-                    <pre class="si">32 41</pre>
+                    <pre class="si" id="ek"></pre>
                 </td>
             </tr>
         </table>
@@ -53,6 +52,18 @@
     <script src="ace/ace.js"></script>
     <script src="ace/ext-language_tools.js"></script>
     <script>
+        inp = `5 4 3 12 3 4 5 6
+3 5 6 7 5 4 5 6`
+        sk = "42 41"
+        kmo = `print(
+    *sorted(
+        [ sum(map(int, row.split(" ")))
+          for row in open("input.txt").read().split("™")
+        ]
+    )
+)`
+        document.getElementById("ek").innerHTML = sk
+        document.getElementById("inp").innerHTML = inp
         psz = window.location.search.substr(1).split('&').length
         dis = ""
         if (psz > 3) {
@@ -77,10 +88,7 @@
             enableSnippets: true,
             enableLiveAutocompletion: false
         });
-        editor1.setValue(`print(*[
-    sum(map(int, row.split(" ")))
-    for row in open("input.txt").read().split("\\n")
-])`)
+        editor1.setValue(kmo.replace("™","\\n"))
         var editor2 = ace.edit("editor2");
         editor2.session.setMode("ace/mode/text");
         editor2.setTheme("ace/theme/tomorrow_night");
@@ -90,8 +98,7 @@
             enableLiveAutocompletion: false
         });
 
-        editor2.setValue(`5 4 3 2 3 4 5 6
-3 5 6 7 5 4 5 6`)
+        editor2.setValue(inp)
         setTimeout(v => {
             document.getElementsByClassName("ace_marker-layer")[0].innerHTML = ""
         }, 500)
@@ -150,6 +157,12 @@ class o1_2:
             })
             setTimeout(v => {
                 brython()
+                setTimeout(q => {
+                    out = document.getElementById("c").value.split("\n")[0]
+                    if (out == sk.trim()) {
+                        alert("Sikeres teljesítés")
+                    }
+                }, 200)
             }, 100)
         }
         function ef() {
