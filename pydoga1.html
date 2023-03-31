@@ -146,6 +146,8 @@
             "1,6,2,4,7,34\n5,3,4,5,1,20",
             "1,7,2,4,7,44\n5,3,4,5,1,30",
         ]
+        t_sk = ["21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18"]
+        t_sk2 = ["22 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18","21 18"]
         t_inp2 = [
             "2,3,2,4,7,4\n5,3,4,5,1,0",
             "2-3-2-4-7-4\n5-3-4-5-1-3",
@@ -168,7 +170,11 @@
         function su(fid) {
             inp = t_inp[fid]
             inp2 = t_inp2[fid]
+            sk = t_sk[fid]
+            sk2 = t_sk2[fid]
             kmo = `l = open("input.txt").read().split("\\n")\nprint(list(map(int, l[0].split("${sep[fid]}"))))`
+
+            document.getElementById("ek").innerHTML = sk
             document.getElementById("inp").innerHTML = inp
             editor2.setValue(inp)
             editor1.setValue(kmo)
