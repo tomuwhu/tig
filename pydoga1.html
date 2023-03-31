@@ -16,8 +16,9 @@
 <body>
     <h1 id="BBIDE">1. Python Dolgozat</h1>   
     <div class="feladat">
-        <input type="text" placeholder="Név"/>
-        <select><option>9/C</option><option>10/DA</option><option>10/DB</option></select><hr>
+        <select onchange="fnm(this.value)"><option value="4"></option><option value="0">9/C</option><option value="1">10/DA</option><option value="2">10/DB</option></select>
+        <select id="nm" onchange="su(this.value)"><option>Név</option></select>
+        <hr>
         <span class="tab">Feladat:</span>Adott <i>kétszer $n$ darab szám, határozzuk meg a számok összegét</i>! (A piros
         szövegek helyett más lesz és mindenkinek különböző.)<br>
         <span class="tab">Bemenet:</span>A bemeneti fájl pontosan <i>két</i> sort tartalmaz, <i>mindkét</i> sorban
@@ -53,6 +54,71 @@
     <script src="ace/ace.js"></script>
     <script src="ace/ext-language_tools.js"></script>
     <script>
+        ns = [
+        [
+            "Csákó Kata",
+            "Darázs Máté",
+            "Dobó Gréta MANNA",
+            "Dobó PÁLMA Dorka",
+            "Forrai Gábor",
+            "Gyuris Boróka",
+            "Hajós Ádám Viktor",
+            "Kalmár Léda",
+            "Lőrincz Lívia Luca",
+            "Martonosi Johanna Milla",
+            "Mészáros Nóra",
+            "Mojzes Máté",
+            "Nagy Csongor",
+            "Stein Lili",
+            "Wodala Júlia Magdolna"
+        ],
+        [
+            "Ábrahám Emma",
+            "Boros Blanka",
+            "Csipak Miklós",
+            "Cziner Ábel",
+            "Dani Zita",
+            "Domján Levente",
+            "Drexler Erik Donát",
+            "Farkas András",
+            "Farkas Dorka Hanna",
+            "Garas Kende",
+            "Gáspár Zorka",
+            "Gáti Ádám",
+            "Kapás Réka",
+            "Keresztúri Maja Dorina",
+            "Kocsis Dániel",
+            "Kószó Milla Kincső",
+            "Kovács Eszter"
+        ],
+        [
+            "Kű Zsombor",
+            "Mészáros Zóra",
+            "Müller Olívia",
+            "Nagy Botond Mátyás",
+            "Patai André",
+            "Pernyész Kristóf Noel",
+            "Sárkány Kitti",
+            "Simon Marcell",
+            "Szász Blanka",
+            "Székely Áron",
+            "Szép Levente",
+            "Takács Aletta",
+            "Tamási Liza",
+            "Török Dóra",
+            "Vesselényi Ákos",
+            "Wodala Benjámin"
+        ]
+    ]
+        function fnm(id) {
+            document.getElementById("nm").innerHTML="<option></option>"
+            ns[id].forEach( (v, i) => {
+                opt = document.createElement("option")
+                opt.value = i
+                opt.innerHTML = v
+                document.getElementById("nm").appendChild(opt)
+            })
+        }
         inp = `5 4 3 12 3 4 5 6
 3 5 6 7 5 4 5 6`
         sk = "42 41"
@@ -66,6 +132,9 @@
         ]
     )
 )`
+        function su(fid) {
+            alert(fid)
+        }
         document.getElementById("ek").innerHTML = sk
         document.getElementById("inp").innerHTML = inp
         psz = window.location.search.substr(1).split('&').length

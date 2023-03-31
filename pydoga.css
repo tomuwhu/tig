@@ -174,3 +174,6 @@ div#program {
 .noselection .ace_cursor {
     color: transparent;
 }
+#nm {
+    width: 250px;
+}
