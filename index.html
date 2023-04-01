@@ -240,7 +240,6 @@
     }
     setInterval(g, 40000)
     setTimeout(g, 500)
-    setTimeout(() => f(6), 1000)
 </script>
 <link rel="stylesheet" href="main.css">
 <style>
@@ -644,9 +643,47 @@
         <a style="margin: auto;" class="btn bx new" href="probadogalista.html">Házi feladatok I.</a>
         <a style="margin: auto;" class="btn bx" href="pdl2.html">Házi feladatok II.</a>
     </div>
+    <div id="hr">
+        <div id="nx"><h2>Idézet a házirendből</h2></div>
+        <pre>
 
+2.1.8. A tanórai rend, elvárt viselkedés a tanórákon
+
+Az oktatás alapegysége a tanóra, amelynek védelmét a lehető legnagyobb mértékben biztosítjuk.
+A tanítási órákon a részvétel kötelező. Az iskola pedagógiai programjában nyújtott választható foglalkozások a tanuló és a szülő döntése alapján válnak kötelezővé, a választást követően ezekre az órákra is ugyanúgy vonatkoznak a távolmaradás következményei. 
+A mulasztások igazolásának rendjét, a foglalkozásról történő távolmaradással kapcsolatos kérdéseket a Házirend 6. fejezete szabályozza.
+A tanítási óra menetét megszakítani, tanulót vagy tanárt a tanítási óráról kihívni csak igazgatói engedéllyel, vagy rendkívüli esetben (tűzriadó, egészségügyi okok, arra jogosult hatóság közbelépése, stb.) szabad. ...
+A tanórákra minden tanulónak felkészülten, elvégzett házi feladattal, a tanórán való eredményes részvételhez szükséges felszerelésekkel kell megérkeznie. A tanítási óra becsöngetéskor kezdődik. ... 
+Az osztálytermekben a tanulók rendben várják a tanárt, miközben előkészítik felszerelésüket. A belépő tanárt, felnőttet felállással köszöntik.
+A tanórákon a tanulóknak fegyelmezetten, figyelemmel, a tananyagra koncentrálva kell együttműködniük az óra menetét irányító tanárral. 
+Mind a tanár, mind a diáktársak munkájának fegyelmezetlenséggel történő megzavarása, akadályozása kötelességszegés, ezért a tanár által meghatározott büntetést von maga után.
+A tanítási órán csak a tanórák zavartalan megtartásához szükséges eszközöket használhatják a tanulók. Padjukon semmilyen elektronikus, kommunikációs eszköz, enni- vagy innivaló, iskolatáska stb. nem lehet. 
+Mobiltelefont a tanítási órákon nem lehet használni, tehát tanórák, foglalkozások idején a tanuló köteles készülékét kikapcsolt állapotban tartani. A készülékkel az intézmény egész területén tanítási időn kívül is tilos kép- és hangfelvételeket készíteni.
+A terem- és iskolabútorok tisztaságának megőrzése valamennyi tanuló feladata, ennek ellenőrzése, betartatása valamennyi pedagógus kötelezettsége.
+A tanítási óra kicsöngetésig tart, a tanulók a tanár egyértelmű jelzésére fejezhetik be órai munkájukat, és hagyhatják el az óra helyszínét.
+        </pre>
+        <div id="nx"><button onclick="document.getElementById('hr').style='display:none;';setTimeout(() => f(6), 1000)">Megértettem</button></div>
+    </div>
 </body>
 <style>
+    #hr {
+        padding: 30px;
+        margin: 20px;
+        width: 88%;
+        position: absolute;
+        top: 30px;
+        left: 20px;
+        background-color: rgba(70,20,10,0.9);
+        border-radius: 20px;
+        box-shadow: 1px 1px 4px black;
+        border: solid 2px white;
+    }
+    #hr pre {
+        white-space: pre-wrap;
+    }
+    #nx {
+        text-align: center;
+    }
     .b3 {
         background-color: yellowgreen;
     }
