@@ -1,4 +1,4 @@
-## A számítástudomány gyakorlati kérdései
+## A számítástudomány gyakorlati kérdései - Szakkör
 
 #### 1. A determinizmus és a véletlen szabályai
 
