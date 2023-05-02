@@ -300,12 +300,15 @@ def nm(e):
         'SELECT * FROM megye',
         'SELECT * FROM allapot',
         'SELECT * FROM aerob',
-        'SELECT megye.nev megye, allapot.nev allapot, nem, aerob.letszam FROM aerob, megye, allapot WHERE mkod=megye.kod and allkod=allapot.kod',
+        'SELECT megye.nev megye, allapot.nev allapot, nem, aerob.letszam\nFROM aerob, megye, allapot\nWHERE mkod=megye.kod and allkod=allapot.kod',
+        'SELECT letszam f2 FROM megye WHERE kod=3',
+        'SELECT SUM(letszam) f3 FROM aerob WHERE mkod=6',
+        'SELECT letszam f4 FROM aerob WHERE mkod=5 and nem=1 and allkod=1'
     ]
     MT.clear()
     MT <= H.PRE("Állóképesség mintaadatbázis betöltése", Class="b b2").bind("click", insma)
     MT <= [
-        H.PRE(li, Class="b").bind("click", ins) for li in l
+        H.PRE(li, Class="b c").bind("click", ins) for li in l
     ]
     BT.clear()
     BT <= CSVM
