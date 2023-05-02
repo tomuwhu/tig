@@ -324,7 +324,7 @@ def cm(e):
     D["run"].style.display = "none"
 if "openDatabase" in W: 
     db = W.openDatabase('d', '1.0', 'x', 5*1024*1024)
-    D <= H.H1("SQL Gyakorló - Állóképesség")
+    D <= H.H1(["SQL Gyakorló - ", H.A("Állóképesség", href="../sqlhf/allokep.pdf", target="Feladatlap")])
     MT = H.DIV(Class="mv")
     D <= MT
     SM = H.BUTTON("SQL mód", Class="cvm").bind("click", nm)

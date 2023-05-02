@@ -172,3 +172,15 @@ div.c1 {
 .c {
     text-align: left;
 }
+a {
+    text-decoration: none;
+    background-color: beige;
+    box-shadow: 1px 1px 3px black;
+    padding: 5px;
+    border-radius: 5px;
+    color:rgb(94, 61, 61)
+}
+a:hover {
+    background-color: rgb(98, 98, 62);
+    color: rgb(239, 215, 215);
+}
