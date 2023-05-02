@@ -1,0 +1,14 @@
+m1;m2;m3;m4
+a1;a2;a3;a4
+a5;a6;a7;a8
+a2;a2;a3;a4
+3;a6;a7;a8
+4;a2;a3;6.5
+6;a6;a7;345.234
+
+
+CREATE TABLE t1 (m1 PRIMARY KEY, m2, m3, m4);
+INSERT INTO t1 VALUES("a1", "a2", "a3", "a4");
+INSERT INTO t1 VALUES("a5", "a6", "a7", "a8");
+
+select 1; select 2; select 3;

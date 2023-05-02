@@ -1,0 +1,171 @@
+* {
+    text-shadow: 1px 1px 2px rgb(67, 64, 64);
+    text-align: center;
+}
+h1 {
+    color: rgb(77, 23, 23);
+    font-size: 23px;
+    user-select: none;
+}
+td, th {
+    margin: 7px;
+    padding: 4px;
+    padding-left: 9px;
+    border-radius: 5px;
+    min-width: 50px;
+    opacity: 0.95;
+}
+th {
+    box-shadow: 1px 1px 3px black;
+    color: rgb(7, 51, 51);
+    background: rgb(141, 174, 175);
+    text-align: center;
+    padding: 4px;
+}
+td {
+    box-shadow: 1px 1px 3px inset black;
+    color: rgb(11, 35, 35);
+    background: rgb(226, 224, 198);
+    text-align: left;
+    padding-right: 20px;
+}
+td.n {
+    text-align: right;
+    padding-right: 11px;
+    padding-left: 11px;
+    color:rgb(2, 75, 75);
+    background-color: rgb(207, 222, 221);
+}
+body {
+    background-color: rgb(234, 234, 214);
+    padding: 20mm;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+textarea {
+    width: 99%;
+    text-align: left;
+    min-height: 50px;
+    margin-top: 14px;
+    box-shadow: 1px 1px 6px inset black;
+    padding: 6px;
+}
+div.done {
+    background-color: aquamarine;
+    color:rgb(32, 67, 55);
+    margin: 8px;
+    padding: 10px;
+    box-shadow: 1px 1px 3px inset black;
+    border-radius: 9px;
+}
+div.err {
+    background-color: rgb(255, 140, 127);
+    color:rgb(67, 36, 32);
+    margin: 8px;
+    padding: 10px;
+    box-shadow: 1px 1px 3px inset black;
+    border-radius: 9px;
+}
+table {
+    border-spacing: 3px;
+    margin: 2px auto;
+    background-color: rgb(246, 209, 205);
+    color:rgb(67, 36, 32);
+    box-shadow: 1px 1px 3px inset black;
+    border-radius: 9px;
+    padding: 2px;
+    font-size: 13px;
+}
+pre.b {
+    display: inline-block;
+    background-color: rgb(203, 233, 223);
+    cursor: pointer;
+    padding: 3px;
+    margin: 2px;
+    border: solid 1px black;
+    box-shadow: 1px 1px 2px rgb(49, 45, 45);
+    font-size: 10px;
+    color:rgb(32, 67, 55);
+    user-select: none;
+}
+pre.b:hover {
+    background-color: rgb(212, 160, 113);
+}
+pre.b2 {
+    background-color: rgb(242, 158, 158);
+}
+button {
+    cursor: pointer;
+    color:rgb(31, 117, 117);
+    background-color: rgb(222, 237, 172);
+    user-select: none;
+    margin: 3px;
+    border: solid 1px rgb(111, 161, 173);
+    box-shadow: 1px 1px 3px black;
+}
+button#run {
+    color:rgb(10, 70, 70);
+    background-color: rgb(149, 193, 128);
+    border: solid 1px rgb(50, 50, 108);
+}
+button:hover {
+    background-color: rgb(221, 170, 141);
+}
+button.cvm {
+    color:rgb(70, 39, 10);
+    background-color: rgb(193, 180, 128);
+    border: solid 1px rgb(50, 50, 108);
+}
+button:active {
+    background-color: rgb(178, 207, 152);
+    box-shadow: 0px 0px 3px rgb(0, 0, 0);
+}
+div.res {
+    min-height: 150px;
+    box-shadow: 1px 1px 6px rgb(162, 131, 131);
+    border-radius: 10px;
+    padding: 6px;
+    background-color: rgb(53, 116, 105);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+div.mv {
+    background-color: rgb(136, 142, 115);
+    border: solid 1px rgb(66, 88, 66);
+    box-shadow: 1px 1px 4px inset black;
+    padding: 5px;
+}
+input {
+    text-align: left;
+}
+input#sep {
+    width: 30px;
+}
+pre.l {
+    border-radius: 6px;
+    text-align: left;
+    width: 95%;
+    display: inline-block;
+    background-color: rgb(245, 205, 193);
+    padding: 3px;
+    margin: 2px;
+    padding-left: 6px;
+    border: solid 1px black;
+    box-shadow: 1px 1px 5px inset rgb(0, 0, 0);
+    font-size: 10px;
+    color:rgb(48, 32, 67);
+}
+pre.l2 {
+    background-color: rgb(242, 237, 220);
+    color:rgb(32, 67, 55);
+}
+i {
+    color:rgb(71, 56, 13)
+}
+div.c1 {
+    font-size: 16px;
+    padding: 30px;
+    color: rgb(94, 50, 4);
+}
