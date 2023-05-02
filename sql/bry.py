@@ -164,7 +164,7 @@ def cm(e):
     D["run"].style.display = "none"
 if "openDatabase" in W: 
     db = W.openDatabase('d', '1.0', 'x', 5*1024*1024)
-    D <= H.H1("SQL Gyakorló")
+    D <= H.H1("SQL Gyakorló - Micimackós")
     MT = H.DIV(Class="mv")
     D <= MT
     SM = H.BUTTON("SQL mód", Class="cvm").bind("click", nm)
