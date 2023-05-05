@@ -214,9 +214,10 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Eseménykezelés
   - Node JS telepítése és alkalmazása
   - Szerver és kliens oldal JS-ben
-- HTML + CSS + Python alkalmazása II. (Brython)
+- HTML + CSS + Python alkalmazása II. (Streamlit, Brython)
   - hello world (ismétlés)
-  - browser modul
+  - Streamlit modul használata
+  - Brython browser modul
     - document, szelektorok (document[])
     - html ( <=, ``` DIV("cica", Class="x1") ```, H1..H6, .bind, ... )
     - HTML events
