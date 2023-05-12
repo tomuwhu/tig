@@ -217,6 +217,9 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
 - HTML + CSS + Python alkalmazása II. (Streamlit, Brython)
   - hello world (ismétlés)
   - Streamlit modul használata
+    - telepítés, alapkoncepció, egy alkalmazás készítése, több oldalas alkalmazások
+    - API referencia (kimenet, bemenet, adatok, diagrammok, multimédia)
+    - alkalmazás közzététele (deploy)
   - Brython browser modul
     - document, szelektorok (document[])
     - html ( <=, ``` DIV("cica", Class="x1") ```, H1..H6, .bind, ... )
