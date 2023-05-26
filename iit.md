@@ -14,7 +14,8 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - operációs rendszer feladata, funkciói
   - operációs rendszerek kezelése
     - grafikus interfészek
-    - terminál, terminál parancsok
+    - terminál, terminál parancsok (Windows vs. Unix)
+    - linux SHELL Scriptek, Windows Batch Script
   - archiválás, tömörítés (.zip)
 - Böngészőben futó interaktív fejlesztőeszközök
   - [Scratch](https://scratch.mit.edu/)
