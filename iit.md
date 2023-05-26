@@ -214,6 +214,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Eseménykezelés
   - Node JS telepítése és alkalmazása
   - Szerver és kliens oldal JS-ben
+  - JSON
 - HTML + CSS + Python alkalmazása II. (Streamlit, Brython)
   - hello world (ismétlés)
   - Streamlit modul használata
@@ -258,6 +259,8 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - http.server
   - get, post
   - full-stack alkalmazások python nyelven (szerver és kliens oldal)
+    - Flask
+    - Axios in Brython
 - Back-end nyelvek használata
   - Python mint webserver, FastAPI vs. FLASK
   - NodeJS és alkalmazása
@@ -271,10 +274,10 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - a PHPMyadmin használata
 - FullStack alkalmazásfejlesztés
   - a FullStack alkalmazésok felépítése, működdése
-  - egy FullStack példaprogram (MySQL-PHP-HTML)
-  - egy másik (SQLite-NodeJS-HTMLJ+JS)
-  - egy harmadik (MySQL-Python-NodeJS)
-  - egy negyedik (MongoDB-valami-valami)
+  - egy FullStack példaprogram (JS - PHP - MySQL)
+  - egy másik (JS- NodeJS - SQLite)
+  - egy harmadik (Brython - Flask - SQLite)
+  - egy negyedik (VUE - NodeJS - MongoDB)
 - Peer to Peer alkalmazásfejlesztés (WebRTC, PeerJS)
 - Algoritmizálás I. ([Ron Rivest](https://en.wikipedia.org/wiki/Ron_Rivest))
   - szám fogalom, halmazelmélet, számelmélet, logika
