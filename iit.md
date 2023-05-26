@@ -229,6 +229,14 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - timer
     - SVG, programozott animációk készítése
     - Ajax
+- Fizikai szimulációk matematikai és fizikai alapjai
+  - Koordináta-rendszerek, pozíció megadása
+  - Pozíció megváltoztatása
+  - Sebességvektor fogalma, alkalmazása
+  - Gyorsulásvektor fogalma, alkalmazása
+  - A lendületmegmaradás törvény, rugalmas és rugalmatlan ütközés
+  - 2 korong ütköztetése, az impulzusmomentum megmaradása
+  - Biliárdszimuláció (2 dimenzióban)
 - Adatbáziskezelés és SQL
   - adatbáziskezelés alapfogalmak (Tábla, Mező, Rekord, Kulcs, Index)
   - descartes-szorzat
