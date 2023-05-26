@@ -234,9 +234,16 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Pozíció megváltoztatása
   - Sebességvektor fogalma, alkalmazása
   - Gyorsulásvektor fogalma, alkalmazása
-  - A lendületmegmaradás törvény, rugalmas és rugalmatlan ütközés
+  - Pattogó labdák (2 dimenzióban)
+    - a golyók mint objektumok
+    - a példaprogram elemzése
+  - A lendületmegmaradás és perdületmegmaradás törvény, rugalmas és rugalmatlan ütközés
   - 2 korong ütköztetése, az impulzusmomentum megmaradása
   - Biliárdszimuláció (2 dimenzióban)
+    - ütközésvizsgálat 2 kör esetére
+    - impulzusvektorok meváltozása az ütközés hatására
+    - a golyók mint objektumok
+    - a példaprogram elemzése
 - Adatbáziskezelés és SQL
   - adatbáziskezelés alapfogalmak (Tábla, Mező, Rekord, Kulcs, Index)
   - descartes-szorzat
