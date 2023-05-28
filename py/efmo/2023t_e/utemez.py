@@ -36,8 +36,7 @@ with open('egytanulo.txt', 'w') as f:
         f"{i['orig'][0]}.{i['orig'][1]}-{i['orig'][2]}.{i['orig'][3]} {i['t']}"
         for i in mt
     ]))
-e = 0
-vu = 0
+e, vu = 0, 0
 for next in [[x["k"], x["v"]] for x in mt]:
     if next[0] < e: vu += 1
     e = next[1]
