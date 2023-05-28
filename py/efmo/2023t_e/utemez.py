@@ -1,8 +1,8 @@
 def f(x):
     t = x.split()
-    h1 = (int(t[0])-6)*30 + int(t[1])
-    h2 = (int(t[2])-6)*30 + int(t[3])
-    if t[0]<t[2] and t[2]==8: h2 += 1 # az augusztus 31 napos
+    h1 = (int(t[0]) - 6) * 30 + int(t[1])
+    h2 = (int(t[2]) - 6) * 30 + int(t[3])
+    if t[0] < t[2] and t[2] == 8: h2 += 1 # az augusztus 31 napos
     return {"t": t[5], "k": h1, "v": h2, "d": list(t[4]),
             "ks": f"kezdődik {t[0]}. hó {t[1]}. napján", "orig": t}
 l = list(map(f, open("taborok.txt").read().split("\n")[:-1]))
@@ -24,7 +24,7 @@ while h == len(lr[i]["d"]):
 ho = input("hó: ")
 nap = input("nap: ")
 hl = (int(ho)-6)*30 + int(nap)
-if ho==2: hl += 1
+if ho == 2: hl += 1
 htze = list(filter(lambda x: x["k"] <= hl and x["v"] >= hl, l))
 print(f"Ekkor éppen {len(htze)} tábor tart.")
 tb = input("Adja meg egy tanuló betűjelét: ")
