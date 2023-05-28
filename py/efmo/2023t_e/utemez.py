@@ -1,19 +1,15 @@
+def sorszam(h, n): return 16 + [0, 30, 31][h - 6] + n
 def f(x):
     t = x.split()
-    h1 = (int(t[0]) - 6) * 30 + int(t[1])
-    h2 = (int(t[2]) - 6) * 30 + int(t[3])
-    if t[0] < t[2] and t[2] == 8: h2 += 1 # az augusztus 31 napos
-    return {"t": t[5], "k": h1, "v": h2, "d": list(t[4]),
-            "ks": f"kezdődik {t[0]}. hó {t[1]}. napján", "orig": t}
+    h1, h2 = sorszam(int(t[0]),int(t[1])), sorszam(int(t[2]),int(t[3]))
+    return {"t": t[5], "k": h1, "v": h2, "d": list(t[4]), "orig": t}
 l = list(map(f, open("taborok.txt").read().split("\n")[:-1]))
-n = len(l)
-print(f"""\n2. feladat\nAz adatsorok száma: {n}
+print(f"""\n2. feladat\nAz adatsorok száma: {len(l)}
 Az először rögzített tábor témája: {l[0]["t"]}
 Az utoljára rögzített tábor témája: {l[-1]["t"]}""")
-tn = "zenei"
-ztl = list(filter(lambda x: x["t"] == tn, l))
-s = "\n".join([i["ks"] for i in ztl])
-print(f"\n3. feladat\n{s if s else f'Nem volt {tn} tábor'}")
+ztl = list(filter(lambda x: x["t"] == "zenei", l))
+s = "\n".join([f"kezdődik {i['orig'][0]}. hó {i['orig'][1]}" for i in ztl])
+print(f"\n3. feladat\n{s if s else f'Nem volt zenei tábor'}")
 lr = sorted(l, key=lambda x: len(x["d"]), reverse=1)
 h, i = len(lr[0]["d"]), 0
 print("4. feladat\nLegnépszerűbbek:")
@@ -21,9 +17,8 @@ while h == len(lr[i]["d"]):
     s = f'{lr[i]["orig"][0]} {lr[i]["orig"][1]} {lr[i]["t"]}'
     print(s)
     i += 1
-ho = input("hó: ")
-nap = input("nap: ")
-hl = (int(ho)-6)*30 + int(nap)
+ho, nap = input("hó: "), input("nap: ")
+hl = sorszam(int(ho),int(nap))
 if ho == 2: hl += 1
 htze = list(filter(lambda x: x["k"] <= hl and x["v"] >= hl, l))
 print(f"Ekkor éppen {len(htze)} tábor tart.")

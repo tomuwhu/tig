@@ -3,11 +3,11 @@
 7.2-7.8 csillagasz
 7.8-7.20 erdojaro
 7.8-7.14 cukrasz
-7.11-7.22 fuvos
-7.15-7.28 kornyezettudatos
-7.28-8.6 cserkesz
 8.9-8.14 hegymaszo
+7.11-7.22 fuvos
 8.13-8.18 torna
+7.15-7.28 kornyezettudatos
 8.15-8.18 uszas
 8.24-8.31 regesz
+7.28-8.6 cserkesz
 8.27-8.30 fotos
