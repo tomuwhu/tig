@@ -14,13 +14,11 @@ lr = sorted(l, key=lambda x: len(x["d"]), reverse=1)
 h, i = len(lr[0]["d"]), 0
 print("4. feladat\nLegnépszerűbbek:")
 while h == len(lr[i]["d"]):
-    s = f'{lr[i]["orig"][0]} {lr[i]["orig"][1]} {lr[i]["t"]}'
-    print(s)
+    print(f'{lr[i]["orig"][0]} {lr[i]["orig"][1]} {lr[i]["t"]}')
     i += 1
 print("6. feladat")
 ho, nap = input("hó: "), input("nap: ")
 hl = sorszam(int(ho),int(nap))
-if ho == 2: hl += 1
 htze = list(filter(lambda x: x["k"] <= hl and x["v"] >= hl, l))
 print(f"Ekkor éppen {len(htze)} tábor tart.")
 tb = input("Adja meg egy tanuló betűjelét: ")
