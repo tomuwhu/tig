@@ -10,7 +10,8 @@ n = len(l)
 print(f"""\n2. feladat\nAz adatsorok száma: {n}
 Az először rögzített tábor témája: {l[0]["t"]}
 Az utoljára rögzített tábor témája: {l[-1]["t"]}""")
-ztl = list(filter(lambda x: x["t"] == "zenei", l))
+tn = "zenei"
+ztl = list(filter(lambda x: x["t"] == tn, l))
 s = "\n".join([i["ks"] for i in ztl])
 print(f"\n3. feladat\n{s if s else f'Nem volt {tn} tábor'}")
 lr = sorted(l, key=lambda x: len(x["d"]), reverse=1)
