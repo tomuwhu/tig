@@ -1,6 +1,5 @@
 s  = input("Kérem a TAJ-számot: ")
-s1 = f"{s[0]}{s[2]}{s[4]}{s[6]}"
-s2 = f"{s[1]}{s[3]}{s[5]}{s[7]}"
+s1, s2 = s[0:-1:2], s[1:-1:2]
 sz = lambda s, n: sum(map(lambda x: int(x) * n, s))
 szo = sz(s1, 3) + sz(s2, 7)
 print("Az ellenőrző számjegy:", szo % 10)
