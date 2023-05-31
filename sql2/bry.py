@@ -298,7 +298,7 @@ def nm(e):
         ['Megyék','SELECT * FROM megye','c1'],
         ['Állapotok','SELECT * FROM allapot','c1'],
         ['Felmérések','SELECT * FROM aerob','c1'],
-        ['Minden adat','SELECT megye.nev megye, allapot.nev allapot, nem, aerob.letszam\nFROM aerob, megye, allapot\nWHERE mkod=megye.kod and allkod=allapot.kod','c1'],
+        ['Minden adat','SELECT megye.nev megye_nev, megye.letszam, allapot.nev, nem, aerob.letszam aerob_letszam\nFROM aerob, megye, allapot\nWHERE mkod=megye.kod and allkod=allapot.kod','c1'],
         ['Megoldások:',False,'sep'],
         ['F2','SELECT letszam f2 FROM megye WHERE kod=3','c2'],
         ['F3','SELECT SUM(letszam) f3 FROM aerob WHERE mkod=6','c2'],
