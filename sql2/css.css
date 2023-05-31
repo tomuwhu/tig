@@ -174,13 +174,18 @@ div.c1 {
 }
 a {
     text-decoration: none;
-    background-color: beige;
+    background-color: rgb(232, 197, 116);
     box-shadow: 1px 1px 3px black;
-    padding: 5px;
-    border-radius: 5px;
-    color:rgb(94, 61, 61)
+    padding: 2px;
+    border-radius: 2px;
+    color:rgb(94, 61, 61);
+    font-size: 12px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 a:hover {
     background-color: rgb(98, 98, 62);
     color: rgb(239, 215, 215);
+}
+b {
+    color: rgb(129, 5, 5);
 }
