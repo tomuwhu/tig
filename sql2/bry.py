@@ -98,9 +98,6 @@ def ea(e):
 def g(e):
         RES.clear()
         D['TX'].value = ""
-def ins(e):
-    D['TX'].value = e.target.text
-    RES.clear()
 def insma(e):
     D['TX'].value ="""DROP TABLE IF EXISTS megye;
 DROP TABLE IF EXISTS allapot;
@@ -295,20 +292,24 @@ def conv(e):
     else:
         RES.clear()
         RES <= H.DIV("Rövid táblanév vagy hibás input", Class="err")
+def ins(e):
+    D['TX'].value = e.target.title
+    RES.clear()
 def nm(e):
     l = [
-        'SELECT * FROM megye',
-        'SELECT * FROM allapot',
-        'SELECT * FROM aerob',
-        'SELECT megye.nev megye, allapot.nev allapot, nem, aerob.letszam\nFROM aerob, megye, allapot\nWHERE mkod=megye.kod and allkod=allapot.kod',
-        'SELECT letszam f2 FROM megye WHERE kod=3',
-        'SELECT SUM(letszam) f3 FROM aerob WHERE mkod=6',
-        'SELECT letszam f4 FROM aerob WHERE mkod=5 and nem=1 and allkod=1'
+        ['Megyék','SELECT * FROM megye'],
+        ['Állapotok','SELECT * FROM allapot'],
+        ['Felmérések','SELECT * FROM aerob'],
+        ['Minden adat','SELECT megye.nev megye, allapot.nev allapot, nem, aerob.letszam\nFROM aerob, megye, allapot\nWHERE mkod=megye.kod and allkod=allapot.kod'],
+        ['F1','SELECT letszam f2 FROM megye WHERE kod=3'],
+        ['F2','SELECT SUM(letszam) f3 FROM aerob WHERE mkod=6'],
+        ['F3','SELECT letszam f4 FROM aerob WHERE mkod=5 and nem=1 and allkod=1'],
+        ['F4','SELECT count(*) f5 FROM megye WHERE letszam < (SELECT letszam FROM megye WHERE kod=14)']
     ]
     MT.clear()
     MT <= H.PRE("Állóképesség mintaadatbázis betöltése", Class="b b2").bind("click", insma)
     MT <= [
-        H.PRE(li, Class="b c").bind("click", ins) for li in l
+        H.PRE(li[0], Class="b c", title=f"{li[1]}").bind("click", ins) for li in l
     ]
     BT.clear()
     BT <= CSVM
