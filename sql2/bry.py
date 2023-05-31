@@ -297,23 +297,23 @@ def ins(e):
     RES.clear()
 def nm(e):
     l = [
-        ['Megyék','SELECT * FROM megye'],
-        ['Állapotok','SELECT * FROM allapot'],
-        ['Felmérések','SELECT * FROM aerob'],
-        ['Minden adat','SELECT megye.nev megye, allapot.nev allapot, nem, aerob.letszam\nFROM aerob, megye, allapot\nWHERE mkod=megye.kod and allkod=allapot.kod'],
-        ['F2','SELECT letszam f2 FROM megye WHERE kod=3'],
-        ['F3','SELECT SUM(letszam) f3 FROM aerob WHERE mkod=6'],
-        ['F4','SELECT letszam f4 FROM aerob WHERE mkod=5 and nem=1 and allkod=1'],
-        ['F5','SELECT count(*) f5 FROM megye WHERE letszam < (SELECT letszam FROM megye WHERE kod=14)'],
-        ['F6','SELECT 100*(SELECT SUM(letszam) FROM aerob WHERE mkod=11)/(SELECT letszam FROM megye WHERE kod=11) f6'],
-        ['F7','SELECT megye.nev Megye, aerob.letszam Létszám FROM megye, aerob WHERE mkod = megye.kod and nem = 0 and allkod = 1 ORDER BY Létszám DESC'],
-        ['F8','SELECT megye.nev Megye, ROUND(0.1 * 10 * SUM(aerob.letszam) / megye.letszam, 4) Arány\nFROM megye, aerob\nWHERE mkod=megye.kod GROUP BY mkod ORDER BY Arány DESC LIMIT 3'],
-        ['F9','SELECT megye.nev Megyenév, ROUND(0.1 * 10 * SUM(aerob.letszam) / megye.letszam, 4) Arány FROM megye, aerob\nWHERE mkod = megye.kod and allkod > 1 GROUP BY mkod HAVING Arány > 0.25']
+        ['Megyék','SELECT * FROM megye','c1'],
+        ['Állapotok','SELECT * FROM allapot','c1'],
+        ['Felmérések','SELECT * FROM aerob','c1'],
+        ['Minden adat','SELECT megye.nev megye, allapot.nev allapot, nem, aerob.letszam\nFROM aerob, megye, allapot\nWHERE mkod=megye.kod and allkod=allapot.kod','c1'],
+        ['Megoldások:',False,'c1'],
+        ['F2','SELECT letszam f2 FROM megye WHERE kod=3','c2'],
+        ['F3','SELECT SUM(letszam) f3 FROM aerob WHERE mkod=6','c2'],
+        ['F4','SELECT letszam f4 FROM aerob WHERE mkod=5 and nem=1 and allkod=1','c2'],
+        ['F5','SELECT count(*) f5 FROM megye WHERE letszam < (SELECT letszam FROM megye WHERE kod=14)','c2'],
+        ['F6','SELECT 100*(SELECT SUM(letszam) FROM aerob WHERE mkod=11)/(SELECT letszam FROM megye WHERE kod=11) f6','c2'],
+        ['F7','SELECT megye.nev Megye, aerob.letszam Létszám FROM megye, aerob WHERE mkod = megye.kod and nem = 0 and allkod = 1 ORDER BY Létszám DESC','c2'],
+        ['F8','SELECT megye.nev Megye, ROUND(0.1 * 10 * SUM(aerob.letszam) / megye.letszam, 4) Arány\nFROM megye, aerob\nWHERE mkod=megye.kod GROUP BY mkod ORDER BY Arány DESC LIMIT 3','c2'],
+        ['F9','SELECT megye.nev Megyenév, ROUND(0.1 * 10 * SUM(aerob.letszam) / megye.letszam, 4) Arány FROM megye, aerob\nWHERE mkod = megye.kod and allkod > 1 GROUP BY mkod HAVING Arány > 0.25','c2']
     ]
     MT.clear()
-    MT <= H.PRE("Állóképesség mintaadatbázis betöltése", Class="b b2").bind("click", insma)
     MT <= [
-        H.PRE(li[0], Class="b c", title=f"{li[1]}").bind("click", ins) for li in l
+        H.PRE(li[0], Class=f"b c {li[2]}", title=f"{li[1]}").bind("click", ins) if li[1] else H.SPAN(li[0], Class="sep") for li in l
     ]
     BT.clear()
     BT <= CSVM
@@ -331,6 +331,8 @@ if "openDatabase" in W:
     db = W.openDatabase('d', '1.0', 'x', 5*1024*1024)
     D <= H.H1("SQL Gyakorló")
     D <= H.A("Állóképesség <b>feladatsor</b>, emelt szint, 2022. őszi (.pdf)", href="../sqlhf/allokep.pdf", target="Feladatlap")
+    D <= H.SPAN(" ")
+    D <= H.A("SQL forrás letöltése (.sql)", href="../sqlhf/allokep_forras.sql")
     D <= H.HR()
     MT = H.DIV(Class="mv")
     D <= MT
@@ -350,3 +352,4 @@ if "openDatabase" in W:
     nm(1)
 else:
     D <= H.H1("A Web SQL nem támogatott, használjon Chrome böngészőt!")
+Tim.set_timeout(insma, 1000)

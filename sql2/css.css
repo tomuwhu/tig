@@ -189,3 +189,14 @@ a:hover {
 b {
     color: rgb(129, 5, 5);
 }
+span.sep {
+    margin-left: 15px;
+    margin-right: 4px;
+    margin-bottom: 0px;
+    font-size: 10px;
+    font-family: Arial;
+    color: rgb(249, 221, 159);
+}
+pre.c2 {
+    background-color: rgb(255, 222, 196);
+}
