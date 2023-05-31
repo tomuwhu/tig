@@ -305,7 +305,10 @@ def nm(e):
         ['F3','SELECT SUM(letszam) f3 FROM aerob WHERE mkod=6'],
         ['F4','SELECT letszam f4 FROM aerob WHERE mkod=5 and nem=1 and allkod=1'],
         ['F5','SELECT count(*) f5 FROM megye WHERE letszam < (SELECT letszam FROM megye WHERE kod=14)'],
-        ['F6','SELECT 100*(SELECT SUM(letszam) FROM aerob WHERE mkod=11)/(SELECT letszam FROM megye WHERE kod=11) f6']
+        ['F6','SELECT 100*(SELECT SUM(letszam) FROM aerob WHERE mkod=11)/(SELECT letszam FROM megye WHERE kod=11) f6'],
+        ['F7','SELECT megye.nev Megye, aerob.letszam Létszám FROM megye, aerob WHERE mkod = megye.kod and nem = 0 and allkod = 1 ORDER BY Létszám DESC'],
+        ['F8','SELECT megye.nev Megye, ROUND(0.1 * 10 * SUM(aerob.letszam) / megye.letszam, 4) Arány\nFROM megye, aerob\nWHERE mkod=megye.kod GROUP BY mkod ORDER BY Arány DESC LIMIT 3'],
+        ['F9','SELECT megye.nev Megyenév, ROUND(0.1 * 10 * SUM(aerob.letszam) / megye.letszam, 4) Arány FROM megye, aerob\nWHERE mkod = megye.kod and allkod > 1 GROUP BY mkod HAVING Arány > 0.25']
     ]
     MT.clear()
     MT <= H.PRE("Állóképesség mintaadatbázis betöltése", Class="b b2").bind("click", insma)
@@ -326,7 +329,7 @@ def cm(e):
     D["run"].style.display = "none"
 if "openDatabase" in W: 
     db = W.openDatabase('d', '1.0', 'x', 5*1024*1024)
-    D <= H.H1(["SQL Gyakorló - ", H.A("Állóképesség feladatsor, emelt szint, 2022. október 25. (.pdf)", href="../sqlhf/allokep.pdf", target="Feladatlap")])
+    D <= H.H1(["SQL Gyakorló - ", H.A("Állóképesség feladatsor, emelt szint, 2022. őszi (.pdf)", href="../sqlhf/allokep.pdf", target="Feladatlap")])
     MT = H.DIV(Class="mv")
     D <= MT
     SM = H.BUTTON("SQL mód", Class="cvm").bind("click", nm)
