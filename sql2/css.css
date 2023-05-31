@@ -196,6 +196,8 @@ span.sep {
     font-size: 10px;
     font-family: Arial;
     color: rgb(249, 221, 159);
+    padding: 3px;
+    user-select: none;
 }
 pre.c2 {
     background-color: rgb(255, 222, 196);

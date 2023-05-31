@@ -27,8 +27,6 @@ def list(tx, res):
     if len(tli) > 0:
         D['TX'].value = ";".join(tli).strip()
         Tim.set_timeout(tr, 1)
-    else:
-        D['TX'].value = ""
 def tr():
     li = D['TX'].value.split(";")
     ali = li[0].strip()
@@ -301,7 +299,7 @@ def nm(e):
         ['Állapotok','SELECT * FROM allapot','c1'],
         ['Felmérések','SELECT * FROM aerob','c1'],
         ['Minden adat','SELECT megye.nev megye, allapot.nev allapot, nem, aerob.letszam\nFROM aerob, megye, allapot\nWHERE mkod=megye.kod and allkod=allapot.kod','c1'],
-        ['Megoldások:',False,'c1'],
+        ['Megoldások:',False,'sep'],
         ['F2','SELECT letszam f2 FROM megye WHERE kod=3','c2'],
         ['F3','SELECT SUM(letszam) f3 FROM aerob WHERE mkod=6','c2'],
         ['F4','SELECT letszam f4 FROM aerob WHERE mkod=5 and nem=1 and allkod=1','c2'],
@@ -309,16 +307,17 @@ def nm(e):
         ['F6','SELECT 100*(SELECT SUM(letszam) FROM aerob WHERE mkod=11)/(SELECT letszam FROM megye WHERE kod=11) f6','c2'],
         ['F7','SELECT megye.nev Megye, aerob.letszam Létszám FROM megye, aerob WHERE mkod = megye.kod and nem = 0 and allkod = 1 ORDER BY Létszám DESC','c2'],
         ['F8','SELECT megye.nev Megye, ROUND(0.1 * 10 * SUM(aerob.letszam) / megye.letszam, 4) Arány\nFROM megye, aerob\nWHERE mkod=megye.kod GROUP BY mkod ORDER BY Arány DESC LIMIT 3','c2'],
-        ['F9','SELECT megye.nev Megyenév, ROUND(0.1 * 10 * SUM(aerob.letszam) / megye.letszam, 4) Arány FROM megye, aerob\nWHERE mkod = megye.kod and allkod > 1 GROUP BY mkod HAVING Arány > 0.25','c2']
+        ['F9','SELECT megye.nev Megyenév, ROUND(0.1 * 10 * SUM(aerob.letszam) / megye.letszam, 4) Arány\nFROM megye, aerob\nWHERE mkod = megye.kod and allkod > 1 GROUP BY mkod HAVING Arány > 0.25','c2']
     ]
     MT.clear()
     MT <= [
-        H.PRE(li[0], Class=f"b c {li[2]}", title=f"{li[1]}").bind("click", ins) if li[1] else H.SPAN(li[0], Class="sep") for li in l
+        H.PRE(li[0], Class=f"b c {li[2]}", title=f"{li[1]}").bind("click", ins) if li[1] else H.SPAN(li[0], Class=f"{li[2]}") for li in l
     ]
     BT.clear()
     BT <= CSVM
     D["run"].style.display = "inline-block"
 def cm(e):
+    D['TX'].value = ""
     global LX
     MT.clear()
     MT <= H.INPUT(placeholder = "Tábla név", id = "tn")
@@ -339,7 +338,7 @@ if "openDatabase" in W:
     SM = H.BUTTON("SQL mód", Class="cvm").bind("click", nm)
     CSVM = H.BUTTON("CSV mód", Class="cvm").bind("click", cm)
     BT = H.SPAN()
-    D <= H.TEXTAREA(id="TX")
+    D <= H.TEXTAREA(id = "TX")
     D <= H.HR()
     D <= H.BUTTON("SQL végrehajtása", id="run").bind("click", f)
     D <= H.BUTTON("<i>db</i> struktúra lekérdezése").bind("click", ldb)
