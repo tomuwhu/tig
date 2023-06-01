@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 * {
     text-shadow: 1px 1px 2px rgb(67, 64, 64);
     text-align: center;
@@ -25,7 +26,7 @@ th {
 td {
     box-shadow: 1px 1px 3px inset black;
     color: rgb(11, 35, 35);
-    background: rgb(226, 224, 198);
+    background: rgb(226, 231, 218);
     text-align: left;
     padding-right: 20px;
 }
@@ -190,13 +191,14 @@ button.b3 {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    font-family: 'Arial Narrow';
-    font-size: 14px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
     color: rgb(197, 79, 79);
 }
 .z div span {
-    font-family: 'Arial Narrow';
+    font-family: 'Oswald', sans-serif;
     color:rgb(4, 41, 76);
+    text-shadow: 1px 1px 3px rgb(96, 89, 89);
 }
 div.n span {
     color:rgb(3, 95, 95);
