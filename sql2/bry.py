@@ -97,6 +97,7 @@ def g(e):
         RES.clear()
         D['TX'].value = ""
 def insma(e = 1):
+    D['ls'].style.display = "none"
     D['TX'].value ="""DROP TABLE IF EXISTS megye;
 DROP TABLE IF EXISTS allapot;
 DROP TABLE IF EXISTS aerob;
@@ -336,7 +337,7 @@ def cm(e):
     BT <= SM
     D["run"].style.display = "none"
 if "openDatabase" in W: 
-    db = W.openDatabase('d', '1.0', 'x', 5*1024*1024)
+    db = W.openDatabase('allokep', '1.0', 'x', 5*1024*1024)
     D <= H.H1("SQL Gyakorló")
     D <= H.A("Állóképesség <b>feladatsor</b>, emelt szint, 2022. őszi (.pdf)", href="../sqlhf/allokep.pdf", target="Feladatlap")
     D <= H.SPAN(" ")
