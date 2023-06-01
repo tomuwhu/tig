@@ -93,6 +93,7 @@ pre.b:hover {
 }
 pre.b2 {
     background-color: rgb(242, 158, 158);
+    color:rgb(58, 2, 2)
 }
 button {
     cursor: pointer;
@@ -201,4 +202,8 @@ span.sep {
 }
 pre.c2 {
     background-color: rgb(255, 222, 196);
+}
+pre.b3 {
+    background-color: rgb(134, 134, 230);
+    color: yellow;
 }

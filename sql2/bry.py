@@ -293,6 +293,10 @@ def conv(e):
 def ins(e):
     D['TX'].value = e.target.title
     RES.clear()
+def delsma(e):
+    D['TX'].value ="DROP TABLE megye; DROP TABLE allapot; DROP TABLE aerob;"
+    RES.clear()
+    f(1)
 def nm(e):
     l = [
         ['Megyék','SELECT * FROM megye','c1'],
@@ -310,9 +314,11 @@ def nm(e):
         ['F9','SELECT megye.nev Megyenév, ROUND(0.1 * 10 * SUM(aerob.letszam) / megye.letszam, 4) Arány\nFROM megye, aerob\nWHERE mkod = megye.kod and allkod > 1 GROUP BY mkod HAVING Arány > 0.25','c2']
     ]
     MT.clear()
+    MT <= H.PRE("SQL forrás betöltése", Class="b b3").bind("click", insma)
     MT <= [
         H.PRE(li[0], Class=f"b c {li[2]}", title=f"{li[1]}").bind("click", ins) if li[1] else H.SPAN(li[0], Class=f"{li[2]}") for li in l
     ]
+    MT <= H.PRE("Adatbázis törlése", Class="b b2").bind("click", delsma)
     BT.clear()
     BT <= CSVM
     D["run"].style.display = "inline-block"
@@ -351,4 +357,4 @@ if "openDatabase" in W:
     nm(1)
 else:
     D <= H.H1("A Web SQL nem támogatott, használjon Chrome böngészőt!")
-Tim.set_timeout(insma, 1000)
+Tim.set_timeout(insma, 5000)
