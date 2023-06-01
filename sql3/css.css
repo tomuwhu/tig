@@ -29,12 +29,11 @@ td {
     text-align: left;
     padding-right: 20px;
 }
-td.n {
+div.n {
+    display: flex;
+    justify-content: right;
     text-align: right;
-    padding-right: 11px;
-    padding-left: 11px;
     color:rgb(2, 75, 75);
-    background-color: rgb(207, 222, 221);
 }
 body {
     background-color: rgb(234, 234, 214);
@@ -187,4 +186,12 @@ button.b3 {
     font-size: 10px;
     padding-top: 2.5px;
     padding-bottom: 1.5px;
+}
+.z div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.z div span {
+    font-family: 'Arial Narrow';
 }

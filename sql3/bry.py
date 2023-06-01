@@ -1,4 +1,8 @@
 from browser import document as D, window as W, html as H, timer as Tim
+def isn(x):
+    if  type(x or 0) is int or type(x or 0) is float or (x or "").isnumeric():
+        return "n"
+    else: return ""
 def ldb(e):
     D['TX'].value ='SELECT name, sql FROM sqlite_master WHERE TYPE IS "table" AND name != "__WebKitDatabaseInfoTable__"'
     f(1)
@@ -12,11 +16,8 @@ def list(tx, res):
         keys = W.js.ent(res.rows.item(0))
         T <= H.TR(H.TH(i) for i in keys)
         T <= [H.TR([
-            H.TD(res.rows.item(j)[i] or H.SPAN("0"), 
-                Class = "n" if 
-                    type(res.rows.item(j)[i] or 0) is int or 
-                    type(res.rows.item(j)[i] or 0) is float or 
-                    (res.rows.item(j)[i] or "").isnumeric() else "" ) 
+            H.TD(
+            H.DIV(",".join(map(lambda x: f"<span>{x}</span>", str(res.rows.item(j)[i]).split(","))), Class=isn(res.rows.item(j)[i])), Class="z")
             for i in keys
         ]) for j in range(res.rows.length)]
         RES <= H.PRE(T, Class="l l2")
