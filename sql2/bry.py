@@ -294,7 +294,7 @@ def ins(e):
     D['TX'].value = e.target.title
     RES.clear()
 def delsma(e):
-    D['TX'].value ="DROP TABLE megye; DROP TABLE allapot; DROP TABLE aerob;"
+    D['TX'].value ="DROP TABLE IF EXISTS megye;\nDROP TABLE IF EXISTS allapot;\nDROP TABLE IF EXISTS aerob;"
     RES.clear()
     f(1)
 def nm(e):
