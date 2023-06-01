@@ -91,7 +91,7 @@ pre.b {
 pre.b:hover {
     background-color: rgb(212, 160, 113);
 }
-pre.b2 {
+pre.b2, button.b3 {
     background-color: rgb(242, 158, 158);
     color:rgb(58, 2, 2)
 }
