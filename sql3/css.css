@@ -33,7 +33,6 @@ div.n {
     display: flex;
     justify-content: right;
     text-align: right;
-    color:rgb(2, 75, 75);
 }
 body {
     background-color: rgb(234, 234, 214);
@@ -191,7 +190,14 @@ button.b3 {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    font-family: 'Arial Narrow';
+    font-size: 14px;
+    color: rgb(197, 79, 79);
 }
 .z div span {
     font-family: 'Arial Narrow';
+    color:rgb(4, 41, 76);
+}
+div.n span {
+    color:rgb(3, 95, 95);
 }
