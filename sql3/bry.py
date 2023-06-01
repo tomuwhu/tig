@@ -965,7 +965,7 @@ def cm(e):
     BT <= SM
     D["run"].style.display = "none"
 if "openDatabase" in W: 
-    db = W.openDatabase('allokep', '1.0', 'x', 5*1024*1024)
+    db = W.openDatabase('szinkron', '1.0', 'x', 5*1024*1024)
     D <= H.H1("SQL Gyakorló")
     D <= H.A("Szinkron <b>feladatsor</b>, emelt szint, 2023. tavasz (.pdf)", href="../sqlhf/szinkron.pdf", target="Feladatlap")
     D <= H.SPAN(" ")
