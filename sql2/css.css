@@ -207,3 +207,9 @@ pre.b3 {
     background-color: rgb(134, 134, 230);
     color: yellow;
 }
+button.b3 {
+    font-family: Monaco;
+    font-size: 10px;
+    padding-top: 2.5px;
+    padding-bottom: 1.5px;
+}
