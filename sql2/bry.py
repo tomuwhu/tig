@@ -96,7 +96,7 @@ def ea(e):
 def g(e):
         RES.clear()
         D['TX'].value = ""
-def insma(e):
+def insma(e = 1):
     D['TX'].value ="""DROP TABLE IF EXISTS megye;
 DROP TABLE IF EXISTS allapot;
 DROP TABLE IF EXISTS aerob;
@@ -297,6 +297,7 @@ def delsma(e):
     D['TX'].value ="DROP TABLE IF EXISTS megye;\nDROP TABLE IF EXISTS allapot;\nDROP TABLE IF EXISTS aerob;"
     RES.clear()
     f(1)
+    D['ls'].style.display = "inline-block"
 def nm(e):
     l = [
         ['Megyék','SELECT * FROM megye','c1'],
@@ -314,7 +315,7 @@ def nm(e):
         ['F9','SELECT megye.nev Megyenév, ROUND(0.1 * 10 * SUM(aerob.letszam) / megye.letszam, 4) Arány\nFROM megye, aerob\nWHERE mkod = megye.kod and allkod > 1 GROUP BY mkod HAVING Arány > 0.25','c2']
     ]
     MT.clear()
-    MT <= H.PRE("SQL betöltése", Class="b b3").bind("click", insma)
+    MT <= H.PRE("SQL betöltése", id="ls", Class="b b3").bind("click", insma)
     MT <= H.SPAN(Class="sep")
     MT <= [
         H.PRE(li[0], Class=f"b c {li[2]}", title=f"{li[1]}").bind("click", ins) if li[1] else H.SPAN(li[0], Class=f"{li[2]}") for li in l
@@ -361,3 +362,4 @@ if "openDatabase" in W:
     nm(1)
 else:
     D <= H.H1("A Web SQL nem támogatott, használjon Chrome böngészőt!")
+Tim.set_timeout(insma, 500)

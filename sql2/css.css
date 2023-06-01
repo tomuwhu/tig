@@ -206,6 +206,7 @@ pre.c2 {
 pre.b3 {
     background-color: rgb(134, 134, 230);
     color: yellow;
+    display: none;
 }
 button.b3 {
     font-family: Monaco;
