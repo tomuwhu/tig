@@ -357,4 +357,3 @@ if "openDatabase" in W:
     nm(1)
 else:
     D <= H.H1("A Web SQL nem támogatott, használjon Chrome böngészőt!")
-Tim.set_timeout(insma, 5000)
