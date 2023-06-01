@@ -950,7 +950,7 @@ def nm(e):
         H.PRE(li[0], Class=f"b c {li[2]}", title=f"{li[1]}").bind("click", ins) if li[1] else H.SPAN(li[0], Class=f"{li[2]}") for li in l
     ]
     MT <= H.SPAN(Class="sep")
-    MT <= H.PRE("SQL törlése", Class="b b2").bind("click", delsma)
+    #MT <= H.PRE("SQL törlése", Class="b b2").bind("click", delsma)
     BT.clear()
     BT <= CSVM
     D["run"].style.display = "inline-block"
@@ -980,11 +980,11 @@ if "openDatabase" in W:
     D <= H.HR()
     D <= H.BUTTON("SQL végrehajtása", id="run").bind("click", f)
     D <= H.SPAN(Class="sep")
-    D <= H.BUTTON("Töröl", Class="b3").bind("click", g)
+    #D <= H.BUTTON("Töröl", Class="b3").bind("click", g)
     D <= H.SPAN(Class="sep")
     D <= H.BUTTON("<i>db</i> struktúra lekérdezése").bind("click", ldb)
-    D <= H.BUTTON("<i>db</i> => SQL").bind("click", ea)
-    D <= BT
+    #D <= H.BUTTON("<i>db</i> => SQL").bind("click", ea)
+    #D <= BT
     RES = H.DIV(Class="res")
     D <= H.HR()
     D <= RES
