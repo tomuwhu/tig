@@ -199,6 +199,7 @@ button.b3 {
     font-family: 'Oswald', sans-serif;
     color:rgb(4, 41, 76);
     text-shadow: 1px 1px 3px rgb(96, 89, 89);
+    text-align: left;
 }
 div.n span {
     color:rgb(3, 95, 95);
