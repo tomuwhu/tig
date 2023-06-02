@@ -103,15 +103,15 @@ def ins(e):
     RES.clear()
 def insma(e):
     D['TX'].value ="""DROP TABLE IF EXISTS pp ;
-CREATE TABLE pp (id PRIMARY KEY, name, age);
-INSERT INTO pp VALUES(1, "Malacka", 7);
-INSERT INTO pp VALUES(2, "Tigris", 2);
-INSERT INTO pp VALUES(3, "Nyuszi", 5);
-INSERT INTO pp VALUES(4, "Füles", 6);
-INSERT INTO pp VALUES(5, "Zsebibaba", 1);
-INSERT INTO pp VALUES(6, "Kanga", 7);
-INSERT INTO pp VALUES(7, "Bagoly", 5);
-INSERT INTO pp VALUES(8, "Róbert Gida", 14);"""
+CREATE TABLE pp (id PRIMARY KEY, name, age, gender);
+INSERT INTO pp VALUES(1, "Malacka", 7, 1);
+INSERT INTO pp VALUES(2, "Tigris", 2, 1);
+INSERT INTO pp VALUES(3, "Nyuszi", 5, 1);
+INSERT INTO pp VALUES(4, "Füles", 6, 2);
+INSERT INTO pp VALUES(5, "Zsebibaba", 1, 2);
+INSERT INTO pp VALUES(6, "Kanga", 7, 2);
+INSERT INTO pp VALUES(7, "Bagoly", 5, 1);
+INSERT INTO pp VALUES(8, "Róbert Gida", 14, 1);"""
     RES.clear()
     f(1)
 def conv(e):
@@ -140,16 +140,16 @@ def nm(e):
         'UPDATE pp SET name = "Tigris" WHERE id = 3',
         'SELECT * FROM pp ORDER BY name',
         'ALTER TABLE pp ADD age',
-        'SELECT SUM(id) as Összeg FROM pp',
-        'SELECT * FROM pp WHERE id IN (1, 2, 4) ORDER BY name',
-        'DELETE FROM pp',
+        'SELECT SUM(age) as Összeg FROM pp',
+        'SELECT name, age FROM pp WHERE age < 5 ORDER BY name',
+        "SELECT 100*(SELECT count(*) FROM pp WHERE gender=1)/(SELECT count(*) FROM pp) fiúk_aránya, '%'",
         'DROP TABLE pp',
     ]
     MT.clear()
     MT <= [
         H.PRE(li, Class="b").bind("click", ins) for li in l
     ]
-    MT <= H.PRE("Százholdas Pagony mintaadatbázis betöltése", Class="b b2").bind("click", insma)
+    MT <= H.PRE("Fill pp", Class="b b2").bind("click", insma)
     BT.clear()
     BT <= CSVM
     D["run"].style.display = "inline-block"
