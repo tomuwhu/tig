@@ -12,14 +12,15 @@ td, th {
     margin: 7px;
     padding: 4px;
     padding-left: 9px;
-    border-radius: 5px;
+    border-radius: 2px;
     min-width: 50px;
     opacity: 0.95;
 }
 th {
     box-shadow: 1px 1px 3px black;
-    color: rgb(7, 51, 51);
-    background: rgb(141, 174, 175);
+    text-shadow: 1px 1px 5px rgb(124, 146, 142);
+    color: rgb(188, 243, 243);
+    background: rgb(39, 50, 50);
     text-align: center;
     padding: 4px;
 }
@@ -67,12 +68,12 @@ div.err {
 }
 table {
     border-spacing: 3px;
-    margin: 2px auto;
-    background-color: rgb(246, 209, 205);
+    margin: 0px auto;
+    background-color: rgb(205, 243, 246);
     color:rgb(67, 36, 32);
     box-shadow: 1px 1px 3px inset black;
-    border-radius: 9px;
-    padding: 2px;
+    border-radius: 3px;
+    padding: 3px;
     font-size: 13px;
 }
 pre.b {
