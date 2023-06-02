@@ -132,8 +132,8 @@ def conv(e):
         RES <= H.DIV("Rövid táblanév vagy hibás input", Class="err")
 l = [
         ['Tábla létrehozása','CREATE TABLE pp (id PRIMARY KEY, name)'],
-        ['Adat beszúrása','INSERT INTO pp VALUES(1, "Malacka")'],
-        ['Adat módosítása','UPDATE pp SET name = "Tigris" WHERE id = 3'],
+        ['Adat beszúrása','INSERT INTO pp VALUES (1, "Malacka"), (2, "Tigris"), (3, "Nyúl")'],
+        ['Adat módosítása','UPDATE pp SET name = "Nyuszi" WHERE id = 3'],
         ['Adatok lekérdezése','SELECT * FROM pp ORDER BY name'],
         ['Tábla módosítása','ALTER TABLE pp ADD age'],
         ['Összegző lekérdezés','SELECT SUM(age) as Összeg FROM pp'],
