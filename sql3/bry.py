@@ -20,7 +20,7 @@ def list(tx, res):
             H.DIV(",".join(map(lambda x: f"<span>{x}</span>", str(res.rows.item(j)[i]).split(","))), Class=isn(res.rows.item(j)[i])), Class="z")
             for i in keys
         ]) for j in range(res.rows.length)]
-        RES <= H.DIV(T, Class="l l2")
+        RES <= H.DIV(T, Class="l")
     else:
         RES <= H.DIV("Sikeres / Nincs output", Class="done")
     li = D['TX'].value.split(";")
