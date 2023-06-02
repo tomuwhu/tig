@@ -98,9 +98,6 @@ def ea(e):
 def g(e):
         RES.clear()
         D['TX'].value = ""
-def ins(e):
-    D['TX'].value = e.target.text
-    RES.clear()
 def insma(e):
     D['TX'].value ="""DROP TABLE IF EXISTS pp ;
 CREATE TABLE pp (id PRIMARY KEY, name, age, gender);
@@ -133,21 +130,25 @@ def conv(e):
     else:
         RES.clear()
         RES <= H.DIV("Rövid táblanév vagy hibás input", Class="err")
+l = [
+        ['Tábla létrehozása','CREATE TABLE pp (id PRIMARY KEY, name)'],
+        ['Adat beszúrása','INSERT INTO pp VALUES(1, "Malacka")'],
+        ['Adat módosítása','UPDATE pp SET name = "Tigris" WHERE id = 3'],
+        ['Adatok lekérdezése','SELECT * FROM pp ORDER BY name'],
+        ['Tábla módosítása','ALTER TABLE pp ADD age'],
+        ['Összegző lekérdezés','SELECT SUM(age) as Összeg FROM pp'],
+        ['Feltétel megadása','SELECT name, age FROM pp WHERE age < 5 ORDER BY name'],
+        ['Allekérdezés',"SELECT 100*(SELECT count(*) FROM pp WHERE gender=1)/(SELECT count(*) FROM pp) fiúk_aránya, '%'"],
+        ['Tábla törlése','DROP TABLE pp'],
+    ]    
+def ins(e):
+    D['TX'].value = e.target.title
+    RES.clear()
 def nm(e):
-    l = [
-        'CREATE TABLE pp (id PRIMARY KEY, name)',
-        'INSERT INTO pp VALUES(1, "Malacka")',
-        'UPDATE pp SET name = "Tigris" WHERE id = 3',
-        'SELECT * FROM pp ORDER BY name',
-        'ALTER TABLE pp ADD age',
-        'SELECT SUM(age) as Összeg FROM pp',
-        'SELECT name, age FROM pp WHERE age < 5 ORDER BY name',
-        "SELECT 100*(SELECT count(*) FROM pp WHERE gender=1)/(SELECT count(*) FROM pp) fiúk_aránya, '%'",
-        'DROP TABLE pp',
-    ]
+    
     MT.clear()
     MT <= [
-        H.PRE(li, Class="b").bind("click", ins) for li in l
+        H.PRE(li[0], Class="b", title=li[1]).bind("click", ins) for li in l
     ]
     MT <= H.PRE("Fill pp", Class="b b2").bind("click", insma)
     BT.clear()
