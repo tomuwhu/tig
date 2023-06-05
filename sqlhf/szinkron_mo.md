@@ -23,3 +23,13 @@ GROUP BY film.filmaz
 #### 7. feladat
 
 SELECT szerep, szinesz, hang FROM szinkron WHERE szerep like "% rab%" or szerep like "rab%"
+
+#### 8. feladat
+
+SELECT szinesz `Színész-rendező` FROM film, szinkron WHERE rendezo = szinesz GROUP BY szinesz
+
+#### 9. feladat
+
+SELECT cim, hang FROM film, szinkron WHERE film.filmaz = szinkron.filmaz and
+szinkron.filmaz in (SELECT szinkron.filmaz FROM szinkron WHERE hang="Pap Kati") and hang!="Pap Kati"
+GROUP BY hang ORDER BY cim, hang
