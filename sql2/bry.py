@@ -305,9 +305,9 @@ def mo(e):
     D['TX'].value = e.target.title
     RES.clear()
 def ins(e):
-    if len(e.target.innerHTML) == 2:
+    if e.target.innerHTML[0] == "(":
         FL.style.display = "table-cell"
-        fn = int(e.target.innerHTML[-1])-2
+        fn = int(e.target.innerHTML[1])-2
         FL.clear()
         FL <= [
             H.H4(f"{fn+2}. feladat"),
@@ -333,14 +333,14 @@ def nm(e):
         ['Felmérések','SELECT * FROM aerob','c1'],
         ['Minden adat','SELECT megye.nev megye_nev, megye.letszam megye_letszam, allapot.nev allapot_nev, nem, aerob.letszam aerob_letszam\nFROM aerob\nJOIN megye, allapot ON megye.kod = mkod and allapot.kod = allkod','c1'],
         ['Feladatok:',False,'sep'],
-        ['F2','SELECT letszam f2 FROM megye WHERE nev = "Vas"','c2'],
-        ['F3','SELECT SUM(aerob.letszam) F3 FROM aerob JOIN megye ON kod = mkod WHERE nev = "Somogy"','c2'],
-        ['F4','SELECT aerob.letszam f4 FROM aerob JOIN megye ON kod = mkod WHERE nev = "Zala" and nem = 1 and allkod = 1','c2'],
-        ['F5','SELECT count(*) f5 FROM megye WHERE letszam < (SELECT letszam FROM megye WHERE kod = 14)','c2'],
-        ['F6','SELECT 100*(SELECT SUM(letszam) FROM aerob WHERE mkod = 11)/(SELECT letszam FROM megye WHERE kod = 11) f6','c2'],
-        ['F7','SELECT megye.nev Megye, aerob.letszam Létszám FROM megye, aerob WHERE mkod = megye.kod and nem = 0 and allkod = 1 ORDER BY Létszám DESC','c2'],
-        ['F8','SELECT megye.nev Megye, ROUND(0.1 * 10 * SUM(aerob.letszam) / megye.letszam, 4) Arány\nFROM megye, aerob\nWHERE mkod = megye.kod GROUP BY mkod ORDER BY Arány DESC LIMIT 1','c2'],
-        ['F9','SELECT megye.nev Megyenév, ROUND(0.1 * 10 * SUM(aerob.letszam) / megye.letszam, 4) Arány\nFROM megye, aerob\nWHERE mkod = megye.kod and allkod > 1 GROUP BY mkod HAVING Arány > 0.25','c2']
+        ['(2vas)','SELECT letszam f2 FROM megye WHERE nev = "Vas"','c2'],
+        ['(3somogy)','SELECT SUM(aerob.letszam) F3 FROM aerob JOIN megye ON kod = mkod WHERE nev = "Somogy"','c2'],
+        ['(4zala)','SELECT aerob.letszam f4 FROM aerob JOIN megye ON kod = mkod WHERE nev = "Zala" and nem = 1 and allkod = 1','c2'],
+        ['(5heves)','SELECT count(*) f5 FROM megye WHERE letszam < (SELECT letszam FROM megye WHERE kod = 14)','c2'],
+        ['(6pest)','SELECT 100*(SELECT SUM(letszam) FROM aerob WHERE mkod = 11)/(SELECT letszam FROM megye WHERE kod = 11) f6','c2'],
+        ['(7egesz)','SELECT megye.nev Megye, aerob.letszam Létszám FROM megye, aerob WHERE mkod = megye.kod and nem = 0 and allkod = 1 ORDER BY Létszám DESC','c2'],
+        ['(8arany)','SELECT megye.nev Megye, ROUND(0.1 * 10 * SUM(aerob.letszam) / megye.letszam, 4) Arány\nFROM megye, aerob\nWHERE mkod = megye.kod GROUP BY mkod ORDER BY Arány DESC LIMIT 1','c2'],
+        ['(9negyed)','SELECT megye.nev Megyenév, ROUND(0.1 * 10 * SUM(aerob.letszam) / megye.letszam, 4) Arány\nFROM megye, aerob\nWHERE mkod = megye.kod and allkod > 1 GROUP BY mkod HAVING Arány > 0.25','c2']
     ]
     MT.clear()
     MT <= H.PRE("SQL betöltése", id="ls", Class="b b3").bind("click", insma)
