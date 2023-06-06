@@ -218,7 +218,7 @@ button.b3 {
 img {
     border-radius: 6px;
     box-shadow: 1px 1px 4px black;
-    border: solid 6px green;
+    border: solid 9px rgb(53, 116, 105);
 }
 img.bal {
     height: 100px;
