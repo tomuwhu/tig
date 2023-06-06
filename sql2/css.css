@@ -74,12 +74,14 @@ div.err {
 table {
     border-spacing: 0px;
     margin: 2px auto;
-    background-color: rgb(246, 241, 205);
+    background-color: rgb(255, 255, 255);
     color:rgb(67, 36, 32);
     box-shadow: 0px 0px 19px black;
     border-radius: 9px;
-    padding: 9px;
+    padding: 3px;
+    box-shadow: 0px 0px 4px inset rgb(76, 76, 76);
     font-size: 13px;
+    border: solid 9px rgb(53, 116, 105);
 }
 pre.b {
     display: inline-block;
