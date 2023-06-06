@@ -373,9 +373,9 @@ if "openDatabase" in W:
     D <= H.SPAN(" ")
     D <= H.A("SQL forrás letöltése (.sql)", href="../sqlhf/allokep_forras.sql")
     D <= H.HR()
-    FL = H.TD(fl[0])
+    FL = H.TD(id="fsz")
     D <= H.DIV(H.TABLE([
-        H.TD(H.IMG(src="aerob.jpeg", Class="bal")),
+        H.TD(H.IMG(src="aerob.jpeg", Class="bal"), Class="bal"),
         FL,
         H.TD(H.IMG(src="minta.jpeg", Class="jobb"), id="minta")], Class="fl"))
     D <= H.HR()

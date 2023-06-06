@@ -218,6 +218,7 @@ button.b3 {
 img {
     border-radius: 6px;
     box-shadow: 1px 1px 4px black;
+    border: solid 6px green;
 }
 img.bal {
     height: 100px;
@@ -241,5 +242,11 @@ table.fl td {
     color: rgb(47, 53, 67);
 }
 #minta {
+    display: none;
+}
+td.bal {
+    text-align: center;
+}
+#fsz {
     display: none;
 }
