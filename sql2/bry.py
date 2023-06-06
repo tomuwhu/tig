@@ -335,10 +335,10 @@ def nm(e):
         ['Feladatok:',False,'sep'],
         ['(2vas)','SELECT letszam f2 FROM megye WHERE nev = "Vas"','c2'],
         ['(3somogy)','SELECT SUM(aerob.letszam) F3 FROM aerob JOIN megye ON kod = mkod WHERE nev = "Somogy"','c2'],
-        ['(4zala)','SELECT aerob.letszam f4 FROM aerob JOIN megye ON kod = mkod WHERE nev = "Zala" and nem = 1 and allkod = 1','c2'],
-        ['(5heves)','SELECT count(*) f5 FROM megye WHERE letszam < (SELECT letszam FROM megye WHERE kod = 14)','c2'],
-        ['(6pest)','SELECT 100*(SELECT SUM(letszam) FROM aerob WHERE mkod = 11)/(SELECT letszam FROM megye WHERE kod = 11) f6','c2'],
-        ['(7egesz)','SELECT megye.nev Megye, aerob.letszam Létszám FROM megye, aerob WHERE mkod = megye.kod and nem = 0 and allkod = 1 ORDER BY Létszám DESC','c2'],
+        ['(4zala)','SELECT aerob.letszam f4\nFROM aerob JOIN megye ON kod = mkod\nWHERE nev = "Zala" and nem = 1 and allkod = 1','c2'],
+        ['(5heves)','SELECT count(*) f5 FROM megye\nWHERE letszam < (SELECT letszam FROM megye WHERE kod = 14)','c2'],
+        ['(6pest)','SELECT 100 * (SELECT SUM(letszam) FROM aerob WHERE mkod = 11)/(SELECT letszam FROM megye WHERE kod = 11) f6','c2'],
+        ['(7egesz)','SELECT megye.nev Megye, aerob.letszam Létszám\nFROM megye, aerob\nWHERE mkod = megye.kod and nem = 0 and allkod = 1 ORDER BY Létszám DESC','c2'],
         ['(8arany)','SELECT megye.nev Megye, ROUND(0.1 * 10 * SUM(aerob.letszam) / megye.letszam, 4) Arány\nFROM megye, aerob\nWHERE mkod = megye.kod GROUP BY mkod ORDER BY Arány DESC LIMIT 1','c2'],
         ['(9negyed)','SELECT megye.nev Megyenév, ROUND(0.1 * 10 * SUM(aerob.letszam) / megye.letszam, 4) Arány\nFROM megye, aerob\nWHERE mkod = megye.kod and allkod > 1 GROUP BY mkod HAVING Arány > 0.25','c2']
     ]
