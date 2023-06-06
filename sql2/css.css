@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,wght@0,300;1,300&display=swap');
 * {
     text-shadow: 1px 1px 2px rgb(67, 64, 64);
     text-align: center;
 }
 h1 {
     color: rgb(77, 23, 23);
-    font-size: 23px;
+    font-size: 30px;
     user-select: none;
+    font-family: 'Playfair', serif;
 }
 td, th {
     margin: 7px;
@@ -18,22 +20,25 @@ td, th {
 }
 th {
     box-shadow: 1px 1px 3px black;
-    color: rgb(7, 51, 51);
-    background: rgb(141, 174, 175);
+    color: rgb(230, 246, 246);
+    background: rgb(30, 59, 60);
     text-align: center;
     padding: 4px;
 }
 td {
-    box-shadow: 1px 1px 3px inset black;
+    border: solid 0.5px black; 
+    box-shadow: 1px 1px 3px black;
     color: rgb(11, 35, 35);
-    background: rgb(226, 224, 198);
+    background: rgb(236, 236, 228);
     text-align: left;
-    padding-right: 20px;
+    padding: 2px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 td.n {
     text-align: right;
-    padding-right: 11px;
-    padding-left: 11px;
+    padding-right: 7px;
+    padding-left: 7px;
     color:rgb(2, 75, 75);
     background-color: rgb(207, 222, 221);
 }
@@ -68,9 +73,9 @@ div.err {
     border-radius: 9px;
 }
 table {
-    border-spacing: 3px;
-    margin: 2px auto;
-    background-color: rgb(246, 209, 205);
+    border-spacing: 2px;
+    margin: 1px auto;
+    background-color: rgb(246, 241, 205);
     color:rgb(67, 36, 32);
     box-shadow: 1px 1px 3px inset black;
     border-radius: 9px;
@@ -123,15 +128,13 @@ button:active {
     box-shadow: 0px 0px 3px rgb(0, 0, 0);
 }
 div.res {
-    min-height: 90px;
-    box-shadow: 1px 1px 6px rgb(162, 131, 131);
+    min-height: 60px;
+    box-shadow: 1px 1px 6px black;
     border-radius: 10px;
-    padding: 6px;
     background-color: rgb(53, 116, 105);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-bottom: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 6px;
+    padding-bottom: 1px;
 }
 div.mv {
     background-color: rgb(136, 142, 115);
@@ -154,14 +157,9 @@ pre.l {
     padding: 3px;
     margin: 2px;
     padding-left: 6px;
-    border: solid 1px black;
+    border: solid 0.5px black;
     box-shadow: 1px 1px 5px inset rgb(0, 0, 0);
     font-size: 10px;
-    color:rgb(48, 32, 67);
-}
-pre.l2 {
-    background-color: rgb(242, 237, 220);
-    color:rgb(32, 67, 55);
 }
 i {
     color:rgb(71, 56, 13)
@@ -233,6 +231,7 @@ table.fl {
     border-spacing: 0px;
 }
 table.fl td {
+    border: none;
     background: transparent;
     text-align: justify;
     border-radius: 0px;
@@ -249,6 +248,8 @@ td.bal {
 }
 #fsz {
     display: none;
+    font-family: 'Playfair', serif;
+    font-size: 14px;
 }
 h4 {
     padding: 0px;
