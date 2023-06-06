@@ -14,6 +14,7 @@ td, th {
     border-radius: 5px;
     min-width: 50px;
     opacity: 0.95;
+    vertical-align: top;
 }
 th {
     box-shadow: 1px 1px 3px black;
@@ -213,4 +214,32 @@ button.b3 {
     font-size: 10px;
     padding-top: 2.5px;
     padding-bottom: 1.5px;
+}
+img {
+    border-radius: 6px;
+    box-shadow: 1px 1px 4px black;
+}
+img.bal {
+    height: 100px;
+}
+img.jobb {
+    height: 170px;
+}
+table.fl {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-spacing: 0px;
+}
+table.fl td {
+    background: transparent;
+    text-align: justify;
+    border-radius: 0px;
+    box-shadow: none;
+    font-size: 15px;
+    text-shadow: 1px 1px 3px gray;
+    color: rgb(47, 53, 67);
+}
+#minta {
+    display: none;
 }

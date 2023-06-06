@@ -291,9 +291,39 @@ def conv(e):
     else:
         RES.clear()
         RES <= H.DIV("Rövid táblanév vagy hibás input", Class="err")
-def ins(e):
+fl = [
+    "Készítsen lekérdezést, amely megadja a „Vas” megyei tanulók számát!",
+    "Készítsen lekérdezést, amely megadja, hogy „Somogy” megyében hány tanuló vett részt a felmérésben!",
+    "Készítsen lekérdezést, amely megadja, hogy összesen hány fiú tanuló kapott egészséges besorolást „Zala” megyéből!",
+    "Lekérdezés segítségével adja meg, hogy hány megyében van kevesebb tanuló, mint „Heves” megyében!",
+    "Lekérdezés segítségével adja meg, hogy „Pest” megyében a tanulók hányadrésze vett részt a felmérésben!",
+    "Adja meg lekérdezés segítségével, hogy melyik megyében hány „egészséges” besorolást kapott lány tanuló van! A lekérdezés a megye nevét és az egészséges tanulók számát adja meg ez utóbbi szerint csökkenő sorrendben!",
+    "Készítsen lekérdezést, amely megadja, hogy melyik megyében volt a legnagyobb a felmérésben részt vevő tanulók aránya! A megye nevét és az arányt jelenítse meg!",
+    "Lekérdezés segítségével adja meg, hogy mely megyékben bizonyult valamilyen mértékben fejlesztendőnek az ott tanuló diákok több mint negyede! A lekérdezés jelenítse meg a keresett megyéket, valamint a megyénként fejlesztést igénylő tanulók és a megyei összes tanulók arányát! A mezőket nevezze el a mintának megfelelően!"
+]
+def mo(e):
     D['TX'].value = e.target.title
     RES.clear()
+def ins(e):
+    if len(e.target.innerHTML) == 2:
+        FL.style.display = "table-cell"
+        fn = int(e.target.innerHTML[-1])-2
+        FL.clear()
+        FL <= [
+            fl[fn],
+            H.HR(),
+            H.PRE("Megoldás", Class=f"b c c2", title=e.target.title).bind("click", mo)
+        ]
+        if fn==7:
+            D['minta'].style.display = "table-cell"
+        else:
+            D['minta'].style.display = "none"
+        D['TX'].value = ""
+    else:
+        FL.clear()
+        FL.style.display = "none"
+        D['minta'].style.display = "none"
+        mo(e)
 def delsma(e):
     D['TX'].value ="DROP TABLE IF EXISTS megye;\nDROP TABLE IF EXISTS allapot;\nDROP TABLE IF EXISTS aerob;"
     RES.clear()
@@ -342,6 +372,12 @@ if "openDatabase" in W:
     D <= H.A("Állóképesség <b>feladatsor</b>, emelt szint, 2022. őszi (.pdf)", href="../sqlhf/allokep.pdf", target="Feladatlap")
     D <= H.SPAN(" ")
     D <= H.A("SQL forrás letöltése (.sql)", href="../sqlhf/allokep_forras.sql")
+    D <= H.HR()
+    FL = H.TD(fl[0])
+    D <= H.DIV(H.TABLE([
+        H.TD(H.IMG(src="aerob.jpeg", Class="bal")),
+        FL,
+        H.TD(H.IMG(src="minta.jpeg", Class="jobb"), id="minta")], Class="fl"))
     D <= H.HR()
     MT = H.DIV(Class="mv")
     D <= MT
