@@ -250,3 +250,19 @@ td.bal {
 #fsz {
     display: none;
 }
+h4 {
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: rgb(85, 9, 9);
+}
+.moc {
+    text-align: right;
+}
+pre.cm {
+    background-color: rgb(83, 83, 83);
+    color: white;
+    padding-right: 10px;
+    padding-left: 10px;
+}

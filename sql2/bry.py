@@ -310,9 +310,10 @@ def ins(e):
         fn = int(e.target.innerHTML[-1])-2
         FL.clear()
         FL <= [
+            H.H4(f"{fn+2}. feladat"),
             fl[fn],
             H.HR(),
-            H.PRE("Megoldás", Class=f"b c c2", title=e.target.title).bind("click", mo)
+            H.DIV(H.PRE("Megoldás felfedése", Class=f"b c cm", title=e.target.title).bind("click", mo), Class="moc")
         ]
         if fn==7:
             D['minta'].style.display = "table-cell"
@@ -335,7 +336,7 @@ def nm(e):
         ['Állapotok','SELECT * FROM allapot','c1'],
         ['Felmérések','SELECT * FROM aerob','c1'],
         ['Minden adat','SELECT megye.nev megye_nev, megye.letszam megye_letszam, allapot.nev allapot_nev, nem, aerob.letszam aerob_letszam\nFROM aerob, megye, allapot\nWHERE mkod=megye.kod and allkod=allapot.kod','c2'],
-        ['Megoldások:',False,'sep'],
+        ['Feladatok:',False,'sep'],
         ['F2','SELECT letszam f2 FROM megye WHERE kod = 3','c2'],
         ['F3','SELECT SUM(letszam) f3 FROM aerob WHERE mkod = 6','c2'],
         ['F4','SELECT letszam f4 FROM aerob WHERE mkod = 5 and nem = 1 and allkod = 1','c2'],
