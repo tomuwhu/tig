@@ -12,7 +12,7 @@ def list(tx, res):
         keys = W.js.ent(res.rows.item(0))
         T <= H.TR(H.TH(i) for i in keys)
         T <= [H.TR([
-            H.TD(res.rows.item(j)[i] or H.SPAN("0"), 
+            H.TD(res.rows.item(j)[i] or "0", 
                 Class = f"n n{j%2}" if 
                     type(res.rows.item(j)[i] or 0) is int or 
                     type(res.rows.item(j)[i] or 0) is float or 

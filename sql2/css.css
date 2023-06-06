@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair:ital,wght@0,300;1,300&display=swap');
 * {
-    text-shadow: 1px 1px 2px rgb(67, 64, 64);
     text-align: center;
 }
 h1 {
@@ -8,6 +7,7 @@ h1 {
     font-size: 30px;
     user-select: none;
     font-family: 'Playfair', serif;
+    text-shadow: 1px 1px 3px rgb(47, 46, 46);
 }
 th {
     color: rgb(98, 58, 32);
@@ -21,7 +21,7 @@ th {
 }
 td {
     border: none;
-    color: rgb(11, 35, 35);
+    color: rgb(45, 13, 35);
     background: rgb(236, 236, 228);
     text-align: left;
     padding: 2px;
@@ -53,6 +53,7 @@ textarea {
     margin-top: 14px;
     box-shadow: 1px 1px 6px inset black;
     padding: 6px;
+    text-shadow: 1px 1px 3px black;
 }
 div.done {
     background-color: aquamarine;
@@ -125,15 +126,6 @@ button:active {
     background-color: rgb(178, 207, 152);
     box-shadow: 0px 0px 3px rgb(0, 0, 0);
 }
-div.res {
-    min-height: 60px;
-    box-shadow: 1px 1px 6px black;
-    border-radius: 10px;
-    background-color: rgb(53, 116, 105);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    padding-top: 6px;
-    padding-bottom: 1px;
-}
 div.mv {
     background-color: rgb(136, 142, 115);
     border: solid 1px rgb(66, 88, 66);
@@ -145,19 +137,6 @@ input {
 }
 input#sep {
     width: 30px;
-}
-pre.l {
-    border-radius: 6px;
-    text-align: left;
-    width: 95%;
-    display: inline-block;
-    background-color: rgb(245, 205, 193);
-    padding: 3px;
-    margin: 2px;
-    padding-left: 6px;
-    border: solid 0.5px black;
-    box-shadow: 1px 1px 5px inset rgb(0, 0, 0);
-    font-size: 10px;
 }
 i {
     color:rgb(71, 56, 13)
