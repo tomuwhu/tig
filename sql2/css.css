@@ -60,6 +60,7 @@ textarea {
     text-shadow: 1px 1px 3px black;
 }
 div.done {
+    text-shadow: 1px 1px 2px rgb(79, 77, 77);
     background-color: aquamarine;
     color:rgb(32, 67, 55);
     margin: 8px;
@@ -68,6 +69,7 @@ div.done {
     border-radius: 9px;
 }
 div.err {
+    text-shadow: 1px 1px 2px rgb(79, 77, 77);
     background-color: rgb(255, 140, 127);
     color:rgb(67, 36, 32);
     margin: 8px;

@@ -349,7 +349,7 @@ def nm(e):
         H.PRE(li[0], Class=f"b c {li[2]}", title=f"{li[1]}").bind("click", ins) if li[1] else H.SPAN(li[0], Class=f"{li[2]}") for li in l
     ]
     MT <= H.SPAN(Class="sep")
-    MT <= H.PRE("SQL törlése", Class="b b2").bind("click", delsma)
+    #MT <= H.PRE("SQL törlése", Class="b b2").bind("click", delsma)
     BT.clear()
     BT <= CSVM
     #Q["run"].style.display = "inline-block"
