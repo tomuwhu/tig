@@ -13,10 +13,10 @@ def list(tx, res):
         T <= H.TR(H.TH(i) for i in keys)
         T <= [H.TR([
             H.TD(res.rows.item(j)[i] or H.SPAN("0"), 
-                Class = "n" if 
+                Class = f"n n{j%2}" if 
                     type(res.rows.item(j)[i] or 0) is int or 
                     type(res.rows.item(j)[i] or 0) is float or 
-                    (res.rows.item(j)[i] or "").isnumeric() else "" ) 
+                    (res.rows.item(j)[i] or "").isnumeric() else f"j{j%2}" ) 
             for i in keys
         ]) for j in range(res.rows.length)]
         RES <= H.PRE(T, Class="l l2")
