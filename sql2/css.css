@@ -123,7 +123,7 @@ button:active {
     box-shadow: 0px 0px 3px rgb(0, 0, 0);
 }
 div.res {
-    min-height: 150px;
+    min-height: 90px;
     box-shadow: 1px 1px 6px rgb(162, 131, 131);
     border-radius: 10px;
     padding: 6px;
