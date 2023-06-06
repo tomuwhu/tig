@@ -67,7 +67,7 @@ def sznsz(v):
     else:    
         return f'"{v}"'
 def list2(tx, res):
-    li = D['TX'].value.split(";")
+    li = Q['TX'].value.split(";")
     tn = li[0].split(" ")[-1]
     if res.rows.length > 0:
         pre = H.PRE(Class="l l2")
@@ -80,25 +80,25 @@ def list2(tx, res):
         RES <= H.BR()
     tli = li[1:]
     if len(tli) > 0:
-        D['TX'].value = ";".join(tli).strip()
+        Q['TX'].value = ";".join(tli).strip()
         Tim.set_timeout(tr2, 1)
 def tr2():
-    li = D['TX'].value.split(";")
+    li = Q['TX'].value.split(";")
     ali = li[0].strip()
     if len(ali) > 1:
         db.transaction(lambda t: t.executeSql(ali, [], list2, err))
 def f2():
-    if len(D['TX'].value) > 1:
+    if len(Q['TX'].value) > 1:
         Tim.set_timeout(tr2, 1)
 def ea(e):
     db.transaction(lambda t: t.executeSql(
         'SELECT name, sql FROM sqlite_master WHERE TYPE IS "table" AND name != "__WebKitDatabaseInfoTable__"',[], ead, err))
 def g(e):
         RES.clear()
-        D['TX'].value = ""
+        Q['TX'].value = ""
 def insma(e = 1):
-    D['ls'].style.display = "none"
-    D['TX'].value ="""DROP TABLE IF EXISTS megye;
+    Q['ls'].style.display = "none"
+    Q['TX'].value ="""DROP TABLE IF EXISTS megye;
 DROP TABLE IF EXISTS allapot;
 DROP TABLE IF EXISTS aerob;
 CREATE TABLE megye (
@@ -275,7 +275,7 @@ INSERT INTO aerob (azon, mkod, nem, allkod, letszam) VALUES
 def conv(e):
     LX = Q['TX'].value.splitlines()
     if len(Q['tn'].value) and len(LX)>1:
-        FL = LX[0].split(D['sep'].value)
+        FL = LX[0].split(Q['sep'].value)
         DL = map(lambda x: x.split(Q['sep'].value), LX[1:])
         s = f"CREATE TABLE {Q['tn'].value} (" + FL[0] + " PRIMARY KEY"
         if len(FL[1:]):
@@ -283,7 +283,7 @@ def conv(e):
         else:
             s += ");\n"
         for i in DL:
-            s += f"INSERT INTO {D['tn'].value} VALUES(" + ", ".join(map(lambda x: sznsz(x), i)) + ");\n"
+            s += f"INSERT INTO {Q['tn'].value} VALUES(" + ", ".join(map(lambda x: sznsz(x), i)) + ");\n"
         Q['TX'].value = s
         nm(1)
         RES.clear()
@@ -389,7 +389,7 @@ if "openDatabase" in W:
     D <= H.BUTTON("Töröl", Class="b3").bind("click", g)
     D <= H.SPAN(Class="sep")
     D <= H.BUTTON("<i>db</i> struktúra lekérdezése").bind("click", ldb)
-    D <= H.BUTTON("<i>db</i> => SQL").bind("click", ea)
+    #D <= H.BUTTON("<i>db</i> => SQL").bind("click", ea)
     #D <= BT
     RES = H.DIV(Class="res")
     D <= H.HR()
