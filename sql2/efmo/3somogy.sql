@@ -1,0 +1,1 @@
+SELECT SUM(aerob.letszam) F3 FROM aerob JOIN megye ON kod = mkod WHERE nev = "Somogy"

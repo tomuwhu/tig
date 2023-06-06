@@ -1,0 +1,1 @@
+SELECT letszam f2 FROM megye WHERE nev = "Vas"

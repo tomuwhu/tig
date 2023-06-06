@@ -1,0 +1,1 @@
+SELECT aerob.letszam f4 FROM aerob JOIN megye ON kod = mkod WHERE nev = "Zala" and nem = 1 and allkod = 1
