@@ -942,7 +942,7 @@ def nm(e):
     l = [
         ['Filmek','SELECT filmaz, cim, eredeti, magyarszoveg FROM film LIMIT 12','c1'],
         ['Szinkronok','SELECT * FROM szinkron LIMIT 18','c1'],
-        ['Kapcsolat','SELECT szerep, szinesz FROM film JOIN szinkron ON film.filmaz = szinkron.filmaz WHERE cim = "Gladiátor"','c2']
+        ['Kapcsolat','SELECT szerep, szinesz\nFROM film JOIN szinkron ON film.filmaz = szinkron.filmaz\nWHERE cim = "Gladiátor"','c2']
         #['Megoldások:',False,'sep']
     ]
     MT.clear()
