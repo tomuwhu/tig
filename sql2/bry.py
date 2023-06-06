@@ -319,11 +319,7 @@ def ins(e):
             D['minta'].style.display = "table-cell"
         else:
             D['minta'].style.display = "none"
-        D['TX'].value = ""
     else:
-        FL.clear()
-        FL.style.display = "none"
-        D['minta'].style.display = "none"
         mo(e)
 def delsma(e):
     D['TX'].value ="DROP TABLE IF EXISTS megye;\nDROP TABLE IF EXISTS allapot;\nDROP TABLE IF EXISTS aerob;"
@@ -335,7 +331,7 @@ def nm(e):
         ['Megyék','SELECT * FROM megye','c1'],
         ['Állapotok','SELECT * FROM allapot','c1'],
         ['Felmérések','SELECT * FROM aerob','c1'],
-        ['Minden adat','SELECT megye.nev megye_nev, megye.letszam megye_letszam, allapot.nev allapot_nev, nem, aerob.letszam aerob_letszam\nFROM aerob, megye, allapot\nWHERE mkod=megye.kod and allkod=allapot.kod','c2'],
+        ['Minden adat','SELECT megye.nev megye_nev, megye.letszam megye_letszam, allapot.nev allapot_nev, nem, aerob.letszam aerob_letszam\nFROM aerob, megye, allapot\nWHERE mkod=megye.kod and allkod=allapot.kod','c1'],
         ['Feladatok:',False,'sep'],
         ['F2','SELECT letszam f2 FROM megye WHERE kod = 3','c2'],
         ['F3','SELECT SUM(letszam) f3 FROM aerob WHERE mkod = 6','c2'],
