@@ -1,6 +1,6 @@
-from browser import document as D, window as W, html as H, timer as Tim
+from browser import document as Q, window as W, html as H, timer as Tim
 def ldb(e):
-    D['TX'].value ='SELECT name, sql FROM sqlite_master WHERE TYPE IS "table" AND name != "__WebKitDatabaseInfoTable__"'
+    Q['TX'].value ='SELECT name, sql FROM sqlite_master WHERE TYPE IS "table" AND name != "__WebKitDatabaseInfoTable__"'
     f(1)
 def err(tx, err):
     RES.clear()
@@ -22,31 +22,31 @@ def list(tx, res):
         RES <= H.PRE(T, Class="l l2")
     else:
         RES <= H.DIV("Sikeres / Nincs output", Class="done")
-    li = D['TX'].value.split(";")
+    li = Q['TX'].value.split(";")
     tli = li[1:]
     if len(tli) > 0:
-        D['TX'].value = ";".join(tli).strip()
+        Q['TX'].value = ";".join(tli).strip()
         Tim.set_timeout(tr, 1)
 def tr():
-    li = D['TX'].value.split(";")
+    li = Q['TX'].value.split(";")
     ali = li[0].strip()
     if len(ali) > 1:
         db.transaction(lambda t: t.executeSql(ali, [], list, err))
 def f(e):
     RES.clear()
-    if len(D['TX'].value) > 1:
+    if len(Q['TX'].value) > 1:
         Tim.set_timeout(tr, 1)
     else:
         RES <= H.DIV("Üres utasítás", Class="err")
 def ead(tx, res):
     RES.clear()
-    HP = H.PRE([res.rows.item(i).sql + ";\n" for i in range(res.rows.length)], Class="l")
+    HP = H.PRE([res.rows.item(i).sql + ";\n" for i in range(res.rows.length)], Class="lx")
     RES <= HP
     NL = [ res.rows.item(i).name for i in range(res.rows.length)]
     s = ""
     for name in NL:
         s += f"SELECT * FROM {name};"
-    D['TX'].value = s
+    Q['TX'].value = s
     if len(s):
         f2()
     else:
@@ -273,18 +273,18 @@ INSERT INTO aerob (azon, mkod, nem, allkod, letszam) VALUES
     RES.clear()
     f(1)
 def conv(e):
-    LX = D['TX'].value.splitlines()
-    if len(D['tn'].value) and len(LX)>1:
+    LX = Q['TX'].value.splitlines()
+    if len(Q['tn'].value) and len(LX)>1:
         FL = LX[0].split(D['sep'].value)
-        DL = map(lambda x: x.split(D['sep'].value), LX[1:])
-        s = f"CREATE TABLE {D['tn'].value} (" + FL[0] + " PRIMARY KEY"
+        DL = map(lambda x: x.split(Q['sep'].value), LX[1:])
+        s = f"CREATE TABLE {Q['tn'].value} (" + FL[0] + " PRIMARY KEY"
         if len(FL[1:]):
             s += ", " + ", ".join(FL[1:]) + ");\n"
         else:
             s += ");\n"
         for i in DL:
             s += f"INSERT INTO {D['tn'].value} VALUES(" + ", ".join(map(lambda x: sznsz(x), i)) + ");\n"
-        D['TX'].value = s
+        Q['TX'].value = s
         nm(1)
         RES.clear()
         RES <= H.DIV("Sikeres beolvasás", Class="done")
@@ -302,7 +302,7 @@ fl = [
     "Lekérdezés segítségével adja meg, hogy mely megyékben bizonyult valamilyen mértékben fejlesztendőnek az ott tanuló diákok több mint negyede! A lekérdezés jelenítse meg a keresett megyéket, valamint a megyénként fejlesztést igénylő tanulók és a megyei összes tanulók arányát! A mezőket nevezze el a mintának megfelelően!"
 ]
 def mo(e):
-    D['TX'].value = e.target.title
+    Q['TX'].value = e.target.title
     RES.clear()
 def ins(e):
     if e.target.innerHTML[0] == "(":
@@ -316,16 +316,16 @@ def ins(e):
             H.DIV(H.PRE("Megoldás felfedése", Class=f"b c cm", title=e.target.title).bind("click", mo), Class="moc")
         ]
         if fn==7:
-            D['minta'].style.display = "table-cell"
+            Q['minta'].style.display = "table-cell"
         else:
-            D['minta'].style.display = "none"
+            Q['minta'].style.display = "none"
     else:
         mo(e)
 def delsma(e):
-    D['TX'].value ="DROP TABLE IF EXISTS megye;\nDROP TABLE IF EXISTS allapot;\nDROP TABLE IF EXISTS aerob;"
+    Q['TX'].value ="DROP TABLE IF EXISTS megye;\nDROP TABLE IF EXISTS allapot;\nDROP TABLE IF EXISTS aerob;"
     RES.clear()
     f(1)
-    D['ls'].style.display = "inline-block"
+    Q['ls'].style.display = "inline-block"
 def nm(e):
     l = [
         ['Megyék','SELECT * FROM megye','c1'],
@@ -352,9 +352,9 @@ def nm(e):
     MT <= H.PRE("SQL törlése", Class="b b2").bind("click", delsma)
     BT.clear()
     BT <= CSVM
-    D["run"].style.display = "inline-block"
+    #Q["run"].style.display = "inline-block"
 def cm(e):
-    D['TX'].value = ""
+    Q['TX'].value = ""
     global LX
     MT.clear()
     MT <= H.INPUT(placeholder = "Tábla név", id = "tn")
@@ -362,7 +362,8 @@ def cm(e):
     MT <= H.BUTTON("Konvertál").bind("click", conv)
     BT.clear()
     BT <= SM
-    D["run"].style.display = "none"
+    Q["run"].style.display = "none"
+D = H.DIV(Class="bc")
 if "openDatabase" in W: 
     db = W.openDatabase('allokep', '1.0', 'x', 5*1024*1024)
     D <= H.H1("SQL Gyakorló")
@@ -389,7 +390,7 @@ if "openDatabase" in W:
     D <= H.SPAN(Class="sep")
     D <= H.BUTTON("<i>db</i> struktúra lekérdezése").bind("click", ldb)
     D <= H.BUTTON("<i>db</i> => SQL").bind("click", ea)
-    D <= BT
+    #D <= BT
     RES = H.DIV(Class="res")
     D <= H.HR()
     D <= RES
@@ -397,3 +398,4 @@ if "openDatabase" in W:
 else:
     D <= H.H1("A Web SQL nem támogatott, használjon Chrome böngészőt!")
 Tim.set_timeout(insma, 500)
+Q <= D

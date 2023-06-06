@@ -2,12 +2,16 @@
 * {
     text-align: center;
 }
+html, body {
+    margin: 0px;
+}
 h1 {
     color: rgb(77, 23, 23);
     font-size: 30px;
     user-select: none;
     font-family: 'Playfair', serif;
     text-shadow: 1px 1px 3px rgb(47, 46, 46);
+    margin-top: 0px;
 }
 th {
     color: rgb(98, 58, 32);
@@ -246,4 +250,21 @@ pre.cm {
     color: white;
     padding-right: 10px;
     padding-left: 10px;
+}
+div.bc {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    padding-bottom: 0px;
+    border: solid 16px rgb(95, 117, 122);
+    background-color: aliceblue;
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px black;
+}
+pre.lx {
+    text-align: left;
+    background-color: rgb(5, 26, 10);
+    color: aliceblue;
+    padding: 20px;
+    border-radius: 8px;
 }
