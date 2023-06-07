@@ -75,7 +75,6 @@
                 l = JSON.parse(q);
                 l.forEach(row => {
                     row['data'].split('').forEach((u, i) => {
-                        console.log(dr, i, u - 1);
                         dr[i][u - 1]++
                     });
                 });
