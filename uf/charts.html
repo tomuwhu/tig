@@ -30,6 +30,12 @@
     <div class="cc">
         <canvas id="c6"></canvas>
     </div>
+    <div class="cc">
+        <canvas id="c7"></canvas>
+    </div>
+    <div class="cc">
+        <canvas id="c8"></canvas>
+    </div>
 </div>
 <script>
     ql = [
@@ -38,7 +44,9 @@
         `Az alábbi tárgyak közül melyiket szereti legkevésvé?`,
         `Mennyire tudja követni az órai magyarázatot, feladatokat?`,
         `Mennyire rendszeresen foglalkozik otthon a kitűzött házi feladatokkal, kötelező irodalmakkal?`,
-        `Mennyire valószínű, hogy az egyik érettségi tárgya a Digitális kultúra tárgy lesz?`
+        `Mennyire valószínű, hogy az egyik érettségi tárgya a Digitális kultúra tárgy lesz?`,
+        `Összességében hányasra értékeli a munkám pedagógiai részét?`,
+        `Összességében hányasra értékeli a szakmai hozzáértésemet?`
     ]
     vl = [
         [`HTML/CSS`, `SVG`, `MarkDown`, `Python`, `Egyik sem`],
@@ -47,15 +55,19 @@
         [`Totál tudom követni`, `Többnyire képben vagyok`, `Többé-kevésbé O.K`, `Általában totlál lemaradok`, `Meg se próbálom`],
         [`Heti 3-4 órát`, `Heti 1-2 órát`, `Hetente kb. fél órát`, `Néha ránézek`, `Szinte soha`],
         [`Biztos vagyok benne.`, `Jó eséllyel ez lesz az egyik`, `Még nem döntöttem`, `Nem valószínű`, `Ebből tutira nem`],
+        [`Elégtelen (1)`,`Elégséges (2)`,`Közepes (3)`,`Jó (4)`,`Jeles (5)`,`Dícséretes (5d)`],
+        [`Elégtelen (1)`,`Elégséges (2)`,`Közepes (3)`,`Jó (4)`,`Jeles (5)`,`Dícséretes (5d)`]
     ]
-    dr = [Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(5).fill(0)]
+    dr = [Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(5).fill(0), Array(6).fill(0), Array(6).fill(0)]
     const c1 = document.getElementById('c1');
     const c2 = document.getElementById('c2');
     const c3 = document.getElementById('c3');
     const c4 = document.getElementById('c4');
     const c5 = document.getElementById('c5');
     const c6 = document.getElementById('c6');
-    ct = [c1, c2, c3, c4, c5, c6]
+    const c7 = document.getElementById('c7');
+    const c8 = document.getElementById('c8');
+    ct = [c1, c2, c3, c4, c5, c6, c7, c8]
     dt = ['doughnut', 'polarArea', 'pie'][Math.floor(Math.random() * 3)]
     $(() => {
         $.get("https://inf.u-szeged.hu/~tnemeth/ufget.php")
@@ -63,10 +75,11 @@
                 l = JSON.parse(q);
                 l.forEach(row => {
                     row['data'].split('').forEach((u, i) => {
+                        console.log(dr, i, u - 1);
                         dr[i][u - 1]++
                     });
                 });
-                for (i = 0; i < 6; i++)
+                for (i = 0; i < 8; i++)
                     myChart = new Chart(ct[i], {
                         type: dt,
                         data: {
