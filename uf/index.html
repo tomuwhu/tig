@@ -2,8 +2,8 @@
 <script>
 function bgy() {
     if (!localStorage.getItem("bek")) {
-        k = Array(6).fill(0)
-        for (j=1; j<7; j++) {
+        k = Array(8).fill(0)
+        for (j=1; j<9; j++) {
             i = 1
             document.getElementsByName("k"+j).forEach(kl => {
                 if (kl.checked) k[j-1] = i
@@ -13,13 +13,13 @@ function bgy() {
                 document.getElementById("k"+j).style.backgroundColor="#74ffa7"
             }
         }
-        if ( k.filter( v => v).length == 6 ) document.getElementById("gb").style.display="inline-block"
+        if ( k.filter( v => v).length == 8 ) document.getElementById("gb").style.display="inline-block"
         else document.getElementById("gb").style.display="none"
         localStorage.setItem("k",k)
     } else {
         j = localStorage.getItem("k")
         k = j.split(",").map(Number)
-        for (j=1; j<7; j++) {
+        for (j=1; j<9; j++) {
             i = 1
             document.getElementsByName("k"+j).forEach(kl => {
                 if (k[j-1] == i) kl.checked = true
@@ -59,7 +59,7 @@ $( () => {
     j = localStorage.getItem("k")
     if (j) {
         k = j.split(",").map(Number)
-        for (j=1; j<7; j++) {
+        for (j=1; j<9; j++) {
             i = 1
             document.getElementsByName("k"+j).forEach(kl => {
                 if (k[j-1] == i) kl.checked = true
@@ -79,6 +79,7 @@ $( () => {
 
 </script>
 <meta charset="utf-8"> 
+<body>
 <ul class="navigation">
     <li><a href="../">Kezdőlap</a></li>
     <li><a href="../tanttm.html">Tananyag</a></li>
@@ -240,6 +241,64 @@ $( () => {
             </div>
         </div>
     </div>
+    <div class="bord" id="k7">
+        <div class="ques">Összességében hányasra értékeli a munkám pedagógiai részét?</div>
+        <div class="cont">
+            <div class="op">
+                <input type="radio" id="k7v1" name="k7">
+                <label for="k7v1">Hihetetlen szar, nem is tanár. EGYES!!!! (1)</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k7v2" name="k7">
+                <label for="k7v2">Nem nagyon tanultam semmit, és ez abszulút Tanárúr hibája, én totál próbálkoztam.  Kettes. (2)</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k7v3" name="k7">
+                <label for="k7v3">Kb. beleszarik, de valami talán mégis átjön. Közepes. (3)</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k7v4" name="k7">
+                <label for="k7v4">Nem rosszabb mint a többi tanárom, némelyiknél még jobb is. Jó. (4)</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k7v5" name="k7">
+                <label for="k7v5">Szerintem egész jó tanár, tök sokat tanultam mindeféle dolgokat is. Ötös. (5)</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k7v6" name="k7">
+                <label for="k7v6">Tökre motiváló, az egyik legjobb az iskolában. Dícséretes ötös. (5d)</label>
+            </div>
+        </div>
+    </div>
+    <div class="bord" id="k8">
+        <div class="ques">Összességében hányasra értékeli a szakmai hozzáértésemet?</div>
+        <div class="cont">
+            <div class="op">
+                <input type="radio" id="k8v1" name="k8">
+                <label for="k8v1">Hát szerintem tök sötét, egyáltalán hogy lehet tanár itt? EGYES!!!! (1)</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k8v2" name="k8">
+                <label for="k8v2">Elég gagyi, egy csomó kérdésre nem is tud válaszolni. Kettes. (2)</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k8v3" name="k8">
+                <label for="k8v3">Hát kb. azt tudja ami kell a tanításhoz, de semmivel se többet. Közepes. (3)</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k8v4" name="k8">
+                <label for="k8v4">Rendben van, ehhez a tárgyhoz épp megfelelő. Jó. (4)</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k8v5" name="k8">
+                <label for="k8v5">Mindent tud amit tanítani kell, meg egy csomó mást is, van mit tanulnom Öntől. Ötös. (5)</label>
+            </div>
+            <div class="op">
+                <input type="radio" id="k8v6" name="k8">
+                <label for="k8v6">Bőven sokkal többet tud, mint ami ide elég lenne. Dícséretes ötös. (5d)</label>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="gc">
@@ -247,7 +306,7 @@ $( () => {
     <div id="gbsent" class="gomb" style="text-align: center;">Beküldve</div>
 </div>
 <div id="echo"></div>
-
+</body>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Shadows+Into+Light&family=Lemonada');
 .navigation {
