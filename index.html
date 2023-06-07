@@ -240,7 +240,10 @@
     }
     setInterval(g, 40000)
     setTimeout(g, 500)
-    setTimeout(() => f(10), 500)
+    setTimeout(() => {
+        document.getElementById('hr2').style.display = "none"
+        setTimeout(() => f(10), 500)
+    }, 8000)
 </script>
 <link rel="stylesheet" href="main.css">
 <style>
@@ -671,7 +674,7 @@
         <a style="margin: auto;" class="btn bx b2" target="yt" href="https://www.youtube.com/@Indently/videos">Januári
             ajánlott videók</a>
         <a style="margin: auto;" target="_blank" class="btn bx b3" href="filmajanlo.html">Filmajánló</a>
-        <a style="margin: auto;" class="btn bx new" href="probadogalista.html">Házi feladatok I.</a>
+        <a style="margin: auto;" class="btn bx" href="probadogalista.html">Házi feladatok I.</a>
         <a style="margin: auto;" class="btn bx" href="pdl2.html">Házi feladatok II.</a>
     </div>
     <div id="hr" style="display: none;">
@@ -693,30 +696,38 @@ Mobiltelefont a tanítási órákon nem lehet használni, tehát tanórák, fogl
 A terem- és iskolabútorok tisztaságának megőrzése valamennyi tanuló feladata, ennek ellenőrzése, betartatása valamennyi pedagógus kötelezettsége.
 A tanítási óra kicsöngetésig tart, a tanulók a tanár egyértelmű jelzésére fejezhetik be órai munkájukat, és hagyhatják el az óra helyszínét.
         </pre>
-        <div id="nx"><button onclick="document.getElementById('hr').style='display:none;';setTimeout(() => f(7), 1000)">Megértettem</button></div>
+        <div id="ncx"><button onclick="document.getElementById('hr').style='display:none;';setTimeout(() => f(7), 1000)">Megértettem</button></div>
+    </div>
+    <div id="hr2">
+        <div id="ncx2"><h2>Óra és tanár értékelés</h2></div>
+        <pre>
+Kedves tanulók, kérem szánjanak 1-2 percet arra, hogy visszajelzésükkel segítsék a szakmai fejlődésem.
+Az az alábbi gombra kattintva kitölthető kitölthető.
+        </pre>
+        <div id="nx2"><a href="uf" target="_blank" class="btn bx new">Értékelőlap kitöltése</a></div>
     </div>
     <br><br><br><br><br>
 </body>
 <style>
-    #hr {
+    #hr, #hr2{
         padding: 30px;
         margin: 20px;
-        width: 88%;
+        width: 58%;
         position: absolute;
-        top: 30px;
-        left: 20px;
+        top: 130px;
+        left: 220px;
         background-color: rgba(70,20,10,0.9);
         border-radius: 20px;
         box-shadow: 1px 1px 4px black;
         border: solid 2px white;
     }
-    #hr pre {
+    #hr pre, #hr2 pre {
         white-space: pre-wrap;
     }
     button {
         cursor: pointer;
     }
-    #nx {
+    #nx, #nx2 {
         text-align: center;
     }
     .b3 {
