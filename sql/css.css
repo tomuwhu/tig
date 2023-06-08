@@ -103,6 +103,9 @@ button {
     border: solid 1px rgb(111, 161, 173);
     box-shadow: 1px 1px 3px black;
 }
+button.red {
+    background-color: rgb(224, 134, 134);
+}
 button#run {
     color:rgb(10, 70, 70);
     background-color: rgb(149, 193, 128);

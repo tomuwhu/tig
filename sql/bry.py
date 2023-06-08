@@ -27,8 +27,6 @@ def list(tx, res):
     if len(tli) > 0:
         D['TX'].value = ";".join(tli).strip()
         Tim.set_timeout(tr, 1)
-    else:
-        D['TX'].value = ""
 def tr():
     li = D['TX'].value.split(";")
     ali = li[0].strip()
@@ -174,8 +172,8 @@ if "openDatabase" in W:
     D <= H.TEXTAREA(id="TX")
     D <= H.HR()
     D <= H.BUTTON("SQL végrehajtása", id="run").bind("click", f)
+    D <= H.BUTTON("Töröl", Class="red").bind("click", g)
     D <= H.BUTTON("<i>db</i> struktúra lekérdezése").bind("click", ldb)
-    D <= H.BUTTON("Töröl").bind("click", g)
     D <= H.BUTTON("<i>db</i> => SQL").bind("click", ea)
     D <= BT
     RES = H.DIV(Class="res")
