@@ -27,7 +27,11 @@
         background-color: aqua;
         box-shadow: 1px 1px 4px black;
     }
-
+    .r {
+        color: rgb(230, 192, 192);
+        font-family: 'Xanh Mono', monospace;
+        font-size: 12px;
+    }
     .navigation {
         display: flex;
         flex-flow: row wrap;
@@ -171,6 +175,10 @@
         class="btn bx"
         target="_blank"
         href="pygyak.html?py/&${inpf}&${fn}">szerkesztés / kipróbálás</a>
+    <a 
+        class="btn bx"
+        target="_blank"
+        href="py/${fn}">letöltés <i class="r">(${fn})</i></a>
     `
     }
     ot = [
@@ -221,7 +229,6 @@
         ["refvsobj.py", "Objektum - Referencia Ⅰ."],
         ["arrvsstring.py", "Objektum - Referencia Ⅱ."],
         ["range_while2.py", "While range Ⅱ. (generátor objektum)"],
-        ["range_while3.py", "While range Ⅲ. (generátor objektum)"],
         ["range_rek2.py", "Rekurzív range Ⅱ. (generátor objektum)"],
         ["enum.py", "Enumerate (generátor objektum)"],
         ["fibn2.py", "Fibonacci sorozat Ⅱ. (generátor függvény)"],
