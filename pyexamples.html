@@ -170,16 +170,17 @@
         };
         xhttp.open("GET", "./" + file, true);
         xhttp.send();
+    if (inpf) {ifb = `<a  class="btn bx"
+        target="_blank"
+        href="py/${inpf}">input fie (<i class="r">${inpf}</i>)</a>`}
+    else {ifb = ``}
         document.getElementById("linkk").innerHTML = `
-    <a 
-        class="btn bx"
+    <a  class="btn bx"
         target="_blank"
         href="pygyak.html?py/&${inpf}&${fn}">szerkesztés / kipróbálás</a>
-    <a 
-        class="btn bx"
+    <a  class="btn bx"
         target="_blank"
-        href="py/${fn}">letöltés <i class="r">(${fn})</i></a>
-    `
+        href="py/${fn}">letöltés <i class="r">(${fn})</i></a>` + ifb
     }
     ot = [
         ["input.py", "Input"],
