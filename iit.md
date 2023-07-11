@@ -340,9 +340,14 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
       - Elem beszúrása és törlése
       - B-fák alkalmazási területei
     - 2-3 fák és tulajdonságaik
-    - Piros-Fekete Fák
-      - Tulajdonságok, elem beszúrása, elem törlése, megvalósítás C++ nyelven
+    - Piros-fekete fák
+      - tulajdonságok, 
+      - elem beszúrása, 
+      - elem törlése, 
+      - megvalósítás C++ nyelven
+    - Intervallum-fák
     - Binomiális fák, a binomiális kupac
+    - Egyesíthető, módosítható kupacok
 - Python nyelv II.
   - halmazok (Set)
   - szótár adatszerkezet (Map)
@@ -353,7 +358,9 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - rekurzió memorizálás
   - dinamikus programozás, Bellman-egyenlet
   - mohó stratégia
-  - visszalépéses keresés
+  - visszalépéses keresés,
+  - az n-királynő probléma, 
+  - a minimális eseménytér-modell meghatározása
   - a gráfelmélet, Königsbergi hidak problémája
     - [Leonhard Euler](https://hu.wikipedia.org/wiki/K%C3%B6nigsbergi_hidak_probl%C3%A9m%C3%A1ja)
     - [Hálózatelemzés](http://real-eod.mtak.hu/9267/1/Rendszerelmelet_10.36250_00734.07.pdf)
@@ -373,18 +380,23 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
     - Erősen összefüggő komponensek
     - Topológikus rendezés
   - Számított gráf, gráfos feladatok megoldása
+    - kaméleonos feladat
+    - öntögetős feladat
+    - eseménytér méretének meghatározása, futási idő és tárigény problémák
+    - utazóügynök probléma, problémák bonyololultságának osztályozása, P és NP problémák
+
   - [PageRank algoritmus](https://web.archive.org/web/20060902004750/http://dbpubs.stanford.edu:8090/pub/showDoc.Fulltext?lang=en&doc=1999-66&format=pdf&compression=&name=1999-66.pdf)
     - [Lawrence E. Page](https://hu.wikipedia.org/wiki/Larry_Page)
   - Speciális gráfok (Fa, DAG, Síkbarajzolható gráf, ...)
-  - Legrövidebb utak (DAG, P+: Floyd-Warshall, Dijkstra, A*, P-: Bellman-Ford algoritmus)
+  - Legrövidebb utak (DAG, P+: Floyd-Warshall, Dijkstra, P-: Bellman-Ford algoritmus)
     - [Robert W. Floyd](https://en.wikipedia.org/wiki/Robert_W._Floyd)
     - [Edsger Wybe Dijkstra](https://hu.wikipedia.org/wiki/Edsger_Wybe_Dijkstra)
     - [Richard Bellman](https://hu.wikipedia.org/wiki/Richard_Bellman)
-  - Leghosszabb utak DAG-ban, folyamok, vágás
+  - Leghosszabb utak DAG-ban, folyamok, vágás, dualitás
   - Páros gráfok, magyar módszer, játékelmélet
     - [Egerváry Jenő](https://hu.wikipedia.org/wiki/Egerv%C3%A1ry_Jen%C5%91)
     - [Kőnig Dénes](https://hu.wikipedia.org/wiki/K%C5%91nig_D%C3%A9nes)
-  - Feszítőfák (Jarník-algoritmus, Kruskal algoritmus, halmazerdő)
+  - Feszítőfák (Jarník-algoritmus, Kruskal algoritmus, halmazerdő, Prím algoritmus)
     - [Joseph Kruskal](https://en.wikipedia.org/wiki/Joseph_Kruskal)
   - Klaszterezés, Single link clustering
   - Egyéb gráf-problémák (gráfszínezés, gráf-lefogás)
@@ -426,18 +438,16 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - véletlenített algoritmusok
   - Ujjlenyomat módszer
   - Miller-Rabin prímteszt
-- Algoritmizálás III.
-  - Halmazerdő, Kruskal algroritmus (ismétlés)
-  - Bináris keresőfák (ismétlés)
-  - Általános keresőfák
-  - AVL-fák
-  - 2-3 fák
-  - Piros-fekete fák
-  - B-fák
-  - Binomiális fa
-  - Bináris kupac, d-kupac
-  - Binomiális kupac
-  - Fibonacci kupac, Jarník-algoritmus (ismétlés)
+  - Kvantum-prímfaktorizáció
+- Geometriai algoritmusok két dimenzióban
+  - két pont távolsága,
+  - szakaszpár metszésének eldöntése, 
+  - forgásirány meghatározása
+  - pontok összekötése zárt, nem metszõ poligonná
+  - ponthalmaz konvex burkának meghatározása
+  - legtávolabbi, legközelebbi pontpár meghatározása ponthalmazban
+  - metszõ szakaszpárok keresése szakaszhalmazban
+- geometriai adatszerkezetek és alkalmazásuk, négyesfa modell, k-d fa
 - Elosztott (Decentralizált) rendszerek
   - World Wide Web <1991> [Tim Berners-Lee](https://hu.wikipedia.org/wiki/Tim_Berners-Lee)
   - Bitchoin <1982> [David Chaum](https://en.wikipedia.org/wiki/David_Chaum)
