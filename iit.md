@@ -303,19 +303,46 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Fermat-Wiles tétel 1995
   - számítási probléma, függvény fogalma, Church–Turing-tézis I.
     - [Alonzo Church](https://hu.wikipedia.org/wiki/Alonzo_Church)
-  - zárt formulák, faltoriális, fibonacci sorozat
-    - [Leonardo Fibonacci](https://hu.wikipedia.org/wiki/Fibonacci)
+  - zárt formulák
+    - precedencia, számítási sorrend
+    - eredmény pontossága, valós számok a számítógépen
+    - gyökvonás közelítő módszerekkel
+    - a PI kiszámítása,
+    - pontosság és megbízhatóság, intervallum-aritmetika
+    - faktoriális, 
+    - fibonacci sorozat ([Leonardo Fibonacci](https://hu.wikipedia.org/wiki/Fibonacci))
   - euklideszi algorimtus
     - [Eukleidész](https://hu.wikipedia.org/wiki/Eukleid%C3%A9sz_(matematikus))
   - eratoszthenészi szita
     - [Eratoszthenész Pentatlosz](https://hu.wikipedia.org/wiki/Eratoszthen%C3%A9sz_Pentatlosz)
-  - rendezések, algoritmus futási ideje, tárigény
-  - verem, sor
-  - lánc, láncolt lista, pointerek
+  - rendezési feladat, a beszúró rendezlés, algoritmus futási ideje, tárigény
+  - futási idő mérése és számítása (legjobb eset, legrosszabb eset, átlagos eset)
+  - elemi adatszerkezetek:
+    - lista
+      - tömb
+      - láncolt lista, pointerek
+    - verem
+      - verem absztrakt adatszerkezet
+      - verem megvalósítása tömb alkalmazásával
+      - verem a gépikódban, assembly-ben és a függvényhívásoknál
+      - verem megvalósítása láncolt listával 
+    - sor
   - fák ábrázolása, tulajdonságai
   - kupac adatszerkezet, prioritási sor
   - kupacrendezés
   - keresőfák, hasítótáblák, halmazok (Set, Map)
+    - bináris keresőfa
+     - beszúrás bináris keresőfába
+     - bináris keresőfa magassága (legjobb, legrosszabb és átlagos eset)
+     - törlés bináris keresőfából
+    - B-fák
+      - B-fák felépítése, tulajdonságai
+      - Elem beszúrása és törlése
+      - B-fák alkalmazási területei
+    - 2-3 fák és tulajdonságaik
+    - Piros-Fekete Fák
+      - Tulajdonságok, elem beszúrása, elem törlése, megvalósítás C++ nyelven
+    - Binomiális fák, a binomiális kupac
 - Python nyelv II.
   - halmazok (Set)
   - szótár adatszerkezet (Map)
@@ -340,7 +367,7 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - Turing gép, Church-Turing tézis  II.
     - [Alan Turing](https://hu.wikipedia.org/wiki/Alan_Turing)
   - Fa és gráf mélységi bejárása
-  - Szélességi bejárás alkalmazásai
+  - Szélességi bejárás alkalmazásai, a szélességi keresés
   - Mélységi keresés alkalmazásai
     - Elérhetőség gráfokban
     - Erősen összefüggő komponensek
@@ -374,6 +401,11 @@ Számítástechnika, Számítógéptudomány, Számítástudomány
   - MI alkalmazások
     - [AlphaFold](https://qubit.hu/2022/02/04/attorest-hoz-a-biologiaba-a-minden-eddiginel-pontosabb-feherjekutato-algoritmus-az-alphafold2)  
     - [DeepMind](https://qubit.hu/2020/12/01/a-feherjestruktura-elorejelzes-fel-evszazados-problemajanak-megoldasaval-egy-csapasra-forradalmasithatja-a-biologiat-a-deepmind-algoritmusa)
+    - Mesterséges intelligancia alkamazása a játékfejlesztésben
+      - intelligens karakterek, Bot-ok
+        - Az A* algoritmus
+        - Genetikus algoritmusok és gépi tanulás
+      - atomatikus pályatervezés, intelligens játékfejlesztés
 - Számelméleti algoritmusok: [Kriptográfia (YOUPROOF)](https://youproof.hu/kriptografia/)
   - Fermat-Wiles tétel*
   - számelmélet
