@@ -1,12 +1,7 @@
-a = 1
-ma = 1
-prev = ""
+a, ma, prev = 1, 1, ""
 for i in list(input()):
-    if i!=prev:
-        prev = i
-        a = 1
+    if i!=prev: prev, a = i, 1
     else:
         a += 1
-        if a > ma:
-            ma = a
+        if a > ma: ma = a
 print(ma)
