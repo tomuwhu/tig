@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Shadows+Into+Light&family=Lemonada');
 body {
     background: rgb(0, 21, 28);
-    background-image: url("img/bgi.jpeg");
+    background-image: linear-gradient(black, white);
     color: rgb(196, 240, 230);
     margin: 0;
     user-select: none;
+    filter: grayscale(70%);
 }
 hr {
     box-shadow: 1px 1px 4px black;
