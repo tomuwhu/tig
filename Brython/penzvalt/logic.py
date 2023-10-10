@@ -35,15 +35,12 @@ def getmo(n, p):
         O2 <= "Felhasznált pénzérmék:"
         fp = []
         while o > 0:
-            try:
-                if t[y - p[x]][x] == o - 1:
-                    o -= 1
-                    fp.append(p[x])
-                    y -= p[x]
-                else:
-                    x -= 1
-            except:
-                o = 0
+            if t[y - p[x]][x] == o - 1:
+                o -= 1
+                fp.append(p[x])
+                y -= p[x]
+            x -= 1
+
         fp.reverse()
         O2 <= [H.SPAN(i, Class="pe") for i in fp]
     T.clear()
