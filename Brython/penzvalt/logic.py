@@ -50,7 +50,7 @@ def getmo(n, p):
     T.clear()
     T <= H.TABLE(H.TR(map(lambda x : H.TD(
         "∞" if x == math.inf else x, 
-        Class='b' if x == -1 else ''
+        Class='b' if x == -1 else 'z' if x == math.inf else None
     ), row)) for row in t)
 
 
@@ -77,14 +77,21 @@ def g(e):
     try:
         clist = list(filter(lambda x: x <= osszeg, map(int, cimletek.split(","))))
         t = getmo(osszeg, clist)
+        rrri()
     except:
         z = 0
 
+RI = H.SPAN()
+def rrri():
+    global RI
+    RI.clear()
+    RI <= H.INPUT(type="range", min=10, max=sum(map(int, cimletek.split(","))), value=osszeg).bind("input", f)
+rrri()
 
 D <= H.H1("Optimális pénzváltás")
-D <= H.INPUT(type="range", min=10, max=100, value=osszeg).bind("input", f)
+D <= RI
 OSSZ = H.SPAN(osszeg)
-D <= OSSZ
+D <= H.SPAN(OSSZ, Class="ossz")
 D <= H.HR()
 D <= [
     "Címletek: ",
