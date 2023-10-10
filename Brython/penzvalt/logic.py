@@ -43,6 +43,7 @@ def getmo(n, p):
 
         fp.reverse()
         O2 <= [H.SPAN(i, Class="pe") for i in fp]
+    t = [p] + t
     T.clear()
     T <= H.TABLE(
         H.TR(
@@ -50,11 +51,11 @@ def getmo(n, p):
                 lambda x: H.TD(
                     "∞" if x == math.inf else x,
                     Class="b" if x == -1 else "z" if x == math.inf else None,
-                ),
-                row,
+                ) if row[0]>0 else H.TH(x),
+                row[1],
             )
         )
-        for row in t
+        for row in enumerate(t)
     )
 
 

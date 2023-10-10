@@ -61,3 +61,6 @@ span.ossz {
     border-radius: 5px;
     border:solid 0.4px black;
 }
+th {
+    font-size: 11px;
+}
