@@ -1,0 +1,218 @@
+<meta charset="UTF-8">
+<script src="hljs/markdown.min.js"></script>
+<link rel="stylesheet" href="main.css">
+<script src="https://cdn.jsdelivr.net/gh/pythonpad/brython-runner/lib/brython-runner.bundle.js"></script>
+<link rel="stylesheet" href="hljs/a11y-dark.css">
+<link rel="stylesheet" href="main.css">
+<title>«es6.eu» Python</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Square+Peg&family=Indie+Flower&family=Xanh+Mono&family=Lemonada&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cousine&display=swap');
+    input {
+        border-radius: 6px;
+        box-shadow: 1px 1px 4px black;
+        border: solid 1px black;
+        padding: 5px;
+    }
+
+    button {
+        background-color: aquamarine;
+        border: solid 1px black;
+        border-radius: 7px;
+        color: rgb(96, 7, 7);
+    }
+
+    button:hover {
+        background-color: aqua;
+        box-shadow: 1px 1px 4px black;
+    }
+    .r {
+        color: rgb(230, 192, 192);
+        font-family: 'Xanh Mono', monospace;
+        font-size: 12px;
+    }
+    .navigation {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        text-shadow: 1px 1px 3px black;
+        list-style: none;
+        margin: 0;
+        background: rgb(2, 98, 130);
+        font-family: 'Lemonada', cursive;
+        font-size: 12px;
+    }
+
+    pre.c {
+        font-family: 'Cousine', monospace;
+        font-size: 13px;
+        text-align: left;
+        margin: 0;
+        border-radius: 5px;
+        border: solid 1px white;
+        padding: 10px;
+        background-color: rgb(59, 59, 59);
+        box-shadow: 1px 1px 3px inset rgb(0, 0, 0);
+        word-wrap: break-word;
+    }
+
+    div.fi {
+        margin: 0 auto;
+        padding: 3px;
+        padding-left: 6px;
+        color: bisque;
+        font-size: 10px;
+    }
+
+    div.row {
+        width: 100%;
+    }
+
+    select {
+        width: 500px;
+        border-radius: 6px;
+        box-shadow: 1px 1px 4px black;
+        border: solid 1px black;
+        padding: 5px;
+    }
+
+    pre.c {
+        user-select: text;
+        white-space: pre-wrap;
+        text-shadow: 1px 1px 3px rgb(6, 6, 6);
+    }
+
+    code#code {
+        user-select: text;
+        font-family: 'Xanh Mono', monospace;
+        font-size: 16px;
+        text-shadow: 0px 0px 7px;
+        border: solid 1px rgb(252, 247, 195);
+        background-color: rgb(8, 43, 28);
+        padding-top: 5px;
+        padding-bottom: 9px;
+        border-radius: 7px;
+        box-shadow: 1px 1px 3px inset black;
+        background-image: url('pic/phg.jpg');
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    #xx {
+        font-family: 'B612 Mono', monospace;
+        font-size: 11px;
+        text-align: left;
+        margin: 0;
+        border-radius: 5px;
+        border: solid 1px white;
+        padding: 6px;
+        background-color: rgb(99, 32, 32);
+        box-shadow: 1px 1px 3px inset rgb(0, 0, 0);
+        word-wrap: break-word;
+    }
+</style>
+<script>
+    // Ⅰ Ⅱ Ⅲ Ⅳ Ⅴ Ⅵ Ⅶ Ⅷ Ⅸ Ⅹ Ⅺ Ⅻ Ⅼ Ⅽ Ⅾ Ⅿ
+    function load() {
+        kv = document.getElementById("sel").value.split("|")
+        a.s = document.getElementById("sel").selectedIndex
+        document.getElementById("xx").innerHTML = "#" + (a.s + 1)
+        file = "pjs/" + kv[0]
+        if (kv.length > 1) inpf = kv[1]
+        else inpf = ""
+        fn = kv[0]
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                if (file.split('.')[1] == 'md') {
+                    html_content = markdown.toHTML(xhttp.responseText)
+                    document.getElementById("code").innerHTML = ''
+                    document.getElementById("content").innerHTML = html_content
+                    document.getElementById('content').style.display = "block"
+                    document.getElementById('code').style.display = "none"
+                } else {
+                    html_content = xhttp.responseText
+                    document.getElementById("code").innerHTML = html_content
+                    document.getElementById("content").innerHTML = ''
+                    document.getElementById('content').style.display = "none"
+                    document.getElementById('code').style.display = "block"
+                }
+                hljs.highlightAll()
+            }
+        };
+        xhttp.open("GET", "./" + file, true);
+        xhttp.send();        
+    }
+    ot = [
+        ["input.js", "Input"],
+        ["ifelse.js", "Elágazás Ⅰ."],
+        ["ifelse2.js", "Elágazás Ⅱ."]
+    ]
+    oe = [...ot]
+    a = {}
+    a.s = 0
+    function selc() {
+        document.getElementById("selc").innerHTML =
+            '<select onchange="load()" id="sel">' +
+            ot.map((v, i) =>
+                `<option ${i == a.s ? "selected" : ""} value="${v[0]}">#${i + 1}: ${v[1]}</option>`
+            ).join('')
+    }
+    function prev() {
+        a.s--
+        selc()
+        setTimeout(v => { load() }, 100)
+        document.getElementById("xx").innerHTML = "#" + (a.s + 1)
+    }
+    function next() {
+        a.s++
+        selc()
+        setTimeout(v => { load() }, 100)
+        document.getElementById("xx").innerHTML = "#" + (a.s + 1)
+    }
+    function szukit(mire) {
+        if (mire.length) {
+            r = new RegExp(`${mire.toUpperCase()}*`)
+            ot = [...oe].filter(v => r.test(v[1].toUpperCase()))
+        } else {
+            ot = [...oe]
+        }
+        if (ot.length) {
+            selc()
+            setTimeout(v => { load() }, 100)
+        }
+        if (ot.length < 4) a.s = ot.length
+        else a.s = 4
+        document.getElementById("xx").innerHTML = "#" + (a.s + 1)
+    }
+    setTimeout(v => { selc() }, 100)
+    setTimeout(v => { load() }, 400)
+</script>
+<script src="hljs/highlight.min.js"></script>
+
+<body>
+    <ul class="navigation">
+        <ul class="navigation">
+            <li><a href="./">Kezdőlap</a></li>
+            <li><a href="tanttm.html">Tananyag</a></li>
+            <li><a href="htmlexampl.html">HTML-CSS-JS</a></li>
+            <li><a href="bryexamples.html">Brython</a></li>
+            <li><a href="lof.html">Intranet</a></li>
+        </ul>
+    </ul>
+    <div class="h m20">
+        <h2 class="h">NodeJS p&eacute;ldaprogramok</h2>
+        <span id="xx"></span>
+        <button onclick="prev()">⬅</button>
+        <span id="selc"></span>
+        <input type="text" id="i1" onkeyup="szukit(this.value)" placeholder="szűrés">
+        <button onclick="next()">⮕</button>
+        <span id="linkk"></span>
+        <pre><code class="language-python" id="code"></code></pre>
+        <div style="text-align: center;">
+            <div id="content" style="display: none;"></div>
+        </div>
+    </div>
+</body>
