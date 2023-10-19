@@ -1,13 +1,13 @@
-rf = ["and", "not", "xor", "or"]
-rc = ["&&", "!!", "!=", "||"]
+rf = ['false', 'true', "and", "not", "xor", "or"]
 s = input().lower()
 so = s.upper()
-for i, v in enumerate(rf): s = s.replace(v, rc[i])
+for i, v in enumerate(rf): s = s.replace(v, str(i))
 try:
-    vl = list(map(lambda x: f"{x}", filter(lambda x: x in "abcdefghijklmnoprstuvwxyz", s)))
-    for i, v in enumerate(rc): s = s.replace(v, rf[i]).replace('xor', '!=')
+    vl = list(map(lambda x: f"{x}", filter(lambda x: x in s, "abcdefghijklmnoprstuvwxyz")))
+    for i, v in enumerate(rf[2:]): s = s.replace(str(i + 2), v).replace('xor', '!=')
     print(f"Q = {so}")
-    l = eval(f"""[[{", ".join(vl)}, eval(s)] {" ".join(map(lambda x: f"for {x} in [False, True]", vl))}]""" )
+    l = eval(f"""[[{", ".join(vl)}, eval(s)] {" ".join(map(lambda x: f"for {x} in [0, 1]", vl))}]""" )
     for row in sum([[sum([list(map(lambda x: x.upper(), vl)), ["Q"]], [])], l], []):
-        print("\t" * 5, "|" .join(map(str, row)) .replace("True", "I").replace("False", "H"))
+        print("\t" * 5, "|" .join(map(str, row))
+                .replace("True", "I").replace("False", "H").replace("1", "I").replace("0", "H"))
 except: print("Hibás kifejezés!")
