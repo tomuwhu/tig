@@ -1,8 +1,6 @@
-const readline = require('readline').createInterface({
-  input: process.stdin, output: process.stdout
-})
-
-readline.question("Mondjon egy 5-nél nagyobb számot! ", a => {
+process.stdin.setEncoding('utf8')
+console.log("Írj be egy számot 1 és 5 között! : ")
+process.stdin.on('data', a => {
   console.log(a < 6 ? "Ez nem nagyobb 5-nél!" : `${Number(a) + 1}, én nyertem. :)`)
-  readline.close();
+  process.exit(0)
 })

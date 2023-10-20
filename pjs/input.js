@@ -1,8 +1,5 @@
-const readline = require('readline').createInterface({
-  input: process.stdin, output: process.stdout
+process.stdin.setEncoding('utf8')
+process.stdin.on('data', i => {
+  console.log(`A kétszerese: ${2 * Number(i)}\n`)
 })
-
-readline.question('Írjon be egy számot! ', i => {
-  readline.write(`A kétszerese: ${2 * Number(i)}\n`)
-  readline.close();
-})
+console.log("Írj be egy számot! ");
