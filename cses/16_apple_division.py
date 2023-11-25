@@ -1,6 +1,5 @@
-n = int(input())
+input()
 ls = sorted(map(int, input().split()))
-
 s = sum(ls)
 def f(s, ls):
     if len(ls) == 1: return abs(s - 2 * ls[0])
