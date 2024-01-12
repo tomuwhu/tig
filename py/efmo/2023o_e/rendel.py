@@ -9,7 +9,7 @@ print(
 m = max(map(lambda x: x[2], l))
 n = list(filter(lambda x: x[2] == m, l))[0]
 print(
-    f"A legnagyobb darabszám: {m}, a rendelés napja: {n}"
+    f"A legnagyobb darabszám: {m}, a rendelés napja: {n[0]}"
 )
 def osszes(v, n):
     return sum(map(lambda x: int(x[2]), filter(lambda x: x[0] == n and x[1] == v,l)))
