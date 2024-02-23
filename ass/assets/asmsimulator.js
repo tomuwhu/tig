@@ -1445,7 +1445,7 @@ ST3:	MOV A, [B] 	;MOV A from memory
         MUL [C]		;ekvivalent with
         CMP A, D	;A mod B
         JNZ AG		;If [A] mod [C]:
-        CALL SET1	;	set1()
+        CALL NP	;	NP()
 AG:	INC C           ;Set pointer C to next memory cell
         CMP B, C	;If B < C:
         JNZ ST3		;	GoTo ST3
@@ -1455,10 +1455,10 @@ AG:	INC C           ;Set pointer C to next memory cell
         JNZ ST2		;	GoTo ST2
         HLT		;Processor Halt (END PROGRAM)
     
-SET1:  	MOV [B], 0xFF	;Not prime => Write Mem point B: 0xFF
+NP:  	MOV [B], 0xFF	;Not prime => Write Mem point B: 0xFF
         MOV C, 0x5F	;pointer C to ListStart - 1
         INC B		;increment pointer B
-        RET		;return from SET1 function`;
+        RET		;return from NP function`;
     $scope.error = '';
     $scope.selectedLine = -1;
     };
