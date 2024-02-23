@@ -1403,6 +1403,32 @@ hello:  DB "Hello World!"       ; Variable
         $scope.displayC = false;
         $scope.displayB = false;
         $scope.displayA = false;
+        $scope.code = `        JMP start
+hello:  DB "Hello World!"  ; Variable
+        DB 0	           ; String terminator
+start:  MOV C, hello       ; Point to var
+        MOV D, 0xE8	   ; Point to output
+        CALL print         ; Call "print" function
+        HLT                ; Stop execution
+print:  MOV B, 0           ; "print" function
+loop:   MOV A, [C]         ; Get char from var
+        MOV [D], A         ; Write to output
+        INC C              ; Next source
+        INC D              ; Next destination
+        CMP B, [C]         ; Check if end
+        JNZ loop           ; jump if not
+        RET`;
+        $scope.error = '';
+        $scope.selectedLine = -1;
+    };
+
+    $scope.ex3 = function () {
+        cpu.reset();
+        memory.reset();
+        $scope.displayD = false;
+        $scope.displayC = true;
+        $scope.displayB = true;
+        $scope.displayA = false;
         $scope.code = `	MOV A, 2  	;Set 1 into the A
 	MOV B, 0x60 	;Point to memory start
 ST1:	MOV [B], A  	;Write number to memory
@@ -1433,31 +1459,11 @@ SET1:  	MOV [B], 0xFF
 	MOV C, 0x5F
 	INC B
 	RET`;
-        $scope.error = '';
-        $scope.selectedLine = -1;
-    };
-
-    $scope.ex3 = function () {
-        cpu.reset();
-        memory.reset();
-        $scope.displayD = true;
-        $scope.displayC = false;
-        $scope.displayB = false;
-        $scope.displayA = false;
-        $scope.code = `    MOV A, 'A'
-    MOV D, 0xE8
-    CALL f
-    HLT
-f:  MOV [D], A
-    INC A
-    INC D
-    CMP A, 'Y'
-    JZ j1
-    CALL f
-j1: RET`;
     $scope.error = '';
     $scope.selectedLine = -1;
     };
+
+    
 
     $scope.reset = function () {
         cpu.reset();
