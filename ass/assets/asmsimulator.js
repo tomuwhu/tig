@@ -1403,21 +1403,36 @@ hello:  DB "Hello World!"       ; Variable
         $scope.displayC = false;
         $scope.displayB = false;
         $scope.displayA = false;
-        $scope.code = `        JMP start
-hello:  DB "Hello World!"  ; Variable
-        DB 0	           ; String terminator
-start:  MOV C, hello       ; Point to var
-        MOV D, 0xE8	   ; Point to output
-        CALL print         ; Call "print" function
-        HLT                ; Stop execution
-print:  MOV B, 0           ; "print" function
-loop:   MOV A, [C]         ; Get char from var
-        MOV [D], A         ; Write to output
-        INC C              ; Next source
-        INC D              ; Next destination
-        CMP B, [C]         ; Check if end
-        JNZ loop           ; jump if not
-        RET`;
+        $scope.code = `	MOV A, 2  	;Set 1 into the A
+	MOV B, 0x60 	;Point to memory start
+ST1:	MOV [B], A  	;Write number to memory
+	INC A       	;Set the next number
+	INC B       	;Set the next memory address
+	CMP A, 0x20 	;If A not 0x20
+	JNZ ST1   	;Jump to ST1
+	
+	MOV B, 0x62 	;Point to memory start
+ST2:	MOV C, 0x60 	;Point to memory start
+ST3:	MOV A, [B] 	;MOV A from memory
+	MOV D, A
+	DIV [C]		;DIV A from memory
+	MUL [C]		;MOD
+	CMP A, D
+	JNZ AG
+	CALL SET1
+AG:	INC C
+	CMP B, C
+	JNZ ST3
+	MOV C, 0x60
+	INC B
+	CMP B, 0x7E
+	JNZ ST2
+	HLT
+
+SET1:  	MOV [B], 0xFF
+	MOV C, 0x5F
+	INC B
+	RET`;
         $scope.error = '';
         $scope.selectedLine = -1;
     };
@@ -1442,8 +1457,7 @@ f:  MOV [D], A
 j1: RET`;
     $scope.error = '';
     $scope.selectedLine = -1;
-};
-    
+    };
 
     $scope.reset = function () {
         cpu.reset();

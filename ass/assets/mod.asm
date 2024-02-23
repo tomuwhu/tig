@@ -1,0 +1,16 @@
+	MOV A, 6
+	MOV B, 2
+E1:	MOV D, A
+	DIV B
+	MUL B
+	CMP D, A
+	JNZ UGR
+	CALL FN
+UGR:	INC A
+	INC B
+	JMP E1
+
+FN:	MOV D, [0x50]
+	INC D
+	MOV [0x50], D	
+	RET
