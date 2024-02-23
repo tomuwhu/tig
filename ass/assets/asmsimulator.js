@@ -1366,22 +1366,37 @@ var app = angular.module('ASMSimulator', []);
     $scope.speed = 4;
     $scope.outputStartIndex = 232;
     $scope.displayB = true;
-    $scope.code = `;Euclidean algorithm
-	MOV A, 120	
-	MOV B, 25	
-	CALL LNKO           	;LNKO(A, B)
-	HLT			;Result in A
-
-LNKO:	MOV C, A        	;Store A in C (A = C)
-	DIV B           	;Divide A with B	(A //= B)
-	MUL B           	;Multiply A with B	(A *= B)
-	SUB C, A    		;Sub A from C           (C -= A)
-	MOV A, B  		;A = B
-	MOV B, C		;B = C
-	JZ NULL			;IF C != 0:
-	CALL LNKO		;	LNKO(A, B)
-
-NULL:	RET`
+    $scope.code = `
+    ;Euclidean algorithm
+    
+            MOV A, 105	
+            MOV B, 60	
+            CALL LNKO           ;LNKO(A, B)
+            CALL DISPLAY	;DISPLAY(A)
+            HLT			;END Program
+    
+    LNKO:   MOV C, A        	;Store A in C (A = C)
+            DIV B           	;Divide A with B	(A //= B)
+            MUL B           	;Multiply A with B	(A *= B)
+            SUB C, A    	;Sub A from C           (C -= A)
+            MOV A, B  		;A = B
+            MOV B, C		;B = C
+            JZ NULL		;IF C != 0:
+            CALL LNKO		;	LNKO(A, B)
+    
+    NULL:   RET
+    
+    DISPLAY:
+            MOV C, A
+            DIV 10
+            MOV D, A
+            MUL 10
+            SUB C, A
+            ADD C, 0x30
+            ADD D, 0x30
+            MOV [0xE8], D
+            MOV [0xE9], C
+            RET`
 
     $scope.ex1 = function () {
         cpu.reset();
