@@ -1366,13 +1366,22 @@ var app = angular.module('ASMSimulator', []);
     $scope.speed = 4;
     $scope.outputStartIndex = 232;
     $scope.displayB = true;
-    $scope.code = `       MOV A, 'A'  ;Set code of 'A' into the A
-       MOV B, 0xE8 ;Point to output
-START: MOV [B], A  ;Write the character from A
-       INC A       ;Set the next character
-       INC B       ;Set the next memory address
-       CMP A, 'Y'  ;If A not "Y"
-       JNZ START   ;Jump to START`
+    $scope.code = `;Euclidean algorithm
+	MOV A, 120	
+	MOV B, 25	
+	CALL LNKO           	;LNKO(A, B)
+	HLT			;Result in A
+
+LNKO:	MOV C, A        	;Store A in C (A = C)
+	DIV B           	;Divide A with B	(A //= B)
+	MUL B           	;Multiply A with B	(A *= B)
+	SUB C, A    		;Sub A from C           (C -= A)
+	MOV A, B  		;A = B
+	MOV B, C		;B = C
+	JZ NULL			;IF C != 0:
+	CALL LNKO		;	LNKO(A, B)
+
+NULL:	RET`
 
     $scope.ex1 = function () {
         cpu.reset();
@@ -1424,8 +1433,7 @@ loop:   MOV A, [C]         ; Get char from var
         $scope.displayC = true;
         $scope.displayB = true;
         $scope.displayA = false;
-        $scope.code = `        ;Sieve of Eratosthenes
-        ;Write numbers 0x2..0x1F to memory (2..31)
+        $scope.code = `;Write numbers 0x2..0x1F to memory (2..31)
         MOV A, 2  	;Set 2 into the A
         MOV B, 0x60 	;Point to memory start
 ST1:	MOV [B], A  	;Write number to memory
@@ -1433,15 +1441,12 @@ ST1:	MOV [B], A  	;Write number to memory
         INC B       	;Point to the next memory address (B++)
         CMP A, 0x20 	;If A not 0x20 (A < 20)
         JNZ ST1   	;Jump to ST1
-        
-        ;Check numbers: 
-        ;if a number is prime:
-        ;it cannot be divided by a number smaller than it
+;If a number is prime, it cannot be divided by a number smaller than it
         MOV B, 0x62 	;Point to memory start + 2 (the number 4)
 ST2:	MOV C, 0x60 	;Point to memory start
 ST3:	MOV A, [B] 	;MOV A from memory
         MOV D, A	;Store A in D temporarly
-        DIV [C]		;(A // C) ** C != 0
+        DIV [C]		;(A // C) ** C != A
         MUL [C]		;ekvivalent with
         CMP A, D	;A mod B
         JNZ AG		;If [A] mod [C]:
@@ -1454,7 +1459,7 @@ AG:	INC C           ;Set pointer C to next memory cell
         CMP B, 0x7E	;If pointer B < listEnd:
         JNZ ST2		;	GoTo ST2
         HLT		;Processor Halt (END PROGRAM)
-    
+;Function NP() // Not a prim
 NP:  	MOV [B], 0xFF	;Not prime => Write Mem point B: 0xFF
         MOV C, 0x5F	;pointer C to ListStart - 1
         INC B		;increment pointer B
