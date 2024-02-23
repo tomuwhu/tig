@@ -1392,8 +1392,8 @@ var app = angular.module('ASMSimulator', []);
             MOV D, A
             MUL 10
             SUB C, A
-            ADD C, 0x30
-            ADD D, 0x30
+            ADD C, '0'
+            ADD D, '0'
             MOV [0xE8], D
             MOV [0xE9], C
             RET`
