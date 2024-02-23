@@ -85,7 +85,6 @@ small.x1 {
 
 span.ad {
     color: #443010;
-    font-family: 'Syne Mono', monospace;
 }
 .panel-title {
     color: #204664;
@@ -124,4 +123,8 @@ textarea#sourceCode {
 span.num {
     color:#125b33;
     font-weight: 100;
+}
+
+.panel-body {
+    text-align: center;
 }

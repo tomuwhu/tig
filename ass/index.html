@@ -83,7 +83,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr style="text-align:center;" class="source-code xx">
+                                <tr style="text-align:center;" class="xx">
                                     <td><div style="margin:auto;" ng-class="displayA && 'marker marker-a'"><small>{{ cpu.gpr[0] | number:displayHex }}</small></div></td>
                                     <td><div style="margin:auto;" ng-class="displayB && 'marker marker-b'"><small>{{ cpu.gpr[1] | number:displayHex }}</small></div></td>
                                     <td><div style="margin:auto;" ng-class="displayC && 'marker marker-c'"><small>{{ cpu.gpr[2] | number:displayHex }}</small></div></td>
@@ -96,7 +96,7 @@
                             </tbody>
                         </table>
                         <p class="text-muted">RAM 256 Bytes &lt;<i>0x00 - 0xFF</i>&gt; (Machine Code + Data)</p>
-                        <div style="width:29em;">
+                        <div style="width:29em; display: inline-block;">
                             <div class="memory-block"
                                  ng-repeat="m in memory.data track by $index"
                                  ng-class="getMemoryCellCss($index)">
