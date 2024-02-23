@@ -6,7 +6,6 @@
 }
 
 .output, .output-bg {
-    font-family: 'Syne Mono', monospace;
     background-color: rgb(175, 213, 197);
 }
 
@@ -31,6 +30,7 @@
 }
 
 .stack-bg {
+    font-family: monospace;
     background-color: #F8DCB4;
 }
 

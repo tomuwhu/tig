@@ -55,7 +55,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">Output Display - <span class="ad">ASC II from RAM &lt;<i>0xE8 - 0xFF</i>&gt;</span></h4>
                     </div>
-                    <div class="panel-body source-code">
+                    <div class="panel-body">
                         <div style="float:left;" class="output"
                              ng-repeat="m in memory.data | startFrom: outputStartIndex track by $index">
                             <span ng-if="m > 29">{{ getChar(m) }}</span>
@@ -96,13 +96,13 @@
                             </tbody>
                         </table>
                         <p class="text-muted">RAM 256 Bytes &lt;<i>0x00 - 0xFF</i>&gt; (Machine Code + Data</p>
-                        <div style="width:29em;" class="source-code">
+                        <div style="width:29em;">
                             <div class="memory-block"
                                  ng-repeat="m in memory.data track by $index"
                                  ng-class="getMemoryCellCss($index)">
                                  <div ng-class="getMemoryInnerCellCss($index)" ng-switch="isInstruction($index)">
-                                     <small ng-switch-default title="{{ 'Memory adress: 0x' + ($index.toString(16).length < 2 ? '0' : '') + $index.toString(16).toUpperCase() }}">{{ m | number:displayHex }}</small>
-                                     <a ng-switch-when="true" ng-click="jumpToLine($index)" title="{{ 'Memory adress: 0x'  + ($index.toString(16).length < 2 ? '0' : '') + $index.toString(16).toUpperCase() }}">
+                                     <small ng-switch-default title="{{ 'Memory adress: 0x' + ($index.toString(16).length < 2 ? '0' : '') + $index.toString(16).toUpperCase() }} (Dec: {{m}})">{{ m | number:displayHex }}</small>
+                                     <a ng-switch-when="true" ng-click="jumpToLine($index)" title="{{ 'Memory adress: 0x'  + ($index.toString(16).length < 2 ? '0' : '') + $index.toString(16).toUpperCase()}}">
                                          <small>{{ m | number:displayHex }}</small>
                                      </a>
                                  </div>

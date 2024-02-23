@@ -1445,7 +1445,7 @@ ST3:	MOV A, [B] 	;MOV A from memory
         MUL [C]		;ekvivalent with
         CMP A, D	;A mod B
         JNZ AG		;If [A] mod [C]:
-        CALL NP	;	NP()
+        CALL NP	        ;	NP()
 AG:	INC C           ;Set pointer C to next memory cell
         CMP B, C	;If B < C:
         JNZ ST3		;	GoTo ST3
