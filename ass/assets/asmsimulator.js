@@ -1451,11 +1451,11 @@ ST3:	MOV A, [B] 	;MOV A from memory
         CMP A, D	;A mod B
         JNZ AG		;If [A] mod [C]:
         CALL SET1	;	set1()
-AG:	INC C
+AG:	INC C           ;Set pointer C to next memory cell
         CMP B, C	;If B < C:
         JNZ ST3		;	GoTo ST3
-        MOV C, 0x60	;pointer C to ListStart
-        INC B		;pointer B++
+        MOV C, 0x60	;Set pointer C to ListStart
+        INC B		;Set pointer B to next memory cell
         CMP B, 0x7E	;If pointer B < listEnd:
         JNZ ST2		;	GoTo ST2
         HLT		;Processor Halt (END PROGRAM)
