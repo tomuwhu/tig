@@ -1381,18 +1381,13 @@ START: MOV [B], A  ;Write the character from A
         $scope.displayC = false;
         $scope.displayB = false;
         $scope.displayA = false;
-        $scope.code = `        MOV C, hello    ; Point to var
-        MOV D, 0xE8	; Point to output
-        MOV B, 0
-loop:   MOV A, [C]	; Get char from var
-        MOV [D], A	; Write to output
-        INC C           ; Next source
-        INC D           ; Next destination
-        CMP B, [C]      ; Check if end
-        JNZ loop        ; jump if not
-        HLT             ; Stop execution
-hello:  DB "Hello World!"       ; Variable
-        DB 0            ; String terminator`
+        $scope.code = `        MOV A, 'A'  ;Set code of 'A' into the A
+        MOV B, 0xE8 ;Point to output
+ START: MOV [B], A  ;Write the character from A
+        INC A       ;Set the next character
+        INC B       ;Set the next memory address
+        CMP A, 'Y'  ;If A not "Y"
+        JNZ START   ;Jump to START`
         $scope.error = '';
         $scope.selectedLine = -1;
     };
@@ -1430,13 +1425,13 @@ loop:   MOV A, [C]         ; Get char from var
         $scope.displayB = true;
         $scope.displayA = false;
         $scope.code = `        ;Sieve of Eratosthenes
-        ;Write numbers 2..20 to memory
+        ;Write numbers 0x2..0x1F to memory (2..31)
         MOV A, 2  	;Set 2 into the A
         MOV B, 0x60 	;Point to memory start
 ST1:	MOV [B], A  	;Write number to memory
-        INC A       	;Set the next number
-        INC B       	;Set the next memory address
-        CMP A, 0x20 	;If A not 0x20
+        INC A       	;Get the next number (A++)
+        INC B       	;Point to the next memory address (B++)
+        CMP A, 0x20 	;If A not 0x20 (A < 20)
         JNZ ST1   	;Jump to ST1
         
         ;Check numbers: 
