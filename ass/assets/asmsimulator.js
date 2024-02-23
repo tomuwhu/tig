@@ -1429,36 +1429,41 @@ loop:   MOV A, [C]         ; Get char from var
         $scope.displayC = true;
         $scope.displayB = true;
         $scope.displayA = false;
-        $scope.code = `	MOV A, 2  	;Set 1 into the A
-	MOV B, 0x60 	;Point to memory start
+        $scope.code = `        ;Sieve of Eratosthenes
+        ;Write numbers 2..20 to memory
+        MOV A, 2  	;Set 2 into the A
+        MOV B, 0x60 	;Point to memory start
 ST1:	MOV [B], A  	;Write number to memory
-	INC A       	;Set the next number
-	INC B       	;Set the next memory address
-	CMP A, 0x20 	;If A not 0x20
-	JNZ ST1   	;Jump to ST1
-	
-	MOV B, 0x62 	;Point to memory start
+        INC A       	;Set the next number
+        INC B       	;Set the next memory address
+        CMP A, 0x20 	;If A not 0x20
+        JNZ ST1   	;Jump to ST1
+        
+        ;Check numbers: 
+        ;if a number is prime:
+        ;it cannot be divided by a number smaller than it
+        MOV B, 0x62 	;Point to memory start + 2 (the number 4)
 ST2:	MOV C, 0x60 	;Point to memory start
 ST3:	MOV A, [B] 	;MOV A from memory
-	MOV D, A
-	DIV [C]		;DIV A from memory
-	MUL [C]		;MOD
-	CMP A, D
-	JNZ AG
-	CALL SET1
+        MOV D, A	;Store A in D temporarly
+        DIV [C]		;(A // C) ** C != 0
+        MUL [C]		;ekvivalent with
+        CMP A, D	;A mod B
+        JNZ AG		;If [A] mod [C]:
+        CALL SET1	;	set1()
 AG:	INC C
-	CMP B, C
-	JNZ ST3
-	MOV C, 0x60
-	INC B
-	CMP B, 0x7E
-	JNZ ST2
-	HLT
-
-SET1:  	MOV [B], 0xFF
-	MOV C, 0x5F
-	INC B
-	RET`;
+        CMP B, C	;If B < C:
+        JNZ ST3		;	GoTo ST3
+        MOV C, 0x60	;pointer C to ListStart
+        INC B		;pointer B++
+        CMP B, 0x7E	;If pointer B < listEnd:
+        JNZ ST2		;	GoTo ST2
+        HLT		;Processor Halt (END PROGRAM)
+    
+SET1:  	MOV [B], 0xFF	;Not prime => Write Mem point B: 0xFF
+        MOV C, 0x5F	;pointer C to ListStart - 1
+        INC B		;increment pointer B
+        RET		;return from SET1 function`;
     $scope.error = '';
     $scope.selectedLine = -1;
     };
