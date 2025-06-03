@@ -1,14 +1,5 @@
-def f(x):
-  xl = x.split(";")
-  return {
-    'év': int(xl[0]),
-    'negyedév': int(xl[1]),
-    'magyar': True if xl[2]=='ma' else False,
-    'Szerző_és_cím': xl[3],
-    'Példányszám': int(xl[4])
-  }
-
-l = [f(i) for i in open("kiadas.txt").readlines()]
+l = [(lambda xl: {'év': int(xl[0]), 'negyedév': int(xl[1]), 'magyar': True if xl[2]=='ma' else False,
+    'Szerző_és_cím': xl[3], 'Példányszám': int(xl[4])})(i.split(";")) for i in open("kiadas.txt").readlines()]
 
 print("2. feladat:")
 szerző = "Benedek Elek"
